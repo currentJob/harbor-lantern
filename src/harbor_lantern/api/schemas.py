@@ -420,6 +420,34 @@ class WeatherResponseOut(ExternalMetaOut):
     source: Literal["open-meteo"] = "open-meteo"
 
 
+class NearbyPlaceOut(BaseModel):
+    """근처 장소 1건 (REQ-017 · AC-050).
+
+    `distance_m` 과 `directions_url` 은 **캐시에 없는 값**이다 — 사용자가 실제로 보낸
+    좌표로 응답을 만들 때 계산한다(`PlaceSnapshot` 주석 참조). 캐시 키는 좌표를
+    양자화하므로 거리를 같이 캐시하면 110m 어긋난 값이 굳는다.
+    """
+
+    osm_type: str
+    osm_id: int
+    name: str
+    lat: float
+    lng: float
+    category: str
+    category_label: str
+    distance_m: float
+    directions_url: str
+
+
+class NearbyResponseOut(ExternalMetaOut):
+    origin_lat: float
+    origin_lng: float
+    radius_m: int
+    categories: list[str]
+    places: list[NearbyPlaceOut]
+    source: Literal["openstreetmap-overpass"] = "openstreetmap-overpass"
+
+
 class ExpenseListOut(BaseModel):
     items: list[ExpenseOut]
     total_minor: int

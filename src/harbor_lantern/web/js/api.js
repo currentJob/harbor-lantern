@@ -261,4 +261,13 @@ export const api = {
     const { data } = await request('/api/fx', { timeoutMs: 6000 });
     return data;
   },
+
+  /** 현재 위치 기준 근처 음식점·카페 (REQ-017).
+   *  Overpass 는 집계 질의라 날씨·환율보다 느리다 — 타임아웃을 넉넉히 준다. */
+  async getNearby({ lat, lng, radiusM }) {
+    const params = new URLSearchParams({ lat, lng });
+    if (radiusM) params.set('radius_m', radiusM);
+    const { data } = await request(`/api/nearby?${params}`, { timeoutMs: 15000 });
+    return data;
+  },
 };

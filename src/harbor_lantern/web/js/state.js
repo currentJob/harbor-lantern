@@ -33,6 +33,12 @@ export const store = {
   me: null,             // {lat, lng, acc}
   hint: '',
   syncError: null,
+
+  // 근처 장소 (REQ-017) — 일정 상태와 **섞지 않는다.** 서버가 준 여행 데이터가 아니라
+  // 그때그때 조회하는 휘발성 목록이고, 폴링 동기화 대상도 아니다.
+  nearby: null,         // GET /api/nearby 응답
+  nearbyBusy: false,
+  nearbyMessage: '',
 };
 
 const listeners = new Set();

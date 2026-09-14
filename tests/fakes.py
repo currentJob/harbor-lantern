@@ -23,9 +23,11 @@ from typing import Any
 
 __all__ = [
     "FX_SAMPLE",
+    "PLACES_SAMPLE",
     "WEATHER_SAMPLE",
     "FakeFxPort",
     "FakeFxPortError",
+    "FakeNearbyPort",
     "FakePort",
     "FakeWeatherPort",
 ]
@@ -83,6 +85,50 @@ class FakeWeatherPort(FakePort):
 
 class FakeFxPort(FakePort):
     """`FxPort` 자리에 꽂는 가짜 (REQ-015)."""
+
+
+class FakeNearbyPort:
+    """`NearbyPort` 자리에 꽂는 가짜 (REQ-017 · AC-054 · AC-055).
+
+    `FakePort` 를 물려받지 않는다 — 이 포트의 `fetch()` 는 **인자를 받는다**(위치·반경·
+    카테고리). 마지막 호출 인자를 `last_call` 에 남겨, 캐시 키가 실제로 인자를 구분하는지
+    검증할 수 있게 한다.
+    """
+
+    def __init__(self, result: Any = None, error: BaseException | None = None) -> None:
+        self.result = result if result is not None else PLACES_SAMPLE
+        self.error = error
+        self.calls = 0
+        self.last_call: dict[str, Any] | None = None
+
+    def fetch(self, *, categories: tuple[str, ...], lat: float, lng: float,
+              radius_m: int) -> Any:
+        self.calls += 1
+        self.last_call = {
+            "categories": categories, "lat": lat, "lng": lng, "radius_m": radius_m,
+        }
+        if self.error is not None:
+            raise self.error
+        return self.result
+
+    def reset(self) -> None:
+        self.calls = 0
+        self.last_call = None
+
+    def __repr__(self) -> str:
+        return f"FakeNearbyPort(calls={self.calls}, error={self.error!r})"
+
+
+# 침사추이(스타 애비뉴 부근) 기준 표본. 좌표는 실재하는 위치대이지만 이름은
+# 테스트용이다 — **실제 Overpass 응답을 그대로 박아 두지 않는다**(가게는 문을 닫는다).
+PLACES_SAMPLE: tuple[dict[str, Any], ...] = (
+    {"osm_type": "node", "osm_id": 1001, "name": "가까운 국수집",
+     "lat": 22.2940, "lng": 114.1735, "category": "restaurant"},
+    {"osm_type": "node", "osm_id": 1002, "name": "하버뷰 카페",
+     "lat": 22.2950, "lng": 114.1750, "category": "cafe"},
+    {"osm_type": "way", "osm_id": 2001, "name": "먼 분식",
+     "lat": 22.3000, "lng": 114.1800, "category": "fast_food"},
+)
 
 
 class FakeFxPortError(RuntimeError):

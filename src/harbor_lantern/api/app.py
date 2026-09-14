@@ -14,7 +14,9 @@ from harbor_lantern.clock import Clock, SystemClock
 from harbor_lantern.config import Settings, load_settings
 from harbor_lantern.services.external.cache import CachedProvider
 from harbor_lantern.services.external.frankfurter import FrankfurterFxAdapter
+from harbor_lantern.services.external.nearby import NearbyProvider
 from harbor_lantern.services.external.openmeteo import OpenMeteoWeatherAdapter
+from harbor_lantern.services.external.overpass import OverpassNearbyAdapter
 from harbor_lantern.storage.db import Database
 
 
@@ -32,6 +34,8 @@ def create_app(*, settings: Settings | None = None, clock: Clock | None = None,
     app.state.weather_provider = CachedProvider(
         OpenMeteoWeatherAdapter(cfg), "weather", cfg.weather_ttl_s, db, clock)
     app.state.fx_provider = CachedProvider(FrankfurterFxAdapter(cfg), "fx", cfg.fx_ttl_s, db, clock)
+    app.state.nearby_provider = NearbyProvider(
+        OverpassNearbyAdapter(settings.nearby), settings.nearby, db, clock)
     origins = allowed_origins if allowed_origins is not None else [
         item.strip() for item in os.environ.get("HL_ALLOWED_ORIGINS", "").split(",") if item.strip()]
     app.add_middleware(CORSMiddleware, allow_origins=origins,

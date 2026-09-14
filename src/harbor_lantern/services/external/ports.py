@@ -17,6 +17,8 @@ __all__ = [
     "ExternalUnavailable",
     "FxPort",
     "FxSnapshot",
+    "NearbyPort",
+    "PlaceSnapshot",
     "WeatherPort",
     "WeatherSnapshot",
     "snapshot_to_payload",
@@ -60,6 +62,23 @@ class FxSnapshot:
     rate_date: str | None
 
 
+@dataclass(frozen=True)
+class PlaceSnapshot:
+    """Overpass 응답의 정규화 형태 — 근처 장소 1건 (DSN-26 · REQ-017).
+
+    **거리와 길찾기 URL 은 여기 없다.** 둘 다 "지금 어디에 서 있는가"에 달린 값인데,
+    캐시는 좌표를 양자화한 키로 공유되기 때문이다(§DSN-26). 거리는 응답을 만들 때
+    사용자가 실제로 보낸 좌표로 계산한다 — 캐시에 넣으면 110m 어긋난 거리가 굳는다.
+    """
+
+    osm_type: str  # node · way · relation
+    osm_id: int
+    name: str
+    lat: float
+    lng: float
+    category: str
+
+
 @runtime_checkable
 class WeatherPort(Protocol):
     def fetch(self) -> WeatherSnapshot:  # 실패하면 ExternalUnavailable
@@ -69,6 +88,25 @@ class WeatherPort(Protocol):
 @runtime_checkable
 class FxPort(Protocol):
     def fetch(self) -> FxSnapshot:  # 실패하면 ExternalUnavailable
+        ...
+
+
+@runtime_checkable
+class NearbyPort(Protocol):
+    """위치가 인자로 들어가는 유일한 포트 (DSN-26).
+
+    날씨·환율은 인자가 없다(키 하나짜리 싱글턴). 근처 장소는 질의마다 키가 달라지므로
+    캐시도 따로다 — `services/external/nearby.py` 를 볼 것.
+    """
+
+    def fetch(
+        self,
+        *,
+        categories: tuple[str, ...],
+        lat: float,
+        lng: float,
+        radius_m: int,
+    ) -> tuple[PlaceSnapshot, ...]:  # 실패하면 ExternalUnavailable
         ...
 
 

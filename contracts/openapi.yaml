@@ -458,6 +458,62 @@ paths:
             application/json:
               schema: { $ref: '#/components/schemas/FxResponse' }
 
+  /api/nearby:
+    get:
+      tags: [external]
+      summary: 현재 위치 기준 근처 음식점·카페 (서버 캐시 TTL 1800초 + stale 폴백)
+      description: |
+        (REQ-017 · NFR-004 · AC-050~AC-056)
+
+        공급자: OpenStreetMap Overpass `POST https://overpass-api.de/api/interpreter`
+        (API 키 불필요, 조회일 2026-09-14).
+
+        **참가자 토큰을 요구하지 않는다** — 여행에 속한 데이터가 아니라 공개 지리
+        정보이며 `/api/weather`·`/api/fx` 와 같은 성격이다.
+
+        `distance_m` 과 `directions_url` 은 **캐시에 저장되지 않는다.** 캐시 키는 좌표를
+        소수 3자리(≈110m)로 양자화해 공유하므로, 거리를 함께 캐시하면 최대 110m 어긋난
+        값이 굳는다. 둘 다 요청이 실제로 보낸 좌표로 응답 조립 시 계산한다.
+
+        카테고리 목록의 SSoT 는 `config.NEARBY_CATEGORIES` 다. 지금 켜져 있는 것은
+        `restaurant`·`cafe`·`fast_food` 뿐이며, 꺼진 카테고리를 요청하면 **422** 다
+        (조용히 무시하면 "결과 없음"과 구분되지 않는다).
+      security: []
+      parameters:
+        - name: lat
+          in: query
+          required: true
+          schema: { type: number, minimum: -90, maximum: 90 }
+          description: 현재 위치 위도
+        - name: lng
+          in: query
+          required: true
+          schema: { type: number, minimum: -180, maximum: 180 }
+          description: 현재 위치 경도
+        - name: radius_m
+          in: query
+          required: false
+          schema: { type: integer, minimum: 100, maximum: 3000, default: 800 }
+          description: 검색 반경(m)
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: array
+            items: { type: string, enum: [restaurant, cafe, fast_food] }
+          description: 생략하면 켜져 있는 전체 카테고리
+      responses:
+        '200':
+          description: 항상 200 (공급자 실패는 available/stale 로 표현한다)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/NearbyResponse' }
+        '422':
+          description: 좌표·반경이 범위 밖이거나 지원하지 않는 카테고리
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+
   # ----------------------------------------------------------------- meta ---
   # 설계서 §7.2 는 `/healthz` 라고 적었지만 구현·프론트(`web/config.js`)·정적 내보내기가
   # `/api/health` 를 쓴다. 경로를 바꾸는 대신 계약을 구현에 맞췄다 — `/api/*` 안에 있으면
@@ -1150,3 +1206,41 @@ components:
                 공급자가 준 환율 기준일. 조회일과 다를 수 있다(ECB 는 영업일에만 갱신).
                 이것은 고장이 아니므로 stale 로 표시하지 않는다.
             source: { type: string, const: frankfurter }
+
+    NearbyPlace:
+      type: object
+      required: [osm_type, osm_id, name, lat, lng, category, category_label,
+                 distance_m, directions_url]
+      properties:
+        osm_type:       { type: string, description: 'node · way · relation' }
+        osm_id:         { type: integer }
+        name:           { type: string, description: 이름 없는 항목은 애초에 실리지 않는다 (AC-056) }
+        lat:            { type: number }
+        lng:            { type: number }
+        category:       { type: string, enum: [restaurant, cafe, fast_food] }
+        category_label: { type: string, description: '화면에 그대로 쓰는 한국어 라벨 (음식점·카페·간편식)' }
+        distance_m:
+          type: number
+          description: 요청이 보낸 좌표로부터의 직선거리. 캐시에 저장되지 않는다
+        directions_url:
+          type: string
+          description: 구글맵 길찾기 딥링크 (AC-034 와 같은 형식)
+
+    NearbyResponse:
+      allOf:
+        - $ref: '#/components/schemas/ExternalMeta'
+        - type: object
+          required: [origin_lat, origin_lng, radius_m, categories, places]
+          properties:
+            origin_lat: { type: number, description: 이 응답이 답한 좌표 }
+            origin_lng: { type: number }
+            radius_m:   { type: integer }
+            categories:
+              type: array
+              items: { type: string }
+              description: 실제로 조회한 카테고리 (생략 시 켜져 있는 전체)
+            places:
+              type: array
+              items: { $ref: '#/components/schemas/NearbyPlace' }
+              description: 거리 오름차순 (AC-051)
+            source: { type: string, const: openstreetmap-overpass }

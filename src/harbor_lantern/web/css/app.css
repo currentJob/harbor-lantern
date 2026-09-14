@@ -212,6 +212,30 @@ details.backend .field{margin-top:10px}
 details.backend .gnote{margin:10px 0 0}
 details.backend code{background:rgba(255,255,255,.07);padding:1px 5px;border-radius:5px;font-size:11.5px}
 
+/* ── 근처 음식점·카페 (REQ-017 · DSN-27) ──────────────────────────────── */
+.nearpanel:empty{display:none}
+.nearpanel{margin:10px 0 2px}
+.nearhead{font-size:12px;color:var(--muted);margin:2px 2px 8px}
+.nearnote{font-size:13px;color:var(--muted);background:var(--surface);
+  border:1px solid var(--line);border-radius:14px;padding:12px 13px;line-height:1.6}
+.nearstale{font-size:12px;color:var(--amber);background:rgba(247,183,51,.1);
+  border:1px solid rgba(247,183,51,.3);border-radius:12px;padding:9px 11px;margin-bottom:9px}
+.nearlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.nearitem{display:flex;align-items:center;gap:9px;background:var(--surface);
+  border:1px solid var(--line);border-left:3px solid var(--amber);
+  border-radius:14px;padding:10px 11px}
+.nearmain{flex:1;min-width:0}
+.nearname{font-size:14.5px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nearmeta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.neargo,.nearadd{flex:0 0 auto;min-height:var(--tap,44px);display:inline-flex;
+  align-items:center;justify-content:center;padding:0 11px;border-radius:11px;
+  font-size:12.5px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
+.neargo{color:var(--text);background:transparent;border:1px solid var(--line)}
+.nearadd{color:var(--bg);background:var(--amber);border:1px solid var(--amber)}
+/* 근처 장소 핀 — 일정 스팟의 번호 물방울과 **모양이 다르다**(같으면 구분이 안 된다) */
+.nearpin{width:14px;height:14px;border-radius:50%;background:var(--amber);
+  border:2px solid rgba(10,14,26,.85);box-shadow:0 0 8px rgba(247,183,51,.8)}
+
 /* ── 팁 · 푸터 · 토스트 ────────────────────────────────────────────────── */
 details.tips{margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
 details.tips summary{list-style:none;padding:15px 16px;font-weight:700;font-size:15px;cursor:pointer;

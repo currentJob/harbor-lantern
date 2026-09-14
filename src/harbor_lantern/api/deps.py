@@ -17,6 +17,7 @@ from harbor_lantern.clock import Clock
 from harbor_lantern.config import Settings
 from harbor_lantern.services import trip_service
 from harbor_lantern.services.external.cache import CachedProvider
+from harbor_lantern.services.external.nearby import NearbyProvider
 from harbor_lantern.storage import repo_trips
 from harbor_lantern.storage.db import Database
 
@@ -24,6 +25,7 @@ __all__ = [
     "ClockDep",
     "Conn",
     "FxProviderDep",
+    "NearbyProviderDep",
     "SettingsDep",
     "TripAccess",
     "TripAccessDep",
@@ -53,6 +55,11 @@ def get_fx_provider(request: Request) -> CachedProvider:
     return request.app.state.fx_provider  # type: ignore[no-any-return]
 
 
+def get_nearby_provider(request: Request) -> NearbyProvider:
+    # 날씨·환율과 달리 `CachedProvider` 가 아니다 — 질의마다 캐시 키가 달라진다(DSN-26).
+    return request.app.state.nearby_provider  # type: ignore[no-any-return]
+
+
 def db_conn(request: Request) -> Iterator[sqlite3.Connection]:
     db: Database = request.app.state.db
     with db.connection() as conn:
@@ -64,6 +71,7 @@ ClockDep = Annotated[Clock, Depends(get_clock)]
 Conn = Annotated[sqlite3.Connection, Depends(db_conn)]
 WeatherProviderDep = Annotated[CachedProvider, Depends(get_weather_provider)]
 FxProviderDep = Annotated[CachedProvider, Depends(get_fx_provider)]
+NearbyProviderDep = Annotated[NearbyProvider, Depends(get_nearby_provider)]
 
 ParticipantToken = Annotated[
     str | None,

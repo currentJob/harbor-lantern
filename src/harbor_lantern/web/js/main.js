@@ -14,6 +14,7 @@ import { TripMap } from './map.js';
 import { renderCards, renderSpotForm } from './render/cards.js';
 import { renderStatusStrip, renderTripDates, startClock } from './render/clock.js';
 import { renderExpenses } from './render/expenses.js';
+import { renderNearby } from './render/nearby.js';
 import { renderProgress } from './render/progress.js';
 import { renderSettlement } from './render/settlement.js';
 import { renderDaySummary, renderTabs } from './render/tabs.js';
@@ -181,6 +182,51 @@ function initMap() {
 }
 
 // ── 지도·위치 바 ──────────────────────────────────────────────────────────
+/* ── 근처 음식점·카페 (REQ-017 · REQ-018) ──────────────────────────────── */
+
+function clearNearby() {
+  store.nearby = null;
+  store.nearbyMessage = '';
+  store.nearbyBusy = false;
+  if (tripMap) tripMap.clearNearby();
+  emit();
+}
+
+async function loadNearby() {
+  // 좌표 없이 부르면 서버가 422 로 거절한다 — 그 전에 사람 말로 안내한다.
+  if (!store.me) {
+    store.nearbyMessage = '먼저 ‘내 위치’를 켜 주세요. 지금 서 있는 자리를 알아야 근처를 찾습니다.';
+    emit();
+    return;
+  }
+  store.nearbyBusy = true;
+  store.nearbyMessage = '';
+  emit();
+  try {
+    store.nearby = await api.getNearby({ lat: store.me.lat, lng: store.me.lng });
+  } catch (error) {
+    // 조회 실패가 앱을 멈추면 안 된다(NFR-004 의 화면 쪽 귀결).
+    store.nearby = null;
+    store.nearbyMessage = error.message || '근처 정보를 가져오지 못했습니다.';
+  } finally {
+    store.nearbyBusy = false;
+    emit();
+  }
+}
+
+async function addNearbyToItinerary(place) {
+  await run(async () => {
+    await api.createSpot(store.tripId, store.token, store.activeDay, {
+      name: place.name,
+      lat: place.lat,
+      lng: place.lng,
+      time_label: '점심',
+      tip: `근처 검색으로 추가 · ${place.category_label}`,
+    });
+    await syncOnce({ force: true });
+  }, `${place.name} 을(를) Day ${store.activeDay} 에 추가했습니다.`);
+}
+
 function wireMapBar() {
   tracker = new LocationTracker({
     onUpdate: (me) => {
@@ -215,6 +261,15 @@ function wireMapBar() {
     }
     store.sortByDistance = !store.sortByDistance;
     emit();
+  });
+
+  el('nearbtn').addEventListener('click', () => {
+    // 이미 결과가 떠 있으면 닫는다 — 목록이 화면을 계속 차지하면 일정이 안 보인다.
+    if (store.nearby || store.nearbyMessage) {
+      clearNearby();
+      return;
+    }
+    loadNearby();
   });
 
   el('editbtn').addEventListener('click', () => {
@@ -404,6 +459,25 @@ function renderAll() {
   renderAlerts(el('alerts'), {
     warnings: state.warnings, conflicts: state.conflicts, day, spotsById,
   });
+
+  // 근처 장소 (REQ-017). 일정 렌더와 독립이다 — 조회 전에는 아무것도 그리지 않는다.
+  renderNearby(el('nearby'), store.nearby, {
+    busy: store.nearbyBusy, message: store.nearbyMessage,
+  });
+  if (tripMap) {
+    tripMap.renderNearby((store.nearby && store.nearby.places) || [], {
+      onPick: (place) => { store.hint = `${place.name} · ${place.category_label}`; emit(); },
+    });
+  }
+  for (const button of el('nearby').querySelectorAll('[data-add]')) {
+    button.addEventListener('click', () => {
+      const place = (store.nearby.places || []).find(
+        (item) => `${item.osm_type}/${item.osm_id}` === button.dataset.add,
+      );
+      if (place) addNearbyToItinerary(place);
+    });
+  }
+  el('nearbtn').classList.toggle('on', Boolean(store.nearby || store.nearbyMessage));
 
   el('sortbtn').classList.toggle('on', store.sortByDistance);
   el('editbtn').classList.toggle('on', store.editMode);

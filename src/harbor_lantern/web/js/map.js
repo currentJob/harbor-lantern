@@ -22,6 +22,7 @@ export class TripMap {
     this.onTileTrouble = onTileTrouble || (() => {});
     this.map = null;
     this.markers = new Map();  // spot_id -> marker
+    this.nearbyMarkers = [];   // 근처 장소 (REQ-017) — 일정 스팟과 **별도 레이어**다.
     this.meMarker = null;
     this.tileErrors = [];
     this.available = false;
@@ -100,6 +101,37 @@ export class TripMap {
         this.markers.set(spot.id, marker);
       });
     }
+  }
+
+  /** 근처 장소를 찍는다 (REQ-017).
+   *
+   *  일정 스팟 핀과 **모양이 달라야 한다** — 같은 모양이면 "내 일정"과 "그냥 근처에 있는
+   *  가게"가 지도에서 구분되지 않는다. 스팟은 번호가 박힌 물방울, 이것은 점이다.
+   */
+  renderNearby(places, { onPick } = {}) {
+    this.clearNearby();
+    if (!this.map) return;
+    for (const place of places || []) {
+      const marker = L.marker([place.lat, place.lng], {
+        icon: L.divIcon({
+          className: '',
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+          popupAnchor: [0, -8],
+          html: '<div class="nearpin"></div>',
+        }),
+      }).addTo(this.map).bindPopup(
+        `<b>${escapeHtml(place.name)}</b><br>${escapeHtml(place.category_label)} · `
+        + `${Math.round(place.distance_m)}m`,
+      );
+      if (onPick) marker.on('click', () => onPick(place));
+      this.nearbyMarkers.push(marker);
+    }
+  }
+
+  clearNearby() {
+    for (const marker of this.nearbyMarkers) marker.remove();
+    this.nearbyMarkers = [];
   }
 
   focus(spot, zoom = 15) {

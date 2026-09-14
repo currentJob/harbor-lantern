@@ -14,7 +14,7 @@
 from __future__ import annotations
 
 import os
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, replace
 from pathlib import Path
 
@@ -22,12 +22,20 @@ __all__ = [
     "DEFAULT_TIME_BAND",
     "ENV_PREFIX",
     "FIXED_TIME_BAND",
+    "NEARBY_CATEGORIES",
+    "NEARBY_DEFAULT_RADIUS_M",
+    "NEARBY_MAX_RADIUS_M",
+    "NEARBY_MIN_RADIUS_M",
     "TIME_BANDS",
     "ExternalConfig",
+    "NearbyCategory",
+    "NearbyConfig",
     "Settings",
     "TimeBand",
     "TravelConfig",
+    "enabled_nearby_categories",
     "load_settings",
+    "nearby_tag_index",
 ]
 
 ENV_PREFIX = "HL_"
@@ -68,6 +76,82 @@ class ExternalConfig:
     weather_lng: float = 114.1694
 
 
+# ── 근처 장소 (REQ-017 · REQ-018 · DSN-26) ────────────────────────────────
+# 반경 상한·기본값은 **계약**(`contracts/openapi.yaml` 의 `/api/nearby`)에 적힌 수치이며
+# FastAPI `Query` 제약이 import 시점에 필요하므로 모듈 상수로 둔다. `NearbyConfig` 의
+# 기본값도 이것을 쓴다 — 두 자리에 다른 숫자가 적히는 일을 없앤다.
+NEARBY_MIN_RADIUS_M = 100
+NEARBY_DEFAULT_RADIUS_M = 800
+NEARBY_MAX_RADIUS_M = 3000
+
+
+@dataclass(frozen=True)
+class NearbyCategory:
+    """카테고리 하나 → OSM 태그 (REQ-017).
+
+    **이 표가 카테고리 목록의 SSoT 다.** 늘리려면 여기 한 줄을 더하고 `enabled=True` 로
+    두면 된다 — 어댑터의 질의도, API 가 받는 값도, 화면의 라벨도 전부 이 표에서 나온다.
+    """
+
+    label: str
+    osm_key: str
+    osm_values: tuple[str, ...]
+    enabled: bool = True
+
+
+# 지금 노출하는 것은 **음식점·카페뿐**이다(요청 범위). `attraction` 은 확장 지점이
+# 실제로 동작한다는 것을 보이려고 남겨 둔 자리이며 `enabled=False` 다 — 꺼진 카테고리를
+# 요청하면 422 이고, `tests/api/test_nearby.py` 가 그 사실을 고정한다.
+NEARBY_CATEGORIES: Mapping[str, NearbyCategory] = {
+    "restaurant": NearbyCategory("음식점", "amenity", ("restaurant",)),
+    "cafe": NearbyCategory("카페", "amenity", ("cafe",)),
+    "fast_food": NearbyCategory("간편식", "amenity", ("fast_food",)),
+    "attraction": NearbyCategory(
+        "관광명소", "tourism", ("attraction", "museum", "viewpoint"), enabled=False,
+    ),
+}
+
+
+def enabled_nearby_categories() -> tuple[str, ...]:
+    """지금 노출되는 카테고리 이름들. 선언 순서를 유지한다(화면 정렬이 흔들리지 않게)."""
+    return tuple(name for name, category in NEARBY_CATEGORIES.items() if category.enabled)
+
+
+def nearby_tag_index(names: Sequence[str]) -> dict[tuple[str, str], str]:
+    """`{(osm_key, osm_value): 카테고리}` — 공급자 응답을 우리 카테고리로 되돌리는 표.
+
+    도메인(`domain/places.py`)은 설정 객체가 아니라 이 평범한 매핑만 받는다. 그래야
+    정규화 함수가 설정을 모른 채 순수하게 남는다(§2.2).
+    """
+    index: dict[tuple[str, str], str] = {}
+    for name in names:
+        category = NEARBY_CATEGORIES[name]
+        for value in category.osm_values:
+            index[(category.osm_key, value)] = name
+    return index
+
+
+@dataclass(frozen=True)
+class NearbyConfig:
+    """Overpass(OpenStreetMap) 조회 설정. **API 키가 없다**(§6.13 과 같은 이유로).
+
+    - `ttl_s` 1800초: 식당·카페는 분 단위로 바뀌지 않는다. 공용 무료 서비스를 상대로
+      걸어 다니는 사용자가 매 요청마다 질의를 보내면 429 를 받는다(실측으로 확인했다).
+    - `quantize_digits` 3자리(≈110m): 캐시 키를 만들 때 좌표를 여기까지만 쓴다.
+      걸으면서 몇십 미터 움직여도 같은 캐시를 맞힌다(AC-054).
+    - `max_results` 50: 남의 서버에 과한 질의를 보내지 않기 위한 어댑터 쪽 상한이다.
+    """
+
+    url: str = "https://overpass-api.de/api/interpreter"
+    ttl_s: int = 1800
+    timeout_s: float = 8.0  # Overpass 는 날씨·환율보다 느리다(집계 질의)
+    default_radius_m: int = NEARBY_DEFAULT_RADIUS_M
+    max_radius_m: int = NEARBY_MAX_RADIUS_M
+    max_results: int = 50
+    quantize_digits: int = 3
+    user_agent: str = "harbor-lantern/0.1 (+https://github.com/currentJob/harbor-lantern)"
+
+
 # ── 시간대 라벨 → 기본 시작시각·체류시간 (O6 · §6.8) ──────────────────────
 @dataclass(frozen=True)
 class TimeBand:
@@ -105,6 +189,7 @@ class Settings:
     port: int = 8080
     travel: TravelConfig = TravelConfig()
     external: ExternalConfig = ExternalConfig()
+    nearby: NearbyConfig = NearbyConfig()
     join_rate_limit_n: int = 10
     join_rate_limit_window_s: int = 600
     poll_interval_s: int = 10
@@ -172,6 +257,19 @@ def load_settings(env: Mapping[str, str] | None = None) -> Settings:
         weather_lng=_env_float(src, "EXTERNAL_WEATHER_LNG", base_external.weather_lng),
     )
 
+    base_nearby = NearbyConfig()
+    nearby = replace(
+        base_nearby,
+        url=_env_str(src, "NEARBY_URL", base_nearby.url),
+        ttl_s=_env_int(src, "NEARBY_TTL_S", base_nearby.ttl_s),
+        timeout_s=_env_float(src, "NEARBY_TIMEOUT_S", base_nearby.timeout_s),
+        default_radius_m=_env_int(src, "NEARBY_DEFAULT_RADIUS_M", base_nearby.default_radius_m),
+        max_radius_m=_env_int(src, "NEARBY_MAX_RADIUS_M", base_nearby.max_radius_m),
+        max_results=_env_int(src, "NEARBY_MAX_RESULTS", base_nearby.max_results),
+        quantize_digits=_env_int(src, "NEARBY_QUANTIZE_DIGITS", base_nearby.quantize_digits),
+        user_agent=_env_str(src, "NEARBY_USER_AGENT", base_nearby.user_agent),
+    )
+
     defaults = Settings(db_path=DEFAULT_DB_PATH)
     return Settings(
         db_path=Path(_env_str(src, "DB_PATH", str(DEFAULT_DB_PATH))),
@@ -179,6 +277,7 @@ def load_settings(env: Mapping[str, str] | None = None) -> Settings:
         port=_env_int(src, "PORT", defaults.port),
         travel=travel,
         external=external,
+        nearby=nearby,
         join_rate_limit_n=_env_int(src, "JOIN_RATE_LIMIT_N", defaults.join_rate_limit_n),
         join_rate_limit_window_s=_env_int(src, "JOIN_RATE_LIMIT_WINDOW_S", defaults.join_rate_limit_window_s),
         poll_interval_s=_env_int(src, "POLL_INTERVAL_S", defaults.poll_interval_s),

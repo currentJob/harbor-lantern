@@ -104,3 +104,21 @@ def fx_port(app: Any) -> Any:
         app.state.clock,
     )
     return port
+
+
+@pytest.fixture
+def nearby_port(app: Any) -> Any:
+    """근처 장소 공급자를 가짜로 바꾼다 (AC-054 · AC-055).
+
+    `fx_port` 와 같은 이유로 둔다. 다만 캐시는 `CachedProvider` 가 아니라
+    `NearbyProvider` 다 — 질의마다 키가 달라지기 때문이다(DSN-26).
+    """
+    from harbor_lantern.services.external.nearby import NearbyProvider
+    from harbor_lantern.services.external.ports import PlaceSnapshot
+    from tests.fakes import PLACES_SAMPLE, FakeNearbyPort
+
+    port = FakeNearbyPort(tuple(PlaceSnapshot(**item) for item in PLACES_SAMPLE))
+    app.state.nearby_provider = NearbyProvider(
+        port, app.state.settings.nearby, app.state.db, app.state.clock,
+    )
+    return port
