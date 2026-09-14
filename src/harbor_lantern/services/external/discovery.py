@@ -1,5 +1,6 @@
 """Destination and place discovery; public OSM data and optional Google reviews."""
 
+import math
 import os
 import threading
 import time
@@ -29,6 +30,7 @@ class DiscoveryProvider:
         self._cache = {}
         self._lock = threading.Lock()
         self._last_request = 0.0
+        self._cooldown = {}
 
     def _cached(self, key, loader):
         # Serialize public-service calls, cap cache size, never cache Google reviews.
@@ -58,6 +60,47 @@ class DiscoveryProvider:
         except (httpx.HTTPError, ValueError) as exc:
             raise ExternalUnavailable("장소 제공자에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요.") from exc
 
+    def _overpass(self, query):
+        configured = os.environ.get("HL_DISCOVERY_OVERPASS_URL")
+        endpoints = [configured] if configured else [
+            "https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter"]
+        for endpoint in endpoints:
+            if self._cooldown.get(endpoint, 0) > time.monotonic():
+                continue
+            try:
+                document = self._request("POST", endpoint, data={"data": query}, timeout=10)
+                if document.get("remark"):
+                    raise ExternalUnavailable("장소 조회가 시간 내 완료되지 않았습니다.")
+                return document
+            except ExternalUnavailable:
+                self._cooldown[endpoint] = time.monotonic() + 30
+        raise ExternalUnavailable("장소 제공자가 혼잡합니다. 30초 후 다시 시도하거나 검색 반경을 줄여 주세요.")
+
+    def _limited_search(self, lat, lng, radius, restaurants_only):
+        """User-triggered best matches, never paginate or bulk-download from Nominatim."""
+        dy = radius / 111000
+        dx = min(180, dy / max(0.01, math.cos(math.radians(lat))))
+        box = f"{max(-180,lng-dx)},{min(90,lat+dy)},{min(180,lng+dx)},{max(-90,lat-dy)}"
+        categories = [("restaurant", "amenity")] if restaurants_only else [
+            ("restaurant", "amenity"), ("museum", "tourism"), ("park", "leisure")]
+        elements = []
+        for category, tag in categories:
+            wait = 1.1 - (time.monotonic() - self._last_request)
+            if wait > 0:
+                time.sleep(wait)
+            self._last_request = time.monotonic()
+            rows = self._request("GET", "https://nominatim.openstreetmap.org/search", timeout=8,
+                                 headers={"User-Agent": USER_AGENT}, params={
+                                     "q": f"[{category}]", "viewbox": box, "bounded": 1,
+                                     "format": "jsonv2", "extratags": 1, "limit": 30})
+            for row in rows:
+                if row.get("type") != category or not row.get("name"):
+                    continue
+                elements.append({"type": row["osm_type"], "id": row["osm_id"],
+                                 "lat": float(row["lat"]), "lon": float(row["lon"]),
+                                 "tags": {**(row.get("extratags") or {}), "name": row["name"], tag: category}})
+        return {"elements": elements, "limited_search": True}
+
     def destinations(self, query):
         def fetch():
             rows = self._request("GET", "https://nominatim.openstreetmap.org/search", params={
@@ -80,8 +123,10 @@ class DiscoveryProvider:
             # Separate per-category caps avoid restaurants crowding out every attraction.
             limit = 100 if not restaurants_only else 150
             query = "[out:json][timeout:25];" + "".join(clause + f"out center {limit};" for clause in clauses)
-            endpoint = os.environ.get("HL_DISCOVERY_OVERPASS_URL", "https://overpass.private.coffee/api/interpreter")
-            document = self._request("POST", endpoint, data={"data": query})
+            try:
+                document = self._overpass(query)
+            except ExternalUnavailable:
+                document = self._limited_search(lat, lng, radius, restaurants_only)
             if document.get("remark"):
                 raise ExternalUnavailable("장소 조회가 시간 내 완료되지 않았습니다. 반경을 줄여 다시 시도하세요.")
             places = []
@@ -101,6 +146,7 @@ class DiscoveryProvider:
                     "recommendation": None, "rating": None, "review_count": None, "reviews": [],
                     "source": "OpenStreetMap", "source_url": f'https://www.openstreetmap.org/{row["type"]}/{row["id"]}',
                     "fetched_at": datetime.now(UTC).isoformat(),
+                    "limited_search": document.get("limited_search", False),
                 })
             unique = []
             for place in places:

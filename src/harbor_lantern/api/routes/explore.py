@@ -65,7 +65,10 @@ def plan(body: PlanRequest, request: Request):
     # Overpass can return way centers outside the requested circle.
     origin = LatLng(destination["lat"], destination["lng"])
     places = [p for p in places if haversine_m(origin, LatLng(p["lat"], p["lng"])) <= body.radius_m]
-    return build_plan(places, destination, body.start_date, body.end_date, body.pace, body.interests)
+    result = build_plan(places, destination, body.start_date, body.end_date, body.pace, body.interests)
+    if any(p.get("limited_search") for p in places):
+        result["notice"] += " 제공자 혼잡으로 대체 검색의 일부 주요 후보를 사용했습니다."
+    return result
 
 
 @router.get("/nearby", responses=_errors)
@@ -81,5 +84,7 @@ def nearby(request: Request, lat: Annotated[float, Query(ge=-90, le=90, allow_in
     results = [{**p, "distance_m": round(haversine_m(origin, LatLng(p["lat"], p["lng"])))} for p in places]
     results = [p for p in results if p["distance_m"] <= radius_m]
     results.sort(key=lambda p: (p["distance_m"], p["name"]))
-    return {"places": results[:30], "reviews_enabled": provider.reviews_enabled,
-            "notice": "평점·후기는 Google Maps 제공 시 표시합니다. 미제공 정보는 추정하지 않습니다."}
+    notice = "평점·후기는 Google Maps 제공 시 표시합니다. 미제공 정보는 추정하지 않습니다."
+    if any(p.get("limited_search") for p in places):
+        notice += " 제공자 혼잡으로 대체 검색 결과 일부를 표시합니다."
+    return {"places": results[:30], "reviews_enabled": provider.reviews_enabled, "notice": notice}
