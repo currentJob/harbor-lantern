@@ -1,4 +1,17 @@
-# Harbor Lantern · 香港
+# Harbor Lantern · 여행 설계와 홍콩 가이드
+
+메인 화면에서 나라·도시·지역을 검색하고 날짜를 선택하면 동네 단위 추천 일정을 만듭니다.
+현지 날짜·요일·공개 영업시간과 거리를 고려하며 최근 여행 10개를 브라우저에 보관합니다.
+현재 위치 주변 음식점 검색, 거리/평점 정렬, 제공되는 메뉴·업체 원문 링크도 지원합니다.
+
+평점·후기는 서버 환경변수 `HL_GOOGLE_PLACES_API_KEY`가 있을 때 Google Places에서 조회합니다.
+키는 PC에만 설정하고 Pages나 채팅에 넣지 마세요. Places API(New)와 결제가 활성화된 키가 필요합니다.
+키 없이도 OSM 검색이 동작하지만 평점·후기·업체별 추천 메뉴는 원천 데이터에 없으면 미제공으로 표시합니다.
+동선은 휴리스틱 추천이며 실제 교통망 최단 경로·공휴일·임시휴무를 보장하지 않습니다.
+기존 홍콩 공동 일정은 메인의 **홍콩 가이드** 링크에서 엽니다.
+
+배포: https://currentjob.github.io/harbor-lantern/
+변경 설계·검증 범위: [지역 여행 확장](docs/_change_explore.md).
 
 홍콩 3박 4일 여행을 **동행 여럿이 같이 편집하는** 웹 앱. 정적 HTML 한 장짜리 가이드를
 서버 기반 공유 일정표로 옮긴 것으로, 27개 기본 스팟·초대코드 참여·이동시간 계산·영업시간
@@ -43,8 +56,8 @@ uv run python -m harbor_lantern
 | `HL_ALLOWED_ORIGINS` | (비어 있음) | CORS 허용 출처. 화면을 다른 호스트에 올릴 때만 쓴다 |
 | `HL_TRAVEL_*` · `HL_EXTERNAL_*` | 설계서 §6.1 | 이동시간 계수·외부 API TTL (전부 추정치라 설정으로 열어 뒀다) |
 
-비밀값은 없다 — 날씨(Open-Meteo)·환율(Frankfurter)·근처 장소(OpenStreetMap Overpass)
-셋 다 API 키를 요구하지 않는다.
+기본 날씨(Open-Meteo)·환율(Frankfurter)·근처 장소(OpenStreetMap Overpass)는 API 키를 요구하지 않는다.
+새 메인의 Google 평점·후기를 선택적으로 사용할 때만 PC에 별도 키를 설정한다.
 
 ## 검증
 

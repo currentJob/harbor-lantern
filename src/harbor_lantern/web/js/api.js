@@ -137,7 +137,7 @@ async function parseBody(response) {
 }
 
 /** 저수준 요청. 반환은 {status, headers, data}. 4xx/5xx 는 ApiError 로 던진다. */
-async function request(path, { method = 'GET', body, token, headers = {}, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
+export async function request(path, { method = 'GET', body, token, headers = {}, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   const init = {

@@ -1,0 +1,40 @@
+# 여행 메인·지역별 일정·주변 맛집 확장
+
+2026-09-14. 기존 프로젝트 확장(LEGACY_INTEGRATION). 원래 홍콩 4일 공유 여행은
+`hongkong.html`에 보존하고 기본 진입점을 `index.html` 여행 메인으로 바꾼다.
+
+## 범위와 근거
+
+- 국가·지역 문자열을 명시적 검색 버튼으로 Nominatim에 질의하고 결과를 사용자가 선택한다.
+  국가·광역지역은 하루 동선의 범위가 아니므로 도시·동네로 좁혀 선택하도록 안내한다.
+- 1~14일 여행, 느긋함/보통/알참, 문화/자연/혼합, 3~10km 범위를 지원한다.
+- Overpass의 명소·음식점·공원 후보를 날짜별 요일·공개 주간 영업시간·거리로 배치한다.
+  매일 09~19시, 식당 60분·명소 90분 체류를 사용한다. 거리와 대기·식사 시간에 따른
+  휴리스틱 추천이며 전역 최적해나 실제 교통망의 최단 경로를 주장하지 않는다.
+- 복잡한 영업규칙·공휴일·계절·자정 넘김은 미확인으로 표시한다. 원문은 함께 보존한다.
+- 같은 장소를 전체 여행에서 반복하지 않으며 후보가 부족하면 빈 시간을 명시한다.
+- 최근 10개 여행은 브라우저에 보관하고 JSON 내려받기를 제공한다. 홍콩 공유 DB와 별개다.
+- 위치 권한은 주변 검색 버튼을 누른 후에만 요청한다. 거부 시 선택한 여행지 기준 검색이 가능하다.
+- 공개 OSM에는 평점·후기가 없으므로 null/빈 목록과 미제공 안내를 표시한다.
+  `HL_GOOGLE_PLACES_API_KEY`가 설정된 PC는 주변 음식점을 Google Places로 조회하여
+  평점·평가 수·관련성순 후기 3개·작성자·원문 링크를 표시한다. Google 내용은 캐시하거나
+  저장된 여행에 넣지 않고 목록에만 표시한다. API 키는 서버 환경변수에서만 읽는다.
+- 업체별 대표 메뉴는 제공 데이터에 없으면 미제공으로 표시한다. 음식 종류와 메뉴·업체 링크는
+  OSM 태그에 있을 때 표시한다. 메뉴를 실제 판매한다고 추정하지 않는다.
+
+## 운영 근거
+
+- Nominatim 정책: https://operations.osmfoundation.org/policies/nominatim/
+- Overpass: https://wiki.openstreetmap.org/wiki/Overpass_API
+- Google nearby: https://developers.google.com/maps/documentation/places/web-service/nearby-search
+- Google 데이터 표시: https://developers.google.com/maps/documentation/places/web-service/policies
+
+공개 서비스 요청은 전역 잠금·1.1초 간격과 최대 100개/30분 캐시로 제어한다.
+조회 동시성은 2개로 제한하고 실패는 503, 초과는 429로 재시도를 안내한다.
+반경·좌표·날짜 입력을 서버에서도 검사하며 무제한 검색이나 자동완성 호출은 하지 않는다.
+
+## 검증
+
+`tests/domain/test_planner.py`와 `tests/api/test_explore.py`는 날짜·요일·체류시간·중복 방문·
+미제공 정보·캐시·제공자 장애·Google 응답의 평점과 작성자 출처를 네트워크 없이 검증한다.
+실제 API 키를 통한 Google 평점·후기 검증은 키 미설정으로 미실행이다.

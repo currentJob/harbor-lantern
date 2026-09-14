@@ -9,10 +9,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from harbor_lantern.api.errors import install_error_handlers
-from harbor_lantern.api.routes import expenses, external, meta, spots, trips
+from harbor_lantern.api.routes import expenses, explore, external, meta, spots, trips
 from harbor_lantern.clock import Clock, SystemClock
 from harbor_lantern.config import Settings, load_settings
 from harbor_lantern.services.external.cache import CachedProvider
+from harbor_lantern.services.external.discovery import DiscoveryProvider
 from harbor_lantern.services.external.frankfurter import FrankfurterFxAdapter
 from harbor_lantern.services.external.nearby import NearbyProvider
 from harbor_lantern.services.external.openmeteo import OpenMeteoWeatherAdapter
@@ -30,6 +31,7 @@ def create_app(*, settings: Settings | None = None, clock: Clock | None = None,
     app.state.settings = settings
     app.state.clock = clock
     app.state.db = db
+    app.state.discovery = DiscoveryProvider()
     cfg = settings.external
     app.state.weather_provider = CachedProvider(
         OpenMeteoWeatherAdapter(cfg), "weather", cfg.weather_ttl_s, db, clock)
@@ -57,7 +59,7 @@ def create_app(*, settings: Settings | None = None, clock: Clock | None = None,
         response.headers["Referrer-Policy"] = "no-referrer"
         return response
 
-    for router in (trips.router, spots.router, expenses.router, external.router, meta.router):
+    for router in (trips.router, spots.router, expenses.router, external.router, meta.router, explore.router):
         app.include_router(router)
     web = Path(__file__).resolve().parents[1] / "web"
     app.mount("/", StaticFiles(directory=web, html=True), name="web")

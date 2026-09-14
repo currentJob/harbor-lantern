@@ -18,7 +18,7 @@ import pytest
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 WEB = PROJECT_ROOT / "src" / "harbor_lantern" / "web"
 VENDOR = WEB / "vendor" / "leaflet-1.9.4"
-INDEX = WEB / "index.html"
+INDEX = WEB / "hongkong.html"
 CSS = WEB / "css" / "app.css"
 
 # 런타임에만 나가는 외부 목적지. 정적 자산(<script src>·<link href>)에는 하나도 없어야 한다.
@@ -34,7 +34,7 @@ URL_RE = re.compile(r"""https?://([^\s"'`)\\<>]+)""")
 
 
 def _front_sources() -> list[Path]:
-    files = [INDEX, CSS]
+    files = [INDEX, CSS, WEB / "index.html", WEB / "css/explore.css"]
     files += sorted((WEB / "js").rglob("*.js"))
     return [path for path in files if path.is_file()]
 

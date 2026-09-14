@@ -43,15 +43,17 @@ jobs:
           # Jekyll 이 밑줄로 시작하는 경로를 삼키지 않게 한다.
           touch _site/.nojekyll
           # 서버 주소는 비워 두는 것이 기본이다. 비어 있으면 화면이 먼저 물어본다.
-          base="${HL_API_BASE:-}"
-          if [ -n "$base" ]; then
-            case "$base" in
-              https://*) ;;
-              *) echo "HL_API_BASE 는 https 여야 한다: $base" >&2; exit 1 ;;
-            esac
-          fi
-          printf 'window.HARBOR_CONFIG = Object.freeze({ apiBase: "%s" });\n' "$base" > _site/config.js
-          echo "배포 대상 $(find _site -type f | wc -l) 파일 · apiBase='${base:-(런타임 입력)}'"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          base = os.environ.get('HL_API_BASE', '').rstrip('/')
+          if base:
+              url = urlsplit(base)
+              if url.scheme != 'https' or not url.hostname or url.username or url.password or url.path or url.query or url.fragment:
+                  raise SystemExit('HL_API_BASE must be an HTTPS origin')
+          Path('_site/config.js').write_text('window.HARBOR_CONFIG = Object.freeze(' + json.dumps({'apiBase': base}) + ');\n')
+          PY
 
       - name: 외부 도메인 참조 재확인
         # AC-042 는 저장소에서 검사하지만, **배포되는 물건**에서 한 번 더 본다.
@@ -67,6 +69,7 @@ jobs:
           hits=$(grep -rInE 'https?://[a-zA-Z0-9.-]+' _site \
                    --include='*.html' --include='*.css' --include='*.js' \
                    --exclude-dir=vendor \
+                   --exclude=config.js \
                  | grep -v 'basemaps.cartocdn.com' \
                  | grep -v 'www.google.com' || true)
           if [ -n "$hits" ]; then
