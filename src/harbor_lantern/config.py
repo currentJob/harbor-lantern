@@ -144,7 +144,12 @@ class NearbyConfig:
 
     url: str = "https://overpass-api.de/api/interpreter"
     ttl_s: int = 1800
-    timeout_s: float = 8.0  # Overpass 는 날씨·환율보다 느리다(집계 질의)
+    # 30초. **추측이 아니라 실측이다** — 2026-09-14 침사추이 반경 500m 질의를 공용
+    # 인스턴스에 보내니 성공 응답이 **10.4초** 걸렸다. 처음 잡았던 8초는 그 정상 응답조차
+    # 받지 못하고 끊었다(사용자에게는 "근처 정보를 가져오지 못했습니다"로만 보였다).
+    # 공용 무료 서비스라 지연이 들쭉날쭉하고 과하게 부르면 JSON 이 아닌 오류 페이지를 준다 —
+    # 그래서 TTL 30분 캐시가 있고, 실패는 stale 폴백으로 흡수된다.
+    timeout_s: float = 30.0
     default_radius_m: int = NEARBY_DEFAULT_RADIUS_M
     max_radius_m: int = NEARBY_MAX_RADIUS_M
     max_results: int = 50

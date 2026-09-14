@@ -263,11 +263,16 @@ export const api = {
   },
 
   /** 현재 위치 기준 근처 음식점·카페 (REQ-017).
-   *  Overpass 는 집계 질의라 날씨·환율보다 느리다 — 타임아웃을 넉넉히 준다. */
+   *
+   *  35초. 서버 쪽 Overpass 타임아웃이 30초이므로 **그보다 길어야 한다** —
+   *  클라이언트가 먼저 포기하면 서버는 응답을 받아 캐시에 넣는데 화면만 실패로 보인다
+   *  (다음 요청은 캐시라 즉시 성공해, "두 번 누르면 되는" 이상한 버그가 된다).
+   *  실측: 공용 인스턴스 성공 응답이 10초 남짓 걸린다(2026-09-14).
+   */
   async getNearby({ lat, lng, radiusM }) {
     const params = new URLSearchParams({ lat, lng });
     if (radiusM) params.set('radius_m', radiusM);
-    const { data } = await request(`/api/nearby?${params}`, { timeoutMs: 15000 });
+    const { data } = await request(`/api/nearby?${params}`, { timeoutMs: 35000 });
     return data;
   },
 };
