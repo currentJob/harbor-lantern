@@ -64,8 +64,10 @@ jobs:
           # `dist/**` 는 디렉토리 자신(`dist/`)도 포함한다 — 그대로 넘기면
           # `sha256sum: dist/: Is a directory` 로 이 단계가 통째로 실패한다.
           # 정규 파일만 남긴다.
+          # 배포 산출물만 센다. `dist/**` 로 훑으면 디렉토리 자신과
+          # `uv build` 가 만드는 `dist/.gitignore` 까지 딸려 온다.
           artifacts=()
-          for path in sbom.cyclonedx.json dist/**; do
+          for path in sbom.cyclonedx.json dist/*.whl dist/*.tar.gz; do
             [ -f "$path" ] && artifacts+=("$path")
           done
           if [ ${#artifacts[@]} -gt 0 ]; then
@@ -81,4 +83,5 @@ jobs:
           files: |
             SHA256SUMS
             sbom.cyclonedx.json
-            dist/**
+            dist/*.whl
+            dist/*.tar.gz
