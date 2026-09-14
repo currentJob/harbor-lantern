@@ -1,0 +1,9 @@
+{
+  "doc_id": "03",
+  "title": "개발내역서",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전", "선행문서"],
+  "requires_changelog": true,
+  "required_sections": ["매핑"],
+  "defines_ids": []
+}

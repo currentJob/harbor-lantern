@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e1a">
+<title>香港 · 홍콩 3박 4일</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0e1a; --bg2:#0f1626; --surface:rgba(255,255,255,.05);
+    --line:rgba(255,255,255,.09); --text:#f4f7fb; --muted:#8b98ad;
+    --pink:#ff2e88; --cyan:#22d3ee; --amber:#f7b733; --violet:#a78bfa;
+    --ok:#34d399; --warn:#ff6b6b;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(120% 60% at 80% -10%,rgba(255,46,136,.14),transparent 60%),
+               radial-gradient(120% 60% at -10% 10%,rgba(34,211,238,.12),transparent 55%),
+               var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+    line-height:1.5; padding-bottom:96px;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+
+  header{padding:26px 16px 14px;max-width:560px;margin:0 auto;position:relative;overflow:hidden}
+  .cn{font-size:64px;font-weight:800;letter-spacing:4px;line-height:.9;
+      background:linear-gradient(100deg,var(--cyan),var(--pink) 70%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+  .en{font-size:14px;color:var(--muted);letter-spacing:2px;margin-top:6px;animation:rise .7s .06s both}
+  .meta{display:flex;align-items:center;gap:12px;margin-top:16px;animation:rise .7s .12s both}
+  .clock{font-variant-numeric:tabular-nums;font-size:13px;color:var(--text);
+    background:var(--surface);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
+  .clock b{color:var(--cyan)}
+  .ring{width:56px;height:56px;flex:0 0 auto;position:relative}
+  .ring svg{transform:rotate(-90deg)}
+  .ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:700}
+  .dates{font-size:13px;color:var(--muted)}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  #map{height:44vh;min-height:280px;border-radius:20px;margin:6px 0 4px;
+    border:1px solid var(--line);box-shadow:0 20px 50px -24px rgba(0,0,0,.9);z-index:0}
+  .leaflet-container{background:#0b1120;font-family:inherit}
+  .mapbar{display:flex;gap:8px;margin:10px 0 2px;align-items:center}
+  .locbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+    background:linear-gradient(100deg,rgba(34,211,238,.16),rgba(255,46,136,.16));
+    border:1px solid var(--line);color:var(--text);padding:12px;border-radius:14px;
+    font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s}
+  .locbtn:active{transform:scale(.97)}
+  .locbtn .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+  .locbtn.live .dot{background:var(--cyan);box-shadow:0 0 0 0 rgba(34,211,238,.6);animation:pulse 1.8s infinite}
+  .sortbtn{background:var(--surface);border:1px solid var(--line);color:var(--muted);
+    padding:12px 14px;border-radius:14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+  .sortbtn.on{color:var(--bg);background:var(--cyan);border-color:var(--cyan)}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.5)}70%{box-shadow:0 0 0 8px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+  .hint{font-size:12px;color:var(--muted);margin:4px 2px 0;min-height:16px}
+
+  .tabs{position:sticky;top:0;z-index:500;display:flex;gap:8px;padding:12px 0;
+    background:linear-gradient(var(--bg) 70%,transparent);backdrop-filter:blur(6px);overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:9px 15px;border-radius:999px;border:1px solid var(--line);
+    background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;
+    display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;transition:.2s}
+  .tab small{font-size:10px;opacity:.7;font-weight:500}
+  .tab[data-active="1"]{color:var(--text);border-color:var(--c);background:color-mix(in srgb,var(--c) 22%,transparent)}
+
+  .daysum{display:flex;align-items:baseline;gap:10px;margin:4px 2px 12px}
+  .daysum h2{margin:0;font-size:20px;font-weight:800}
+  .daysum span{font-size:12px;color:var(--muted)}
+  .accent{color:var(--c)}
+
+  .card{position:relative;background:var(--surface);border:1px solid var(--line);
+    border-left:3px solid var(--c);border-radius:16px;padding:14px 14px 14px 16px;margin-bottom:11px;
+    cursor:pointer;transition:transform .15s,border-color .2s,opacity .3s;animation:card .45s both}
+  .card:active{transform:scale(.99)}
+  .card[data-done="1"]{opacity:.5}
+  .card[data-done="1"] .name{text-decoration:line-through;text-decoration-color:var(--muted)}
+  @keyframes card{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .row1{display:flex;align-items:center;gap:8px}
+  .time{font-size:11px;font-weight:700;color:var(--c);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .sub{font-size:11px;color:var(--muted);letter-spacing:.5px}
+  .more{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .3s}
+  .card.open .more{transform:rotate(180deg)}
+  .name{font-size:16px;font-weight:700;margin:2px 0}
+  .tip{font-size:13px;color:#c5cede;margin:6px 0 0}
+  .hours{font-size:12px;color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+  .hours .cl{color:var(--warn);font-weight:600}
+  .detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .25s ease}
+  .card.open .detail{max-height:340px;opacity:1}
+  .desc{font-size:13px;color:#cfd8e6;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+  .rec{font-size:13px;color:#e7edf6;margin-top:8px}
+  .rec b{color:var(--c)}
+  .foot{display:flex;align-items:center;gap:10px;margin-top:11px}
+  .dist{font-size:12px;color:var(--cyan);font-weight:600;font-variant-numeric:tabular-nums}
+  .dist.off{color:var(--muted);font-weight:500}
+  .spacer{flex:1}
+  .go{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+    color:var(--bg);background:var(--c);padding:8px 13px;border-radius:11px;text-decoration:none}
+  .chk{width:34px;height:34px;flex:0 0 auto;border-radius:10px;border:1px solid var(--line);
+    background:transparent;color:var(--muted);font-size:16px;cursor:pointer;display:grid;place-items:center}
+  .chk.done{background:var(--ok);border-color:var(--ok);color:var(--bg)}
+
+  details.tips{margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+  details.tips summary{list-style:none;padding:15px 16px;font-weight:700;font-size:15px;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between}
+  details.tips summary::-webkit-details-marker{display:none}
+  details.tips[open] summary{border-bottom:1px solid var(--line)}
+  .tipbody{padding:6px 16px 16px}
+  .tipbody li{margin:9px 0;font-size:13.5px;color:#cdd6e4}
+  .tipbody b{color:var(--amber)}
+  footer{text-align:center;color:var(--muted);font-size:11px;padding:22px 0 8px;line-height:1.7}
+
+  .pin{width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    border:2px solid rgba(255,255,255,.85);box-shadow:0 0 12px currentColor}
+  .pin i{position:absolute;inset:0;display:grid;place-items:center;transform:rotate(45deg);
+    font-size:10px;font-weight:800;color:#0a0e1a}
+  .me{width:18px;height:18px;border-radius:50%;background:var(--cyan);border:3px solid #fff;
+    box-shadow:0 0 0 6px rgba(34,211,238,.25);animation:pulse 1.8s infinite}
+  .leaflet-popup-content-wrapper{background:#111a2c;color:#fff;border-radius:12px;border:1px solid var(--line)}
+  .leaflet-popup-tip{background:#111a2c}
+  .leaflet-popup-content{margin:10px 12px;font-size:13px}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="cn">香港</div>
+  <div class="en">HONG KONG · 3박 4일 여행 가이드</div>
+  <div class="meta">
+    <div class="ring">
+      <svg width="56" height="56"><circle cx="28" cy="28" r="24" stroke="rgba(255,255,255,.12)" stroke-width="5" fill="none"/>
+      <circle id="ringfg" cx="28" cy="28" r="24" stroke="url(#g)" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="150.8"/>
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#ff2e88"/></linearGradient></defs></svg>
+      <span id="ringtxt">0%</span>
+    </div>
+    <div>
+      <div class="clock" id="clock">홍콩 <b>--:--</b></div>
+      <div class="dates" style="margin-top:6px">10.5(월) → 10.8(목) · <span id="donecount">0/0 완료</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="map"></div>
+  <div class="mapbar">
+    <button class="locbtn" id="locbtn"><span class="dot"></span> 내 위치</button>
+    <button class="sortbtn" id="sortbtn">가까운 순</button>
+  </div>
+  <div class="hint" id="hint">카드를 누르면 설명·추천이 펼쳐지고 지도가 그 지점으로 이동합니다. ‘내 위치’로 실시간 추적을 켜세요.</div>
+
+  <div class="tabs" id="tabs"></div>
+  <div class="daysum" id="daysum"></div>
+  <div id="list"></div>
+
+  <details class="tips">
+    <summary>여행 실전 팁 <span style="color:var(--muted);font-weight:400;font-size:13px">탭하여 열기</span></summary>
+    <div class="tipbody"><ul style="padding-left:18px;margin:8px 0">
+      <li><b>옥토퍼스 카드</b> 먼저 충전 — MTR·버스·편의점 다 됩니다. 이동은 MTR 중심.</li>
+      <li><b>피크트램·옹핑360</b>은 온라인 사전예약으로 대기 시간을 줄이세요.</li>
+      <li><b>심포니 오브 라이트</b>는 매일 밤 8시, 침사추이 프롬나드가 명당.</li>
+      <li><b>10월 날씨</b>는 덥고 습함(~28℃). 가벼운 옷 + 우산 겸용, 자외선 대비.</li>
+      <li><b>영업시간은 근사치</b>입니다. 방문 직전 각 명소 공식 채널로 재확인하세요.</li>
+      <li><b>길찾기</b> 버튼은 구글맵 앱으로 현재 위치→목적지 경로를 바로 엽니다.</li>
+    </ul></div>
+  </details>
+
+  <footer>완료 체크는 이 기기에 자동 저장됩니다 · 영업시간·휴무는 변동될 수 있어요<br>즐거운 홍콩 여행 되세요 🇭🇰</footer>
+</div>
+
+<script>
+const DAYS = [
+  { d:1, date:"10.5 월", title:"도착 + 침사추이 하버뷰", area:"구룡(TST)", color:"#22d3ee", spots:[
+    {t:"오후", n:"스타 애비뉴", s:"Avenue of Stars", tip:"빅토리아 하버 산책로. 이소룡 동상·스타 핸드프린트.",
+      hours:"야외 상시 (24h)", closed:"", desc:"하버를 따라 이어진 산책로로 홍콩 영화의 전설들을 기념하는 공간. 침사추이 도착 첫 코스로 좋다.", lat:22.2937, lng:114.1730,
+      rec:"이소룡 동상 인증샷, 밤 8시 심포니 오브 라이트 관람 명당."},
+    {t:"오후", n:"시계탑", s:"Clock Tower", tip:"1915년 옛 구룡역 붉은 벽돌 시계탑.",
+      hours:"야외 상시", closed:"", desc:"철거된 구 구룡-광저우 철도역의 유일한 잔존물로 TST의 랜드마크.", lat:22.2937, lng:114.1687,
+      rec:"해질녘 하버·문화센터 배경 사진."},
+    {t:"오후", n:"스타페리", s:"Star Ferry (TST→Central)", tip:"1888년부터 운행한 명물 페리.",
+      hours:"매일 06:30–23:30경 · 6~10분 간격", closed:"", desc:"저렴하게 빅토리아 하버를 건너는 클래식한 방법. 홍콩섬 이동과 관광을 동시에.", lat:22.2935, lng:114.1685,
+      rec:"상층 데크에서 스카이라인 감상, 옥토퍼스로 탑승(약 HK$5)."},
+    {t:"저녁", n:"하버시티 / K11 MUSEA", s:"쇼핑·다이닝", tip:"대형 쇼핑몰 + 아트 테마 몰.",
+      hours:"대체로 매일 10:00–22:00", closed:"", desc:"TST 최대 쇼핑몰 하버시티와 예술을 접목한 K11 MUSEA. 저녁 식사와 쇼핑을 한 번에.", lat:22.2939, lng:114.1740,
+      rec:"K11 MUSEA 옥상정원·포토존, 하버시티 내 딤섬·로컬 맛집."},
+    {t:"20:00", n:"심포니 오브 라이트", s:"Symphony of Lights", tip:"하버 양안 빌딩의 조명·레이저 쇼.",
+      hours:"매일 20:00 시작 · 약 10~13분", closed:"", desc:"기네스 등재 상설 조명쇼. 40여 개 빌딩이 음악에 맞춰 빛난다.", lat:22.2934, lng:114.1720,
+      rec:"침사추이 프롬나드 또는 스타페리 위에서 관람. 8시 15분 전 자리잡기."},
+    {t:"밤", n:"템플 스트리트 야시장", s:"Temple St Night Market", tip:"야우마테이 대표 야시장(여력 시).",
+      hours:"매일 대략 18:00–24:00", closed:"", desc:"노점·먹거리·점집이 늘어선 홍콩의 상징적 야시장. 저녁부터 활기를 띤다.", lat:22.3070, lng:114.1701,
+      rec:"해산물 볶음·꼬치, 노천 다이파이동 분위기 즐기기."},
+  ]},
+  { d:2, date:"10.6 화", title:"홍콩섬 — 센트럴·남부·피크", area:"Hong Kong Island", color:"#ff2e88", spots:[
+    {t:"오전", n:"만모사원", s:"Man Mo Temple", tip:"문(학문)·무(무예)의 신을 모신 도교 사원.",
+      hours:"매일 08:00–18:00 · 무료", closed:"", desc:"1847년경 세운 사원으로 천장 가득한 소용돌이 향이 인상적. 성완 헤리티지 코스의 시작점.", lat:22.2838, lng:114.1503,
+      rec:"소용돌이 향 아래 사진(조용히·정숙). 근처 캣스트리트 골동품 거리."},
+    {t:"오전", n:"PMQ", s:"元創方", tip:"옛 경찰 기숙사를 개조한 디자인·공예 단지.",
+      hours:"단지 상시 · 상점 대략 11:00–20:00", closed:"", desc:"로컬 디자이너와 공예가들의 스튜디오·편집숍이 모인 창작 공간.", lat:22.2836, lng:114.1512,
+      rec:"독립 디자이너 숍·팝업 구경, 안뜰 카페."},
+    {t:"오전", n:"타이쿤", s:"Tai Kwun 大館", tip:"옛 경찰서·감옥·법원 개조 예술문화 공간.",
+      hours:"매일 10:00–23:00 (갤러리 화~일 11:00–19:00)", closed:"일부 갤러리 월요일", desc:"식민지 시대 중앙경찰서·빅토리아 감옥을 복원한 복합문화공간. 역사와 현대미술이 공존.", lat:22.2818, lng:114.1547,
+      rec:"감옥동 무료 관람, 현대미술 갤러리, 안뜰 바·레스토랑."},
+    {t:"오전", n:"미드레벨 에스컬레이터", s:"세계 최장 옥외 에스컬레이터", tip:"소호를 관통하는 명물 에스컬레이터.",
+      hours:"하행 06:00–10:00 / 상행 10:00–24:00", closed:"", desc:"800m 길이의 세계 최장 옥외 에스컬레이터. 언덕 위 소호 골목으로 이어진다.", lat:22.2828, lng:114.1552,
+      rec:"오르내리며 소호 골목의 카페·바·벽화 탐방."},
+    {t:"점심후", n:"스탠리 마켓", s:"Stanley Market", tip:"홍콩섬 남단 해안마을 노천 시장.",
+      hours:"대체로 매일 10:00–18:00", closed:"", desc:"실크·기념품·의류 노점이 모인 해변 마을. Exchange Sq에서 6/6X/260 버스로 이동.", lat:22.2188, lng:114.2130,
+      rec:"머레이 하우스·해변 산책로, 기념품 쇼핑."},
+    {t:"오후", n:"리펄스 베이", s:"Repulse Bay", tip:"완만한 백사장과 톈허우 사원.",
+      hours:"야외 상시", closed:"", desc:"홍콩 남부의 대표 해변. 스탠리 오가는 길에 들르기 좋다.", lat:22.2360, lng:114.1965,
+      rec:"해변 산책, 사원 앞 소원의 다리·수관음상."},
+    {t:"일몰", n:"피크트램 승차", s:"Peak Tram (Garden Rd)", tip:"1888년 개통한 급경사 푸니쿨라.",
+      hours:"매일 07:30–23:00", closed:"", desc:"6세대 유리천장 트램으로 빅토리아 피크까지 오르는 명물. 가든로드 하부역에서 탑승.", lat:22.2777, lng:114.1600,
+      rec:"온라인 예약 + 앞쪽 우측 좌석. 오르막에 건물이 기우는 착시가 압권."},
+    {t:"야경", n:"빅토리아 피크", s:"Sky Terrace 428", tip:"해발 428m, 홍콩 최고의 야경 전망대.",
+      hours:"매일 08:30–22:00", closed:"", desc:"홍콩 최고 높이의 옥외 전망대. 낮과 밤 모두 하버 전경이 장관.", lat:22.2759, lng:114.1455,
+      rec:"일몰~야경 타이밍이 베스트. 무료 뷰는 피크 갤러리아 옥상·라이언스 파빌리온."},
+    {t:"저녁", n:"란콰이퐁 / 소호", s:"Lan Kwai Fong", tip:"센트럴 대표 나이트라이프 거리.",
+      hours:"저녁~심야", closed:"", desc:"바·레스토랑이 밀집한 홍콩의 밤 문화 중심지.", lat:22.2809, lng:114.1556,
+      rec:"하산 후 저녁 식사와 바 홉핑으로 마무리."},
+  ]},
+  { d:3, date:"10.7 수", title:"란타우섬 + 몽콕", area:"Lantau + Mongkok", color:"#f7b733", spots:[
+    {t:"오전", n:"옹핑360 케이블카", s:"Ngong Ping 360", tip:"통청↔옹핑 25분 크리스탈 캐빈.",
+      hours:"평일 10:00–18:00 / 주말·공휴일 09:00–18:30", closed:"(정비휴무 9/8~18은 여행 전 종료)", desc:"5.7km를 잇는 케이블카로 란타우 산·바다 위를 미끄러진다. 10/7 수요일은 평일 운행.", lat:22.2926, lng:113.9418,
+      rec:"온라인 예약 필수. 크리스탈(투명바닥) 캐빈, 오전 일찍 탑승해 대기 회피."},
+    {t:"오전", n:"천단대불", s:"Big Buddha 天壇大佛", tip:"268계단 위 34m 청동 좌불.",
+      hours:"야외 상시 / 내부 대략 10:00–17:30", closed:"", desc:"란타우의 상징인 대형 청동 좌불. 계단을 오르면 사방 전망이 트인다.", lat:22.2540, lng:113.9050,
+      rec:"계단 오르기는 무료. 내부·박물관은 포린사원 식사권으로 입장. 물·자외선 대비."},
+    {t:"오전", n:"포린사원", s:"Po Lin Monastery", tip:"1906년 창건, 홍콩 최대 불교 사원.",
+      hours:"매일 09:00–18:00 / 채식당 11:30–16:30", closed:"", desc:"빅부다 아래 자리한 대형 사원. 지혜의 길(Wisdom Path)은 보수로 폐쇄(2026년말까지).", lat:22.2545, lng:113.9061,
+      rec:"유명한 채식 세트런치(HK$100~145). 인기라 정오 전 도착 권장."},
+    {t:"점심", n:"옹핑빌리지", s:"Ngong Ping Village", tip:"케이블카 종점의 식당·상점 거리.",
+      hours:"대략 10:00–18:00", closed:"", desc:"테마형 상점가로 식당·카페·기념품점이 모여 있다.", lat:22.2565, lng:113.9042,
+      rec:"점심 해결에 편리. 시내보다 20~30% 비싼 편이니 참고."},
+    {t:"오후", n:"타이오 어촌마을", s:"Tai O (선택)", tip:"수상가옥으로 유명한 서쪽 어촌.",
+      hours:"마을 상시 · 상점은 낮 시간", closed:"", desc:"란타우 서쪽 끝의 전통 어촌으로 스틸트 하우스(수상가옥)가 명물. 시간 여유 시 방문.", lat:22.2530, lng:113.8620,
+      rec:"핑크 돌고래 보트투어, 새우젓·건어물. 옹핑에서 21번 버스."},
+    {t:"저녁", n:"레이디스 마켓", s:"몽콕 女人街", tip:"흥정의 재미가 있는 노점 거리.",
+      hours:"매일 대략 11:00–23:30", closed:"", desc:"몽콕의 대표 노점 시장. 통청 복귀 후 MTR로 이동.", lat:22.3170, lng:114.1705,
+      rec:"기념품·잡화·의류 흥정. 여러 곳 가격 비교."},
+    {t:"저녁", n:"금붕어 시장", s:"Goldfish Market", tip:"관상어 노점이 늘어선 이색 거리.",
+      hours:"대략 10:30–22:00", closed:"", desc:"비닐봉지에 담긴 관상어·수족용품 가게가 이어지는 몽콕의 명물 거리.", lat:22.3210, lng:114.1701,
+      rec:"이색 볼거리·사진 스팟. 레이디스 마켓과 도보권."},
+    {t:"이른저녁", n:"꽃시장", s:"Flower Market", tip:"화사한 화훼 거리(비교적 일찍 마감).",
+      hours:"대략 07:00–19:30", closed:"", desc:"몽콕 프린스에드워드의 꽃 도매·소매 거리. 저녁 7시 반경 문을 닫는 곳이 많다.", lat:22.3258, lng:114.1690,
+      rec:"해 지기 전 먼저 들르고, 이후 레이디스·금붕어 시장으로 이동."},
+  ]},
+  { d:4, date:"10.8 목", title:"여유 + 쇼핑 → 공항", area:"Kowloon / HK Island", color:"#a78bfa", spots:[
+    {t:"오전", n:"딤섬 브런치 · 팀호완", s:"添好運 (삼수이포)", tip:"미쉐린 딤섬 저가 명가.",
+      hours:"매일 대략 10:00–21:30", closed:"", desc:"세계에서 가장 저렴한 미쉐린 딤섬으로 유명. 삼수이포 푹윙가(Fuk Wing St) 매장.", lat:22.3300, lng:114.1600,
+      rec:"베이크드 차슈바오(폭탄빵)·창펀·무떡. 오픈런하면 대기 최소."},
+    {t:"오전", n:"타임스퀘어", s:"코즈웨이베이", tip:"코즈웨이베이 대형 쇼핑몰.",
+      hours:"대략 10:00–22:00", closed:"", desc:"패션·전자·식당가가 모인 코즈웨이베이 랜드마크 몰.", lat:22.2783, lng:114.1822,
+      rec:"마지막 쇼핑·식사. 지하 슈퍼에서 기념 먹거리."},
+    {t:"오후", n:"SOGO 백화점", s:"崇光 코즈웨이베이", tip:"일본계 백화점, 화장품·잡화.",
+      hours:"대략 10:00–22:00", closed:"", desc:"코즈웨이베이의 대표 백화점으로 화장품·기념품 쇼핑에 좋다.", lat:22.2801, lng:114.1840,
+      rec:"화장품·뷰티, 지하 식품관. 세일 시즌엔 붐빔."},
+    {t:"저녁", n:"홍콩역 → 공항", s:"에어포트 익스프레스", tip:"도심 체크인 가능한 공항철도.",
+      hours:"AEL 대략 05:50–00:48", closed:"", desc:"홍콩역에서 공항까지 약 24분. 인타운 체크인으로 짐을 미리 부칠 수 있다.", lat:22.2847, lng:114.1585,
+      rec:"국제선 2.5~3시간 전 도착. 도심 체크인 활용해 홀가분하게 이동."},
+  ]},
+];
+
+const store={ get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}} };
+let done = store.get("hk_done") || {};
+
+const map = L.map('map',{zoomControl:false,attributionControl:false}).setView([22.30,114.10],11);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+  subdomains:'abcd',maxZoom:19}).addTo(map);
+L.control.attribution({prefix:false}).addAttribution('© OpenStreetMap · © CARTO').addTo(map);
+
+const markers={};
+function keyOf(di,si){return di+"_"+si}
+function makePin(color,label){
+  return L.divIcon({className:'',iconSize:[22,22],iconAnchor:[11,22],popupAnchor:[0,-22],
+    html:'<div class="pin" style="background:'+color+';color:'+color+'"><i>'+label+'</i></div>'});
+}
+DAYS.forEach((day,di)=>day.spots.forEach((sp,si)=>{
+  const m=L.marker([sp.lat,sp.lng],{icon:makePin(day.color,si+1)}).addTo(map)
+    .bindPopup('<b>'+sp.n+'</b><br>'+sp.t+' · '+sp.s+'<br>🕐 '+sp.hours);
+  m.on('click',()=>focusCard(di,si));
+  markers[keyOf(di,si)]=m;
+}));
+
+let me=null, meMarker=null, watchId=null;
+const locbtn=document.getElementById('locbtn'), hint=document.getElementById('hint');
+locbtn.onclick=()=>{
+  if(!navigator.geolocation){hint.textContent="이 브라우저는 위치 기능을 지원하지 않습니다.";return}
+  hint.textContent="위치 권한을 확인하는 중…";
+  if(watchId==null){
+    watchId=navigator.geolocation.watchPosition(onPos,onErr,{enableHighAccuracy:true,maximumAge:5000,timeout:15000});
+  }else if(me){ map.flyTo([me.lat,me.lng],15) }
+};
+function onPos(p){
+  me={lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy};
+  locbtn.classList.add('live');
+  hint.textContent="실시간 위치 추적 중 (정확도 ±"+Math.round(me.acc)+"m). 카드에 남은 거리가 표시됩니다.";
+  if(!meMarker){
+    meMarker=L.marker([me.lat,me.lng],{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map);
+    map.flyTo([me.lat,me.lng],14);
+  }else meMarker.setLatLng([me.lat,me.lng]);
+  render();
+}
+function onErr(e){
+  locbtn.classList.remove('live');
+  hint.textContent = e.code===1
+    ? "위치 권한이 거부됐어요. 브라우저 설정에서 허용하거나, 파일을 다운로드해 HTTPS/로컬에서 열면 추적됩니다."
+    : "위치를 가져오지 못했습니다. 실외에서 다시 시도해 주세요.";
+}
+function dist(a,b){
+  const R=6371000,r=Math.PI/180;
+  const dLat=(b.lat-a.lat)*r,dLng=(b.lng-a.lng)*r;
+  const x=Math.sin(dLat/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+function fmt(m){ return m<1000 ? Math.round(m/10)*10+"m" : (m/1000).toFixed(m<10000?1:0)+"km" }
+
+let active=pickDay(), sortByDist=false;
+function pickDay(){
+  const now=new Date(), y=now.getFullYear();
+  const key=y+"-"+now.getMonth()+"-"+now.getDate();
+  const m={}; m[y+"-9-5"]=0; m[y+"-9-6"]=1; m[y+"-9-7"]=2; m[y+"-9-8"]=3;
+  return m[key]!=null?m[key]:0;
+}
+const tabsEl=document.getElementById('tabs'), listEl=document.getElementById('list'),
+      sumEl=document.getElementById('daysum'), sortbtn=document.getElementById('sortbtn');
+
+function buildTabs(){
+  tabsEl.innerHTML='';
+  DAYS.forEach((day,di)=>{
+    const b=document.createElement('button');
+    b.className='tab'; b.style.setProperty('--c',day.color);
+    b.dataset.active = di===active?'1':'0';
+    b.innerHTML='Day '+day.d+'<small>'+day.date+'</small>';
+    b.onclick=()=>{active=di;sortByDist=false;sortbtn.classList.remove('on');render();
+      const first=day.spots[0]; map.flyTo([first.lat,first.lng],13);};
+    tabsEl.appendChild(b);
+  });
+}
+sortbtn.onclick=()=>{
+  if(!me){hint.textContent="먼저 ‘내 위치’를 켜면 가까운 순으로 정렬돼요.";return}
+  sortByDist=!sortByDist; sortbtn.classList.toggle('on',sortByDist); render();
+};
+
+function render(){
+  const day=DAYS[active];
+  document.documentElement.style.setProperty('--c',day.color);
+  buildTabs();
+  sumEl.style.setProperty('--c',day.color);
+  sumEl.innerHTML='<h2>'+day.title+'</h2><span class="accent">'+day.area+'</span>';
+
+  let items=day.spots.map((sp,si)=>({sp,si,d:me?dist(me,sp):null}));
+  if(sortByDist && me) items.sort((a,b)=>a.d-b.d);
+
+  listEl.innerHTML='';
+  items.forEach((it,idx)=>{
+    const sp=it.sp, si=it.si, d=it.d, k=keyOf(active,si), isDone=!!done[k];
+    const gmaps="https://www.google.com/maps/dir/?api=1&destination="+sp.lat+","+sp.lng;
+    const card=document.createElement('div');
+    card.className='card'; card.style.setProperty('--c',day.color);
+    card.dataset.done=isDone?'1':'0'; card.style.animationDelay=(idx*0.03)+'s';
+    card.innerHTML=
+      '<div class="row1"><span class="time">'+sp.t+'</span>'
+        +'<span class="sub">'+(si+1)+'. '+sp.s+'</span><span class="more">▾</span></div>'
+      +'<div class="name">'+sp.n+'</div>'
+      +'<div class="tip">'+sp.tip+'</div>'
+      +'<div class="hours">🕐 '+sp.hours+(sp.closed?' <span class="cl">'+sp.closed+'</span>':'')+'</div>'
+      +'<div class="detail"><div class="desc">'+sp.desc+'</div>'
+        +'<div class="rec"><b>추천</b> · '+sp.rec+'</div></div>'
+      +'<div class="foot">'
+        +'<span class="dist '+(d==null?'off':'')+'">'+(d==null?'· 위치 꺼짐':'📍 '+fmt(d))+'</span>'
+        +'<span class="spacer"></span>'
+        +'<a class="go" href="'+gmaps+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">길찾기 ›</a>'
+        +'<button class="chk '+(isDone?'done':'')+'" aria-label="완료">'+(isDone?'✓':'')+'</button>'
+      +'</div>';
+    card.onclick=()=>{ card.classList.toggle('open'); map.flyTo([sp.lat,sp.lng],15); markers[k].openPopup(); };
+    card.querySelector('.chk').onclick=(e)=>{e.stopPropagation();toggle(k);};
+    listEl.appendChild(card);
+  });
+  updateProgress();
+}
+function toggle(k){ done[k]=!done[k]; store.set("hk_done",done); render(); }
+function focusCard(di,si){ if(di!==active){active=di;render();} }
+
+function updateProgress(){
+  let total=0,d=0;
+  DAYS.forEach((day,di)=>day.spots.forEach((_,si)=>{total++; if(done[keyOf(di,si)])d++;}));
+  const pct=total?Math.round(d/total*100):0;
+  document.getElementById('ringtxt').textContent=pct+"%";
+  document.getElementById('ringfg').style.strokeDashoffset=150.8*(1-pct/100);
+  document.getElementById('donecount').textContent=d+"/"+total+" 완료";
+}
+
+function tick(){
+  const s=new Date().toLocaleTimeString('ko-KR',{timeZone:'Asia/Hong_Kong',hour:'2-digit',minute:'2-digit',hour12:false});
+  document.getElementById('clock').innerHTML='홍콩 <b>'+s+'</b>';
+}
+tick(); setInterval(tick,1000*20);
+render();
+setTimeout(()=>map.invalidateSize(),300);
+</script>
+</body>
+</html>

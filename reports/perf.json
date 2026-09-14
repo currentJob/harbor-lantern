@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-09-13T15:33:47Z",
+  "python": "3.12.13",
+  "platform": "Windows 11 (AMD64)",
+  "measurement": "서버 핸들러 내부 처리시간 (X-Process-Time, ms). 네트워크·브라우저 제외",
+  "warmup": 20,
+  "spot_count": 27,
+  "targets": [
+    {
+      "name": "GET /api/trips/{trip_id}/state",
+      "samples": 200,
+      "min_ms": 4.132,
+      "p50_ms": 4.457,
+      "p95_ms": 5.287,
+      "p99_ms": 6.598,
+      "max_ms": 17.275,
+      "mean_ms": 4.629,
+      "target_p50_ms": 50.0,
+      "target_p95_ms": 120.0,
+      "within_target": true,
+      "breach_limit_ms": 1000.0,
+      "breached": false
+    },
+    {
+      "name": "POST /api/trips/{trip_id}/days/2/optimize",
+      "samples": 200,
+      "min_ms": 2.362,
+      "p50_ms": 2.554,
+      "p95_ms": 2.883,
+      "p99_ms": 3.974,
+      "max_ms": 4.286,
+      "mean_ms": 2.61,
+      "target_p50_ms": 150.0,
+      "target_p95_ms": 150.0,
+      "within_target": true,
+      "breach_limit_ms": 1000.0,
+      "breached": false
+    }
+  ]
+}

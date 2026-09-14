@@ -1,0 +1,9 @@
+{
+  "doc_id": "05",
+  "title": "완료보고서",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전"],
+  "requires_changelog": false,
+  "required_sections": ["목표", "산출물"],
+  "defines_ids": []
+}

@@ -1,0 +1,72 @@
+[project]
+name = "harbor-lantern"
+version = "0.1.0"
+description = "홍콩 3박4일 동적 여행 가이드 — 일정 공유·이동시간·경비 정산 (FastAPI + SQLite + 바닐라 JS)"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12,<3.14"
+# readme 는 IMP-C 가 README.md 를 만든 뒤 T5(릴리스)에서 추가한다.
+# 없는 파일을 가리키면 `uv sync` 의 프로젝트 빌드가 그 자리에서 실패한다.
+
+# 설계서 DOC-HKG-02 §3.1 — 전부 1차 출처(PyPI JSON API)로 실물 확인해 고정한 버전이다.
+# 떠 있는 범위(`^` `~` `*` `latest` · 상한 없는 `>=`)를 쓰지 않는다(NFR-002 · AC-041).
+# 버전을 바꾸려면 설계서 §3.1 표를 먼저 고쳐라 — 그 표가 SSoT 다.
+dependencies = [
+  "fastapi==0.141.1",
+  "uvicorn[standard]==0.52.4",
+  "pydantic==2.13.5",
+  "httpx==0.28.1",
+]
+
+[dependency-groups]
+# 개발 전용. `uv sync` 가 기본으로 함께 설치하고 CI 의 `uv sync --frozen` 도 같다.
+# pytest-asyncio 는 넣지 않는다 — 핸들러가 전부 동기(`def`)다(설계서 §3.2).
+dev = [
+  "pytest==9.1.1",
+  "ruff==0.16.7",
+]
+
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/harbor_lantern"]
+
+[tool.hatch.build.targets.wheel.force-include]
+# 패키지 데이터(DDL · 프론트 자산)를 휠에 함께 싣는다.
+# schema.sql 이 빠지면 최초 기동이 조용히 실패한다 — 소스 트리에서만 돌려 보면 안 보인다.
+"src/harbor_lantern/storage/schema.sql" = "harbor_lantern/storage/schema.sql"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/harbor_lantern", "seed", "contracts", "tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests", "tools"]
+# `.github/quality/**` 는 하네스가 빌드마다 덮어쓰는 생성물이다. 우리가 고칠 수 없는
+# 파일로 게이트를 빨갛게 만들면 아무도 게이트를 안 본다.
+extend-exclude = ["src/harbor_lantern/web/vendor", ".github"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "TID"]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+# 설계서 §12 F10 — HKT 는 UTC+8 고정이다(§2.3). zoneinfo 는 Windows 에서 tzdata 를
+# 추가로 요구해 CI(리눅스)만 통과하고 개발자 PC 에서 터진다.
+"zoneinfo".msg = "HKT 는 UTC+8 고정이다. harbor_lantern.domain.util.HKT 를 쓸 것 (설계서 §2.3 · F10)"
+
+[tool.ruff.lint.isort]
+known-first-party = ["harbor_lantern"]
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = "-q --strict-markers --strict-config"
+# Starlette retains compatibility with the project's pinned httpx 0.28 client.
+filterwarnings = [
+  "error",
+  "ignore:Using `httpx` with `starlette.testclient` is deprecated:starlette.exceptions.StarletteDeprecationWarning",
+  "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]

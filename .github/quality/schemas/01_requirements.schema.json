@@ -1,0 +1,9 @@
+{
+  "doc_id": "01",
+  "title": "요구사항정의서",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전", "작성일"],
+  "requires_changelog": true,
+  "required_sections": ["문제 정의", "범위", "요구사항", "수용 기준"],
+  "defines_ids": ["REQ", "NFR", "AC"]
+}

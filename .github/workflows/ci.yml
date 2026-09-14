@@ -1,0 +1,133 @@
+# 품질·보안 게이트 (release-engineering.md §2).
+#
+# 이 워크플로가 green 이 아니면 릴리스가 만들어지지 않는다(release.yml 이 이걸 호출한다).
+# "로컬에서 됐다"는 증거가 아니다. 게이트는 여기 한 곳이다.
+#
+# **비공개 저장소에서도 전부 무료로 돈다.** CodeQL·GitHub Secret Scanning 은 비공개 repo 에서
+# GitHub Advanced Security(유료)를 요구하므로 쓰지 않고, 같은 역할을 하는 OSS 도구
+# (Semgrep·gitleaks·OSV-Scanner·syft)를 액션 단계로 직접 돌린다.
+#
+# 액션 버전은 전부 고정한다. CI 가 스스로 지키지 않는 규칙을 프로젝트에 요구할 수는 없다.
+# 갱신은 .github/dependabot.yml 이 PR 로 가져온다.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_call: # release.yml 이 배포 전에 이 게이트를 그대로 재사용한다
+
+# 최소 권한 원칙. 필요한 잡에서만 늘린다.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GITLEAKS_VERSION: "8.30.1"
+
+jobs:
+  # ────────────────────────────────────────────────────────────────
+  # 1. 공급망 — 언어 무관. 무엇을 끌어다 쓰는지, 비밀이 새지 않는지.
+  # ────────────────────────────────────────────────────────────────
+  supply-chain:
+    name: 공급망 · 시크릿 · 라이선스
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0 # gitleaks 가 히스토리까지 본다
+
+      - name: Python 준비
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: LICENSE 파일 확인
+        run: |
+          test -f LICENSE || { echo "::error::LICENSE 파일이 없습니다"; exit 1; }
+          echo "LICENSE 확인: $(head -1 LICENSE)"
+
+      - name: 의존성 버전 고정 검증
+        run: python .github/quality/check_pinning.py .
+
+      - name: 시크릿 스캔 (gitleaks)
+        run: |
+          curl -sSfL -o gitleaks.tar.gz \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          tar -xzf gitleaks.tar.gz gitleaks
+          # 히스토리에 한 번이라도 커밋된 비밀은 되돌릴 수 없다. 그래서 exit-code 1 로 막는다.
+          ./gitleaks dir . --redact --exit-code 1 --no-banner
+
+      - name: 취약점 스캔 (OSV-Scanner)
+        uses: google/osv-scanner-action/osv-scanner-action@v2.5.1
+        with:
+          scan-args: |-
+            --recursive
+            ./
+
+      - name: SBOM 생성 (CycloneDX)
+        uses: anchore/sbom-action@v0.24.0
+        with:
+          path: .
+          format: cyclonedx-json
+          output-file: sbom.cyclonedx.json
+          artifact-name: sbom.cyclonedx.json
+
+      - name: 의존성 라이선스 검사
+        run: python .github/quality/check_licenses.py sbom.cyclonedx.json
+
+  # ────────────────────────────────────────────────────────────────
+  # 2. 정적 분석 — 코드 자체의 취약 패턴.
+  # ────────────────────────────────────────────────────────────────
+  sast:
+    name: 정적 분석 (Semgrep)
+    runs-on: ubuntu-latest
+    container:
+      # Docker Hub 태그에는 v 접두사가 없다(GitHub 릴리스 태그는 v1.175.0, 이미지는 1.175.0).
+      # 이걸 혼동해 CI 가 한 번 깨졌다 — 두 이름 체계가 다르다는 것을 여기 남겨 둔다.
+      image: semgrep/semgrep:1.175.0
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Semgrep 규칙셋 실행
+        # p/security-audit·p/secrets 는 로그인 없이 쓰는 공개 규칙셋이다.
+        # --error 로 발견 시 실패시킨다. 경고만 남기면 아무도 안 본다.
+        run: semgrep --config=p/security-audit --config=p/secrets --error --metrics=off .
+
+  # ────────────────────────────────────────────────────────────────
+  # 3. 문서 계약 — 산출물 문서가 스키마·추적성을 지키는지.
+  # ────────────────────────────────────────────────────────────────
+  docs:
+    name: 문서 계약 검증
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Validate selected document policy
+        run: python .github/quality/check_documents.py .
+
+  # ────────────────────────────────────────────────────────────────
+  # 4. 빌드·테스트 — 스택별. 하네스가 프로젝트 스택에 맞게 채운다.
+  #    (예시는 release-engineering.md §4)
+  # ────────────────────────────────────────────────────────────────
+  build:
+    name: 빌드 · 테스트
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      # Python (uv) — build 잡 스택 블록 (release-engineering.md §4)
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.12"
+      - name: uv 설치
+        run: pipx install uv
+      - name: 의존성 설치 (락파일 그대로)
+        run: uv sync --frozen
+      - run: uv run ruff check .
+        continue-on-error: false
+      - run: uv run pytest

@@ -1,0 +1,253 @@
+/* Harbor Lantern — 다크 네온 테마 (설계서 DSN-22 · NFR-007~009)
+ *
+ * 원본 정적 페이지(reference/original-static-page.html)의 시각 자산은
+ * **회귀 방지 대상**이다. 토큰·레이아웃·애니메이션은 그대로 옮기고,
+ * 바뀐 것은 두 가지뿐이다.
+ *   1) 터치 타깃에 min-width/min-height 44px 를 **명시**한다 (AC-044 · §12 F12).
+ *      원본의 .chk 는 34px 였고, padding 으로 "대략 맞는" 것들은 폰트에 따라 43.5px 가 된다.
+ *   2) 서버 연동으로 새로 생긴 것들(참여 게이트·경고·경비·정산·편집)의 스타일이 추가됐다.
+ *      추가분도 같은 토큰만 쓴다 — 화면이 관리자 대시보드가 되면 그것이 회귀다.
+ */
+
+:root{
+  --bg:#0a0e1a; --bg2:#0f1626; --surface:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.09); --text:#f4f7fb; --muted:#8b98ad;
+  --pink:#ff2e88; --cyan:#22d3ee; --amber:#f7b733; --violet:#a78bfa;
+  --ok:#34d399; --warn:#ff6b6b;
+  --c:#22d3ee;                 /* 활성 일자 색 — JS 가 일자별로 덮어쓴다 */
+  --tap:44px;                  /* 최소 터치 타깃 (NFR-007) */
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:radial-gradient(120% 60% at 80% -10%,rgba(255,46,136,.14),transparent 60%),
+             radial-gradient(120% 60% at -10% 10%,rgba(34,211,238,.12),transparent 55%),
+             var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  line-height:1.5; padding-bottom:96px;
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+[hidden]{display:none!important}
+
+/* ── 헤더 ──────────────────────────────────────────────────────────────── */
+header{padding:26px 16px 14px;max-width:560px;margin:0 auto;position:relative;overflow:hidden}
+.cn{font-size:64px;font-weight:800;letter-spacing:4px;line-height:.9;
+    background:linear-gradient(100deg,var(--cyan),var(--pink) 70%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.en{font-size:14px;color:var(--muted);letter-spacing:2px;margin-top:6px;animation:rise .7s .06s both}
+.meta{display:flex;align-items:center;gap:12px;margin-top:16px;animation:rise .7s .12s both}
+.clock{font-variant-numeric:tabular-nums;font-size:13px;color:var(--text);
+  background:var(--surface);border:1px solid var(--line);padding:6px 11px;border-radius:999px;display:inline-block}
+.clock b{color:var(--cyan)}
+.ring{width:56px;height:56px;flex:0 0 auto;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:700}
+.dates{font-size:13px;color:var(--muted)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ── 날씨 · 환율 스트립 ─────────────────────────────────────────────────── */
+.status{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 10px}
+.chip{font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--line);
+  padding:7px 11px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.chip b{color:var(--text);font-weight:700}
+.chip.stale{border-color:rgba(247,183,51,.45)}
+.chip.stale .age{color:var(--amber)}
+.chip.off{opacity:.7}
+
+/* ── 지도 ──────────────────────────────────────────────────────────────── */
+#map{height:44vh;min-height:280px;border-radius:20px;margin:6px 0 4px;
+  border:1px solid var(--line);box-shadow:0 20px 50px -24px rgba(0,0,0,.9);z-index:0}
+#map.map-offline{background:
+  repeating-linear-gradient(45deg,#0b1120,#0b1120 12px,#0d1526 12px,#0d1526 24px)}
+.leaflet-container{background:#0b1120;font-family:inherit}
+.mapmsg{font-size:12px;color:var(--amber);background:rgba(247,183,51,.10);
+  border:1px solid rgba(247,183,51,.35);border-radius:12px;padding:9px 12px;margin:8px 0 0}
+.mapbar{display:flex;gap:8px;margin:10px 0 2px;align-items:center}
+.locbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  min-height:var(--tap);min-width:var(--tap);
+  background:linear-gradient(100deg,rgba(34,211,238,.16),rgba(255,46,136,.16));
+  border:1px solid var(--line);color:var(--text);padding:12px;border-radius:14px;
+  font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s}
+.locbtn:active{transform:scale(.97)}
+.locbtn .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.locbtn.live .dot{background:var(--cyan);box-shadow:0 0 0 0 rgba(34,211,238,.6);animation:pulse 1.8s infinite}
+.sortbtn{background:var(--surface);border:1px solid var(--line);color:var(--muted);
+  min-height:var(--tap);min-width:var(--tap);
+  padding:12px 14px;border-radius:14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.sortbtn.on{color:var(--bg);background:var(--cyan);border-color:var(--cyan)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.5)}70%{box-shadow:0 0 0 8px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+.hint{font-size:12px;color:var(--muted);margin:4px 2px 0;min-height:16px}
+
+/* ── 일자 탭 ───────────────────────────────────────────────────────────── */
+.tabs{position:sticky;top:0;z-index:500;display:flex;gap:8px;padding:12px 0;
+  background:linear-gradient(var(--bg) 70%,transparent);backdrop-filter:blur(6px);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:9px 15px;border-radius:999px;border:1px solid var(--line);
+  min-height:var(--tap);min-width:var(--tap);
+  background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;line-height:1.25;transition:.2s}
+.tab small{font-size:10px;opacity:.7;font-weight:500}
+.tab[data-active="1"]{color:var(--text);border-color:var(--c);background:color-mix(in srgb,var(--c) 22%,transparent)}
+
+.daysum{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin:4px 2px 12px}
+.daysum h2{margin:0;font-size:20px;font-weight:800}
+.daysum span{font-size:12px;color:var(--muted)}
+.accent{color:var(--c)}
+
+/* ── 경고 · 충돌 ───────────────────────────────────────────────────────── */
+.alert{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;border-radius:13px;
+  padding:10px 12px;margin:0 0 8px;border:1px solid rgba(255,107,107,.35);
+  background:rgba(255,107,107,.10);color:#ffd9d9}
+.alert.conflict{border-color:rgba(247,183,51,.38);background:rgba(247,183,51,.10);color:#ffe9c2}
+.alert b{color:#fff}
+.alert .who{font-weight:700}
+
+/* ── 스팟 카드 ─────────────────────────────────────────────────────────── */
+.card{position:relative;background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--c);border-radius:16px;padding:14px 14px 14px 16px;margin-bottom:11px;
+  cursor:pointer;transition:transform .15s,border-color .2s,opacity .3s;animation:card .45s both}
+.card:active{transform:scale(.99)}
+.card[data-done="1"]{opacity:.5}
+.card[data-done="1"] .name{text-decoration:line-through;text-decoration-color:var(--muted)}
+@keyframes card{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.row1{display:flex;align-items:center;gap:8px}
+.time{font-size:11px;font-weight:700;color:var(--c);font-variant-numeric:tabular-nums;flex:0 0 auto}
+.eta{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sub{font-size:11px;color:var(--muted);letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.more{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .3s}
+.card.open .more{transform:rotate(180deg)}
+.name{font-size:16px;font-weight:700;margin:2px 0}
+.tip{font-size:13px;color:#c5cede;margin:6px 0 0}
+.hours{font-size:12px;color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.hours .cl{color:var(--warn);font-weight:600}
+.hours .approx{color:var(--muted);opacity:.8}
+.badge{font-size:10.5px;font-weight:700;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}
+.badge.warn{color:#ffd9d9;border-color:rgba(255,107,107,.4);background:rgba(255,107,107,.12)}
+.badge.done{color:var(--ok);border-color:rgba(52,211,153,.4)}
+.detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .25s ease}
+.card.open .detail{max-height:900px;opacity:1}
+.desc{font-size:13px;color:#cfd8e6;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.rec{font-size:13px;color:#e7edf6;margin-top:8px}
+.rec b{color:var(--c)}
+.foot{display:flex;align-items:center;gap:10px;margin-top:11px}
+.dist{font-size:12px;color:var(--cyan);font-weight:600;font-variant-numeric:tabular-nums}
+.dist.off{color:var(--muted);font-weight:500}
+.spacer{flex:1}
+.go{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:700;
+  min-height:var(--tap);min-width:var(--tap);
+  color:var(--bg);background:var(--c);padding:8px 13px;border-radius:11px;text-decoration:none}
+.chk{min-width:var(--tap);min-height:var(--tap);flex:0 0 auto;border-radius:12px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);font-size:18px;cursor:pointer;display:grid;place-items:center}
+.chk.done{background:var(--ok);border-color:var(--ok);color:var(--bg)}
+.leg{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);
+  margin:-4px 0 11px 6px;font-variant-numeric:tabular-nums}
+.leg .est{opacity:.75}
+
+/* ── 편집 컨트롤 ───────────────────────────────────────────────────────── */
+.editrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px;padding-top:11px;border-top:1px dashed var(--line)}
+.mini{min-height:var(--tap);min-width:var(--tap);border-radius:11px;border:1px solid var(--line);
+  background:var(--surface);color:var(--text);font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer}
+.mini.danger{color:#ffd9d9;border-color:rgba(255,107,107,.4)}
+.mini:disabled{opacity:.35;cursor:default}
+select.mini{padding:8px 10px}
+#dayedit{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 18px}
+
+.form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0}
+.form h3{margin:0 0 10px;font-size:15px}
+.field{display:block;margin:0 0 10px}
+.field>span{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+.field input,.field select,.field textarea{
+  width:100%;min-height:var(--tap);background:rgba(0,0,0,.25);border:1px solid var(--line);
+  border-radius:12px;color:var(--text);padding:11px 12px;font-size:15px;font-family:inherit}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--c);outline-offset:1px}
+.field textarea{min-height:76px;resize:vertical}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{display:inline-flex;align-items:center;gap:7px;min-height:var(--tap);
+  border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:13px;background:var(--surface)}
+.checks input{width:20px;height:20px;accent-color:var(--cyan)}
+.formbtns{display:flex;gap:8px;margin-top:4px}
+.primary{min-height:var(--tap);min-width:var(--tap);width:100%;border:none;border-radius:14px;padding:13px;
+  font-size:15px;font-weight:800;color:var(--bg);cursor:pointer;
+  background:linear-gradient(100deg,var(--cyan),var(--pink) 90%)}
+.secondary{min-height:var(--tap);min-width:var(--tap);width:100%;border:1px solid var(--line);border-radius:14px;
+  padding:13px;font-size:15px;font-weight:700;color:var(--text);background:var(--surface);cursor:pointer}
+
+/* ── 패널(경비 · 정산 · 초대) ──────────────────────────────────────────── */
+.panel{margin:18px 0 0}
+.panel h2{font-size:16px;font-weight:800;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.panel h2 span{font-size:12px;font-weight:500;color:var(--muted)}
+.rowitem{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:11px 13px;margin-bottom:8px}
+.rowitem .who{font-size:13px;font-weight:700}
+.rowitem .memo{font-size:12px;color:var(--muted)}
+.rowitem .amt{margin-left:auto;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
+.rowitem .amt small{display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.transfer{border-left:3px solid var(--ok)}
+.transfer .amt{color:var(--ok)}
+.balance.minus .amt{color:var(--warn)}
+.balance.plus .amt{color:var(--ok)}
+.empty{font-size:13px;color:var(--muted);padding:10px 2px}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:2px;
+  font-size:17px;font-weight:700;color:var(--cyan)}
+
+/* ── 참여 게이트 ───────────────────────────────────────────────────────── */
+.gate{margin:14px 0 40px}
+.gatecard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px}
+.gatecard h2{margin:0 0 8px;font-size:18px}
+.gnote{font-size:12.5px;color:var(--muted);line-height:1.6;margin:0 0 14px}
+.gnote b{color:var(--amber)}
+.or{text-align:center;color:var(--muted);font-size:12px;margin:14px 0}
+.gerr{font-size:13px;color:#ffd9d9;background:rgba(255,107,107,.12);
+  border:1px solid rgba(255,107,107,.35);border-radius:12px;padding:11px 12px;margin-top:12px}
+
+/* 백엔드 주소 (Pages + 로컬 백엔드 구성) */
+details.backend{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+details.backend summary{list-style:none;cursor:pointer;font-size:12.5px;color:var(--muted);
+  min-height:var(--tap,44px);display:flex;align-items:center;gap:6px}
+details.backend summary::-webkit-details-marker{display:none}
+details.backend .bnow{color:var(--cyan)}
+details.backend .field{margin-top:10px}
+details.backend .gnote{margin:10px 0 0}
+details.backend code{background:rgba(255,255,255,.07);padding:1px 5px;border-radius:5px;font-size:11.5px}
+
+/* ── 팁 · 푸터 · 토스트 ────────────────────────────────────────────────── */
+details.tips{margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+details.tips summary{list-style:none;padding:15px 16px;font-weight:700;font-size:15px;cursor:pointer;
+  min-height:var(--tap);display:flex;align-items:center;justify-content:space-between}
+details.tips summary::-webkit-details-marker{display:none}
+details.tips[open] summary{border-bottom:1px solid var(--line)}
+.tipbody{padding:6px 16px 16px}
+.tipbody li{margin:9px 0;font-size:13.5px;color:#cdd6e4}
+.tipbody b{color:var(--amber)}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:22px 0 8px;line-height:1.7}
+footer b{color:#c5cede}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:1200;
+  max-width:520px;width:calc(100% - 32px);text-align:center;
+  background:#111a2c;border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px;font-size:13px;color:var(--text);box-shadow:0 18px 40px -18px #000}
+.toast.bad{border-color:rgba(255,107,107,.5);color:#ffd9d9}
+
+/* ── 지도 마커 (원본 그대로) ───────────────────────────────────────────── */
+.pin{width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+  border:2px solid rgba(255,255,255,.85);box-shadow:0 0 12px currentColor}
+.pin i{position:absolute;inset:0;display:grid;place-items:center;transform:rotate(45deg);
+  font-size:10px;font-weight:800;color:#0a0e1a;font-style:normal}
+.me{width:18px;height:18px;border-radius:50%;background:var(--cyan);border:3px solid #fff;
+  box-shadow:0 0 0 6px rgba(34,211,238,.25);animation:pulse 1.8s infinite}
+.leaflet-popup-content-wrapper{background:#111a2c;color:#fff;border-radius:12px;border:1px solid var(--line)}
+.leaflet-popup-tip{background:#111a2c}
+.leaflet-popup-content{margin:10px 12px;font-size:13px}
+.leaflet-control-attribution{background:rgba(10,14,26,.65)!important;color:var(--muted)!important;font-size:10px}
+
+/* 좁은 화면(375px)에서도 깨지지 않게: 헤더 글자만 줄인다 */
+@media (max-width:380px){
+  .cn{font-size:52px}
+  .en{font-size:12.5px;letter-spacing:1px}
+  .mapbar{flex-wrap:wrap}
+  .locbtn{flex:1 1 100%}
+}
+
+/* 애니메이션을 원치 않는 사용자 (NFR-008 · AC-044) */
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

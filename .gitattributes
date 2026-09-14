@@ -1,0 +1,5 @@
+# Leaflet 벤더 파일은 MANIFEST.sha256 이 **바이트 단위**로 검증한다(설계서 §12 F11).
+# 이 저장소를 core.autocrlf=true 인 Windows 에서 클론하면 체크아웃 때 LF→CRLF 변환이
+# 일어나고, 그 순간 해시가 전부 깨진다. 벤더 디렉터리는 변환 대상에서 뺀다.
+src/harbor_lantern/web/vendor/** -text
+*.png binary

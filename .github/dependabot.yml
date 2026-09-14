@@ -1,0 +1,22 @@
+# 의존성 자동 갱신 (release-engineering.md §3).
+#
+# 버전을 고정하면 그대로 썩는다. 고정과 갱신은 반대말이 아니라 짝이다 —
+# 고정으로 재현성을 얻고, Dependabot 으로 갱신을 **사람이 검토하는 PR** 로 받는다.
+version: 2
+updates:
+  # 워크플로가 쓰는 액션도 의존성이다. 여기를 빼면 CI 자체가 낡는다.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "⬆️ CI"
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "⬆️ Deps"

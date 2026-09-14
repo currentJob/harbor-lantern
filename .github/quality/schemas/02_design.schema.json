@@ -1,0 +1,9 @@
+{
+  "doc_id": "02",
+  "title": "설계서",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전", "선행문서", "작성일"],
+  "requires_changelog": true,
+  "required_sections": ["아키텍처", "기술 선택", "설계", "데이터 모델"],
+  "defines_ids": ["DSN"]
+}

@@ -1,0 +1,9 @@
+{
+  "doc_id": "04",
+  "title": "테스트결과서",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전"],
+  "requires_changelog": true,
+  "required_sections": ["테스트 케이스", "커버리지"],
+  "defines_ids": ["TC"]
+}

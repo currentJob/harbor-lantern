@@ -1,0 +1,40 @@
+{
+  "requiredEnv": [],
+  "steps": [
+    {
+      "name": "lint",
+      "cmd": [
+        "uv",
+        "run",
+        "ruff",
+        "check",
+        "."
+      ]
+    },
+    {
+      "name": "테스트",
+      "cmd": [
+        "uv",
+        "run",
+        "pytest",
+        "-q"
+      ]
+    },
+    {
+      "name": "의존성 고정",
+      "cmd": [
+        "python",
+        ".github/quality/check_pinning.py",
+        "."
+      ]
+    },
+    {
+      "name": "문서 계약",
+      "cmd": [
+        "python",
+        ".github/quality/check_documents.py",
+        "."
+      ]
+    }
+  ]
+}

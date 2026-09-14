@@ -1,0 +1,78 @@
+# 릴리스 배포 (release-engineering.md §5).
+#
+# 태그를 밀면 **CI 게이트를 그대로 다시 통과한 뒤에만** 릴리스가 만들어진다.
+# "로컬에서 통과했으니 됐다"로 배포하지 않는다 — 배포는 검증의 결과지 별개 행동이 아니다.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  # 1) 배포 전 전량 재검증. ci.yml 을 그대로 호출하므로 게이트가 두 벌이 되지 않는다.
+  verify:
+    name: 배포 전 검증
+    uses: ./.github/workflows/ci.yml
+
+  # 2) 통과한 경우에만 산출물을 만들어 릴리스에 붙인다.
+  release:
+    name: 릴리스 생성
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 릴리스 생성에만 필요. 여기서만 승격한다.
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0 # 릴리스 노트 자동 생성이 이전 태그를 본다
+
+      # Python (uv) — build 잡 스택 블록 (release-engineering.md §4)
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.12"
+      - name: uv 설치
+        run: pipx install uv
+      - name: 의존성 설치 (락파일 그대로)
+        run: uv sync --frozen
+      - run: uv run ruff check .
+        continue-on-error: false
+      - run: uv run pytest
+
+      - name: 배포 산출물 빌드 (dist/)
+        # 결함 D-1: 아래 첨부 목록이 `dist/**` 를 요구하고 `fail_on_unmatched_files: true`
+        # 인데 그것을 만드는 단계가 없었다 — 태그를 밀면 릴리스 잡이 그 자리에서 실패한다.
+        # 로컬 `uv build` 로 sdist·wheel 이 나오는 것을 확인하고 이 단계를 넣었다.
+        run: uv build
+
+      - name: SBOM 재생성 (릴리스 첨부용)
+        uses: anchore/sbom-action@v0.24.0
+        with:
+          path: .
+          format: cyclonedx-json
+          output-file: sbom.cyclonedx.json
+
+      - name: 체크섬 생성 (SHA256SUMS)
+        # 받은 사람이 파일이 온전한지 확인할 수단은 최소한 있어야 한다.
+        # Artifact Attestations 는 비공개 저장소에서 Enterprise Cloud 를 요구하므로
+        # (2026-08-27 확인) 무료로 되는 체크섬을 기본으로 둔다.
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          artifacts=(sbom.cyclonedx.json dist/**)
+          if [ ${#artifacts[@]} -gt 0 ]; then
+            sha256sum "${artifacts[@]}" | tee SHA256SUMS
+          fi
+
+      - name: 릴리스 생성 + 산출물 첨부
+        uses: softprops/action-gh-release@v3.0.2
+        with:
+          # 저장소가 비공개면 릴리스도 비공개다(가시성은 repo 를 따른다).
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            SHA256SUMS
+            sbom.cyclonedx.json
+            dist/**

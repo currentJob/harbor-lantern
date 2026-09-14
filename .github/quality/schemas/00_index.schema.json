@@ -1,0 +1,10 @@
+{
+  "doc_id": "00",
+  "title": "산출물 인덱스",
+  "required": true,
+  "required_meta": ["문서번호", "프로젝트", "버전"],
+  "requires_changelog": false,
+  "required_sections": ["문서 목록", "추적성 매트릭스"],
+  "defines_ids": [],
+  "is_traceability_index": true
+}
