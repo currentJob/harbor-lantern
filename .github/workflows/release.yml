@@ -61,7 +61,13 @@ jobs:
         shell: bash
         run: |
           shopt -s globstar nullglob
-          artifacts=(sbom.cyclonedx.json dist/**)
+          # `dist/**` 는 디렉토리 자신(`dist/`)도 포함한다 — 그대로 넘기면
+          # `sha256sum: dist/: Is a directory` 로 이 단계가 통째로 실패한다.
+          # 정규 파일만 남긴다.
+          artifacts=()
+          for path in sbom.cyclonedx.json dist/**; do
+            [ -f "$path" ] && artifacts+=("$path")
+          done
           if [ ${#artifacts[@]} -gt 0 ]; then
             sha256sum "${artifacts[@]}" | tee SHA256SUMS
           fi
