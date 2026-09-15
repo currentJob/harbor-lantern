@@ -70,7 +70,7 @@ jobs:
             ./
 
       - name: SBOM 생성 (CycloneDX)
-        uses: anchore/sbom-action@v0.24.0
+        uses: anchore/sbom-action@v0.24.2
         with:
           path: .
           format: cyclonedx-json

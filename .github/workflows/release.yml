@@ -48,7 +48,7 @@ jobs:
         run: uv build
 
       - name: SBOM 재생성 (릴리스 첨부용)
-        uses: anchore/sbom-action@v0.24.0
+        uses: anchore/sbom-action@v0.24.2
         with:
           path: .
           format: cyclonedx-json
