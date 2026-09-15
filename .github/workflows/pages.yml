@@ -99,7 +99,7 @@ jobs:
           print("외부 도메인 참조: 허용 목록 안에만 있음 (vendor 는 MANIFEST.sha256 이 검증)")
           PY
 
-      - uses: actions/configure-pages@v5.0.0
+      - uses: actions/configure-pages@v6.0.0
       - uses: actions/upload-pages-artifact@v4.0.0
         with:
           path: _site
