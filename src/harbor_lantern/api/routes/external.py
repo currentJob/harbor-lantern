@@ -2,10 +2,15 @@
 
 from typing import Annotated
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException, Query
 
 from harbor_lantern.api.deps import FxProviderDep, NearbyProviderDep, WeatherProviderDep
-from harbor_lantern.api.schemas import FxResponseOut, NearbyResponseOut, WeatherResponseOut
+from harbor_lantern.api.schemas import (
+    CuratedResponseOut,
+    FxResponseOut,
+    NearbyResponseOut,
+    WeatherResponseOut,
+)
 from harbor_lantern.config import (
     NEARBY_CATEGORIES,
     NEARBY_DEFAULT_RADIUS_M,
@@ -15,6 +20,7 @@ from harbor_lantern.config import (
 )
 from harbor_lantern.domain.geo import directions_url, haversine_m
 from harbor_lantern.domain.models import LatLng
+from harbor_lantern.services.curated import load_curated, select
 from harbor_lantern.services.external.cache import CachedProvider
 
 router = APIRouter(prefix="/api", tags=["external"])
@@ -33,6 +39,43 @@ def weather(provider: WeatherProviderDep):
 @router.get("/fx", response_model=FxResponseOut)
 def fx(provider: FxProviderDep):
     return payload(provider)
+
+
+@router.get("/curated", response_model=CuratedResponseOut)
+def curated(
+    city: Annotated[str | None, Query(pattern="^(HK|MO)$", description="HK · MO (생략 시 전체)")] = None,
+    min_stars: Annotated[int, Query(ge=1, le=3, description="이 등급 이상만")] = 1,
+    lat: Annotated[float | None, Query(ge=-90, le=90)] = None,
+    lng: Annotated[float | None, Query(ge=-180, le=180)] = None,
+):
+    """미리 조사해 저장해 둔 미쉐린 홍콩·마카오 목록 (REQ-019 · AC-058~AC-061).
+
+    외부 호출이 없다 — 저장소 안의 파일을 읽는다. `lat`·`lng` 를 **둘 다** 주면
+    좌표가 있는 항목을 가까운 순으로 올린다(좌표 없는 항목은 뒤에 남는다).
+
+    응답에 `sources` 와 `known_gaps` 를 **항상 함께 싣는다.** 이 목록은 크라우드
+    평점이 아니라 미쉐린 등급이고, 좌표가 비어 있는 항목이 있으며, 빕구르망은
+    빠져 있다 — 그 사실을 모르고 쓰면 "홍콩에 좋은 집이 97곳뿐"이라고 읽게 된다.
+    """
+    if (lat is None) != (lng is None):
+        raise HTTPException(422, detail={
+            "error": "incomplete_origin",
+            "message": "거리순으로 보려면 lat 과 lng 를 함께 주세요.",
+        })
+
+    dataset = load_curated()
+    origin = LatLng(lat, lng) if lat is not None and lng is not None else None
+    rows = select(dataset, city=city, min_stars=min_stars, origin=origin)
+    return {
+        "dataset": dataset.dataset,
+        "retrieved_at": dataset.retrieved_at,
+        "what_this_is": dataset.what_this_is,
+        "sources": list(dataset.sources),
+        "known_gaps": list(dataset.known_gaps),
+        "counts": dataset.counts,
+        "returned": len(rows),
+        "places": rows,
+    }
 
 
 # 참가자 토큰을 요구하지 않는다 — 여행에 속한 데이터가 아니라 공개 지리 정보이고,

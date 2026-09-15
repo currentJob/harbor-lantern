@@ -439,6 +439,38 @@ class NearbyPlaceOut(BaseModel):
     directions_url: str
 
 
+class CuratedPlaceOut(BaseModel):
+    """큐레이션 목록의 한 곳 (REQ-019).
+
+    `lat`/`lng`/`distance_m` 이 **없을 수 있다.** 이름만으로 위치를 가를 수 없었던
+    식당은 좌표를 비워 두기로 했다(데이터셋 `known_gaps` 참조). 화면은 그 경우
+    거리를 숨기고 검색 링크만 보여 준다 — 목록에서 빼지는 않는다.
+    """
+
+    name: str
+    city: str
+    city_label: str
+    stars: int
+    tier_label: str
+    lat: float | None = None
+    lng: float | None = None
+    distance_m: float | None = None
+    address: str | None = None
+    district: str | None = None
+    coord_confidence: str | None = None
+
+
+class CuratedResponseOut(BaseModel):
+    dataset: str
+    retrieved_at: str
+    what_this_is: str
+    sources: list[dict[str, Any]]
+    known_gaps: list[str]
+    counts: dict[str, Any]
+    returned: int
+    places: list[CuratedPlaceOut]
+
+
 class NearbyResponseOut(ExternalMetaOut):
     origin_lat: float
     origin_lng: float

@@ -269,6 +269,18 @@ export const api = {
    *  (다음 요청은 캐시라 즉시 성공해, "두 번 누르면 되는" 이상한 버그가 된다).
    *  실측: 공용 인스턴스 성공 응답이 10초 남짓 걸린다(2026-09-14).
    */
+  /** 미쉐린 큐레이션 목록 (REQ-019). 외부 호출이 없어 빠르다.
+   *  좌표를 주면 위치가 확인된 곳만 거리순으로 올라온다. */
+  async getCurated({ lat, lng, city, minStars } = {}) {
+    const params = new URLSearchParams();
+    if (lat != null && lng != null) { params.set('lat', lat); params.set('lng', lng); }
+    if (city) params.set('city', city);
+    if (minStars) params.set('min_stars', minStars);
+    const query = params.toString();
+    const { data } = await request(`/api/curated${query ? `?${query}` : ''}`);
+    return data;
+  },
+
   async getNearby({ lat, lng, radiusM }) {
     const params = new URLSearchParams({ lat, lng });
     if (radiusM) params.set('radius_m', radiusM);

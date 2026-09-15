@@ -14,6 +14,7 @@ import { TripMap } from './map.js';
 import { renderCards, renderSpotForm } from './render/cards.js';
 import { renderStatusStrip, renderTripDates, startClock } from './render/clock.js';
 import { renderExpenses } from './render/expenses.js';
+import { renderCurated } from './render/curated.js';
 import { renderNearby } from './render/nearby.js';
 import { renderProgress } from './render/progress.js';
 import { renderSettlement } from './render/settlement.js';
@@ -182,6 +183,33 @@ function initMap() {
 }
 
 // ── 지도·위치 바 ──────────────────────────────────────────────────────────
+/* ── 미쉐린 큐레이션 목록 (REQ-019) ────────────────────────────────────── */
+
+function clearCurated() {
+  store.curated = null;
+  store.curatedMessage = '';
+  store.curatedBusy = false;
+  emit();
+}
+
+async function loadCurated() {
+  // 위치는 **있으면 쓰고 없으면 그냥 목록으로 본다.** 근처 검색과 달리 위치가
+  // 필수가 아니다 — 저장된 목록이라 좌표 없이도 보여 줄 것이 있다.
+  store.curatedBusy = true;
+  store.curatedMessage = '';
+  emit();
+  try {
+    const origin = store.me ? { lat: store.me.lat, lng: store.me.lng } : {};
+    store.curated = await api.getCurated(origin);
+  } catch (error) {
+    store.curated = null;
+    store.curatedMessage = error.message || '목록을 불러오지 못했습니다.';
+  } finally {
+    store.curatedBusy = false;
+    emit();
+  }
+}
+
 /* ── 근처 음식점·카페 (REQ-017 · REQ-018) ──────────────────────────────── */
 
 function clearNearby() {
@@ -261,6 +289,11 @@ function wireMapBar() {
     }
     store.sortByDistance = !store.sortByDistance;
     emit();
+  });
+
+  el('curatedbtn').addEventListener('click', () => {
+    if (store.curated || store.curatedMessage) { clearCurated(); return; }
+    loadCurated();
   });
 
   el('nearbtn').addEventListener('click', () => {
@@ -478,6 +511,11 @@ function renderAll() {
     });
   }
   el('nearbtn').classList.toggle('on', Boolean(store.nearby || store.nearbyMessage));
+
+  renderCurated(el('curated'), store.curated, {
+    busy: store.curatedBusy, message: store.curatedMessage,
+  });
+  el('curatedbtn').classList.toggle('on', Boolean(store.curated || store.curatedMessage));
 
   el('sortbtn').classList.toggle('on', store.sortByDistance);
   el('editbtn').classList.toggle('on', store.editMode);

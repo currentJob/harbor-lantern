@@ -24,9 +24,12 @@ CSS = WEB / "css" / "app.css"
 # 런타임에만 나가는 외부 목적지. 정적 자산(<script src>·<link href>)에는 하나도 없어야 한다.
 #   - 지도 타일: 원본과 같은 CARTO 다크 타일. 실패해도 앱은 죽지 않는다(설계서 §6.15 폴백).
 #   - 구글맵 딥링크: 사용자가 누를 때 열리는 길찾기 URL. AC-034 가 이 형식을 요구한다.
+#   - OpenRice: 미쉐린 목록의 "리뷰" 링크(REQ-019). **우리가 부르는 API 가 아니라
+#     사용자가 누를 때 열리는 링크다.** 리뷰를 무료로 가져올 경로가 없어 링크로 넘긴다.
 ALLOWED_RUNTIME_HOSTS = {
     "{s}.basemaps.cartocdn.com",
     "www.google.com",
+    "www.openrice.com",
     # 지도 저작권 표기에 쓰이는 도메인 문자열이 필요해지면 여기에 명시적으로 추가한다.
 }
 

@@ -39,6 +39,11 @@ export const store = {
   nearby: null,         // GET /api/nearby 응답
   nearbyBusy: false,
   nearbyMessage: '',
+
+  // 미쉐린 큐레이션 목록 (REQ-019) — 저장소 안의 고정 데이터라 폴링·캐시 대상이 아니다.
+  curated: null,
+  curatedBusy: false,
+  curatedMessage: '',
 };
 
 const listeners = new Set();

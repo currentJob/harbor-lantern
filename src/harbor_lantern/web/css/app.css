@@ -236,6 +236,32 @@ details.backend code{background:rgba(255,255,255,.07);padding:1px 5px;border-rad
 .nearpin{width:14px;height:14px;border-radius:50%;background:var(--amber);
   border:2px solid rgba(10,14,26,.85);box-shadow:0 0 8px rgba(247,183,51,.8)}
 
+/* ── 미쉐린 큐레이션 목록 (REQ-019 · DSN-28) ──────────────────────────── */
+.curatedhead{font-size:13px;margin:2px 2px 9px}
+.curatedsub{color:var(--muted);font-size:11.5px;font-weight:400}
+.curatedlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.curateditem{display:flex;align-items:center;gap:8px;background:var(--surface);
+  border:1px solid var(--line);border-left:3px solid var(--violet);
+  border-radius:14px;padding:10px 11px}
+.curatedmain{flex:1;min-width:0}
+.curatedname{font-size:14.5px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.curatedstar{color:var(--amber);letter-spacing:-1px;margin-right:3px}
+.curatedmeta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.curateddist{color:var(--cyan);font-weight:600}
+.curatednoloc{color:var(--muted);font-style:italic}
+.curatedgo{flex:0 0 auto;min-height:var(--tap,44px);display:inline-flex;align-items:center;
+  justify-content:center;padding:0 10px;border-radius:11px;font-size:12.5px;font-weight:700;
+  text-decoration:none;color:var(--text);background:transparent;border:1px solid var(--line)}
+.curatedmore{font-size:12px;color:var(--muted);text-align:center;margin-top:9px}
+details.curatedgaps{margin-top:12px;border:1px solid var(--line);border-radius:14px;
+  background:var(--surface);padding:0 12px}
+details.curatedgaps summary{list-style:none;cursor:pointer;font-size:12.5px;color:var(--muted);
+  min-height:var(--tap,44px);display:flex;align-items:center}
+details.curatedgaps summary::-webkit-details-marker{display:none}
+details.curatedgaps p,details.curatedgaps li{font-size:12px;color:#cdd6e4;line-height:1.65}
+details.curatedgaps ul{padding-left:17px;margin:8px 0}
+.curatedsrc a{color:var(--cyan)}
+
 /* ── 팁 · 푸터 · 토스트 ────────────────────────────────────────────────── */
 details.tips{margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
 details.tips summary{list-style:none;padding:15px 16px;font-weight:700;font-size:15px;cursor:pointer;
