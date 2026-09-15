@@ -31,7 +31,8 @@ function row(place) {
     : '<span class="curatednoloc" title="위치를 확인하지 못해 거리 계산에서 빠집니다">위치 미확인</span>';
   const where = place.district || place.address || place.city_label;
   return `
-    <li class="curateditem">
+    <li class="curateditem${place.lat != null ? ' curatedpick' : ''}"
+        data-focus="${escapeHtml(place.city)}/${escapeHtml(place.name)}">
       <div class="curatedmain">
         <div class="curatedname"><b class="curatedstar">${STAR[place.stars] || ''}</b> ${escapeHtml(place.name)}</div>
         <div class="curatedmeta">${escapeHtml(where)} · ${distance}</div>
@@ -62,7 +63,8 @@ export function renderCurated(root, data, ui = {}) {
   root.innerHTML = `
     <div class="curatedhead">
       <b>미쉐린 홍콩·마카오</b> ${data.counts.total}곳
-      <span class="curatedsub">· 위치 확인 ${located}곳 · 조사 ${escapeHtml(data.retrieved_at)}</span>
+      <span class="curatedsub">· 지도에 ${located}곳 · 조사 ${escapeHtml(data.retrieved_at)}</span>
+      <div class="curatedsub">항목을 누르면 지도가 그곳으로 이동합니다. 같은 건물에 여러 곳이 있으면 핀 하나에 묶여 숫자로 표시됩니다.</div>
     </div>
     <ul class="curatedlist">${shown.map(row).join('')}</ul>
     ${data.places.length > limit

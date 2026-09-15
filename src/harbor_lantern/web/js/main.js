@@ -189,6 +189,7 @@ function clearCurated() {
   store.curated = null;
   store.curatedMessage = '';
   store.curatedBusy = false;
+  if (tripMap) tripMap.clearCurated();
   emit();
 }
 
@@ -515,6 +516,18 @@ function renderAll() {
   renderCurated(el('curated'), store.curated, {
     busy: store.curatedBusy, message: store.curatedMessage,
   });
+  if (tripMap) tripMap.renderCurated((store.curated && store.curated.places) || []);
+  // 목록에서 고르면 지도가 그곳으로 간다. 좌표 없는 항목은 눌러도 조용하다 —
+  // 그 경우 카드에 "위치 미확인"이 이미 적혀 있어 사용자가 이유를 안다.
+  for (const item of el('curated').querySelectorAll('[data-focus]')) {
+    item.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;  // 지도·리뷰 링크는 그대로 열리게
+      const place = (store.curated.places || []).find(
+        (p) => `${p.city}/${p.name}` === item.dataset.focus,
+      );
+      if (place && tripMap) tripMap.focusCurated(place);
+    });
+  }
   el('curatedbtn').classList.toggle('on', Boolean(store.curated || store.curatedMessage));
 
   el('sortbtn').classList.toggle('on', store.sortByDistance);

@@ -15,6 +15,34 @@ const TILE_ATTRIBUTION = '© OpenStreetMap · © CARTO';
 const TILE_ERROR_WINDOW_MS = 10000;
 const TILE_ERROR_THRESHOLD = 5;
 
+/** 같은 좌표에 있는 장소들을 한 핀으로 묶는다 (REQ-019).
+ *
+ * **순수 함수로 떼어 둔 이유**: 큐레이션 좌표의 상당수가 건물 단위여서 랜드마크
+ * 한 곳에만 6개 식당이 있다. 그대로 찍으면 핀이 완전히 겹쳐 하나처럼 보이고 맨 위
+ * 하나만 눌린다. 이 묶는 규칙이 이 기능의 유일한 진짜 로직인데, Leaflet 안에 두면
+ * 브라우저 없이는 한 번도 실행해 볼 수 없다.
+ *
+ * 좌표가 없는 항목은 지도에 올릴 방법이 없으므로 제외한다(목록에는 남는다).
+ *
+ * @returns {{lat:number, lng:number, items:object[]}[]} 입력 순서를 보존한 그룹들
+ */
+export function groupByCoordinate(places, digits = 5) {
+  const groups = new Map();
+  for (const place of places || []) {
+    if (place == null || place.lat == null || place.lng == null) continue;
+    const key = `${place.lat.toFixed(digits)},${place.lng.toFixed(digits)}`;
+    if (!groups.has(key)) groups.set(key, { lat: place.lat, lng: place.lng, items: [] });
+    groups.get(key).items.push(place);
+  }
+  return [...groups.values()];
+}
+
+/** 묶인 핀에 찍을 라벨 — 여럿이면 개수, 하나면 별 개수. */
+export function pinLabel(group) {
+  if (group.items.length > 1) return String(group.items.length);
+  return '★'.repeat(Math.max(1, Math.min(3, group.items[0].stars || 1)));
+}
+
 export class TripMap {
   constructor(containerId, { onMarkerClick, onTileTrouble } = {}) {
     this.containerId = containerId;
@@ -23,6 +51,7 @@ export class TripMap {
     this.map = null;
     this.markers = new Map();  // spot_id -> marker
     this.nearbyMarkers = [];   // 근처 장소 (REQ-017) — 일정 스팟과 **별도 레이어**다.
+    this.curatedMarkers = [];  // 미쉐린 큐레이션 (REQ-019) — 또 다른 레이어.
     this.meMarker = null;
     this.tileErrors = [];
     this.available = false;
@@ -132,6 +161,56 @@ export class TripMap {
   clearNearby() {
     for (const marker of this.nearbyMarkers) marker.remove();
     this.nearbyMarkers = [];
+  }
+
+  /** 미쉐린 큐레이션 목록을 찍는다 (REQ-019).
+   *
+   *  **같은 좌표를 여러 곳이 공유한다.** 좌표 상당수가 건물 단위여서 랜드마크 한
+   *  곳에만 6개 식당이 있다 — 그대로 찍으면 핀 6개가 완전히 겹쳐 하나처럼 보이고
+   *  맨 위 하나만 눌린다. 그래서 **좌표로 묶어 핀 하나**를 찍고 팝업에 전부 적는다.
+   *  묶인 개수는 핀에 숫자로 보인다(클러스터링 라이브러리 없이 되는 선).
+   *
+   *  좌표가 없는 항목은 지도에 올릴 방법이 없다 — 목록에는 남아 있다.
+   */
+  renderCurated(places) {
+    this.clearCurated();
+    if (!this.map) return;
+
+    for (const group of groupByCoordinate(places)) {
+      const label = pinLabel(group);
+      const lines = group.items
+        .map((p) => `${'★'.repeat(p.stars)} ${escapeHtml(p.name)}`)
+        .join('<br>');
+      const where = group.items[0].address || group.items[0].district || '';
+      const marker = L.marker([group.lat, group.lng], {
+        icon: L.divIcon({
+          className: '',
+          iconSize: [24, 24],
+          iconAnchor: [12, 12],
+          popupAnchor: [0, -12],
+          html: `<div class="curpin"><i>${label}</i></div>`,
+        }),
+      }).addTo(this.map).bindPopup(
+        `${lines}${where ? `<br><span class="curpopaddr">${escapeHtml(where)}</span>` : ''}`,
+      );
+      this.curatedMarkers.push(marker);
+    }
+  }
+
+  clearCurated() {
+    for (const marker of this.curatedMarkers) marker.remove();
+    this.curatedMarkers = [];
+  }
+
+  /** 목록에서 고른 한 곳으로 지도를 옮긴다. 좌표가 없으면 아무것도 하지 않는다. */
+  focusCurated(place) {
+    if (!this.map || !place || place.lat == null) return;
+    this.map.flyTo([place.lat, place.lng], 16);
+    const key = `${place.lat.toFixed(5)},${place.lng.toFixed(5)}`;
+    const marker = this.curatedMarkers.find(
+      (m) => `${m.getLatLng().lat.toFixed(5)},${m.getLatLng().lng.toFixed(5)}` === key,
+    );
+    if (marker) marker.openPopup();
   }
 
   focus(spot, zoom = 15) {

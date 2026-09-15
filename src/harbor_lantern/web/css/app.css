@@ -252,7 +252,19 @@ details.backend code{background:rgba(255,255,255,.07);padding:1px 5px;border-rad
 .curatedgo{flex:0 0 auto;min-height:var(--tap,44px);display:inline-flex;align-items:center;
   justify-content:center;padding:0 10px;border-radius:11px;font-size:12.5px;font-weight:700;
   text-decoration:none;color:var(--text);background:transparent;border:1px solid var(--line)}
+.curatedpick{cursor:pointer;transition:border-color .15s}
+.curatedpick:active{border-color:var(--violet)}
 .curatedmore{font-size:12px;color:var(--muted);text-align:center;margin-top:9px}
+
+/* 미쉐린 핀 — 일정 스팟(번호 물방울)·근처 장소(작은 점)와 **모양이 다르다**.
+   셋이 같은 모양이면 지도에서 무엇이 무엇인지 구분되지 않는다.
+   같은 건물에 여러 곳이면 핀 하나에 개수가 찍힌다. */
+.curpin{width:24px;height:24px;border-radius:7px;background:var(--violet);
+  border:2px solid rgba(10,14,26,.85);box-shadow:0 0 10px rgba(167,139,250,.75);
+  display:grid;place-items:center;transform:rotate(45deg)}
+.curpin i{transform:rotate(-45deg);font-size:9px;font-weight:800;color:#0a0e1a;
+  font-style:normal;letter-spacing:-.5px}
+.curpopaddr{color:#8b98ad;font-size:11.5px}
 details.curatedgaps{margin-top:12px;border:1px solid var(--line);border-radius:14px;
   background:var(--surface);padding:0 12px}
 details.curatedgaps summary{list-style:none;cursor:pointer;font-size:12.5px;color:var(--muted);
