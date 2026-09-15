@@ -75,7 +75,7 @@ jobs:
           fi
 
       - name: 릴리스 생성 + 산출물 첨부
-        uses: softprops/action-gh-release@v3.0.2
+        uses: softprops/action-gh-release@v3.0.3
         with:
           # 저장소가 비공개면 릴리스도 비공개다(가시성은 repo 를 따른다).
           generate_release_notes: true
