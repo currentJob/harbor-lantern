@@ -1,0 +1,810 @@
+{
+ "schema_version": 1,
+ "dataset": "michelin-hong-kong-macau-2026",
+ "retrieved_at": "2026-09-15",
+ "what_this_is": "미쉐린 가이드 홍콩·마카오 2026 의 **별 등급** 식당 목록. '평균 이상'의 근거는 크라우드 평점이 아니라 미쉐린 등급이라는 공개된 사실이다.",
+ "sources": [
+  {
+   "what": "별 등급 식당 명단 (3·2·1스타)",
+   "url": "https://macaonews.org/food-drink/michelin-guide-2026-hong-kong-macao-stars/",
+   "retrieved_at": "2026-09-15"
+  },
+  {
+   "what": "공식 집계 대조 (총 98곳 · 홍콩 77 · 마카오 21)",
+   "url": "https://guide.michelin.com/en/article/michelin-guide-ceremony/hong-kong-and-macau-full-selection-release-2026",
+   "retrieved_at": "2026-09-15"
+  }
+ ],
+ "known_gaps": [
+  "마카오가 20곳으로 미쉐린 공식 집계(21곳)보다 하나 적다 — 2차 출처의 누락. 어느 곳인지 확인하지 못했다.",
+  "**좌표가 없다.** OpenStreetMap 이름 일치로 붙여 봤으나 신뢰할 수 없었다 — 역지오코딩 전수 대조에서 Duddell's 는 센트럴이 아니라 공항 지점이, Amber 는 타이항의 동명 가게가 잡혔다. 지점이 여럿이거나 같은 이름의 다른 가게가 있으면 이름만으로 가를 수 없다. 조용히 틀린 핀 몇 개가 목록 전체의 신뢰를 깎으므로 넣지 않았다. 따라서 이 목록은 거리순 '근처' 검색에 섞이지 않고 참고 목록으로만 쓴다.",
+  "빕구르망(83곳)은 포함하지 않았다. 미쉐린 공식 사이트가 자동 조회를 차단(403)하고 2차 출처 어디에도 전체 명단이 없었다. 부분만 담으면 '없는 것'과 '빠진 것'이 구분되지 않는다.",
+  "평점 숫자·후기 본문은 없다. 구글·오픈라이스 등의 크라우드 평점을 무료로 합법적으로 가져올 경로가 없다(조사 결과는 문서 참조)."
+ ],
+ "counts": {
+  "total": 97,
+  "hong_kong": 77,
+  "macau": 20,
+  "three_star": 9,
+  "two_star": 19,
+  "one_star": 69
+ },
+ "places": [
+  {
+   "name": "8½ Otto e Mezzo – Bombana",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Amber",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Caprice",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Forum",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Sushi Shikon",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "T'ang Court",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Ta Vie",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Arbor",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Bo Innovation",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Cristal Room by Anne-Sophie Pic",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "L'Atelier de Joel Robuchon",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "L'Envol",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Lai Ching Heen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Lung King Heen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Noi by Paulo Airaudo",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Octavium",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Rùn",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "TATE Dining Room",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Tin Lung Heen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Ying Jee Club",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Ami",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Andō",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Arcane",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Beefbar",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Belon",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Chaat",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "China Tang",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Duddell's",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Estro",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Feuille",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Fook Lam Moon",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Fu Ho",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Gaddi's",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Godenya",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Hansik Goo",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Ho Hung Kee",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "I M Teppanyaki & Wine",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Imperial Treasure Fine Chinese Cuisine",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Kam's Roast Goose",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Kappo Rin",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Liu Yuan Pavilion",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Loaf On",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Louise",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Man Ho",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Man Wah",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Mono",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Mora",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Nagamoto",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Neighborhood",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "New Punjab Club",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Pang's Kitchen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Petrus",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Plaisance by Mauro Colagreco",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Racines",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Roganic",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Ryota Kappou Modern",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Seventh Son",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Shang Palace",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Spring Moon",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Summer Palace",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Sun Tung Lok",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Sushi Takeshi",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Sushi Wadatsumi",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "The Chairman",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "The Legacy House",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Tosca di Angelo",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Tuber Umberto Bombana",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Vea",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Whey",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Xin Rong Ji",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Yardbird",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Yat Lok",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Yat Tung Heen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Yong Fu",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Yè Shanghai",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Zhejiang Heen",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Épure",
+   "city": "HK",
+   "city_label": "홍콩",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Jade Dragon",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Robuchon au Dôme",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 3,
+   "tier_label": "미쉐린 3스타"
+  },
+  {
+   "name": "Alain Ducasse at Morpheus",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Chef Tam's Seasons",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Feng Wei Ju",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "The Eight",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "The Huaiyang Garden",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "Wing Lei",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 2,
+   "tier_label": "미쉐린 2스타"
+  },
+  {
+   "name": "8½ Otto e Mezzo – Bombana",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Aji",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Don Alfonso 1890",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Five Foot Road",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Lai Heen",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Mizumi",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Palace Garden",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Pearl Dragon",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Sushi Kinetsu",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Sushi Kissho by Miyakawa",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Ying",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  },
+  {
+   "name": "Zi Yat Heen",
+   "city": "MO",
+   "city_label": "마카오",
+   "distinction": "michelin_star",
+   "stars": 1,
+   "tier_label": "미쉐린 1스타"
+  }
+ ]
+}
