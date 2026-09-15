@@ -43,8 +43,9 @@ import sys
 import time
 import unicodedata
 import urllib.parse
-import urllib.request
 from pathlib import Path
+
+import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 SEED = ROOT / "seed" / "curated-places.json"
@@ -485,9 +486,13 @@ def _get(url: str) -> object:
     wait = RATE_LIMIT_S - (time.time() - _last_call[0])
     if wait > 0:
         time.sleep(wait)
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    # `urllib` 대신 `httpx` 를 쓴다. urllib 은 `file://` 스킴도 열기 때문에 동적 URL 과
+    # 함께 쓰면 Semgrep 이 막는다(`dynamic-urllib-use-detected`). 저장소의 나머지
+    # 코드도 전부 httpx 를 쓴다 — 도구만 다른 클라이언트를 쓸 이유가 없다.
+    response = httpx.get(url, headers={"User-Agent": UA}, timeout=60.0,
+                         follow_redirects=True)
+    response.raise_for_status()
+    data = response.json()
     _last_call[0] = time.time()
     _cache[url] = data
     save_cache()
@@ -543,11 +548,10 @@ out center tags;
         elements = []
         for ep in OVERPASS:
             try:
-                req = urllib.request.Request(
-                    ep, data=urllib.parse.urlencode({"data": q}).encode(),
-                    headers={"User-Agent": UA})
-                with urllib.request.urlopen(req, timeout=300) as r:
-                    elements = json.loads(r.read().decode("utf-8"))["elements"]
+                response = httpx.post(ep, data={"data": q},
+                                      headers={"User-Agent": UA}, timeout=300.0)
+                response.raise_for_status()
+                elements = response.json()["elements"]
                 break
             except Exception as exc:  # pragma: no cover - network dependent
                 print(f"  overpass {ep} failed: {exc!r}", file=sys.stderr)
