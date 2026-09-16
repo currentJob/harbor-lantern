@@ -10,6 +10,17 @@ DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
 FOOD = {"restaurant", "cafe", "fast_food"}
 
 
+def travel_minutes(distance_m):
+    """Straight-line distance -> minutes. Walking below 1.2km, transit above with access overhead.
+
+    Extracted verbatim from `build_plan` so the guide planner (`domain/guide.py`, DSN-43)
+    computes the same minutes. Two paths quoting different travel times show up on one screen.
+    """
+    if distance_m <= 1200:
+        return max(1, round(distance_m * 1.35 / 80))
+    return round(distance_m * 1.45 / 366) + 8
+
+
 def opening_windows(text, weekday):
     """Conservative OSM weekly subset; unsupported holidays/seasonal syntax stays unknown."""
     if text == "24/7":
@@ -69,7 +80,7 @@ def build_plan(places, destination, start, end, pace="balanced", interests="mixe
                     continue
                 distance = haversine_m(position, LatLng(place["lat"], place["lng"]))
                 # Approximate walking / transit including access overhead.
-                travel = max(1, round(distance * 1.35 / 80)) if distance <= 1200 else round(distance * 1.45 / 366) + 8
+                travel = travel_minutes(distance)
                 duration = 60 if food else 90
                 eta = cursor + (travel if stops else 0)
                 windows = opening_windows(place.get("opening_hours", ""), day.weekday())

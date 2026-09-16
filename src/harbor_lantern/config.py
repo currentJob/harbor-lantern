@@ -19,6 +19,7 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 
 __all__ = [
+    "DEFAULT_GUIDE_CONFIG",
     "DEFAULT_TIME_BAND",
     "ENV_PREFIX",
     "FIXED_TIME_BAND",
@@ -28,6 +29,7 @@ __all__ = [
     "NEARBY_MIN_RADIUS_M",
     "TIME_BANDS",
     "ExternalConfig",
+    "GuideConfig",
     "NearbyCategory",
     "NearbyConfig",
     "Settings",
@@ -157,6 +159,34 @@ class NearbyConfig:
     user_agent: str = "harbor-lantern/0.1 (+https://github.com/currentJob/harbor-lantern)"
 
 
+# ── 도시 가이드 (O12 · O13 · §16.13 · §16.14) ─────────────────────────────
+@dataclass(frozen=True)
+class GuideConfig:
+    """구운 도시 가이드의 클러스터링·일정 파라미터. **한 곳에 모은다**(§6.1 과 같은 이유).
+
+    흩어 두면 "설정으로 노출한다"가 거짓말이 된다 — 하루 창을 고치려고 두 파일을
+    고쳐야 하는 순간부터 한쪽만 바뀐다.
+
+    `evening_from_min` 이 고정 19:00 인 것은 **일몰을 계산하지 않기로 했기 때문**이다
+    (§16.14 · O13). 날짜·위도로 일몰을 근사하면 원천 없는 값이 도메인에 들어온다.
+    """
+
+    seed_min_separation_m: float = 1500.0  # 씨앗끼리 이만큼 떨어져야 하루가 한 지역이 된다
+    day_palette: tuple[str, ...] = ("#22d3ee", "#f472b6", "#fbbf24", "#a78bfa")  # 홍콩 시드와 같은 팔레트
+    reserve_top_n: int = 10  # 중요도 상위 몇 개를 먼저 자리로 예약하나 (AC-068)
+    day_start_min: int = 9 * 60  # 하루 창 시작 09:00 (폴백 경로와 동일)
+    day_end_min: int = 21 * 60  # 하루 창 끝 21:00 (폴백은 19:00 · A14 유지)
+    evening_from_min: int = 19 * 60  # 저녁 슬롯 기준 시각 — 일몰이 아니라 고정값이다
+    evening_categories: tuple[str, ...] = ("viewpoint", "tower", "observation")  # 저녁 후보 유도 분류
+    spot_dwell_min: int = 90  # 스팟 체류. planner 의 비식사 체류와 같은 값
+    pace_spots: tuple[tuple[str, int], ...] = (("relaxed", 3), ("balanced", 5), ("full", 7))  # planner 와 동일
+
+
+# 기본 인스턴스 하나만 둔다. frozen dataclass 라 공유해도 안전하고, 도메인 함수의 기본
+# 인자가 호출마다 새 객체를 만드는 것(ruff B008)을 피한다.
+DEFAULT_GUIDE_CONFIG = GuideConfig()
+
+
 # ── 시간대 라벨 → 기본 시작시각·체류시간 (O6 · §6.8) ──────────────────────
 @dataclass(frozen=True)
 class TimeBand:
@@ -195,6 +225,7 @@ class Settings:
     travel: TravelConfig = TravelConfig()
     external: ExternalConfig = ExternalConfig()
     nearby: NearbyConfig = NearbyConfig()
+    guide: GuideConfig = GuideConfig()
     join_rate_limit_n: int = 10
     join_rate_limit_window_s: int = 600
     poll_interval_s: int = 10
