@@ -127,7 +127,9 @@ def test_batch_and_interval_constants_stay_within_provider_limits() -> None:
     assert bakery_io.EXTRACTS_BATCH <= 20
     assert bakery_io.MIN_REQUEST_INTERVAL_S >= 1.1
     assert 60.0 / bakery_io.MIN_REQUEST_INTERVAL_S <= 200
-    assert bakery_io.WDQS_TIMEOUT_S < 60.0  # WDQS 공개 엔드포인트 상한보다 먼저 끊는다
+    # 1단계 geosearch 는 파리 실측 1.0초다(2026-09-16). 30초를 넘기면 느린 것이 아니라 고장이다.
+    assert bakery_io.GEOSEARCH_TIMEOUT_S <= 30.0
+    assert not hasattr(bakery_io, "WDQS_TIMEOUT_S")  # WDQS 는 §16.4 v1.5 에서 통째로 걷어냈다
     assert len(bakery_io.RETRY_BACKOFF_S) == 3  # 재시도 3회 — **같은 파라미터로만**(함정 F13)
     assert list(bakery_io.RETRY_BACKOFF_S) == sorted(bakery_io.RETRY_BACKOFF_S)
 
@@ -147,7 +149,7 @@ def test_chunked_respects_the_batch_cap() -> None:
 
 def test_cache_key_includes_as_of_and_query_parameters() -> None:
     """대장을 고치면 캐시가 **자동으로 무효화**된다 — 옛 응답이 조용히 재사용되지 않는다."""
-    base = {"as_of": "2026-09-15", "stage": "wdqs", "radius_m": 6000, "sitelink_min": 15}
+    base = {"as_of": "2026-09-15", "stage": "geosearch", "radius_m": 6000, "sitelink_min": 15}
     assert bakery_io.cache_key(base) == bakery_io.cache_key(dict(reversed(list(base.items()))))
     assert bakery_io.cache_key(base) != bakery_io.cache_key({**base, "as_of": "2026-09-16"})
     assert bakery_io.cache_key(base) != bakery_io.cache_key({**base, "radius_m": 3000})
@@ -157,14 +159,14 @@ def test_cache_key_includes_as_of_and_query_parameters() -> None:
 def test_response_cache_round_trips_without_network(tmp_path: Path) -> None:
     """재개 경로 — 캐시 적중분은 네트워크 없이 지나간다 (§16.18)."""
     cache = bakery_io.ResponseCache(tmp_path)
-    assert cache.get("paris", "wdqs", "k1") is None
-    cache.put("paris", "wdqs", "k1", {"results": {"bindings": []}})
-    assert cache.get("paris", "wdqs", "k1") == {"results": {"bindings": []}}
+    assert cache.get("paris", "geosearch", "k1") is None
+    cache.put("paris", "geosearch", "k1", {"query": {"geosearch": []}})
+    assert cache.get("paris", "geosearch", "k1") == {"query": {"geosearch": []}}
 
     reopened = bakery_io.ResponseCache(tmp_path)  # 다른 실행에서 이어 하기
-    assert reopened.get("paris", "wdqs", "k1") == {"results": {"bindings": []}}
+    assert reopened.get("paris", "geosearch", "k1") == {"query": {"geosearch": []}}
     assert reopened.hits == 1
-    assert (tmp_path / "paris" / "wdqs.json").read_bytes().count(b"\r\n") == 0
+    assert (tmp_path / "paris" / "geosearch.json").read_bytes().count(b"\r\n") == 0
 
 
 def test_offline_client_refuses_to_invent_a_result() -> None:
@@ -175,4 +177,4 @@ def test_offline_client_refuses_to_invent_a_result() -> None:
     """
     client = bakery_io.HttpClient(offline=True)
     with pytest.raises(bakery_io.BakeError):
-        client.get_json("wdqs", "https://query.wikidata.org/sparql")
+        client.get_json("geosearch", "https://ko.wikipedia.org/w/api.php")

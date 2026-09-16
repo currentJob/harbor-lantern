@@ -1,8 +1,14 @@
-"""2단계 — `wbgetentities` 배치 (DSN-36 · 설계서 §16.7 · 분류 입력은 §16.5).
+"""3단계 — `wbgetentities` 배치 (DSN-33 3단계 · DSN-36 · 설계서 §16.4 · §16.7 · §16.5).
 
-한 번의 응답이 **네 가지**를 준다: 한국어·영어·현지어 라벨, kowiki/enwiki 문서 제목,
-`P31`(분류), `P131`(행정구역), `P625`(연결 검증용 좌표). 같은 요청 하나가 두 가지
-일을 하므로 **분류를 위해 요청이 늘지 않는다**(§16.4 의 마지막 근거).
+한 번의 응답이 **다섯 가지**를 준다: 한국어·영어·현지어 라벨, `sitelinks`(랭킹과
+kowiki/enwiki 문서 제목), `P31`(분류), `P131`(행정구역), `P625`(연결 검증용 좌표).
+같은 요청 하나가 그 일을 다 하므로 **랭킹과 분류를 위해 요청이 늘지 않는다**
+(§16.4 의 마지막 근거).
+
+**`sitefilter` 를 걸지 않는다.** 1단계가 ko.wikipedia geosearch 로 바뀌면서(§16.4 v1.5)
+순위의 근거가 이 응답의 `sitelinks` **개수**가 됐다. `sitefilter=kowiki|enwiki` 를 걸면
+언어판이 두 개만 돌아와 모든 항목의 중요도가 2 로 평평해진다 — 그러면 랭킹이 사라진 것이
+아니라 **거짓이 된다.** 문서 제목은 필터 없이도 같은 응답에서 읽힌다.
 
 배치 상한 50 은 공급자 고지다
 (https://www.wikidata.org/w/api.php?action=help&modules=wbgetentities · 2026-09-15 조회).
@@ -18,6 +24,7 @@ from bakery.io import WBGETENTITIES_BATCH, HttpClient, ResponseCache, cache_key,
 __all__ = [
     "ENDPOINT",
     "claim_coord",
+    "claim_coords",
     "claim_qids",
     "fetch_ancestry",
     "fetch_entities",
@@ -25,6 +32,7 @@ __all__ = [
     "monolingual",
     "pick_name",
     "pick_original",
+    "sitelink_count",
     "sitelink_title",
 ]
 
@@ -39,7 +47,10 @@ def fetch_entities(
     native_lang: str,
     as_of: str,
 ) -> dict[str, dict[str, Any]]:
-    """후보 QID 들의 라벨·문서 제목·클레임. `ceil(후보/50)` 요청 (§16.18 예산표)."""
+    """후보 QID 들의 라벨·`sitelinks`·클레임. `ceil(후보/50)` 요청 (§16.18 예산표).
+
+    `sitefilter` 는 걸지 않는다 — 모듈 설명의 이유대로, 언어판 **개수**가 랭킹의 근거다.
+    """
     languages = "|".join(_unique(["ko", "en", native_lang]))
     return _fetch(
         client,
@@ -50,7 +61,7 @@ def fetch_entities(
         as_of,
         props="labels|sitelinks|claims",
         languages=languages,
-        sitefilter="kowiki|enwiki",
+        sitefilter=None,
     )
 
 
@@ -229,13 +240,39 @@ def claim_coord(entity: Mapping[str, Any]) -> tuple[float, float] | None:
     둘을 같은 값으로 표현하면 대척점 거리 계산이 통과해 버린다(`guide_link.LinkInput`
     의 주석과 같은 이유).
     """
+    coords = claim_coords(entity)
+    return coords[0] if coords else None
+
+
+def claim_coords(entity: Mapping[str, Any]) -> list[tuple[float, float]]:
+    """`P625` 좌표 **문 전부**. 응답 순서를 지킨다.
+
+    항목 하나에 좌표 문이 여럿인 경우가 실제로 있다(도쿄 스미다강 2 · 다낭 선짜산 3 ·
+    실측). 어느 것을 쓸지는 여기서 고르지 않는다 — `guide_harvest.fold_rows` 가
+    **중심에 가장 가까운 좌표**를 고르고, 그 선택이 반경 불변식을 공짜로 지킨다(§16.6).
+    여기서 하나만 골라 넘기면 그 판단이 두 자리로 갈린다.
+    """
+    found: list[tuple[float, float]] = []
     for claim in _claims(entity, "P625"):
         value = _datavalue(claim)
         if isinstance(value, Mapping):
             lat, lng = value.get("latitude"), value.get("longitude")
             if lat is not None and lng is not None:
-                return float(lat), float(lng)
-    return None
+                pair = (float(lat), float(lng))
+                if pair not in found:
+                    found.append(pair)
+    return found
+
+
+def sitelink_count(entity: Mapping[str, Any]) -> int:
+    """언어판 수 = 중요도 (§16.4 랭킹 근거).
+
+    WDQS 의 `wikibase:sitelinks` 와 같은 값이다 — 파리 실측에서 에펠탑 191 · 루브르 169 ·
+    노트르담 125 · 개선문 85 로 WDQS 시절 순위를 그대로 재현했다(2026-09-16).
+    `sitefilter` 가 걸린 응답을 넣으면 이 값이 거짓이 된다(모듈 설명 참조).
+    """
+    sitelinks = entity.get("sitelinks")
+    return len(sitelinks) if isinstance(sitelinks, Mapping) else 0
 
 
 def sitelink_title(entity: Mapping[str, Any], site: str) -> str:

@@ -21,13 +21,13 @@ import httpx
 
 __all__ = [
     "EXTRACTS_BATCH",
+    "GEOSEARCH_TIMEOUT_S",
     "HTTP_TIMEOUT_S",
     "MIN_REQUEST_INTERVAL_S",
     "RETRY_BACKOFF_S",
     "THROTTLED_BACKOFF_S",
     "USER_AGENT",
     "WBGETENTITIES_BATCH",
-    "WDQS_TIMEOUT_S",
     "BakeError",
     "HttpClient",
     "ResponseCache",
@@ -57,8 +57,10 @@ WBGETENTITIES_BATCH = 50
 # `extracts` 의 `exlimit` 최대 20. 다건 요청에는 `exintro` 가 필수다 (공급자 고지).
 EXTRACTS_BATCH = 20
 
-# WDQS 공개 엔드포인트 상한이 60초다. 55초에서 우리가 먼저 끊고 같은 파라미터로 재시도한다.
-WDQS_TIMEOUT_S = 55.0
+# 1단계 geosearch 는 파리 실측 1.0초다(2026-09-16). 30초를 넘기면 그것은 느린 것이 아니라
+# 고장이므로 먼저 끊고 같은 파라미터로 재시도한다 — 이 자리에 있던 55초는 WDQS 의 60초
+# 상한을 피하려던 값이고, WDQS 는 §16.4 v1.5 에서 통째로 걷어냈다.
+GEOSEARCH_TIMEOUT_S = 30.0
 HTTP_TIMEOUT_S = 60.0
 # 지수 백오프. **파라미터는 바꾸지 않는다** — 하한을 올려 재시도하면 수확량이 바뀌고,
 # 수확량이 바뀌면 등급이 바뀐다(함정 F13 · 도쿄 32건 → 10건, 실측 2026-09-15).
