@@ -1,0 +1,641 @@
+{
+ "center": {
+  "lat": 41.387,
+  "lng": 2.17
+ },
+ "city_id": "barcelona",
+ "country_code": "ES",
+ "country_en": "Spain",
+ "country_ko": "스페인",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 23,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 3,
+   "building_landmark": 2,
+   "monument": 1,
+   "museum": 5,
+   "park": 2
+  },
+  "denylisted_count": 0,
+  "described_count": 11,
+  "effective_radius_m": 5000,
+  "excluded_count": 1,
+  "grade_window": 13,
+  "hours_count": 5,
+  "ko_label_count": 13,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 35,
+  "page_count": 35,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 13,
+  "unclassified_count": 9,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 8곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 9건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Barcelona",
+ "name_ko": "바르셀로나",
+ "name_local": "Barcelona",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 35,
+  "page_count": 35,
+  "radius_clamped": false,
+  "radius_m": 5000,
+  "registry_radius_m": 5000,
+  "sitelink_min": 20
+ },
+ "radius_m": 5000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "Sant Pere, Santa Caterina i la Ribera",
+   "category": "building_landmark",
+   "description": "카탈루냐 음악당(스페인어: Palau de la Música Catalana, 팔라우 델 라 무지카 카탈라냐)은 스페인 카탈루냐 바르셀로나에 있는 연주회장이다. 카탈루냐 문예부흥운동인 레나셴사(Renaixença)를 주도한 오르페오 카탈라(Orfeó Català) 합창단을 위해 루이스 도메네크 이 몬타네르가 설계하였으며, 1905년에 시공하여 1908년 2월 9일에 준공하였다. 1982년부터 1989년까지 복원과 개수를 거쳐 1997년에 산 파우 병원과 함께 유네스코 세계문화유산에 등재되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카탈루냐 음악당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EC%9D%8C%EC%95%85%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q327940",
+   "importance": {
+    "sitelinks": 44
+   },
+   "lat": 41.387667,
+   "lng": 2.175278,
+   "name": "카탈루냐 음악당",
+   "name_original": "Palau de la Música Barcelonesa",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 29.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829"
+   ],
+   "wikidata_id": "Q327940"
+  },
+  {
+   "area": "La Derecha del Ensanche",
+   "category": "attraction",
+   "description": "카탈루냐 광장(카탈루냐어: Plaça de Catalunya, 스페인어: Plaza de Cataluña)은 스페인 바르셀로나에 있는 광장이다. 카탈루냐 광장은 바르셀로나 공항에서 아에로 버스를 타고 갈 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카탈루냐 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q822881",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 41.387031,
+   "lng": 2.170079,
+   "name": "카탈루냐 광장",
+   "name_original": "Plaça de Catalunya",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 41.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q2298537"
+   ],
+   "wikidata_id": "Q822881"
+  },
+  {
+   "area": "La Maternitat i Sant Ramon",
+   "category": "building_landmark",
+   "description": "미니 에스타디(카탈루냐어: Mini Estadi, 스페인어: Miniestadi)는 스페인 바르셀로나에 위치한 축구 경기장이었다. 캄 노우와 인접해있다. 평상시는 FC 바르셀로나 B의 경기장으로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미니 에스타디",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%8B%88_%EC%97%90%EC%8A%A4%ED%83%80%EB%94%94"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q725581",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 41.379722,
+   "lng": 2.118056,
+   "name": "미니 에스타디",
+   "name_original": "Miniestadi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q725581"
+  },
+  {
+   "area": "Sants-Montjuïc",
+   "category": "museum",
+   "description": "카탈루냐 미술관(카탈루냐어: Museu Nacional d'Art de Catalunya, 약칭: MNAC)은 1934년에 설립된 카탈루냐 지방 바르셀로나에 위치한 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카탈루냐 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/43995751"
+   },
+   "hours_text": "Tu-Sa 10:00-18:00; Su 10:00-15:00; May-Sep: Tu-Sa 10:00-20:00",
+   "id": "wd:Q861252",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 41.368333,
+   "lng": 2.153306,
+   "name": "카탈루냐 미술관",
+   "name_original": "Museu Nacional d'Art de Catalunya",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/43995751",
+     "text": "영업시간 Tu-Sa 10:00-18:00; Su 10:00-15:00; May-Sep: Tu-Sa 10:00-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/43995751",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 2.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q861252"
+  },
+  {
+   "area": "Ciutat Vella",
+   "category": "museum",
+   "description": "피카소 미술관(카탈루냐어: Museu Picasso)은 스페인 바르셀로나에 위치한 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "피카소 미술관 (바르셀로나)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B9%B4%EC%86%8C_%EB%AF%B8%EC%88%A0%EA%B4%80_(%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98)"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/188938001"
+   },
+   "hours_text": "Mo 10:00-17:00; Tu-Su 09:00-19:00; Th 09:00-21:30; Dec 24,Dec 31: 09:00-14:00; Jan 05: 09:00-17:00; Jan 01,May 01,Jun 24,Dec 25: off",
+   "id": "wd:Q1050032",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 41.385216,
+   "lng": 2.180893,
+   "name": "피카소 미술관",
+   "name_original": "Museu Picasso",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/188938001",
+     "text": "영업시간 Mo 10:00-17:00; Tu-Su 09:00-19:00; Th 09:00-21:30; Dec 24,Dec 31: 09:00-14:00; Jan 05: 09:00-17:00; Jan 01,May 01,Jun 24,Dec 25: off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/188938001",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 29.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q207694"
+   ],
+   "wikidata_id": "Q1050032"
+  },
+  {
+   "area": "몬주이크",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q867072",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 41.368611,
+   "lng": 2.16,
+   "name": "미로 미술관",
+   "name_original": "Fundació Joan Miró",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q3196771",
+    "Q1792630",
+    "Q18127",
+    "Q33506",
+    "Q207694"
+   ],
+   "wikidata_id": "Q867072"
+  },
+  {
+   "area": "라발 / 바리 크시니스",
+   "category": "museum",
+   "description": "바르셀로나 현대미술관(카탈루냐어: Museu d'Art Contemporani de Barcelona, 스페인어: Museo de Arte Contemporáneo de Barcelona, 약칭: MACBA)은 스페인 바르셀로나에 위치한 미술관이다. 1995년 11월 28일에 개관했으며 건축가 리처드 마이어가 설계를 맡았다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 현대미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/36930946"
+   },
+   "hours_text": "Mo, We-Fr 11:00-19:30; Sa 10:00-20:00; Su, PH 10:00-15:00",
+   "id": "wd:Q1067140",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 41.38311,
+   "lng": 2.16679,
+   "name": "바르셀로나 현대미술관",
+   "name_original": "Museu d'Art Contemporani de Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/36930946",
+     "text": "영업시간 Mo, We-Fr 11:00-19:30; Sa 10:00-20:00; Su, PH 10:00-15:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/36930946",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 28.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q2385804",
+    "Q117531692"
+   ],
+   "wikidata_id": "Q1067140"
+  },
+  {
+   "area": "바르셀로나",
+   "category": "museum",
+   "description": "FC 바르셀로나 박물관(카탈루냐어: Museu del FC Barcelona) 또는 누녜스 박물관(Museu President Núñez)은 스페인 바르셀로나 캄 노우 내에 있는 축구 박물관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "FC 바르셀로나 박물관",
+    "url": "https://ko.wikipedia.org/wiki/FC_%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/5337055959"
+   },
+   "hours_text": "09:00-19:00; Dec 25,Jan 01 off",
+   "id": "wd:Q616238",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 41.38039,
+   "lng": 2.120636,
+   "name": "FC 바르셀로나 박물관",
+   "name_original": "Museu del Futbol Club Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/5337055959",
+     "text": "영업시간 09:00-19:00; Dec 25,Jan 01 off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/5337055959",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 52.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q17000324",
+    "Q33506"
+   ],
+   "wikidata_id": "Q616238"
+  },
+  {
+   "area": "Sant Pere, Santa Caterina i la Ribera",
+   "category": "park",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q301135",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 41.388111,
+   "lng": 2.187517,
+   "name": "시우타데야 공원",
+   "name_original": "Parc de la Ciutadella",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.3,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q22746",
+    "Q14946335"
+   ],
+   "wikidata_id": "Q301135"
+  },
+  {
+   "area": "몬주이크",
+   "category": "monument",
+   "description": "몬주이크 마법의 분수(카탈루냐어: Font màgica de Montjuïc, 스페인어: Font màgica de Montjuïc)는 스페인 바르셀로나 몬주이크의 분수이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "몬주이크 마법의 분수",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AA%AC%EC%A3%BC%EC%9D%B4%ED%81%AC_%EB%A7%88%EB%B2%95%EC%9D%98_%EB%B6%84%EC%88%98"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/35816134"
+   },
+   "hours_text": "Apr 01-May 31: Fr,Sa 21:00-22:00; Jun 01-Sep 30: We-Su 21:30-22:30; Oct 01-31: Th-Sa 21:00-22:00; Nov 01-Jan 06,Mar 01-31: Th-Sa 20:00-21:00",
+   "id": "wd:Q1414600",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 41.371139,
+   "lng": 2.151727,
+   "name": "몬주이크 마법의 분수",
+   "name_original": "Font Màgica de Montjuïc",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/35816134",
+     "text": "영업시간 Apr 01-May 31: Fr,Sa 21:00-22:00; Jun 01-Sep 30: We-Su 21:30-22:30; Oct 01-31: Th-Sa 21:00-22:00; Nov 01-Jan 06,Mar 01-31: Th-Sa 20:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 1.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q483453"
+   ],
+   "wikidata_id": "Q1414600"
+  },
+  {
+   "area": "바르셀로나",
+   "category": "park",
+   "description": "바르셀로나 동물원(카탈루냐어: Parc Zoològic de Barcelona, 스페인어: Parque Zoológico de Barcelona)은 스페인 바르셀로나에 있는 동물원이다. 13 헥타르의 원내에는 400여 종, 7500여 동물이 있으며, 흰색 고릴라 코피토 데 니에베가 있던 동물원으로도 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 동물원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EB%8F%99%EB%AC%BC%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q220013",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 41.387883,
+   "lng": 2.191194,
+   "name": "바르셀로나 동물원",
+   "name_original": "Parque Zoológico de Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 139.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q43501"
+   ],
+   "wikidata_id": "Q220013"
+  },
+  {
+   "area": "몬주이크",
+   "category": "attraction",
+   "description": "에스파냐 광장(카탈루냐어: Plaça d'Espanya, 스페인어: Plaza de España)은 스페인 바르셀로나에 있는 광장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에스파냐 광장 (바르셀로나)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EC%8A%A4%ED%8C%8C%EB%83%90_%EA%B4%91%EC%9E%A5_(%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2013874",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 41.375038,
+   "lng": 2.149108,
+   "name": "에스파냐 광장",
+   "name_original": "plaça d'Espanya",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q2013874"
+  },
+  {
+   "area": "Ciutat Vella",
+   "category": "attraction",
+   "description": "바르셀로나 수족관(카탈루냐어: Aquarium de Barcelona)는 스페인 바르셀로나 벨 항구에 있는 수족관이다. 35개의 수족관과, 450종의 11,000마리의 동물이 있으며, 해저 80m의 수중 터널이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 수족관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EC%88%98%EC%A1%B1%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1200948",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 41.376667,
+   "lng": 2.184167,
+   "name": "바르셀로나 수족관",
+   "name_original": "Aquàrium de Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2281788"
+   ],
+   "wikidata_id": "Q1200948"
+  }
+ ]
+}

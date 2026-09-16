@@ -1,0 +1,876 @@
+{
+ "center": {
+  "lat": 41.0055,
+  "lng": 28.9769
+ },
+ "city_id": "istanbul",
+ "country_code": "TR",
+ "country_en": "Türkiye",
+ "country_ko": "튀르키예",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 24,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 2,
+   "building_landmark": 2,
+   "castle": 1,
+   "monument": 2,
+   "museum": 2,
+   "tower": 1,
+   "worship": 8
+  },
+  "denylisted_count": 0,
+  "described_count": 16,
+  "effective_radius_m": 6000,
+  "excluded_count": 1,
+  "grade_window": 18,
+  "hours_count": 8,
+  "ko_label_count": 18,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 30,
+  "page_count": 30,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 18,
+  "unclassified_count": 5,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 5건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Istanbul",
+ "name_ko": "이스탄불",
+ "name_local": "İstanbul",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 30,
+  "page_count": 30,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 25
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "파티흐",
+   "category": "worship",
+   "description": "아야 소피아 또는 하기아 소피아(그리스어: Αγία Σοφία 고대: 하기아 소피아, 현대: 아야 소피아[*], 영어: Hagia Sophia, 라틴어: Sancta Sophia 상크타 소피아[*], 튀르키예어: Ayasofya 아야소프야[*], ‘거룩한 지혜’라는 뜻)의 정식 명칭은 하기아 소피아 그랜드 모스크이다. 튀르키예의 이스탄불에 있는 동방 정교회 대성당으로 세워졌으며, 현재는 이슬람 모스크 및 정교회 성당으로 사용 중이다. 537년에서 1453년까지는 그리스 정교회 성당이자 콘스탄티노폴리스 세계 총대주교의 총본산이었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아야 소피아",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%95%BC_%EC%86%8C%ED%94%BC%EC%95%84"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/109862851"
+   },
+   "hours_text": "Mo-Su 09:00-19:30",
+   "id": "wd:Q12506",
+   "importance": {
+    "sitelinks": 152
+   },
+   "lat": 41.008333,
+   "lng": 28.98,
+   "name": "아야 소피아",
+   "name_original": "Αγία Σοφία",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/109862851",
+     "text": "영업시간 Mo-Su 09:00-19:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q120560",
+    "Q32815",
+    "Q33506",
+    "Q96371632",
+    "Q96440023",
+    "Q811979",
+    "Q35112127",
+    "Q16970",
+    "Q48356",
+    "Q97588309"
+   ],
+   "wikidata_id": "Q12506"
+  },
+  {
+   "area": "에미뇌뉘",
+   "category": "worship",
+   "description": "술탄 아흐메트 모스크(튀르키예어: Sultan Ahmet Camii)는 튀르키예의 이스탄불에 있는 대표적인 모스크로, 세계문화유산인 이스탄불 역사지구의 유서깊은 건축물 가운데 하나이다. 술탄 아흐메드 사원이라고도 한다. 오스만 제국의 제14대 술탄 아흐메트 1세의 명령에 따라 1609년부터 착공에 들어가 7년이란 공사기간 끝에 1616년에 완성되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "술탄 아흐메트 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EC%88%A0%ED%83%84_%EC%95%84%ED%9D%90%EB%A9%94%ED%8A%B8_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/18055570"
+   },
+   "hours_text": "Mo-Su 08:30-12:15, 14:00-16:45, 17:45-18:30",
+   "id": "wd:Q80541",
+   "importance": {
+    "sitelinks": 89
+   },
+   "lat": 41.005385,
+   "lng": 28.976825,
+   "name": "술탄 아흐메트 모스크",
+   "name_original": "Sultan Ahmet camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/18055570",
+     "text": "영업시간 Mo-Su 08:30-12:15, 14:00-16:45, 17:45-18:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 48.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815",
+    "Q35112127"
+   ],
+   "wikidata_id": "Q80541"
+  },
+  {
+   "area": "에미뇌뉘",
+   "category": "castle",
+   "description": "톱카프 궁전(오스만 튀르크어: طوپقپو سرايى, 튀르키예어: Topkapı Sarayı)은 15세기 중순부터 19세기 중순까지 약 400년 동안 오스만 제국의 군주가 거주한 튀르키예 이스탄불의 궁전이다. 이스탄불 구시가지가 있는 반도, 보스포루스 해협과 마르마라해, 금각만이 합류하는 지점이 내려다보이는 언덕 위에 세워져 있다. 현재는 박물관으로 이용 중이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "톱카프 궁전",
+    "url": "https://ko.wikipedia.org/wiki/%ED%86%B1%EC%B9%B4%ED%94%84_%EA%B6%81%EC%A0%84"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/10284696709"
+   },
+   "hours_text": "Mo, We-Su 09:00-18:00",
+   "id": "wd:Q170495",
+   "importance": {
+    "sitelinks": 79
+   },
+   "lat": 41.013,
+   "lng": 28.984,
+   "name": "톱카프 궁전",
+   "name_original": "Topkapı",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/10284696709",
+     "text": "영업시간 Mo, We-Su 09:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/10284696709",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q12377751",
+    "Q33506"
+   ],
+   "wikidata_id": "Q170495"
+  },
+  {
+   "area": "이스탄불주",
+   "category": "worship",
+   "description": "쉴레이마니예 모스크(튀르키예어: Süleymaniye Camii 쉴레이마니예 자미[*])는 터키 이스탄불에 있는 모스크이다. 1557년 완성되어 오스만 건축의 최고 걸작 중 하나로 불린다. 이스탄불의 구시가지에 있는 7개의 언덕 중 하나의 정상에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쉴레이마니예 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EC%89%B4%EB%A0%88%EC%9D%B4%EB%A7%88%EB%8B%88%EC%98%88_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q178643",
+   "importance": {
+    "sitelinks": 69
+   },
+   "lat": 41.016111,
+   "lng": 28.963889,
+   "name": "쉴레이마니예 모스크",
+   "name_original": "Süleymaniye Camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815",
+    "Q35112127"
+   ],
+   "wikidata_id": "Q178643"
+  },
+  {
+   "area": "베이욜루",
+   "category": "tower",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/23236783"
+   },
+   "hours_text": "09:00-20:30",
+   "id": "wd:Q91274",
+   "importance": {
+    "sitelinks": 58
+   },
+   "lat": 41.025632,
+   "lng": 28.974153,
+   "name": "갈라타 타워",
+   "name_original": "Galata Kulesi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/23236783",
+     "text": "영업시간 09:00-20:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/23236783",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 8.6,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q12518",
+    "Q33506"
+   ],
+   "wikidata_id": "Q91274"
+  },
+  {
+   "area": "베이욜루",
+   "category": "attraction",
+   "description": "탁심 광장(튀르키예어: Taksim Meydanı, 영어: Taksim Square), 튀르키예 이스탄불의 유럽에 있는 주요 관광지, 레스토랑, 상점, 호텔 등 레저 지역으로 유명한 광장이다. 이 곳은 현재 이스탄불 지하철의 중심지로, 현대 이스탄불의 중심지로 간주된다. 또한, 탁심 광장에는 1928년 피에트로 카노니카가 만든 공화국 기념비(튀르키예어: Cumhuriyet Anıtı)가 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "탁심 광장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%81%EC%8B%AC_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q736072",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 41.036944,
+   "lng": 28.985833,
+   "name": "탁심 광장",
+   "name_original": "Taksim Meydanı",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q736072"
+  },
+  {
+   "area": "파티흐",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/303807317"
+   },
+   "hours_text": "Mo-Sa 9:00-19:00",
+   "id": "wd:Q505954",
+   "importance": {
+    "sitelinks": 46
+   },
+   "lat": 41.010581,
+   "lng": 28.967933,
+   "name": "그랜드 바자르",
+   "name_original": "Kapalıçarşı",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/303807317",
+     "text": "영업시간 Mo-Sa 9:00-19:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q219760",
+    "Q2080521"
+   ],
+   "wikidata_id": "Q505954"
+  },
+  {
+   "area": "파티흐",
+   "category": "worship",
+   "description": "카리예 박물관(튀르키예어: Kariye Müzesi)은 터키 이스탄불 구시가지의 북서쪽 테오도시우스 성벽과 간선 도로가 교차하는 에디르네 문 근처에 있는 박물관이다. 건물 자체는 동로마 제국의 시대였던 11세기에 동방 정교회 수도원 부속 교회로 건설된 것으로, 14세기까지 간헐적으로 증축과 개축이 반복되었다. 오스만 제국 시대가 되면서 모스크로 개조되어 명칭도 카리예 자미(Kariye Camii)로 개칭되었지만, 터키로부터 예술적 가치를 인정 받아 종교 박물관이 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카리예 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A6%AC%EC%98%88_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/7614527"
+   },
+   "hours_text": "09:00-18:00",
+   "id": "wd:Q849489",
+   "importance": {
+    "sitelinks": 44
+   },
+   "lat": 41.031111,
+   "lng": 28.939167,
+   "name": "카리예 박물관",
+   "name_original": "Kariye Camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/7614527",
+     "text": "영업시간 09:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q32815",
+    "Q33506"
+   ],
+   "wikidata_id": "Q849489"
+  },
+  {
+   "area": "파티흐",
+   "category": "attraction",
+   "description": "셰흐자데 모스크(튀르키예어: Şehzade Camii 셰흐자데 자미[*])는 터키 이스탄불 파티흐에 위치한 모스크이다. 쉴레이만 1세가 1543년에 사망한 아들 셰흐자데 메흐메드를 위해 지은 것이다. 영어식 표현으로 때때로 프린스 모스크(Prince's Mosque)라고 부른다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "셰흐자데 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EC%85%B0%ED%9D%90%EC%9E%90%EB%8D%B0_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q644677",
+   "importance": {
+    "sitelinks": 43
+   },
+   "lat": 41.013794,
+   "lng": 28.957175,
+   "name": "셰흐자데 모스크",
+   "name_original": "Şehzade Camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2319498",
+    "Q1454820"
+   ],
+   "wikidata_id": "Q644677"
+  },
+  {
+   "area": "에미뇌뉘",
+   "category": "worship",
+   "description": "예니 모스크(튀르키예어: Yeni Cami 예니 자미[*]), 발리데 술탄 모스크(영어: Valide Sultan Camii 발리데 술탄 자미[*]), 영어식 표현으로 뉴 모스크(영어: New Mosque)는 터키 이스탄불에 위치한 모스크이다. 1665년에 완성되었다. 금각만 위에 있으며, 갈라타 다리 남동쪽 끝에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "예니 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%88%EB%8B%88_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q911720",
+   "importance": {
+    "sitelinks": 41
+   },
+   "lat": 41.016875,
+   "lng": 28.972141,
+   "name": "예니 모스크",
+   "name_original": "Yeni Cami",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 58.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815",
+    "Q35112127",
+    "Q71974"
+   ],
+   "wikidata_id": "Q911720"
+  },
+  {
+   "area": "에미뇌뉘",
+   "category": "worship",
+   "description": "아야 이리니(튀르키예어: Aya İrini) 또는 하기아 에이리니(그리스어: Ἁγία Εἰρήνη)는 튀르키예 이스탄불 톱카프 궁전 바깥 뜰에 위치한 동방 정교회 교회당이다. 화요일을 제외하고 매일 박물관으로 개방된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아야 이리니",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%95%BC_%EC%9D%B4%EB%A6%AC%EB%8B%88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q736676",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 41.00972,
+   "lng": 28.98111,
+   "name": "아야 이리니",
+   "name_original": "Aya İrini",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q736676"
+  },
+  {
+   "area": "파티흐",
+   "category": "worship",
+   "description": "베야지드 모스크(튀르키예어: Bayezid Camii 베야지드 자미[*]) 또는 베야지트 모크스(튀르키예어: Beyazıt Camii 베야지트 자미[*])는 터키 이스탄불 베야지트 광장에 위치한 모스크이다. 고대 콘스탄티노폴리스의 테오도시우스 포룸 근처에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베야지드 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%95%BC%EC%A7%80%EB%93%9C_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q853064",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 41.010278,
+   "lng": 28.965278,
+   "name": "베야지드 모스크",
+   "name_original": "Bayezid Camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815",
+    "Q35112127",
+    "Q71974"
+   ],
+   "wikidata_id": "Q853064"
+  },
+  {
+   "area": "Sultan Ahmet",
+   "category": "monument",
+   "description": "테오도시우스 오벨리스크(튀르키예어: Dikilitaş)는 터키 이스탄불 술탄아흐메트 광장에 위치한 오벨리스크이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "테오도시우스 오벨리스크",
+    "url": "https://ko.wikipedia.org/wiki/%ED%85%8C%EC%98%A4%EB%8F%84%EC%8B%9C%EC%9A%B0%EC%8A%A4_%EC%98%A4%EB%B2%A8%EB%A6%AC%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q763854",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 41.006056,
+   "lng": 28.975389,
+   "name": "테오도시우스 오벨리스크",
+   "name_original": "Dikilitaş",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 17.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q170980"
+   ],
+   "wikidata_id": "Q763854"
+  },
+  {
+   "area": "파티흐",
+   "category": "worship",
+   "description": "누루오스마니예 모스크(튀르키예어: Nuruosmaniye Camii 누루오스마니예 자미[*])는 터키 이스탄불 젬베를리타슈에 위치한 모스크이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "누루오스마니예 모스크",
+    "url": "https://ko.wikipedia.org/wiki/%EB%88%84%EB%A3%A8%EC%98%A4%EC%8A%A4%EB%A7%88%EB%8B%88%EC%98%88_%EB%AA%A8%EC%8A%A4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1430090",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 41.010278,
+   "lng": 28.970278,
+   "name": "누루오스마니예 모스크",
+   "name_original": "Nuruosmaniye Camii",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815",
+    "Q35112127"
+   ],
+   "wikidata_id": "Q1430090"
+  },
+  {
+   "area": "이스탄불주",
+   "category": "building_landmark",
+   "description": "튀넬(튀르키예어: Tünel)은 이스탄불의 도시 철도로 지하로 지어진 강삭철도이다. 1875년 1월 17일에 개통되었으며, 세계에서 런던 지하철(1863년) 다음으로 오래된 지하철이다. 이보다 앞서 1862년에 개통된 리옹의 구식 강삭철도가 지하의 도로 터널로 전환함으로서, 유럽 대륙에서 가장 오랫동안 살아남은 지하철이 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "튀넬",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8A%80%EB%84%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q387264",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 41.033611,
+   "lng": 28.9775,
+   "name": "튀넬",
+   "name_original": "F2 (Karaköy – Beyoğlu) Tarihi Tünel Füniküler Hattı",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1210.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q106542031",
+    "Q55488",
+    "Q35112127"
+   ],
+   "wikidata_id": "Q387264"
+  },
+  {
+   "area": "파티흐",
+   "category": "museum",
+   "description": "튀르키예와 이슬람 예술 박물관(튀르키예어: Türk ve İslam Eserleri Müzesi)은 튀르키예 이스탄불 파티흐 술탄아흐메트 광장에 있는 박물관이다. 1524년에 지어진 이 건물은 원래 술레이만 대제의 두 번째 대재상이었던 파르갈리 이브라힘 파샤의 궁전이었다. 이 박물관에는 이슬람 예술에 관한 것들이 전시되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "튀르키예와 이슬람 예술 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8A%80%EB%A5%B4%ED%82%A4%EC%98%88%EC%99%80_%EC%9D%B4%EC%8A%AC%EB%9E%8C_%EC%98%88%EC%88%A0_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/5113500256"
+   },
+   "hours_text": "Mo-Su 09:00-18:30",
+   "id": "wd:Q525939",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 41.006278,
+   "lng": 28.974556,
+   "name": "튀르키예와 이슬람 예술 박물관",
+   "name_original": "Türk ve İslâm Eserleri Müzesi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/5113500256",
+     "text": "영업시간 Mo-Su 09:00-18:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24699794",
+    "Q17431399",
+    "Q33506"
+   ],
+   "wikidata_id": "Q525939"
+  },
+  {
+   "area": "이스탄불",
+   "category": "monument",
+   "description": "뱀기둥(고대 그리스어: Τρικάρηνος Ὄφις, 튀르키예어: Yılanlı Sütun)은 터키 이스탄불 술탄아흐메트 광장에 위치한 기둥이다. 새 수도의 위상을 높이기 위해 콘스탄티누스 1세와 그 후계자 (특히 테오도시우스 1세)는 제국 전역에서 예술 작품을 모아 콘스탄티노폴리스를 장식했다. 콘스탄티노폴리스 경마장에는 특히 스피나라는 길 중앙 장벽에 설치되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뱀기둥",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B1%80%EA%B8%B0%EB%91%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q588892",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 41.00562,
+   "lng": 28.975122,
+   "name": "뱀기둥",
+   "name_original": "Yılanlı Sütun",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q860861",
+    "Q1930585",
+    "Q60234534"
+   ],
+   "wikidata_id": "Q588892"
+  },
+  {
+   "area": "베이욜루",
+   "category": "museum",
+   "description": "순수박물관(튀르키예어: Masumiyet Müzesi)은 튀르키예 이스탄불 베이욜루에 있는 박물관이다. 소설가 오르한 파무크의 동명 소설의 이름을 따서 설립했으며, 박물관은 소설의 두 가족의 이야기를 중심으로 만들어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "순수박물관 (박물관)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%88%9C%EC%88%98%EB%B0%95%EB%AC%BC%EA%B4%80_(%EB%B0%95%EB%AC%BC%EA%B4%80)"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/3279398393"
+   },
+   "hours_text": "Tu-Su 10:00-18:00",
+   "id": "wd:Q15961492",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 41.030931,
+   "lng": 28.979822,
+   "name": "순수박물관",
+   "name_original": "Masumiyet Müzesi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/3279398393",
+     "text": "영업시간 Tu-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/3279398393",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q614316"
+   ],
+   "wikidata_id": "Q15961492"
+  }
+ ]
+}

@@ -333,3 +333,277 @@ def test_the_chain_endpoints_are_the_ones_the_design_named() -> None:
     assert geosearch.ENDPOINT == "https://ko.wikipedia.org/w/api.php"
     assert wikidata.ENDPOINT == "https://www.wikidata.org/w/api.php"
     assert geosearch.PAGEPROPS_BATCH <= bakery_io.WBGETENTITIES_BATCH == 50
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# 7. 합집합 — 영어로 발견하고, 한국어로 싣는다 (§16.4 v1.6)
+# ─────────────────────────────────────────────────────────────────────────
+# 프라하를 본뜬 고정 응답. 굽기 실측(2026-09-16)에서 ko geosearch 31건 · en geosearch
+# 500건(상한)이었고 **en 에만 있으면서 한국어 문서가 있는 것이 62건**이었다 — 그 안에
+# 카를교·프라하 천문시계·바츨라프 광장이 있었다. 한국어 문서는 있는데 **그 문서에 좌표가
+# 없어서** ko geosearch 가 돌려주지 않은 것들이다.
+#
+# 아래 Q-id 와 pageid 는 **모양만 빌린 가짜**다. 어떤 응답에서도 그대로 오지 않았다.
+PRAGUE_CENTER = LatLng(50.0875, 14.4213)
+
+KO_PRAGUE: dict[str, Any] = {
+    "query": {
+        "geosearch": [
+            {"pageid": 101, "title": "프라하성", "lat": 50.0900, "lon": 14.4000, "dist": 1600.0},
+            {"pageid": 102, "title": "구시가지 광장", "lat": 50.0870, "lon": 14.4210, "dist": 60.0},
+        ]
+    }
+}
+
+EN_PRAGUE: dict[str, Any] = {
+    "query": {
+        "geosearch": [
+            # **ko 의 101 과 같은 번호지만 다른 문서다** — pageid 공간은 위키마다 따로다.
+            {"pageid": 101, "title": "Charles Bridge", "lat": 50.0865, "lon": 14.4114, "dist": 710.0},
+            {"pageid": 102, "title": "Old Town Square", "lat": 50.0871, "lon": 14.4211, "dist": 62.0},
+            {"pageid": 103, "title": "Rudolfinum", "lat": 50.0900, "lon": 14.4160, "dist": 450.0},
+            # 한국어 문서가 없는 항목. **여기서 끝나야 한다** — 결과에 들어오면 안 된다.
+            {"pageid": 104, "title": "Bench of a Local Poet", "lat": 50.0880, "lon": 14.4230, "dist": 130.0},
+            # 위키데이터 항목조차 없는 문서. 조용히 빠지지 않고 세어진다.
+            {"pageid": 105, "title": "Unlinked Plaque", "lat": 50.0881, "lon": 14.4231, "dist": 140.0},
+        ]
+    }
+}
+
+KO_PRAGUE_PROPS: dict[str, Any] = {
+    "query": {
+        "pages": [
+            {"pageid": 101, "pageprops": {"wikibase_item": "Q9001"}},
+            {"pageid": 102, "pageprops": {"wikibase_item": "Q9002"}},
+        ]
+    }
+}
+
+EN_PRAGUE_PROPS: dict[str, Any] = {
+    "query": {
+        "pages": [
+            {"pageid": 101, "pageprops": {"wikibase_item": "Q9003"}},  # ko 의 101 과 다른 항목
+            {"pageid": 102, "pageprops": {"wikibase_item": "Q9002"}},  # 같은 장소 — 여기서 합쳐진다
+            {"pageid": 103, "pageprops": {"wikibase_item": "Q9004"}},
+            {"pageid": 104, "pageprops": {"wikibase_item": "Q9005"}},
+            {"pageid": 105},
+        ]
+    }
+}
+
+
+def _prague_entity(qid: str, sitelinks: int, ko_title: str, coords: list[tuple[float, float]]) -> dict[str, Any]:
+    """`ko_title` 이 빈 문자열이면 **`kowiki` sitelink 가 없는 항목**이다."""
+    extra = {"enwiki": f"en:{qid}"}
+    if ko_title:
+        extra["kowiki"] = ko_title
+    return {
+        "id": qid,
+        "labels": {"ko": {"language": "ko", "value": ko_title or qid}},
+        "sitelinks": _sitelinks(sitelinks - len(extra), extra),
+        "claims": {
+            "P625": [
+                {"mainsnak": {"datavalue": {"value": {"latitude": lat, "longitude": lng}}}} for lat, lng in coords
+            ]
+        },
+    }
+
+
+PRAGUE_ENTITIES: dict[str, dict[str, Any]] = {
+    "Q9001": _prague_entity("Q9001", 120, "프라하성", [(50.0900, 14.4000)]),
+    "Q9002": _prague_entity("Q9002", 90, "구시가지 광장", [(50.0870, 14.4210)]),
+    # 카를교 — 한국어 문서는 있는데 그 문서에 좌표가 없어 ko geosearch 에 안 잡혔다.
+    "Q9003": _prague_entity("Q9003", 110, "카를교", [(50.0865, 14.4114)]),
+    # 루돌피눔 — 같은 사연. `P625` 도 없어 문서 좌표(en)로 내려간다.
+    "Q9004": _prague_entity("Q9004", 45, "루돌피눔", []),
+    # 한국어 문서가 **없는** 항목. 이것이 결과에 들어오면 "한국어 100%" 가 깨진다.
+    "Q9005": _prague_entity("Q9005", 6, "", [(50.0880, 14.4230)]),
+}
+
+
+def _prague_union() -> geosearch.Union:
+    return geosearch.union_by_qid(
+        {"ko": geosearch.pages_of(KO_PRAGUE), "en": geosearch.pages_of(EN_PRAGUE)},
+        {"ko": geosearch.qids_of(KO_PRAGUE_PROPS), "en": geosearch.qids_of(EN_PRAGUE_PROPS)},
+    )
+
+
+def _gate(union: geosearch.Union, qid: str) -> str:
+    """베이커가 3단계 뒤에 세우는 관문과 **같은 호출**이다."""
+    return geosearch.korean_title(union.by_qid[qid], wikidata.sitelink_title(PRAGUE_ENTITIES[qid], "kowiki"))
+
+
+def test_each_wiki_is_asked_its_own_endpoint_and_bucket(tmp_path: Path) -> None:
+    """**pageid 는 위키마다 다르다.** en 의 번호를 ko 에 물으면 오류가 아니라 다른 문서가 온다.
+
+    ko 쪽 단계 이름은 바뀌지 않는다 — 바뀌면 이미 받아 둔 한국어 응답이 통째로 무효가 된다.
+    """
+    assert geosearch.endpoint_for("ko") == "https://ko.wikipedia.org/w/api.php"
+    assert geosearch.endpoint_for("en") == "https://en.wikipedia.org/w/api.php"
+    assert geosearch.stage_for("ko", "geosearch") == "geosearch"
+    assert geosearch.stage_for("ko", "pageprops") == "pageprops"
+    assert geosearch.stage_for("en", "geosearch") != geosearch.stage_for("ko", "geosearch")
+    assert geosearch.stage_for("en", "pageprops") != geosearch.stage_for("ko", "pageprops")
+
+    city = {"city_id": "prague", "center": {"lat": 50.0875, "lng": 14.4213}, "radius_m": 6000}
+    client = _ScriptedClient({"geosearch": [KO_PRAGUE], "geosearch-en": [EN_PRAGUE]})
+    cache = bakery_io.ResponseCache(tmp_path)
+
+    ko = geosearch.fetch_pages(client, cache, city, "2026-09-16", "ko")
+    en = geosearch.fetch_pages(client, cache, city, "2026-09-16", "en")
+    # 두 번째 호출은 캐시가 받아 낸다 — 위키별로 버킷이 갈려 있어야 성립한다(재개 경로).
+    assert geosearch.fetch_pages(client, cache, city, "2026-09-16", "ko") == ko
+    assert geosearch.fetch_pages(client, cache, city, "2026-09-16", "en") == en
+
+    assert client.requests == {"geosearch": 1, "geosearch-en": 1}
+    assert len(ko) == 2
+    assert len(en) == 5
+    assert (tmp_path / "prague" / "geosearch.json").exists()
+    assert (tmp_path / "prague" / "geosearch-en.json").exists()
+
+
+def test_an_unknown_wiki_fails_instead_of_falling_back() -> None:
+    """조용히 ko 로 되돌리면 ko 를 두 번 긁고 '영어 발견 0건'이 사실처럼 남는다."""
+    with pytest.raises(bakery_io.BakeError):
+        geosearch.endpoint_for("de")
+    with pytest.raises(bakery_io.BakeError):
+        geosearch.stage_for("de", "geosearch")
+
+
+def test_pageprops_asks_the_wiki_the_pageids_came_from(tmp_path: Path) -> None:
+    client = _ScriptedClient({"pageprops-en": [EN_PRAGUE_PROPS]})
+    cache = bakery_io.ResponseCache(tmp_path)
+
+    found = geosearch.fetch_wikibase_items(client, cache, "prague", [101, 102, 103, 104, 105], "2026-09-16", "en")
+
+    assert client.requests == {"pageprops-en": 1}
+    assert found[101] == "Q9003"  # ko 의 101(Q9001)이 아니다
+    assert 105 not in found
+
+
+def test_the_union_is_keyed_by_qid_and_ordered() -> None:
+    """합집합의 열쇠는 Q-id 다 — 같은 장소가 두 위키에 다른 제목으로 있어도 항목은 하나다.
+
+    순서는 **Q-id 오름차순**으로 고정한다. 어느 위키를 먼저 읽었는지가 결과 바이트에
+    스며들면 재현성이 조용히 사라진다(DSN-40 · AC-082).
+    """
+    union = _prague_union()
+    assert list(union.by_qid) == ["Q9001", "Q9002", "Q9003", "Q9004", "Q9005"]
+    assert union.mapped_rows == 6  # ko 2 + en 4 (105 는 위키데이터 항목이 없다)
+    assert [(lang, page["title"]) for lang, page in union.unmapped] == [("en", "Unlinked Plaque")]
+
+    assert geosearch.discovery_of(union.by_qid["Q9001"]) == "ko"
+    assert geosearch.discovery_of(union.by_qid["Q9002"]) == "both"
+    assert geosearch.discovery_of(union.by_qid["Q9003"]) == "en"
+    assert geosearch.discovery_of({}) == ""
+
+
+def test_the_union_order_does_not_depend_on_which_wiki_was_read_first() -> None:
+    forward = _prague_union()
+    backward = geosearch.union_by_qid(
+        {"en": geosearch.pages_of(EN_PRAGUE), "ko": geosearch.pages_of(KO_PRAGUE)},
+        {"en": geosearch.qids_of(EN_PRAGUE_PROPS), "ko": geosearch.qids_of(KO_PRAGUE_PROPS)},
+    )
+    assert list(forward.by_qid) == list(backward.by_qid)
+    assert forward.by_qid == backward.by_qid
+
+
+def test_two_documents_of_one_wiki_fold_to_the_nearest() -> None:
+    """한 위키에서 두 문서가 같은 항목을 가리키면 중심에 가까운 쪽을 쓴다(동률이면 pageid)."""
+    pages = {
+        "ko": [
+            {"pageid": 7, "title": "먼 쪽", "lat": 1.0, "lng": 1.0, "dist": 900.0},
+            {"pageid": 8, "title": "가까운 쪽", "lat": 1.1, "lng": 1.1, "dist": 10.0},
+        ],
+        "en": [],
+    }
+    union = geosearch.union_by_qid(pages, {"ko": {7: "Q1", 8: "Q1"}, "en": {}})
+    assert union.by_qid["Q1"]["ko"]["title"] == "가까운 쪽"
+    assert union.mapped_rows == 2
+
+
+# ── 이 절의 핵심 명제 ───────────────────────────────────────────────────────
+def test_an_english_only_item_without_a_korean_article_never_gets_in() -> None:
+    """**한국어 문서가 없으면 싣지 않는다** — 영어는 발견 경로일 뿐이다(§16.4 v1.6).
+
+    이 관문이 "한국어 100%" 불변식이 사는 자리다. 1단계가 ko 하나였을 때는 후보가 정의상
+    한국어 문서였지만, 영어를 합치면서 그 보장이 1단계에서 이 자리로 옮겨졌다. 여기가
+    풀리면 화면에 **영어 이름 + 빈 설명**이 실린다.
+    """
+    union = _prague_union()
+    assert _gate(union, "Q9005") == ""  # en 으로만 발견 + kowiki 없음 → 탈락
+    assert _gate(union, "Q9003") == "카를교"  # en 으로만 발견 + kowiki 있음 → 그 제목으로 싣는다
+    assert _gate(union, "Q9004") == "루돌피눔"
+    assert _gate(union, "Q9001") == "프라하성"  # ko 로 발견 → 1단계가 이미 제목을 들고 있다
+
+
+def test_a_korean_page_carries_the_item_even_if_the_sitelink_is_stale() -> None:
+    """ko geosearch 로 온 항목은 **그 문서 자체가 한국어 문서**다.
+
+    위키데이터 쪽 색인이 늦어 `kowiki` sitelink 가 비어 있는 일이 있고, 그때 잃는 것은 방금
+    눈으로 본 문서다 — 관문이 그것까지 떨어뜨리면 안 된다.
+    """
+    slot = {"ko": {"pageid": 1, "title": "구시가지 광장", "lat": 1.0, "lng": 1.0, "dist": 1.0}}
+    assert geosearch.korean_title(slot, "") == "구시가지 광장"
+    assert geosearch.korean_title({}, "") == ""
+
+
+def test_the_english_route_adds_places_the_korean_search_cannot_see() -> None:
+    """합집합이 값을 하는지 — 카를교가 들어오고, 한국어 문서 없는 항목은 안 들어온다.
+
+    ko 만 보면 후보가 둘이다. 영어를 합치면 넷이 되고 그 둘이 **한국어 문서를 가진 장소**다.
+    카를교 없는 프라하 가이드는 가이드가 아니다.
+    """
+    union = _prague_union()
+    rows: list[dict[str, Any]] = []
+    kept: list[str] = []
+    for qid, slot in union.by_qid.items():
+        if not _gate(union, qid):
+            continue
+        entity = PRAGUE_ENTITIES[qid]
+        kept.append(qid)
+        coords = wikidata.claim_coords(entity)
+        if not coords:
+            page = slot.get("ko") or slot.get("en")
+            coords = [(page["lat"], page["lng"])]
+        rows.extend(
+            {"qid": qid, "lat": lat, "lng": lng, "sitelinks": wikidata.sitelink_count(entity)}
+            for lat, lng in coords
+        )
+
+    ko_only = [qid for qid, slot in union.by_qid.items() if geosearch.discovery_of(slot) == "ko"]
+    assert len(ko_only) == 1  # ko geosearch 단독으로는 프라하성 하나뿐이다
+    assert kept == ["Q9001", "Q9002", "Q9003", "Q9004"]
+    assert "Q9005" not in kept
+
+    folded = fold_rows(rows, PRAGUE_CENTER, 6000.0)
+    assert [c.qid for c in folded.candidates] == ["Q9001", "Q9003", "Q9002", "Q9004"]
+    # 루돌피눔은 `P625` 가 없어 **en 문서 좌표**로 내려왔다 — 반경 검사를 그대로 통과한다.
+    rudolfinum = next(c for c in folded.candidates if c.qid == "Q9004")
+    assert (rudolfinum.coord.lat, rudolfinum.coord.lng) == (50.0900, 14.4160)
+
+
+# ── 좌표 출처가 셋이면 대조도 셋이다 ────────────────────────────────────────
+def test_the_cross_check_never_compares_a_coordinate_with_itself() -> None:
+    """자기 자신과 재면 거리가 언제나 0 이고, 그 0 은 '맞다'가 아니라 **아무것도 재지 않았다**다.
+
+    겨울 궁전 사건(다른 항목의 설명이 붙는 것)이 노린 자리가 정확히 그런 통과였다.
+    """
+    own = (50.0865, 14.4114)
+    assert geosearch.independent_coord(own, {"en": own}, None) is None
+    assert geosearch.independent_coord(own, {"en": own}, (50.09, 14.42)) == (50.09, 14.42)
+
+
+def test_the_cross_check_prefers_the_korean_page_then_english_then_p625() -> None:
+    own = (50.0, 14.0)
+    ko, en, p625 = (50.01, 14.01), (50.02, 14.02), (50.03, 14.03)
+    assert geosearch.independent_coord(own, {"ko": ko, "en": en}, p625) == ko
+    assert geosearch.independent_coord(own, {"en": en}, p625) == en
+    assert geosearch.independent_coord(own, {}, p625) == p625
+    assert geosearch.independent_coord(own, {}, None) is None
+
+
+def test_the_cross_check_ignores_rounding_of_the_spot_coordinate() -> None:
+    """스팟 좌표는 소수 6자리로 반올림돼 저장된다 — 같은 값인지도 그 자리에서 본다."""
+    own = (50.086512, 14.411434)
+    assert geosearch.independent_coord(own, {"en": (50.0865124, 14.4114338)}, None) is None

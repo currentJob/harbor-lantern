@@ -238,13 +238,19 @@ def test_measured_values_cite_their_source() -> None:
 
 
 def test_sitelink_min_is_not_a_retry_knob() -> None:
-    """도쿄의 하한은 15 로 고정돼 있다 (함정 F13).
+    """하한은 **모든 도시에 같은 값**이다 — 도시별 재시도 손잡이가 아니다 (함정 F13).
 
-    하한 32 로 재시도했을 때 32건이 10건이 됐다 — 하한은 성능 손잡이가 아니라 선별
+    도쿄를 하한 32 로 재시도했을 때 32건이 10건이 됐다. 하한은 성능 손잡이가 아니라 선별
     기준이고, 그것을 흔들면 측정 대상이 측정 과정에 따라 달라진다.
+
+    **값 자체는 한 번에 정해진다.** 이 테스트가 원래 도쿄의 15 를 못박고 있었는데, 그 뒤
+    사람이 전 도시를 한 값으로 다시 정하면서(현재 대장) 값만으로는 규칙을 표현할 수 없게
+    됐다 — 그래서 막는 것을 **값**에서 **분포**로 옮긴다. 한 도시만 조용히 올라가는 것이
+    F13 이 말한 실패 양식이고, 그것은 값이 갈리는 순간 여기서 걸린다.
     """
+    floors = {city["city_id"]: city["sitelink_min"] for city in REGISTRY["cities"]}
+    assert len(set(floors.values())) == 1, f"도시마다 하한이 다르다 — 재시도로 흔든 흔적이다: {floors}"
     tokyo = next(city for city in REGISTRY["cities"] if city["city_id"] == "tokyo")
-    assert tokyo["sitelink_min"] == 15
     assert tokyo["radius_m"] == 6000
     assert "F13" in " ".join(REGISTRY["rules"]) or "재시도" in " ".join(REGISTRY["rules"])
 

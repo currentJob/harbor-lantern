@@ -1,0 +1,517 @@
+{
+ "as_of": "2026-09-16",
+ "cities": [
+  {
+   "candidate_count": 126,
+   "candidate_ko_ratio": 1.0,
+   "city_id": "london",
+   "composition": {
+    "attraction": 16,
+    "bridge": 5,
+    "building_landmark": 15,
+    "castle": 3,
+    "monument": 2,
+    "museum": 10,
+    "park": 5,
+    "tower": 2,
+    "worship": 2
+   },
+   "denylisted": [],
+   "dropped": [
+    {
+     "detail": "sitelinks 3 < 하한 5",
+     "qid": "Q15222182",
+     "reason": "below_sitelink_min"
+    },
+    {
+     "detail": "sitelinks 2 < 하한 5",
+     "qid": "Q5113789",
+     "reason": "below_sitelink_min"
+    },
+    {
+     "detail": "sitelinks 2 < 하한 5",
+     "qid": "Q5449842",
+     "reason": "below_sitelink_min"
+    },
+    {
+     "detail": "sitelinks 3 < 하한 5",
+     "qid": "Q6670546",
+     "reason": "below_sitelink_min"
+    },
+    {
+     "detail": "sitelinks 4 < 하한 5",
+     "qid": "Q6786255",
+     "reason": "below_sitelink_min"
+    },
+    {
+     "detail": "5563009.0m > 6000.0m",
+     "qid": "Q654762",
+     "reason": "out_of_radius"
+    }
+   ],
+   "effective_radius_m": 6000,
+   "grade": "full",
+   "grade_window": 25,
+   "ko_label_ratio": 1.0,
+   "mapped_count": 132,
+   "page_count": 132,
+   "reviewed": false,
+   "spot_count": 60,
+   "status": "exported",
+   "unclassified": [
+    {
+     "classes": [
+      "Q9247597"
+     ],
+     "name": "영국 하원",
+     "qid": "Q11005"
+    },
+    {
+     "classes": [
+      "Q110315866"
+     ],
+     "name": "영국 상원",
+     "qid": "Q11007"
+    },
+    {
+     "classes": [
+      "Q11691"
+     ],
+     "name": "런던 증권거래소",
+     "qid": "Q171240"
+    },
+    {
+     "classes": [
+      "Q211690",
+      "Q7897276"
+     ],
+     "name": "켄징턴 첼시 구",
+     "qid": "Q188801"
+    },
+    {
+     "classes": [
+      "Q211690",
+      "Q7897276"
+     ],
+     "name": "캠던구",
+     "qid": "Q202088"
+    },
+    {
+     "classes": [
+      "Q110288240"
+     ],
+     "name": "유로비전 송 콘테스트 1960",
+     "qid": "Q203245"
+    },
+    {
+     "classes": [
+      "Q211690",
+      "Q7897276"
+     ],
+     "name": "램버스구",
+     "qid": "Q202059"
+    },
+    {
+     "classes": [
+      "Q7248095"
+     ],
+     "name": "딜로이트",
+     "qid": "Q491748"
+    },
+    {
+     "classes": [
+      "Q110288240"
+     ],
+     "name": "유로비전 송 콘테스트 1968",
+     "qid": "Q204010"
+    },
+    {
+     "classes": [
+      "Q211690",
+      "Q7897276"
+     ],
+     "name": "이즐링턴구",
+     "qid": "Q205817"
+    },
+    {
+     "classes": [
+      "Q55488",
+      "Q55485",
+      "Q20202072",
+      "Q22808404",
+      "Q22808403"
+     ],
+     "name": "런던 패딩턴",
+     "qid": "Q214788"
+    },
+    {
+     "classes": [
+      "Q682943"
+     ],
+     "name": "런던 로드 크리켓 구장",
+     "qid": "Q331613"
+    },
+    {
+     "classes": [
+      "Q1133961",
+      "Q2755753"
+     ],
+     "name": "웨스트엔드오브런던",
+     "qid": "Q460735"
+    },
+    {
+     "classes": [
+      "Q708676",
+      "Q748019",
+      "Q1966910",
+      "Q4135597"
+     ],
+     "name": "왕립지리학회",
+     "qid": "Q691152"
+    },
+    {
+     "classes": [
+      "Q18543139",
+      "Q55485"
+     ],
+     "name": "런던 워털루역",
+     "qid": "Q795691"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q55491"
+     ],
+     "name": "킹스크로스 세인트 판크라스",
+     "qid": "Q826120"
+    },
+    {
+     "classes": [
+      "Q4752944",
+      "Q2755753",
+      "Q18511725"
+     ],
+     "name": "서더크",
+     "qid": "Q5273898"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q22808403",
+      "Q18516630",
+      "Q1147171"
+     ],
+     "name": "뱅크 앤 모뉴먼트",
+     "qid": "Q806704"
+    },
+    {
+     "classes": [
+      "Q748019",
+      "Q829080",
+      "Q2085381",
+      "Q1391517",
+      "Q163740",
+      "Q45400320"
+     ],
+     "name": "영국 왕립 화학회",
+     "qid": "Q905549"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q55491"
+     ],
+     "name": "피카딜리 서커스",
+     "qid": "Q26448"
+    },
+    {
+     "classes": [
+      "Q1371150",
+      "Q188055"
+     ],
+     "name": "주영국 이란 대사관 인질 사건",
+     "qid": "Q370706"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q55491"
+     ],
+     "name": "차링 크로스 역",
+     "qid": "Q795322"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q55491"
+     ],
+     "name": "그레이트포틀랜드 스트리트역",
+     "qid": "Q946924"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q55491"
+     ],
+     "name": "세인트 제임스 파크",
+     "qid": "Q1567095"
+    },
+    {
+     "classes": [
+      "Q55488",
+      "Q55490"
+     ],
+     "name": "블랙프리어스역",
+     "qid": "Q284195"
+    },
+    {
+     "classes": [
+      "Q15720793"
+     ],
+     "name": "베이커가 221B",
+     "qid": "Q1992196"
+    },
+    {
+     "classes": [
+      "Q19609158"
+     ],
+     "name": "케이블 스트리트 전투",
+     "qid": "Q1678340"
+    },
+    {
+     "classes": [
+      "Q1311958"
+     ],
+     "name": "템스 터널",
+     "qid": "Q1190691"
+    },
+    {
+     "classes": [
+      "Q132821"
+     ],
+     "name": "화이트채플 연쇄살인사건",
+     "qid": "Q1062923"
+    },
+    {
+     "classes": [
+      "Q14562709",
+      "Q22808403"
+     ],
+     "name": "에지웨어로드역",
+     "qid": "Q1347608"
+    },
+    {
+     "classes": [
+      "Q11812394"
+     ],
+     "name": "새들러즈 웰즈",
+     "qid": "Q1352949"
+    },
+    {
+     "classes": [
+      "Q62078547",
+      "Q38723",
+      "Q811979",
+      "Q62079009",
+      "Q5341295"
+     ],
+     "name": "런던 위생 열대의학 대학원",
+     "qid": "Q1126189"
+    },
+    {
+     "classes": [
+      "Q3044788",
+      "Q139256889"
+     ],
+     "name": "영국 검찰청",
+     "qid": "Q1141790"
+    },
+    {
+     "classes": [
+      "Q806824"
+     ],
+     "name": "베이커가 강도 사건",
+     "qid": "Q2661033"
+    },
+    {
+     "classes": [
+      "Q2314375",
+      "Q190084"
+     ],
+     "name": "콕 레인 유령",
+     "qid": "Q3052463"
+    },
+    {
+     "classes": [
+      "Q113065939"
+     ],
+     "name": "주영국 미국 대사관",
+     "qid": "Q5369960"
+    },
+    {
+     "classes": [
+      "Q27971968"
+     ],
+     "name": "이즐링턴노스",
+     "qid": "Q1077552"
+    },
+    {
+     "classes": [
+      "Q245260"
+     ],
+     "name": "그레이터런던 도시권",
+     "qid": "Q2447222"
+    },
+    {
+     "classes": [
+      "Q10273077"
+     ],
+     "name": "영국 건축협회 건축학교",
+     "qid": "Q634951"
+    },
+    {
+     "classes": [
+      "Q931092"
+     ],
+     "name": "버너스 거리 사기극",
+     "qid": "Q4894124"
+    },
+    {
+     "classes": [
+      "Q6498663"
+     ],
+     "name": "런던 소방대",
+     "qid": "Q3091309"
+    },
+    {
+     "classes": [
+      "Q27971968"
+     ],
+     "name": "홀번 세인트판크라스",
+     "qid": "Q3337060"
+    },
+    {
+     "classes": [
+      "Q55488",
+      "Q928830",
+      "Q22808403"
+     ],
+     "name": "다운 스트리트역",
+     "qid": "Q450893"
+    },
+    {
+     "classes": [
+      "Q28966115"
+     ],
+     "name": "제3회 G7 정상회담",
+     "qid": "Q684985"
+    },
+    {
+     "classes": [
+      "Q132821"
+     ],
+     "name": "이본 플레처 피살 사건",
+     "qid": "Q107258217"
+    },
+    {
+     "classes": [
+      "Q3917681"
+     ],
+     "name": "주영국 대한민국 대사관 겸 주국제 해사 기구 대한민국 대표부",
+     "qid": "Q16891028"
+    },
+    {
+     "classes": [
+      "Q2192508",
+      "Q2620513"
+     ],
+     "name": "마셔니스호 참사",
+     "qid": "Q6757026"
+    }
+   ],
+   "unknown_denylist_qids": []
+  },
+  {
+   "candidate_count": 31,
+   "candidate_ko_ratio": 1.0,
+   "city_id": "prague",
+   "composition": {
+    "building_landmark": 3,
+    "castle": 2,
+    "monument": 1,
+    "museum": 5,
+    "tower": 3,
+    "worship": 3
+   },
+   "denylisted": [],
+   "dropped": [],
+   "effective_radius_m": 5000,
+   "grade": "full",
+   "grade_window": 17,
+   "ko_label_ratio": 1.0,
+   "mapped_count": 31,
+   "page_count": 31,
+   "reviewed": false,
+   "spot_count": 17,
+   "status": "exported",
+   "unclassified": [
+    {
+     "classes": [
+      "Q20871353",
+      "Q61089180"
+     ],
+     "name": "요세포프",
+     "qid": "Q753292"
+    },
+    {
+     "classes": [
+      "Q124734"
+     ],
+     "name": "프라하 봉기",
+     "qid": "Q666778"
+    },
+    {
+     "classes": [
+      "Q875538",
+      "Q184644",
+      "Q108935461"
+     ],
+     "name": "프라하 공연예술 아카데미",
+     "qid": "Q414221"
+    },
+    {
+     "classes": [
+      "Q42948"
+     ],
+     "name": "레넌 벽",
+     "qid": "Q1630131"
+    },
+    {
+     "classes": [
+      "Q142031"
+     ],
+     "name": "페트르진 케이블카",
+     "qid": "Q1502676"
+    },
+    {
+     "classes": [
+      "Q15978299",
+      "Q20871353",
+      "Q61089180"
+     ],
+     "name": "스미호프",
+     "qid": "Q942842"
+    },
+    {
+     "classes": [
+      "Q162602"
+     ],
+     "name": "캄파섬",
+     "qid": "Q3501077"
+    }
+   ],
+   "unknown_denylist_qids": []
+  }
+ ],
+ "surveyed": 2
+}

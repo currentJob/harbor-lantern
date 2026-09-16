@@ -1,0 +1,785 @@
+{
+ "center": {
+  "lat": 39.9055,
+  "lng": 116.3976
+ },
+ "city_id": "beijing",
+ "country_code": "CN",
+ "country_en": "China",
+ "country_ko": "중국",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 26,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 2,
+   "building_landmark": 6,
+   "castle": 2,
+   "monument": 2,
+   "museum": 1,
+   "park": 1,
+   "worship": 3
+  },
+  "denylisted_count": 0,
+  "described_count": 15,
+  "effective_radius_m": 8000,
+  "excluded_count": 1,
+  "grade_window": 17,
+  "hours_count": 5,
+  "ko_label_count": 17,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 169,
+  "page_count": 169,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 17,
+  "unclassified_count": 8,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 12곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 8건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Beijing",
+ "name_ko": "베이징",
+ "name_local": "北京",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 169,
+  "page_count": 169,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 20
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "castle",
+   "description": "자금성(중국어: 紫禁城, 병음: Zǐjìnchéng 쯔진청[*])은 베이징의 중심에 있는 명과 청 왕조의 궁궐이다. 자금성의 규모는 궁궐로는 세계 최대의 규모이다. 현재는 황실이 사라져서 중국어권에서는 주로 고궁(중국어 간체자: 故宫, 정체자: 故宮, 병음: Gùgōng 구공[*])이라고도 불리며, 1925년 10월, 고궁 박물원(중국어 간체자: 故宫博物院, 정체자: 故宮博物院, 병음: Gùgōng Bówùyùan)으로 용도가 변경되어 일반에게 공개되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "자금성",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EA%B8%88%EC%84%B1"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/9511883"
+   },
+   "hours_text": "Mo-Su 08:30-17:00; Oct 16-Apr 15 08:30-16:30",
+   "id": "wd:Q80290",
+   "importance": {
+    "sitelinks": 104
+   },
+   "lat": 39.915833,
+   "lng": 116.390833,
+   "name": "자금성",
+   "name_original": "故宫",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/9511883",
+     "text": "영업시간 Mo-Su 08:30-17:00; Oct 16-Apr 15 08:30-16:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 125.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q1497364",
+    "Q33506",
+    "Q6838244"
+   ],
+   "wikidata_id": "Q80290"
+  },
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "attraction",
+   "description": "톈안먼 광장(천안문 광장, 중국어 간체자: 天安门广场, 정체자: 天安門廣場, 병음: Tiān'ānmén Guǎngchǎng)은 베이징의 자금성 톈안먼 앞의 광장이다. 톈안먼 광장에는 인민영웅기념비, 인민대회당, 중국국가박물관, 모주석기념당 등이 자리를 잡고 있다. 마오쩌둥이 1949년 10월 1일에, 바로 이 곳에서 중화인민공화국의 수립을 선포하였고, 지금까지도 이를 기리는 기념식이 이어져 오고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "톈안먼 광장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%86%88%EC%95%88%EB%A8%BC_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q164055",
+   "importance": {
+    "sitelinks": 78
+   },
+   "lat": 39.904567,
+   "lng": 116.391392,
+   "name": "톈안먼 광장",
+   "name_original": "天安門廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 139.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q164055"
+  },
+  {
+   "area": "Tiantan Subdistrict",
+   "category": "worship",
+   "description": "천단(중국어 정체자: 天壇, 간체자: 天坛, 병음: Tiāntán)은 중화인민공화국 베이징시 충원구에 있는 사적으로, 명청시대 중국에서 군주가 제천 의식을 행하던 유교 제단이다. 매년 풍년을 기원하는 것은 황제의 연례행사였고, 비가 오지 않으면 기우제를 지냈다. 고대 규모로는 가장 큰 제단 규모로 만들어졌으며, 대지면적은 약 273만 m2로 황궁인 자금성의 4배이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "천단",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B2%9C%EB%8B%A8"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/24824550"
+   },
+   "hours_text": "opening_hours=Apr 1-Oct 31 06:00-21:00; Nov 1-Mar 31 06:30-21:00",
+   "id": "wd:Q125445",
+   "importance": {
+    "sitelinks": 68
+   },
+   "lat": 39.8822,
+   "lng": 116.4066,
+   "name": "천단",
+   "name_original": "天壇",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/24824550",
+     "text": "영업시간 opening_hours=Apr 1-Oct 31 06:00-21:00; Nov 1-Mar 31 06:30-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 12.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q44539",
+    "Q6838244"
+   ],
+   "wikidata_id": "Q125445"
+  },
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "attraction",
+   "description": "중국국가박물관(중국어 간체자: 中国国家博物馆, 병음: Zhōngguó Guójiā Bówùguăn)은 중화인민공화국 베이징시 천안문 광장 동쪽에 위치하는 종합박물관이다. 2003년 이전에는 동일한 건물에 〈중국 역사박물관〉(中国歴史博物館)과 〈중국 혁명박물관〉(中国革命博物)이라는 성격이 다른 두 박물관이 설치되어 있었지만, 2003년에 합병해 〈국가박물관〉(国家博物館)으로 개편되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국국가박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EA%B5%AD%EA%B0%80%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1074318",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 39.903611,
+   "lng": 116.395,
+   "name": "중국국가박물관",
+   "name_original": "中国国家博物馆",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 39.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q17431399",
+    "Q98675100"
+   ],
+   "wikidata_id": "Q1074318"
+  },
+  {
+   "area": "베이징시",
+   "category": "building_landmark",
+   "description": "인민대회당(중국어 간체자: 人民大会堂, 정체자: 人民大會堂, 병음: Rénmín Dàhuìtáng)은 중화인민공화국의 수도 베이징 천안문 광장 서쪽에 위치한 건축물로, 중국의 국회에 해당하는 전국인민대표대회가 개최되는 장소이다. 전국인민대표대회는 중국인민정치협상회의와 함께 매년 3월에 개회한다. 인민대회당에서는 1982년 이래 중국공산당 전국대표대회도 매 5년마다 개최되며, 중국공산당 중앙위원회도 이 곳에서 대략 1년에 한 번씩 회담을 가진다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "인민대회당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EB%AF%BC%EB%8C%80%ED%9A%8C%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q72891",
+   "importance": {
+    "sitelinks": 44
+   },
+   "lat": 39.903333,
+   "lng": 116.3875,
+   "name": "인민대회당",
+   "name_original": "人民大会堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1220959"
+   ],
+   "wikidata_id": "Q72891"
+  },
+  {
+   "area": "Xichang'anjie Subdistrict",
+   "category": "building_landmark",
+   "description": "중난하이(중국어: 中南海, 병음: Zhōngnánhăi)는 베이징 시의 중심부인 시청 구에 있는 옛 황실 정원으로, 자금성과 바로 근처에 있다. 현재는 중국공산당의 최고 집무실이자 중화인민공화국 국무원 등이 입주하여 있다. 중난하이는 중국공산당 중앙위원회 총서기, 국가주석과 총리의 집무실이 있는, 중국에서 가장 경호가 삼엄한 공간들 중 하나이며, 워낙 유명하여 '중난하이'라는 단어 자체가 중국 정부 수반들을 가리키는 고유명사화되기도 했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중난하이",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EB%82%9C%ED%95%98%EC%9D%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q197889",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 39.911389,
+   "lng": 116.380556,
+   "name": "중난하이",
+   "name_original": "中南海",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q47692",
+    "Q481289",
+    "Q2114972",
+    "Q7540126"
+   ],
+   "wikidata_id": "Q197889"
+  },
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "monument",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/8848142"
+   },
+   "hours_text": "Tu-Su 07:00-11:00",
+   "id": "wd:Q1154819",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 39.901025,
+   "lng": 116.391581,
+   "name": "마오쩌둥 기념당",
+   "name_original": "毛主席纪念堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/8848142",
+     "text": "영업시간 Tu-Su 07:00-11:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 7.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q162875",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q1154819"
+  },
+  {
+   "area": "Xichang'anjie Subdistrict",
+   "category": "building_landmark",
+   "description": "국가대극원(중국어: 国家大剧院)은 중화인민공화국 베이징시 시청구에 있는 세계 최대 규모의 공연장이다. 오페라하우스, 콘서트홀, 드라마센터로 구성되어 있으며, 총 5473석 규모로 이루어져있다. 프랑스 건축사인 폴 앙드뢰(Paul Andreu)의 설계로 2001년 12월 13일 공사를 시작하여 2007년 9월 완공되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국가대극원",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EA%B0%80%EB%8C%80%EA%B7%B9%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q860188",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 39.90333,
+   "lng": 116.38361,
+   "name": "국가대극원",
+   "name_original": "国家大剧院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24354",
+    "Q153562",
+    "Q3469910"
+   ],
+   "wikidata_id": "Q860188"
+  },
+  {
+   "area": "차오양구",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q627250",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 39.929528,
+   "lng": 116.441139,
+   "name": "베이징 공인체육장",
+   "name_original": "工人體育場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q627250"
+  },
+  {
+   "area": "Shichahai Subdistrict",
+   "category": "park",
+   "description": "베이하이 공원(북해공원, 중국어: 北海公园, 병음: Běihǎi Gōngyuán)은 베이징 자금성 북서쪽에 위치한 황실의 정원이다. 10세기 무렵 지어졌는데, 전형적인 중국식 정원을 대표한다. 1911년에 청나라가 망하기 전까지는, 이 지역은 자금성의 일부였다; 1925년부터 일반인에게 공개되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베이하이 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%ED%95%98%EC%9D%B4_%EA%B3%B5%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/366464114"
+   },
+   "hours_text": "Apr-Oct 06:30-21:00; Nov-Mar 06:30-20:00",
+   "id": "wd:Q133650",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 39.924444,
+   "lng": 116.383056,
+   "name": "베이하이 공원",
+   "name_original": "北海公园",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/366464114",
+     "text": "영업시간 Apr-Oct 06:30-21:00; Nov-Mar 06:30-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q47692",
+    "Q22746"
+   ],
+   "wikidata_id": "Q133650"
+  },
+  {
+   "area": "둥청구",
+   "category": "monument",
+   "description": "인민영웅기념비(人民英雄紀念碑)는 중화인민공화국 베이징 시의 천안문 광장에 있는 중국 공산주의 혁명 인민 영웅의 현창비로, 1949년 마오쩌둥의 제안으로, 1952년에 공사가 시작되어 1958년에 완공되었다. 앞쪽(북쪽 방향)에는 마오쩌둥이 1955년에 쓴 금석문(옛날 중국에서는 영웅들의 피를 빨간 문자로 나타냈다)인 \"영원히 잠들어도 불후하리라\"(\"人民英雄永垂不朽\")가 새겨져 있으며 뒷쪽(남쪽 남향)에는 저우언라이가 쓴 현창문이 새겨져 있다. 기념비의 남쪽에는 마오쩌둥 기념당이 자리하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "인민영웅기념비",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EB%AF%BC%EC%98%81%EC%9B%85%EA%B8%B0%EB%85%90%EB%B9%84"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q536955",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 39.903056,
+   "lng": 116.391667,
+   "name": "인민영웅기념비",
+   "name_original": "人民英雄纪念碑",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q893745",
+    "Q170980"
+   ],
+   "wikidata_id": "Q536955"
+  },
+  {
+   "area": "둥청구",
+   "category": "castle",
+   "description": "옹화궁(雍(Yōng)和(hé)宮(gōng)/융허궁)은 베이징시에 있는 라마교 사원으로 세계의 라마교 사원 중에서 가장 중요한 사원 중 하나이다. 건축 양식은 중국의 양식과 티베트의 방식을 혼합한 건축물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "옹화궁",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%B9%ED%99%94%EA%B6%81"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/24825312"
+   },
+   "hours_text": "Mo-Su 09:00-16:00",
+   "id": "wd:Q692723",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 39.947086,
+   "lng": 116.410917,
+   "name": "옹화궁",
+   "name_original": "雍和宫",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/24825312",
+     "text": "영업시간 Mo-Su 09:00-16:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 22.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54074585",
+    "Q16560"
+   ],
+   "wikidata_id": "Q692723"
+  },
+  {
+   "area": "둥청구",
+   "category": "worship",
+   "description": "왕푸징 성당은 중화인민공화국 베이징시 둥청구 왕푸징에 있는 가톨릭 성당이다. 건축은 1655년에 완료되었다. 개조 및 재건축으로 인해 현재의 구조는 1904년에 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "왕푸징 천주당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%99%95%ED%91%B8%EC%A7%95_%EC%B2%9C%EC%A3%BC%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1064185",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 39.915833,
+   "lng": 116.405833,
+   "name": "왕푸징 천주당",
+   "name_original": "王府井天主堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2977"
+   ],
+   "wikidata_id": "Q1064185"
+  },
+  {
+   "area": "베이징시",
+   "category": "building_landmark",
+   "description": "중국사회과학원(중국어 간체자: 中国社会科学院, 정체자: 中國社會科學院, 병음: Zhōngguó Shèhuì Kēxuéyuàn, 영어: Chinese Academy of Social Sciences, CASS)은 중화인민공화국 국무원 직속의 국립 연국기관이다. 1977년 설립되었으며, 경제, 법학, 철학, 고고학, 역사, 문학, 언어, 민족, 종교등 여러 다양한 과제에 대하여 연구한다. 2008년 12월 26일, 카네기 국제평화재단이 출판하는 포린 폴리시는 전 세계 싱크탱크 순위를 발표했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국사회과학원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1073828",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 39.909695,
+   "lng": 116.43508,
+   "name": "중국사회과학원",
+   "name_original": "中国社会科学院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q414147",
+    "Q45400320",
+    "Q155271",
+    "Q10925959"
+   ],
+   "wikidata_id": "Q1073828"
+  },
+  {
+   "area": "시청구",
+   "category": "worship",
+   "description": "쉬안우먼 성당(중국어: 宣武门天主堂, 병음: Xuānwǔmén Tiānzhǔtáng)은 중화인민공화국 베이징시 시청구에 있는 가톨릭 성당이다. 1605년에 세워졌으며 베이징에서 가장 오래된 가톨릭 교회으로, 현재 바로크 양식의 건물은 1904년에 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쉬안우먼 천주당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%89%AC%EC%95%88%EC%9A%B0%EB%A8%BC_%EC%B2%9C%EC%A3%BC%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1188864",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 39.899464,
+   "lng": 116.369292,
+   "name": "쉬안우먼 천주당",
+   "name_original": "宣武门天主堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 510.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2977"
+   ],
+   "wikidata_id": "Q1188864"
+  },
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "building_landmark",
+   "description": "태묘(太廟)는 명나라와 청나라 때 황제와 황후의 위패를 모신 종묘 제도 상의 황실 유교사당으로 북경 자금성 밖에 있다. 1420년에 영락제의 재위 시절 처음으로 지어졌으며, 1544년 가정제 때 개건되었고, 청나라 때까지 유지되었다. 태묘는 조선의 종묘와 같은 역할을 수행하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "태묘",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%9C%EB%AC%98"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1347866",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 39.91,
+   "lng": 116.393611,
+   "name": "태묘",
+   "name_original": "太庙",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 7.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q10825742",
+    "Q10948212"
+   ],
+   "wikidata_id": "Q1347866"
+  },
+  {
+   "area": "Donghuamen Subdistrict",
+   "category": "museum",
+   "description": "고궁박물원(중국어 간체자: 故宫博物院, 병음: Gùgōng Bówùyùan)은 중화인민공화국 베이징시의 자금성내에 위치한 국립박물관이다. 박물관은 명나라와 청나라 시기 궁궐의 소장품과 이후 중화인민공화국이 구입하거나 수집한 여러 새로운 유물들을 소장 및 전시하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "고궁박물원",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B6%81%EB%B0%95%EB%AC%BC%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2047427",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 39.915556,
+   "lng": 116.390833,
+   "name": "고궁박물원",
+   "name_original": "故宫博物院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q17431399",
+    "Q1200957",
+    "Q98675100",
+    "Q1497375"
+   ],
+   "wikidata_id": "Q2047427"
+  }
+ ]
+}

@@ -1,0 +1,499 @@
+{
+ "center": {
+  "lat": 22.1936,
+  "lng": 113.54
+ },
+ "city_id": "macau",
+ "country_code": "MO",
+ "country_en": "Macau",
+ "country_ko": "마카오",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 16,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 1,
+   "bridge": 3,
+   "building_landmark": 2,
+   "tower": 1,
+   "worship": 4
+  },
+  "denylisted_count": 0,
+  "described_count": 9,
+  "effective_radius_m": 5000,
+  "excluded_count": 2,
+  "grade_window": 11,
+  "hours_count": 1,
+  "ko_label_count": 11,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 18,
+  "page_count": 18,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 11,
+  "unclassified_count": 3,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 3건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Macau",
+ "name_ko": "마카오",
+ "name_local": "澳門",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 18,
+  "page_count": 18,
+  "radius_clamped": false,
+  "radius_m": 5000,
+  "registry_radius_m": 5000,
+  "sitelink_min": 8
+ },
+ "radius_m": 5000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "마카오",
+   "category": "worship",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1551411",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 22.197468,
+   "lng": 113.54086,
+   "name": "세인트폴 성당 유적",
+   "name_original": "大三巴牌坊",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 31.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q210272"
+   ],
+   "wikidata_id": "Q1551411"
+  },
+  {
+   "area": "마카오",
+   "category": "tower",
+   "description": "마카오 타워 컨벤션 & 엔터테인먼트 센터(중국어: 澳門旅遊塔會展娛樂中心, 포르투갈어: Centro de Convenções e Entretenimento da Torre de Macau, 영어: Macau Tower Convention & Entertainment Center) 또는 간단히 마카오 타워(중국어: 澳門觀光塔 또는 중국어: 觀光塔, 포르투갈어: Torre de Macau, 포르투갈어: Macau Tower)는 마카오에 위치한 타워이다. 지상에서 가장 윗부분까지 총 높이는 338m이다. 타워 내에는 전망대, 레스토랑, 영화관, 쇼핑몰 등이 설치되어 있으며, 외연을 둘러 볼 수 있는 '스카이워크 X'라는 투어도 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마카오 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/7914304898"
+   },
+   "hours_text": "Mo-Fr 10:00-21:00",
+   "id": "wd:Q1568304",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 22.179722,
+   "lng": 113.536667,
+   "name": "마카오 타워",
+   "name_original": "澳門旅遊塔會展娛樂中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/7914304898",
+     "text": "영업시간 Mo-Fr 10:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1440300"
+   ],
+   "wikidata_id": "Q1568304"
+  },
+  {
+   "area": "마카오",
+   "category": "worship",
+   "description": "아마 사원(A-Ma Temple)은 마카오에서 가장 오래된 중국식 절이다. 약 600여년 전에 세워진 것으로 추정된다. 1554∼1557년 사이에 포르투갈인들이 마카오에 정착할 즈음에 유럽인들이 이 지역의 이름을 아마 여신의 이름을 따서 ‘아마가오’ 또는 ‘아마베이’로 바꾸어 불렀다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아마 사원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%A7%88_%EC%82%AC%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2149114",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 22.186111,
+   "lng": 113.531139,
+   "name": "아마 사원",
+   "name_original": "媽閣廟",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q44539"
+   ],
+   "wikidata_id": "Q2149114"
+  },
+  {
+   "area": "마카오",
+   "category": "bridge",
+   "description": "카르발류 총독 대교(중국어 간체자: 嘉乐庇总督大桥, 정체자: 嘉樂庇總督大橋, 병음: Jiālèbì zǒngdū dàqiáo, 포르투갈어: Ponte Governador Nobre de Carvalho) 또는 마카우-타이파 대교(중국어 간체자: 澳氹大桥, 병음: 澳氹大橋)는 마카오반도와 타이파섬을 이은 첫번째 다리이다. 마카오 현지에서는 \"구대교\"(舊大橋)라고도 부른다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카르발류 총독 대교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%B4%EB%B0%9C%EB%A5%98_%EC%B4%9D%EB%8F%85_%EB%8C%80%EA%B5%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q977841",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 22.176389,
+   "lng": 113.546111,
+   "name": "카르발류 총독 대교",
+   "name_original": "嘉樂庇總督大橋",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q537127",
+    "Q210272"
+   ],
+   "wikidata_id": "Q977841"
+  },
+  {
+   "area": "마카오",
+   "category": "worship",
+   "description": "성 도밍고 성당(St. Dominic's Church)은 마카오의 가장 아름다운 바로크 양식 성당이다. 원래는 나무로 지어졌으나, 후에 흙으로 재건되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성 도밍고 성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%8F%84%EB%B0%8D%EA%B3%A0_%EC%84%B1%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q4130614",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 22.194681,
+   "lng": 113.540412,
+   "name": "성 도밍고 성당",
+   "name_original": "玫瑰聖母堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q210272"
+   ],
+   "wikidata_id": "Q4130614"
+  },
+  {
+   "area": "마카오",
+   "category": "bridge",
+   "description": "마카오 우의대교(중국어: 澳門友誼大橋) 또는 아미자드 대교(포르투갈어: Ponte de Amizade)는 마카오에 있는 다리이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마카오 우의대교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%EC%9A%B0%EC%9D%98%EB%8C%80%EA%B5%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1318003",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 22.189317,
+   "lng": 113.563194,
+   "name": "마카오 우의대교",
+   "name_original": "澳門友誼大橋",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q537127"
+   ],
+   "wikidata_id": "Q1318003"
+  },
+  {
+   "area": "마카오",
+   "category": "building_landmark",
+   "description": "윈 마카오(영어: Wynn Macau, 중국어: 永利澳門渡假村)는 중국 마카오에 있는 윈 리조트가 운영하는 카지노 호텔이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "윈 마카오",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9C%88_%EB%A7%88%EC%B9%B4%EC%98%A4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1414111",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 22.188,
+   "lng": 113.54724,
+   "name": "윈 마카오",
+   "name_original": "永利澳門",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 145.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q875157"
+   ],
+   "wikidata_id": "Q1414111"
+  },
+  {
+   "area": "마카오",
+   "category": "bridge",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1137940",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.172222,
+   "lng": 113.536111,
+   "name": "사이반 대교",
+   "name_original": "西灣大橋",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q158555",
+    "Q1243306"
+   ],
+   "wikidata_id": "Q1137940"
+  },
+  {
+   "area": "마카오",
+   "category": "building_landmark",
+   "description": "민정총서대루(중국어: 民政總署大樓, 포르투갈어: Edifício do Leal Senado, 영어: Leal Senado Building)는 마카오의 관공서 민정총서의 청사이다. 민정총서대루 앞 광장인 세나두 광장은 이 빌딩의 포르투갈어 이름 \"레알 세나두\"에서 유래한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "민정총서대루",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%BC%EC%A0%95%EC%B4%9D%EC%84%9C%EB%8C%80%EB%A3%A8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3181816",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.193333,
+   "lng": 113.539444,
+   "name": "민정총서대루",
+   "name_original": "民政總署大樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q294422",
+    "Q210272"
+   ],
+   "wikidata_id": "Q3181816"
+  },
+  {
+   "area": "마카오",
+   "category": "attraction",
+   "description": "세나두 광장(중국어: 議事亭前地, 포르투갈어: Largo do Senado)은 마카오의 광장이다. 유네스코 마카오 역사지구 세계유산의 일부이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "세나두 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EB%82%98%EB%91%90_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q837935",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.193583,
+   "lng": 113.539667,
+   "name": "세나두 광장",
+   "name_original": "議事亭前地",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q837935"
+  },
+  {
+   "area": "마카오",
+   "category": "worship",
+   "description": "관음당(觀音堂)은 600여년의 역사를 지닌 대표적인 중국식 불교사원이다. 원나라 때 창건되었다. 마카오 최대의 관음불을 모시고 있고, 본당의 벽면에는 중국 18현인의 상이 나란히 서 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "관음당",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EC%9D%8C%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q281550",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 22.204444,
+   "lng": 113.550278,
+   "name": "관음당",
+   "name_original": "普濟禪院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q44539"
+   ],
+   "wikidata_id": "Q281550"
+  }
+ ]
+}

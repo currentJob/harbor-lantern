@@ -2,13 +2,16 @@
 
     uv run python tools/bake_city_guides.py --as-of 2026-09-15 [--city paris] [--review] [--dry-run]
 
-**이것은 런타임 코드가 아니다.** 도시 하나를 굽는 데 9~13요청 · 16초가 걸린다(파리 실측
-2026-09-16). 요청을 받은 자리에서 할 수 있는 일이 아니므로 조사는 여기서 하고, 런타임은
-`seed/city-guides/` 의 구운 파일만 읽는다(NFR-017).
+**이것은 런타임 코드가 아니다.** 도시 하나를 굽는 데 수십 요청과 수십 초가 걸린다. 요청을
+받은 자리에서 할 수 있는 일이 아니므로 조사는 여기서 하고, 런타임은 `seed/city-guides/` 의
+구운 파일만 읽는다(NFR-017).
 
-**수확 사슬에 SPARQL 이 없다**(§16.4 v1.5). 1단계는 한국어 위키백과 `geosearch` 이고,
-순위는 3단계 `wbgetentities` 의 `sitelinks` 가 매긴다 — WDQS 를 걷어낸 근거는
-`bakery/geosearch.py` 의 모듈 설명과 `docs/_recon.md` "실측 2" 에 있다.
+**수확 사슬에 SPARQL 이 없다**(§16.4 v1.5). 1단계는 한국어·영어 위키백과 `geosearch` 의
+합집합이고(v1.6), 순위는 3단계 `wbgetentities` 의 `sitelinks` 가 매긴다 — WDQS 를 걷어낸
+근거와 영어를 합친 근거는 둘 다 `bakery/geosearch.py` 의 모듈 설명에 있다.
+
+**영어는 발견 경로일 뿐이다.** 싣는 것은 `kowiki` 문서가 있는 항목뿐이고 제목·설명은 언제나
+한국어 문서에서 온다 — "한국어 100%" 불변식은 1단계가 아니라 3단계가 지킨다.
 
 **판단은 전부 `harbor_lantern.domain` 이 한다.** 이 파일에 있는 것은 순서·I/O·보고서다.
 분류(`guide_taxonomy.classify`) · 중복 접기(`guide_harvest.fold_rows`) · 연결 검증
@@ -59,6 +62,10 @@ CITY_ID_RE = re.compile(r"^[a-z0-9-]+$")
 
 # 저녁 슬롯 후보가 되는 분류(§16.14). `category` 에서 유도하며 일몰 계산은 하지 않는다.
 EVENING_ROOTS = frozenset({"viewpoint", "tower", "observation"})
+
+# 한국어 문서가 없어 버린 항목을 보고서에 **몇 개까지** 이름으로 남길지. 총수는 언제나
+# `harvest.no_korean_count` 로 센다 — 자르는 것은 목록이지 숫자가 아니다.
+NO_KOREAN_REPORT_MAX = 25
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -169,35 +176,51 @@ def harvest_city(
 
     dropped_extra: list[dict[str, str]] = []
 
-    # 1단계 — ko.wikipedia geosearch (도시당 1요청). **거리순이라 랭킹이 아니다.**
+    # 1단계 — ko + en geosearch 의 **합집합** (도시당 2요청). **거리순이라 랭킹이 아니다.**
     # 여기서는 자르지 않는다 — 순위는 3단계 `sitelinks` 가 매긴다(§16.4).
-    pages = geosearch.fetch_pages(client, cache, city, as_of)
-    if not pages:
-        return {"city_id": city_id, "status": "no_candidates", "reason": "1단계 geosearch 결과가 0건이다"}
+    # 영어를 함께 긁는 이유는 `bakery/geosearch.py` 모듈 설명에 있다: 한국어 문서가 있어도
+    # **그 문서에 좌표가 없으면** ko geosearch 가 돌려주지 않는다(프라하에서 카를교가 그랬다).
+    pages: dict[str, list[dict[str, Any]]] = {
+        lang: geosearch.fetch_pages(client, cache, city, as_of, lang) for lang in geosearch.LANGS
+    }
+    page_total = sum(len(rows) for rows in pages.values())
+    if not page_total:
+        return {
+            "city_id": city_id,
+            "status": "no_candidates",
+            "reason": "1단계 geosearch 결과가 ko·en 모두 0건이다",
+        }
 
-    # 2단계 — pageid → Q-id (50개씩)
-    page_qids = geosearch.fetch_wikibase_items(client, cache, city_id, [page["pageid"] for page in pages], as_of)
-
-    # 위키데이터 항목이 없는 문서는 3단계로 갈 수 없다. **조용히 빠지지 않는다** —
-    # 파리 실측은 173/173 이었지만, 0 이 아닐 때 그 사실이 보여야 한다.
-    qid_pages: dict[str, dict[str, Any]] = {}
-    for page in pages:
-        qid = page_qids.get(page["pageid"])
-        if not qid:
-            dropped_extra.append(
-                {"qid": "", "reason": "no_wikidata_item", "detail": f"{page['title']} (pageid {page['pageid']})"}
-            )
-            continue
-        current = qid_pages.get(qid)
-        if current is None or (page["dist"], page["pageid"]) < (current["dist"], current["pageid"]):
-            # 한 항목에 두 문서가 걸리면 중심에 가까운 쪽을 쓴다(동률이면 pageid) — 결정론.
-            qid_pages[qid] = page
-    qids = sorted(qid_pages)
+    # 2단계 — pageid → Q-id (50개씩). **위키별로 자기 위키에 묻는다** — pageid 공간이 따로라
+    # en 의 번호를 ko 에 물으면 오류가 아니라 다른 문서가 돌아온다.
+    #
+    # 합집합은 **Q-id 로** 짓는다. 같은 장소가 두 위키에 다른 제목으로 있어도 Q-id 는 하나다.
+    mappings = {
+        lang: geosearch.fetch_wikibase_items(
+            client, cache, city_id, [page["pageid"] for page in pages[lang]], as_of, lang
+        )
+        for lang in geosearch.LANGS
+    }
+    # 합치는 것은 순수 함수가 한다 — 순서(Q-id 오름차순)와 동률 규칙이 거기 적혀 있고,
+    # 고정 입력으로 검증된다(AC-081 은 베이커 자신의 실행을 금한다).
+    union = geosearch.union_by_qid(pages, mappings)
+    qid_pages = union.by_qid
+    mapped_rows = union.mapped_rows
+    for lang, page in union.unmapped:
+        # 위키데이터 항목이 없는 문서는 3단계로 갈 수 없다. **조용히 빠지지 않는다.**
+        dropped_extra.append(
+            {
+                "qid": "",
+                "reason": "no_wikidata_item",
+                "detail": f"[{lang}] {page['title']} (pageid {page['pageid']})",
+            }
+        )
+    qids = list(qid_pages)
     if not qids:
         return {
             "city_id": city_id,
             "status": "no_candidates",
-            "reason": f"geosearch 문서 {len(pages)}건 중 위키데이터 항목에 매핑된 것이 0건이다",
+            "reason": f"geosearch 문서 {page_total}건 중 위키데이터 항목에 매핑된 것이 0건이다",
         }
 
     # 3단계 — sitelinks(랭킹) · P31(분류) · P625(좌표 대조) · 라벨. 50개씩 한 번에 온다.
@@ -205,6 +228,10 @@ def harvest_city(
 
     # 4단계 — 네트워크 없음. 여기부터는 전부 도메인 순수 함수의 입력이다.
     rows: list[dict[str, Any]] = []
+    coord_sources: dict[str, dict[tuple[float, float], str]] = {}
+    ko_titles: dict[str, str] = {}
+    no_korean_count = 0
+    no_korean_rows: list[tuple[int, str, str]] = []  # (sitelinks, qid, en 제목)
     for qid in qids:
         entity = entities.get(qid)
         if entity is None:
@@ -212,13 +239,56 @@ def harvest_city(
                 {"qid": qid, "reason": "entity_missing", "detail": f"위키데이터가 항목을 돌려주지 않았다 ({qid})"}
             )
             continue
+        # **한국어 문서가 없으면 싣지 않는다.** en 은 발견 경로일 뿐이고, 제목도 설명도
+        # 한국어 문서에서 온다 — 한국어 문서가 없으면 영어 이름 + 빈 설명이 된다.
+        # ko geosearch 로 온 항목은 그 자체가 한국어 문서이므로 sitelink 가 낡아 비어 있어도
+        # 떨어뜨리지 않는다(예전 동작 그대로). en 으로만 온 항목은 `kowiki` 가 판정한다.
+        ko_title = geosearch.korean_title(qid_pages[qid], wikidata.sitelink_title(entity, "kowiki"))
+        if not ko_title:
+            no_korean_count += 1
+            en_title = str((qid_pages[qid].get("en") or {}).get("title", ""))
+            no_korean_rows.append((wikidata.sitelink_count(entity), qid, en_title))
+            continue
+        ko_titles[qid] = ko_title
+
         sitelinks = wikidata.sitelink_count(entity)
-        coords = wikidata.claim_coords(entity)
-        if not coords:
+        # 좌표는 출처가 셋이다: `P625` · ko 문서 좌표 · en 문서 좌표. **어느 것을 썼는지
+        # 기록한다** — 연결 검증이 자기 자신과 대조하는 것을 막는 근거가 이 값이다.
+        sources: dict[tuple[float, float], str] = {}
+        for lat, lng in wikidata.claim_coords(entity):
+            sources.setdefault((lat, lng), "wikidata:P625")
+        if not sources:
             # `P625` 가 없는 항목은 문서 좌표(geosearch)를 쓴다. 문서 좌표는 반경 안이
             # 보장돼 있으므로 이것은 완화가 아니라 **같은 사실의 다른 출처**다.
-            coords = [(qid_pages[qid]["lat"], qid_pages[qid]["lng"])]
-        rows.extend({"qid": qid, "lat": lat, "lng": lng, "sitelinks": sitelinks} for lat, lng in coords)
+            # ko 를 먼저 본다 — 같은 장소라도 언어판마다 대표점이 조금씩 다르고, 우리가
+            # 싣는 문서는 한국어 쪽이다.
+            for lang in geosearch.LANGS:
+                page = qid_pages[qid].get(lang)
+                if page:
+                    sources[(page["lat"], page["lng"])] = f"geosearch:{lang}"
+                    break
+        coord_sources[qid] = sources
+        rows.extend({"qid": qid, "lat": lat, "lng": lng, "sitelinks": sitelinks} for lat, lng in sources)
+
+    # 한국어 문서가 없어 버린 것은 **수가 많다**(프라하 410건 · 실측 2026-09-16). 전부
+    # 적으면 보고서가 그것만으로 차서 아무도 읽지 않는다 — 총수는 `no_korean_count` 로 세고,
+    # 목록에는 **언어판이 많은 순으로 앞쪽만** 남긴다. 다음 사람이 "그렇게 유명한데 한국어
+    # 문서가 없나"를 확인할 수 있는 만큼이면 된다. 순서는 결정론적이다.
+    for sitelinks, qid, en_title in sorted(no_korean_rows, key=lambda row: (-row[0], row[1]))[:NO_KOREAN_REPORT_MAX]:
+        dropped_extra.append(
+            {
+                "qid": qid,
+                "reason": "no_korean_article",
+                "detail": f"{en_title or qid} — kowiki 문서가 없다 (en 으로만 발견 · sitelinks {sitelinks})",
+            }
+        )
+
+    if not ko_titles:
+        return {
+            "city_id": city_id,
+            "status": "no_candidates",
+            "reason": f"위키데이터 항목 {len(qids)}건 중 한국어 문서가 있는 것이 0건이다",
+        }
 
     fold = fold_rows(rows, center, radius_m)
 
@@ -299,17 +369,24 @@ def harvest_city(
                 "evening_candidate": root in EVENING_ROOTS,
                 "tips": [],
                 "recommendations": [],
+                # 이 좌표가 어디서 왔는지. `wikidata:P625` · `geosearch:ko` · `geosearch:en`.
+                # 기록하지 않으면 연결 검증이 **자기 자신과 대조**해 놓고 통과로 남는다.
+                "coord_source": coord_sources.get(candidate.qid, {}).get(
+                    (candidate.coord.lat, candidate.coord.lng), ""
+                ),
+                # 어느 경로로 발견됐는지: ko · en · both. 합집합이 값을 하는지 세는 근거다.
+                "discovery": geosearch.discovery_of(qid_pages[candidate.qid]),
                 "_area_qid": _first(wikidata.claim_qids(entity, "P131")),
-                # 한국어 문서 제목은 **1단계가 이미 들고 있다** — 우리가 그 문서에서
-                # 왔기 때문이다. 위키데이터 sitelink 가 비어 있어도(항목 쪽이 낡은 경우)
-                # 설명 단계가 빈손이 되지 않는다.
-                "_ko_title": qid_pages[candidate.qid]["title"]
-                or wikidata.sitelink_title(entity, "kowiki"),
+                # 한국어 문서 제목. ko 로 발견한 항목은 **1단계가 이미 들고 있고**(우리가 그
+                # 문서에서 왔다), en 으로만 발견한 항목은 `kowiki` sitelink 가 준다.
+                "_ko_title": ko_titles[candidate.qid],
                 "_en_label": wikidata.sitelink_title(entity, "enwiki"),
                 "_entity_coord": wikidata.claim_coord(entity),
-                # 문서 좌표(geosearch). `P625` 와 **둘 다** 연결 검증에 쓴다 — 출처가
-                # 둘이면 겨울 궁전 사건(다른 항목의 설명이 붙는 것)의 방어선이 두 겹이 된다.
-                "_page_coord": (qid_pages[candidate.qid]["lat"], qid_pages[candidate.qid]["lng"]),
+                # 문서 좌표(geosearch) 둘. `P625` 까지 **셋 다** 연결 검증에 쓴다 — 출처가
+                # 셋이면 겨울 궁전 사건(다른 항목의 설명이 붙는 것)의 방어선이 세 겹이다.
+                "_page_coords": {
+                    lang: (page["lat"], page["lng"]) for lang, page in sorted(qid_pages[candidate.qid].items())
+                },
             }
         )
 
@@ -329,6 +406,11 @@ def harvest_city(
 
     selected = [dict(spot) for spot in select_spots(kept, EXPORT_MAX)]
 
+    # 합집합이 값을 하는지 **세어서** 남긴다. 다음 사람이 요청을 2.5배 쓸 값어치가 있었는지
+    # 판단할 근거가 이 두 줄이다 — 수록된 스팟 기준과 한국어 문서가 있는 후보 풀 기준.
+    discovery = _discovery_counts(spot.get("discovery", "") for spot in selected)
+    discovery_pool = _discovery_counts(geosearch.discovery_of(qid_pages[qid]) for qid in ko_titles)
+
     if review:
         return {
             "city_id": city_id,
@@ -338,6 +420,9 @@ def harvest_city(
             "excluded_count": excluded_count,
             "unclassified": unclassified,
             "unknown_denylist_qids": unknown_deny,
+            "discovery": discovery,
+            "discovery_pool": discovery_pool,
+            "no_korean_count": no_korean_count,
         }
 
     _fill_areas(client, cache, city_id, selected, as_of)
@@ -380,8 +465,15 @@ def harvest_city(
             key=lambda row: (row["reason"], row["qid"], row["detail"]),
         ),
         "harvest": {
-            "page_count": len(pages),
+            "page_count": page_total,
+            "ko_page_count": len(pages["ko"]),
+            "en_page_count": len(pages["en"]),
             "mapped_count": len(qid_pages),
+            "unmapped_count": page_total - mapped_rows,
+            "korean_count": len(ko_titles),
+            "no_korean_count": no_korean_count,
+            "discovery": discovery,
+            "discovery_pool": discovery_pool,
             "candidate_count": len(candidates),
             "effective_radius_m": effective_radius_m,
             "radius_note": radius_note,
@@ -404,6 +496,16 @@ def harvest_city(
 
 def _first(values: Sequence[str]) -> str:
     return values[0] if values else ""
+
+
+def _discovery_counts(values: Any) -> dict[str, int]:
+    """발견 경로 집계. **키는 항상 셋 다 있다** — 0 이 빠지면 '측정 안 함'과 구분되지 않는다."""
+    counts = {"ko": 0, "en": 0, "both": 0}
+    for value in values:
+        key = str(value)
+        if key in counts:
+            counts[key] += 1
+    return counts
 
 
 def _fill_areas(
@@ -440,10 +542,13 @@ def _fill_descriptions(
         extract = page.extract if page else ""
         coord = page.coord if page else None
         if coord is None:
-            # 문서에 좌표가 없으면 **문서 좌표(geosearch) → 항목 좌표(P625)** 순으로 대조한다.
-            # 이것은 **완화가 아니다** — 셋 중 무엇을 쓰든 스팟 좌표와 다른 경우(다른 항목의
-            # 설명이 붙은 경우)를 그대로 잡는다. 출처가 셋이면 방어선이 셋이다(§16.4 v1.5).
-            coord = spot.get("_page_coord") or spot.get("_entity_coord")
+            # 문서에 좌표가 없으면 **스팟 좌표와 다른 출처의 좌표**로 대조한다(§16.4 v1.6).
+            # 자기 자신과 재는 것은 대조가 아니다 — 그 규칙은 `independent_coord` 에 있다.
+            coord = geosearch.independent_coord(
+                (float(spot["lat"]), float(spot["lng"])),
+                spot.get("_page_coords") or {},
+                spot.get("_entity_coord"),
+            )
         verdict = verify_link(
             LinkInput(
                 spot_names=[name for name in names if name],
@@ -531,8 +636,13 @@ def city_document(city: Mapping[str, Any], result: Mapping[str, Any], as_of: str
             "registry_radius_m": int(city["radius_m"]),
             "radius_clamped": int(harvest["effective_radius_m"]) != int(city["radius_m"]),
             "gslimit": geosearch.GSLIMIT_MAX,
+            # 발견은 두 위키의 합집합이다. 수록은 여전히 한국어 문서가 있는 것만이다.
+            "wikis": list(geosearch.LANGS),
             "page_count": int(harvest["page_count"]),
+            "ko_page_count": int(harvest["ko_page_count"]),
+            "en_page_count": int(harvest["en_page_count"]),
             "mapped_count": int(harvest["mapped_count"]),
+            "korean_count": int(harvest["korean_count"]),
         },
         "harvest": harvest,
         "sources": _sources(as_of),
@@ -545,7 +655,16 @@ def _sources(as_of: str) -> list[dict[str, str]]:
     return [
         {
             "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색",
-            "url": geosearch.ENDPOINT,
+            "url": geosearch.KO_ENDPOINT,
+            "retrieved_at": as_of,
+        },
+        {
+            "what": (
+                "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 "
+                "한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, "
+                "수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+            ),
+            "url": geosearch.EN_ENDPOINT,
             "retrieved_at": as_of,
         },
         {
@@ -602,17 +721,27 @@ def _known_gaps(harvest: Mapping[str, Any], spots: Sequence[Mapping[str, Any]]) 
             f"분류에 걸리지 않아 제외한 후보 {harvest['unclassified_count']}건 — 버리되 굽기 "
             "보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게)."
         )
-    unmapped = int(harvest.get("page_count", 0)) - int(harvest.get("mapped_count", 0))
+    unmapped = int(harvest.get("unmapped_count", 0))
     if unmapped > 0:
         gaps.append(
-            f"반경 안의 한국어 문서 {unmapped}건은 위키데이터 항목이 없어 후보가 되지 못했다 — "
+            f"반경 안의 문서 {unmapped}건은 위키데이터 항목이 없어 후보가 되지 못했다 — "
             "중요도와 분류를 매길 근거가 없다."
         )
+    if harvest.get("no_korean_count"):
+        gaps.append(
+            f"영어 위키백과에서만 발견된 {harvest['no_korean_count']}건은 한국어 문서가 없어 "
+            "싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 "
+            f"{NO_KOREAN_REPORT_MAX}건까지 이름으로 남는다."
+        )
+    discovery = harvest.get("discovery") or {}
     gaps.append(
-        "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 "
-        "없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 "
-        "오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 "
-        "없나'로 읽히지 않도록 여기 적는다."
+        "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 "
+        f"것만** 싣는다(이 도시: 한국어 검색 {discovery.get('ko', 0)}곳 · 영어 검색에서만 "
+        f"{discovery.get('en', 0)}곳 · 양쪽 {discovery.get('both', 0)}곳). 영어를 함께 긁는 "
+        "이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 "
+        "때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 "
+        "한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 "
+        "됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다."
     )
     gaps.append("소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.")
     gaps.append(
@@ -640,9 +769,9 @@ def index_document(exported: Sequence[Mapping[str, Any]], report: Mapping[str, A
         "retrieved_at": as_of,
         "what_this_is": (
             "한국어 위키백과·위키데이터·OpenStreetMap 에서 조사해 구운 도시 가이드다. 사람이 고르고 쓴 "
-            "홍콩 가이드와 성격이 다르다 — 후보는 중심 반경 안의 한국어 문서에서 오고, 순위는 언어판 "
-            "수(sitelinks), 분류는 P31 이며, 설명은 위키백과 도입부 요약이다. 도시마다 등급(완전/부분)을 "
-            "재어 함께 싣는다."
+            "홍콩 가이드와 성격이 다르다 — 후보는 중심 반경 안의 한국어·영어 문서 합집합에서 오고(영어는 "
+            "발견 경로일 뿐이며 한국어 문서가 있는 것만 싣는다), 순위는 언어판 수(sitelinks), 분류는 P31 "
+            "이며, 설명은 한국어 위키백과 도입부 요약이다. 도시마다 등급(완전/부분)을 재어 함께 싣는다."
         ),
         "counts": counts,
         "sources": _sources(as_of),
@@ -653,9 +782,10 @@ def index_document(exported: Sequence[Mapping[str, Any]], report: Mapping[str, A
             "리조트 목적지는 이 방식으로 채워지지 않는다 — 나트랑 5건 · 푸꾸옥 3건(한국어 라벨 0)이고 "
             "반경 25km 로도 채워지지 않았다(실측 2026-09-15).",
             "조사 시점은 retrieved_at 이다. 자동 갱신은 하지 않는다 — 사람이 다시 굽는다.",
-            "후보는 한국어 위키백과에 문서가 있고 좌표가 붙은 장소로 한정된다 — 한국어 문서가 없는 "
-            "장소는 아예 잡히지 않는다. 제약의 방향이 제품 목표(한국어 가이드)와 같지만, 도시별 "
-            "스팟 수를 '그 도시의 전부'로 읽으면 안 된다.",
+            "후보는 한국어·영어 위키백과 지리 검색의 합집합에서 오고, 그중 한국어 문서가 있는 것만 "
+            "싣는다 — 한국어 문서가 없는 장소는 여전히 잡히지 않는다. 제약의 방향이 제품 목표(한국어 "
+            "가이드)와 같지만, 도시별 스팟 수를 '그 도시의 전부'로 읽으면 안 된다. 어느 경로로 "
+            "발견됐는지는 harvest-report.json 의 discovery 에 도시별로 남는다.",
             "지리 검색 반경 상한은 10km 다. 대장에 그보다 넓게 적힌 도시는 10km 로 잘렸고 그 사실은 "
             "각 도시 파일의 query.radius_clamped 와 known_gaps 에 적혀 있다.",
         ],
@@ -732,11 +862,16 @@ def print_review(city: Mapping[str, Any], result: Mapping[str, Any], top: int = 
     print(f"\n=== {city['name_ko']} ({city['city_id']}) — 상위 {top}건 검토 ===")
     if result.get("radius_note"):
         print(f"  ! {result['radius_note']}")
-    print(f"{'#':>3}  {'sitelinks':>9}  {'분류':<18} {'QID':<10} 이름")
+    pool = result.get("discovery_pool", {})
+    print(
+        f"  발견 경로(한국어 문서가 있는 후보 풀): ko {pool.get('ko', 0)} · en 만 {pool.get('en', 0)} · "
+        f"양쪽 {pool.get('both', 0)} · 한국어 문서가 없어 버린 en 항목 {result.get('no_korean_count', 0)}"
+    )
+    print(f"{'#':>3}  {'sitelinks':>9}  {'발견':<5} {'분류':<18} {'QID':<10} 이름")
     for rank, spot in enumerate(result["candidates"][:top], start=1):
         print(
-            f"{rank:>3}  {spot['importance']['sitelinks']:>9}  {spot['category']:<18} "
-            f"{spot['wikidata_id']:<10} {spot['name']}  "
+            f"{rank:>3}  {spot['importance']['sitelinks']:>9}  {spot.get('discovery', ''):<5} "
+            f"{spot['category']:<18} {spot['wikidata_id']:<10} {spot['name']}  "
             f"https://www.wikidata.org/wiki/{spot['wikidata_id']}"
         )
     if result["unclassified"]:
@@ -847,7 +982,14 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "candidate_count": harvest["candidate_count"],
                 "candidate_ko_ratio": harvest["candidate_ko_ratio"],
                 "page_count": harvest["page_count"],
+                "ko_page_count": harvest["ko_page_count"],
+                "en_page_count": harvest["en_page_count"],
                 "mapped_count": harvest["mapped_count"],
+                "korean_count": harvest["korean_count"],
+                "no_korean_count": harvest["no_korean_count"],
+                # 어느 경로로 발견됐는지 — 이 두 줄이 "합집합이 값을 했나"의 답이다.
+                "discovery": harvest["discovery"],
+                "discovery_pool": harvest["discovery_pool"],
                 "effective_radius_m": harvest["effective_radius_m"],
                 "denylisted": list(denylist.get(city_id, [])),
                 "unknown_denylist_qids": result["unknown_denylist_qids"],
@@ -872,9 +1014,11 @@ def main(argv: Sequence[str] | None = None) -> int:
 
             if result["grade"] != "below":
                 exported.append(city_document(city, result, as_of))
+            discovery = harvest["discovery"]
             print(
                 f"  {result['grade']:<7} 스팟 {harvest['spot_count']:>3} · 한국어 "
-                f"{harvest['ko_label_ratio']:.0%} · 설명 {harvest['described_count']}"
+                f"{harvest['ko_label_ratio']:.0%} · 설명 {harvest['described_count']} · 발견 "
+                f"ko {discovery['ko']}/en {discovery['en']}/both {discovery['both']}"
             )
 
         # 보고서에 요청 수·캐시 적중을 싣지 않는다. 그 둘은 **이 실행**의 성질이지
@@ -924,9 +1068,10 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print(f"요청: {budget} (합계 {sum(budget.values())}) · 캐시 적중 {cache_hits}")
     surveyed = max(1, report["surveyed"])
-    # 사슬은 도시당 geosearch 1 + pageprops ceil(문서/50) + wbgetentities ceil(후보/50)
-    # + areas 1 + extracts ceil(스팟/20) + overpass 1 이다(§16.4). 파리 실측 기준 13.
-    print(f"도시당 평균 요청 {sum(budget.values()) / surveyed:.1f} (예산표 기준 약 9~13)")
+    # 사슬은 도시당 geosearch 2(ko·en) + pageprops ceil(ko문서/50) + ceil(en문서/50)
+    # + wbgetentities ceil(후보/50) + areas 1 + extracts ceil(스팟/20) + overpass 1 이다(§16.4).
+    # en 이 상한(500)에 닿는 큰 도시는 pageprops-en 만 10요청이라 예산이 2~3배가 된다.
+    print(f"도시당 평균 요청 {sum(budget.values()) / surveyed:.1f} (합집합 사슬 기준 약 20~35)")
     return 0
 
 

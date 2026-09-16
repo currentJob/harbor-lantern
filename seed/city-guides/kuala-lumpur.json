@@ -1,0 +1,602 @@
+{
+ "center": {
+  "lat": 3.1578,
+  "lng": 101.7117
+ },
+ "city_id": "kuala-lumpur",
+ "country_code": "MY",
+ "country_en": "Malaysia",
+ "country_ko": "말레이시아",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 22,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 1,
+   "building_landmark": 7,
+   "museum": 2,
+   "worship": 2
+  },
+  "denylisted_count": 0,
+  "described_count": 11,
+  "effective_radius_m": 8000,
+  "excluded_count": 1,
+  "grade_window": 12,
+  "hours_count": 6,
+  "ko_label_count": 12,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 29,
+  "page_count": 29,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 12,
+  "unclassified_count": 9,
+  "verification_failed_count": 1
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 6곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 9건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Kuala Lumpur",
+ "name_ko": "쿠알라룸푸르",
+ "name_local": "Kuala Lumpur",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 29,
+  "page_count": 29,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 8
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "쿠알라룸푸르",
+   "category": "worship",
+   "description": "마스지드 느가르(말레이어: Masjid Negara)는 말레이시아 쿠알라룸푸르에 위치한 모스크이다. 총 15,000명 수용이 가능하며 13에이커(53,000제곱미터) 정도 되는 아름다운 정원에 위치해 있다. 마스지드 느가르는 서말레이시아 발음이며 '마스지드 느가라'라고도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마스지드 느가르",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%8A%A4%EC%A7%80%EB%93%9C_%EB%8A%90%EA%B0%80%EB%A5%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1356818",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 3.141944,
+   "lng": 101.691667,
+   "name": "마스지드 느가르",
+   "name_original": "Masjid Negara",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q32815"
+   ],
+   "wikidata_id": "Q1356818"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "worship",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1143296",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 3.148906,
+   "lng": 101.695961,
+   "name": "자멕 이슬람 사원",
+   "name_original": "Masjid Jamek Sultan Abdul Samad",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q32815"
+   ],
+   "wikidata_id": "Q1143296"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "museum",
+   "description": "말레이시아 이슬람 미술관(말레이어: Muzium Kesenian Islam Malaysia)는 말레이시아 쿠알라룸푸르에 있는 미술관이다. 1998년 12월 12일에 공식적으로 개관했다. 이 미술관은 이슬람 세계에서 7천 점이 넘는 유물을 소장하고 있는 동남아시아에서 가장 큰 이슬람 미술 박물관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "말레이시아 이슬람 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%90%EB%A0%88%EC%9D%B4%EC%8B%9C%EC%95%84_%EC%9D%B4%EC%8A%AC%EB%9E%8C_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/659878360"
+   },
+   "hours_text": "Mo-Su 10:00-18:00",
+   "id": "wd:Q3330187",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 3.14292,
+   "lng": 101.689,
+   "name": "말레이시아 이슬람 미술관",
+   "name_original": "Muzium Kesenian Islam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/659878360",
+     "text": "영업시간 Mo-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/659878360",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 144.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q3330187"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "building_landmark",
+   "description": "술탄 압둘 사마드 빌딩(영어: Sultan Abdul Samad Building, 말레이어: Bangunan Sultan Abdul Samad, 자위 문자: باڠونن سلطان عبدالصمد‎)은 영국 식민지 시대인 1897년에 건축된 건물로 주요 행정부의 부서로 사용되었다. 도시를 대표하는 건물로 40m 높이의 시계탑과 햇볕을 받으면 우아하게 빛나는 구리로 만든 돔이 덮여 있어 새해를 맞는 신성한 의식과 국가독립기념일(8월 31일)의 시가행진 및 국가행사에 중심적인 역할을 하는 곳이다. 이 유서깊은 건물은 현재 대법원과 섬유박물관으로 사용되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "술탄 압둘 사마드 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%88%A0%ED%83%84_%EC%95%95%EB%91%98_%EC%82%AC%EB%A7%88%EB%93%9C_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q615958",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 3.148611,
+   "lng": 101.694444,
+   "name": "술탄 압둘 사마드 빌딩",
+   "name_original": "Bangunan Sultan Abdul Samad",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q811979",
+    "Q16831714"
+   ],
+   "wikidata_id": "Q615958"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "attraction",
+   "description": "아쿠아리아 KLCC(Aquaria KLCC)는 말레이시아 쿠알라룸푸르에 있는 수족관이다. KLCC는 쿠알라룸푸르 시티 센터(Kuala Lumpur City Centre)의 머리 글자를 딴 것으로 그 이름 그대로 쿠알라룸푸르 중심부에 위치한다. 아쿠아리아 KLCC는 2003년에 건설을 시작하여 2005년에 완성, 같은 해 8월에 개관했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아쿠아리아 KLCC",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%BF%A0%EC%95%84%EB%A6%AC%EC%95%84_KLCC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q29168",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 3.153393,
+   "lng": 101.713078,
+   "name": "아쿠아리아 KLCC",
+   "name_original": "Aquaria KLCC",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2281788"
+   ],
+   "wikidata_id": "Q29168"
+  },
+  {
+   "area": "체라스",
+   "category": "building_landmark",
+   "description": "쿠알라룸푸르 스타디움(말레이어: Stadium Bola Sepak Kuala Lumpur)은 말레이시아 쿠알라룸푸르에 있는 다목적 경기장이다. 현재 주로 축구 경기장으로 이용되며 쿠알라룸푸르 FA와 말레이시아 축구 국가대표팀의 홈구장으로 사용된다. 이 경기장 수용 인원은 18,000명이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쿠알라룸푸르 스타디움",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BF%A0%EC%95%8C%EB%9D%BC%EB%A3%B8%ED%91%B8%EB%A5%B4_%EC%8A%A4%ED%83%80%EB%94%94%EC%9B%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q567218",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 3.100536,
+   "lng": 101.721372,
+   "name": "쿠알라룸푸르 스타디움",
+   "name_original": "Stadium KLFA",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q567218"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "building_landmark",
+   "description": "파빌리온 쿠알라룸푸르(영어: Pavilion Kuala Lumpur)는 말레이시아 쿠알라룸푸르 부킷빈탕에 있는 쇼핑 센터이다. 파빌리온 쿠알라룸푸르는 8개의 쇼핑 구역과 1개의 부티크 거리로 구성되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파빌리온 쿠알라룸푸르",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8_%EC%BF%A0%EC%95%8C%EB%9D%BC%EB%A3%B8%ED%91%B8%EB%A5%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/28271276"
+   },
+   "hours_text": "Mo-Su 10:00-22:00",
+   "id": "wd:Q7155871",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 3.1485,
+   "lng": 101.71318,
+   "name": "파빌리온 쿠알라룸푸르",
+   "name_original": "Pavilion Kuala Lumpur",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/28271276",
+     "text": "영업시간 Mo-Su 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 88.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q11315"
+   ],
+   "wikidata_id": "Q7155871"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "building_landmark",
+   "description": "미드 밸리 메가몰(Mid Valley Megamall)은 말레이시아 쿠알라룸푸르의 연방 고속도로 상에 있는 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미드 밸리 메가몰",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%93%9C_%EB%B0%B8%EB%A6%AC_%EB%A9%94%EA%B0%80%EB%AA%B0"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/922804567"
+   },
+   "hours_text": "10:00-22:00",
+   "id": "wd:Q1481063",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 3.118042,
+   "lng": 101.676558,
+   "name": "미드 밸리 메가몰",
+   "name_original": "Mid Valley Megamall",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/922804567",
+     "text": "영업시간 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 12.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q1481063"
+  },
+  {
+   "area": "",
+   "category": "building_landmark",
+   "description": "패런하이트 88(영어: Fahrenheit 88)는 말레이시아 쿠알라룸푸르 부킷빈탕에 있는 쇼핑 센터이다. 본래 KL 플라자(KL Plaza)라는 쇼핑 센터였으며, 광범위한 리모델링 공사를 거쳐 2010년 8월에 현재의 이름으로 재개장했다. 관리 및 임대는 파빌리온 쿠알라룸푸르를 관리하는 동일한 회사에서 이루어진다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "패런하이트 88",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%A8%EB%9F%B0%ED%95%98%EC%9D%B4%ED%8A%B8_88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1081260",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 3.1475,
+   "lng": 101.7125,
+   "name": "패런하이트 88",
+   "name_original": "Fahrenheit 88",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q1081260"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "building_landmark",
+   "description": "숭가이 왕 플라자(영어: Sungei Wang Plaza, 말레이어: Plaza Sungei Wang)는 말레이시아 쿠알라룸푸르 부킷빈탕에 있는 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "숭가이 왕 플라자",
+    "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EA%B0%80%EC%9D%B4_%EC%99%95_%ED%94%8C%EB%9D%BC%EC%9E%90"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/28271256"
+   },
+   "hours_text": "Mo-Su 10:00-22:00",
+   "id": "wd:Q3503888",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 3.144594,
+   "lng": 101.710836,
+   "name": "숭가이 왕 플라자",
+   "name_original": "Plaza Sungei Wang",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/28271256",
+     "text": "영업시간 Mo-Su 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 19.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q3503888"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "building_landmark",
+   "description": "Lot 10은 말레이시아 쿠알라룸푸르 부킷빈탕에 있는 쇼핑 센터이다. 에스컬레이터를 통해 부킷빈탕과 직접 이어진다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "Lot 10",
+    "url": "https://ko.wikipedia.org/wiki/Lot_10"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/190885803"
+   },
+   "hours_text": "Mo-Su 10:00-22:00",
+   "id": "wd:Q535177",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 3.146301,
+   "lng": 101.711973,
+   "name": "Lot 10",
+   "name_original": "Lot 10",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/190885803",
+     "text": "영업시간 Mo-Su 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q535177"
+  },
+  {
+   "area": "쿠알라룸푸르",
+   "category": "museum",
+   "description": "아시아 미술관(말레이어: Muzium Seni Asia)은 말레이시아 쿠알라룸푸르에 위치한 미술관이다. 아시아 대륙 각 지역의 다양한 예술을 소개하는 데 목적을 두고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쿠알라룸푸르 아시아 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BF%A0%EC%95%8C%EB%9D%BC%EB%A3%B8%ED%91%B8%EB%A5%B4_%EC%95%84%EC%8B%9C%EC%95%84_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/358004197"
+   },
+   "hours_text": "Mo-Th 09:00-13:00,14:00-17:00; Fr 09:00-12:15,14:45-17:00; Sa,Su,PH off",
+   "id": "wd:Q7393569",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 3.118261,
+   "lng": 101.653215,
+   "name": "쿠알라룸푸르 아시아 미술관",
+   "name_original": "Muzium Seni Asia",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/358004197",
+     "text": "영업시간 Mo-Th 09:00-13:00,14:00-17:00; Fr 09:00-12:15,14:45-17:00; Sa,Su,PH off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/358004197",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 6.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q7393569"
+  }
+ ]
+}

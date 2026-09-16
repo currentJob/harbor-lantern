@@ -1,0 +1,1057 @@
+{
+ "center": {
+  "lat": 40.758,
+  "lng": -73.9855
+ },
+ "city_id": "new-york",
+ "country_code": "US",
+ "country_en": "United States",
+ "country_ko": "미국",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 66,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 1,
+   "bridge": 1,
+   "building_landmark": 17,
+   "monument": 2,
+   "museum": 4
+  },
+  "denylisted_count": 0,
+  "described_count": 22,
+  "effective_radius_m": 8000,
+  "excluded_count": 3,
+  "grade_window": 25,
+  "hours_count": 2,
+  "ko_label_count": 25,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 209,
+  "page_count": 209,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 25,
+  "unclassified_count": 38,
+  "verification_failed_count": 3
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 23곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 38건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "New York",
+ "name_ko": "뉴욕",
+ "name_local": "New York",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 209,
+  "page_count": 209,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 25
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "엠파이어 스테이트 빌딩(Empire State Building)은 미국 뉴욕주 뉴욕 맨해튼섬 5번가와 34블록 일대에 위치하고 있는, 1931년에 지어진 아르 데코 양식의 건물이다. 지상 102층에 높이는 381 m이며 1953년에 설치된 안테나 탑을 포함할 경우 443 m이다. 86층의 콘크리트 건물 위의 16층 짜리 철탑은 본래 비행선의 계류탑을 목적으로 만들어졌으나 바람이 심해 비행선 정박이 위험하다는 이유로 거의 사용되지 않았으며 현재는 전망대와 방송용 안테나만이 위치해있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "엠파이어 스테이트 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%A0%ED%8C%8C%EC%9D%B4%EC%96%B4_%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/34633854"
+   },
+   "hours_text": "Mo-Su 08:00-02:00",
+   "id": "wd:Q9188",
+   "importance": {
+    "sitelinks": 124
+   },
+   "lat": 40.748333,
+   "lng": -73.985556,
+   "name": "엠파이어 스테이트 빌딩",
+   "name_original": "Empire State Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/34633854",
+     "text": "영업시간 Mo-Su 08:00-02:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 14.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1021645",
+    "Q11303"
+   ],
+   "wikidata_id": "Q9188"
+  },
+  {
+   "area": "맨해튼",
+   "category": "bridge",
+   "description": "브루클린교는 뉴욕시에 있는 케이블 지지 현수교로, 맨해튼과 브루클린 자치구 사이의 이스트강을 가로지른다. 1883년 5월 24일에 개통된 브루클린교는 이스트강에 놓인 최초의 영구적인 다리였다. 개통 당시에는 주경간이 1,595.5 피트 (486.3 m)에 달했고, 상판이 평균만조수위에서 127 ft (38.7 m) 높이에 있어 세계에서 가장 긴 현수교였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "브루클린교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A3%A8%ED%81%B4%EB%A6%B0%EA%B5%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q125006",
+   "importance": {
+    "sitelinks": 84
+   },
+   "lat": 40.705667,
+   "lng": -73.996333,
+   "name": "브루클린교",
+   "name_original": "Brooklyn Bridge",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12570",
+    "Q158555",
+    "Q1243306",
+    "Q12042110",
+    "Q537127",
+    "Q1210334"
+   ],
+   "wikidata_id": "Q125006"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "원 월드 트레이드 센터(영어: One World Trade Center, 1WTC) 혹은 제1 세계 무역 센터는 미국 뉴욕주 뉴욕 시 맨해튼의 구 세계 무역 센터가 위치해 있었던 자리에 재건한 타워 건물이다. 설계자는 2002년 8월 컴페티션에 제출된 7개의 후보안 중 당선된 다니엘 리베스킨트이나, 토지소유자인 뉴욕 뉴저지 항만공사와, 구 세계무역센터를 항만공사로부터 장기 리스한 부동산 개발업자 래리 실버슈타인, 치안담당기관 등의 요청에 의해 2004년 7월 최초의 설계안으로부터 대폭 변경되었다. 별칭은 프리덤 타워이며, 약칭은 1WTC이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "원 월드 트레이드 센터",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9B%90_%EC%9B%94%EB%93%9C_%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EC%84%BC%ED%84%B0"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11245",
+   "importance": {
+    "sitelinks": 73
+   },
+   "lat": 40.713,
+   "lng": -74.0135,
+   "name": "원 월드 트레이드 센터",
+   "name_original": "One World Trade Center",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q11245"
+  },
+  {
+   "area": "맨해튼",
+   "category": "attraction",
+   "description": "타임스 스퀘어(영어: Times Square)는 미국 뉴욕 미드타운 맨해튼에 있는 유명한 상업적 교차로로, 웨스트 42번가와 웨스트 7번가가 합쳐져 만난 세븐스 에비뉴(Seventh Avenue)와 브로드웨이가 교차하는 일대를 말한다. 타임 스퀘어는 브로드웨이의 극장가가 환하게 빛나는 중심지이고, 세계에서 가장 붐비는 보행자용 교차로 중 한 곳이며, 세계 엔터테인먼트 산업의 중심지로 \"세계의 교차로\", \"우주의 중심\", \"불야성의 거리\"라는 별명으로도 잘 알려져 있다. Travel + Leisure의 2011년 10월 조사에 따르면 세계의 관광객들이 가장 많이 방문한 명소로, 면적은 무려 서울 광화문광장의 10배에 달할정도로 넓고, 매년 3,900만 명 이상의 관광객이 온다고한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타임스 스퀘어",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9E%84%EC%8A%A4_%EC%8A%A4%ED%80%98%EC%96%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11259",
+   "importance": {
+    "sitelinks": 72
+   },
+   "lat": 40.7575,
+   "lng": -73.985833,
+   "name": "타임스 스퀘어",
+   "name_original": "Times Square",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q123705"
+   ],
+   "wikidata_id": "Q11259"
+  },
+  {
+   "area": "맨해튼",
+   "category": "museum",
+   "description": "근대미술관(Museum of Modern Art)은 미국 뉴욕시에 위치한 근현대 전문 미술관이다. 세계적으로 강력한 영향력을 갖고있는 근대미술관으로, 영문 명칭의 머리글자를 취해 모마(MoMA)라고도 불린다. 모마 컬렉션은 건축, 디자인, 드로잉, 페인팅, 설치, 사진, 출판물, 도록 및 예술저서, 영화, 게임을 포함한 전자매체등 근대와 현대미술에 대한 폭넓은 개요를 제공하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뉴욕 근대미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%89%B4%EC%9A%95_%EA%B7%BC%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q188740",
+   "importance": {
+    "sitelinks": 67
+   },
+   "lat": 40.761444,
+   "lng": -73.977611,
+   "name": "뉴욕 근대미술관",
+   "name_original": "Museum of Modern Art",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q97662266",
+    "Q207694",
+    "Q11396960",
+    "Q163740",
+    "Q24699794"
+   ],
+   "wikidata_id": "Q188740"
+  },
+  {
+   "area": "맨해튼",
+   "category": "museum",
+   "description": "솔로몬 R. 구겐하임 미술관(Solomon R. Guggenheim Museum), 또는 뉴욕 구겐하임 미술관은 미국 뉴욕 맨해튼 89번가에 위치한 현대 미술관이며, 인상파와 후기 인상파, 그리고 현대 미술 작품들이 전시되어있다. 1937년 개관하였으며, 현재의 모습은 건축가 프랭크 로이드 라이트의 작품으로 1959년 완공되었다. 뉴욕 구겐하임 미술관은 달팽이처럼 건물 자체가 나선형으로 내려오도록 설계되어있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "솔로몬 R. 구겐하임 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%86%94%EB%A1%9C%EB%AA%AC_R._%EA%B5%AC%EA%B2%90%ED%95%98%EC%9E%84_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q201469",
+   "importance": {
+    "sitelinks": 60
+   },
+   "lat": 40.783056,
+   "lng": -73.958889,
+   "name": "솔로몬 R. 구겐하임 미술관",
+   "name_original": "Solomon R. Guggenheim Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q24699794"
+   ],
+   "wikidata_id": "Q201469"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "그랜드센트럴 터미널(Grand Central Terminal)은 미국 뉴욕 시의 42번가와 파크 가의 교차점에 위치한 통근철도를 위한 터미널형 역이다. 그랜드 센트럴 역, 그랜드센트럴 스테이션 또는 단순히 그랜드 센트럴로 불리기도 한다. 그랜드 센트럴 터미널은 뉴욕도시권의 북쪽을 담당하는 메트로 노스 철도(영어: Metro North Railroad)의 할렘선, 허디슨선, 뉴헤이븐선의 남쪽 종착역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그랜드 센트럴 터미널",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%9C%EB%93%9C_%EC%84%BC%ED%8A%B8%EB%9F%B4_%ED%84%B0%EB%AF%B8%EB%84%90"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/7099182377"
+   },
+   "hours_text": "Mo-Su 05:30-02:00",
+   "id": "wd:Q11290",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 40.752778,
+   "lng": -73.977222,
+   "name": "그랜드 센트럴 터미널",
+   "name_original": "Grand Central Terminal",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/7099182377",
+     "text": "영업시간 Mo-Su 05:30-02:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 3.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1339195",
+    "Q55485",
+    "Q55491",
+    "Q7886778"
+   ],
+   "wikidata_id": "Q11290"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "유엔 본부(영어: United Nations Headquarters)는 미국 뉴욕에 있는 유엔의 본부 건물이며, 1952년 완공 이래 유엔의 공식 본부로 쓰여왔다. 이스트 강을 바라보는 맨해튼의 터틀 만 이웃에 자리잡고 있으며, 서쪽으로 1번가, 남쪽으로 동부 42번지 거리, 북쪽으로 동부 48번지 거리, 동쪽으로 이스트 강과 경계를 이루고 있다. 유엔은 3개의 부가적인 사무소를 두고 있으며, 제네바, 빈, 나이로비에 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "유엔 본부",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9C%A0%EC%97%94_%EB%B3%B8%EB%B6%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11297",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 40.749629,
+   "lng": -73.96739,
+   "name": "유엔 본부",
+   "name_original": "Headquarters of the United Nations",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 59.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1497364",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q11297"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "플랫아이언 빌딩(Flatiron Building)은 뉴욕 맨해튼에 위치한 강철 구조의 삼각형 22층 마천루이다. 원래 이름은 풀러 빌딩(Fuller Building)이다. 플랫아이언이라는 이름은 건물 모양이 다리미 같다고 해서 붙여진 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "플랫아이언 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%8C%EB%9E%AB%EC%95%84%EC%9D%B4%EC%96%B8_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q220728",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 40.741111,
+   "lng": -73.989722,
+   "name": "플랫아이언 빌딩",
+   "name_original": "Flatiron Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1021645"
+   ],
+   "wikidata_id": "Q220728"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "록펠러 센터(Rockefeller Center)는 미국 뉴욕 맨해튼 5번가와 6번가 사이에 있는 초고층 건물 등 여러 건물로 구성된 복합 시설이다. 1987년 미국 역사기념물로 등재되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "록펠러 센터",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9D%ED%8E%A0%EB%9F%AC_%EC%84%BC%ED%84%B0"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11277",
+   "importance": {
+    "sitelinks": 48
+   },
+   "lat": 40.758611,
+   "lng": -73.979194,
+   "name": "록펠러 센터",
+   "name_original": "Rockefeller Center",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 120.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1497364",
+    "Q11315",
+    "Q4298922",
+    "Q18142"
+   ],
+   "wikidata_id": "Q11277"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "뉴욕 타임스 빌딩(영어: The New York Times Building)은 뉴욕 맨하탄 미드타운 맨해튼에 있는 고층 빌딩으로, 2007년 완성되었다. 높이는 319m, 59층으로 되어있다. 뉴욕에서 1WTC, 엠파이어 스테이트 빌딩, BOA 타워 다음으로 높으며, 공인된 높이는 319m로 크라이슬러 빌딩과 높이가 같다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뉴욕 타임스 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EB%89%B4%EC%9A%95_%ED%83%80%EC%9E%84%EC%8A%A4_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q192680",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 40.756111,
+   "lng": -73.99,
+   "name": "뉴욕 타임스 빌딩",
+   "name_original": "New York Times Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q192680"
+  },
+  {
+   "area": "파이낸셜 디스트릭트",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1136137",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 40.711389,
+   "lng": -74.013611,
+   "name": "국립 9·11 테러 메모리얼 & 박물관",
+   "name_original": "National September 11 Memorial & Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q1136137"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "메트로폴리탄 생명보험 타워(Metropolitan Life Insurance Company Tower)은 뉴욕 시 맨해튼 매디슨 가에 위치한 오래된 초고층 빌딩이다. 이탈리아 베네치아에 위치한 산 마르코 대성당의 종탑을 본따 설계되었다. 1909년 완공된 이 빌딩은 2005년까지 메트라이프 사의 본사로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "메트로폴리탄 생명보험 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A9%94%ED%8A%B8%EB%A1%9C%ED%8F%B4%EB%A6%AC%ED%83%84_%EC%83%9D%EB%AA%85%EB%B3%B4%ED%97%98_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q652452",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 40.741111,
+   "lng": -73.9875,
+   "name": "메트로폴리탄 생명보험 타워",
+   "name_original": "Metropolitan Life Insurance Company Tower",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 16.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645",
+    "Q27686"
+   ],
+   "wikidata_id": "Q652452"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1123997",
+   "importance": {
+    "sitelinks": 34
+   },
+   "lat": 40.756667,
+   "lng": -73.973889,
+   "name": "윌도프 애스토리아 뉴욕",
+   "name_original": "Waldorf-Astoria Hotel (New York, N.Y.)",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 38.8,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q27686"
+   ],
+   "wikidata_id": "Q1123997"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "432 파크 애비뉴(영어: 432 Park Avenue)는 미국 뉴욕주 뉴욕시 맨해튼에 위치한 초고층 주상복합 아파트 건물이다. 지상 85층(지하 3층), 1,396ft(425.5m)로 미국에서 다섯 번째로 높은 빌딩이 되었다. 세계에서 3번째로 높은 아파트 건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "432 파크 애비뉴",
+    "url": "https://ko.wikipedia.org/wiki/432_%ED%8C%8C%ED%81%AC_%EC%95%A0%EB%B9%84%EB%89%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q233940",
+   "importance": {
+    "sitelinks": 34
+   },
+   "lat": 40.761667,
+   "lng": -73.971944,
+   "name": "432 파크 애비뉴",
+   "name_original": "432 Park Avenue",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 33.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q13402009"
+   ],
+   "wikidata_id": "Q233940"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "시그램 빌딩(Seagram Building)은 뉴욕 미드타운 맨해튼 52번가와 53번가 사이의 파크 애비뉴 375번지에 있는 초고층 빌딩이다. 시그램 미국 본사 건물로, 미스 반 데어 로에의 설계에 의해 1958년에 완공되었다. 층수는 38층이며 높이는 159.6m이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시그램 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EA%B7%B8%EB%9E%A8_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q737484",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 40.758444,
+   "lng": -73.972139,
+   "name": "시그램 빌딩",
+   "name_original": "Seagram Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q737484"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "싱어 빌딩(Singer Building)은 맨해튼 브로드웨이와 리버티 가 사이에 있었던 마천루이다. 47층짜리 높이 187m로, '싱어 코퍼레이션'의 본사 건물로 1908년 준공했다. 1968년 재개발에 의해 없어졌으며, 현재 건물이 있던 자리에는 원 리버티 플라자가 세워져있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "싱어 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%B1%EC%96%B4_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q651362",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 40.70953,
+   "lng": -74.01078,
+   "name": "싱어 빌딩",
+   "name_original": "Singer Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 72.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q651362"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "플라자 호텔(Plaza Hotel)은 미국 뉴욕 맨해튼에 위치한 호화 호텔이다. 1907년 건축되었다. 센트럴 파크의 동남 모서리에 위치한 그랜드 아미 플라자에 접하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "플라자 호텔",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%8C%EB%9D%BC%EC%9E%90_%ED%98%B8%ED%85%94"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1066676",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 40.764528,
+   "lng": -73.974444,
+   "name": "플라자 호텔",
+   "name_original": "Plaza Hotel",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 23.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q18142",
+    "Q11303",
+    "Q27686",
+    "Q628858"
+   ],
+   "wikidata_id": "Q1066676"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1351208",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 40.7104,
+   "lng": -74.0119,
+   "name": "포 월드 트레이드 센터",
+   "name_original": "4 World Trade Center",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q1351208"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "라디오 시티 뮤직 홀(영어: Radio City Music Hall)은 미국 뉴욕주 뉴욕 록펠러 센터의 음악 공연장이다. 5933석 규모의 세계 최대의 홀이며, 매년 6월 토니상 시상식도 여기에서 열린다. 설계자는 에드워드 듀럴 스톤이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "라디오 시티 뮤직 홀",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%94%94%EC%98%A4_%EC%8B%9C%ED%8B%B0_%EB%AE%A4%EC%A7%81_%ED%99%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q753437",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 40.759722,
+   "lng": -73.979167,
+   "name": "라디오 시티 뮤직 홀",
+   "name_original": "Radio City Music Hall",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829",
+    "Q24354"
+   ],
+   "wikidata_id": "Q753437"
+  },
+  {
+   "area": "맨해튼",
+   "category": "monument",
+   "description": "페더럴 홀(영어: Federal Hall)은 헌법 하의 미국의 첫 번째 국회의사당이었다. 제1차 미국 의회의 회의 장소였으며 조지 워싱턴의 첫 번째 대통령 취임식이 열린 장소였던 이 건물은 1703년부터 1812년까지 뉴욕 로어맨해튼의 월가와 브로드 스트리트 교차점에 위치했다. 현재의 부지인 맨해튼 파이낸셜 디스트릭트의 월가 26번지에는 1842년에 세관으로 완공된 그리스 리바이벌 건축 양식의 건물인 페더럴 홀 국립기념관(영어: Federal Hall National Memorial)이 자리하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "페더럴 홀",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%EB%8D%94%EB%9F%B4_%ED%99%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q858689",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 40.7072,
+   "lng": -74.0103,
+   "name": "페더럴 홀",
+   "name_original": "Federal Hall",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1967454"
+   ],
+   "wikidata_id": "Q858689"
+  },
+  {
+   "area": "맨해튼",
+   "category": "museum",
+   "description": "프릭 컬렉션(Frick Collection)은 뉴욕 맨해튼에 위치한 미술관이다. 사업가 헨리 클레이 프릭의 저택 헨리 클레이 프릭 하우스로 사용되던 곳으로, 1913년부터 14년까지 토머스 헤이스팅스에 의해 설계되었다. 헨리 클레이 프릭이 죽은 이후, 1930년대에 존 러셀 포프에 의해 확장되어 1935년 12월에 박물관으로 개관했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "프릭 컬렉션",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%A6%AD_%EC%BB%AC%EB%A0%89%EC%85%98"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q682827",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 40.771111,
+   "lng": -73.967222,
+   "name": "프릭 컬렉션",
+   "name_original": "The Frick Collection",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 23.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q7328910"
+   ],
+   "wikidata_id": "Q682827"
+  },
+  {
+   "area": "미드타운맨해튼",
+   "category": "building_landmark",
+   "description": "블룸버그 타워(Bloomberg Tower, 731 Lexington Avenue)는 미국 뉴욕 미드타운 맨해튼에 위치한 마천루이다. 블룸버그 L.P.의 본사이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "블룸버그 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A3%B8%EB%B2%84%EA%B7%B8_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q875078",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 40.761806,
+   "lng": -73.968,
+   "name": "블룸버그 타워",
+   "name_original": "731 Lexington Avenue",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 21.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q875078"
+  },
+  {
+   "area": "맨해튼",
+   "category": "monument",
+   "description": "콜럼버스 서클(Columbus Circle)은 미국 맨해튼 어퍼 웨스트 사이드에 있는 교통량이 많은 회전교차로이다. 이 교차로는 교차로 중앙에 있는 1892년에 만들어진 크리스토퍼 콜럼버스 동상에서 이름을 따왔으며 이 동상은 2018년 9월 20일 미국 국립사적지에 등재되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "콜럼버스 서클",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BD%9C%EB%9F%BC%EB%B2%84%EC%8A%A4_%EC%84%9C%ED%81%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q109968",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 40.768056,
+   "lng": -73.981944,
+   "name": "콜럼버스 서클",
+   "name_original": "Columbus Circle",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1529",
+    "Q61297932",
+    "Q4989906",
+    "Q1112897",
+    "Q179700"
+   ],
+   "wikidata_id": "Q109968"
+  },
+  {
+   "area": "맨해튼",
+   "category": "building_landmark",
+   "description": "원57(영어: One57)는 2013년에 준공한 뉴욕 맨해튼 미드타운 157 웨스트 57번가에 건설된 초고층 빌딩이다. 높이 306m로, 뉴욕에서 6번째로 높은 빌딩이다. 예전 이름은 카네기 57(Carnegie 57)이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "원57",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9B%9057"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2023928",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 40.7652,
+   "lng": -73.9792,
+   "name": "원57",
+   "name_original": "One57",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q11755880",
+    "Q63099748"
+   ],
+   "wikidata_id": "Q2023928"
+  }
+ ]
+}

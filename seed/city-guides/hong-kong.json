@@ -1,0 +1,556 @@
+{
+ "center": {
+  "lat": 22.295,
+  "lng": 114.172
+ },
+ "city_id": "hong-kong",
+ "country_code": "HK",
+ "country_en": "Hong Kong",
+ "country_ko": "홍콩",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 77,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 1,
+   "building_landmark": 8,
+   "museum": 1,
+   "park": 2,
+   "tower": 1
+  },
+  "denylisted_count": 0,
+  "described_count": 8,
+  "effective_radius_m": 8000,
+  "excluded_count": 2,
+  "grade_window": 13,
+  "hours_count": 1,
+  "ko_label_count": 13,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 102,
+  "page_count": 102,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 13,
+  "unclassified_count": 62,
+  "verification_failed_count": 5
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 12곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 62건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Hong Kong",
+ "name_ko": "홍콩",
+ "name_local": "香港",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 102,
+  "page_count": 102,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 10
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "description": "중국은행 타워(중국어: 中銀大廈 중은대하[*], Bank of China Tower 뱅크 오브 차이나 타워[*])는 홍콩 중완에 건설된 중국은행 (홍콩) 본점 건물이다. 이 건물은 프리츠커상 수상자이기도 한 중국계 미국인 건축가 I. M. 페이가 디자인하였다. 건물의 높이는 315m이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국은행 타워 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EC%9D%80%ED%96%89_%ED%83%80%EC%9B%8C_(%ED%99%8D%EC%BD%A9)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q214855",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 22.279167,
+   "lng": 114.161389,
+   "name": "중국은행 타워",
+   "name_original": "中銀大廈",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q18761864"
+   ],
+   "wikidata_id": "Q214855"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q992697",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 22.272861,
+   "lng": 114.188444,
+   "name": "홍콩대구장",
+   "name_original": "香港大球場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q992697"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "park",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2918614",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 22.30028,
+   "lng": 114.17044,
+   "name": "주룽 공원",
+   "name_original": "九龍公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 141.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q2918614"
+  },
+  {
+   "area": "홍콩",
+   "category": "tower",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q692288",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 22.293581,
+   "lng": 114.16955,
+   "name": "젠사쥐 종루",
+   "name_original": "尖沙咀鐘樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q853854"
+   ],
+   "wikidata_id": "Q692288"
+  },
+  {
+   "area": "홍콩",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/184731574"
+   },
+   "hours_text": "Mo-Fr 13:00-21:00 open \"LNY eve~17:00\"; Dec 24 Mo,We-Fr 13:00-17:00; Dec 24 Sa,Su,PH 10:00-17:00; Tu off; Sa,Su 10:00-21:00 open \"LNY eve~17:00\"; PH 10:00-21:00 open \"LNY D1-2 off\"",
+   "id": "wd:Q1144740",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 22.2944,
+   "lng": 114.172,
+   "name": "홍콩 스페이스 뮤지엄",
+   "name_original": "香港太空館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/184731574",
+     "text": "영업시간 Mo-Fr 13:00-21:00 open \"LNY eve~17:00\"; Dec 24 Mo,We-Fr 13:00-17:00; Dec 24 Sa,Su,PH 10:00-17:00; Tu off; Sa,Su 10:00-21:00 open \"LNY eve~17:00\"; PH 10:00-21:00 open \"LNY D1-2 off\" (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 14.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q588140",
+    "Q17431399",
+    "Q1254933"
+   ],
+   "wikidata_id": "Q1144740"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "description": "충킹맨션(중국어: 重慶大廈, 영어: Chungking Mansions)은 홍콩 짐사저이 네이선 로드에 위치한 복합 빌딩이다. '도시 속 게토'로 알려진 충칭 빌딩은 홍콩의 소수민족이 많이 모이는 곳이다. 영화 중경삼림에 나와 유명해졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "충칭 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%B9%AD_%EB%B9%8C%EB%94%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q943856",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 22.296389,
+   "lng": 114.172778,
+   "name": "충칭 빌딩",
+   "name_original": "重慶大廈",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 43.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q60989966"
+   ],
+   "wikidata_id": "Q943856"
+  },
+  {
+   "area": "완자이구",
+   "category": "park",
+   "description": "빅토리아 공원 또는 빅토리아 파크(Victoria Park, 중국어: 維多利亞公園)는 홍콩의 공원의 하나이다. 땅이 좁은 홍콩에서 빅토리아 항을 메워서 만든 면적 약 30ha라는 파격적인 넓이를 자랑하는 공원으로 이름의 유래가 된 빅토리아 여왕의 동상은 입구에 있다. 공원 서쪽으로는 최고의 번화가로 홍콩 제일의 쇼핑 센터의 하나로 손꼽히고, 우리식의 먹자골목인 푸드 스트리트에는 중국 각지의 요리는 말할 것도 없고, 프랑스, 이탈리아, 일본 등 각국의 요리를 맛볼 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빅토리아 공원 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%85%ED%86%A0%EB%A6%AC%EC%95%84_%EA%B3%B5%EC%9B%90_(%ED%99%8D%EC%BD%A9)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1859090",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 22.281944,
+   "lng": 114.188056,
+   "name": "빅토리아 공원",
+   "name_original": "維多利亞公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 91.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q1859090"
+  },
+  {
+   "area": "중완",
+   "category": "building_landmark",
+   "description": "만다린 오리엔탈 호텔 홍콩(Mandarin Oriental Hotel Hong Kong)은 홍콩의 5성급 호텔이다. 만다린 오리엔탈 그룹이 지은 최초이자 대표적인 호텔이다. 1963년 더 만다린이라는 이름으로 홍콩섬의 금융 무역 중심지인 콘노트가 5번지에서 개업하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "만다린 오리엔탈 호텔 홍콩",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%8C%EB%8B%A4%EB%A6%B0_%EC%98%A4%EB%A6%AC%EC%97%94%ED%83%88_%ED%98%B8%ED%85%94_%ED%99%8D%EC%BD%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1064758",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.2821,
+   "lng": 114.159,
+   "name": "만다린 오리엔탈 호텔 홍콩",
+   "name_original": "香港文華東方酒店",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 186.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q27686",
+    "Q63099748"
+   ],
+   "wikidata_id": "Q1064758"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "description": "더 페닌슐라 홍콩(영어: The Peninsula Hong Kong, 중국어 정체자: 香港半島酒店), 또는 홍콩 페닌슐라 호텔은 홍콩 가우룽 짐사저이에 위치한 최고급 호텔로 더 페닌슐라 호텔 그룹의 대표 호텔이자 홍콩 상하이 호텔그룹 소속이다. 1928년에 문을 연 최초의 페닌슐라 브랜드 호텔로, 1994년에 대대적인 확장공사를 거쳐 식민지 시절과 현대적인 요소가 공존하는 모습을 갖추게 되었다. 호텔에서 운영하는 차량은 롤스로이스 차량으로 '페닌슐라 그린'이라 불리는 색으로 도색하여 여러 대를 보유한 것으로도 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "더 페닌슐라 홍콩",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%ED%8E%98%EB%8B%8C%EC%8A%90%EB%9D%BC_%ED%99%8D%EC%BD%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1757744",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.295292,
+   "lng": 114.171531,
+   "name": "더 페닌슐라 홍콩",
+   "name_original": "半島酒店",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q27686"
+   ],
+   "wikidata_id": "Q1757744"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "description": "홍콩문화중심(중국어: 香港文化中心, 영어: Hong Kong Cultural Centre)은 홍콩 짐사저이에 위치한 종합 예술 문화 시설이다. 오페라, 발레, 뮤지컬, 연극, 관현악, 실내악 등의 각종 공연이 개최되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩문화중심",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9%EB%AC%B8%ED%99%94%EC%A4%91%EC%8B%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q598086",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 22.293949,
+   "lng": 114.170387,
+   "name": "홍콩문화중심",
+   "name_original": "香港文化中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829",
+    "Q3469910"
+   ],
+   "wikidata_id": "Q598086"
+  },
+  {
+   "area": "난 구",
+   "category": "attraction",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1207908",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 22.245861,
+   "lng": 114.175917,
+   "name": "홍콩오션파크",
+   "name_original": "香港海洋公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q3363974"
+   ],
+   "wikidata_id": "Q1207908"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "description": "홍콩 대회당(중국어 정체자: 香港大會堂, Hong Kong City Hall)은 홍콩 홍콩섬 쭝완 에든버러 광장에 위치한 건물이다. 영어명은 '홍콩 시청'이지만 홍콩에서는 홍콩 그 자체나 홍콩 내 어떤 지역이든 '시'라고 지칭하지 않기에 시장이나 시의회가 없다. 그래서 전세계 각지의 시청과는 달리 홍콩 시청에는 시 행정부 청사가 존재하지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩 대회당",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EB%8C%80%ED%9A%8C%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q837115",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 22.282,
+   "lng": 114.16128,
+   "name": "홍콩 대회당",
+   "name_original": "香港大會堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 56.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q25550691"
+   ],
+   "wikidata_id": "Q837115"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "description": "포 시즌스 호텔 홍콩(영어: Four Seasons Hotel Hong Kong, 중국어 정체자: 香港四季酒店)은 홍콩 중완의 국제금융센터에 위치한 5성급 호텔이다. 산훙게이 지산발전유한공사가 소유하고 있다. 2005년 9월에 완공하여 개장했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "포 시즌스 호텔 홍콩",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC_%EC%8B%9C%EC%A6%8C%EC%8A%A4_%ED%98%B8%ED%85%94_%ED%99%8D%EC%BD%A9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2365550",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 22.28664,
+   "lng": 114.1566,
+   "name": "포 시즌스 호텔 홍콩",
+   "name_original": "Four Seasons Hotel Hong Kong",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 39.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q63099748",
+    "Q27686"
+   ],
+   "wikidata_id": "Q2365550"
+  }
+ ]
+}

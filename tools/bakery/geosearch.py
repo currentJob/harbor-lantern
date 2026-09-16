@@ -1,4 +1,19 @@
-"""1·2단계 수확 — 한국어 위키백과 `geosearch` → `pageprops` (DSN-33 · 설계서 §16.4 v1.5).
+"""1·2단계 수확 — 한국어·영어 위키백과 `geosearch` → `pageprops` (DSN-33 · 설계서 §16.4 v1.5).
+
+**영어로 발견하고, 한국어로 싣는다(v1.6).** 1단계가 `ko.wikipedia` geosearch 하나였을 때,
+*한국어 문서는 있는데 그 문서에 좌표가 없는* 장소가 통째로 누락됐다 — geosearch 는 좌표가
+붙은 문서만 돌려주기 때문이다. 굽기 실측(2026-09-16)에서 프라하는 ko 31건 · en 500건(상한)
+이었고 **en 에만 있으면서 한국어 문서가 존재하는 것이 62건**, 파리는 ko 156 · en 500 에
+**50건**이었다. 그 62건에 카를교 · 프라하 천문시계 · 바츨라프 광장 · 흐라드차니 · 루돌피눔이
+들어 있었다. 카를교 없는 프라하 가이드는 가이드가 아니다.
+
+그래서 두 위키의 geosearch 를 **합집합**으로 모으되, 싣는 기준은 그대로다 — 위키데이터
+`sitelinks` 에 `kowiki` 가 있는 항목만 남긴다(`bake_city_guides.harvest_city`). 영어는
+**발견 경로일 뿐** 결과에 들어가지 않는다: 제목도 설명도 항상 한국어 문서에서 온다.
+"한국어 100%" 불변식은 위치가 1단계에서 3단계로 옮겨졌을 뿐 그대로다.
+
+**pageid 는 위키마다 다르다.** 그래서 2단계는 **각자 자기 위키에** 묻는다 — en 의 pageid 를
+ko 에 물으면 조용히 엉뚱한 문서가 돌아온다(404 가 아니라 다른 문서다).
 
 **SPARQL 이 없다.** 이 자리에는 원래 WDQS 질의가 있었고, T8 에서 실제로 구우며 세 가지가
 차례로 드러나 통째로 걷어냈다(실측 2026-09-16 · `docs/_recon.md` "실측 2"):
@@ -24,29 +39,76 @@
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from typing import Any
 
-from bakery.io import BakeError, HttpClient, ResponseCache, cache_key, chunked
+from bakery.io import BakeError, HttpClient, ResponseCache, cache_key, chunked, round_coord
 
 __all__ = [
     "ENDPOINT",
+    "ENDPOINTS",
+    "EN_ENDPOINT",
     "GSLIMIT_MAX",
     "GSRADIUS_MAX_M",
+    "KO_ENDPOINT",
+    "LANGS",
     "PAGEPROPS_BATCH",
+    "Union",
     "clamp_radius",
+    "discovery_of",
+    "endpoint_for",
     "fetch_pages",
     "fetch_wikibase_items",
     "geosearch_params",
+    "independent_coord",
+    "korean_title",
     "pages_of",
     "qids_of",
+    "stage_for",
+    "union_by_qid",
 ]
 
-ENDPOINT = "https://ko.wikipedia.org/w/api.php"
+ENDPOINT = "https://ko.wikipedia.org/w/api.php"  # 기존 이름 — 출처 표기가 이것을 가리킨다
+KO_ENDPOINT = ENDPOINT
+EN_ENDPOINT = "https://en.wikipedia.org/w/api.php"
+
+# 발견 경로. **순서가 고정이다** — ko 를 먼저 보고 en 을 나중에 본다. 같은 장소가 둘 다에
+# 걸렸을 때 어느 쪽 문서 좌표를 쓸지, 보고서의 집계 순서가 어떻게 될지가 여기서 정해진다.
+LANGS = ("ko", "en")
+ENDPOINTS = {"ko": KO_ENDPOINT, "en": EN_ENDPOINT}
+
+# 단계 이름은 캐시 버킷 파일명이자 요청 집계 키다. ko 쪽은 **이름을 바꾸지 않는다** —
+# 바꾸면 이미 받아 둔 한국어 응답이 통째로 무효가 되고, 다시 받을 이유가 없다.
+_STAGES = {
+    "ko": {"geosearch": "geosearch", "pageprops": "pageprops"},
+    "en": {"geosearch": "geosearch-en", "pageprops": "pageprops-en"},
+}
 
 # 공급자 고지 상한. 우리가 정하는 값이 아니다.
 GSRADIUS_MAX_M = 10000
 GSLIMIT_MAX = 500
 PAGEPROPS_BATCH = 50
+
+
+def endpoint_for(lang: str) -> str:
+    """`'ko'`·`'en'` → API 주소. 모르는 이름은 **그 자리에서 실패한다**.
+
+    조용히 ko 로 되돌리면 en 사슬이 통째로 ko 를 두 번 긁고, 보고서에는 "en 발견 0건"이
+    사실인 것처럼 남는다 — 고장이 데이터처럼 보이는 경로다.
+    """
+    try:
+        return ENDPOINTS[lang]
+    except KeyError:
+        raise BakeError(f"모르는 위키다: {lang!r} (아는 것은 {'·'.join(LANGS)})") from None
+
+
+def stage_for(lang: str, step: str) -> str:
+    """캐시 버킷·요청 집계에 쓰는 단계 이름. 위키가 다르면 **버킷도 다르다.**"""
+    endpoint_for(lang)  # 모르는 위키를 여기서도 막는다
+    try:
+        return _STAGES[lang][step]
+    except KeyError:
+        raise BakeError(f"모르는 단계다: {step!r}") from None
 
 
 def clamp_radius(radius_m: float) -> tuple[int, str]:
@@ -131,20 +193,23 @@ def fetch_pages(
     cache: ResponseCache,
     city: Mapping[str, Any],
     as_of: str,
+    lang: str = "ko",
 ) -> list[dict[str, Any]]:
-    """도시당 **1요청**. 실패하면 `BakeError` — 호출자가 `query_failed` 로 기록한다.
+    """위키 하나당 **1요청**. 실패하면 `BakeError` — 호출자가 `query_failed` 로 기록한다.
 
     파라미터를 바꿔 재시도하지 않는다. 반경·하한은 성능 손잡이가 아니라 선별 기준이고,
-    그것을 흔들면 **측정 대상이 측정 과정에 따라 달라진다**(함정 F13).
+    그것을 흔들면 **측정 대상이 측정 과정에 따라 달라진다**(함정 F13). 두 위키에 **같은**
+    중심·반경·`gslimit` 을 던진다 — 한쪽만 넓게 보면 합집합이 무엇을 뜻하는지 말할 수 없다.
     """
+    stage = stage_for(lang, "geosearch")
     params = geosearch_params(city)
-    key = cache_key({"as_of": as_of, "stage": "geosearch", "params": params})
+    key = cache_key({"as_of": as_of, "stage": stage, "params": params})
     payload = client.cached_json(
         cache,
         str(city["city_id"]),
-        "geosearch",
+        stage,
         key,
-        lambda: client.get_json("geosearch", ENDPOINT, params=params),
+        lambda: client.get_json(stage, endpoint_for(lang), params=params),
     )
     return pages_of(payload)
 
@@ -184,13 +249,19 @@ def fetch_wikibase_items(
     city_id: str,
     pageids: Sequence[int],
     as_of: str,
+    lang: str = "ko",
 ) -> dict[int, str]:
     """pageid **50개씩** → Q-id. `ceil(문서수/50)` 요청 (§16.4 사슬 표 2단계).
 
     배치는 pageid 오름차순으로 자른다 — 응답 순서와 무관하게 같은 배치가 나와야 캐시가
     같은 키를 얻고, 중단된 굽기를 이어 할 수 있다.
+
+    **`lang` 은 pageid 가 나온 위키여야 한다.** pageid 공간은 위키마다 따로라 en 의 번호를
+    ko 에 물으면 오류가 아니라 **다른 문서**가 돌아온다 — 조용히 틀린 Q-id 가 섞인다.
     """
     ordered = sorted({int(pageid) for pageid in pageids})
+    stage = stage_for(lang, "pageprops")
+    endpoint = endpoint_for(lang)
     found: dict[int, str] = {}
     for batch in chunked(ordered, PAGEPROPS_BATCH):
         params = {
@@ -201,13 +272,119 @@ def fetch_wikibase_items(
             "prop": "pageprops",
             "ppprop": "wikibase_item",
         }
-        key = cache_key({"as_of": as_of, "stage": "pageprops", "params": params})
+        key = cache_key({"as_of": as_of, "stage": stage, "params": params})
         payload = client.cached_json(
             cache,
             city_id,
-            "pageprops",
+            stage,
             key,
-            lambda params=params: client.get_json("pageprops", ENDPOINT, params=params),
+            lambda params=params: client.get_json(stage, endpoint, params=params),
         )
         found.update(qids_of(payload))
     return found
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# 합집합 — 전부 순수 함수다 (고정 응답으로 검증 가능 · AC-081 이 베이커 실행을 금한다)
+# ─────────────────────────────────────────────────────────────────────────
+@dataclass(frozen=True)
+class Union:
+    """두 위키의 geosearch 를 Q-id 로 합친 결과.
+
+    `by_qid` 는 `Q-id → 위키 → 문서`이고 **Q-id 오름차순**이다. 어느 위키를 먼저 읽었는지가
+    결과 바이트에 스며들면 재현성이 조용히 사라진다(DSN-40).
+
+    `unmapped` 는 위키데이터 항목이 없어 후보가 되지 못한 문서다 — **조용히 빠지지 않는다.**
+    """
+
+    by_qid: dict[str, dict[str, dict[str, Any]]]
+    unmapped: list[tuple[str, dict[str, Any]]]  # (위키, 문서)
+    mapped_rows: int
+
+
+def union_by_qid(
+    pages: Mapping[str, Sequence[Mapping[str, Any]]],
+    mappings: Mapping[str, Mapping[int, str]],
+) -> Union:
+    """`{위키: 문서들}` + `{위키: {pageid: Q-id}}` → Q-id 로 합친 결과. **순수 함수다.**
+
+    **합치는 열쇠는 Q-id 다.** 같은 장소가 두 위키에 다른 제목으로 있어도 항목은 하나이므로
+    제목이나 좌표로 맞추려 들 필요가 없다 — 그렇게 맞추면 '한강'처럼 이름이 겹치는 다른
+    장소가 섞인다.
+
+    한 위키에서 두 문서가 같은 항목을 가리키면 **중심에 가까운 쪽**을 쓴다(동률이면 pageid).
+    공급자 응답 순서에 기대지 않는다.
+    """
+    by_qid: dict[str, dict[str, dict[str, Any]]] = {}
+    unmapped: list[tuple[str, dict[str, Any]]] = []
+    mapped_rows = 0
+    for lang in LANGS:
+        mapping = mappings.get(lang) or {}
+        for page in pages.get(lang) or ():
+            qid = mapping.get(int(page["pageid"]))
+            if not qid:
+                unmapped.append((lang, dict(page)))
+                continue
+            mapped_rows += 1
+            slot = by_qid.setdefault(qid, {})
+            current = slot.get(lang)
+            if current is None or (page["dist"], page["pageid"]) < (current["dist"], current["pageid"]):
+                slot[lang] = dict(page)
+    return Union({qid: by_qid[qid] for qid in sorted(by_qid)}, unmapped, mapped_rows)
+
+
+def discovery_of(slot: Mapping[str, Any]) -> str:
+    """이 항목이 어느 geosearch 에서 왔는지 — `'ko'` · `'en'` · `'both'` · `''`.
+
+    **`'en'` 은 "영어로만 발견했다"이지 "영어로 싣는다"가 아니다.** 수록까지 가는 항목은
+    전부 한국어 문서를 가지고 있다(`korean_title` 관문). 프라하의 카를교가 이 값 `'en'` 이다.
+    """
+    langs = [lang for lang in LANGS if slot.get(lang)]
+    if len(langs) > 1:
+        return "both"
+    return langs[0] if langs else ""
+
+
+def korean_title(slot: Mapping[str, Any], kowiki_sitelink: str) -> str:
+    """싣는 데 쓸 **한국어 문서 제목**. 없으면 `""` — 그 항목은 싣지 않는다.
+
+    이 한 줄이 "영어로 발견하고 한국어로 싣는다"의 관문이고, **한국어 100% 불변식이 사는
+    자리**다(§16.4 v1.6). 1단계가 ko 하나였을 때는 후보가 정의상 한국어 문서였지만, 영어를
+    합치면서 그 보장이 1단계에서 이 자리로 옮겨졌다.
+
+    ko geosearch 로 온 항목은 **그 문서 자체가 한국어 문서**이므로 위키데이터 sitelink 가
+    낡아 비어 있어도 떨어뜨리지 않는다 — 항목 쪽 색인이 늦는 일이 실제로 있고, 그때 잃는
+    것은 우리가 방금 눈으로 본 문서다. en 으로만 온 항목은 `kowiki` sitelink 가 판정한다.
+    """
+    ko_page = slot.get("ko")
+    if isinstance(ko_page, Mapping) and ko_page.get("title"):
+        return str(ko_page["title"])
+    return str(kowiki_sitelink or "")
+
+
+def independent_coord(
+    own: tuple[float, float],
+    page_coords: Mapping[str, tuple[float, float]],
+    entity_coord: tuple[float, float] | None,
+) -> tuple[float, float] | None:
+    """스팟 좌표와 **대조할 수 있는** 다른 좌표. 없으면 `None` (DSN-37 · §16.8).
+
+    후보는 셋이다 — ko 문서 좌표 · en 문서 좌표 · 항목 좌표(`P625`). 이 중 **스팟 좌표와
+    값이 같은 것은 건너뛴다**: 자기 자신과 재면 거리가 언제나 0 이고, 그 0 은 "맞다"가 아니라
+    **아무것도 재지 않았다**는 뜻이다. 겨울 궁전 사건이 노린 자리가 정확히 그런 통과였다.
+
+    좌표 출처가 셋이 되면서 방어선도 셋이 됐다. 거꾸로 `P625` 가 없어 문서 좌표를 그대로
+    스팟 좌표로 쓴 항목은 이제 대조할 것이 없으면 `None` 이 되고, 판정표가 제목만으로
+    판단한다(exact 면 통과 · partial 이면 실패) — **완화가 아니라 그 반대다.**
+    """
+    mine = (round_coord(own[0]), round_coord(own[1]))
+    candidates: list[Any] = [page_coords.get(lang) for lang in LANGS]
+    candidates.append(entity_coord)
+    for coord in candidates:
+        if not coord:
+            continue
+        pair = (float(coord[0]), float(coord[1]))
+        if (round_coord(pair[0]), round_coord(pair[1])) == mine:
+            continue
+        return pair
+    return None

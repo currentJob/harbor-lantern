@@ -1,0 +1,909 @@
+{
+ "center": {
+  "lat": 34.9858,
+  "lng": 135.7588
+ },
+ "city_id": "kyoto",
+ "country_code": "JP",
+ "country_en": "Japan",
+ "country_ko": "일본",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 41,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "building_landmark": 6,
+   "castle": 2,
+   "museum": 1,
+   "tower": 1,
+   "worship": 8
+  },
+  "denylisted_count": 0,
+  "described_count": 14,
+  "effective_radius_m": 6000,
+  "excluded_count": 2,
+  "grade_window": 18,
+  "hours_count": 10,
+  "ko_label_count": 18,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 93,
+  "page_count": 93,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 18,
+  "unclassified_count": 21,
+  "verification_failed_count": 4
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 4곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 4곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 8곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 21건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Kyoto",
+ "name_ko": "교토",
+ "name_local": "京都",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 93,
+  "page_count": 93,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 12
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "히가시야마구",
+   "category": "worship",
+   "description": "기요미즈데라(일본어: 清水寺 (きよみずでら) 청수사[*])는 교토부 교토시 히가시야마구에 있는 사원이다. 정식 이름으로 오토와산 키요미즈데라(音羽山清水寺)로도 불린다. 본존은 천수관음, 개기(창립자)는 엔친이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "기요미즈데라",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B8%B0%EC%9A%94%EB%AF%B8%EC%A6%88%EB%8D%B0%EB%9D%BC"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/336641107"
+   },
+   "hours_text": "Mo-Su 06:00-18:00",
+   "id": "wd:Q221716",
+   "importance": {
+    "sitelinks": 77
+   },
+   "lat": 34.994831,
+   "lng": 135.785003,
+   "name": "기요미즈데라",
+   "name_original": "清水寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/336641107",
+     "text": "영업시간 Mo-Su 06:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/336641107",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q221716"
+  },
+  {
+   "area": "후시미구",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q714828",
+   "importance": {
+    "sitelinks": 41
+   },
+   "lat": 34.967202,
+   "lng": 135.773386,
+   "name": "후시미 이나리 신사",
+   "name_original": "伏見稲荷大社",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 55.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q514480",
+    "Q11438310",
+    "Q134917286",
+    "Q845945",
+    "Q135009132",
+    "Q135419779"
+   ],
+   "wikidata_id": "Q714828"
+  },
+  {
+   "area": "가미교구",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/554879249"
+   },
+   "hours_text": "Mo-Su 09:00-21:00",
+   "id": "wd:Q1202239",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 35.025278,
+   "lng": 135.762222,
+   "name": "교토고쇼",
+   "name_original": "京都御所",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/554879249",
+     "text": "영업시간 Mo-Su 09:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/554879249",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11489051",
+    "Q53536964",
+    "Q134962447"
+   ],
+   "wikidata_id": "Q1202239"
+  },
+  {
+   "area": "사쿄구",
+   "category": "worship",
+   "description": "지쇼지(일본어: 慈照寺)는 일본 교토부 교토시 사쿄구에 위치한 선불교 사찰이다. 비공식적인 명칭은 긴카쿠지(일본어: 銀閣寺)인데, 이 이름으로 더 잘 알려져 있기도 하다. 무로마치 시대의 히가시야마 문화를 가장 잘 보여주는 건축물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "지쇼지",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%80%EC%87%BC%EC%A7%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q257473",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 35.026667,
+   "lng": 135.798333,
+   "name": "지쇼지",
+   "name_original": "銀閣寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 24.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q15835",
+    "Q5393308"
+   ],
+   "wikidata_id": "Q257473"
+  },
+  {
+   "area": "미나미구",
+   "category": "worship",
+   "description": "도지(東寺)는 일본 교토시에 있는 진언종의 사원이다. 도지라는 이름의 \"동쪽의 절\"을 뜻하며 한 때 \"서쪽의 절\"인 사이지(西寺)와 한 쌍을 이루었다. 절은 헤이안쿄의 입구인 라조몬과 나란히 세워졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "도지",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%A7%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/359896810"
+   },
+   "hours_text": "Mo-Su 05:00-17:00",
+   "id": "wd:Q1046403",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 34.980556,
+   "lng": 135.747778,
+   "name": "도지",
+   "name_original": "東寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/359896810",
+     "text": "영업시간 Mo-Su 05:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/359896810",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 23.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q11452101"
+   ],
+   "wikidata_id": "Q1046403"
+  },
+  {
+   "area": "나카교구",
+   "category": "castle",
+   "description": "옛 별궁 니조성(일본어: 元離宮二条城)은 일본 교토부 교토시 나카교구 니조도오리 호리가와에 있는 에도 시대 때 지어진 성으로 윤곽식 평성(坪城)이다. 유네스코 세계문화유산으로 지정되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "니조성",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%88%EC%A1%B0%EC%84%B1"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/57111281"
+   },
+   "hours_text": "Mo-Su 08:45-17:00",
+   "id": "wd:Q1013399",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 35.014167,
+   "lng": 135.7475,
+   "name": "니조성",
+   "name_original": "二条城",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/57111281",
+     "text": "영업시간 Mo-Su 08:45-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 1.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q92026",
+    "Q11482300"
+   ],
+   "wikidata_id": "Q1013399"
+  },
+  {
+   "area": "사쿄구",
+   "category": "building_landmark",
+   "description": "헤이안 신궁(일본어: 平安神宮 (へいあんじんぐう) 헤이안진구[*])은 교토부 교토시 사쿄구에 있는 신궁(神宮)이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "헤이안 신궁",
+    "url": "https://ko.wikipedia.org/wiki/%ED%97%A4%EC%9D%B4%EC%95%88_%EC%8B%A0%EA%B6%81"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/619903245"
+   },
+   "hours_text": "Mar 15-Sep 30 Mo-Su 06:00-18:00; Oct 01-Oct 31 Mo-Su 06:00-17:30; Nov 01-Feb 14 Mo-Su 06:00-17:00; Feb 15-Mar 14 Mo-Su 06:00-17:30",
+   "id": "wd:Q385141",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 35.016667,
+   "lng": 135.782222,
+   "name": "헤이안 신궁",
+   "name_original": "平安神宮",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/619903245",
+     "text": "영업시간 Mar 15-Sep 30 Mo-Su 06:00-18:00; Oct 01-Oct 31 Mo-Su 06:00-17:30; Nov 01-Feb 14 Mo-Su 06:00-17:00; Feb 15-Mar 14 Mo-Su 06:00-17:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/619903245",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q120680118",
+    "Q175288",
+    "Q845945"
+   ],
+   "wikidata_id": "Q385141"
+  },
+  {
+   "area": "후시미구",
+   "category": "castle",
+   "description": "후시미성(일본어: 伏見城, ふしみじょう)은 일본 교토부 교토시 후시미구에 있던 성의 이름이다. 현재 그 터에 세워진 후시미 모모야마 성(伏見桃山城)은 근대의 건축물로 후시미 성과는 관계없는 성이다. 1592년, 도요토미 히데요시가 자신의 은거 후 거처로 삼기 위하여 우지강 연안의 낮은 구릉인 시즈키산(指月山)에 주라쿠다이의 건물을 이축하는 등의 방식으로 축성했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "후시미성",
+    "url": "https://ko.wikipedia.org/wiki/%ED%9B%84%EC%8B%9C%EB%AF%B8%EC%84%B1"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1196273",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 34.939501,
+   "lng": 135.77686,
+   "name": "후시미성",
+   "name_original": "伏見城",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 476.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q92026"
+   ],
+   "wikidata_id": "Q1196273"
+  },
+  {
+   "area": "히가시야마구",
+   "category": "worship",
+   "description": "도후쿠지(東福寺, とうふくじ)는 일본 교토시 히가시야마구 혼마치 15초메에 위치한 린자이슈 도후쿠지파(臨済宗東福寺派)의 대본산 사원이다. 산호는 에이닛산(慧日山)이며, 본존은 석가여래이다. 중세와 근세를 통틀어 교토오산의 네 번째 선종 사찰로 번영했으며, 근대에 들어 규모가 축소되었음에도 여전히 25개 절의 탑두를 가진 대사찰이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "도후쿠지",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%ED%9B%84%EC%BF%A0%EC%A7%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/768987591"
+   },
+   "hours_text": "Mo-Su 08:30-16:30",
+   "id": "wd:Q2166743",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 34.975707,
+   "lng": 135.773676,
+   "name": "도후쿠지",
+   "name_original": "東福寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/768987591",
+     "text": "영업시간 Mo-Su 08:30-16:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 154.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q2385804"
+   ],
+   "wikidata_id": "Q2166743"
+  },
+  {
+   "area": "히가시야마구",
+   "category": "building_landmark",
+   "description": "야사카 신사(일본어: 八坂神社, やさかじんじゃ 야사카진쟈[*])는 교토부 교토시 히가시야마구에 위치한 신사이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "야사카 신사",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%BC%EC%82%AC%EC%B9%B4_%EC%8B%A0%EC%82%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/328903218"
+   },
+   "hours_text": "24/7",
+   "id": "wd:Q692714",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 35.003645,
+   "lng": 135.778529,
+   "name": "야사카 신사",
+   "name_original": "八坂神社",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/328903218",
+     "text": "영업시간 24/7 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/328903218",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 8.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q125324170",
+    "Q118304363",
+    "Q845945",
+    "Q11588442"
+   ],
+   "wikidata_id": "Q692714"
+  },
+  {
+   "area": "시모교구",
+   "category": "tower",
+   "description": "교토 타워(Kyoto Tower)는 일본 교토부 교토시 시모교구에 있는 탑이다. 교토역 맞은 편에 있으며, 1964년 세워졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "교토 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%90%ED%86%A0_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/1494857741"
+   },
+   "hours_text": "Mo-Su 10:00-21:00",
+   "id": "wd:Q1201304",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 34.9875,
+   "lng": 135.759167,
+   "name": "교토 타워",
+   "name_original": "京都タワー",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/1494857741",
+     "text": "영업시간 Mo-Su 10:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/1494857741",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1440300"
+   ],
+   "wikidata_id": "Q1201304"
+  },
+  {
+   "area": "히가시야마구",
+   "category": "worship",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/456122965"
+   },
+   "hours_text": "Mo-Su 09:00-16:00",
+   "id": "wd:Q873645",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 35.005208,
+   "lng": 135.783403,
+   "name": "치온인",
+   "name_original": "知恩院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/456122965",
+     "text": "영업시간 Mo-Su 09:00-16:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q873645"
+  },
+  {
+   "area": "가미교구",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/432120699"
+   },
+   "hours_text": "Mo-Su 07:00-17:00",
+   "id": "wd:Q662176",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 35.029195,
+   "lng": 135.735008,
+   "name": "기타노텐만 궁",
+   "name_original": "北野天満宮",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/432120699",
+     "text": "영업시간 Mo-Su 07:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/432120699",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 213.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q798838",
+    "Q118304363",
+    "Q845945",
+    "Q135022918",
+    "Q135009132",
+    "Q135022904",
+    "Q135419779"
+   ],
+   "wikidata_id": "Q662176"
+  },
+  {
+   "area": "사쿄구",
+   "category": "museum",
+   "description": "교토 국립근대미술관(일본어: 京都国立近代美術館 교토쿠리쓰킨다이비쥬쓰칸[*])은 교토부 사쿄구 오카자키 공원에 위치한 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "교토 국립근대미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%90%ED%86%A0_%EA%B5%AD%EB%A6%BD%EA%B7%BC%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1055628",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 35.012389,
+   "lng": 135.781943,
+   "name": "교토 국립근대미술관",
+   "name_original": "京都国立近代美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q17431399"
+   ],
+   "wikidata_id": "Q1055628"
+  },
+  {
+   "area": "히가시야마구",
+   "category": "worship",
+   "description": "호코지(方広寺 (ほうこうじ))는 일본 교토 시(京都市) 히가시야마 구(東山区)에 소재한 천태종(天台宗) 사찰이다. 산호(山号)는 없다. 본존(本尊)은 노사나불(盧舎那仏).",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호코지 (교토시)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%BD%94%EC%A7%80_(%EA%B5%90%ED%86%A0%EC%8B%9C)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1045971",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 34.992106,
+   "lng": 135.772064,
+   "name": "호코지",
+   "name_original": "方広寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 16.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q1045971"
+  },
+  {
+   "area": "교토시",
+   "category": "worship",
+   "description": "혼간지(영어: 本願寺)는 일본의 불교 종파 중 하나인 정토진종 계열의 가장 큰 문파를 일컫는 총칭으로, 니시(서)와 히가시(동) 분파로 나뉜다. '혼간지'는 또한 이 종파와 관련된 여러 실제 사원 건물 중 하나를 가리키기도 한다. 니시혼간지(西本願寺)와 히가시혼간지(東本願寺)는 교토시에 위치한 두 개의 주요 사찰이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "혼간지",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%BC%EA%B0%84%EC%A7%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1627016",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 34.991111,
+   "lng": 135.751111,
+   "name": "혼간지",
+   "name_original": "本願寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q1971849"
+   ],
+   "wikidata_id": "Q1627016"
+  },
+  {
+   "area": "사쿄구",
+   "category": "building_landmark",
+   "description": "요시다 신사(일본어: 吉田神社)는 일본 교토시 사쿄구에 위치한 신토 신사이다. 859년에 후지와라 씨족에 의해 창건되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "요시다 신사",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%8B%9C%EB%8B%A4_%EC%8B%A0%EC%82%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q713177",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 35.02535,
+   "lng": 135.784633,
+   "name": "요시다 신사",
+   "name_original": "吉田神社",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/369017538",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q845945",
+    "Q118469772",
+    "Q125316983"
+   ],
+   "wikidata_id": "Q713177"
+  },
+  {
+   "area": "히가시야마구",
+   "category": "worship",
+   "description": "센뉴지(일본어: 泉涌寺 せんにゅうじ[*])는 교토부 교토시 히가시야마구 센뉴지 야마우치초에 있는 진언종 센뉴지파의 총본산 사찰이다. 산호는 토잔 (東山) 또는 센잔 (泉山)이다. 본존은 석가여래, 아미타여래, 미륵여래의 3세불이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "센뉴지",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%BC%EB%89%B4%EC%A7%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1060966",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 34.978056,
+   "lng": 135.780556,
+   "name": "센뉴지",
+   "name_original": "泉涌寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q17218816",
+    "Q10901138",
+    "Q134962447"
+   ],
+   "wikidata_id": "Q1060966"
+  }
+ ]
+}

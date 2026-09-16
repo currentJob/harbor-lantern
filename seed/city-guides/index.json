@@ -1,0 +1,79 @@
+{
+ "cities": [
+  {
+   "center": {
+    "lat": 51.508,
+    "lng": -0.1281
+   },
+   "city_id": "london",
+   "country_code": "GB",
+   "country_en": "United Kingdom",
+   "country_ko": "영국",
+   "grade": "full",
+   "ko_label_ratio": 1.0,
+   "name_en": "London",
+   "name_ko": "런던",
+   "name_local": "London",
+   "retrieved_at": "2026-09-16",
+   "spot_count": 60
+  },
+  {
+   "center": {
+    "lat": 50.0875,
+    "lng": 14.4213
+   },
+   "city_id": "prague",
+   "country_code": "CZ",
+   "country_en": "Czechia",
+   "country_ko": "체코",
+   "grade": "full",
+   "ko_label_ratio": 1.0,
+   "name_en": "Prague",
+   "name_ko": "프라하",
+   "name_local": "Praha",
+   "retrieved_at": "2026-09-16",
+   "spot_count": 17
+  }
+ ],
+ "counts": {
+  "below": 0,
+  "exported": 2,
+  "full": 2,
+  "partial": 0,
+  "surveyed": 2
+ },
+ "dataset": "city-guides",
+ "known_gaps": [
+  "구운 도시는 사람이 쓴 홍콩 가이드에 근접하지만 동일해지지 않는다 — 같은 방식으로 홍콩을 재현하면 상위 25건 중 한국어가 12건이고 주룽 모스크가 상위에 온다(실측 2026-09-15).",
+  "등급이 미달인 도시는 수록하지 않는다. 조사는 했고 지표는 harvest-report.json 에 남는다.",
+  "리조트 목적지는 이 방식으로 채워지지 않는다 — 나트랑 5건 · 푸꾸옥 3건(한국어 라벨 0)이고 반경 25km 로도 채워지지 않았다(실측 2026-09-15).",
+  "조사 시점은 retrieved_at 이다. 자동 갱신은 하지 않는다 — 사람이 다시 굽는다.",
+  "후보는 한국어 위키백과에 문서가 있고 좌표가 붙은 장소로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 제약의 방향이 제품 목표(한국어 가이드)와 같지만, 도시별 스팟 수를 '그 도시의 전부'로 읽으면 안 된다.",
+  "지리 검색 반경 상한은 10km 다. 대장에 그보다 넓게 적힌 도시는 10km 로 잘렸고 그 사실은 각 도시 파일의 query.radius_clamped 와 known_gaps 에 적혀 있다."
+ ],
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "what_this_is": "한국어 위키백과·위키데이터·OpenStreetMap 에서 조사해 구운 도시 가이드다. 사람이 고르고 쓴 홍콩 가이드와 성격이 다르다 — 후보는 중심 반경 안의 한국어 문서에서 오고, 순위는 언어판 수(sitelinks), 분류는 P31 이며, 설명은 위키백과 도입부 요약이다. 도시마다 등급(완전/부분)을 재어 함께 싣는다."
+}

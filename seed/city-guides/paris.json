@@ -1,0 +1,2386 @@
+{
+ "center": {
+  "lat": 48.8606,
+  "lng": 2.3376
+ },
+ "city_id": "paris",
+ "country_code": "FR",
+ "country_en": "France",
+ "country_ko": "프랑스",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 150,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 25,
+   "bridge": 3,
+   "building_landmark": 9,
+   "castle": 2,
+   "monument": 3,
+   "museum": 9,
+   "park": 3,
+   "tower": 1,
+   "worship": 5
+  },
+  "denylisted_count": 0,
+  "described_count": 57,
+  "effective_radius_m": 6000,
+  "excluded_count": 7,
+  "grade_window": 25,
+  "hours_count": 3,
+  "ko_label_count": 25,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 158,
+  "page_count": 158,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 60,
+  "unclassified_count": 41,
+  "verification_failed_count": 3
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 57곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 41건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Paris",
+ "name_ko": "파리",
+ "name_local": "Paris",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 158,
+  "page_count": 158,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 5
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "파리 7구",
+   "category": "tower",
+   "description": "에펠탑(프랑스어: Tour Eiffel 투르 에펠[*], 프랑스어 발음: ​[tuʁ ɛfɛl])은 프랑스 파리 마르스 광장에 위치한 격자형 철골 타워이다. 1889년에 프랑스 혁명 100주년을 맞이하여 파리 만국 박람회를 개최하였는데 이 박람회를 상징할만한 기념물로 에펠탑을 건축하였다. 박람회가 열린 마르스 광장 출입 관문에 위치해있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에펠탑",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%ED%8E%A0%ED%83%91"
+   },
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q243",
+   "importance": {
+    "sitelinks": 191
+   },
+   "lat": 48.858296,
+   "lng": 2.294479,
+   "name": "에펠탑",
+   "name_original": "tour Eiffel",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1440476",
+    "Q1440300",
+    "Q2319498"
+   ],
+   "wikidata_id": "Q243"
+  },
+  {
+   "area": "생제르맹로세루아",
+   "category": "museum",
+   "description": "루브르 박물관(프랑스어: Musée du Louvre 뮈제 뒤 루브르[*], 영어: Louvre Museum)은 프랑스 파리의 중심가인 리볼리가에 있는 국립 박물관이다. 소장품의 수와 질 면에서 메트로폴리탄 미술관, 대영박물관과 함께 세계적으로 손꼽히는 박물관이다. 현재의 건물은 루브르 궁전을 개조한 것으로, 파리의 센강 주변을 포함하여 세계유산으로 지정되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루브르 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%EB%B8%8C%EB%A5%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q19675",
+   "importance": {
+    "sitelinks": 169
+   },
+   "lat": 48.861111,
+   "lng": 2.335833,
+   "name": "루브르 박물관",
+   "name_original": "Musée du Louvre",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 40.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q17431399",
+    "Q3329412",
+    "Q570116",
+    "Q11396960"
+   ],
+   "wikidata_id": "Q19675"
+  },
+  {
+   "area": "Quartier Notre-Dame",
+   "category": "worship",
+   "description": "파리 노트르담 대성당(프랑스어: cathédrale Notre-Dame de Paris 카테드랄 노트르담 드 파리[*])은 프랑스 파리 시테 섬 동쪽 반쪽에 있는 프랑스 후기 고딕 양식의 성당이다. 이 대성당은 지금도 로마 가톨릭교회의 교회 건물로서 파리 대주교좌 성당으로 사용되고 있다. 노트르담 대성당은 흔히 프랑스 고딕 건축의 정수로 이야기된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "노트르담 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%ED%8A%B8%EB%A5%B4%EB%8B%B4_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2981",
+   "importance": {
+    "sitelinks": 125
+   },
+   "lat": 48.853,
+   "lng": 2.3498,
+   "name": "노트르담 대성당",
+   "name_original": "Notre-Dame de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q56242215",
+    "Q120560",
+    "Q317557"
+   ],
+   "wikidata_id": "Q2981"
+  },
+  {
+   "area": "파리 8구",
+   "category": "attraction",
+   "description": "에투알 개선문(프랑스어: Arc de triomphe de l'Étoile 아르크 드 트리옹프 드 레투알[*])은 프랑스 파리 샹젤리제 거리의 서쪽 끝, 샤를 드골 광장 한복판에 위치한 거대한 개선문이다. 개선문의 위치는 총 3개의 아롱디스망에 걸쳐있는데, 남서쪽으로 16구, 북쪽으로 17구, 동쪽으로 8구가 자리하고 있다. 에투알 개선문은 프랑스 혁명과 나폴레옹 전쟁에서 죽은 전사자들을 기리기 위하여 세워졌으며, 개선문 아래에는 당시 전쟁에서 프랑스가 거둔 모든 승전보들과 지휘관들의 이름이 양각되어있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에투알 개선문",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%ED%88%AC%EC%95%8C_%EA%B0%9C%EC%84%A0%EB%AC%B8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q64436",
+   "importance": {
+    "sitelinks": 85
+   },
+   "lat": 48.87378,
+   "lng": 2.29504,
+   "name": "에투알 개선문",
+   "name_original": "Arc de triomphe de l'Étoile",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q143912",
+    "Q570116",
+    "Q33506"
+   ],
+   "wikidata_id": "Q64436"
+  },
+  {
+   "area": "파리 8구",
+   "category": "castle",
+   "description": "엘리제궁(프랑스어: Palais de l'Élysée)은 프랑스 대통령의 공식 관저로서 대통령 사무소가 위치했으며 장관 회의도 이곳에서 열린다. 중요한 외국 인사의 방문 시에는 인근의 오텔 드 마리니(프랑스어: Hôtel de Marigny)가 숙소로 사용된다. 사실 여기서의 호텔이란 우리가 생각하는 호텔이 아니라 궁전 부속 거주지 격에 해당하므로 격이 다르다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "엘리제궁",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%98%EB%A6%AC%EC%A0%9C%EA%B6%81"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q188190",
+   "importance": {
+    "sitelinks": 66
+   },
+   "lat": 48.870278,
+   "lng": 2.316389,
+   "name": "엘리제궁",
+   "name_original": "Palais de l'Élysée",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q15848826",
+    "Q481289"
+   ],
+   "wikidata_id": "Q188190"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 1구(프랑스어: 1er arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개 행정구 가운데 하나다. 파리 시 거의 중앙에 있으며, 센강 북안에 접하고 있다. 파리 옛 지구 가운데 하나인 레알 지구가 여기에 속하며 그 역사는 중세 초로 거슬러 올라간다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 1구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_1%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q161741",
+   "importance": {
+    "sitelinks": 64
+   },
+   "lat": 48.859947,
+   "lng": 2.342059,
+   "name": "파리 1구",
+   "name_original": "1er arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 69.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842",
+    "Q4286337"
+   ],
+   "wikidata_id": "Q161741"
+  },
+  {
+   "area": "Quartier de la Chaussée-d'Antin",
+   "category": "building_landmark",
+   "description": "오페라 가르니에(Opéra Garnier) 또는 가르니에 궁(Palais Garnier)은 프랑스 파리 9구 오페라 광장 북쪽 끝에 위치한 2200석을 수용하는 오페라 극장이다. 파리 오페라 극장(Opéra de Paris, Paris Opéra)으로도 알려져 있다. 샤를 가르니에가 신바로크 양식으로 설계한 건물로 그 당시 건축학적 걸작 중 하나로 평가된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오페라 가르니에",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%ED%8E%98%EB%9D%BC_%EA%B0%80%EB%A5%B4%EB%8B%88%EC%97%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q187840",
+   "importance": {
+    "sitelinks": 62
+   },
+   "lat": 48.871944,
+   "lng": 2.331667,
+   "name": "오페라 가르니에",
+   "name_original": "Opéra Garnier",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q153562",
+    "Q24699794"
+   ],
+   "wikidata_id": "Q187840"
+  },
+  {
+   "area": "샹젤리제 카르티에",
+   "category": "attraction",
+   "description": "콩코르드 광장(프랑스어: Place de la Concorde, 프랑스어 발음 plas də la kɔ̃kɔʁd)은 프랑스 파리의 광장으로 샹젤리제 거리 동쪽에 튈르리 공원과 사이에 위치한다. 면적은 86,400m2(8.64ha)로 파리에서는 가장 넓은 광장이다. 1755년 앙주자크 가브리엘이 설계한 이 광장에는 원래 루이 15세의 기마상이 설치되어 있었기 때문에 '루이 15세 광장'으로 불리었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "콩코르드 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BD%A9%EC%BD%94%EB%A5%B4%EB%93%9C_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q189503",
+   "importance": {
+    "sitelinks": 62
+   },
+   "lat": 48.865633,
+   "lng": 2.321236,
+   "name": "콩코르드 광장",
+   "name_original": "place de la Concorde",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q189503"
+  },
+  {
+   "area": "소르본 카르티에",
+   "category": "worship",
+   "description": "팡테옹(Panthéon 혹은 Panthéon de Paris)은 프랑스 파리 카르티에 라탱(Quartier latin) 지역에 있는 건축물이다. 입구에 있는 삼각형 부조 아래에는 \"조국이 위대한 사람들에게 사의를 표하다.\"(AUX GRANDS HOMMES LA PATRIE RECONNAISSANTE)라는 글자가 씌어 있는데, 팡테옹은 원래 성 주느비에브에게 봉헌된 교회였으나, 수많은 변화를 거쳐 현재는 예배 장소와 위인들의 묘지의 역할이 복합되었기 때문이다. 이 건물은 초기 신고전주의 건물로 파사드(Façade, 건물의 정면)은 로마의 판테온에서 따온 것으로 브라만테의 템피에토와 비슷하게 생긴 돔이 위에 얹혀 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "팡테옹",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%A1%ED%85%8C%EC%98%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q188856",
+   "importance": {
+    "sitelinks": 60
+   },
+   "lat": 48.846198,
+   "lng": 2.346105,
+   "name": "팡테옹",
+   "name_original": "Panthéon",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q162875",
+    "Q16970"
+   ],
+   "wikidata_id": "Q188856"
+  },
+  {
+   "area": "Clignancourt",
+   "category": "worship",
+   "description": "사크레쾨르 바실리카(프랑스어: Basilique du Sacré-Cœur 바실리크 뒤 사크레쾨르[*])은 프랑스 파리의 몽마르트르 언덕 위에 있는 성당이다. 프랑스가 프로이센과의 전쟁에서 패한 뒤 침체된 국민의 사기를 고양시킬 목적으로 모금한 돈으로 만들어졌다. 1876년에 기공되어 1910년에 완성되었으나 제1차 세계 대전에서 독일의 항복 후에 헌당식을 했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "사크레쾨르 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%ED%81%AC%EB%A0%88%EC%BE%A8%EB%A5%B4_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q28785",
+   "importance": {
+    "sitelinks": 59
+   },
+   "lat": 48.88665,
+   "lng": 2.34295,
+   "name": "사크레쾨르 대성당",
+   "name_original": "Basilique du Sacré-Cœur",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q120560",
+    "Q693842",
+    "Q133747929"
+   ],
+   "wikidata_id": "Q28785"
+  },
+  {
+   "area": "생제르맹로세루아",
+   "category": "worship",
+   "description": "생트샤펠(프랑스어: Sainte-Chapelle 생트샤펠[*])은 프랑스 파리의 시테섬의 서쪽에 있는 프랑스 후기 고딕 양식의 성당이다. 14세기까지 프랑스의 왕들이 살았던 궁전인 시테궁 안에 지어진 왕실 성당이었다. 노트르담 대성당에서 그리 멀지 않은 곳에 위치해 있으며 파리 대법원이 바로 옆에 위치해 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "생트샤펠",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%9D%ED%8A%B8%EC%83%A4%ED%8E%A0"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q193193",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 48.855369,
+   "lng": 2.345028,
+   "name": "생트샤펠",
+   "name_original": "Sainte Chapelle",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q108325",
+    "Q96371632"
+   ],
+   "wikidata_id": "Q193193"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 2구(프랑스어: 2e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 부호 상에서는 '부르스'(Arrondissement de la Bourse)라는 이름이 붙어 있지만, 이는 일상 생활에서 거의 쓰이지 않는 지명이다. 15세기에서 16세기 사이 파리 시가 교외로 확장되는 과정에서 조성된 지역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 2구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_2%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q209549",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 48.86688,
+   "lng": 2.34047,
+   "name": "파리 2구",
+   "name_original": "2e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 254.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842",
+    "Q4286337"
+   ],
+   "wikidata_id": "Q209549"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 3구(프랑스어: 3e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 탕플레 구(Arrondissement du Temple)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 3구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_3%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q223140",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 48.864027,
+   "lng": 2.361531,
+   "name": "파리 3구",
+   "name_original": "3e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 24.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842",
+    "Q4286337"
+   ],
+   "wikidata_id": "Q223140"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 7구(프랑스어: 7e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 팔레부르봉 구(Arrondissement du Palais-Bourbon)이라고도 하며, 에펠탑과 앵발리드 (나폴레옹의 시신이 안치된 곳), 기적의 메달 예배당, 오르세 미술관, 로댕 미술관, 뒤 케 브랑리 미술관 같은 파리에서 잘 알려지고 유명한 관광지들이 모여있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 7구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_7%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q259463",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 48.859167,
+   "lng": 2.312778,
+   "name": "파리 7구",
+   "name_original": "7e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q259463"
+  },
+  {
+   "area": "파리",
+   "category": "building_landmark",
+   "description": "ESCP 경영대학원(영어: ESCP Business School, 프랑스어: École Supérieure de Commerce de Paris)은 파리에서 설립된 프랑스의 경영대학원이자 그랑제콜로, 파리, 베를린, 런던, 마드리드, 토리노, 바르샤바에 캠퍼스를 두고 유럽 전역에 거점을 두고 있다. 1819년에 설립된 이 학교는 세계에서 가장 오래된 경영대학원으로 간주된다. ESCP 경영대학원은 BSc, MBA, Executive MBA, 금융 및 경영 분야의 석사 과정, 경영자 교육 프로그램 및 PhD 과정을 운영한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "ESCP 경영대학원",
+    "url": "https://ko.wikipedia.org/wiki/ESCP_%EA%B2%BD%EC%98%81%EB%8C%80%ED%95%99%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q29293",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 48.8644,
+   "lng": 2.380789,
+   "name": "ESCP 경영대학원",
+   "name_original": "ESCP Business School",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1143635",
+    "Q2385804",
+    "Q902104"
+   ],
+   "wikidata_id": "Q29293"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 9구(프랑스어: 9e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 오페라 구(Arrondissement de l'Opéra)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 9구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_9%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q275118",
+   "importance": {
+    "sitelinks": 56
+   },
+   "lat": 48.878281,
+   "lng": 2.336967,
+   "name": "파리 9구",
+   "name_original": "9e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q275118"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 4구(프랑스어: 4e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 오텔드빌 구(Arrondissement de l'Hôtel-de-Ville)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 4구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_4%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q230127",
+   "importance": {
+    "sitelinks": 55
+   },
+   "lat": 48.855556,
+   "lng": 2.355556,
+   "name": "파리 4구",
+   "name_original": "4e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842",
+    "Q4286337"
+   ],
+   "wikidata_id": "Q230127"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 6구(프랑스어: 6e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 뤽상부르 구(Arrondissement du Luxembourg)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 6구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_6%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q245546",
+   "importance": {
+    "sitelinks": 55
+   },
+   "lat": 48.850531,
+   "lng": 2.332233,
+   "name": "파리 6구",
+   "name_original": "6e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q245546"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 8구(프랑스어: 8e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 엘리제 구(Arrondissement de l'Élysée)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 8구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_8%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q270230",
+   "importance": {
+    "sitelinks": 55
+   },
+   "lat": 48.874167,
+   "lng": 2.311111,
+   "name": "파리 8구",
+   "name_original": "8e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q270230"
+  },
+  {
+   "area": "파리 18구",
+   "category": "building_landmark",
+   "description": "물랭 루주(프랑스어: Moulin Rouge; 빨간 풍차)는 1889년에 만들어진 파리 몽마르트르에 있는 카바레이다. ‘빨간 풍차’라는 뜻의 이름은 건물 옥상에 있는 빨간 풍차 장식 때문에 붙여졌다. 물랭 루주는 프랑스 근대 유흥 문화의 상징으로 여겨지며, 지금까지 많은 관광객들이 찾는 관광 명소가 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "물랭 루주",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AC%BC%EB%9E%AD_%EB%A3%A8%EC%A3%BC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q151030",
+   "importance": {
+    "sitelinks": 54
+   },
+   "lat": 48.884167,
+   "lng": 2.332222,
+   "name": "물랭 루주",
+   "name_original": "Moulin-Rouge",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q131183",
+    "Q8719053"
+   ],
+   "wikidata_id": "Q151030"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 10구(프랑스어: 10e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 앙트르포 구(Arrondissement de l'Entrepôt)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 10구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_10%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q163948",
+   "importance": {
+    "sitelinks": 54
+   },
+   "lat": 48.875508,
+   "lng": 2.357853,
+   "name": "파리 10구",
+   "name_original": "10ᵉ arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q163948"
+  },
+  {
+   "area": "파리 3구",
+   "category": "museum",
+   "description": "기술공예박물관(프랑스어: Musée des Arts et Métiers)은 프랑스 파리에 있는 산업 디자인 박물관이다. 1794년 설립되어 프랑스 국립기술공예원이 소장하는 과학 기구와 발명품 등을 전시하고 있다. 레옹 푸코가 1851년 사용한 원본 진자, 프레데리크 오귀스트 바르톨디의 자유의 여신상의 제작 견본, 클레망 아데르와 루이 블레리오가 제작한 초창기 비행기, 파스칼 계산기 등을 소장하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "기술공예박물관 (프랑스)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B8%B0%EC%88%A0%EA%B3%B5%EC%98%88%EB%B0%95%EB%AC%BC%EA%B4%80_(%ED%94%84%EB%9E%91%EC%8A%A4)"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/247618453"
+   },
+   "hours_text": "Tu-Th 10:00-18:00; Fr 10:00-21:00; Sa-Su 10:00-18:00",
+   "id": "wd:Q1538826",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 48.866111,
+   "lng": 2.355278,
+   "name": "기술공예박물관",
+   "name_original": "Musée des arts et métiers",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/247618453",
+     "text": "영업시간 Tu-Th 10:00-18:00; Fr 10:00-21:00; Sa-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/247618453",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q588140",
+    "Q2398990",
+    "Q787934",
+    "Q866133"
+   ],
+   "wikidata_id": "Q1538826"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 11구(프랑스어: 4e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 포팽쿠르 구(Arrondissement de Popincourt)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 11구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_11%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q169293",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 48.858678,
+   "lng": 2.379306,
+   "name": "파리 11구",
+   "name_original": "11e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q169293"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 12구(프랑스어: 12e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 뤼이이 구(Arrondissement de Reuilly)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 12구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_12%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q171689",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 48.840808,
+   "lng": 2.388183,
+   "name": "파리 12구",
+   "name_original": "12e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q171689"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 14구(프랑스어: 14e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 오브세르바투아르 구(Arrondissement de l'Observatoire)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 14구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_14%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q187153",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 48.833022,
+   "lng": 2.326889,
+   "name": "파리 14구",
+   "name_original": "14e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q187153"
+  },
+  {
+   "area": "Quartier de l'Odéon",
+   "category": "castle",
+   "description": "뤽상부르궁(프랑스어: Palais du Luxembourg)은 프랑스 파리 6구에 위치한 궁전이다. 1615년부터 1645년까지 건축가 살로몬 드 보로세의 설계안을 따라 섭정이자 루이 13세의 어머니인 마리아 데 메디치를 위하여 지었다. 프랑스 혁명 이후에는 의회 건물로 개축되어 사용되었고, 1835년부터 1856년까지 또다시 대대적인 재건 작업을 거쳐 현재의 모습으로 이르게 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뤽상부르궁",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A4%BD%EC%83%81%EB%B6%80%EB%A5%B4%EA%B6%81"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q329852",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 48.848333,
+   "lng": 2.3375,
+   "name": "뤽상부르궁",
+   "name_original": "palais du Luxembourg",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560"
+   ],
+   "wikidata_id": "Q329852"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 13구(프랑스어: 13e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 고블랭 구(Arrondissement des Gobelins)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 13구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_13%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q175129",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 48.832222,
+   "lng": 2.355556,
+   "name": "파리 13구",
+   "name_original": "13e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q175129"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 15구(프랑스어: 15e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 보지라르 구(Arrondissement de Vaugirard)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 15구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_15%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q191066",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 48.841328,
+   "lng": 2.300292,
+   "name": "파리 15구",
+   "name_original": "15e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842",
+    "Q192611"
+   ],
+   "wikidata_id": "Q191066"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 20구(arrondissement de Ménilmontant)는 프랑스 파리의 아롱디스망 가운데 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 20구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_20%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q210720",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 48.865061,
+   "lng": 2.39905,
+   "name": "파리 20구",
+   "name_original": "20e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q210720"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 17구(프랑스어: 17e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 바티뇰몬소 구(Arrondissement des Batignolles-Monceaux)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 17구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_17%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q197297",
+   "importance": {
+    "sitelinks": 51
+   },
+   "lat": 48.882244,
+   "lng": 2.307839,
+   "name": "파리 17구",
+   "name_original": "17e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q197297"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 18구(프랑스어: 18e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 뷔트몽마르트르 구(Arrondissement des Buttes-Montmartre)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 18구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_18%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q200126",
+   "importance": {
+    "sitelinks": 51
+   },
+   "lat": 48.89215,
+   "lng": 2.344447,
+   "name": "파리 18구",
+   "name_original": "18e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q200126"
+  },
+  {
+   "area": "파리 6구",
+   "category": "park",
+   "description": "뤽상부르 공원(프랑스어: Jardin du Luxembourg)은 프랑스 파리 6구에 위치한 공원이자 정원이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뤽상부르 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A4%BD%EC%83%81%EB%B6%80%EB%A5%B4_%EA%B3%B5%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q309458",
+   "importance": {
+    "sitelinks": 51
+   },
+   "lat": 48.846944,
+   "lng": 2.337222,
+   "name": "뤽상부르 공원",
+   "name_original": "Jardin du Luxembourg",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746",
+    "Q56478984"
+   ],
+   "wikidata_id": "Q309458"
+  },
+  {
+   "area": "샹젤리제 카르티에",
+   "category": "building_landmark",
+   "description": "그랑 팔레(프랑스어: Grand Palais)는 프랑스 파리 8구에 있는 대형 전시장이자 박물관이다. 원래 1900년 파리 만국 박람회를 위해 지어졌다. 프티 팔레와 알렉상드르 3세 다리와 같은 시기에 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그랑 팔레",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%91_%ED%8C%94%EB%A0%88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q457318",
+   "importance": {
+    "sitelinks": 51
+   },
+   "lat": 48.866111,
+   "lng": 2.3125,
+   "name": "그랑 팔레",
+   "name_original": "Grand Palais",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q18674739",
+    "Q1378975"
+   ],
+   "wikidata_id": "Q457318"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 16구(프랑스어: 16e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 파시 구(Arrondissement de Passy)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 16구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_16%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q194420",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 48.863611,
+   "lng": 2.276489,
+   "name": "파리 16구",
+   "name_original": "16e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q194420"
+  },
+  {
+   "area": "파리",
+   "category": "attraction",
+   "description": "파리 19구(프랑스어: 19e arrondissement de Paris)는 프랑스의 수도 파리를 구성하는 20개의 행정구 중 하나이다. 일반 지방 자치 코드 (Code général des collectivités territoriales)로는 뷔트쇼몽 구(Arrondissement des Buttes-Chaumont)라고 표기하지만, 일상 생활에서 이 명칭은 거의 쓰이지 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 19구",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_19%EA%B5%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q204622",
+   "importance": {
+    "sitelinks": 49
+   },
+   "lat": 48.88235,
+   "lng": 2.381822,
+   "name": "파리 19구",
+   "name_original": "19e arrondissement de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q702842"
+   ],
+   "wikidata_id": "Q204622"
+  },
+  {
+   "area": "파리 15구",
+   "category": "building_landmark",
+   "description": "몽파르나스 타워(프랑스어: Tour Montparnasse 투르 몽파르나스[*]), 정식 명칭인 멘-몽파르나스 타워(프랑스어: Tour Maine-Montparnasse 투르 멘-몽파르나스[*])는 프랑스 파리의 몽파르나스에 위치한 사무용 빌딩이다. 높이 210m로 완공 당시부터 파리에서 가장 높은 마천루였으며, 2011년 라데팡스의 퍼스트 타워(높이 231m)가 완공됨에 따라 2순위로 밀렸다. 동시에 유럽 연합에서 14번째로 높은 건물이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "몽파르나스 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AA%BD%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q323767",
+   "importance": {
+    "sitelinks": 48
+   },
+   "lat": 48.84211,
+   "lng": 2.32198,
+   "name": "몽파르나스 타워",
+   "name_original": "Tour Montparnasse",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q323767"
+  },
+  {
+   "area": "파리 14구",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/493870538"
+   },
+   "hours_text": "Tu-Su 09:45-20:30",
+   "id": "wd:Q28924",
+   "importance": {
+    "sitelinks": 46
+   },
+   "lat": 48.83397,
+   "lng": 2.33245,
+   "name": "파리 카타콤",
+   "name_original": "Catacombes de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/493870538",
+     "text": "영업시간 Tu-Su 09:45-20:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/493870538",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 19.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q172896"
+   ],
+   "wikidata_id": "Q28924"
+  },
+  {
+   "area": "파리 6구",
+   "category": "bridge",
+   "description": "퐁뇌프(프랑스어: Pont Neuf)는 센강을 가로지르는 프랑스 파리에 서있는 가장 오래된 다리이다. 모순되게도 그 이름은 프랑스어로 \"새로운 다리\"라는 뜻을 가진다. 지금의 다리는 16세기 말에 건설되어 17세기 초에 완성된 것으로, 당시 강을 건너는 다리라면 교량 위에 건설되던 주택가의 부재와, 진흙과 마차로부터 보행자를 구분하는 인도를 갖추었다는 점에서 참신한 다리로 여겨졌기에 '새로운 다리'라는 명칭이 붙었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퐁뇌프",
+    "url": "https://ko.wikipedia.org/wiki/%ED%90%81%EB%87%8C%ED%94%84"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q335277",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 48.8575,
+   "lng": 2.341667,
+   "name": "퐁뇌프",
+   "name_original": "Pont Neuf",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 110.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3397526",
+    "Q158438"
+   ],
+   "wikidata_id": "Q335277"
+  },
+  {
+   "area": "파리 7구",
+   "category": "bridge",
+   "description": "알렉상드르 3세 다리(프랑스어: Pont Alexandre-III)는 프랑스 파리 센강에 있는 다리로서 파리 전체에서도 가장 아름답고 정교한 다리로 손꼽힌다. 에펠탑 구획과 샹젤리제 구획과도 인접한다. 다리는 1896년~1900년에 지어진 것으로서 당시로는 최신식의 등과 천사 등을 형상화한 조각품으로 이루어져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "알렉상드르 3세 다리",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%A0%89%EC%83%81%EB%93%9C%EB%A5%B4_3%EC%84%B8_%EB%8B%A4%EB%A6%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q390418",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 48.86361,
+   "lng": 2.31361,
+   "name": "알렉상드르 3세 다리",
+   "name_original": "Pont Alexandre-III",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q14276458",
+    "Q12042110"
+   ],
+   "wikidata_id": "Q390418"
+  },
+  {
+   "area": "갈리아 루그두넨시스",
+   "category": "monument",
+   "description": "루테티아(라틴어: Lutetia, 프랑스어: Lutèce 뤼테스[*])는 갈로로마인 마을로 오늘날의 파리에 해당하는 곳이다. 기원전 4,500년 전의 신석기 유적이 있으며, 기원전 3세기 경 갈리아 부족 중 하나인 파리시족에 의해 더 큰 정착지로 확장되었다. 센강의 중요한 교차점에 위치해 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루테티아",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%ED%85%8C%ED%8B%B0%EC%95%84"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q270273",
+   "importance": {
+    "sitelinks": 44
+   },
+   "lat": 48.854722,
+   "lng": 2.3475,
+   "name": "루테티아",
+   "name_original": "Lutèce",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q21752084",
+    "Q2202509"
+   ],
+   "wikidata_id": "Q270273"
+  },
+  {
+   "area": "파리 1구",
+   "category": "building_landmark",
+   "description": "루브르 피라미드(프랑스어: Pyramide du Louvre)는 프랑스 파리에 위치한 루브르궁의 안뜰인 나폴레옹 광장(Cour Napoléon)에 설치된 거대한 유리 금속 피라미드이다. 3개의 작은 유리 피라미드에 둘러싸인 가운데의 큰 피라미드는 루브르 박물관의 입구로 사용되고 있다. 루브르 박물관의 상징으로 여겨진다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루브르 피라미드",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%EB%B8%8C%EB%A5%B4_%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q13397",
+   "importance": {
+    "sitelinks": 43
+   },
+   "lat": 48.861,
+   "lng": 2.335861,
+   "name": "루브르 피라미드",
+   "name_original": "pyramide du Louvre",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12516"
+   ],
+   "wikidata_id": "Q13397"
+  },
+  {
+   "area": "",
+   "category": "museum",
+   "description": "파리 보자르(프랑스어: Beaux-Arts de Paris 보자르 드 파리[*])는 고급 미술 교육과 훈련을 제공하는 것을 주 목표로 하는 1817년에 설립된 프랑스의 그랑제콜이자 학술원(아카데미)이며 파리의 생제르맹데프레와 생투앵 두 곳에 위치해 있다. 파리 과학·인문학대학교의 일부인 이 미술 학교의 정식 명칭은 국립 고등 미술학교(프랑스어: École nationale supérieure des beaux-arts 에콜 나시오날 쉬페리외르 데 보자르[*], 약칭: ENSBA)이다. 보나파르트 거리 14번지에 위치한 파리 보자르는 생제르맹데프레의 중심부에 위치하고 있으며, 센강 바로 건너편에는 루브르 박물관이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 보자르",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_%EB%B3%B4%EC%9E%90%EB%A5%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q273593",
+   "importance": {
+    "sitelinks": 42
+   },
+   "lat": 48.856806,
+   "lng": 2.333278,
+   "name": "파리 보자르",
+   "name_original": "École nationale supérieure des beaux-arts",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q383092",
+    "Q847027",
+    "Q33506"
+   ],
+   "wikidata_id": "Q273593"
+  },
+  {
+   "area": "파리 8구",
+   "category": "attraction",
+   "description": "샤를 드골 광장(프랑스어: Place Charles-de-Gaulle)은 프랑스 파리에 있는 광장이다. 샹젤리제 거리를 포함한 12개의 직선 도로가 이 광장에서 만나며 그 모양이 별 모양을 이루어 과거에는 별의 광장을 의미하는 에투알 광장(프랑스어: Place de l' Étoile)이라고 불리었다. 광장 중앙에는 에투알 개선문이 있으며 이 개선문을 가로질러 '역사의 축'이 형성되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "샤를 드골 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%A4%EB%A5%BC_%EB%93%9C%EA%B3%A8_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q390243",
+   "importance": {
+    "sitelinks": 42
+   },
+   "lat": 48.873889,
+   "lng": 2.294722,
+   "name": "샤를 드골 광장",
+   "name_original": "Place Charles-de-Gaulle",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q390243"
+  },
+  {
+   "area": "",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q463055",
+   "importance": {
+    "sitelinks": 40
+   },
+   "lat": 48.888889,
+   "lng": 2.390833,
+   "name": "파리 음악원",
+   "name_original": "Conservatoire de musique",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q847027",
+    "Q184644"
+   ],
+   "wikidata_id": "Q463055"
+  },
+  {
+   "area": "생제르맹로세루아",
+   "category": "monument",
+   "description": "카루젤 개선문(프랑스어: Arc de triomphe du Carrousel)은 파리의 카루젤 광장에 위치한 개선문으로, 코린토스 양식의 신고전주의 건축물이다. 이 기념물은 나폴레옹이 제3차, 제4차 대프랑스 동맹에서 거둔 군사적 승리를 기념하기 위해 1806년부터 1808년 사이에 지어졌다. 샹젤리제 거리의 가장 끝에 있는 에투알 개선문은 카루젤 개선문의 약 두 배 규모로, 같은 해에 설계되었지만 1836년에야 완공되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카루젤 개선문",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A3%A8%EC%A0%A4_%EA%B0%9C%EC%84%A0%EB%AC%B8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q631104",
+   "importance": {
+    "sitelinks": 40
+   },
+   "lat": 48.861667,
+   "lng": 2.332778,
+   "name": "카루젤 개선문",
+   "name_original": "Arc de Triomphe du Carrousel",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 11.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q143912"
+   ],
+   "wikidata_id": "Q631104"
+  },
+  {
+   "area": "파리 3구",
+   "category": "attraction",
+   "description": "보주 광장(프랑스어: Place des Vosges)은 프랑스 파리 마레에 위치한 광장이다. 3구와 4구 경계선에 걸쳐있다. 이 광장에는 역사적인 건물이 매우 많으며, 국제 통화 기금(IMF)의 전 총재 도미니크 스트로스칸 등 저명한 인사들도 많이 거주한 것으로 잘 알려져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "보주 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%A3%BC_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q898629",
+   "importance": {
+    "sitelinks": 40
+   },
+   "lat": 48.855556,
+   "lng": 2.365556,
+   "name": "보주 광장",
+   "name_original": "Place des Vosges",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q2026833"
+   ],
+   "wikidata_id": "Q898629"
+  },
+  {
+   "area": "파리 16구",
+   "category": "museum",
+   "description": "마르모탕 모네 미술관(프랑스어: Musée Marmottan Monet, 프랑스어 발음: ​[myze maʁmɔtɑ̃ mɔnɛ]; 영어: Marmottan Monet Museum)은 프랑스 파리에 있는, 화가 클로드 모네에게 헌정된 미술관이다. 이 미술관 컬렉션은 모네의 1872년 작품인 《인상, 해돋이》를 포함하여 300점 이상의 인상주의 및 후기인상주의 회화가 특징이다. 다른 화가들의 여러 인상주의 작품도 전시되어 있는데, 특히 세계에서 가장 큰 베르트 모리조의 공개 컬렉션을 소장하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마르모탕 모네 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A5%B4%EB%AA%A8%ED%83%95_%EB%AA%A8%EB%84%A4_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1327886",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 48.85928,
+   "lng": 2.267383,
+   "name": "마르모탕 모네 미술관",
+   "name_original": "Musée Marmottan Monet",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q1327886"
+  },
+  {
+   "area": "Pont-de-Flandre",
+   "category": "museum",
+   "description": "과학산업박물관(프랑스어: Cité des Sciences et de l'Industrie, 약칭: la CSI 또는 CSI)은 프랑스 파리의 라빌레트 공원에 위치한 유럽 최대의 과학 박물관으로, 과학과 과학 문화를 진흥하는 프랑스 과학기술산업문화센터(CCSTI)의 서른여섯 곳 중 한 곳이다. 파리 과학 산업 박물관에는 매년 약 500만 명의 사람들이 방문한다. 볼거리로는 천체투영관, 잠수함(아고노트 S636), 아이맥스 극장(라 제오드) 및 어린이와 청소년을 위한 특별 구역이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "과학산업박물관 (파리)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%BC%ED%95%99%EC%82%B0%EC%97%85%EB%B0%95%EB%AC%BC%EA%B4%80_(%ED%8C%8C%EB%A6%AC)"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/253065826"
+   },
+   "hours_text": "Tu-Sa 10:00-18:00; Su 10:00-19:00",
+   "id": "wd:Q1094338",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 48.895556,
+   "lng": 2.388056,
+   "name": "과학산업박물관",
+   "name_original": "Cité des sciences et de l'industrie",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/253065826",
+     "text": "영업시간 Tu-Sa 10:00-18:00; Su 10:00-19:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/253065826",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2398990"
+   ],
+   "wikidata_id": "Q1094338"
+  },
+  {
+   "area": "Quartier de l'Europe",
+   "category": "park",
+   "description": "몽소 공원(프랑스어: Parc Monceau)은 프랑스 파리 8구에 위치한 공원이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "몽소 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AA%BD%EC%86%8C_%EA%B3%B5%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1414059",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 48.8794,
+   "lng": 2.30923,
+   "name": "몽소 공원",
+   "name_original": "Parc Monceau",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12783",
+    "Q22746"
+   ],
+   "wikidata_id": "Q1414059"
+  },
+  {
+   "area": "파리 4구",
+   "category": "building_landmark",
+   "description": "파리 시청사(프랑스어: Hôtel de Ville 오텔드빌[*])는 프랑스 파리의 시청이다. 파리 4구의 오텔드빌 광장 (시청 광장)에 위치해 있으며, 북쪽 방면으로 리볼리가와 접한다. 1357년 파리의 시청사 부지로 처음 사용된 이래 두어 차례 증축과 재건을 거친 건물로, 오늘날 외관에 해당되는 남쪽동은 1535년~1551년 국왕 프랑수아 1세의 명으로, 북쪽동은 1605년~1628년 앙리 4세와 루이 8세 대에 걸쳐 준공되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "파리 시청사",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_%EC%8B%9C%EC%B2%AD%EC%82%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q640968",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 48.856389,
+   "lng": 2.352222,
+   "name": "파리 시청",
+   "name_original": "hôtel de ville de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.4,
+    "label_match": "partial",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q25550691"
+   ],
+   "wikidata_id": "Q640968"
+  },
+  {
+   "area": "파리 3구",
+   "category": "attraction",
+   "description": "마레(프랑스어: Le Marais)는 프랑스 파리의 역사적 지역명(현행 행정구역이 아님)이다. 역사적 및 건축적 중요성이 높은 많은 뛰어난 건축물이 많이 있다. 파리 3구에서 4구에 걸쳐 있는 지역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마레",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A0%88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q749573",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 48.86,
+   "lng": 2.360833,
+   "name": "마레",
+   "name_original": "Le Marais",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 270.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705",
+    "Q748198"
+   ],
+   "wikidata_id": "Q749573"
+  },
+  {
+   "area": "Quartier de l'Odéon",
+   "category": "worship",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q295844",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 48.851002,
+   "lng": 2.334923,
+   "name": "생 쉴피스 교회",
+   "name_original": "Église Saint-Sulpice de Paris",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q295844"
+  },
+  {
+   "area": "파리 16구",
+   "category": "museum",
+   "description": "루이비통 재단(프랑스어: Fondation d'entreprise Louis-Vuitton)은 LVMH 그룹과 그 계열사가 후원하는 프랑스의 미술관이자 문화 센터로, 이전 명칭은 루이비통 창조 재단(프랑스어: Fondation Louis-Vuitton pour la création)이었다. 이 재단은 LVMH의 예술 및 문화 진흥 활동의 일환으로 운영되는 별도의 비영리 법인이다. 미술관은 프랑수아 올랑드 대통령이 참석한 가운데 2014년 10월 20일에 개관했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루이비통 파운데이션",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%EC%9D%B4%EB%B9%84%ED%86%B5_%ED%8C%8C%EC%9A%B4%EB%8D%B0%EC%9D%B4%EC%85%98"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3075489",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 48.876667,
+   "lng": 2.263333,
+   "name": "루이비통 파운데이션",
+   "name_original": "Fondation Louis-Vuitton",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q3075489"
+  },
+  {
+   "area": "파리 1구",
+   "category": "bridge",
+   "description": "퐁데자르(프랑스어: Pont des Arts) 또는 예술의 다리(프랑스어: Passerelle des Arts)는 프랑스 파리 센강에 있는 보행자 전용 다리이며 프랑스 학술원과 루브르궁(프랑스 제1제국 치하에서 \"Palais des Arts\"라고 불렸던)의 중앙 광장(프랑스어: cour carée)을 연결한다. 대한민국에선 아르교라고도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퐁데자르",
+    "url": "https://ko.wikipedia.org/wiki/%ED%90%81%EB%8D%B0%EC%9E%90%EB%A5%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1329141",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 48.858333,
+   "lng": 2.337778,
+   "name": "퐁데자르",
+   "name_original": "Pont des Arts",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1068842"
+   ],
+   "wikidata_id": "Q1329141"
+  },
+  {
+   "area": "파리",
+   "category": "building_landmark",
+   "description": "ISG 경영대학원(프랑스어: Institut Superieur de Gestion) 또는 ISG 비즈니스 스쿨(ISG Business School)은 프랑스 파리에 위치한 경영대학원이다. 이 학교는 1967년 피에르알렉상드르 뒤마가 이끄는 프랑스 최고경영자 그룹에 의해 설립되었다. 1983년, ISG는 뉴욕과 도쿄도에 자체 캠퍼스를 개설했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "ISG 경영대학원",
+    "url": "https://ko.wikipedia.org/wiki/ISG_%EA%B2%BD%EC%98%81%EB%8C%80%ED%95%99%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1659456",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 48.867238,
+   "lng": 2.275926,
+   "name": "ISG 경영대학원",
+   "name_original": "Institut supérieur de gestion",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 279.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1143635"
+   ],
+   "wikidata_id": "Q1659456"
+  },
+  {
+   "area": "파리 1구",
+   "category": "museum",
+   "description": "오랑주리 미술관(프랑스어: Musée de l'Orangerie)은 프랑스 파리에 있는 인상파와 후기 인상주의 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오랑주리 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EB%9E%91%EC%A3%BC%EB%A6%AC_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q726781",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 48.863845,
+   "lng": 2.322538,
+   "name": "오랑주리 미술관",
+   "name_original": "Le Musée de l'Orangerie",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q17431399"
+   ],
+   "wikidata_id": "Q726781"
+  },
+  {
+   "area": "파리 16구",
+   "category": "museum",
+   "description": "팔레 드 토쿄(프랑스어: Palais de Tokyo→도쿄 궁전)는 프랑스 파리 16구에 위치한 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "팔레 드 토쿄",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%94%EB%A0%88_%EB%93%9C_%ED%86%A0%EC%BF%84"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1535247",
+   "importance": {
+    "sitelinks": 34
+   },
+   "lat": 48.86408,
+   "lng": 2.29713,
+   "name": "팔레 드 토쿄",
+   "name_original": "palais de Tokyo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24699794",
+    "Q3152824",
+    "Q33506"
+   ],
+   "wikidata_id": "Q1535247"
+  },
+  {
+   "area": "Pont-de-Flandre",
+   "category": "park",
+   "description": "라빌레트 공원(프랑스어: Parc de la Villette)은 프랑스 파리 19구 북동쪽에 위치한 공원이다. 라 빌레트 공원은 매일 오전 6:00시부터 새벽 1:00시까지 운영된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "라빌레트 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%B9%8C%EB%A0%88%ED%8A%B8_%EA%B3%B5%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q246448",
+   "importance": {
+    "sitelinks": 34
+   },
+   "lat": 48.89306,
+   "lng": 2.39056,
+   "name": "라빌레트 공원",
+   "name_original": "Parc de la Villette",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q246448"
+  },
+  {
+   "area": "파리 8구",
+   "category": "monument",
+   "description": "무명 용사의 무덤(프랑스어: Tombe du Soldat inconnu)은 프랑스 파리에 있는 기념물로, 프랑스를 위해 목숨을 바친 무명 용사를 기리기 위해 건립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "무명 용사의 무덤 (파리)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AC%B4%EB%AA%85_%EC%9A%A9%EC%82%AC%EC%9D%98_%EB%AC%B4%EB%8D%A4_(%ED%8C%8C%EB%A6%AC)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q523312",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 48.873752,
+   "lng": 2.29513,
+   "name": "무명 용사의 무덤",
+   "name_original": "Tombe du Soldat inconnu",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1541043"
+   ],
+   "wikidata_id": "Q523312"
+  },
+  {
+   "area": "파리 3구",
+   "category": "attraction",
+   "description": "레퓌블리크 광장(프랑스어: Place de la République) 또는 공화국 광장은 프랑스 파리에 있는 광장으로, 프랑스 혁명의 영향을 받았다. 프랑스를 의인화한 마리안의 동상이 위치해있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레퓌블리크 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%ED%93%8C%EB%B8%94%EB%A6%AC%ED%81%AC_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q175055",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 48.867278,
+   "lng": 2.364056,
+   "name": "레퓌블리크 광장",
+   "name_original": "Place de la République",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q1867518"
+   ],
+   "wikidata_id": "Q175055"
+  }
+ ]
+}

@@ -1,0 +1,799 @@
+{
+ "center": {
+  "lat": 50.0875,
+  "lng": 14.4213
+ },
+ "city_id": "prague",
+ "country_code": "CZ",
+ "country_en": "Czechia",
+ "country_ko": "체코",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 31,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "building_landmark": 3,
+   "castle": 2,
+   "monument": 1,
+   "museum": 5,
+   "tower": 3,
+   "worship": 3
+  },
+  "denylisted_count": 0,
+  "described_count": 16,
+  "effective_radius_m": 5000,
+  "excluded_count": 7,
+  "grade_window": 17,
+  "hours_count": 5,
+  "ko_label_count": 17,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 31,
+  "page_count": 31,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 17,
+  "unclassified_count": 7,
+  "verification_failed_count": 1
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 12곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 7건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Prague",
+ "name_ko": "프라하",
+ "name_local": "Praha",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 31,
+  "page_count": 31,
+  "radius_clamped": false,
+  "radius_m": 5000,
+  "registry_radius_m": 5000,
+  "sitelink_min": 5
+ },
+ "radius_m": 5000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "흐라드차니",
+   "category": "castle",
+   "description": "프라하성(체코어: Pražský hrad 프라슈스키 흐라트[*])은 체코의 수도인 프라하에 블타바 강의 서쪽 언덕에 자리 잡고 있는 성으로 프라하의 초기 역사부터 존재해 왔으며 프라하의 상징이자 체코의 상징이다. 체코의 왕들과 신성 로마 제국의 황제들이 이곳에서 통치를 했으며 현재는 체코 공화국의 대통령 관저가 이곳에 자리잡고 있다. 프라하 성은 기네스북에 따르면 세계에서 가장 큰 옛성이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "프라하성",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%ED%95%98%EC%84%B1"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/6815500185"
+   },
+   "hours_text": "Mo-Su 06:00-21:00",
+   "id": "wd:Q193369",
+   "importance": {
+    "sitelinks": 64
+   },
+   "lat": 50.09,
+   "lng": 14.4,
+   "name": "프라하성",
+   "name_original": "Pražský hrad",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/6815500185",
+     "text": "영업시간 Mo-Su 06:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 117.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23413",
+    "Q744099"
+   ],
+   "wikidata_id": "Q193369"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "worship",
+   "description": "성 비투스 대성당(체코어: Katedrála svatého Víta)은 체코의 수도 프라하의 대주교좌로 프라하 성 안에 위치하고 있으며 고딕 양식의 뛰어난 전범으로 꼽히는, 체코에서 가장 크고 가장 중요한 성당이다. 1989년에 성 비투스, 성 바츨라프, 성 아달베르트 대성당(체코어: Katedrála svatého Víta, Václava a Vojtěcha)으로 개명하였다. 이 대성당에는 여러 명의 체코 왕과 여러 성자들, 영주, 귀족, 대주교들의 유골이 안치되어 있기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성 비투스 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%B9%84%ED%88%AC%EC%8A%A4_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5949",
+   "importance": {
+    "sitelinks": 59
+   },
+   "lat": 50.090833,
+   "lng": 14.400556,
+   "name": "성 비투스 대성당",
+   "name_original": "Katedrála svatého Víta",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q56242215"
+   ],
+   "wikidata_id": "Q5949"
+  },
+  {
+   "area": "프라하",
+   "category": "museum",
+   "description": "국립박물관(체코어: Národní muzeum)은 체코 프라하에 위치한 박물관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국립박물관 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q188112",
+   "importance": {
+    "sitelinks": 41
+   },
+   "lat": 50.079843,
+   "lng": 14.430417,
+   "name": "국립박물관",
+   "name_original": "Národní muzeum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q17431399",
+    "Q33506",
+    "Q108935461",
+    "Q2085381"
+   ],
+   "wikidata_id": "Q188112"
+  },
+  {
+   "area": "Vyšehrad",
+   "category": "monument",
+   "description": "비셰흐라트(체코어: Vyšehrad)는 체코 프라하에 위치한 요새이다. 비셰흐라트는 체코어로 \"높은 성\"을 뜻한다.영문으로 비세그라드Visegrad라고도 알려졌다. 비셰흐라트는 로마네스크 건축, 고딕 건축, 고딕 리바이벌 건축, 바로크 건축 양식이 혼합된 건축 양식을 띠고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "비셰흐라트",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EC%85%B0%ED%9D%90%EB%9D%BC%ED%8A%B8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q616334",
+   "importance": {
+    "sitelinks": 40
+   },
+   "lat": 50.064427,
+   "lng": 14.417644,
+   "name": "비셰흐라트",
+   "name_original": "Vyšehrad",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 178.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q57831",
+    "Q109607",
+    "Q744099"
+   ],
+   "wikidata_id": "Q616334"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "worship",
+   "description": "스트라호프 수도원(체코어: Strahovský klášter)은 1143년에 Jindřich Zdík, 블라디슬라프 2세, 프라하의 요한 주교가 설립한 프레몬트레 수도원이다. 체코 프라하 스트라호프에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스트라호프 수도원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8A%B8%EB%9D%BC%ED%98%B8%ED%94%84_%EC%88%98%EB%8F%84%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q969482",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 50.085963,
+   "lng": 14.389282,
+   "name": "스트라호프 수도원",
+   "name_original": "Strahovský klášter",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 51.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q44613",
+    "Q1128397",
+    "Q1509716"
+   ],
+   "wikidata_id": "Q969482"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "worship",
+   "description": "성 니콜라스 성당(체코어: Kostel svatého Mikuláše)은 후기 고딕, 바로크 양식의 성당으로 체코의 수도 프라하 구시가지 광장에 위치해 있다. 13세기에 성 니콜라스를 기리는 고딕 건축 양식의 성당이 원래 있었으며, 현재의 건물은 1732년부터 1737년 사이에 건설됐다. 1920년 이전에는 체코슬로바키아 정교회의 성당으로 사용됐다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성 니콜라스 성당 (스타레메스토)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%8B%88%EC%BD%9C%EB%9D%BC%EC%8A%A4_%EC%84%B1%EB%8B%B9_(%EC%8A%A4%ED%83%80%EB%A0%88%EB%A9%94%EC%8A%A4%ED%86%A0)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2595999",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 50.087778,
+   "lng": 14.419861,
+   "name": "성 니콜라스 성당",
+   "name_original": "Kostel sv. Mikuláše",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q2977"
+   ],
+   "wikidata_id": "Q2595999"
+  },
+  {
+   "area": "Prague 1",
+   "category": "tower",
+   "description": "페트르진 타워(체코어: Petřínská rozhledna)는 체코 프라하에 위치한 63.5m 높이의 타워이다. 에펠탑과 비슷한 구조이지만 훨씬 작다. 페트르진 언덕에 위치하고 있어, 에펠탑보다는 높은 고도에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "페트르진 타워",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%ED%8A%B8%EB%A5%B4%EC%A7%84_%ED%83%80%EC%9B%8C"
+   },
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q12256",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 50.083544,
+   "lng": 14.39505,
+   "name": "페트르진 타워",
+   "name_original": "Petřínska rozhledna",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1440300"
+   ],
+   "wikidata_id": "Q12256"
+  },
+  {
+   "area": "Prague 1",
+   "category": "castle",
+   "description": "구 왕궁(체코어: Starý královský palác)은 체코 프라하에 있는 프라하성의 일부다. 역사는 12세기로 거슬러 올라가며 고딕과 르네상스 양식으로 설계되었다. 블라디슬라브스키 홀은 취임식에 사용되며 국가에서 가장 중요한 대표 홀이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "구 왕궁 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC_%EC%99%95%EA%B6%81_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2340793",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 50.09063,
+   "lng": 14.40174,
+   "name": "구 왕궁",
+   "name_original": "Starý královský palác",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560"
+   ],
+   "wikidata_id": "Q2340793"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "building_landmark",
+   "description": "검은 성모의 집(체코어: Dům U Černé Matky Boží)은 체코 프라하에 있는 입체주의 건축물이다. 요제프 고차르가 설계했다. 1층에는 카페가 있고, 위 4개 층은 체코 입체주의 미술관으로 사용된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "검은 성모의 집",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B2%80%EC%9D%80_%EC%84%B1%EB%AA%A8%EC%9D%98_%EC%A7%91"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2717859",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 50.087,
+   "lng": 14.42545,
+   "name": "검은 성모의 집",
+   "name_original": "dům U Černé Matky Boží",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q655686"
+   ],
+   "wikidata_id": "Q2717859"
+  },
+  {
+   "area": "프라하",
+   "category": "museum",
+   "description": "프란츠 카프카 박물관(체코어: Muzeum Franze Kafky)은 체코 프라하에 있는 박물관이다. 작가 프란츠 카프카에게 헌정된 박물관으로, 박물관에는 카프카의 초판 책이 여러 권 보관되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "프란츠 카프카 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9E%80%EC%B8%A0_%EC%B9%B4%ED%94%84%EC%B9%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/443297509"
+   },
+   "hours_text": "Mo-Su 10:00-18:00",
+   "id": "wd:Q4306202",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 50.088056,
+   "lng": 14.410556,
+   "name": "프란츠 카프카 박물관",
+   "name_original": "Franz Kafka Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/443297509",
+     "text": "영업시간 Mo-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/443297509",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q4306202"
+  },
+  {
+   "area": "프라하",
+   "category": "museum",
+   "description": "성 기구 박물관(Sex Machines Museum)은 체코 프라하에 있는 성 박물관이다. 성 도구를 수집하고 있다. 2002년에 설립되었으며, 구시가 광장 근처에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성 기구 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EA%B8%B0%EA%B5%AC_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/2517682988"
+   },
+   "hours_text": "Mo-Su 10:00-23:00",
+   "id": "wd:Q3480881",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 50.086111,
+   "lng": 14.420833,
+   "name": "성 기구 박물관",
+   "name_original": "Sex Machines Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/2517682988",
+     "text": "영업시간 Mo-Su 10:00-23:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/2517682988",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q50114313"
+   ],
+   "wikidata_id": "Q3480881"
+  },
+  {
+   "area": "Prague 1",
+   "category": "museum",
+   "description": "공산주의 박물관(체코어: Muzeum komunismu)은 체코 프라하에 있는 박물관이다. 프라하를 중심으로 체코슬로바키아의 제2차 세계대전 이후 공산주의 정권에 대한 설명을 제공한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "공산주의 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%A3%BC%EC%9D%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/4986978223"
+   },
+   "hours_text": "Mo-Su, PH 09:00-20:00; Dec 24 off",
+   "id": "wd:Q2571867",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 50.087851,
+   "lng": 14.430011,
+   "name": "공산주의 박물관",
+   "name_original": "Muzeum komunismu",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/4986978223",
+     "text": "영업시간 Mo-Su, PH 09:00-20:00; Dec 24 off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/4986978223",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q2571867"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "building_landmark",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q12020416",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 50.08822,
+   "lng": 14.42749,
+   "name": "Hotel Paříž",
+   "name_original": "Hotel Paříž",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q63099748"
+   ],
+   "wikidata_id": "Q12020416"
+  },
+  {
+   "area": "말라스트라나",
+   "category": "tower",
+   "description": "말라스트라나 다리탑(체코어: Malostranská mostecká věž)은 체코 프라하에 있는 탑이다. 탑은 카를교에서 말라스트라나로 들어가는 입구 역할을 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "말라스트라나 다리탑",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%90%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9D%BC%EB%82%98_%EB%8B%A4%EB%A6%AC%ED%83%91"
+   },
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1509185",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 50.087314,
+   "lng": 14.40686,
+   "name": "말라스트라나 다리탑",
+   "name_original": "Malostranské mostecké věže",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12518",
+    "Q82117"
+   ],
+   "wikidata_id": "Q1509185"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "tower",
+   "description": "구시가지 다리탑(체코어: Staroměstská mostecká věž)은 체코 프라하에 있는 고딕 양식의 탑이다. 건설은 1357년 카를 4세 황제 통치 기간에 시작되었다. 건축가 페트르 파를레르시가 설계했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "구시가지 다리탑",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%8B%9C%EA%B0%80%EC%A7%80_%EB%8B%A4%EB%A6%AC%ED%83%91"
+   },
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q445762",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 50.086293,
+   "lng": 14.413655,
+   "name": "구시가지 다리탑",
+   "name_original": "Staroměstská mostecká věž",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q82117",
+    "Q12518"
+   ],
+   "wikidata_id": "Q445762"
+  },
+  {
+   "area": "노베메스토",
+   "category": "museum",
+   "description": "무하 박물관(체코어: Muchovo muzeum)은 체코 프라하에 있는 미술관이다. 알폰스 무하의 삶과 작품에 초점을 맞추고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "무하 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AC%B4%ED%95%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/3270484912"
+   },
+   "hours_text": "Mo-Su 10:00-18:00",
+   "id": "wd:Q959038",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 50.084361,
+   "lng": 14.427583,
+   "name": "무하 박물관",
+   "name_original": "Muchovo muzeum, s. r. o.",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/3270484912",
+     "text": "영업시간 Mo-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/3270484912",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q10624527"
+   ],
+   "wikidata_id": "Q959038"
+  },
+  {
+   "area": "프라하",
+   "category": "building_landmark",
+   "description": "레두타 재즈 클럽(Reduta Jazz Club)은 체코 프라하에 있는 음악 공연장이자 술집이다. 프라하 중심인 나로드니에 위치하고 있으며, 프라하에서 제일 오래된 재즈 클럽이다. 이 클럽은 특히 1994년 미국 대통령 빌 클린턴의 즉흥 색소폰 공연을 주최한 것으로 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레두타 재즈 클럽",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EB%91%90%ED%83%80_%EC%9E%AC%EC%A6%88_%ED%81%B4%EB%9F%BD"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q12049057",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 50.082,
+   "lng": 14.4184,
+   "name": "레두타 재즈 클럽",
+   "name_original": "Reduta Jazz Club",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q8719053",
+    "Q24354",
+    "Q1684522"
+   ],
+   "wikidata_id": "Q12049057"
+  }
+ ]
+}

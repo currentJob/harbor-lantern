@@ -1,893 +1,894 @@
 {
- "schema_version": 1,
- "what_this_is": "굽기(tools/bake_city_guides.py)의 유일한 입력이다(DSN-32 · 설계서 §16.3). 베이커는 이 파일 밖의 값을 받지 않는다 — 중심·반경·sitelink_min 은 사람이 정하고 고정한다.",
+ "cities": [
+  {
+   "center": {
+    "lat": 48.8606,
+    "lng": 2.3376
+   },
+   "center_note": "루브르 박물관. 노트르담 기준 3km 로 조이면 에펠탑(4.2km)이 빠진다(실측) — 중심을 서쪽에 두고 반경 6km 를 쓴다.",
+   "city_id": "paris",
+   "country_code": "FR",
+   "country_en": "France",
+   "country_ko": "프랑스",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 80,
+    "ko_labels": 74,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Paris",
+   "name_ko": "파리",
+   "name_local": "Paris",
+   "native_lang": "fr",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 41.8986,
+    "lng": 12.4769
+   },
+   "center_note": "판테온. 콜로세움·바티칸·트레비 분수가 5km 안에 든다.",
+   "city_id": "rome",
+   "country_code": "IT",
+   "country_en": "Italy",
+   "country_ko": "이탈리아",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 80,
+    "ko_labels": 65,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Rome",
+   "name_ko": "로마",
+   "name_local": "Roma",
+   "native_lang": "it",
+   "radius_m": 5000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 51.508,
+    "lng": -0.1281
+   },
+   "center_note": "트래펄가 광장. 웨스트민스터·대영박물관·타워브리지를 6km 로 덮는다.",
+   "city_id": "london",
+   "country_code": "GB",
+   "country_en": "United Kingdom",
+   "country_ko": "영국",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 69,
+    "ko_labels": 62,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "London",
+   "name_ko": "런던",
+   "name_local": "London",
+   "native_lang": "en",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 35.6812,
+    "lng": 139.7671
+   },
+   "center_note": "도쿄역. 아사쿠사·스카이트리·도쿄타워가 6km 안이다.",
+   "city_id": "tokyo",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 32,
+    "ko_labels": 30,
+    "note": "하한 15 로 잰 값이다. 같은 도시를 하한 32 로 재시도했을 때는 10건이었다 — 하한을 재시도 손잡이로 쓰지 않는 이유(함정 F13).",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Tokyo",
+   "name_ko": "도쿄",
+   "name_local": "東京",
+   "native_lang": "ja",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 40.758,
+    "lng": -73.9855
+   },
+   "center_note": "타임스 스퀘어. 센트럴파크 남단·미드타운·다운타운 일부가 8km 안이다.",
+   "city_id": "new-york",
+   "country_code": "US",
+   "country_en": "United States",
+   "country_ko": "미국",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 29,
+    "ko_labels": 28,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "New York",
+   "name_ko": "뉴욕",
+   "name_local": "New York",
+   "native_lang": "en",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 21.0287,
+    "lng": 105.8524
+   },
+   "center_note": "호안끼엠 호수. 구시가·문묘·호찌민 묘소가 8km 안이다.",
+   "city_id": "hanoi",
+   "country_code": "VN",
+   "country_en": "Vietnam",
+   "country_ko": "베트남",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 28,
+    "ko_labels": 24,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Hanoi",
+   "name_ko": "하노이",
+   "name_local": "Hà Nội",
+   "native_lang": "vi",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 45.4342,
+    "lng": 12.3388
+   },
+   "center_note": "산마르코 광장. 본섬이 작아 3km 로 충분하고, 더 넓히면 메스트레(육지부)가 섞인다.",
+   "city_id": "venice",
+   "country_code": "IT",
+   "country_en": "Italy",
+   "country_ko": "이탈리아",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 21,
+    "note": "상위 25 기준 한국어 84%(후보 전체로는 35%) — 등급 평가 집합을 옮겨 판정이 뒤집힌 도시(DSN-49).",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Venice",
+   "name_ko": "베네치아",
+   "name_local": "Venezia",
+   "native_lang": "it",
+   "radius_m": 3000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 41.0055,
+    "lng": 28.9769
+   },
+   "center_note": "술탄아흐메트 광장. 아야소피아·톱카프·그랜드 바자르가 6km 안이다.",
+   "city_id": "istanbul",
+   "country_code": "TR",
+   "country_en": "Türkiye",
+   "country_ko": "튀르키예",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 80,
+    "ko_labels": 41,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Istanbul",
+   "name_ko": "이스탄불",
+   "name_local": "İstanbul",
+   "native_lang": "tr",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 50.0875,
+    "lng": 14.4213
+   },
+   "center_note": "구시가 광장. 프라하성·카를교가 5km 안이다.",
+   "city_id": "prague",
+   "country_code": "CZ",
+   "country_en": "Czechia",
+   "country_ko": "체코",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 59,
+    "ko_labels": 37,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Prague",
+   "name_ko": "프라하",
+   "name_local": "Praha",
+   "native_lang": "cs",
+   "radius_m": 5000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 48.2085,
+    "lng": 16.3721
+   },
+   "center_note": "슈테판 대성당. 링슈트라세 전체와 벨베데레가 5km 안이다.",
+   "city_id": "vienna",
+   "country_code": "AT",
+   "country_en": "Austria",
+   "country_ko": "오스트리아",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 47,
+    "ko_labels": 29,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Vienna",
+   "name_ko": "비엔나",
+   "name_local": "Wien",
+   "native_lang": "de",
+   "radius_m": 5000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 39.9055,
+    "lng": 116.3976
+   },
+   "center_note": "톈안먼 광장. 자금성·천단이 8km 안이다(만리장성은 당일 이동 대상이라 도시 반경에 넣지 않는다).",
+   "city_id": "beijing",
+   "country_code": "CN",
+   "country_en": "China",
+   "country_ko": "중국",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 46,
+    "ko_labels": 25,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Beijing",
+   "name_ko": "베이징",
+   "name_local": "北京",
+   "native_lang": "zh",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 40.4168,
+    "lng": -3.7038
+   },
+   "center_note": "푸에르타 델 솔. 프라도·왕궁·레티로 공원이 6km 안이다.",
+   "city_id": "madrid",
+   "country_code": "ES",
+   "country_en": "Spain",
+   "country_ko": "스페인",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 43,
+    "ko_labels": 28,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Madrid",
+   "name_ko": "마드리드",
+   "name_local": "Madrid",
+   "native_lang": "es",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 34.6937,
+    "lng": 135.5023
+   },
+   "center_note": "요도야바시 부근(시 중심부). 오사카성·난바·우메다가 6km 안이다.",
+   "city_id": "osaka",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 34,
+    "ko_labels": 21,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Osaka",
+   "name_ko": "오사카",
+   "name_local": "大阪",
+   "native_lang": "ja",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 34.9858,
+    "lng": 135.7588
+   },
+   "center_note": "교토역. 기요미즈데라·긴카쿠지와 아라시야마 일부가 6km 안이다.",
+   "city_id": "kyoto",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 33,
+    "ko_labels": 26,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Kyoto",
+   "name_ko": "교토",
+   "name_local": "京都",
+   "native_lang": "ja",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 41.387,
+    "lng": 2.17
+   },
+   "center_note": "카탈루냐 광장. 사그라다 파밀리아·고딕 지구·몬주익이 5km 안이다.",
+   "city_id": "barcelona",
+   "country_code": "ES",
+   "country_en": "Spain",
+   "country_ko": "스페인",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 32,
+    "ko_labels": 16,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Barcelona",
+   "name_ko": "바르셀로나",
+   "name_local": "Barcelona",
+   "native_lang": "ca",
+   "radius_m": 5000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": -33.861,
+    "lng": 151.2105
+   },
+   "center_note": "서큘러 키. 오페라하우스·하버브리지·달링하버가 6km 안이다.",
+   "city_id": "sydney",
+   "country_code": "AU",
+   "country_en": "Australia",
+   "country_ko": "호주",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 29,
+    "ko_labels": 19,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Sydney",
+   "name_ko": "시드니",
+   "name_local": "Sydney",
+   "native_lang": "en",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 13.75,
+    "lng": 100.4913
+   },
+   "center_note": "왕궁(그랜드 팰리스). 왓포·왓아룬·카오산이 8km 안이다.",
+   "city_id": "bangkok",
+   "country_code": "TH",
+   "country_en": "Thailand",
+   "country_ko": "태국",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 18,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Bangkok",
+   "name_ko": "방콕",
+   "name_local": "กรุงเทพมหานคร",
+   "native_lang": "th",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 31.2397,
+    "lng": 121.49
+   },
+   "center_note": "와이탄. 예원·인민광장·푸둥이 8km 안이다.",
+   "city_id": "shanghai",
+   "country_code": "CN",
+   "country_en": "China",
+   "country_ko": "중국",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 24,
+    "ko_labels": 17,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Shanghai",
+   "name_ko": "상하이",
+   "name_local": "上海",
+   "native_lang": "zh",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 1.283,
+    "lng": 103.86
+   },
+   "center_note": "마리나 베이. 도시국가라 8km 로 중심부 대부분을 덮는다.",
+   "city_id": "singapore",
+   "country_code": "SG",
+   "country_en": "Singapore",
+   "country_ko": "싱가포르",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 14,
+    "note": "상위 25 기준 56%(후보 전체 34%).",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Singapore",
+   "name_ko": "싱가포르",
+   "name_local": "Singapore",
+   "native_lang": "en",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 52.3731,
+    "lng": 4.8926
+   },
+   "center_note": "담 광장. 운하지구·국립미술관이 4km 안이다.",
+   "city_id": "amsterdam",
+   "country_code": "NL",
+   "country_en": "Netherlands",
+   "country_ko": "네덜란드",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 14,
+    "note": "상위 25 기준 56%(후보 전체 31%).",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Amsterdam",
+   "name_ko": "암스테르담",
+   "name_local": "Amsterdam",
+   "native_lang": "nl",
+   "radius_m": 4000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 25.0478,
+    "lng": 121.517
+   },
+   "center_note": "타이베이 역. 타이베이 101·중정기념당·룽산사가 6km 안이다.",
+   "city_id": "taipei",
+   "country_code": "TW",
+   "country_en": "Taiwan",
+   "country_ko": "대만",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 18,
+    "ko_labels": 11,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Taipei",
+   "name_ko": "타이베이",
+   "name_local": "臺北",
+   "native_lang": "zh",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 43.0686,
+    "lng": 141.3508
+   },
+   "center_note": "삿포로역. 오도리 공원·스스키노가 6km 안이다.",
+   "city_id": "sapporo",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 15,
+    "ko_labels": 8,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Sapporo",
+   "name_ko": "삿포로",
+   "name_local": "札幌",
+   "native_lang": "ja",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 35.1709,
+    "lng": 136.8815
+   },
+   "center_note": "나고야역. 나고야성·오스 상점가가 6km 안이다.",
+   "city_id": "nagoya",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 15,
+    "ko_labels": 8,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Nagoya",
+   "name_ko": "나고야",
+   "name_local": "名古屋",
+   "native_lang": "ja",
+   "radius_m": 6000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 22.1936,
+    "lng": 113.54
+   },
+   "center_note": "세나도 광장. 역사지구와 코타이가 5km 안이다.",
+   "city_id": "macau",
+   "country_code": "MO",
+   "country_en": "Macau",
+   "country_ko": "마카오",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 11,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Macau",
+   "name_ko": "마카오",
+   "name_local": "澳門",
+   "native_lang": "zh",
+   "radius_m": 5000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 22.295,
+    "lng": 114.172
+   },
+   "center_note": "침사추이. 이 도시에는 사람이 쓴 가이드(seed/spots.json)가 이미 있다 — 구운 결과는 그것을 대체하지 않는다. 기대치 비교 표본으로 함께 조사한다(§16.1.1).",
+   "city_id": "hong-kong",
+   "country_code": "HK",
+   "country_en": "Hong Kong",
+   "country_ko": "홍콩",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 12,
+    "note": "상위 25 기준 48%. 사람이 쓴 홍콩 가이드와의 격차를 보여 주는 표본이다 — 같은 방식으로 재현하면 주룽 모스크가 상위에 온다.",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Hong Kong",
+   "name_ko": "홍콩",
+   "name_local": "香港",
+   "native_lang": "zh",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 3.1578,
+    "lng": 101.7117
+   },
+   "center_note": "KLCC(페트로나스 트윈타워). 부킷빈탕·차이나타운이 8km 안이다.",
+   "city_id": "kuala-lumpur",
+   "country_code": "MY",
+   "country_en": "Malaysia",
+   "country_ko": "말레이시아",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 39,
+    "ko_labels": 14,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Kuala Lumpur",
+   "name_ko": "쿠알라룸푸르",
+   "name_local": "Kuala Lumpur",
+   "native_lang": "ms",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 26.215,
+    "lng": 127.687
+   },
+   "center_note": "고쿠사이도리. 슈리성이 8km 안이다.",
+   "city_id": "naha",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 21,
+    "ko_labels": 7,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Naha",
+   "name_ko": "나하",
+   "name_local": "那覇",
+   "native_lang": "ja",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 10.772,
+    "lng": 106.698
+   },
+   "center_note": "벤탄 시장. 1군 전역이 8km 안이다.",
+   "city_id": "ho-chi-minh",
+   "country_code": "VN",
+   "country_en": "Vietnam",
+   "country_ko": "베트남",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 21,
+    "ko_labels": 9,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Ho Chi Minh City",
+   "name_ko": "호치민",
+   "name_local": "Thành phố Hồ Chí Minh",
+   "native_lang": "vi",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 14.5826,
+    "lng": 120.9787
+   },
+   "center_note": "리살 공원. 인트라무로스와 마카티 일부가 8km 안이다.",
+   "city_id": "manila",
+   "country_code": "PH",
+   "country_en": "Philippines",
+   "country_ko": "필리핀",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 23,
+    "ko_labels": 4,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Manila",
+   "name_ko": "마닐라",
+   "name_local": "Maynila",
+   "native_lang": "tl",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 33.5897,
+    "lng": 130.4207
+   },
+   "center_note": "하카타역. 텐진·오호리 공원이 8km 안이다.",
+   "city_id": "fukuoka",
+   "country_code": "JP",
+   "country_en": "Japan",
+   "country_ko": "일본",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 14,
+    "ko_labels": 6,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Fukuoka",
+   "name_ko": "후쿠오카",
+   "name_local": "福岡",
+   "native_lang": "ja",
+   "radius_m": 8000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 16.0678,
+    "lng": 108.2208
+   },
+   "center_note": "다낭 대성당. 정찰이 r=15km·하한 4 로 실측한 값을 그대로 쓴다 — 오행산·손짜산이 이 반경 안이다.",
+   "city_id": "danang",
+   "country_code": "VN",
+   "country_en": "Vietnam",
+   "country_ko": "베트남",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 12,
+    "ko_labels": 10,
+    "note": "초기 측정(r=15km·sl>=4)에서는 14/12 였다. 후보 14건 중 다리 4·강 2 — 명소 밀도가 낮은 도시다.",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Da Nang",
+   "name_ko": "다낭",
+   "name_local": "Đà Nẵng",
+   "native_lang": "vi",
+   "radius_m": 15000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": -8.6705,
+    "lng": 115.2126
+   },
+   "center_note": "덴파사르. 우붓·쿠타·사누르를 25km 로 묶는다(섬 전체가 목적지라 단일 도심이 없다).",
+   "city_id": "bali",
+   "country_code": "ID",
+   "country_en": "Indonesia",
+   "country_ko": "인도네시아",
+   "enabled": true,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 25,
+    "ko_labels": 5,
+    "note": "상위 25 기준 20% — 선별로도 가려지지 않는 진짜 미달이다(개수가 아니라 언어가 이유).",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Bali",
+   "name_ko": "발리",
+   "name_local": "Bali",
+   "native_lang": "id",
+   "radius_m": 25000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 10.2937,
+    "lng": 123.902
+   },
+   "center_note": "마젤란 십자가(세부시티). 막탄섬까지 15km 로 덮는다.",
+   "city_id": "cebu",
+   "country_code": "PH",
+   "country_en": "Philippines",
+   "country_ko": "필리핀",
+   "disabled_reason": "2026-09-15 실측 11건/한국어 2건 → 스팟 수·한국어 비율 둘 다 하한 미달(등급 below). 지우지 않고 남긴다 — 왜 목록에 없는지가 정보다(REQ-029). 반경·하한을 사람이 고쳐 다시 재려면 enabled 를 true 로 돌린다.",
+   "enabled": false,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 11,
+    "ko_labels": 2,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Cebu",
+   "name_ko": "세부",
+   "name_local": "Sugbo",
+   "native_lang": "ceb",
+   "radius_m": 15000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 12.2451,
+    "lng": 109.1943
+   },
+   "center_note": "냐짱 대성당. 정찰이 r=15km·하한 4 로 실측했다.",
+   "city_id": "nha-trang",
+   "country_code": "VN",
+   "country_en": "Vietnam",
+   "country_ko": "베트남",
+   "disabled_reason": "2026-09-15 실측 5건/한국어 4건 → 스팟 5개 < 8 로 미달. 반경 15km 로도 채워지지 않았다 — 해변·리조트가 목적인 곳이라 위키데이터에 걸릴 명소가 애초에 적다(R11).",
+   "enabled": false,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 5,
+    "ko_labels": 4,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Nha Trang",
+   "name_ko": "나트랑",
+   "name_local": "Nha Trang",
+   "native_lang": "vi",
+   "radius_m": 15000,
+   "sitelink_min": 5
+  },
+  {
+   "center": {
+    "lat": 10.217,
+    "lng": 103.967
+   },
+   "center_note": "즈엉동. 정찰이 r=25km·하한 3 으로 실측했다(섬 전체).",
+   "city_id": "phu-quoc",
+   "country_code": "VN",
+   "country_en": "Vietnam",
+   "country_ko": "베트남",
+   "disabled_reason": "2026-09-15 실측 3건/한국어 0건 → 스팟 수·한국어 비율 둘 다 미달. 반경 25km 로 재도 채워지지 않았다.",
+   "enabled": false,
+   "limit": 150,
+   "measured_2026_09_15": {
+    "candidates": 3,
+    "ko_labels": 0,
+    "note": "",
+    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량"
+   },
+   "name_en": "Phu Quoc",
+   "name_ko": "푸꾸옥",
+   "name_local": "Phú Quốc",
+   "native_lang": "vi",
+   "radius_m": 25000,
+   "sitelink_min": 5
+  }
+ ],
+ "counts_note": "여기 실린 도시는 35개다. docs/_recon.md 본문은 34개 도시라고 적었지만 같은 절의 표에는 35개가 있다(완전 7 · 완전− 16 · 부분 9 · 제외 3). 숫자를 맞추려고 한 도시를 지우지 않았다 — 측정된 것은 35개이고, 문서 쪽 숫자는 T11 에서 사람이 정정한다.",
  "rules": [
   "sitelink_min 은 랭킹 하한이다(설계서 §16.4 v1.5). 예전에는 WDQS 질의를 싸게 만드는 필터였지만 1단계가 ko.wikipedia geosearch 로 바뀌면서 질의에는 필터가 없다 — 이제 3단계 wbgetentities 가 매긴 언어판 수(sitelinks)가 이 값보다 낮은 후보를 떨어뜨리는 데만 쓰인다. 지우지 않는 이유는 '왜 이 도시에 잡동사니가 실렸나'를 조절할 손잡이가 그것뿐이기 때문이다. 여전히 성능 손잡이가 아니다 — 실패해도 하한을 올려 재시도하지 않는다(도쿄가 하한 32 로 재시도되며 32건에서 10건이 됐다 · 실측 2026-09-15 · 함정 F13). 재시도는 같은 파라미터로만 하고, 끝내 실패하면 query_failed 로 보고서에 남는다.",
   "반경을 성능 때문에 줄이지 않는다. 파리를 노트르담 기준 3km 로 조이면 에펠탑(4.2km)이 빠진다(실측). 성능은 반경이 아니라 질의 형태로 산다(DSN-33 · geosearch 사슬 · 파리 1단계 1.0초 · 실측 2026-09-16).",
   "radius_m 이 10000 을 넘으면 geosearch 상한(gsradius 10km)으로 잘린다 — 여기 적힌 값이 아니라 잘린 값으로 굽는다. 지금 해당하는 도시는 danang(15000) · bali(25000) · cebu(15000) · nha-trang(15000) · phu-quoc(25000) 다. 값을 고쳐 맞추지 않는 이유는 사람이 원래 무엇을 의도했는지가 정보이기 때문이고, 자른 사실은 각 도시 파일의 query.radius_clamped 와 known_gaps 에, 굽기 보고서에는 effective_radius_m 로 남는다. 더 넓게 보려면 중심을 나눠 여러 항목으로 적는다.",
   "enabled=false 인 도시는 지우지 않는다. 조사는 했고 등급이 미달이었다는 사실이 여기 남는다 — 왜 목록에 없는지가 정보다.",
   "measured_2026_09_15 는 정찰이 실제로 던져 본 결과다. 굽기 시점의 수확량은 다를 수 있고, 그때 값은 seed/city-guides/harvest-report.json 에 남는다. 두 값이 다르면 보고서 쪽이 사실이다.",
-  "중심 좌표는 center_note 가 지목한 지점의 근사값(소수 4자리)이다. 정확한 측지 좌표가 아니라 어디를 기준으로 반경을 그었는지를 적어 두는 값이다."
+  "중심 좌표는 center_note 가 지목한 지점의 근사값(소수 4자리)이다. 정확한 측지 좌표가 아니라 어디를 기준으로 반경을 그었는지를 적어 두는 값이다.",
+  "2026-09-16: sitelink_min 을 전 도시 5 로 통일했다. 이전 값(파리 25 · 마드리드/프라하 20 · 도쿄 15 …)은 WDQS 질의를 싸게 만들려고 정한 성능 손잡이였는데, 1단계가 geosearch 로 바뀌면서 순수한 품질 하한이 됐고 그 용도로는 너무 높았다 — 첫 굽기에서 프라하는 후보 15 중 스팟 6, 마드리드는 29 중 7 이었고 잘린 것들이 sitelinks 12~18(성 비투스 대성당급)이었다. 선별은 sitelinks 내림차순 상위 N 이 하므로 하한은 명백한 잡동사니만 막으면 된다."
  ],
- "counts_note": "여기 실린 도시는 35개다. docs/_recon.md 본문은 34개 도시라고 적었지만 같은 절의 표에는 35개가 있다(완전 7 · 완전− 16 · 부분 9 · 제외 3). 숫자를 맞추려고 한 도시를 지우지 않았다 — 측정된 것은 35개이고, 문서 쪽 숫자는 T11 에서 사람이 정정한다.",
- "cities": [
-  {
-   "city_id": "paris",
-   "name_ko": "파리",
-   "name_local": "Paris",
-   "name_en": "Paris",
-   "country_code": "FR",
-   "country_ko": "프랑스",
-   "country_en": "France",
-   "native_lang": "fr",
-   "center": {
-    "lat": 48.8606,
-    "lng": 2.3376
-   },
-   "center_note": "루브르 박물관. 노트르담 기준 3km 로 조이면 에펠탑(4.2km)이 빠진다(실측) — 중심을 서쪽에 두고 반경 6km 를 쓴다.",
-   "radius_m": 6000,
-   "sitelink_min": 25,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 80,
-    "ko_labels": 74,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "rome",
-   "name_ko": "로마",
-   "name_local": "Roma",
-   "name_en": "Rome",
-   "country_code": "IT",
-   "country_ko": "이탈리아",
-   "country_en": "Italy",
-   "native_lang": "it",
-   "center": {
-    "lat": 41.8986,
-    "lng": 12.4769
-   },
-   "center_note": "판테온. 콜로세움·바티칸·트레비 분수가 5km 안에 든다.",
-   "radius_m": 5000,
-   "sitelink_min": 25,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 80,
-    "ko_labels": 65,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "london",
-   "name_ko": "런던",
-   "name_local": "London",
-   "name_en": "London",
-   "country_code": "GB",
-   "country_ko": "영국",
-   "country_en": "United Kingdom",
-   "native_lang": "en",
-   "center": {
-    "lat": 51.508,
-    "lng": -0.1281
-   },
-   "center_note": "트래펄가 광장. 웨스트민스터·대영박물관·타워브리지를 6km 로 덮는다.",
-   "radius_m": 6000,
-   "sitelink_min": 25,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 69,
-    "ko_labels": 62,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "tokyo",
-   "name_ko": "도쿄",
-   "name_local": "東京",
-   "name_en": "Tokyo",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 35.6812,
-    "lng": 139.7671
-   },
-   "center_note": "도쿄역. 아사쿠사·스카이트리·도쿄타워가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 15,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 32,
-    "ko_labels": 30,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "하한 15 로 잰 값이다. 같은 도시를 하한 32 로 재시도했을 때는 10건이었다 — 하한을 재시도 손잡이로 쓰지 않는 이유(함정 F13)."
-   }
-  },
-  {
-   "city_id": "new-york",
-   "name_ko": "뉴욕",
-   "name_local": "New York",
-   "name_en": "New York",
-   "country_code": "US",
-   "country_ko": "미국",
-   "country_en": "United States",
-   "native_lang": "en",
-   "center": {
-    "lat": 40.758,
-    "lng": -73.9855
-   },
-   "center_note": "타임스 스퀘어. 센트럴파크 남단·미드타운·다운타운 일부가 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 25,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 29,
-    "ko_labels": 28,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "hanoi",
-   "name_ko": "하노이",
-   "name_local": "Hà Nội",
-   "name_en": "Hanoi",
-   "country_code": "VN",
-   "country_ko": "베트남",
-   "country_en": "Vietnam",
-   "native_lang": "vi",
-   "center": {
-    "lat": 21.0287,
-    "lng": 105.8524
-   },
-   "center_note": "호안끼엠 호수. 구시가·문묘·호찌민 묘소가 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 28,
-    "ko_labels": 24,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "venice",
-   "name_ko": "베네치아",
-   "name_local": "Venezia",
-   "name_en": "Venice",
-   "country_code": "IT",
-   "country_ko": "이탈리아",
-   "country_en": "Italy",
-   "native_lang": "it",
-   "center": {
-    "lat": 45.4342,
-    "lng": 12.3388
-   },
-   "center_note": "산마르코 광장. 본섬이 작아 3km 로 충분하고, 더 넓히면 메스트레(육지부)가 섞인다.",
-   "radius_m": 3000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 21,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "상위 25 기준 한국어 84%(후보 전체로는 35%) — 등급 평가 집합을 옮겨 판정이 뒤집힌 도시(DSN-49)."
-   }
-  },
-  {
-   "city_id": "istanbul",
-   "name_ko": "이스탄불",
-   "name_local": "İstanbul",
-   "name_en": "Istanbul",
-   "country_code": "TR",
-   "country_ko": "튀르키예",
-   "country_en": "Türkiye",
-   "native_lang": "tr",
-   "center": {
-    "lat": 41.0055,
-    "lng": 28.9769
-   },
-   "center_note": "술탄아흐메트 광장. 아야소피아·톱카프·그랜드 바자르가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 25,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 80,
-    "ko_labels": 41,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "prague",
-   "name_ko": "프라하",
-   "name_local": "Praha",
-   "name_en": "Prague",
-   "country_code": "CZ",
-   "country_ko": "체코",
-   "country_en": "Czechia",
-   "native_lang": "cs",
-   "center": {
-    "lat": 50.0875,
-    "lng": 14.4213
-   },
-   "center_note": "구시가 광장. 프라하성·카를교가 5km 안이다.",
-   "radius_m": 5000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 59,
-    "ko_labels": 37,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "vienna",
-   "name_ko": "비엔나",
-   "name_local": "Wien",
-   "name_en": "Vienna",
-   "country_code": "AT",
-   "country_ko": "오스트리아",
-   "country_en": "Austria",
-   "native_lang": "de",
-   "center": {
-    "lat": 48.2085,
-    "lng": 16.3721
-   },
-   "center_note": "슈테판 대성당. 링슈트라세 전체와 벨베데레가 5km 안이다.",
-   "radius_m": 5000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 47,
-    "ko_labels": 29,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "beijing",
-   "name_ko": "베이징",
-   "name_local": "北京",
-   "name_en": "Beijing",
-   "country_code": "CN",
-   "country_ko": "중국",
-   "country_en": "China",
-   "native_lang": "zh",
-   "center": {
-    "lat": 39.9055,
-    "lng": 116.3976
-   },
-   "center_note": "톈안먼 광장. 자금성·천단이 8km 안이다(만리장성은 당일 이동 대상이라 도시 반경에 넣지 않는다).",
-   "radius_m": 8000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 46,
-    "ko_labels": 25,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "madrid",
-   "name_ko": "마드리드",
-   "name_local": "Madrid",
-   "name_en": "Madrid",
-   "country_code": "ES",
-   "country_ko": "스페인",
-   "country_en": "Spain",
-   "native_lang": "es",
-   "center": {
-    "lat": 40.4168,
-    "lng": -3.7038
-   },
-   "center_note": "푸에르타 델 솔. 프라도·왕궁·레티로 공원이 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 43,
-    "ko_labels": 28,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "osaka",
-   "name_ko": "오사카",
-   "name_local": "大阪",
-   "name_en": "Osaka",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 34.6937,
-    "lng": 135.5023
-   },
-   "center_note": "요도야바시 부근(시 중심부). 오사카성·난바·우메다가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 12,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 34,
-    "ko_labels": 21,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "kyoto",
-   "name_ko": "교토",
-   "name_local": "京都",
-   "name_en": "Kyoto",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 34.9858,
-    "lng": 135.7588
-   },
-   "center_note": "교토역. 기요미즈데라·긴카쿠지와 아라시야마 일부가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 12,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 33,
-    "ko_labels": 26,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "barcelona",
-   "name_ko": "바르셀로나",
-   "name_local": "Barcelona",
-   "name_en": "Barcelona",
-   "country_code": "ES",
-   "country_ko": "스페인",
-   "country_en": "Spain",
-   "native_lang": "ca",
-   "center": {
-    "lat": 41.387,
-    "lng": 2.17
-   },
-   "center_note": "카탈루냐 광장. 사그라다 파밀리아·고딕 지구·몬주익이 5km 안이다.",
-   "radius_m": 5000,
-   "sitelink_min": 20,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 32,
-    "ko_labels": 16,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "sydney",
-   "name_ko": "시드니",
-   "name_local": "Sydney",
-   "name_en": "Sydney",
-   "country_code": "AU",
-   "country_ko": "호주",
-   "country_en": "Australia",
-   "native_lang": "en",
-   "center": {
-    "lat": -33.861,
-    "lng": 151.2105
-   },
-   "center_note": "서큘러 키. 오페라하우스·하버브리지·달링하버가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 15,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 29,
-    "ko_labels": 19,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "bangkok",
-   "name_ko": "방콕",
-   "name_local": "กรุงเทพมหานคร",
-   "name_en": "Bangkok",
-   "country_code": "TH",
-   "country_ko": "태국",
-   "country_en": "Thailand",
-   "native_lang": "th",
-   "center": {
-    "lat": 13.75,
-    "lng": 100.4913
-   },
-   "center_note": "왕궁(그랜드 팰리스). 왓포·왓아룬·카오산이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 12,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 18,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "shanghai",
-   "name_ko": "상하이",
-   "name_local": "上海",
-   "name_en": "Shanghai",
-   "country_code": "CN",
-   "country_ko": "중국",
-   "country_en": "China",
-   "native_lang": "zh",
-   "center": {
-    "lat": 31.2397,
-    "lng": 121.49
-   },
-   "center_note": "와이탄. 예원·인민광장·푸둥이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 15,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 24,
-    "ko_labels": 17,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "singapore",
-   "name_ko": "싱가포르",
-   "name_local": "Singapore",
-   "name_en": "Singapore",
-   "country_code": "SG",
-   "country_ko": "싱가포르",
-   "country_en": "Singapore",
-   "native_lang": "en",
-   "center": {
-    "lat": 1.283,
-    "lng": 103.86
-   },
-   "center_note": "마리나 베이. 도시국가라 8km 로 중심부 대부분을 덮는다.",
-   "radius_m": 8000,
-   "sitelink_min": 15,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 14,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "상위 25 기준 56%(후보 전체 34%)."
-   }
-  },
-  {
-   "city_id": "amsterdam",
-   "name_ko": "암스테르담",
-   "name_local": "Amsterdam",
-   "name_en": "Amsterdam",
-   "country_code": "NL",
-   "country_ko": "네덜란드",
-   "country_en": "Netherlands",
-   "native_lang": "nl",
-   "center": {
-    "lat": 52.3731,
-    "lng": 4.8926
-   },
-   "center_note": "담 광장. 운하지구·국립미술관이 4km 안이다.",
-   "radius_m": 4000,
-   "sitelink_min": 15,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 14,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "상위 25 기준 56%(후보 전체 31%)."
-   }
-  },
-  {
-   "city_id": "taipei",
-   "name_ko": "타이베이",
-   "name_local": "臺北",
-   "name_en": "Taipei",
-   "country_code": "TW",
-   "country_ko": "대만",
-   "country_en": "Taiwan",
-   "native_lang": "zh",
-   "center": {
-    "lat": 25.0478,
-    "lng": 121.517
-   },
-   "center_note": "타이베이 역. 타이베이 101·중정기념당·룽산사가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 10,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 18,
-    "ko_labels": 11,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "sapporo",
-   "name_ko": "삿포로",
-   "name_local": "札幌",
-   "name_en": "Sapporo",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 43.0686,
-    "lng": 141.3508
-   },
-   "center_note": "삿포로역. 오도리 공원·스스키노가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 15,
-    "ko_labels": 8,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "nagoya",
-   "name_ko": "나고야",
-   "name_local": "名古屋",
-   "name_en": "Nagoya",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 35.1709,
-    "lng": 136.8815
-   },
-   "center_note": "나고야역. 나고야성·오스 상점가가 6km 안이다.",
-   "radius_m": 6000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 15,
-    "ko_labels": 8,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "macau",
-   "name_ko": "마카오",
-   "name_local": "澳門",
-   "name_en": "Macau",
-   "country_code": "MO",
-   "country_ko": "마카오",
-   "country_en": "Macau",
-   "native_lang": "zh",
-   "center": {
-    "lat": 22.1936,
-    "lng": 113.54
-   },
-   "center_note": "세나도 광장. 역사지구와 코타이가 5km 안이다.",
-   "radius_m": 5000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 11,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "hong-kong",
-   "name_ko": "홍콩",
-   "name_local": "香港",
-   "name_en": "Hong Kong",
-   "country_code": "HK",
-   "country_ko": "홍콩",
-   "country_en": "Hong Kong",
-   "native_lang": "zh",
-   "center": {
-    "lat": 22.295,
-    "lng": 114.172
-   },
-   "center_note": "침사추이. 이 도시에는 사람이 쓴 가이드(seed/spots.json)가 이미 있다 — 구운 결과는 그것을 대체하지 않는다. 기대치 비교 표본으로 함께 조사한다(§16.1.1).",
-   "radius_m": 8000,
-   "sitelink_min": 10,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 12,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "상위 25 기준 48%. 사람이 쓴 홍콩 가이드와의 격차를 보여 주는 표본이다 — 같은 방식으로 재현하면 주룽 모스크가 상위에 온다."
-   }
-  },
-  {
-   "city_id": "kuala-lumpur",
-   "name_ko": "쿠알라룸푸르",
-   "name_local": "Kuala Lumpur",
-   "name_en": "Kuala Lumpur",
-   "country_code": "MY",
-   "country_ko": "말레이시아",
-   "country_en": "Malaysia",
-   "native_lang": "ms",
-   "center": {
-    "lat": 3.1578,
-    "lng": 101.7117
-   },
-   "center_note": "KLCC(페트로나스 트윈타워). 부킷빈탕·차이나타운이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 39,
-    "ko_labels": 14,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "naha",
-   "name_ko": "나하",
-   "name_local": "那覇",
-   "name_en": "Naha",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 26.215,
-    "lng": 127.687
-   },
-   "center_note": "고쿠사이도리. 슈리성이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 6,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 21,
-    "ko_labels": 7,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "ho-chi-minh",
-   "name_ko": "호치민",
-   "name_local": "Thành phố Hồ Chí Minh",
-   "name_en": "Ho Chi Minh City",
-   "country_code": "VN",
-   "country_ko": "베트남",
-   "country_en": "Vietnam",
-   "native_lang": "vi",
-   "center": {
-    "lat": 10.772,
-    "lng": 106.698
-   },
-   "center_note": "벤탄 시장. 1군 전역이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 21,
-    "ko_labels": 9,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "manila",
-   "name_ko": "마닐라",
-   "name_local": "Maynila",
-   "name_en": "Manila",
-   "country_code": "PH",
-   "country_ko": "필리핀",
-   "country_en": "Philippines",
-   "native_lang": "tl",
-   "center": {
-    "lat": 14.5826,
-    "lng": 120.9787
-   },
-   "center_note": "리살 공원. 인트라무로스와 마카티 일부가 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 8,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 23,
-    "ko_labels": 4,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "fukuoka",
-   "name_ko": "후쿠오카",
-   "name_local": "福岡",
-   "name_en": "Fukuoka",
-   "country_code": "JP",
-   "country_ko": "일본",
-   "country_en": "Japan",
-   "native_lang": "ja",
-   "center": {
-    "lat": 33.5897,
-    "lng": 130.4207
-   },
-   "center_note": "하카타역. 텐진·오호리 공원이 8km 안이다.",
-   "radius_m": 8000,
-   "sitelink_min": 6,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 14,
-    "ko_labels": 6,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "danang",
-   "name_ko": "다낭",
-   "name_local": "Đà Nẵng",
-   "name_en": "Da Nang",
-   "country_code": "VN",
-   "country_ko": "베트남",
-   "country_en": "Vietnam",
-   "native_lang": "vi",
-   "center": {
-    "lat": 16.0678,
-    "lng": 108.2208
-   },
-   "center_note": "다낭 대성당. 정찰이 r=15km·하한 4 로 실측한 값을 그대로 쓴다 — 오행산·손짜산이 이 반경 안이다.",
-   "radius_m": 15000,
-   "sitelink_min": 4,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 12,
-    "ko_labels": 10,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "초기 측정(r=15km·sl>=4)에서는 14/12 였다. 후보 14건 중 다리 4·강 2 — 명소 밀도가 낮은 도시다."
-   }
-  },
-  {
-   "city_id": "bali",
-   "name_ko": "발리",
-   "name_local": "Bali",
-   "name_en": "Bali",
-   "country_code": "ID",
-   "country_ko": "인도네시아",
-   "country_en": "Indonesia",
-   "native_lang": "id",
-   "center": {
-    "lat": -8.6705,
-    "lng": 115.2126
-   },
-   "center_note": "덴파사르. 우붓·쿠타·사누르를 25km 로 묶는다(섬 전체가 목적지라 단일 도심이 없다).",
-   "radius_m": 25000,
-   "sitelink_min": 5,
-   "limit": 150,
-   "enabled": true,
-   "measured_2026_09_15": {
-    "candidates": 25,
-    "ko_labels": 5,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": "상위 25 기준 20% — 선별로도 가려지지 않는 진짜 미달이다(개수가 아니라 언어가 이유)."
-   }
-  },
-  {
-   "city_id": "cebu",
-   "name_ko": "세부",
-   "name_local": "Sugbo",
-   "name_en": "Cebu",
-   "country_code": "PH",
-   "country_ko": "필리핀",
-   "country_en": "Philippines",
-   "native_lang": "ceb",
-   "center": {
-    "lat": 10.2937,
-    "lng": 123.902
-   },
-   "center_note": "마젤란 십자가(세부시티). 막탄섬까지 15km 로 덮는다.",
-   "radius_m": 15000,
-   "sitelink_min": 4,
-   "limit": 150,
-   "enabled": false,
-   "disabled_reason": "2026-09-15 실측 11건/한국어 2건 → 스팟 수·한국어 비율 둘 다 하한 미달(등급 below). 지우지 않고 남긴다 — 왜 목록에 없는지가 정보다(REQ-029). 반경·하한을 사람이 고쳐 다시 재려면 enabled 를 true 로 돌린다.",
-   "measured_2026_09_15": {
-    "candidates": 11,
-    "ko_labels": 2,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "nha-trang",
-   "name_ko": "나트랑",
-   "name_local": "Nha Trang",
-   "name_en": "Nha Trang",
-   "country_code": "VN",
-   "country_ko": "베트남",
-   "country_en": "Vietnam",
-   "native_lang": "vi",
-   "center": {
-    "lat": 12.2451,
-    "lng": 109.1943
-   },
-   "center_note": "냐짱 대성당. 정찰이 r=15km·하한 4 로 실측했다.",
-   "radius_m": 15000,
-   "sitelink_min": 4,
-   "limit": 150,
-   "enabled": false,
-   "disabled_reason": "2026-09-15 실측 5건/한국어 4건 → 스팟 5개 < 8 로 미달. 반경 15km 로도 채워지지 않았다 — 해변·리조트가 목적인 곳이라 위키데이터에 걸릴 명소가 애초에 적다(R11).",
-   "measured_2026_09_15": {
-    "candidates": 5,
-    "ko_labels": 4,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  },
-  {
-   "city_id": "phu-quoc",
-   "name_ko": "푸꾸옥",
-   "name_local": "Phú Quốc",
-   "name_en": "Phu Quoc",
-   "country_code": "VN",
-   "country_ko": "베트남",
-   "country_en": "Vietnam",
-   "native_lang": "vi",
-   "center": {
-    "lat": 10.217,
-    "lng": 103.967
-   },
-   "center_note": "즈엉동. 정찰이 r=25km·하한 3 으로 실측했다(섬 전체).",
-   "radius_m": 25000,
-   "sitelink_min": 3,
-   "limit": 150,
-   "enabled": false,
-   "disabled_reason": "2026-09-15 실측 3건/한국어 0건 → 스팟 수·한국어 비율 둘 다 미달. 반경 25km 로 재도 채워지지 않았다.",
-   "measured_2026_09_15": {
-    "candidates": 3,
-    "ko_labels": 0,
-    "source": "docs/_recon.md 2026-09-15 · 후보 34개 도시 수확량",
-    "note": ""
-   }
-  }
- ]
+ "schema_version": 1,
+ "what_this_is": "굽기(tools/bake_city_guides.py)의 유일한 입력이다(DSN-32 · 설계서 §16.3). 베이커는 이 파일 밖의 값을 받지 않는다 — 중심·반경·sitelink_min 은 사람이 정하고 고정한다."
 }

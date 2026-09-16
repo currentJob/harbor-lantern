@@ -1,0 +1,736 @@
+{
+ "center": {
+  "lat": 21.0287,
+  "lng": 105.8524
+ },
+ "city_id": "hanoi",
+ "country_code": "VN",
+ "country_en": "Vietnam",
+ "country_ko": "베트남",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 28,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 1,
+   "bridge": 1,
+   "building_landmark": 2,
+   "castle": 1,
+   "monument": 2,
+   "museum": 5,
+   "tower": 2,
+   "worship": 2
+  },
+  "denylisted_count": 0,
+  "described_count": 10,
+  "effective_radius_m": 8000,
+  "excluded_count": 1,
+  "grade_window": 16,
+  "hours_count": 6,
+  "ko_label_count": 16,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 45,
+  "page_count": 45,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 16,
+  "unclassified_count": 11,
+  "verification_failed_count": 6
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 6곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 6곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 11건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Hanoi",
+ "name_ko": "하노이",
+ "name_local": "Hà Nội",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 45,
+  "page_count": 45,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 8
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "Điện Biên",
+   "category": "monument",
+   "description": "호찌민 주석릉(베트남어: Lăng Chủ tịch Hồ Chí Minh 陵主席胡志明[*])은 베트남 하노이 바딘군에 있는 베트남 혁명 지도자 호찌민의 능이다. 베트남 독립선언문을 낭독했던 바딘 광장의 중앙에 2년의 세월에 걸쳐 높이 21.6m에, 3층으로 지어져 1975년 9월 2일에 완성되었다. 바딘 릉(베트남어: Lăng Ba Đình)로 알려져 있으며, 현재 대중에게 공개되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호찌민 주석릉",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC_%EC%A3%BC%EC%84%9D%EB%A6%89"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/37625751"
+   },
+   "hours_text": "Tu-Th 07:30-10:30; Sa,Su 07:30-11:00",
+   "id": "wd:Q874234",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 21.036667,
+   "lng": 105.834722,
+   "name": "호찌민 주석릉",
+   "name_original": "Lăng Chủ tịch Hồ Chí Minh",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/37625751",
+     "text": "영업시간 Tu-Th 07:30-10:30; Sa,Su 07:30-11:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q162875",
+    "Q4989906",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q874234"
+  },
+  {
+   "area": "하노이",
+   "category": "monument",
+   "description": "문묘(Văn Miếu, 文廟)는 베트남 하노이 동다군에 있는 건축물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "문묘 (하노이)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AC%B8%EB%AC%98_(%ED%95%98%EB%85%B8%EC%9D%B4)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1202019",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 21.028611,
+   "lng": 105.835556,
+   "name": "문묘",
+   "name_original": "Văn Miếu",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q358"
+   ],
+   "wikidata_id": "Q1202019"
+  },
+  {
+   "area": "하노이",
+   "category": "castle",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q864758",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 21.039444,
+   "lng": 105.834444,
+   "name": "주석궁",
+   "name_original": "Phủ Chủ tịch",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 68.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q16560"
+   ],
+   "wikidata_id": "Q864758"
+  },
+  {
+   "area": "하노이",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/340128580"
+   },
+   "hours_text": "Mo-Su 08:00-17:00",
+   "id": "wd:Q1359941",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 21.025278,
+   "lng": 105.846389,
+   "name": "호알로 교도소",
+   "name_original": "Nhà tù Hỏa Lò",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/340128580",
+     "text": "영업시간 Mo-Su 08:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q40357",
+    "Q1070290",
+    "Q33506"
+   ],
+   "wikidata_id": "Q1359941"
+  },
+  {
+   "area": "하노이",
+   "category": "attraction",
+   "description": "바딘 광장(베트남어: Quảng trường Ba Đình / 廣場𠀧亭)은 베트남, 하노이의 바딘군에 있는 광장이다. 1945년 9월 2일 호치민은 바딘 광장에서 독립을 선언하고 베트남 민주공화국을 수립하였다. 호치민의 사후 그의 영묘가 세워져 안장되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바딘 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%94%98_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2234574",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 21.03667,
+   "lng": 105.83583,
+   "name": "바딘 광장",
+   "name_original": "Quảng trường Ba Đình",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q2234574"
+  },
+  {
+   "area": "Tràng Tiền",
+   "category": "building_landmark",
+   "description": "하노이 오페라 하우스(베트남어: Nhà hát lớn Hà Nội)(영어: Hanoi Opera House)는 베트남 하노이에 있는 오페라 극장이다. 프랑스 식민지 시절인 1901년부터 1911년 사이에 세워진 건축물로 바로크 양식으로 지어졌으며, 프랑스 식민지 관리들이 콘서트와 공연 등을 보기위해 건축했다. 건축가 샤를 가르니에가 디자인했으며, 1911년 완공했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하노이 오페라 하우스",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EC%98%A4%ED%8E%98%EB%9D%BC_%ED%95%98%EC%9A%B0%EC%8A%A4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1186043",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 21.024167,
+   "lng": 105.857778,
+   "name": "하노이 오페라 하우스",
+   "name_original": "Nhà hát Lớn Hà Nội",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24354",
+    "Q153562"
+   ],
+   "wikidata_id": "Q1186043"
+  },
+  {
+   "area": "하노이",
+   "category": "worship",
+   "description": "못꼿 사원(베트남어: Chùa Một Cột, 一柱寺)은 베트남 하노이에 있는 절이다. 하노이를 상징하는 고사찰로, 1049년 리 왕조의 창건자인 리 태종이 건설했다. 사원의 주춧돌 직경은 1.25m에 달한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "못꼿 사원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AA%BB%EA%BC%BF_%EC%82%AC%EC%9B%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1186292",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 21.035745,
+   "lng": 105.833428,
+   "name": "못꼿 사원",
+   "name_original": "Chùa Một Cột",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 17.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q1186292"
+  },
+  {
+   "area": "하노이",
+   "category": "bridge",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2670019",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 21.043333,
+   "lng": 105.858889,
+   "name": "롱비엔 다리",
+   "name_original": "Cầu Long Biên",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q1429218",
+    "Q1210334"
+   ],
+   "wikidata_id": "Q2670019"
+  },
+  {
+   "area": "하노이",
+   "category": "museum",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/700145152"
+   },
+   "hours_text": "Mo-Su 08:30-17:00",
+   "id": "wd:Q3654706",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 21.030624,
+   "lng": 105.837066,
+   "name": "베트남 미술박물관",
+   "name_original": "Bảo tàng Mỹ thuật Việt Nam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/700145152",
+     "text": "영업시간 Mo-Su 08:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/700145152",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q3654706"
+  },
+  {
+   "area": "하노이",
+   "category": "museum",
+   "description": "호찌민 박물관은 베트남 하노이 바딘 광장에 있는 박물관으로, 1990년 5월 19일 호찌민 탄생 100주년을 기념하여 개관하였다. 호찌민 묘소와 연결되어 호찌민에 관한 물품들이 전시되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호찌민 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/37629143"
+   },
+   "hours_text": "Tu-Th 08:00-11:30; Sa-Su 14:00-16:30",
+   "id": "wd:Q1055897",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 21.035693,
+   "lng": 105.832624,
+   "name": "호찌민 박물관",
+   "name_original": "Bảo tàng Hồ Chí Minh",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/37629143",
+     "text": "영업시간 Tu-Th 08:00-11:30; Sa-Su 14:00-16:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/37629143",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16735822"
+   ],
+   "wikidata_id": "Q1055897"
+  },
+  {
+   "area": "하노이",
+   "category": "tower",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1134533",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 21.0279,
+   "lng": 105.8523,
+   "name": "터틀 타워",
+   "name_original": "Tháp Rùa",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q12518"
+   ],
+   "wikidata_id": "Q1134533"
+  },
+  {
+   "area": "하노이",
+   "category": "worship",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q864770",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 21.0479,
+   "lng": 105.837,
+   "name": "쩐 꿕 사당",
+   "name_original": "Chùa Trấn Quốc",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/220302249",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 37.2,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q864770"
+  },
+  {
+   "area": "하노이",
+   "category": "tower",
+   "description": "하노이 깃대(베트남어: Cột cờ Hà Nội / Kỳ đài Hà Nội)는 베트남 하노이에 있는 타워다. 33.4m이며, 깃발까지 포함하면 41m이다. 시의 상징물 중 하나이며, 세계유산인 하노이 탕롱황성의 일부이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하노이 깃대",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EA%B9%83%EB%8C%80"
+   },
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q864752",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 21.032558,
+   "lng": 105.839772,
+   "name": "하노이 깃대",
+   "name_original": "Cột cờ Hà Nội",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 8.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1971570",
+    "Q12518"
+   ],
+   "wikidata_id": "Q864752"
+  },
+  {
+   "area": "호안끼엠군",
+   "category": "museum",
+   "description": "베트남 역사박물관(베트남어: Viện Bảo tàng Lịch sử Việt Nam, 프랑스어: Musée National d'Histoire du Viêt Nam)은 베트남 하노이의 호안끼엠에 있는 박물관이다. 박물관 건물은 원래 프랑스령 인도차이나 시절 프랑스국립극동연구원의 박물관이었다. 1958년 북베트남 정부에 의해 인수되었으며 이후 동양 예술과 국가 역사를 아우르는 박물관으로 확장되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베트남 역사박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%8A%B8%EB%82%A8_%EC%97%AD%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/37933256"
+   },
+   "hours_text": "Mo off; Tu-Su 08:00-12:00,13:30-17:00",
+   "id": "wd:Q5370414",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 21.024722,
+   "lng": 105.859722,
+   "name": "베트남 역사박물관",
+   "name_original": "Bảo tàng Lịch sử Việt Nam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/37933256",
+     "text": "영업시간 Mo off; Tu-Su 08:00-12:00,13:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q5370414"
+  },
+  {
+   "area": "Tràng Tiền",
+   "category": "building_landmark",
+   "description": "소피텔 레전드 메트로폴 하노이(Sofitel Legend Metropole Hanoi)은 원래 메트로폴 호텔(Hôtel Metropole)이라는 명칭으로 알려져 있었다. 이 호텔은 베트남 하노이 호안끼엠의 응오꾸옌 거리에 위치해 있으며, 프랑스 식민지 시대인 1901년 개장한 유서 깊은 오성급 호텔이다. 이 고급 호텔을 찾은 저명 인사들로는 조지 H. W. 부시 대통령, 프랑수아 미테랑 대통령, 자크 시라크 대통령, 도널드 트럼프 대통령(2017년 APEC 정상회의) 등 각국의 정상과 대사, 국장 등 거물급 인사들이 묶으면서 풍부한 역사와 1세기의 전통을 자랑한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "소피텔 레전드 메트로폴 하노이",
+    "url": "https://ko.wikipedia.org/wiki/%EC%86%8C%ED%94%BC%ED%85%94_%EB%A0%88%EC%A0%84%EB%93%9C_%EB%A9%94%ED%8A%B8%EB%A1%9C%ED%8F%B4_%ED%95%98%EB%85%B8%EC%9D%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7553773",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 21.02567,
+   "lng": 105.85553,
+   "name": "소피텔 레전드 메트로폴 하노이",
+   "name_original": "Khách sạn Sofitel Legend Métropole Hanoï",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 60.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q27686"
+   ],
+   "wikidata_id": "Q7553773"
+  },
+  {
+   "area": "하노이",
+   "category": "museum",
+   "description": "하노이 박물관(Hanoi Museum, 베트남어: Bảo tàng Hà Nội)은 베트남 하노이 남뜨리엠 군에 위치한 박물관이다. 하노이 박물관은 2010년 10월 6일 하노이 천년 기념일에 문을 열었다. 이 박물관에는 하노이 1000년 역사와 베트남의 역사, 문화, 유산 및 건축물의 유물이 전시되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하노이 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/208255133"
+   },
+   "hours_text": "Tu-Su 08:00-11:30,13:30-17:00",
+   "id": "wd:Q1835176",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 21.011,
+   "lng": 105.786,
+   "name": "하노이 박물관",
+   "name_original": "Bảo tàng Hà Nội",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/208255133",
+     "text": "영업시간 Tu-Su 08:00-11:30,13:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 204.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q1835176"
+  }
+ ]
+}

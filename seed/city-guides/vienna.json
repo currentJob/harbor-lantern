@@ -1,0 +1,839 @@
+{
+ "center": {
+  "lat": 48.2085,
+  "lng": 16.3721
+ },
+ "city_id": "vienna",
+ "country_code": "AT",
+ "country_en": "Austria",
+ "country_ko": "오스트리아",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 42,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 3,
+   "building_landmark": 7,
+   "castle": 1,
+   "monument": 2,
+   "museum": 6
+  },
+  "denylisted_count": 0,
+  "described_count": 18,
+  "effective_radius_m": 5000,
+  "excluded_count": 0,
+  "grade_window": 19,
+  "hours_count": 2,
+  "ko_label_count": 19,
+  "ko_label_ratio": 1.0,
+  "mapped_count": 48,
+  "page_count": 48,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 19,
+  "unclassified_count": 23,
+  "verification_failed_count": 1
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 17곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 23건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Vienna",
+ "name_ko": "비엔나",
+ "name_local": "Wien",
+ "query": {
+  "gslimit": 500,
+  "limit": 150,
+  "mapped_count": 48,
+  "page_count": 48,
+  "radius_clamped": false,
+  "radius_m": 5000,
+  "registry_radius_m": 5000,
+  "sitelink_min": 20
+ },
+ "radius_m": 5000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "인네레슈타트",
+   "category": "castle",
+   "description": "호프부르크 왕궁(독일어: Hofburg)은 오스트리아 빈에 있는 궁전이다. 건물 가운데에는 오스트리아 연방 대통령의 관저가 있다. 빈 중심에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호프부르크",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%ED%94%84%EB%B6%80%EB%A5%B4%ED%81%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q46242",
+   "importance": {
+    "sitelinks": 55
+   },
+   "lat": 48.206389,
+   "lng": 16.365278,
+   "name": "호프부르크 왕궁",
+   "name_original": "Hofburg",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.2,
+    "label_match": "partial",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23413",
+    "Q751876",
+    "Q16560",
+    "Q481289",
+    "Q1200957",
+    "Q33506"
+   ],
+   "wikidata_id": "Q46242"
+  },
+  {
+   "area": "레오폴트슈타트",
+   "category": "building_landmark",
+   "description": "에른스트 하펠 슈타디온(독일어: Ernst-Happel-Stadion)은 오스트리아 빈에 위치한 경기장이다. 1931년에 개장했으며 수용 인원은 53,008명이다. 개장 당시의 이름은 프라터슈타디온(Praterstadion)이었으며 현재의 경기장 이름은 1992년 오스트리아의 전직 축구 선수 겸 감독인 에른스트 하펠이 사망하자 그를 기념하기 위해 지금과 같은 이름으로 변경한 데서 유래된 이름이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에른스트 하펠 슈타디온",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EB%A5%B8%EC%8A%A4%ED%8A%B8_%ED%95%98%ED%8E%A0_%EC%8A%88%ED%83%80%EB%94%94%EC%98%A8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q185741",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 48.207222,
+   "lng": 16.420833,
+   "name": "에른스트 하펠 슈타디온",
+   "name_original": "Ernst-Happel-Stadion",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 23.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710",
+    "Q483110"
+   ],
+   "wikidata_id": "Q185741"
+  },
+  {
+   "area": "인네레슈타트",
+   "category": "museum",
+   "description": "빈 미술사 박물관(Kunsthistorisches Museum)은 오스트리아의 빈에 있는 박물관이다. 대대의 오스트리아 황제의 콜렉션을 중심으로 한 총합적인 미술관인데, 현재의 건물은 고트프리트 젬퍼의 설계에 의해 1891년에 개관하였다. 고대, 중세의 조각이나 공예품 등에도 명작이 적지 않지만 뭐니뭐니해도 중심은 회화로서, 질적 수준에서는 유럽 1·2위를 다투고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 미술사 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EB%AF%B8%EC%88%A0%EC%82%AC_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q95569",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 48.203881,
+   "lng": 16.3616,
+   "name": "빈 미술사 박물관",
+   "name_original": "Kunsthistorisches Museum Wien",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 25.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q3152824"
+   ],
+   "wikidata_id": "Q95569"
+  },
+  {
+   "area": "인네레슈타트",
+   "category": "museum",
+   "description": "알베르티나(독일어: Albertina)는 오스트리아 빈 인네레슈타트(제1구)에 있는 미술관이다. 약 65,000점의 소묘와 약 100만 점의 옛 거장의 판화를 비롯하여 현대 그래픽 작품, 사진, 건축 도면 등을 소장하고 있어 세계에서 가장 크고 중요한 판화 및 소묘 전시실 중 하나를 갖추고 있다. 판화 외에도 임대로 장기 확보한 상설 기증 컬렉션 두 개를 보유하고 있으며, 이 중 인상주의 및 20세기 초반 미술 작품 일부는 상설 전시되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "알베르티나",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%B2%A0%EB%A5%B4%ED%8B%B0%EB%82%98"
+   },
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/60438337"
+   },
+   "hours_text": "PH,Th,Sa-Tu 10:00-18:00; We,Fr 10:00-21:00",
+   "id": "wd:Q371908",
+   "importance": {
+    "sitelinks": 47
+   },
+   "lat": 48.204722,
+   "lng": 16.368333,
+   "name": "알베르티나",
+   "name_original": "Albertina",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/60438337",
+     "text": "영업시간 PH,Th,Sa-Tu 10:00-18:00; We,Fr 10:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/60438337",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q371908"
+  },
+  {
+   "area": "인네레슈타트",
+   "category": "building_landmark",
+   "description": "빈 시청사(독일어: Wiener Rathaus 비너 라타우스[*])는 오스트리아 빈에 위치하고 있다. 빈 1구 (인네레슈타트)의 프리드리히 슈미트 광장 (Friedrich-Schmidt-Platz)에 위치한다. 1872년부터 1883년에 걸쳐 프리드리히 본 슈미트의 설계를 바탕으로 건설되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 시청사",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EC%8B%9C%EC%B2%AD%EC%82%AC"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q686468",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 48.2108,
+   "lng": 16.3574,
+   "name": "빈 시청",
+   "name_original": "Wiener Rathaus",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 34.0,
+    "label_match": "partial",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q543654"
+   ],
+   "wikidata_id": "Q686468"
+  },
+  {
+   "area": "빈",
+   "category": "building_landmark",
+   "description": "비너 슈타트할레(독일어: Wiener Stadthalle)는 오스트리아 빈 루돌프스하임퓐프하우스에 위치한 다목적 실내 경기장이자 컨벤션 센터다. 오스트리아의 건축가 롤란트 라이너가 설계한 원래 홀들은 1953년에서 1958년 사이에 건설되었으며, 이후 1974년, 1994년, 2006년에 확장되었다. 유연한 다목적 행사장인 메인 홀은 최대 약 16,083명을 수용할 수 있는 오스트리아 최대 규모의 실내 경기장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "비너 슈타트할레",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EB%84%88_%EC%8A%88%ED%83%80%ED%8A%B8%ED%95%A0%EB%A0%88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q698140",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 48.20231,
+   "lng": 16.33244,
+   "name": "비너 슈타트할레",
+   "name_original": "Wiener Stadthalle",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 47.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1763828"
+   ],
+   "wikidata_id": "Q698140"
+  },
+  {
+   "area": "빈",
+   "category": "monument",
+   "description": "",
+   "description_source": null,
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/250063134"
+   },
+   "hours_text": "10:00-18:00",
+   "id": "wd:Q662652",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 48.205556,
+   "lng": 16.369722,
+   "name": "황실 묘지",
+   "name_original": "Kaisergruft",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/250063134",
+     "text": "영업시간 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/250063134",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q192619",
+    "Q1578744"
+   ],
+   "wikidata_id": "Q662652"
+  },
+  {
+   "area": "빈",
+   "category": "monument",
+   "description": "빈도보나 (Vindobona, 갈리아어어로 '하양'을 뜻하는 빈도, '기지'를 뜻하는 보나에서 유래)는 오스트리아 빈 지역에 있었던 로마의 군영이다. 빈도보나가 있던 지역은 13세기에 베르크호프(Berghof)라는 이름으로 바뀌었고, 현재는 알터 베르크호프 (Alter Berghof, 옛 베르크호프)로 알려져 있다. 기원전 15년 무렵, 노리쿰 왕국이 로마 제국으로 편입되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈도보나",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88%EB%8F%84%EB%B3%B4%EB%82%98"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q871525",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 48.210833,
+   "lng": 16.370278,
+   "name": "빈도보나",
+   "name_original": "Vindobona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q15661340",
+    "Q839954"
+   ],
+   "wikidata_id": "Q871525"
+  },
+  {
+   "area": "빈",
+   "category": "museum",
+   "description": "군사사박물관(독일어: Heeresgeschichtliche Museum – Militärhistorische Institut)은 오스트리아 빈 란트슈트라세에 있는 군사 박물관이다. 이 박물관은 무기, 갑옷, 탱크, 항공기, 군복, 깃발, 그림, 메달, 명예 휘장, 사진, 문서 등 을 광범위한 군사 관련 전시를 통해 오스트리아군의 역사를 기록하고 있다. 이 박물관은 연방 정부 소유이지만 연방 박물관과 제휴하지 않고 국방부와 스포츠부에 직접 보고하는 종속 기관으로 조직되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "군사사박물관 (빈)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%B0%EC%82%AC%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_(%EB%B9%88)"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700751",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 48.185361,
+   "lng": 16.387389,
+   "name": "군사사박물관",
+   "name_original": "Heeresgeschichtliches Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2772772",
+    "Q787934"
+   ],
+   "wikidata_id": "Q700751"
+  },
+  {
+   "area": "빈",
+   "category": "building_landmark",
+   "description": "빈 가소메터(Vienna Gasometers)는 오스트리아 빈의 시립 가스 공장의 일부로 건설된 네 개의 가스 저장고 건물이다. 원래의 가스 저장고 건물들은 1896년부터 1899년 사이에 건축되었다. 이들은 11구인 지머링에 위치해 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 가소메터",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EA%B0%80%EC%86%8C%EB%A9%94%ED%84%B0"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697527",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 48.18489,
+   "lng": 16.41997,
+   "name": "빈 가소메터",
+   "name_original": "Gasometer",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315",
+    "Q1348006",
+    "Q962715",
+    "Q1200957",
+    "Q1329623",
+    "Q1060829"
+   ],
+   "wikidata_id": "Q697527"
+  },
+  {
+   "area": "노이바우",
+   "category": "museum",
+   "description": "무제움스크바르티어(독일어: MuseumsQuartier, MQ)는 오스트리아의 수도 빈의 노이바우 지구에 있는 미술관 지역으로, 약 60,000m²의 면적을 차지한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "무제움스크바르티어",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%A0%9C%EC%9B%80%EC%8A%A4%ED%81%AC%EB%B0%94%EB%A5%B4%ED%8B%B0%EC%96%B4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q699943",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 48.203333,
+   "lng": 16.358889,
+   "name": "무제움스크바르티어",
+   "name_original": "MuseumsQuartier",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q1329623",
+    "Q33506",
+    "Q1497375"
+   ],
+   "wikidata_id": "Q699943"
+  },
+  {
+   "area": "인네레슈타트",
+   "category": "building_landmark",
+   "description": "호텔 자허(독일어: Hotel Sacher)는 오스트리아 빈에 위치한 5성 호텔이다. 호텔은 오스트리아의 명물인 자허토르테의 원조로 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호텔 자허",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%ED%85%94_%EC%9E%90%ED%97%88"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q279260",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 48.20388,
+   "lng": 16.36969,
+   "name": "호텔 자허",
+   "name_original": "Hotel Sacher",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 18.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q27686",
+    "Q261335"
+   ],
+   "wikidata_id": "Q279260"
+  },
+  {
+   "area": "노이바우",
+   "category": "museum",
+   "description": "레오폴트 미술관(독일어: Leopold Museum 레오폴트 무세움[*])은 오스트리아 빈 무제움스크바르티어에 있는 현대 미술관이다. 여기에는 에곤 실레, 구스타프 클림트, 오스카스 코코슈카, 리하르트 게르스틀 등의 작품이 있다. 에곤 실레의 컬렉션은 세계에서 가장 큰 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레오폴트 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EC%98%A4%ED%8F%B4%ED%8A%B8_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q59435",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 48.20265,
+   "lng": 16.359142,
+   "name": "레오폴트 미술관",
+   "name_original": "Leopold Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 25.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q59435"
+  },
+  {
+   "area": "인네레슈타트",
+   "category": "attraction",
+   "description": "헬덴 광장(독일어: Heldenplatz 헬덴플라츠[*]) 또는 영웅광장(英雄廣場)은 오스트리아 빈에 있는 광장이다. 인네레슈타트 지구의 호프부르크 왕궁 앞에 위치해 있다. 역사적인 많은 사건이 이 광장에서 일어났는데, 대표적으로 1938년 3월 15일 나치 독일의 오스트리아 병합 당시 아돌프 히틀러가 연설을 한 것으로도 잘 알려져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "헬덴 광장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%97%AC%EB%8D%B4_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700128",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 48.206281,
+   "lng": 16.363761,
+   "name": "헬덴 광장",
+   "name_original": "Heldenplatz",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 73.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q700128"
+  },
+  {
+   "area": "빈",
+   "category": "attraction",
+   "description": "카를 광장(독일어: Karlsplatz 카를스플라츠[*])은 오스트리아 빈에 위치한 광장이다. 인네레슈타트(Innere Stadt, 1구)와 비덴(Wieden, 4구) 간의 경계 지점에 위치하며 빈의 교통의 중심지 역할을 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카를 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%BC_%EA%B4%91%EC%9E%A5"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700753",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 48.1992,
+   "lng": 16.37,
+   "name": "카를 광장",
+   "name_original": "Karlsplatz",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q700753"
+  },
+  {
+   "area": "빈",
+   "category": "building_landmark",
+   "description": "빈 응용예술대학교(독일어: Universität für angewandte Kunst Wien), 약칭 안게반테(독일어: die Angewandte)는 오스트리아 빈의 예술 대학이다. 오스트리아 유겐트스틸의 발상지로 여겨지며 20세기 초 빈 분리파와 밀접한 관계를 맺었다. 1970년부터 종합 대학 지위를 얻고 예술, 인문학, 과학 분야의 교육 과정을 제공하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 응용예술대학교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EC%9D%91%EC%9A%A9%EC%98%88%EC%88%A0%EB%8C%80%ED%95%99%EA%B5%90"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q877686",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 48.208419,
+   "lng": 16.382219,
+   "name": "빈 응용예술대학교",
+   "name_original": "Universität für angewandte Kunst Wien",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 110.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q875538",
+    "Q130327897"
+   ],
+   "wikidata_id": "Q877686"
+  },
+  {
+   "area": "빈",
+   "category": "attraction",
+   "description": "빈 대관람차(독일어: Wiener Riesenrad 비너 라이센라드[*])는 오스트리아 빈 레오폴드슈타트 프라터 공원에 있는 대관람차이다. 영화 《제3의 사나이》에도 등장한 것으로 잘 알려져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 대관람차",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EB%8C%80%EA%B4%80%EB%9E%8C%EC%B0%A8"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697578",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 48.216831,
+   "lng": 16.395919,
+   "name": "빈 대관람차",
+   "name_original": "Wiener Riesenrad",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q202570",
+    "Q2319498"
+   ],
+   "wikidata_id": "Q697578"
+  },
+  {
+   "area": "Penzing",
+   "category": "museum",
+   "description": "빈 기술박물관(독일어: Technisches Museum Wien)은 오스트리아 빈에 있는 기술 박물관이다. 기술 박물관을 설립하기로 한 결정은 1908년에 내려졌고, 건물 건설은 1909년에 시작되었다. 박물관은 1918년에 개관했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "빈 기술박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%88_%EA%B8%B0%EC%88%A0%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q372676",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 48.190931,
+   "lng": 16.318031,
+   "name": "빈 기술박물관",
+   "name_original": "Technisches Museum Wien",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2398990",
+    "Q787934"
+   ],
+   "wikidata_id": "Q372676"
+  },
+  {
+   "area": "빈",
+   "category": "building_landmark",
+   "description": "DC 타워스(독일어: DC Towers)는 오스트리아 빈에 위치한 마천루로, 현재 오스트리아에서 가장 높은 건물이다. 설계는 프랑스의 건축가 도미니크 페롤트가 맡았다. DC 타워는 세 개의 타워로 구성되어 있으며, 현재 완공된 것은 타워 1 뿐이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "DC 타워스",
+    "url": "https://ko.wikipedia.org/wiki/DC_%ED%83%80%EC%9B%8C%EC%8A%A4"
+   },
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q675964",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 48.23161,
+   "lng": 16.41356,
+   "name": "DC 타워",
+   "name_original": "DC Towers",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 68.8,
+    "label_match": "partial",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645"
+   ],
+   "wikidata_id": "Q675964"
+  }
+ ]
+}
