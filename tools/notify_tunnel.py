@@ -21,8 +21,9 @@ import os
 import re
 import sys
 import urllib.parse
-import urllib.request
 from pathlib import Path
+
+import httpx
 
 __all__ = ["build_share_url", "find_tunnel_url", "load_config", "send"]
 
@@ -68,17 +69,19 @@ def load_config(path: str | os.PathLike[str] | None) -> dict[str, object] | None
 
 
 def send(config: dict[str, object], text: str) -> int:
-    """Telegram 으로 보낸다. HTTP 상태 코드를 돌려준다."""
-    payload = urllib.parse.urlencode(
-        {"chat_id": str(config["chat"]), "text": text, "disable_web_page_preview": "true"}
-    ).encode()
-    request = urllib.request.Request(  # noqa: S310 - 스킴이 상수다
+    """Telegram 으로 보낸다. HTTP 상태 코드를 돌려준다.
+
+    `urllib` 을 쓰지 않는 이유가 있다 — `urllib` 은 `file://` 도 연다. 여기서는 URL 이
+    상수 템플릿이지만 토큰이 설정 파일에서 오므로 정적 분석은 "동적 값"으로 읽고
+    막는다(이 저장소가 좌표 해석 도구에서 이미 겪은 일이다 · 커밋 9534daa).
+    `httpx` 는 HTTP(S) 만 말하므로 그 경로 자체가 없다.
+    """
+    response = httpx.post(
         TELEGRAM_API.format(token=config["token"]),
-        data=payload,
-        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        data={"chat_id": str(config["chat"]), "text": text, "disable_web_page_preview": "true"},
+        timeout=20,
     )
-    with urllib.request.urlopen(request, timeout=20) as response:  # noqa: S310
-        return int(response.status)
+    return int(response.status_code)
 
 
 def main(argv: list[str] | None = None) -> int:
