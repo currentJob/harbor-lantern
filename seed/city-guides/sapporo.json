@@ -1,0 +1,585 @@
+{
+ "center": {
+  "lat": 43.0686,
+  "lng": 141.3508
+ },
+ "city_id": "sapporo",
+ "country_code": "JP",
+ "country_en": "Japan",
+ "country_ko": "일본",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 70,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 2,
+   "building_landmark": 4,
+   "museum": 3,
+   "park": 1,
+   "tower": 1
+  },
+  "denylisted_count": 0,
+  "described_count": 9,
+  "discovery": {
+   "both": 6,
+   "en": 5,
+   "ko": 0
+  },
+  "discovery_pool": {
+   "both": 48,
+   "en": 23,
+   "ko": 27
+  },
+  "effective_radius_m": 6000,
+  "en_page_count": 113,
+  "excluded_count": 2,
+  "grade_window": 11,
+  "hours_count": 3,
+  "ko_label_count": 11,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 75,
+  "korean_count": 98,
+  "mapped_count": 140,
+  "no_korean_count": 42,
+  "page_count": 188,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 11,
+  "unclassified_count": 57,
+  "unmapped_count": 0,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 8곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 57건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 42건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 0곳 · 영어 검색에서만 5곳 · 양쪽 6곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Sapporo",
+ "name_ko": "삿포로",
+ "name_local": "札幌",
+ "query": {
+  "en_page_count": 113,
+  "gslimit": 500,
+  "ko_page_count": 75,
+  "korean_count": 98,
+  "limit": 150,
+  "mapped_count": 140,
+  "page_count": 188,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "삿포로시",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "오도리 공원(일본어: 大 (おお)通 (どおり)公 (こう)園 (えん) 오도리코엔[*])은 일본 홋카이도 삿포로시 주오구에 있는 공원이다. 일본의 길 100선, 일본의 도시공원 100선, 도시경관 100선, 일본의 역사 공원 100선에 선정되었다. 삿포로 중심부에 위치하고 있으며, 동서 약 1.5km, 면적 약 7.8ha의 공원이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오도리 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EB%8F%84%EB%A6%AC_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3107971",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 43.059722,
+   "lng": 141.346389,
+   "name": "오도리 공원",
+   "name_original": "大通公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746",
+    "Q3809453",
+    "Q6553474"
+   ],
+   "wikidata_id": "Q3107971"
+  },
+  {
+   "area": "Ōdōri-Nishi",
+   "category": "tower",
+   "coord_source": "wikidata:P625",
+   "description": "삿포로 TV타워(일본어: さっぽろテレビ塔 삿포로 테레비토우[*])은 일본 홋카이도 삿포로시 주오구에 있는 지상 147.2m의 텔레비전 전파탑이다. 1957년에 지어졌으며, 지하에는 식당, 1층에는 오락실이, 2층에는 다목적 홀, 3층에는 기념품 판매점이 있다. 지상 90.38미터 부근에 전망대가 있으며, 이곳에도 매점 같은 관광객의 편의를 위한 시설이 존재한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "삿포로 TV타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%BF%ED%8F%AC%EB%A1%9C_TV%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/199758828"
+   },
+   "hours_text": "Mo-Su 10:00-22:00",
+   "id": "wd:Q1063319",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 43.061111,
+   "lng": 141.356389,
+   "name": "삿포로 TV타워",
+   "name_original": "さっぽろテレビ塔",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/199758828",
+     "text": "영업시간 Mo-Su 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11166728"
+   ],
+   "wikidata_id": "Q1063319"
+  },
+  {
+   "area": "Miyanomori",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "오쿠라야마 점프 경기장(일본어: 大倉山ジャンプ競技場 오쿠라야마쟘푸쿄기죠[*])은 홋카이도 삿포로시 주오구에 위치한 스키 점프장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오쿠라야마 점프 경기장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%BF%A0%EB%9D%BC%EC%95%BC%EB%A7%88_%EC%A0%90%ED%94%84_%EA%B2%BD%EA%B8%B0%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q385351",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 43.050667,
+   "lng": 141.286306,
+   "name": "오쿠라야마 점프 경기장",
+   "name_original": "大倉山ジャンプ競技場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 308.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1109069",
+    "Q11323781",
+    "Q177305",
+    "Q31157863"
+   ],
+   "wikidata_id": "Q385351"
+  },
+  {
+   "area": "주오구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "미야노모리 점프 경기장(일본어: 宮の森ジャンプ競技場 미야노모리쟘푸쿄기죠[*])은 홋카이도 삿포로시 주오구에 위치한 스키 점프장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미야노모리 점프 경기장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EC%95%BC%EB%85%B8%EB%AA%A8%EB%A6%AC_%EC%A0%90%ED%94%84_%EA%B2%BD%EA%B8%B0%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1191109",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 43.039167,
+   "lng": 141.295556,
+   "name": "미야노모리 점프 경기장",
+   "name_original": "宮の森ジャンプ競技場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1109069",
+    "Q11323781",
+    "Q31157863"
+   ],
+   "wikidata_id": "Q1191109"
+  },
+  {
+   "area": "Miyagaoka",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "홋카이도 신궁(일본어: 北海道神宮)은 홋카이도 삿포로시 주오구에 있는 신사로, 구 사격은 관폐대사이며 현재는 별표신사이다. 교통편은 삿포로 시영 지하철 도자이선 마루야마고엔역에서 진입하면 된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홋카이도 신궁",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8B%EC%B9%B4%EC%9D%B4%EB%8F%84_%EC%8B%A0%EA%B6%81"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q710826",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 43.054235,
+   "lng": 141.307705,
+   "name": "홋카이도 신궁",
+   "name_original": "北海道神宮",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q120680118",
+    "Q845945"
+   ],
+   "wikidata_id": "Q710826"
+  },
+  {
+   "area": "",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/64747104"
+   },
+   "hours_text": "Mo-Su 08:45-17:00; Jan 01-03 off",
+   "id": "wd:Q1140619",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 43.062602,
+   "lng": 141.353681,
+   "name": "삿포로 시계탑",
+   "name_original": "札幌市時計台",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/64747104",
+     "text": "영업시간 Mo-Su 08:45-17:00; Jan 01-03 off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/64747104",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q853854",
+    "Q1763828",
+    "Q33506"
+   ],
+   "wikidata_id": "Q1140619"
+  },
+  {
+   "area": "주오구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "JR 타워(일본어: JRタワー)는 일본 홋카이도 삿포로시 주오구에 있는 역사, 복합 상업 시설, 마천루이다. 삿포로역에 위치하고 있으며 높이 173m, 38층짜리 건물이다. JR 타워 내에는 삿포로 스텔라 플레이스, 다이마루 백화점 삿포로점, JR 타워 호텔 니코 삿포로 등의 상업시설과 업무시설이 위치해있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "JR 타워",
+    "url": "https://ko.wikipedia.org/wiki/JR_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3041894",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 43.06793,
+   "lng": 141.35262,
+   "name": "JR 타워",
+   "name_original": "JRタワー",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 23.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q11626975",
+    "Q1339195"
+   ],
+   "wikidata_id": "Q3041894"
+  },
+  {
+   "area": "미나미구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11625132",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 43.0225,
+   "lng": 141.322222,
+   "name": "모이와야마",
+   "name_original": "藻岩山",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q8502"
+   ],
+   "wikidata_id": "Q11625132"
+  },
+  {
+   "area": "",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "홋카이도청 구 본청사(일본어: 北海道庁旧本庁舎 홋카이도초큐혼초샤[*])는 한때 홋카이도의 청사로 사용되던 건축물이다. 관내는 홋카이도 개척 관계 자료를 전시, 보존하는 홋카이도립 문서관이 있어 일반인에게 공개되고 있으며, 도청 회의실로도 사용되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홋카이도청 구 본청사",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8B%EC%B9%B4%EC%9D%B4%EB%8F%84%EC%B2%AD_%EA%B5%AC_%EB%B3%B8%EC%B2%AD%EC%82%AC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q861554",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 43.063944,
+   "lng": 141.348,
+   "name": "홋카이도청 구 본청사",
+   "name_original": "北海道庁旧本庁舎",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 8.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q100705206",
+    "Q867703"
+   ],
+   "wikidata_id": "Q861554"
+  },
+  {
+   "area": "",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "홋카이도 도립 근대미술관(北海道立近代美術館, Hokkaidō-ritsu Kindai Bijutsukan)은 1977년 일본 홋카이도 삿포로시에 개관하였다. 주요 목적은 \"우수한 작품의 수집·보존\", \"다양한 전시\", \"모든 활동의 기초가 되는 조사·연구\", \"종합적인 학습의 장 제공\" 등이다. 소장품으로는 줄스 파스킨과 에콜 드 파리 화파의 작품들을 비롯하여 현대 일본 예술가, 특히 홋카이도와 연고가 있는 작가들의 작품이 포함되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홋카이도 도립 근대미술관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8B%EC%B9%B4%EC%9D%B4%EB%8F%84_%EB%8F%84%EB%A6%BD_%EA%B7%BC%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11402992",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 43.060278,
+   "lng": 141.330389,
+   "name": "홋카이도 도립 근대미술관",
+   "name_original": "北海道立近代美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q4409567"
+   ],
+   "wikidata_id": "Q11402992"
+  },
+  {
+   "area": "Miyanomori",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "미야노모리 미술관(일본어: 宮の森美術館 미야노모리비쥬쓰칸[*])은 홋카이도 삿포로시 주오구에 위치한 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미야노모리 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EC%95%BC%EB%85%B8%EB%AA%A8%EB%A6%AC_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/3570781324"
+   },
+   "hours_text": "10:30-18:30",
+   "id": "wd:Q2420835",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 43.057161,
+   "lng": 141.30245,
+   "name": "미야노모리 미술관",
+   "name_original": "札幌宮の森美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/3570781324",
+     "text": "영업시간 10:30-18:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q1007870"
+   ],
+   "wikidata_id": "Q2420835"
+  }
+ ]
+}

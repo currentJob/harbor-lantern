@@ -12,37 +12,54 @@
   "candidate_count": 150,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 9,
-   "building_landmark": 16,
+   "attraction": 10,
+   "building_landmark": 17,
+   "castle": 2,
    "monument": 1,
-   "museum": 8,
-   "park": 7,
-   "tower": 4,
-   "worship": 4
+   "museum": 9,
+   "park": 6,
+   "tower": 3,
+   "worship": 2
   },
   "denylisted_count": 0,
-  "described_count": 44,
+  "described_count": 43,
+  "discovery": {
+   "both": 17,
+   "en": 19,
+   "ko": 14
+  },
+  "discovery_pool": {
+   "both": 125,
+   "en": 163,
+   "ko": 137
+  },
   "effective_radius_m": 6000,
-  "excluded_count": 16,
+  "en_page_count": 500,
+  "excluded_count": 17,
   "grade_window": 25,
   "hours_count": 2,
   "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 262,
-  "page_count": 262,
+  "ko_page_count": 262,
+  "korean_count": 425,
+  "mapped_count": 637,
+  "no_korean_count": 212,
+  "page_count": 762,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 49,
-  "unclassified_count": 85,
-  "verification_failed_count": 5
+  "spot_count": 50,
+  "unclassified_count": 83,
+  "unmapped_count": 0,
+  "verification_failed_count": 7
  },
  "known_gaps": [
-  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 47곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 7곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 7곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 48곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 85건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 83건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 212건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 14곳 · 영어 검색에서만 19곳 · 양쪽 17곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -50,14 +67,21 @@
  "name_ko": "도쿄",
  "name_local": "東京",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 262,
+  "korean_count": 425,
   "limit": 150,
-  "mapped_count": 262,
-  "page_count": 262,
+  "mapped_count": 637,
+  "page_count": 762,
   "radius_clamped": false,
   "radius_m": 6000,
   "registry_radius_m": 6000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 6000,
  "retrieved_at": "2026-09-16",
@@ -67,6 +91,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -88,6 +117,7 @@
   {
    "area": "오시아게",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "도쿄 스카이트리(일본어: 東 (とう)京 (きょう)スカイツリー 도쿄스카이쓰리[*])는 일본 도쿄도 스미다구에 세워진 전파탑이다. 본래 높이 610.58m로 계획되었으나 2009년 10월에 높이 634m로 설계가 변경되어, 캐나다의 CN 타워와 중국의 광저우타워를 제치고 세계에서 가장 높은 자립식 전파탑으로 등극하였다. 2008년 7월 14일에 착공하였고, 2012년 2월 29일에 완공하였으며, 2012년 5월 22일부터 정식으로 영업을 시작하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -96,6 +126,7 @@
     "title": "도쿄 스카이트리",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EC%8A%A4%EC%B9%B4%EC%9D%B4%ED%8A%B8%EB%A6%AC"
    },
+   "discovery": "ko",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -128,6 +159,7 @@
   {
    "area": "Shibakōen",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "도쿄 타워(일본어: 東京タワー 도쿄타와[*], 영어: Tokyo Tower)는 일본 도쿄도 미나토구에 있는 높이 333m의 종합 전파탑으로, 관광명소로서의 인기는 지금도 여전하다(에펠탑을 모방해서 만들었음). 빨간색(또는 국제 표준 주황색)하고 하얀색이 교차하여 도색되어 있다(주소는 도쿄 도 미나토 구 시바코엔 4-2-8). 지상파 아날로그·디지털 텔레비전 방송(VHF·UHF) 및 FM 방송의 안테나로서 방송전파로서 방송전파를 송출하는 다른 동일본 여객철도(JR 동일본)의 열차 방호 무선장치용 안테나와 도쿄 도 환경국의 각종 측정기를 설치하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -136,6 +168,7 @@
     "title": "도쿄 타워",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -166,8 +199,44 @@
    "wikidata_id": "Q183536"
   },
   {
+   "area": "나가타초",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q477675",
+   "importance": {
+    "sitelinks": 68
+   },
+   "lat": 35.678333,
+   "lng": 139.744167,
+   "name": "일본 국립국회도서관",
+   "name_original": "国立国会図書館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "partial",
+    "reason": "coords_missing_and_label_weak",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q22806",
+    "Q2052886",
+    "Q856584"
+   ],
+   "wikidata_id": "Q477675"
+  },
+  {
    "area": "다이토구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "아키하바라(일본어: 秋 (あき)葉 (は)原 (ばら))는 일본 도쿄도 지요다구의 아키하바라역 주변을 지칭하는 지명이다. 행정 구역상, 아키하바라 일대는 소토칸다(外神田)와 간다하나오카초(神田花岡町), 간다사쿠마초(神田佐久間町)에 속한다. 아키하바라라는 이름은 1896년 이 지역의 신사가 화재로 전소된 이후 붙여진 이름인 아키바가하라(일본어: 秋 (あき)葉 (は)が原 (はら)→낙엽 밭)에서 유래했으며, 줄여서 아키바(일본어: 秋 (あき)葉 (ば))라고도 부른다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -176,6 +245,7 @@
     "title": "아키하바라",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%ED%82%A4%ED%95%98%EB%B0%94%EB%9D%BC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -207,6 +277,7 @@
   {
    "area": "우에노코엔",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "도쿄 국립박물관(일본어: 東京国立博物館 (とうきょうこくりつはくぶつかん) 도쿄코쿠리쓰하쿠부쓰칸[*])은 일본과 동양의 고고 유물, 미술품 등의 문화재를 수집 보관, 전시 공개, 조사 연구, 보급 등의 목적으로 독립행정법인 국립문화재기구가 운영하는 박물관이다. 또한 사단법인 일본공예회의 본부가 있다. 1872년(메이지 3년)에 설립된 일본에서 가장 오래된 박물관으로 도쿄도 다이토구 우에노 공원 내에 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -215,6 +286,7 @@
     "title": "도쿄 국립박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EA%B5%AD%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -244,6 +316,7 @@
   {
    "area": "구단키타",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "야스쿠니 신사(일본어: 靖國神社/靖国神社 야스쿠니진자[*]) 또는 조슈 신사(일본어: 長州神社 초슈진자[*])는 일본 도쿄도 지요다구 황궁 북쪽에 있는 신사로, 전쟁에서 싸우다 전사한 사람들을 신(영령)으로 모시고 제사를 지내는 곳이다. 총면적은 93,356m2로 일본 신사 중 가장 규모가 크다. 영미권 언론에서는 '전쟁 신사'(war shrine)란 용어를 주로 사용하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -252,6 +325,7 @@
     "title": "야스쿠니 신사",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%BC%EC%8A%A4%EC%BF%A0%EB%8B%88_%EC%8B%A0%EC%82%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -282,8 +356,49 @@
    "wikidata_id": "Q242803"
   },
   {
+   "area": "지요다",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "고쿄(皇居 (こうきょ) 고쿄[*]) 또는 황거는 일본 천황의 평소 주거지, 즉 황궁으로 관광지다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "고쿄",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%BF%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q500681",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 35.6825,
+   "lng": 139.7521,
+   "name": "고쿄",
+   "name_original": "皇居",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 55.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q53536964",
+    "Q134962447"
+   ],
+   "wikidata_id": "Q500681"
+  },
+  {
    "area": "지요다구",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "에도성(일본어: 江戸城)은 도쿄도 지요다구 지요다에 있는 윤곽식 평산성이다. 다른 이름은 지요다성(千代田城)이다. 에도 막부 쇼군의 거처이며, 최고 정무기관이었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -292,6 +407,7 @@
     "title": "에도성",
     "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EB%8F%84%EC%84%B1"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -320,8 +436,90 @@
    "wikidata_id": "Q865913"
   },
   {
+   "area": "기타노마루 공원",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "일본무도관(일본어: 日 (にっ)本 (ぽん)武 (ぶ)道 (どう)館 (かん) 닛폰부도칸[*])은 도쿄도 지요다구 기타노마루 공원에 있는 실내 경기장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "일본무도관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%BC%EB%B3%B8%EB%AC%B4%EB%8F%84%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q386246",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 35.693333,
+   "lng": 139.75,
+   "name": "일본무도관",
+   "name_original": "日本武道館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1763828",
+    "Q16534385",
+    "Q641226"
+   ],
+   "wikidata_id": "Q386246"
+  },
+  {
+   "area": "우에노코엔",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "우에노 공원(Ueno Park,上野公園)은 일본 도쿄도 다이토구의 우에노 지구에 위치한 넓은 공원이다. 공원은 도쿠가와 막부와 관련이 있는 절로 불행한 방향으로 여겨지는 북동쪽으로부터 에도 성을 방어하기 위해 세워진 칸에이지의 예전 자리에 있다. 절은 보신 전쟁 때 파괴되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "우에노 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9A%B0%EC%97%90%EB%85%B8_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q746216",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 35.712222,
+   "lng": 139.771111,
+   "name": "우에노 공원",
+   "name_original": "上野恩賜公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q95977092",
+    "Q22746"
+   ],
+   "wikidata_id": "Q746216"
+  },
+  {
    "area": "우에노코엔",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립서양미술관(일본어: 国立西洋美術館, こくりつせいようびじゅつかん 고쿠리쓰세이요비쥬쓰칸[*], NMWA)은 서양 전통의 미술을 전문으로 하는 일본의 주요 공공 미술관으로, 도쿄도 다이토구 우에노 공원 안에 위치해 있으며 1959년에 설립되었다. 본관은 프랑스의 건축가 르코르뷔지에의 작품으로 1998년 일본의 공공 건축 100선에 소개되었다. 2016년에는 1,162,345명의 방문객이 다녀갔다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -330,6 +528,7 @@
     "title": "국립서양미술관",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EC%84%9C%EC%96%91%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -362,6 +561,7 @@
   {
    "area": "미나토구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "롯폰기(六本木 (ろっぽんぎ), 문화어: 롭뽕기)는 도쿄도의 미나토구에 있는 지역이다. 현행 행정구역은 롯폰기 1초메부터 롯폰기 7초메. 주거표시 실시 완료 지역이기도 하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -370,6 +570,7 @@
     "title": "롯폰기",
     "url": "https://ko.wikipedia.org/wiki/%EB%A1%AF%ED%8F%B0%EA%B8%B0"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -399,6 +600,7 @@
   {
    "area": "고라쿠",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "도쿄 돔(일본어: 東京ドーム, Tokyo Dome)은 일본 도쿄도 분쿄구에 있는 일본 최초의 돔 구장이다. 1985년에 착공하여 1988년 3월 18일에 개장했으며 현재 일본 프로 야구 팀 요미우리 자이언츠가 홈 구장으로 사용하고 있으며 2004년 이후에는 홋카이도 닛폰햄 파이터스가 준본거지로 사용 중이다. 흰색의 돔 지붕이 전체적으로 달걀과 비슷하게 생겼다는 의미에서 일명 빅 에그(BIG EGG)라고도 불린다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -407,6 +609,7 @@
     "title": "도쿄 돔",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EB%8F%94"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -437,6 +640,7 @@
   {
    "area": "Asakusa",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "센소지(일본어: 浅草寺, 천초사. Sensoji (Temple))는 일본 도쿄도 다이토구 아사쿠사에 있는 절로 도쿄에서 가장 큰 사찰이다. 628년 스미다강에서 백제인 히노구마 어부 형제가 던져놓은 그물에 걸린 관음상을 모시기 위해 사당을 지었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -445,6 +649,7 @@
     "title": "센소지",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%BC%EC%86%8C%EC%A7%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -474,6 +679,7 @@
   {
    "area": "나가타초",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "국회의사당(일본어: 国会議事堂 곳카이기지도[*])은 일본의 국회가 개최되는 건물이다. 현재 건물은 1936년 11월 제국의회의사당으로서 도쿄도 지요다구 나가타초 잇초메에 건설되었다. 건물은 좌우대칭형으로 이루어져 있으며 정면을 향하여 좌측에 중의원, 우측에 참의원(구 귀족원)이 배치되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -482,6 +688,7 @@
     "title": "국회의사당 (일본)",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%82%AC%EB%8B%B9_(%EC%9D%BC%EB%B3%B8)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -511,6 +718,7 @@
   {
    "area": "롯폰기",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립신미술관(일본어: 国立新美術館, こくりつしんびじゅつかん 고쿠리츠신비쥬츠칸[*])은 일본 도쿄도 미나토구 롯폰기에 있는 미술관이다. 2007년 1월 21일 개관하였으며, 구로카와 기쇼가 설계한 작품이자 그의 유작이다. 높이 20m가 넘는 실내에는 뒤집힌 원뿔 모양의 구조물로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -519,6 +727,7 @@
     "title": "국립신미술관",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EC%8B%A0%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -549,6 +758,7 @@
   {
    "area": "우에노코엔",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "우에노 동물원(일본어: 東京都恩賜上野動物園 도쿄토온시우에노도부쓰엔[*])은 일본 도쿄도 다이토구 우에노에 위치한 우에노 공원에 속한 동물원이다. 1882년 3월 20일, 문을 연 일본 최초의 동물원이다. 일본동물원수족관협회(JAZA)에 소속되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -557,6 +767,7 @@
     "title": "우에노 동물원",
     "url": "https://ko.wikipedia.org/wiki/%EC%9A%B0%EC%97%90%EB%85%B8_%EB%8F%99%EB%AC%BC%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -584,8 +795,50 @@
    "wikidata_id": "Q162722"
   },
   {
+   "area": "긴자",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "나카긴 캅셀타워빌(일본어: 中銀 (なかぎん)カプセルタワービル 나카긴카푸세루타와비루[*])은 세계 최초로 실용화된 캡슐형 집합주택(맨션아파트)다. 쿠로카와 키쇼가 설계하여 1972년(쇼와 47년) 준공했다. 쿠로카와의 초기 대표작이자, 메타볼리즘 양식을 대표하는 작품이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "나카긴 캅셀타워빌",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EC%B9%B4%EA%B8%B4_%EC%BA%85%EC%85%80%ED%83%80%EC%9B%8C%EB%B9%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1633586",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 35.66564,
+   "lng": 139.76345,
+   "name": "나카긴 캅셀타워빌",
+   "name_original": "中銀カプセルタワービル",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q18142",
+    "Q161851",
+    "Q19860854"
+   ],
+   "wikidata_id": "Q1633586"
+  },
+  {
    "area": "미나토구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "아카사카(일본어: 赤坂)는 일본 도쿄도 미나토구에 있는 지명이다. 일본 국회의사당과 총리대사관저, 영빈관 등이 있으며, 번화가가 형성되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -594,6 +847,7 @@
     "title": "아카사카 (도쿄도)",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%B9%B4%EC%82%AC%EC%B9%B4_(%EB%8F%84%EC%BF%84%EB%8F%84)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -621,8 +875,43 @@
    "wikidata_id": "Q416131"
   },
   {
+   "area": "모토아카사카",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q555255",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 35.68,
+   "lng": 139.728611,
+   "name": "영빈관 (일본)",
+   "name_original": "赤坂離宮",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "partial",
+    "reason": "coords_missing_and_label_weak",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11659483",
+    "Q52843464"
+   ],
+   "wikidata_id": "Q555255"
+  },
+  {
    "area": "우에노코엔",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립과학박물관(일본어: 国立科学博物館 고쿠리쓰카가쿠하쿠부쓰칸[*])은 일본 도쿄도 다이토구 우에노 공원 안에 있는 박물관이다. 이곳의 전시관은 지구관과 일본관으로 구성되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -631,6 +920,7 @@
     "title": "국립과학박물관",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EA%B3%BC%ED%95%99%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -659,8 +949,89 @@
    "wikidata_id": "Q74940"
   },
   {
+   "area": "주오구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "니혼바시(일본어: 日本橋)는 일본 도쿄도 주오구의 니혼바시강을 가로지는 다리 이름이다. 또한 이 다리 주위로 발달한 상업 지구를 가리키는 지명이기도 하다. 일본은행 본점과 도쿄 증권거래소 등이 위치한 일본의 대표적인 금융가이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "니혼바시",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%88%ED%98%BC%EB%B0%94%EC%8B%9C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1141952",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 35.681669,
+   "lng": 139.772831,
+   "name": "니혼바시",
+   "name_original": "日本橋",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 286.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5327369"
+   ],
+   "wikidata_id": "Q1141952"
+  },
+  {
+   "area": "기타노마루 공원",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "도쿄 국립근대미술관(일본어: 東京国立近代美術館 (とうきょうこくりつきんだいびじゅつかん) 도쿄코쿠리쓰칸다이비쥬쓰칸[*])은 일본 도쿄도 지요다구에 있는 미술관이다. 1952년 일본 문부성 산하 기관으로 설립됐으며, 미술관 건물은 마에가와 구니오가 설계했다. 일본 메이지 시대 후반부터 지금까지의 근현대 미술작품 (회화, 조각, 수채화, 소묘, 판화, 사진 등)을 수시로 수집하고 상설전시한 일본 최초의 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "도쿄 국립근대미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EA%B5%AD%EB%A6%BD%EA%B7%BC%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1359908",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 35.690553,
+   "lng": 139.754642,
+   "name": "도쿄 국립근대미술관",
+   "name_original": "東京国立近代美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 7.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q17431399",
+    "Q96888669"
+   ],
+   "wikidata_id": "Q1359908"
+  },
+  {
    "area": "Naitōmachi",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "신주쿠교엔(일본어: 新 (しん)宿 (じゅく)御 (ぎょ)苑 (えん))은 일본 도쿄도 신주쿠에 있는 공원이다. 넓이 58만 3,000m2, 주변 둘레 3.5km에 달하며, 이는 신주쿠 일대에서 가장 크다. 에도 시대에는 막부의 가신 나이토 가문의 소유지로 나이토신주쿠(內藤新宿)로 불리었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -669,6 +1040,7 @@
     "title": "신주쿠 교엔",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EC%A3%BC%EC%BF%A0_%EA%B5%90%EC%97%94"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -698,8 +1070,48 @@
    "wikidata_id": "Q776863"
   },
   {
+   "area": "지요다구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "나가타초(일본어: 永田町)는 도쿄도 지요다구 남단에 있는 지역의 이름이다. 국회의사당, 국립국회도서관, 수상 관저, 중의원 의장 및 참의원 의장 공관, 자유민주당 본부, 입헌민주당 본부, 구 사회민주당 본부, 히에 신사(日枝神社) 등이 있으며, 일본 국정의 중심지역이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "나가타초",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EA%B0%80%ED%83%80%EC%B4%88"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1197269",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 35.675892,
+   "lng": 139.744372,
+   "name": "나가타초",
+   "name_original": "永田町",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 489.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5327369"
+   ],
+   "wikidata_id": "Q1197269"
+  },
+  {
    "area": "센다가야",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "NTT 도코모 요요기 빌딩(일본어: NTTドコモ代々木ビル, 영어: NTT Docomo Yoyogi Building)은 도쿄도 시부야구 센다가야 5가에 있는 일본의 마천루이다. 높이는 239.85m, 지상 27층과 지하 3층으로 돼있다. NTT 도코모가 운영하고 있으며 통칭으론 도코모 타워(ドコモタワー)라고 불리기도 한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -708,6 +1120,7 @@
     "title": "NTT 도코모 요요기 빌딩",
     "url": "https://ko.wikipedia.org/wiki/NTT_%EB%8F%84%EC%BD%94%EB%AA%A8_%EC%9A%94%EC%9A%94%EA%B8%B0_%EB%B9%8C%EB%94%A9"
    },
+   "discovery": "ko",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -739,6 +1152,7 @@
   {
    "area": "Hamarikyū-Teien",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "하마리큐 은사정원(일본어: 浜離宮恩賜庭園 하마리큐온시테이엔[*])은 일본 도쿄도 주오구의 정원이다. 시오도메 바로 뒤편 수도고속도로와 스미다가와 경계 사이에 있다. 봄에는 약 30만 포기의 유채꽃이 펴 인근 시오도메의 건물들과 함께 어우러진다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -747,6 +1161,7 @@
     "title": "하마리큐 은사정원",
     "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%A7%88%EB%A6%AC%ED%81%90_%EC%9D%80%EC%82%AC%EC%A0%95%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -778,6 +1193,7 @@
   {
    "area": "아카사카",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "미드타운 타워(일본어: ミッドタウンタワー 미도타운 타와[*], 영어: Midtown Tower)는 도쿄 미드타운의 상징으로, 높이 248m, 지상 54층, 지하 5층으로 이루어진 마천루이다. 지하 1층 ~ 지상 4층은 갤러리아이며, 5층은 디자인 허브, 6~44층은 야후, 선, 시스코, 시스템 등 기업이 입주해 있으며, 45~53층은 더 리츠칼튼 도쿄 호텔(The Ritz-Calton Tokyo Hotel)로 구성되어 있다. 2014년 3월 7일까지는 도쿄도에서 제일 높은 빌딩이었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -786,6 +1202,7 @@
     "title": "미드타운 타워",
     "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%93%9C%ED%83%80%EC%9A%B4_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -816,6 +1233,7 @@
   {
    "area": "지요다구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "마루노우치(일본어: 丸の内)는 도쿄도 지요다구에 있는 비즈니스 거리이자 상업 지구로, 도쿄역과 황궁 사이에 위치한다. 마루노우치라는 이름을 뜻 그대로 풀이하면, \"동그라미 내\"라는 뜻으로, 황궁의 바깥쪽 해자 내에 위치하기 때문에 이런 이름이 붙었다. 이 지역은 일본의 금융 산업의 중심으로, 서울의 마포구하고 여의도 상업지구를 합쳐 놓은 것이랑 비슷하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -824,6 +1242,7 @@
     "title": "마루노우치",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A3%A8%EB%85%B8%EC%9A%B0%EC%B9%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -852,8 +1271,43 @@
    "wikidata_id": "Q1196955"
   },
   {
+   "area": "나가타초",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q659013",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 35.673,
+   "lng": 139.743,
+   "name": "일본 수상 관저",
+   "name_original": "内閣総理大臣官邸",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q3947",
+    "Q481289"
+   ],
+   "wikidata_id": "Q659013"
+  },
+  {
    "area": "히가시신바시",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "시오도메(일본어: 汐留, しおどめ)는 일본 도쿄도 미나토구의 지구로, 도쿄의 대규모 도심재개발 프로젝트의 일환으로 2007년 완성된 도시이다. 시오도메 일대는 원래 일본의 국철이었던 JR의 화물역이 있던 곳으로 낙후된 지역이였다. 그렇지만 1995년 도쿄도의 프로젝트에 따라 2003년에 니혼 테레비 본사 입주를 시작으로 시오도메 시티센터, 파나소닉전공 도쿄 본사 빌딩, 덴쓰 본사, 시오도메 시티센터 등의 빌딩이 속속 들어섰다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -862,6 +1316,7 @@
     "title": "시오도메",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EC%98%A4%EB%8F%84%EB%A9%94"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -890,8 +1345,49 @@
    "wikidata_id": "Q1185910"
   },
   {
+   "area": "지요다구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "간다진보초(神田神保町 (かんだじんぼうちょう))는 일본 도쿄도 지요다구 간다에 있는 지명이다. 우편번호는 101-0051이다. 간다 고서점가가 위치한 곳으로 잘 알려져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "간다진보초",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B0%84%EB%8B%A4%EC%A7%84%EB%B3%B4%EC%B4%88"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1689258",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 35.697153,
+   "lng": 139.757742,
+   "name": "간다진보초",
+   "name_original": "神田神保町",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 187.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q27095194",
+    "Q5327369"
+   ],
+   "wikidata_id": "Q1689258"
+  },
+  {
    "area": "우에노코엔",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "도쿄도 미술관(東京都美術館(Tōkyōto Bijutsukan))은 일본 도쿄도 우에노 공원에 위치한 미술관이다. 도도부현 정부의 지원을 받는 일본의 여러 미술관 중 하나이다. 일본 최초의 공립 미술관으로, 1926년 도쿄부 미술관으로 개관하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -900,6 +1396,7 @@
     "title": "도쿄도 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84%EB%8F%84_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -928,8 +1425,43 @@
    "wikidata_id": "Q864957"
   },
   {
+   "area": "요코아미",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1191042",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 35.696389,
+   "lng": 139.796083,
+   "name": "에도-도쿄 박물관",
+   "name_original": "東京都江戸東京博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q16735822",
+    "Q24699794"
+   ],
+   "wikidata_id": "Q1191042"
+  },
+  {
    "area": "교바시",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "아티존 미술관 Aatizon Bijutukan(アーティゾン美術館)은 2018년까지 브리지스톤 미술관(ブリヂストン美術館, Burijisuton Bijutsukan)으로 불렸던 일본 도쿄도의 예술 박물관이다. 이 미술관은 1952년 브리지스톤 타이어 공업의 설립자인 이시바시 쇼지로에 의해 설립되었다(그의 성 쇼지로(石橋)는 돌다리라는 뜻이다). 아티존 미술관에는 인상파, 후기 인상파 및 일본, 유럽, 미국 예술가들의 20세기 미술 작품은 물론 고대 그리스의 도자기 작품 등이 소장되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -938,6 +1470,7 @@
     "title": "아티존 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%ED%8B%B0%EC%A1%B4_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -964,7 +1497,7 @@
     }
    ],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": 4.2,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -978,6 +1511,7 @@
   {
    "area": "주오구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "쓰키지(일본어: 築地, つきじ)는 일본 도쿄도 주오구의 지명이다. 원래는 매립지로서 외국인 거류지와 해군양성학교가 몰려 있는 곳이었으며, 오늘날에는 쓰키지 시장이 있는 곳으로 유명하다. 메이지 시대부터 교바시 구청이나 현재 중앙 구청이 있었고, 오구, 교바시 지역의 행정적 중추를 담당해왔다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -986,6 +1520,7 @@
     "title": "쓰키지",
     "url": "https://ko.wikipedia.org/wiki/%EC%93%B0%ED%82%A4%EC%A7%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1013,10 +1548,52 @@
    "wikidata_id": "Q1201337"
   },
   {
+   "area": "하야부사초",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "국립극장(일본어: 国立劇場 고쿠리쓰게키죠[*])은 도쿄도 지요다구 하야부사 정에 위치한 극장이다. 독립 행정 법인 일본 예술 문화 진흥회가 운영한다. 일본 연극을 상연하는 것 외에도 연극 연구도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국립극장 (일본)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EA%B7%B9%EC%9E%A5_(%EC%9D%BC%EB%B3%B8)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1369225",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 35.681389,
+   "lng": 139.743056,
+   "name": "국립극장",
+   "name_original": "国立劇場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3469910",
+    "Q1548406"
+   ],
+   "wikidata_id": "Q1369225"
+  },
+  {
    "area": "Asakusa",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1044,8 +1621,100 @@
    "wikidata_id": "Q670049"
   },
   {
+   "area": "니혼바시혼고쿠초",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "화폐박물관(일본어: 貨幣博物館 가헤이하쿠부쓰칸[*])은 일본 도쿄도 주오구 니혼바시에 있는 박물관이다. 일본 은행 창립 100주년을 기념해 1982년 설립되어 1985년 정식으로 개관했다. 5,500여점에 달하는 각국의 화폐에 관한 정보를 제공하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "화폐박물관 (일본)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%94%ED%8F%90%EB%B0%95%EB%AC%BC%EA%B4%80_(%EC%9D%BC%EB%B3%B8)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/1350269516"
+   },
+   "hours_text": "Tu-Su 09:30-16:30",
+   "id": "wd:Q865607",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 35.685369,
+   "lng": 139.771797,
+   "name": "화폐박물관",
+   "name_original": "貨幣博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/1350269516",
+     "text": "영업시간 Tu-Su 09:30-16:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q52987309",
+    "Q52987303"
+   ],
+   "wikidata_id": "Q865607"
+  },
+  {
+   "area": "고지마치구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "로쿠메이칸(록명관, 일본어: 鹿鳴館)은 외빈이나 외교관을 접대하고 숙박하게 하고자 일본 제국(大日本帝國) 메이지 행정부가 1883년 도쿄에 2층 규모로 건축한 사교장이다. 당시 궁극의 목표인 유럽화 정책을 상징하는 존재이기도 하다. 로쿠메이칸을 중심으로 한 외교 정책을 로쿠메이칸 외교(鹿鳴館外交)라고도 부른다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "로쿠메이칸",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EC%BF%A0%EB%A9%94%EC%9D%B4%EC%B9%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1039219",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 35.671667,
+   "lng": 139.757778,
+   "name": "로쿠메이칸",
+   "name_original": "鹿鳴館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q867703",
+    "Q1103285"
+   ],
+   "wikidata_id": "Q1039219"
+  },
+  {
    "area": "Hibiya Park",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "히비야 공원(일본어: 日 (ひ)比 (び)谷 (や)公 (こう)園 (えん) () 히비야코엔[*])은 도쿄도 지요다구에 있는 지명 및 이름이 비슷한 공원이다. 도쿄도 건설국의 관할로 재단법인 도쿄도 공원 협회가 관리하고 있다. 면적은 161,636.66 m2이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1054,6 +1723,7 @@
     "title": "히비야 공원",
     "url": "https://ko.wikipedia.org/wiki/%ED%9E%88%EB%B9%84%EC%95%BC_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1083,6 +1753,7 @@
   {
    "area": "롯폰기",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "롯폰기 힐스 모리 타워(일본어: 六本木ヒルズ森タワー 롯폰기히루즈모리타와[*], 영어: Roppongi Hills Mori Tower)는 도쿄도 미나토구에 있는 복합 시설 롯폰기 힐스의 핵심을 담당하는 초고층 빌딩이다. 지상 54층, 238m로 도쿄에서는 미드타운 타워, 도쿄 도청, 선샤인 60 다음으로 높은 빌딩이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1091,6 +1762,7 @@
     "title": "롯폰기 힐스 모리 타워",
     "url": "https://ko.wikipedia.org/wiki/%EB%A1%AF%ED%8F%B0%EA%B8%B0_%ED%9E%90%EC%8A%A4_%EB%AA%A8%EB%A6%AC_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1106,7 +1778,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.1,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1118,8 +1790,120 @@
    "wikidata_id": "Q1771772"
   },
   {
+   "area": "Shibakōen",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q42311591",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 35.656111,
+   "lng": 139.748333,
+   "name": "Shiba Park",
+   "name_original": "芝公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q42311591"
+  },
+  {
+   "area": "에도",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "오오쿠(일본어: 大奥)는 에도성에 존재했던 쇼군가의 자녀나 정실, 오쿠죠츄 등이 거처하는 구역이다. 오오쿠라는 표현은 좁은 의미에서는 에도성 혼마루 오오쿠만을 가리키지만, 넓은 의미로는 니시노마루 오오쿠, 니노마루 오오쿠도 포함한다. 에도시대 다이묘 가문에서도 가문에 따라 오쿠무키(奥向)를 오오쿠라고 부르기도 했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오오쿠",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%98%A4%EC%BF%A0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1064983",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 35.68832,
+   "lng": 139.75438,
+   "name": "오오쿠",
+   "name_original": "大奥",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q165853"
+   ],
+   "wikidata_id": "Q1064983"
+  },
+  {
+   "area": "지요다구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "가스미가세키(일본어: 霞 (かすみ)が関 (せき), 霞 (かすみ)ヶ (が)関 (せき))는 일본 도쿄도 지요다구에 위치한 관청가 지역을 가리키는 지명이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "가스미가세키",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B0%80%EC%8A%A4%EB%AF%B8%EA%B0%80%EC%84%B8%ED%82%A4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1268102",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 35.673817,
+   "lng": 139.751314,
+   "name": "가스미가세키",
+   "name_original": "霞が関",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 214.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5327369"
+   ],
+   "wikidata_id": "Q1268102"
+  },
+  {
    "area": "롯폰기",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "스미토모 부동산 롯폰기 그랜드 타워(일본어: 住友不動産六本木グランドタワー, 영어: Sumitomo Fudosan Roppongi Grand Tower)는 도쿄도 미나토구 롯폰기에 있는 일본의 마천루이다. 높이는 230.76m, 지상 40층과 지하 5층으로 돼있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1128,6 +1912,7 @@
     "title": "스미토모 부동산 롯폰기 그랜드 타워",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%EB%AF%B8%ED%86%A0%EB%AA%A8_%EB%B6%80%EB%8F%99%EC%82%B0_%EB%A1%AF%ED%8F%B0%EA%B8%B0_%EA%B7%B8%EB%9E%9C%EB%93%9C_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1143,7 +1928,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1157,8 +1942,10 @@
   {
    "area": "Shibakōen",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1188,6 +1975,7 @@
   {
    "area": "Nezu",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "네즈 신사(일본어: 根津神社 네즈진자[*])는 일본 도쿄도 분쿄구 네즈에 있는 신사이다. 신사 내의 7동의 일본의 중요문화재로 지정되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1196,6 +1984,7 @@
     "title": "네즈 신사",
     "url": "https://ko.wikipedia.org/wiki/%EB%84%A4%EC%A6%88_%EC%8B%A0%EC%82%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1225,6 +2014,7 @@
   {
    "area": "나가타초",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "히에 신사(일본어: 日 (ひ)枝 (え)神 (じん)社 (じゃ) 히에진자[*])는 일본 도쿄도 미나토구 나가타초에 있는 신사이다. 산노마쓰리가 열리는 곳이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1233,6 +2023,7 @@
     "title": "히에 신사",
     "url": "https://ko.wikipedia.org/wiki/%ED%9E%88%EC%97%90_%EC%8B%A0%EC%82%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1262,681 +2053,43 @@
    "wikidata_id": "Q702042"
   },
   {
-   "area": "하쿠산",
-   "category": "park",
-   "description": "도쿄 대학 대학원 이학계 연구과 부속 식물원(일본어: 東京大学大学院理学系研究科附属植物園)은 식물에 관한 여러 가지 연구를 위한 도쿄 대학의 부속 시설이다. 본원은 도쿄도 분쿄구 하쿠산 3초메에 있으며, 일반적으로 고이시카와 식물원(일본어: 小石川植物園)이라고 불린다. 닛코시에 위치한 분원은 일반적으로 닛코 식물원(일본어: 日光植物園)이라고 불리지만, 정식 명칭은 도쿄 대학 대학원 이학계 연구과 부속 식물원 닛코 분원(일본어: 東京大学大学院理学系研究科附属植物園日光分園)이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "도쿄 대학 대학원 이학계 연구과 부속 식물원",
-    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EB%8C%80%ED%95%99_%EB%8C%80%ED%95%99%EC%9B%90_%EC%9D%B4%ED%95%99%EA%B3%84_%EC%97%B0%EA%B5%AC%EA%B3%BC_%EB%B6%80%EC%86%8D_%EC%8B%9D%EB%AC%BC%EC%9B%90"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1064892",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 35.719183,
-   "lng": 139.745376,
-   "name": "도쿄 대학 대학원 이학계 연구과 부속 식물원",
-   "name_original": "東京大学大学院理学系研究科附属植物園",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 214.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q167346"
-   ],
-   "wikidata_id": "Q1064892"
-  },
-  {
-   "area": "도쿄도",
+   "area": "소토칸다",
    "category": "building_landmark",
-   "description": "",
-   "description_source": null,
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1143226",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 35.717034,
-   "lng": 139.720433,
-   "name": "니혼 여자 대학",
-   "name_original": "日本女子大学",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 81.7,
-    "label_match": "none",
-    "reason": "label_mismatch",
-    "redirected": false,
-    "status": "failed"
-   },
-   "wikidata_classes": [
-    "Q902104",
-    "Q3660535"
-   ],
-   "wikidata_id": "Q1143226"
-  },
-  {
-   "area": "Ōtsuka",
-   "category": "worship",
-   "description": "고코쿠지(일본어: 護国寺 ごこくじ[*])는 일본의 도쿄도 분쿄구에 있는 사찰이다.",
+   "coord_source": "wikidata:P625",
+   "description": "간다 신사(일본어: 神田神社 (かんだじんじゃ) 긴다진자[*])는 일본 도쿄도 지요다구 소토칸다에 있는 신사다. 간다묘진(일본어: 神田明神 (かんだみょうじん) 간다묘진[*])이라고도 부른다. 간다마쓰리를 하는 신사로 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "고코쿠지",
-    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%BD%94%EC%BF%A0%EC%A7%80"
+    "title": "간다묘진",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B0%84%EB%8B%A4%EB%AC%98%EC%A7%84"
    },
+   "discovery": "en",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q1534481",
+   "id": "wd:Q717682",
    "importance": {
-    "sitelinks": 13
+    "sitelinks": 14
    },
-   "lat": 35.721667,
-   "lng": 139.725556,
-   "name": "고코쿠지",
-   "name_original": "護国寺",
+   "lat": 35.701944,
+   "lng": 139.767778,
+   "name": "간다묘진",
+   "name_original": "神田明神",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 11.9,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q5393308"
-   ],
-   "wikidata_id": "Q1534481"
-  },
-  {
-   "area": "다카나와",
-   "category": "worship",
-   "description": "센가쿠지(일본어: 泉岳寺 せんがくじ[*])는 도쿄도 미나토구 타카나와2초메에 있는 조동종 사원이다. 세이쇼지・소센지와 함께 조동종 에도 3대 절 중 하나로 꼽힌다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "센가쿠지",
-    "url": "https://ko.wikipedia.org/wiki/%EC%84%BC%EA%B0%80%EC%BF%A0%EC%A7%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3176144",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 35.637733,
-   "lng": 139.736275,
-   "name": "센가쿠지",
-   "name_original": "泉岳寺",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 1.2,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q5393308"
-   ],
-   "wikidata_id": "Q3176144"
-  },
-  {
-   "area": "롯폰기",
-   "category": "building_landmark",
-   "description": "이즈미 가든 타워(일본어: 泉ガーデンタワー)는 일본 도쿄도 미나토구 롯폰기에 위치한 고층 건물로, 스미토모 부동산이 소유하고 있는 오피스 빌딩이다. 롯폰기 잇초메 서부 지구 제1종 시가지 재개발 사업의 일환으로 구 스미토모 회관 및 스미토모 리넨 하이츠 아파트, 많은 민가, 아파트, 소규모 아파트의 부지에 건설된 이즈미 가든의 한 부분을 이룬다. 제45회 건축업 협회상 (BCS상)을 수상하였다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "이즈미 가든 타워",
-    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A6%88%EB%AF%B8_%EA%B0%80%EB%93%A0_%ED%83%80%EC%9B%8C"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3275660",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 35.66467,
-   "lng": 139.73938,
-   "name": "이즈미 가든 타워",
-   "name_original": "泉ガーデンタワー",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q11303",
-    "Q1339195"
-   ],
-   "wikidata_id": "Q3275660"
-  },
-  {
-   "area": "Kasumigaoka",
-   "category": "building_landmark",
-   "description": "메이지 진구 야구장(일본어: 明治神宮野球場 메이지진구야큐죠[*], Meiji Jingu Stadium)은 일본 도쿄도 신주쿠구에 있는 야구장이다. 소유처는 종교 법인 메이지 신궁이고, 통칭 \"진구 구장\"으로 부른다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "메이지 진구 야구장",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A9%94%EC%9D%B4%EC%A7%80_%EC%A7%84%EA%B5%AC_%EC%95%BC%EA%B5%AC%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q944559",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 35.674572,
-   "lng": 139.717136,
-   "name": "메이지 진구 야구장",
-   "name_original": "明治神宮野球場",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q483110",
-    "Q595452"
-   ],
-   "wikidata_id": "Q944559"
-  },
-  {
-   "area": "히가시신바시",
-   "category": "building_landmark",
-   "description": "시오도메 시티센터(일본어: 汐留シティセンター)는 일본 도쿄도 미나토구에 있는 초고층 빌딩이다. ANA 항공, 후지쯔, 미쓰이화학 등 대기업 본사가 들어서 있으며, 지하 2층~지상 3층, 41~42층에는 모두 60여 개의 숍과 레스토랑이 입점해 있다. 미쓰이 부동산과 앨더니 인베스트먼츠 유한회사 (Alderney Investments Pte Ltd.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "시오도메 시티센터",
-    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EC%98%A4%EB%8F%84%EB%A9%94_%EC%8B%9C%ED%8B%B0%EC%84%BC%ED%84%B0"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1134566",
-   "importance": {
-    "sitelinks": 12
-   },
-   "lat": 35.665351,
-   "lng": 139.76098,
-   "name": "시오도메 시티센터",
-   "name_original": "汐留シティセンター",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q11303",
-    "Q1021645"
-   ],
-   "wikidata_id": "Q1134566"
-  },
-  {
-   "area": "Miyoshi",
-   "category": "museum",
-   "description": "도쿄도 정원 미술관(일본어: 東京都現代美術館 (とうきょうとげんだいびじゅつかん))은 일본 고토구 미요시에 있는 현대미술관이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "도쿄도 현대미술관",
-    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84%EB%8F%84_%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1649688",
-   "importance": {
-    "sitelinks": 12
-   },
-   "lat": 35.68,
-   "lng": 139.808056,
-   "name": "도쿄도 현대미술관",
-   "name_original": "東京都現代美術館",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q207694",
-    "Q1007870",
-    "Q4409567"
-   ],
-   "wikidata_id": "Q1649688"
-  },
-  {
-   "area": "아사쿠사구",
-   "category": "tower",
-   "description": "료운카쿠(일본어: 凌雲閣 (りょううんかく) 능운각[*])는 일본 도쿄 아사쿠사 공원에 있었던 전망대였다. 1890년 메이지 시대 때 준공되어 일본에서 가장 높은 건축물이 되었으나, 1923년 간토 대지진 때 반쯤 무너져 결국 철거되었다. '능운각'이란 이름은 '구름을 능가할 정도로 높다'는 의미다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "료운카쿠",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A3%8C%EC%9A%B4%EC%B9%B4%EC%BF%A0"
-   },
-   "evening_candidate": true,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3071089",
-   "importance": {
-    "sitelinks": 12
-   },
-   "lat": 35.715744,
-   "lng": 139.793162,
-   "name": "료운카쿠",
-   "name_original": "凌雲閣",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 27.2,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q18142",
-    "Q1440300",
-    "Q19860854"
-   ],
-   "wikidata_id": "Q3071089"
-  },
-  {
-   "area": "야나카",
-   "category": "park",
-   "description": "",
-   "description_source": null,
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q864387",
-   "importance": {
-    "sitelinks": 12
-   },
-   "lat": 35.725278,
-   "lng": 139.770556,
-   "name": "야나카 령원",
-   "name_original": "谷中霊園",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 150.1,
-    "label_match": "none",
-    "reason": "label_mismatch",
-    "redirected": false,
-    "status": "failed"
-   },
-   "wikidata_classes": [
-    "Q39614",
-    "Q11660700"
-   ],
-   "wikidata_id": "Q864387"
-  },
-  {
-   "area": "주오구",
-   "category": "attraction",
-   "description": "쓰키시마(月島 (つきしま) 쓰키시마[*])은 일본 도쿄도 주오구의 조초다. 현행 행정지명은 쓰키시마 1초메에서 쓰키시마 6초메까지. 1892년 도쿄만 매립 계획 (현재의 쓰키시마 1초메에서 쓰키시마 4초메)에 따라 생긴 매립지다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "쓰키시마",
-    "url": "https://ko.wikipedia.org/wiki/%EC%93%B0%ED%82%A4%EC%8B%9C%EB%A7%88"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1048979",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.663569,
-   "lng": 139.782,
-   "name": "쓰키시마섬",
-   "name_original": "月島",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 99.7,
-    "label_match": "partial",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q5327369",
-    "Q13691"
-   ],
-   "wikidata_id": "Q1048979"
-  },
-  {
-   "area": "고라쿠",
-   "category": "park",
-   "description": "고이시카와 고라쿠엔(일본어: 小石川後楽園 こいしかわこうらくえん[*])은 일본 도쿄도 분쿄구에 있는 정원이다. 일본 특별명승・특별사적이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "고이시카와 고라쿠엔",
-    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%9D%B4%EC%8B%9C%EC%B9%B4%EC%99%80_%EA%B3%A0%EB%9D%BC%EC%BF%A0%EC%97%94"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1778881",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.705556,
-   "lng": 139.749167,
-   "name": "고이시카와 고라쿠엔",
-   "name_original": "小石川後楽園",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q95977092",
-    "Q11433351"
-   ],
-   "wikidata_id": "Q1778881"
-  },
-  {
-   "area": "분쿄구",
-   "category": "attraction",
-   "description": "고이시카와(일본어: 小石川 こいしかわ[*])은 도쿄도 분쿄구의 정명이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "고이시카와",
-    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%9D%B4%EC%8B%9C%EC%B9%B4%EC%99%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2666269",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.713211,
-   "lng": 139.745192,
-   "name": "고이시카와",
-   "name_original": "小石川",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 201.6,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q5327369"
-   ],
-   "wikidata_id": "Q2666269"
-  },
-  {
-   "area": "유라쿠초",
-   "category": "building_landmark",
-   "description": "",
-   "description_source": null,
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3011415",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.675869,
-   "lng": 139.760806,
-   "name": "DN 타워 21",
-   "name_original": "第一生命日比谷ファースト",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "none",
-    "reason": "label_mismatch",
-    "redirected": false,
-    "status": "failed"
-   },
-   "wikidata_classes": [
-    "Q18142",
-    "Q1021645"
-   ],
-   "wikidata_id": "Q3011415"
-  },
-  {
-   "area": "유시마",
-   "category": "building_landmark",
-   "description": "유시마 텐만구(일본어: 湯島天満宮 ゆしまてんまんぐう[*])는 일본 도쿄도 분쿄구 유시마에 있는 신사이다. 유시마텐진(일본어: 湯島天神 ゆしまてんじん[*])라고도 부른다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "유시마 텐만구",
-    "url": "https://ko.wikipedia.org/wiki/%EC%9C%A0%EC%8B%9C%EB%A7%88_%ED%85%90%EB%A7%8C%EA%B5%AC"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q335606",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.707772,
-   "lng": 139.768225,
-   "name": "유시마 텐만구",
-   "name_original": "湯島天満宮",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 9.8,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q798838",
     "Q845945"
    ],
-   "wikidata_id": "Q335606"
-  },
-  {
-   "area": "고라쿠",
-   "category": "building_landmark",
-   "description": "고라쿠엔 홀(일본어: 後楽園 (こうらくえん)ホール)은 일본 도쿄도 분쿄구에 있는 다목적 스포츠 홀로, 보통 권투, 프로레슬링, 킥복싱, 종합격투기, 레웨이 경기가 열린다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "고라쿠엔 홀",
-    "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%9D%BC%EC%BF%A0%EC%97%94_%ED%99%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q4389857",
-   "importance": {
-    "sitelinks": 11
-   },
-   "lat": 35.704319,
-   "lng": 139.751939,
-   "name": "고라쿠엔 홀",
-   "name_original": "後楽園ホール",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q1763828"
-   ],
-   "wikidata_id": "Q4389857"
-  },
-  {
-   "area": "아카사카",
-   "category": "museum",
-   "description": "산토리 미술관(サントリー 美術館(Santorī Bijutsukan))은 도쿄도 롯폰기의 도쿄 미드타운에 위치한 미술관이다. 산토리 홀딩스가 소유하고 있다. 소장품의 수집 테마는 \"생활 속의 미\"이며 주로 일본의 고미술품을 보유하고 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "산토리 미술관",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%86%A0%EB%A6%AC_%EB%AF%B8%EC%88%A0%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/node/4807675725"
-   },
-   "hours_text": "Fr 10:00-20:00; Sa-We 10:00-18:00; Th off",
-   "id": "wd:Q11249110",
-   "importance": {
-    "sitelinks": 10
-   },
-   "lat": 35.666389,
-   "lng": 139.730278,
-   "name": "산토리 미술관",
-   "name_original": "サントリー美術館",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/node/4807675725",
-     "text": "영업시간 Fr 10:00-20:00; Sa-We 10:00-18:00; Th off (OpenStreetMap 기준 · 방문 전 확인)"
-    },
-    {
-     "evidence": "admission",
-     "source_url": "https://www.openstreetmap.org/node/4807675725",
-     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q207694"
-   ],
-   "wikidata_id": "Q11249110"
-  },
-  {
-   "area": "다이토구",
-   "category": "attraction",
-   "description": "야나카(일본어: 谷中 やなか[*])는 일본의 도쿄도 다이토구에 있는 지역이다. 야나카 령원, 야나카 긴자 상점가등이있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "야나카 (다이토구)",
-    "url": "https://ko.wikipedia.org/wiki/%EC%95%BC%EB%82%98%EC%B9%B4_(%EB%8B%A4%EC%9D%B4%ED%86%A0%EA%B5%AC)"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q11632597",
-   "importance": {
-    "sitelinks": 10
-   },
-   "lat": 35.723789,
-   "lng": 139.768422,
-   "name": "야나카",
-   "name_original": "谷中",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 441.5,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q5327369"
-   ],
-   "wikidata_id": "Q11632597"
+   "wikidata_id": "Q717682"
   }
  ]
 }

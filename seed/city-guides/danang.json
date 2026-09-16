@@ -1,0 +1,444 @@
+{
+ "center": {
+  "lat": 16.0678,
+  "lng": 108.2208
+ },
+ "city_id": "danang",
+ "country_code": "VN",
+ "country_en": "Vietnam",
+ "country_ko": "베트남",
+ "grade": "partial",
+ "harvest": {
+  "candidate_count": 19,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 2,
+   "bridge": 4,
+   "museum": 1,
+   "river": 1
+  },
+  "denylisted_count": 0,
+  "described_count": 8,
+  "discovery": {
+   "both": 3,
+   "en": 4,
+   "ko": 1
+  },
+  "discovery_pool": {
+   "both": 7,
+   "en": 11,
+   "ko": 1
+  },
+  "effective_radius_m": 10000,
+  "en_page_count": 35,
+  "excluded_count": 2,
+  "grade_window": 8,
+  "hours_count": 1,
+  "ko_label_count": 8,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 8,
+  "korean_count": 19,
+  "mapped_count": 36,
+  "no_korean_count": 17,
+  "page_count": 43,
+  "radius_note": "대장의 반경 15,000m 는 geosearch 상한 10,000m 를 넘어 10,000m 로 잘렸다 — 그 바깥의 장소는 이번 수확에 들어오지 않았다.",
+  "reviewed": false,
+  "spot_count": 8,
+  "unclassified_count": 9,
+  "unmapped_count": 0,
+  "verification_failed_count": 0
+ },
+ "known_gaps": [
+  "대장의 반경 15,000m 는 geosearch 상한 10,000m 를 넘어 10,000m 로 잘렸다 — 그 바깥의 장소는 이번 수확에 들어오지 않았다.",
+  "영업시간이 없는 스팟 7곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 9건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 17건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 1곳 · 영어 검색에서만 4곳 · 양쪽 3곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Da Nang",
+ "name_ko": "다낭",
+ "name_local": "Đà Nẵng",
+ "query": {
+  "en_page_count": 35,
+  "gslimit": 500,
+  "ko_page_count": 8,
+  "korean_count": 19,
+  "limit": 150,
+  "mapped_count": 36,
+  "page_count": 43,
+  "radius_clamped": true,
+  "radius_m": 10000,
+  "registry_radius_m": 15000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 10000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "다낭",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "롱 교(베트남어: Cầu Rồng / 橋龍)는 베트남 다낭을 흐는 한강 위로 지나는 다리이다. 롱(Rồng)은 베트남어로 용(龍)을 가리키는 말로, 다리는 용 모양으로 디자인했다. 2009년 7월 19일에 착공하여, 2013년 3월 29일에 완공한 길이 전체 길이 666m의 다리이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "롱교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%B1%EA%B5%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/694831926"
+   },
+   "hours_text": "24/7",
+   "id": "wd:Q5305270",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 16.061111,
+   "lng": 108.226667,
+   "name": "롱교",
+   "name_original": "Cầu Rồng",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/694831926",
+     "text": "영업시간 24/7 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q5305270"
+  },
+  {
+   "area": "",
+   "category": "river",
+   "coord_source": "wikidata:P625",
+   "description": "한강(Sông Hàn, 또는 Hàn giang; 瀚江)은 베트남 남중부 지방에 위치한 강이다. 베트남 꽝남 성에서 발원하여, 다낭에서 남중국해로 빠져나간다. 한강은 길이 약 7 km로, 강폭은 약 900 m~1,200 m, 평균 수심은 약 4~5 m에 이른다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "한강 (베트남)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B0%95_(%EB%B2%A0%ED%8A%B8%EB%82%A8)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1320599",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 16.096944,
+   "lng": 108.220278,
+   "name": "한강",
+   "name_original": "Sông Hàn",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4022"
+   ],
+   "wikidata_id": "Q1320599"
+  },
+  {
+   "area": "",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "송한교(베트남어: Cầu Sông Hàn / 한국 한자: 橋瀧瀚)는 베트남 다낭에 있는 다리이다. 다낭은 한강 서안에 있고, 동쪽으로는 해변이 있다. 송한(Sông Hàn)은 다낭을 남북으로 가로지르는 한강을 의미한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "송한교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%86%A1%ED%95%9C%EA%B5%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q10752400",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 16.072278,
+   "lng": 108.226722,
+   "name": "송한교",
+   "name_original": "Cầu Sông Hàn",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q10752400"
+  },
+  {
+   "area": "",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "참 조각 박물관(Bảo tàng Nghệ thuật điêu khắc Chăm Đà Nẵng, Museum of Cham Sculpture)은 베트남 중부 다낭의 하이쩌우 군, 한강 근처에 위치한 박물관이다. 참조각박물관은 세계 최대의 참족 조각 수집품을 보유하고 있는 인기 관광지이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "참 조각 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B0%B8_%EC%A1%B0%EA%B0%81_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6940790",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 16.059894,
+   "lng": 108.222641,
+   "name": "참 조각 박물관",
+   "name_original": "Bảo tàng Nghệ thuật điêu khắc Chăm Đà Nẵng",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/302872188",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q6940790"
+  },
+  {
+   "area": "다낭",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "선짜산(베트남어: Núi Sơn Trà / 𡶀山茶)은 베트남 다낭시 선짜군에 위치한 산이다. 남중국해가 내려다 보이고, 다낭항의 띠엔사 터미널은 산의 서쪽 기슭에 위치해 있으며, 띠엔사 해변 근처에 있다. 산 위에 있는 원숭이 산 시설(Monkey Mountain Facility)은 베트남 전쟁 당시 미군기지였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "선짜산",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%A0%EC%A7%9C%EC%82%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7560606",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 16.123889,
+   "lng": 108.278611,
+   "name": "선짜산",
+   "name_original": "Núi Sơn Trà",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 991.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q8502",
+    "Q34763"
+   ],
+   "wikidata_id": "Q7560606"
+  },
+  {
+   "area": "",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "투언안프억 교(베트남어: Cầu Thuận Phước / 橋順福)는 베트남 다낭의 한강 하류에 가설된 현수교이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "투언안프억교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%88%AC%EC%96%B8%EC%95%88%ED%94%84%EC%96%B5%EA%B5%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7798648",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 16.0919,
+   "lng": 108.222,
+   "name": "투언안프억교",
+   "name_original": "Cầu Thuận Phước",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12570",
+    "Q12280"
+   ],
+   "wikidata_id": "Q7798648"
+  },
+  {
+   "area": "다낭",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "쩐티리교(베트남어: Cầu Nguyễn Văn Trỗi–Trần Thị Lý)(정식 명칭은 응우옌반쪼이-쩐티리 교)는 베트남 다낭의 한강을 가로지르는 다리이다. 이 다리는 베트남 혁명가 응우옌 반 쪼이와 쩐티리의 이름을 딴 2개의 오래된 다리를 대체했다. 쩐티리교는 2011년 3월 29일 다낭의 날을 기념하여 개통했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쩐티리교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A9%90%ED%8B%B0%EB%A6%AC%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7833322",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 16.050278,
+   "lng": 108.229444,
+   "name": "쩐티리교",
+   "name_original": "Cầu Trần Thị Lý",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q7833322"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "미케 해변(bãi biển Mỹ Khê)은 베트남 다낭시 선짜군 미프억에 위치한 해변이다. 시내 외곽으로 차를 타고 쉽게 접근할 수 있는 교통접근성이 좋아 인기 있는 해변 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미케 해변",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EC%BC%80_%ED%95%B4%EB%B3%80"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q10796763",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 16.0704,
+   "lng": 108.2461,
+   "name": "미케 해변",
+   "name_original": "Mỹ Khê",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q40080"
+   ],
+   "wikidata_id": "Q10796763"
+  }
+ ]
+}

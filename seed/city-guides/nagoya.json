@@ -7,40 +7,58 @@
  "country_code": "JP",
  "country_en": "Japan",
  "country_ko": "일본",
- "grade": "partial",
+ "grade": "full",
  "harvest": {
-  "candidate_count": 43,
+  "candidate_count": 91,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "building_landmark": 4,
+   "attraction": 1,
+   "building_landmark": 6,
    "castle": 1,
-   "museum": 2,
+   "museum": 3,
+   "park": 1,
    "tower": 1,
-   "worship": 1
+   "worship": 2
   },
   "denylisted_count": 0,
-  "described_count": 7,
+  "described_count": 12,
+  "discovery": {
+   "both": 12,
+   "en": 2,
+   "ko": 1
+  },
+  "discovery_pool": {
+   "both": 49,
+   "en": 39,
+   "ko": 38
+  },
   "effective_radius_m": 6000,
-  "excluded_count": 0,
-  "grade_window": 9,
-  "hours_count": 3,
-  "ko_label_count": 9,
+  "en_page_count": 159,
+  "excluded_count": 1,
+  "grade_window": 15,
+  "hours_count": 5,
+  "ko_label_count": 15,
   "ko_label_ratio": 1.0,
-  "mapped_count": 87,
-  "page_count": 87,
+  "ko_page_count": 87,
+  "korean_count": 126,
+  "mapped_count": 197,
+  "no_korean_count": 71,
+  "page_count": 246,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 9,
-  "unclassified_count": 34,
-  "verification_failed_count": 2
+  "spot_count": 15,
+  "unclassified_count": 75,
+  "unmapped_count": 0,
+  "verification_failed_count": 3
  },
  "known_gaps": [
-  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 6곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 34건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 75건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 71건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 1곳 · 영어 검색에서만 2곳 · 양쪽 12곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -48,14 +66,21 @@
  "name_ko": "나고야",
  "name_local": "名古屋",
  "query": {
+  "en_page_count": 159,
   "gslimit": 500,
+  "ko_page_count": 87,
+  "korean_count": 126,
   "limit": 150,
-  "mapped_count": 87,
-  "page_count": 87,
+  "mapped_count": 197,
+  "page_count": 246,
   "radius_clamped": false,
   "radius_m": 6000,
   "registry_radius_m": 6000,
-  "sitelink_min": 8
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 6000,
  "retrieved_at": "2026-09-16",
@@ -65,6 +90,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -86,6 +116,7 @@
   {
    "area": "나카구",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "나고야성(일본어: 名 (な)古 (ご)屋 (や)城 (じょう) 나고야조[*])은 오와리국 아이치 군 나고야에 있었던 성이다. 오와리 도쿠가와가 17대의 거성으로 긴코조(金鯱城, 금호성), 오사카성과 함께 긴죠(金城, 금성)로도 불린다. 성이 있는 곳은 현재 아이치현 나고야시 나카구·기타구의 메이조 공원에 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -94,6 +125,7 @@
     "title": "나고야성",
     "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EA%B3%A0%EC%95%BC%EC%84%B1"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -140,6 +172,7 @@
   {
    "area": "Jingū 1-chōme",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "아쓰타 신궁(일본어: 熱 (あつ)田 (た)神 (じん)宮 (ぐう) 아쓰타진구[*])은 일본 아이치현 나고야시 아쓰타구에 있는 신사이다. 제사를 기리는 신은 아쓰타노오카미(熱田大神)이며, 삼종의 신기의 하나인 구사나기 검을 신체로 하고 있다. 이외에도 아마테라스 오미카미, 스사노오, 야마토타케루 노미코토 등을 모신다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -148,6 +181,7 @@
     "title": "아쓰타 신궁",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%93%B0%ED%83%80_%EC%8B%A0%EA%B6%81"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -180,8 +214,42 @@
    "wikidata_id": "Q482065"
   },
   {
+   "area": "나고야시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2878337",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 35.168056,
+   "lng": 136.885833,
+   "name": "모드 학원 스파이럴 타워",
+   "name_original": "モード学園スパイラルタワーズ",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q2878337"
+  },
+  {
    "area": "Meieki 4-chōme",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "미들랜드 스퀘어(일본어: ミッドランドスクエア, 영어: Midland Square)는 아이치현 나고야시 나카무라구 메이에키에 있는 도와 부동산, 토요타 자동차, 마이니치 신문사가 공동으로 소유하고 있는 빌딩이다. 정식명칭은 토요타·마이니치 빌딩이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -190,6 +258,7 @@
     "title": "미들랜드 스퀘어",
     "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%93%A4%EB%9E%9C%EB%93%9C_%EC%8A%A4%ED%80%98%EC%96%B4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -220,8 +289,10 @@
   {
    "area": "나카무라구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -264,8 +335,10 @@
   {
    "area": "Nishiki 3-chōme",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -295,6 +368,7 @@
   {
    "area": "Sakae 2-chōme",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "나고야시 미술관(名古屋市美術館 (なごやしびじゅつかん))은 일본 아이치현 나고야시 니카구 시라카와 공원 내에 있는 미술관이다. 1988년 4월 22일 개관하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -303,6 +377,7 @@
     "title": "나고야시 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EA%B3%A0%EC%95%BC%EC%8B%9C_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -332,6 +407,7 @@
   {
    "area": "Sakae 2-chōme",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "나고야시 과학관(名古屋市科学館 (なごやしかがくかん))은 일본 아이치현 나고야시 니카구 시라카와 공원 내에 있는 과학관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -340,6 +416,7 @@
     "title": "나고야시 과학관",
     "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EA%B3%A0%EC%95%BC%EC%8B%9C_%EA%B3%BC%ED%95%99%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -371,7 +448,7 @@
     }
    ],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -385,6 +462,7 @@
   {
    "area": "Higashisakura 1-chōme",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "아이치 예술 문화 센터(일본어: 愛知芸術文化センター 아이치게쥬쓰분카센타[*], Aichi Arts Center)는 일본, 아이치현, 나고야시 히가시구에 있는 복합 예술 공간이다. 아이치 현 미술관, 아이치 현 예술 극장, 아이치 현 문화 정보 센터, 아이치 현 도서관이 위치하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -393,6 +471,7 @@
     "title": "아이치 예술 문화 센터",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%B9%98_%EC%98%88%EC%88%A0_%EB%AC%B8%ED%99%94_%EC%84%BC%ED%84%B0"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -420,8 +499,48 @@
    "wikidata_id": "Q4696562"
   },
   {
+   "area": "니시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "나고야 루센트 타워(일본어: 名古屋ルーセントタワー)는 일본 나고야에 위치한 마천루다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "나고야 루센트 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EA%B3%A0%EC%95%BC_%EB%A3%A8%EC%84%BC%ED%8A%B8_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2913609",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 35.175278,
+   "lng": 136.881111,
+   "name": "나고야 루센트 타워",
+   "name_original": "名古屋ルーセントタワー",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q2913609"
+  },
+  {
    "area": "Ōsu 2-chōme",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "오스칸논(大須観音 (おおすかんのん))은 일본 아이치현 나고야시 나카구 오스에 있는 진언종 지산파의 절이다. 일본 삼대 관음 중 하나로, 관음 성지 절이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -430,6 +549,7 @@
     "title": "오스칸논",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%8A%A4%EC%B9%B8%EB%85%BC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -455,6 +575,188 @@
     "Q5393308"
    ],
    "wikidata_id": "Q3594052"
+  },
+  {
+   "area": "나카구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "사카에(일본어: 栄 사카에[*])는 아이치현 나고야시 나카구의 지명이자 사카에 교차로 및 나고야 시영 지하철 사카에 역을 중심으로 한 번화가이다. 사카에 지역은 나고야시 나카구의 중심부에 위치해 나고야시를 대표하는 상업 지구이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "사카에 (나고야시)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EC%B9%B4%EC%97%90_(%EB%82%98%EA%B3%A0%EC%95%BC%EC%8B%9C)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1138623",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 35.168889,
+   "lng": 136.906917,
+   "name": "사카에",
+   "name_original": "栄",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 992.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5327369",
+    "Q66364404"
+   ],
+   "wikidata_id": "Q1138623"
+  },
+  {
+   "area": "Ōsu 3-chōme",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "반쇼지(일본어: 萬松寺, 万松寺)는 일본 아이치현 나고야시 나카구에 위치한 불교 조동종의 사찰이다. 산호는 귀악림(亀岳林, きがくりん 기가쿠린[*])이다. 1540년 오다 가문의 보살을 모시는 사찰로써, 오다 노부히데가 창건하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "반쇼지",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%98%EC%87%BC%EC%A7%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q608994",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 35.159167,
+   "lng": 136.904722,
+   "name": "반쇼지",
+   "name_original": "萬松寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 5.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q608994"
+  },
+  {
+   "area": "Noritake-shimmachi 4-chōme",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "도요타 산업기술 기념관(일본어: トヨタ産業技術記念館)은 일본 아이치현 나고야시 니시구에 있는 토요타 그룹이 운영하는 기업 박물관이다. 1994년 6월 11일에 개관했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "도요타 산업기술 기념관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%9A%94%ED%83%80_%EC%82%B0%EC%97%85%EA%B8%B0%EC%88%A0_%EA%B8%B0%EB%85%90%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/582752051"
+   },
+   "hours_text": "Tu-Su 09:30-17:00",
+   "id": "wd:Q7830774",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 35.1832,
+   "lng": 136.876,
+   "name": "도요타 산업기술 기념관",
+   "name_original": "トヨタ産業技術記念館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/582752051",
+     "text": "영업시간 Tu-Su 09:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 7.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2398990",
+    "Q3867745",
+    "Q1662089"
+   ],
+   "wikidata_id": "Q7830774"
+  },
+  {
+   "area": "나카구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "히사야오도리 공원(일본어: 久屋大通公園 히사야오도리코엔[*])는 아이치현 나고야시 나카구 사카에에 위치한 공원이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "히사야오도리 공원",
+    "url": "https://ko.wikipedia.org/wiki/%ED%9E%88%EC%82%AC%EC%95%BC%EC%98%A4%EB%8F%84%EB%A6%AC_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/18418512"
+   },
+   "hours_text": "24/7",
+   "id": "wd:Q872549",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 35.168708,
+   "lng": 136.908383,
+   "name": "히사야오도리 공원",
+   "name_original": "久屋大通公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/18418512",
+     "text": "영업시간 24/7 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746",
+    "Q6553474"
+   ],
+   "wikidata_id": "Q872549"
   }
  ]
 }

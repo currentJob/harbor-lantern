@@ -1,0 +1,1150 @@
+{
+ "center": {
+  "lat": -33.861,
+  "lng": 151.2105
+ },
+ "city_id": "sydney",
+ "country_code": "AU",
+ "country_en": "Australia",
+ "country_ko": "호주",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 39,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 2,
+   "bridge": 1,
+   "building_landmark": 7,
+   "museum": 7,
+   "park": 4,
+   "tower": 1,
+   "worship": 1
+  },
+  "denylisted_count": 0,
+  "described_count": 21,
+  "discovery": {
+   "both": 8,
+   "en": 11,
+   "ko": 4
+  },
+  "discovery_pool": {
+   "both": 14,
+   "en": 21,
+   "ko": 8
+  },
+  "effective_radius_m": 6000,
+  "en_page_count": 500,
+  "excluded_count": 4,
+  "grade_window": 23,
+  "hours_count": 7,
+  "ko_label_count": 23,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 22,
+  "korean_count": 43,
+  "mapped_count": 508,
+  "no_korean_count": 465,
+  "page_count": 522,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 23,
+  "unclassified_count": 12,
+  "unmapped_count": 0,
+  "verification_failed_count": 2
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 16곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 12건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 465건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 4곳 · 영어 검색에서만 11곳 · 양쪽 8곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Sydney",
+ "name_ko": "시드니",
+ "name_local": "Sydney",
+ "query": {
+  "en_page_count": 500,
+  "gslimit": 500,
+  "ko_page_count": 22,
+  "korean_count": 43,
+  "limit": 150,
+  "mapped_count": 508,
+  "page_count": 522,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "시티 오브 시드니",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 오페라 하우스(영어: Sydney Opera House)는 오스트레일리아 뉴사우스웨일스주 시드니에 있는 공연장이다. 1547석의 객석과 2679석의 음악당을 비롯해 여러 개의 극장, 전시관, 도서관 등이 있다. 이곳은 가장 유명하고 인상적인 20세기의 건축물 가운데 하나로, 세계에서 가장 유명한 공연장 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 오페라 하우스",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%98%A4%ED%8E%98%EB%9D%BC_%ED%95%98%EC%9A%B0%EC%8A%A4"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q45178",
+   "importance": {
+    "sitelinks": 99
+   },
+   "lat": -33.857058,
+   "lng": 151.214897,
+   "name": "시드니 오페라 하우스",
+   "name_original": "Sydney Opera House",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 196.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q153562",
+    "Q2319498",
+    "Q38048707"
+   ],
+   "wikidata_id": "Q45178"
+  },
+  {
+   "area": "시드니",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 하버 브리지(영어: Sydney Harbour Bridge)는 오스트레일리아 시드니에 있는 다리이다. 시드니 도심에 위치한 철제 아치교로, 세계에서 8번째로 긴 아치교이다. 시드니 중심상업지구와 북쪽해변 사이의 시드니항을 가로질러 철도, 차량, 자전거와 보행자의 통행을 담당하는 주 교량이며, 인접해있는 시드니 오페라 하우스와 함께 시드니와 오스트레일리아를 대표하는 상징물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 하버 브리지",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%ED%95%98%EB%B2%84_%EB%B8%8C%EB%A6%AC%EC%A7%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q54495",
+   "importance": {
+    "sitelinks": 68
+   },
+   "lat": -33.852232,
+   "lng": 151.210684,
+   "name": "시드니 하버 브리지",
+   "name_original": "Sydney Harbour Bridge",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 11.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5592057",
+    "Q12042110",
+    "Q6636777",
+    "Q7814330",
+    "Q38048707",
+    "Q18615527"
+   ],
+   "wikidata_id": "Q54495"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "포트잭슨만(영어: Port Jackson)은 오스트레일리아 뉴사우스웨일스주 시드니에 있는 리아스식 해안이자 자연항만이다. 시드니항 해역, 미들하버만, 노스하버만, 레인코브강과 패러매타강 수역으로 나눠진다. 포트잭슨만은 남태평양 태즈먼해의 만 입구이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "포트잭슨만",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%ED%8A%B8%EC%9E%AD%EC%8A%A8%EB%A7%8C"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q54504",
+   "importance": {
+    "sitelinks": 42
+   },
+   "lat": -33.858333,
+   "lng": 151.233333,
+   "name": "포트잭슨만",
+   "name_original": "Port Jackson",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q554394",
+    "Q39594",
+    "Q13424466",
+    "Q913035"
+   ],
+   "wikidata_id": "Q54504"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "tower",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 타워(Sydney Tower)는 AMP 타워, AMP 센터포인트 타워, 센터포인트 타워, 센터포인트 등으로 불리며, 시드니에서 가장 높은 자립 구조의 건축물이며 오스트레일리아에서 두 번째로 높은 자립 구조의 건축물이기도 하다. (오스트레일리아에서 가장 높은 건축물은 골드 코스트 지역에 위치한 Q1 빌딩이다.) 또한 뉴질랜드 오클랜드의 스카이 타워, 멜버른의 오스트레일리아 유레카 타워에 이어 남반구에서 세 번째로 높은 전망대이다. 시드니 타워의 주 전망대는 오클랜드 스카이 타워의 그것보다 약 50미터나 높다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q827268",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": -33.870278,
+   "lng": 151.208889,
+   "name": "시드니 타워",
+   "name_original": "Sydney Tower",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/197801072",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 13.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1068623",
+    "Q1580122"
+   ],
+   "wikidata_id": "Q827268"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "타롱가 동물원(Taronga Zoo)은 오스트레일리아 뉴사우스웨일스주 시드니 교외의 모스먼, 포트잭슨만 기슭에 있는 국영 동물원이다. 개장 시간은 현지 시각 기준 오전 9시 30분부터 오후 4시 30분까지이다. 동물원 이름인 '타롱가'는 오스트레일리아 원주민의 언어로 \"아름다운 경치\"라는 뜻이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타롱가 동물원",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EB%A1%B1%EA%B0%80_%EB%8F%99%EB%AC%BC%EC%9B%90"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/4354532"
+   },
+   "hours_text": "May-Aug 09:30-16:30; Sep-Apr 09:30-17:00",
+   "id": "wd:Q1064813",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": -33.843333,
+   "lng": 151.241111,
+   "name": "타롱가 동물원",
+   "name_original": "Taronga Zoo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/4354532",
+     "text": "영업시간 May-Aug 09:30-16:30; Sep-Apr 09:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/4354532",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q43501"
+   ],
+   "wikidata_id": "Q1064813"
+  },
+  {
+   "area": "시드니",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/1265404795"
+   },
+   "hours_text": "Th-Tu 10:00-17:00; We 10:00-22:00",
+   "id": "wd:Q705551",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": -33.868611,
+   "lng": 151.217222,
+   "name": "뉴사우스웨일스 주 아트 갤러리",
+   "name_original": "Art Gallery of New South Wales",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/1265404795",
+     "text": "영업시간 Th-Tu 10:00-17:00; We 10:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/1265404795",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 2.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q705551"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/16599528"
+   },
+   "hours_text": "Th-Tu 10:00-17:00; We 10:00-21:00",
+   "id": "wd:Q690242",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": -33.86,
+   "lng": 151.208889,
+   "name": "시드니 현대 미술관",
+   "name_original": "Museum of Contemporary Art Australia",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/16599528",
+     "text": "영업시간 Th-Tu 10:00-17:00; We 10:00-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/16599528",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 10.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q690242"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 왕립 식물원(Royal Botanic Gardens, Sydney)은 오스트레일리아 뉴사우스웨일스주 시드니 중심 업무 지구에 위치한 식물원으로 마운트 아난 식물원, 마운트 토마 식물원과 함께 시드니 내에 위치한 대중에게 개방된 식물원 중, 3대 메이저 식물원이다. 이 공원은 도메인 공원과 인접하여 있어 함께 관리되며 연중 무휴로 운영되고 자유로이 개방되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 왕립식물원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%99%95%EB%A6%BD%EC%8B%9D%EB%AC%BC%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/relation/3744999"
+   },
+   "hours_text": "Nov-Feb 07:00-20:00; Mar 07:00-18:30; Apr 07:00-18:00; May 07:00-17:30; Jun-Jul 07:00-17:00; Aug 07:00-17:30; Sep 07:00-18:00; Oct 07:00-19:30",
+   "id": "wd:Q54489",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": -33.862222,
+   "lng": 151.2175,
+   "name": "시드니 왕립식물원",
+   "name_original": "Royal Botanic Gardens",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/relation/3744999",
+     "text": "영업시간 Nov-Feb 07:00-20:00; Mar 07:00-18:30; Apr 07:00-18:00; May 07:00-17:30; Jun-Jul 07:00-17:00; Aug 07:00-17:30; Sep 07:00-18:00; Oct 07:00-19:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/relation/3744999",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 192.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q167346"
+   ],
+   "wikidata_id": "Q54489"
+  },
+  {
+   "area": "시드니",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 풋볼 스타디움(Sydney Football Stadium)은 오스트레일리아의 축구 경기장이다. 알리안츠(Allianz)가 경기장 스폰서 계약을 체결하면서 알리안츠 스타디움(Allianz Stadium)이라는 이름으로 바뀌었다. A리그 멘에 소속되어 있는 팀인 시드니 FC의 홈구장으로 사용되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 풋볼 스타디움 (2022년)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%ED%92%8B%EB%B3%BC_%EC%8A%A4%ED%83%80%EB%94%94%EC%9B%80_(2022%EB%85%84)"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q65091153",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": -33.889167,
+   "lng": 151.225278,
+   "name": "시드니 풋볼 스타디움",
+   "name_original": "Sydney Football Stadium II",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1049757",
+    "Q483110"
+   ],
+   "wikidata_id": "Q65091153"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "시티그룹 센터(Citigroup Centre)는 시드니에 위치한 마천루이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시티그룹 센터 (시드니)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%8B%B0%EA%B7%B8%EB%A3%B9_%EC%84%BC%ED%84%B0_(%EC%8B%9C%EB%93%9C%EB%8B%88)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q54491",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": -33.872694,
+   "lng": 151.207556,
+   "name": "시티그룹 센터",
+   "name_original": "Citigroup Centre",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 44.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q18142"
+   ],
+   "wikidata_id": "Q54491"
+  },
+  {
+   "area": "시티 오브 시드니",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "세인트 메리 대성당(St. Mary's Cathedral)은 오스트레일리아 시드니에 위치한 고딕 양식의 로마 가톨릭 대성당으로, 시드니 대교구 대성당이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 세인트 메리 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%84%B8%EC%9D%B8%ED%8A%B8_%EB%A9%94%EB%A6%AC_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q971514",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": -33.871111,
+   "lng": 151.213333,
+   "name": "시드니 세인트 메리 대성당",
+   "name_original": "St Mary’s Cathedral",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2977",
+    "Q120560",
+    "Q163740"
+   ],
+   "wikidata_id": "Q971514"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "퀸 빅토리아 빌딩(Queen Victoria Building)은 오스트레일리아 시드니 중심 업무 지구에 있는 건물로 그 남북으로 뻗은 건물의 길이가 190미터, 폭은 30미터로 설계된 건물이다. 주변 도로로 조지 스트리트, 요크 스트리트, 드루이트 스트리트와 마켓 스트리트를 끼고 직사각형 모양으로 위치하고 있으며 각종 브랜드 상점이 입점한 쇼핑센터로 활용된다. 일반적으로 약어로 'QVB'라고 불린다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퀸 빅토리아 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%ED%80%B8_%EB%B9%85%ED%86%A0%EB%A6%AC%EC%95%84_%EB%B9%8C%EB%94%A9"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q54518",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": -33.8718,
+   "lng": 151.207,
+   "name": "퀸 빅토리아 빌딩",
+   "name_original": "Queen Victoria Building",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 31.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q54518"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 하이드 파크(Hyde Park, Sydney)는 오스트레일리아 뉴사우스웨일스주 시드니 중심 업무 지구 동부에 위치한 시드니에서 가장 큰 공원이다. 엘리자베스 스트리트와 컬리지 스트리트, 세인트 제임스 로드, 프린스 알버트 로드, 리버풀 스트리트의 남단을 끼고 직사각형에 가까운 모양으로 건설되었다. 공원 주변으로 남쪽에는 뉴사우스웨일스 주 법원, 세인트 제임스 교회, 하이드 파크 배럭, 시드니 병원이 위치하고 있으며 동쪽으로는 세인트 메리 대성당, 오스트레일리아 박물관이 남쪽으로는 다우닝 센터가 그리고 서쪽으로는 데이비드 존스 백화점과 시드니 중심 업무 지구가 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하이드 파크 (시드니)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EC%9D%B4%EB%93%9C_%ED%8C%8C%ED%81%AC_(%EC%8B%9C%EB%93%9C%EB%8B%88)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1144894",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": -33.873333,
+   "lng": 151.211389,
+   "name": "하이드 파크",
+   "name_original": "Hyde Park",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1076486",
+    "Q22698"
+   ],
+   "wikidata_id": "Q1144894"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "시 라이프 시드니 아쿠아리움(Sea Life Sydney Aquarium, 과거명: 시드니 아쿠아리움, 시드니 수족관)은 700종 이상의 13,000마리의 물고기, 오스트레일리아 해양 대부분의 생물을 전시해놓은 많은 양의 오스트레일리아 바닷생물을 갖추고 있는 수족관이다. 1988년 개장하였다. 바다밑에 설계되어 있는 시드니 수족관은 바닷속의 신비한 모습을 실감있게 느낄 수 있는 곳이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시 라이프 시드니 아쿠아리움",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C_%EB%9D%BC%EC%9D%B4%ED%94%84_%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%95%84%EC%BF%A0%EC%95%84%EB%A6%AC%EC%9B%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2591764",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": -33.8694,
+   "lng": 151.202,
+   "name": "시 라이프 시드니 아쿠아리움",
+   "name_original": "Sea Life Sydney Aquarium",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2281788"
+   ],
+   "wikidata_id": "Q2591764"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 천문대(영어: Sydney Observatory)는 시드니에 있으며 현재는 시드니 천문대 공원의 일부다. 이 장소는 풍차가 위치했던 윈드밀 힐(Windmill Hill)에 세워진 요새가 훗날 천문대로 바뀐 것이다. 현재는 박물관으로 운영되고 있으며 이곳을 저녁에 방문하면 40cm 크기의 현대식 슈미트-카세그레인식 망원경과 1874년에 세워진 29cm 크기의 굴절 망원경으로 천문관측을 할 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 천문대",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%B2%9C%EB%AC%B8%EB%8C%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7660067",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": -33.859559,
+   "lng": 151.204583,
+   "name": "시드니 천문대",
+   "name_original": "Sydney Observatory",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/55218511",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 11.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q1254933"
+   ],
+   "wikidata_id": "Q7660067"
+  },
+  {
+   "area": "시티 오브 시드니",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "오스트레일리아 국립해양박물관(Australian National Maritime Museum, 줄임말 ANMM)은 오스트레일리아 뉴사우스웨일스주 시드니 달링 하버 지역에 위치한 오스트레일리아 국립해양박물관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오스트레일리아 국립해양박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%BC%EB%A6%AC%EC%95%84_%EA%B5%AD%EB%A6%BD%ED%95%B4%EC%96%91%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/16598528"
+   },
+   "hours_text": "Mo-Su 10:00-16:00",
+   "id": "wd:Q844329",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": -33.8692,
+   "lng": 151.199,
+   "name": "오스트레일리아 국립해양박물관",
+   "name_original": "Australian National Maritime Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/16598528",
+     "text": "영업시간 Mo-Su 10:00-16:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/16598528",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 36.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1863818",
+    "Q17431399",
+    "Q110376455"
+   ],
+   "wikidata_id": "Q844329"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 조폐국 또는 시드니 민트(Sydney Mint)는 호주 뉴사우스웨일즈주 시드니에 있는 건물로, 시드니 중심 업무 지구에서 가장 오래된 공공 건물이다. 1811년에서 1816년 사이에 시드니 병원의 남쪽 윙으로 지어졌으며, 당시에는 \"럼 병원\"(Rum Hospital)으로 알려졌다. 1854년에 이 자리에 조폐국이 설립되었고, 병원 건물은 조폐국 직원의 거주지로 사용되었으며, 부조폐국장의 거주지도 제공했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 조폐국",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%A1%B0%ED%8F%90%EA%B5%AD"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/16750260"
+   },
+   "hours_text": "Mo-Fr 09:00-16:00; PH off",
+   "id": "wd:Q1641346",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": -33.868889,
+   "lng": 151.2125,
+   "name": "시드니 조폐국",
+   "name_original": "Sydney Mint",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/16750260",
+     "text": "영업시간 Mo-Fr 09:00-16:00; PH off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/16750260",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 1.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q464780",
+    "Q33506"
+   ],
+   "wikidata_id": "Q1641346"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "뉴사우스웨일스 주립 도서관(State Library of New South Wales)은 오스트레일리아 시드니의 맥쿼리 스트리트의 쉐익스피어 광장 근처에 위치한 뉴사우스웨일스 주(이하 NSW) 정부에서 운영하는 도서관이다. 이 도서관은 2개의 건물로 나뉘어 있는데 정면에서 보았을 때 좌측(오페라 하우스 방향)에 위치한 과거 유럽 양식의 건축물은 미첼 도서관, 우측(하이드 파크 방향)에 위치한 현대식 건물은 딕슨 도서관이라 명명되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뉴사우스웨일스 주립 도서관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%89%B4%EC%82%AC%EC%9A%B0%EC%8A%A4%EC%9B%A8%EC%9D%BC%EC%8A%A4_%EC%A3%BC%EB%A6%BD_%EB%8F%84%EC%84%9C%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6133813",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": -33.866389,
+   "lng": 151.213333,
+   "name": "뉴사우스웨일스 주립 도서관",
+   "name_original": "State Library of New South Wales",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q131625803",
+    "Q33506"
+   ],
+   "wikidata_id": "Q6133813"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 도메인(The Domain, Sydney) 지역은 오스트레일리아 뉴사우스웨일스주 시드니 중심 업무 지구의 동쪽 끝부분에 위치하며 대중에 개방된 넓은 공간으로 울루물루 지역과 시드니 왕립 식물원과 접해있다. 이 지역은 시드니 왕립 식물원과 뉴사우스웨일스 주 환경 기후 변화 담당 부서에서 공동으로 관리하며 대형 야외 콘서트나 집회, 이벤트들이 열리는 공간으로 사용된다. '더 도메인(The Domain)'은 호주 시드니 중심 업무 지구 동쪽 가장자리에 위치한, 유산으로 지정된 34헥타르(84에이커) 규모의 개방형 공간입니다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 도메인",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EB%8F%84%EB%A9%94%EC%9D%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q844407",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": -33.865,
+   "lng": 151.217778,
+   "name": "시드니 도메인",
+   "name_original": "The Domain",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 465.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22698",
+    "Q682943"
+   ],
+   "wikidata_id": "Q844407"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 박물관(Museum of Sydney)은 오스트레일리아 뉴사우스웨일스주 시드니의 필립 스트리트와 브리지 스트리트가 만나는 교차점에 위치한 박물관으로 오스트레일리아의 초대 총독인 필립 총독의 생가 터에 지어진 박물관이다. 1983년, 고고학자들에 의해 이곳에 1788년 유럽인들의 이주 당시 오스트레일리아의 첫 총독 관저가 있었던 것으로 밝혀졌다. 박물관은 필립 총독 타워(Governor Phillip Tower)의 일부분으로 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/409035048"
+   },
+   "hours_text": "Mo-Su 10:00-17:00",
+   "id": "wd:Q910232",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": -33.8636,
+   "lng": 151.211,
+   "name": "시드니 박물관",
+   "name_original": "Museum of Sydney",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/409035048",
+     "text": "영업시간 Mo-Su 10:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/409035048",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 33.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q910232"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 전시 컨벤션 센터(Sydney Convention and Exhibition Centre)는 오스트레일리아 뉴사우스웨일스주 시드니 중심 업무 지구 근처 달링 하버에 위치한 전시 컨벤션 센터이다. 이 건물은 코클 베이, 툼발롱 파크, 하버사이드 쇼핑 센터와 인접해 있다. 1988년 설립된 시드니 전시 컨벤션 센터는 2000년 시드니 올림픽 당시에도 행사 진행의 일부로 사용되었으며, 2007년 9월, 아시아-태평양 지역 21개국의 정상이 참가한 가운데 열린 APEC 오스트레일리아 2007 의 주 회의장으로 이용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 전시 컨벤션 센터",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EC%A0%84%EC%8B%9C_%EC%BB%A8%EB%B2%A4%EC%85%98_%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q54493",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": -33.8759,
+   "lng": 151.2,
+   "name": "시드니 전시 컨벤션 센터",
+   "name_original": "Sydney Convention and Exhibition Centre",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 14.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1378975"
+   ],
+   "wikidata_id": "Q54493"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "뉴사우스웨일스 주립 극장(The State Theatre, Sydney) 오스트레일리아 뉴사우스웨일스주 시드니에 위치한 뉴사우스웨일스 주에서 운영하는 극장이다. 1929년 2,000석 규모로 설립되었다. 이 극장은 고딕 양식과 이태리 양식, 아르데코 양식으로 지어졌으며 벌리처 오르간과 코이누르 다이아몬드로 장식 된 지구상에서 2번째로 크며 그 무게가 4톤에 달하는 샹들리에가 설치되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뉴사우스웨일스 주립 극장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%89%B4%EC%82%AC%EC%9A%B0%EC%8A%A4%EC%9B%A8%EC%9D%BC%EC%8A%A4_%EC%A3%BC%EB%A6%BD_%EA%B7%B9%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7603582",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": -33.87096,
+   "lng": 151.20739,
+   "name": "뉴사우스웨일스 주립 극장",
+   "name_original": "State Theatre",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 26.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3469910",
+    "Q24354",
+    "Q41253"
+   ],
+   "wikidata_id": "Q7603582"
+  },
+  {
+   "area": "뉴사우스웨일스주",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "시드니 로스쿨(Sydney Law School)은 시드니 대학교의 법학부를 의미한다. 시드니 대학교의 필립 스트리트 캠퍼스에 위치하고 있다. 오스트레일리아 최초의 로스쿨이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시드니 로스쿨",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%93%9C%EB%8B%88_%EB%A1%9C%EC%8A%A4%EC%BF%A8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7660015",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": -33.869,
+   "lng": 151.211,
+   "name": "시드니 로스쿨",
+   "name_original": "Sydney Law School",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1321960",
+    "Q180958"
+   ],
+   "wikidata_id": "Q7660015"
+  }
+ ]
+}

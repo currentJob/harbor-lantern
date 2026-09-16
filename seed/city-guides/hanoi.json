@@ -9,41 +9,58 @@
  "country_ko": "베트남",
  "grade": "full",
  "harvest": {
-  "candidate_count": 28,
+  "candidate_count": 70,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 1,
-   "bridge": 1,
-   "building_landmark": 2,
+   "attraction": 5,
+   "bridge": 3,
+   "building_landmark": 5,
    "castle": 1,
-   "monument": 2,
-   "museum": 5,
+   "monument": 3,
+   "museum": 7,
+   "park": 1,
    "tower": 2,
-   "worship": 2
+   "worship": 5
   },
   "denylisted_count": 0,
-  "described_count": 10,
+  "described_count": 23,
+  "discovery": {
+   "both": 21,
+   "en": 10,
+   "ko": 1
+  },
+  "discovery_pool": {
+   "both": 40,
+   "en": 28,
+   "ko": 5
+  },
   "effective_radius_m": 8000,
-  "excluded_count": 1,
-  "grade_window": 16,
-  "hours_count": 6,
-  "ko_label_count": 16,
+  "en_page_count": 150,
+  "excluded_count": 9,
+  "grade_window": 25,
+  "hours_count": 9,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 45,
-  "page_count": 45,
+  "ko_page_count": 45,
+  "korean_count": 73,
+  "mapped_count": 155,
+  "no_korean_count": 82,
+  "page_count": 195,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 16,
-  "unclassified_count": 11,
-  "verification_failed_count": 6
+  "spot_count": 32,
+  "unclassified_count": 29,
+  "unmapped_count": 0,
+  "verification_failed_count": 9
  },
  "known_gaps": [
-  "설명이 없는 스팟 6곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 6곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 9곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 9곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 23곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 11건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 29건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 82건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 1곳 · 영어 검색에서만 10곳 · 양쪽 21곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -51,14 +68,21 @@
  "name_ko": "하노이",
  "name_local": "Hà Nội",
  "query": {
+  "en_page_count": 150,
   "gslimit": 500,
+  "ko_page_count": 45,
+  "korean_count": 73,
   "limit": 150,
-  "mapped_count": 45,
-  "page_count": 45,
+  "mapped_count": 155,
+  "page_count": 195,
   "radius_clamped": false,
   "radius_m": 8000,
   "registry_radius_m": 8000,
-  "sitelink_min": 8
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 8000,
  "retrieved_at": "2026-09-16",
@@ -68,6 +92,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -87,8 +116,54 @@
  ],
  "spots": [
   {
+   "area": "하노이",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/696913691"
+   },
+   "hours_text": "Tu-Su 08:00-17:00",
+   "id": "wd:Q206219",
+   "importance": {
+    "sitelinks": 41
+   },
+   "lat": 21.0325,
+   "lng": 105.83972,
+   "name": "탕롱 왕궁",
+   "name_original": "皇城昇龍",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/696913691",
+     "text": "영업시간 Tu-Su 08:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 814.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q88291",
+    "Q618123"
+   ],
+   "wikidata_id": "Q206219"
+  },
+  {
    "area": "Điện Biên",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "호찌민 주석릉(베트남어: Lăng Chủ tịch Hồ Chí Minh 陵主席胡志明[*])은 베트남 하노이 바딘군에 있는 베트남 혁명 지도자 호찌민의 능이다. 베트남 독립선언문을 낭독했던 바딘 광장의 중앙에 2년의 세월에 걸쳐 높이 21.6m에, 3층으로 지어져 1975년 9월 2일에 완성되었다. 바딘 릉(베트남어: Lăng Ba Đình)로 알려져 있으며, 현재 대중에게 공개되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -97,6 +172,7 @@
     "title": "호찌민 주석릉",
     "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC_%EC%A3%BC%EC%84%9D%EB%A6%89"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -139,6 +215,7 @@
   {
    "area": "하노이",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "문묘(Văn Miếu, 文廟)는 베트남 하노이 동다군에 있는 건축물이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -147,6 +224,7 @@
     "title": "문묘 (하노이)",
     "url": "https://ko.wikipedia.org/wiki/%EB%AC%B8%EB%AC%98_(%ED%95%98%EB%85%B8%EC%9D%B4)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -175,10 +253,84 @@
    "wikidata_id": "Q1202019"
   },
   {
-   "area": "하노이",
-   "category": "castle",
+   "area": "Mễ Trì",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q609140",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 21.017322,
+   "lng": 105.784053,
+   "name": "경남 하노이 랜드마크 타워",
+   "name_original": "AON Hanoi Landmark Tower",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.2,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q609140"
+  },
+  {
+   "area": "하노이",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "호안끼엠 호수(Hồ Hoàn Kiếm, 還劍湖)는 베트남 하노이의 호안끼엠에 있는 호수이다. 호안끼엠(還劍)이라는 말은 반납한 검이라는 의미로 호금(Hồ Gươm, Sword Lake)이라는 이름으로 불리기도 한다. 이 호수는 고도 하노이의 주요 명물 중의 하나이며, 이곳 사람들의 중심지이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호안끼엠호",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%95%88%EB%81%BC%EC%97%A0%ED%98%B8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1151254",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 21.028889,
+   "lng": 105.8525,
+   "name": "호안끼엠 호수",
+   "name_original": "Hoàn Kiếm hồ",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "partial",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23397"
+   ],
+   "wikidata_id": "Q1151254"
+  },
+  {
+   "area": "하노이",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -208,8 +360,10 @@
   {
    "area": "하노이",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -252,6 +406,7 @@
   {
    "area": "하노이",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "바딘 광장(베트남어: Quảng trường Ba Đình / 廣場𠀧亭)은 베트남, 하노이의 바딘군에 있는 광장이다. 1945년 9월 2일 호치민은 바딘 광장에서 독립을 선언하고 베트남 민주공화국을 수립하였다. 호치민의 사후 그의 영묘가 세워져 안장되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -260,6 +415,7 @@
     "title": "바딘 광장",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%94%98_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -287,8 +443,48 @@
    "wikidata_id": "Q2234574"
   },
   {
+   "area": "하노이",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "항더이 경기장(베트남어: Sân vận động Hàng Đẫy, 영어: Hang Day Stadium)은 베트남 하노이에 있는 22,500명을 수용할 수 있는 다목적 경기장으로 미딘 국립경기장이 완공되기 전에는 베트남 축구 국가대표팀의 홈 구장이었다. 현재는 하노이 FC와 하노이 폴리스의 홈 경기장으로 사용되고 있으며 2024년 아세안 챔피언십 개최 기간에는 동티모르 축구 대표팀의 홈 경기장으로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "항더이 경기장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%AD%EB%8D%94%EC%9D%B4_%EA%B2%BD%EA%B8%B0%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1817188",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 21.029722,
+   "lng": 105.833056,
+   "name": "항더이 경기장",
+   "name_original": "Sân vận động Hàng Đẫy",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q1817188"
+  },
+  {
    "area": "Tràng Tiền",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "하노이 오페라 하우스(베트남어: Nhà hát lớn Hà Nội)(영어: Hanoi Opera House)는 베트남 하노이에 있는 오페라 극장이다. 프랑스 식민지 시절인 1901년부터 1911년 사이에 세워진 건축물로 바로크 양식으로 지어졌으며, 프랑스 식민지 관리들이 콘서트와 공연 등을 보기위해 건축했다. 건축가 샤를 가르니에가 디자인했으며, 1911년 완공했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -297,6 +493,7 @@
     "title": "하노이 오페라 하우스",
     "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EC%98%A4%ED%8E%98%EB%9D%BC_%ED%95%98%EC%9A%B0%EC%8A%A4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -327,6 +524,7 @@
   {
    "area": "하노이",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "못꼿 사원(베트남어: Chùa Một Cột, 一柱寺)은 베트남 하노이에 있는 절이다. 하노이를 상징하는 고사찰로, 1049년 리 왕조의 창건자인 리 태종이 건설했다. 사원의 주춧돌 직경은 1.25m에 달한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -335,6 +533,7 @@
     "title": "못꼿 사원",
     "url": "https://ko.wikipedia.org/wiki/%EB%AA%BB%EA%BC%BF_%EC%82%AC%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -364,8 +563,10 @@
   {
    "area": "하노이",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -381,7 +582,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "none",
     "reason": "label_mismatch",
     "redirected": false,
@@ -396,8 +597,10 @@
   {
    "area": "하노이",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -443,6 +646,7 @@
   {
    "area": "하노이",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "호찌민 박물관은 베트남 하노이 바딘 광장에 있는 박물관으로, 1990년 5월 19일 호찌민 탄생 100주년을 기념하여 개관하였다. 호찌민 묘소와 연결되어 호찌민에 관한 물품들이 전시되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -451,6 +655,7 @@
     "title": "호찌민 박물관",
     "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -495,9 +700,89 @@
   },
   {
    "area": "하노이",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "성요셉 성당(베트남어: Nhà thờ Lớn Hà Nội, Nhà thờ Chính tòa Thánh Giuse)은 베트남 하노이 호안끼엠 냐토 (교회) 거리에 위치한 성당이다. 이 성당은 19세기말 고딕 복고풍의 신고딕 양식으로 지어졌고, 약 4백만명의 신도가 있는 하노이 로마카톨릭 대주교구 소속의 성당이다. 건축은 1886년에 시작되었으며, 노트르담 대성당을 닮은 건축 양식으로 묘사된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성요셉 성당 (하노이)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1%EC%9A%94%EC%85%89_%EC%84%B1%EB%8B%B9_(%ED%95%98%EB%85%B8%EC%9D%B4)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1923783",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 21.0286,
+   "lng": 105.849,
+   "name": "성요셉 성당",
+   "name_original": "Nhà thờ Lớn Hà Nội",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 11.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2977"
+   ],
+   "wikidata_id": "Q1923783"
+  },
+  {
+   "area": "바딘 지구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "롯데센터 하노이(Lotte Center Hanoi)는 베트남 하노이 시에 건설한 마천루이다. 하노이 시티 콤플렉스(Hanoi City Complex)라는 별칭으로도 부른다. 2010년 착공하여 2014년 완공하였으며, 2025년 기준, 경남 랜드마크 72에 이어 베트남에서 세 번째로 높은 빌딩이다..",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "롯데센터 하노이",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%AF%EB%8D%B0%EC%84%BC%ED%84%B0_%ED%95%98%EB%85%B8%EC%9D%B4"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6684904",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 21.03235,
+   "lng": 105.8126,
+   "name": "롯데센터 하노이",
+   "name_original": "Hà Nội City Complex",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q6684904"
+  },
+  {
+   "area": "하노이",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -527,8 +812,10 @@
   {
    "area": "하노이",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -564,6 +851,7 @@
   {
    "area": "하노이",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "하노이 깃대(베트남어: Cột cờ Hà Nội / Kỳ đài Hà Nội)는 베트남 하노이에 있는 타워다. 33.4m이며, 깃발까지 포함하면 41m이다. 시의 상징물 중 하나이며, 세계유산인 하노이 탕롱황성의 일부이기도 하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -572,6 +860,7 @@
     "title": "하노이 깃대",
     "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EA%B9%83%EB%8C%80"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -600,8 +889,87 @@
    "wikidata_id": "Q864752"
   },
   {
+   "area": "하노이",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "떠이호(西湖, 베트남어: Hồ Tây / 湖西)는 베트남 하노이에 있는 민물 호수이다. 호반의 둘레 길이는 약 17km이며, 면적은 5km2이다. 이곳은 하노이에서 가장 큰 호수로 주변에 공원, 호텔, 빌라들이 많아서 여가활동으로 인기 있는 장소 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "떠이호",
+    "url": "https://ko.wikipedia.org/wiki/%EB%96%A0%EC%9D%B4%ED%98%B8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1187394",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 21.055,
+   "lng": 105.82,
+   "name": "떠이호",
+   "name_original": "Hồ Tây",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23397"
+   ],
+   "wikidata_id": "Q1187394"
+  },
+  {
+   "area": "",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "녓떤 대교(Cầu Nhật Tân / 日新橋) 또는 일본-베트남 우정의 다리(Vietnam–Japan Friendship Bridge)는 베트남의 수도 하노이의 홍강을 횡단하는 세계 최대 규모의 사장교이다. 2009년 3월 7일에 착공하여, 2015년 1월 4일, 개통되었다. 하노이와 노이바이 국제공항을 잇는 새로운 6차선 고속도로의 일부를 이룬다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "녓떤 대교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%85%93%EB%96%A4_%EB%8C%80%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3023944",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 21.092811,
+   "lng": 105.820706,
+   "name": "녓떤 대교",
+   "name_original": "Cầu Nhật Tân",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q3023944"
+  },
+  {
    "area": "호안끼엠군",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "베트남 역사박물관(베트남어: Viện Bảo tàng Lịch sử Việt Nam, 프랑스어: Musée National d'Histoire du Viêt Nam)은 베트남 하노이의 호안끼엠에 있는 박물관이다. 박물관 건물은 원래 프랑스령 인도차이나 시절 프랑스국립극동연구원의 박물관이었다. 1958년 북베트남 정부에 의해 인수되었으며 이후 동양 예술과 국가 역사를 아우르는 박물관으로 확장되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -610,6 +978,7 @@
     "title": "베트남 역사박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%8A%B8%EB%82%A8_%EC%97%AD%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -648,45 +1017,65 @@
    "wikidata_id": "Q5370414"
   },
   {
-   "area": "Tràng Tiền",
-   "category": "building_landmark",
-   "description": "소피텔 레전드 메트로폴 하노이(Sofitel Legend Metropole Hanoi)은 원래 메트로폴 호텔(Hôtel Metropole)이라는 명칭으로 알려져 있었다. 이 호텔은 베트남 하노이 호안끼엠의 응오꾸옌 거리에 위치해 있으며, 프랑스 식민지 시대인 1901년 개장한 유서 깊은 오성급 호텔이다. 이 고급 호텔을 찾은 저명 인사들로는 조지 H. W. 부시 대통령, 프랑수아 미테랑 대통령, 자크 시라크 대통령, 도널드 트럼프 대통령(2017년 APEC 정상회의) 등 각국의 정상과 대사, 국장 등 거물급 인사들이 묶으면서 풍부한 역사와 1세기의 전통을 자랑한다.",
+   "area": "하노이",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "베트남 민족학 박물관은 베트남 하노이 꺼우저이 군에 있는 박물관이다. 1997년 11월 12일 개관하였으며, 54개의 소수 종족의 생활, 민속 등을 지도, 모형, 비디오 등을 통하여 소개 및 전시하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "소피텔 레전드 메트로폴 하노이",
-    "url": "https://ko.wikipedia.org/wiki/%EC%86%8C%ED%94%BC%ED%85%94_%EB%A0%88%EC%A0%84%EB%93%9C_%EB%A9%94%ED%8A%B8%EB%A1%9C%ED%8F%B4_%ED%95%98%EB%85%B8%EC%9D%B4"
+    "title": "베트남 민족학 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%8A%B8%EB%82%A8_%EB%AF%BC%EC%A1%B1%ED%95%99_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "en",
    "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q7553773",
-   "importance": {
-    "sitelinks": 11
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/339936730"
    },
-   "lat": 21.02567,
-   "lng": 105.85553,
-   "name": "소피텔 레전드 메트로폴 하노이",
-   "name_original": "Khách sạn Sofitel Legend Métropole Hanoï",
+   "hours_text": "Tu-Su 08:30-17:30",
+   "id": "wd:Q1048345",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 21.0406,
+   "lng": 105.799,
+   "name": "베트남 민족학 박물관",
+   "name_original": "Bảo tàng Dân tộc học Việt Nam",
    "name_source": "ko",
    "recommendations": [],
-   "tips": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/339936730",
+     "text": "영업시간 Tu-Su 08:30-17:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/339936730",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
    "verification": {
-    "coord_delta_m": 60.5,
+    "coord_delta_m": 31.1,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q27686"
+    "Q33506",
+    "Q12104174"
    ],
-   "wikidata_id": "Q7553773"
+   "wikidata_id": "Q1048345"
   },
   {
    "area": "하노이",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "하노이 박물관(Hanoi Museum, 베트남어: Bảo tàng Hà Nội)은 베트남 하노이 남뜨리엠 군에 위치한 박물관이다. 하노이 박물관은 2010년 10월 6일 하노이 천년 기념일에 문을 열었다. 이 박물관에는 하노이 1000년 역사와 베트남의 역사, 문화, 유산 및 건축물의 유물이 전시되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -695,6 +1084,7 @@
     "title": "하노이 박물관",
     "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -731,6 +1121,324 @@
     "Q33506"
    ],
    "wikidata_id": "Q1835176"
+  },
+  {
+   "area": "하노이",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7273080",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 21.02449,
+   "lng": 105.845258,
+   "name": "꽌쓰 사",
+   "name_original": "Chùa Quán Sứ",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q10748583"
+   ],
+   "wikidata_id": "Q7273080"
+  },
+  {
+   "area": "하노이",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "베트남 국립 컨벤션 센터(Vietnam National Convention Center)는 베트남 하노이 남뜨리엠 군의 탕롱대로에 위치한 주요 컨벤션 센터이다. 이 센터는 게르칸, 마르크 앤 파트너스의 마인하르트 폰 게르칸과 니콜라우스 괴체가 설계했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베트남 국립 컨벤션 센터",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%8A%B8%EB%82%A8_%EA%B5%AD%EB%A6%BD_%EC%BB%A8%EB%B2%A4%EC%85%98_%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q10828427",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 21.006389,
+   "lng": 105.7875,
+   "name": "베트남 국립 컨벤션 센터",
+   "name_original": "Trung tâm Hội nghị Quốc gia Việt Nam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 65.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1378975"
+   ],
+   "wikidata_id": "Q10828427"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "쭉박호(베트남어: Hồ Trúc Bạch / 湖竹帛)는 베트남 하노이 떠이호의 분할로 만들어진 호수이다. 베트남 외부에서는 베트남 전쟁 때 공군 조종사였던 존 매케인이 피격을 당해 착륙을 한 곳으로 잘 알려져 있다. 쭉박호는 하노이 구시가지 북서쪽에 자리잡고 있으며, 하노이에서 가장 큰 떠이호 동편에 바로 인접해 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쭉박호",
+    "url": "https://ko.wikipedia.org/wiki/%EC%AD%89%EB%B0%95%ED%98%B8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1320141",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 21.045556,
+   "lng": 105.838056,
+   "name": "쭉박호",
+   "name_original": "Hồ Trúc Bạch",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23397"
+   ],
+   "wikidata_id": "Q1320141"
+  },
+  {
+   "area": "떠이호군",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "꽌타인 사당(베트남어: Đền Quán Thánh)은 베트남 하노이에 있는 도교 사원으로, 11세기에 지어진 사당이다. 진무(眞武)에게 봉헌된 사당이었으로 예전엔 쩐부꽌(베트남어: Trấn Vũ Quán / 眞武觀)으로 불렸다. 현천진무신(玄天眞武)의 동상은 높이 약 4m, 무게는 약 4톤으로 베트남 최대의 동상이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "꽌타인 사당",
+    "url": "https://ko.wikipedia.org/wiki/%EA%BD%8C%ED%83%80%EC%9D%B8_%EC%82%AC%EB%8B%B9"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5370148",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 21.043113,
+   "lng": 105.836508,
+   "name": "꽌타인 사당",
+   "name_original": "Đền Quán Thánh",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q44539"
+   ],
+   "wikidata_id": "Q5370148"
+  },
+  {
+   "area": "하노이",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "통녓 공원(베트남어: Công viên Thống Nhất)은 베트남 하노이에 있는 주요 공원들 중 하나이다. 공원에는 바이머우 호수가 있다. 통녓 공원은 하노이 하이바쯩군, 레다이하인방에 위치한 쩐년똥 거리, 응우옌딘쩨우 거리, 레주안 거리, 그리고 다이꼬비엣 거리 4면에 인접해 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "통녓 공원",
+    "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EB%85%93_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/37933849"
+   },
+   "hours_text": "Mo-Su 06:00-22:00",
+   "id": "wd:Q10752058",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 21.015762,
+   "lng": 105.844818,
+   "name": "통녓 공원",
+   "name_original": "Công viên Thống Nhất",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/37933849",
+     "text": "영업시간 Mo-Su 06:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22698"
+   ],
+   "wikidata_id": "Q10752058"
+  },
+  {
+   "area": "",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "쯔엉즈엉 대교(Chương Dương Bridge)는 1985년 완공된 베트남 하노이에 있는 홍강을 횡단하는 주요 하천 도로 교량이다. 길이는 1213m, 각 방향에는 최대 80톤의 차량용 2개 차로가 있다. 국도 제1A호선으로 호안끼엠군의 중심과 롱비엔군을 연결한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쯔엉즈엉 대교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%AF%94%EC%97%89%EC%A6%88%EC%97%89_%EB%8C%80%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3023443",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 21.038,
+   "lng": 105.861,
+   "name": "쯔엉즈엉 대교",
+   "name_original": "Cầu Chương Dương",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 26.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q3023443"
+  },
+  {
+   "area": "하노이",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "호찌민 관저는 베트남 하노이 바딘 광장 주변에 호찌민 묘소 뒤편에 자리한 있는 관저이다. 호찌민이 1954년 12월 19일부터 1969년 10월 2일까지 살았던 곳이다. 이 시기는 그의 삶에서 혁명기 대부분이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "호찌민 관저",
+    "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC_%EA%B4%80%EC%A0%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5370392",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 21.037901,
+   "lng": 105.833547,
+   "name": "호찌민 관저",
+   "name_original": "Khu di tích Phủ Chủ tịch",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 57.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q2114972"
+   ],
+   "wikidata_id": "Q5370392"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "티엔꽝 호수(베트남어: Hồ Thiền Quang / 湖禪光)는 베트남 하노이 하이바쯩군에 위치한 호수이다. 호수는 나무와 그늘로 채워진 4개의 응우옌주 거리, 쩐빈쫑 거리, 쩐년똥 거리 및 꽝쭝 거리로 둘러싸여 있다. 특히, 응우옌주 거리에는 가을에는 유백색 꽃이 피어난다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "티엔꽝호",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8B%B0%EC%97%94%EA%BD%9D%ED%98%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7349899",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 21.018428,
+   "lng": 105.845544,
+   "name": "티엔꽝호",
+   "name_original": "Hồ Thiền Quang",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q23397"
+   ],
+   "wikidata_id": "Q7349899"
   }
  ]
 }

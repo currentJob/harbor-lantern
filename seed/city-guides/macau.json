@@ -7,40 +7,58 @@
  "country_code": "MO",
  "country_en": "Macau",
  "country_ko": "마카오",
- "grade": "partial",
+ "grade": "full",
  "harvest": {
-  "candidate_count": 16,
+  "candidate_count": 37,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 1,
+   "attraction": 4,
    "bridge": 3,
-   "building_landmark": 2,
+   "building_landmark": 4,
+   "castle": 1,
+   "museum": 3,
    "tower": 1,
    "worship": 4
   },
   "denylisted_count": 0,
-  "described_count": 9,
+  "described_count": 17,
+  "discovery": {
+   "both": 13,
+   "en": 5,
+   "ko": 2
+  },
+  "discovery_pool": {
+   "both": 16,
+   "en": 21,
+   "ko": 2
+  },
   "effective_radius_m": 5000,
-  "excluded_count": 2,
-  "grade_window": 11,
-  "hours_count": 1,
-  "ko_label_count": 11,
+  "en_page_count": 169,
+  "excluded_count": 6,
+  "grade_window": 20,
+  "hours_count": 2,
+  "ko_label_count": 20,
   "ko_label_ratio": 1.0,
-  "mapped_count": 18,
-  "page_count": 18,
+  "ko_page_count": 18,
+  "korean_count": 39,
+  "mapped_count": 171,
+  "no_korean_count": 132,
+  "page_count": 187,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 11,
-  "unclassified_count": 3,
-  "verification_failed_count": 2
+  "spot_count": 20,
+  "unclassified_count": 11,
+  "unmapped_count": 0,
+  "verification_failed_count": 3
  },
  "known_gaps": [
-  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 10곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 18곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 3건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 11건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 132건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 2곳 · 영어 검색에서만 5곳 · 양쪽 13곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -48,14 +66,21 @@
  "name_ko": "마카오",
  "name_local": "澳門",
  "query": {
+  "en_page_count": 169,
   "gslimit": 500,
+  "ko_page_count": 18,
+  "korean_count": 39,
   "limit": 150,
-  "mapped_count": 18,
-  "page_count": 18,
+  "mapped_count": 171,
+  "page_count": 187,
   "radius_clamped": false,
   "radius_m": 5000,
   "registry_radius_m": 5000,
-  "sitelink_min": 8
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 5000,
  "retrieved_at": "2026-09-16",
@@ -65,6 +90,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -85,9 +115,50 @@
  "spots": [
   {
    "area": "마카오",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "그랜드 리스보아(중국어: 新葡京酒店, 영어: Grand Lisboa)는 중국 마카오 세 당구에 있는 호텔이다. 카지노와 레스토랑은 2007년 2월 11일에 오픈했으며 호텔은 2008년 12월에 오픈했다. 이 카지노에는 800개의 게임 테이블과 1,000개의 슬롯 머신이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그랜드 리스보아",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%9C%EB%93%9C_%EB%A6%AC%EC%8A%A4%EB%B3%B4%EC%95%84"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1033099",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 22.190644,
+   "lng": 113.543117,
+   "name": "그랜드 리스보아",
+   "name_original": "Grand Lisboa",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q1033099"
+  },
+  {
+   "area": "마카오",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -118,6 +189,7 @@
   {
    "area": "마카오",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "마카오 타워 컨벤션 & 엔터테인먼트 센터(중국어: 澳門旅遊塔會展娛樂中心, 포르투갈어: Centro de Convenções e Entretenimento da Torre de Macau, 영어: Macau Tower Convention & Entertainment Center) 또는 간단히 마카오 타워(중국어: 澳門觀光塔 또는 중국어: 觀光塔, 포르투갈어: Torre de Macau, 포르투갈어: Macau Tower)는 마카오에 위치한 타워이다. 지상에서 가장 윗부분까지 총 높이는 338m이다. 타워 내에는 전망대, 레스토랑, 영화관, 쇼핑몰 등이 설치되어 있으며, 외연을 둘러 볼 수 있는 '스카이워크 X'라는 투어도 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -126,6 +198,7 @@
     "title": "마카오 타워",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -166,6 +239,7 @@
   {
    "area": "마카오",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "아마 사원(A-Ma Temple)은 마카오에서 가장 오래된 중국식 절이다. 약 600여년 전에 세워진 것으로 추정된다. 1554∼1557년 사이에 포르투갈인들이 마카오에 정착할 즈음에 유럽인들이 이 지역의 이름을 아마 여신의 이름을 따서 ‘아마가오’ 또는 ‘아마베이’로 바꾸어 불렀다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -174,6 +248,7 @@
     "title": "아마 사원",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%A7%88_%EC%82%AC%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -189,7 +264,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -203,6 +278,7 @@
   {
    "area": "마카오",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "카르발류 총독 대교(중국어 간체자: 嘉乐庇总督大桥, 정체자: 嘉樂庇總督大橋, 병음: Jiālèbì zǒngdū dàqiáo, 포르투갈어: Ponte Governador Nobre de Carvalho) 또는 마카우-타이파 대교(중국어 간체자: 澳氹大桥, 병음: 澳氹大橋)는 마카오반도와 타이파섬을 이은 첫번째 다리이다. 마카오 현지에서는 \"구대교\"(舊大橋)라고도 부른다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -211,6 +287,7 @@
     "title": "카르발류 총독 대교",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%B4%EB%B0%9C%EB%A5%98_%EC%B4%9D%EB%8F%85_%EB%8C%80%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -241,6 +318,7 @@
   {
    "area": "마카오",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "성 도밍고 성당(St. Dominic's Church)은 마카오의 가장 아름다운 바로크 양식 성당이다. 원래는 나무로 지어졌으나, 후에 흙으로 재건되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -249,6 +327,7 @@
     "title": "성 도밍고 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%8F%84%EB%B0%8D%EA%B3%A0_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -279,6 +358,7 @@
   {
    "area": "마카오",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "마카오 우의대교(중국어: 澳門友誼大橋) 또는 아미자드 대교(포르투갈어: Ponte de Amizade)는 마카오에 있는 다리이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -287,6 +367,7 @@
     "title": "마카오 우의대교",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%EC%9A%B0%EC%9D%98%EB%8C%80%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -316,6 +397,7 @@
   {
    "area": "마카오",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "윈 마카오(영어: Wynn Macau, 중국어: 永利澳門渡假村)는 중국 마카오에 있는 윈 리조트가 운영하는 카지노 호텔이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -324,6 +406,7 @@
     "title": "윈 마카오",
     "url": "https://ko.wikipedia.org/wiki/%EC%9C%88_%EB%A7%88%EC%B9%B4%EC%98%A4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -351,10 +434,45 @@
    "wikidata_id": "Q1414111"
   },
   {
-   "area": "마카오",
-   "category": "bridge",
+   "area": "타이파섬",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1674107",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 22.154523,
+   "lng": 113.553266,
+   "name": "마카오 올림픽스포츠센터운동장",
+   "name_original": "奧林匹克體育中心-運動場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q1674107"
+  },
+  {
+   "area": "마카오",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -385,6 +503,7 @@
   {
    "area": "마카오",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "민정총서대루(중국어: 民政總署大樓, 포르투갈어: Edifício do Leal Senado, 영어: Leal Senado Building)는 마카오의 관공서 민정총서의 청사이다. 민정총서대루 앞 광장인 세나두 광장은 이 빌딩의 포르투갈어 이름 \"레알 세나두\"에서 유래한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -393,6 +512,7 @@
     "title": "민정총서대루",
     "url": "https://ko.wikipedia.org/wiki/%EB%AF%BC%EC%A0%95%EC%B4%9D%EC%84%9C%EB%8C%80%EB%A3%A8"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -423,6 +543,7 @@
   {
    "area": "마카오",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "세나두 광장(중국어: 議事亭前地, 포르투갈어: Largo do Senado)은 마카오의 광장이다. 유네스코 마카오 역사지구 세계유산의 일부이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -431,6 +552,7 @@
     "title": "세나두 광장",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EB%82%98%EB%91%90_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -460,6 +582,7 @@
   {
    "area": "마카오",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "관음당(觀音堂)은 600여년의 역사를 지닌 대표적인 중국식 불교사원이다. 원나라 때 창건되었다. 마카오 최대의 관음불을 모시고 있고, 본당의 벽면에는 중국 18현인의 상이 나란히 서 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -468,6 +591,7 @@
     "title": "관음당",
     "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EC%9D%8C%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -494,6 +618,291 @@
     "Q44539"
    ],
    "wikidata_id": "Q281550"
+  },
+  {
+   "area": "Freguesia de Nossa Senhora do Carmo",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "쿠냐 거리(광둥어: 官也街, 포르투갈어: Rua do Cunha 후아 두 쿠냐[*])는 마카오 타이파섬에 있는 거리이다. 정확하게 말하자면 먹거리 골목이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "쿠냐 거리",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BF%A0%EB%83%90_%EA%B1%B0%EB%A6%AC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7375637",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 22.15368,
+   "lng": 113.55692,
+   "name": "쿠냐 거리",
+   "name_original": "官也街",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007"
+   ],
+   "wikidata_id": "Q7375637"
+  },
+  {
+   "area": "마카오",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "마카오 피셔맨스워프(영어: Macau Fisherman's Wharf, 중국어: 澳門漁人碼頭, 포르투갈어: Doca dos Pescadores)는 마카오의 테마파크이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마카오 피셔맨스워프",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%ED%94%BC%EC%85%94%EB%A7%A8%EC%8A%A4%EC%9B%8C%ED%94%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3274095",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.191453,
+   "lng": 113.556608,
+   "name": "마카오 피셔맨스워프",
+   "name_original": "澳門漁人碼頭",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2416723"
+   ],
+   "wikidata_id": "Q3274095"
+  },
+  {
+   "area": "마카오",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "그랑프리 박물관(중국어: 大賽車博物館, 포르투갈어: Museu do Grande Prémio)은 중국 마카오 세 당구 마카오 관광 활동 센터에 위치한 박물관이다. 포도주 박물관이랑 붙어있다. 1993년 11월 18일에 개관하였으며, 마카오 그랑프리 40주년 기념으로 개설된 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그랑프리 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%91%ED%94%84%EB%A6%AC_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5594934",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.1949,
+   "lng": 113.553,
+   "name": "그랑프리 박물관",
+   "name_original": "大賽車博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q5594934"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "페냐 언덕 (Penha Hill, 포르투갈어: Colina da Penha), 광둥어로 사이몽정 산(중국어: 西望洋山)은 마카오 상로렌수 당구에 자리한 작은 언덕이다. 해발고도는 62.7m에 불과하지만 마카오에서 세번째로 큰 산이기도 하다. 남서쪽으로는 바라 언덕 (媽閣山, Colina da Barra)과 접한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "페냐 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%EB%83%90_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q16926772",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.186472,
+   "lng": 113.534722,
+   "name": "페냐 언덕",
+   "name_original": "西望洋山",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q16926772"
+  },
+  {
+   "area": "마카오",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "마카오 특별행정구 정부청사(포르투갈어: Sede do Governo da Região Administrativa Especial de Macau da República Popular da China), (중국어 정체자: 中華人民共和國澳門特別行政區政府總部)는 중화인민공화국 마카오 특별행정구 정부청사이다. 반환전 이름은 (포르투갈어: Palácio da Praia Grande), (중국어 정체자: 澳門總督府)이며 마카오 프라이아 그란데 대로 (Avenida da Praia Grande/南灣大馬路)에 위치한 중요한 건축물이다. 포르투갈령 마카오시기 마카오 총독의 관저였으며, 1999년 12월 20일 중화인민공화국으로 주권이 이양되면서 마카오 정부청사로 사용되고, 마카오 행정장관 및 주요관료, 외빈 접대장소로도 사용된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마카오 특별행정구 정부청사",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B9%B4%EC%98%A4_%ED%8A%B9%EB%B3%84%ED%96%89%EC%A0%95%EA%B5%AC_%EC%A0%95%EB%B6%80%EC%B2%AD%EC%82%AC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6722701",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.189854,
+   "lng": 113.53786,
+   "name": "마카오 특별행정구 정부청사",
+   "name_original": "澳門特別行政區政府總部",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q210272"
+   ],
+   "wikidata_id": "Q6722701"
+  },
+  {
+   "area": "마카오",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "포도주 박물관(중국어: 葡萄酒博物馆, 포르투갈어: Museu do Vinho)은 중국 마카오 세 당구 마카오 관광 활동 센터에 위치한 포도주 박물관이다. 그랑프리 박물관과 붙어있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "포도주 박물관 (마카오)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%EB%8F%84%EC%A3%BC_%EB%B0%95%EB%AC%BC%EA%B4%80_(%EB%A7%88%EC%B9%B4%EC%98%A4)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6722717",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.1947,
+   "lng": 113.553,
+   "name": "포도주 박물관",
+   "name_original": "葡萄酒博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 31.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q6722717"
+  },
+  {
+   "area": "마카오",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "손문기념관(Sun Yat Sen Memorial House), 손문국부기념관(중국어: 澳門國父紀念館)은 중국 마카오 상라자루 당구에 위치한 박물관이다. 중국민국을 세운 신해혁명의 지도자이자 중국 삼민주의의 창시자인 쑨원(孫文)이 1890년대에 마카오에서 의술을 펼치고 있었을 때 살던 집으로 현재는 기념관으로 개방되어 있다. 원래 쑨원이 살았던 집은 옆에 있었으나 폭발사고로 파괴되었고, 그후 그의 아들이 1918년 아버지를 기념하기 위해 건립했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "손문기념관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%86%90%EB%AC%B8%EA%B8%B0%EB%85%90%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/411044995"
+   },
+   "hours_text": "We-Mo 10:00-17:00",
+   "id": "wd:Q7638630",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.1999,
+   "lng": 113.549,
+   "name": "손문기념관",
+   "name_original": "澳門國父紀念館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/411044995",
+     "text": "영업시간 We-Mo 10:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 3.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q7638630"
   }
  ]
 }

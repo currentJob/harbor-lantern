@@ -7,40 +7,57 @@
  "country_code": "HK",
  "country_en": "Hong Kong",
  "country_ko": "홍콩",
- "grade": "partial",
+ "grade": "full",
  "harvest": {
-  "candidate_count": 77,
+  "candidate_count": 149,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 1,
-   "building_landmark": 8,
-   "museum": 1,
-   "park": 2,
-   "tower": 1
+   "attraction": 11,
+   "building_landmark": 27,
+   "museum": 4,
+   "park": 4,
+   "tower": 1,
+   "worship": 2
   },
-  "denylisted_count": 0,
-  "described_count": 8,
+  "denylisted_count": 10,
+  "described_count": 41,
+  "discovery": {
+   "both": 14,
+   "en": 28,
+   "ko": 7
+  },
+  "discovery_pool": {
+   "both": 43,
+   "en": 55,
+   "ko": 59
+  },
   "effective_radius_m": 8000,
-  "excluded_count": 2,
-  "grade_window": 13,
-  "hours_count": 1,
-  "ko_label_count": 13,
+  "en_page_count": 500,
+  "excluded_count": 11,
+  "grade_window": 25,
+  "hours_count": 3,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 102,
-  "page_count": 102,
+  "ko_page_count": 102,
+  "korean_count": 157,
+  "mapped_count": 559,
+  "no_korean_count": 402,
+  "page_count": 602,
   "radius_note": "",
-  "reviewed": false,
-  "spot_count": 13,
-  "unclassified_count": 62,
-  "verification_failed_count": 5
+  "reviewed": true,
+  "spot_count": 49,
+  "unclassified_count": 79,
+  "unmapped_count": 0,
+  "verification_failed_count": 8
  },
  "known_gaps": [
-  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 12곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
-  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 62건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "설명이 없는 스팟 8곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 8곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 46곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토에서 제외한 항목 10건 — 사유는 tools/city-denylist.json 에 적혀 있다.",
+  "분류에 걸리지 않아 제외한 후보 79건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 402건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 7곳 · 영어 검색에서만 28곳 · 양쪽 14곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -48,14 +65,21 @@
  "name_ko": "홍콩",
  "name_local": "香港",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 102,
+  "korean_count": 157,
   "limit": 150,
-  "mapped_count": 102,
-  "page_count": 102,
+  "mapped_count": 559,
+  "page_count": 602,
   "radius_clamped": false,
   "radius_m": 8000,
   "registry_radius_m": 8000,
-  "sitelink_min": 10
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 8000,
  "retrieved_at": "2026-09-16",
@@ -65,6 +89,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -84,48 +113,129 @@
  ],
  "spots": [
   {
-   "area": "중시구",
-   "category": "building_landmark",
-   "description": "중국은행 타워(중국어: 中銀大廈 중은대하[*], Bank of China Tower 뱅크 오브 차이나 타워[*])는 홍콩 중완에 건설된 중국은행 (홍콩) 본점 건물이다. 이 건물은 프리츠커상 수상자이기도 한 중국계 미국인 건축가 I. M. 페이가 디자인하였다. 건물의 높이는 315m이다.",
+   "area": "홍콩",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "빅토리아 피크(영어: Victoria Pick, 중국어: 太平山)는 높이 552m로 홍콩섬에서 가장 높은 산이다. 정상에는 피크 타워와 중국풍의 정자가 있다. 피크 트램이나 버스를 타고 올라갈 수 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "중국은행 타워 (홍콩)",
-    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EC%9D%80%ED%96%89_%ED%83%80%EC%9B%8C_(%ED%99%8D%EC%BD%A9)"
+    "title": "빅토리아 피크",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%85%ED%86%A0%EB%A6%AC%EC%95%84_%ED%94%BC%ED%81%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q214855",
+   "id": "wd:Q17541",
    "importance": {
-    "sitelinks": 45
+    "sitelinks": 35
    },
-   "lat": 22.279167,
-   "lng": 114.161389,
-   "name": "중국은행 타워",
-   "name_original": "中銀大廈",
+   "lat": 22.275469,
+   "lng": 114.143828,
+   "name": "빅토리아 피크",
+   "name_original": "Victoria Peak",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": 43.2,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q11303",
-    "Q18761864"
+    "Q8502"
    ],
-   "wikidata_id": "Q214855"
+   "wikidata_id": "Q17541"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "이 문서의 광둥어 명칭 (짐사저이)은 위키백과 자체의 광둥어 표기법을 따랐으며, 통용 표기법과는 다를 수 있습니다. 침사추이(영어: Tsim Sha Tsui, 중국어: 尖沙咀, 월병: zim1 saa1 zeoi2/Jīm sā jéui (짐사저이), 한자음: 첨사저; 한월어: Thiêm Sa Chủy)는 홍콩에 있는 가우룽 남단의 상업지구이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "짐사저이",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%90%EC%82%AC%EC%A0%80%EC%9D%B4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q15022",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 22.293981,
+   "lng": 114.171219,
+   "name": "짐사저이",
+   "name_original": "尖沙咀",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q15022"
+  },
+  {
+   "area": "홍콩",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "홍콩 예술관(중국어: 香港藝術館, 영어: Hong Kong Museum of Art)은 홍콩에 위치한 미술관이다. 중국 역사 유물, 동서양 미술 작품 등을 전시한다. 이 뮤지엄은 원래는 홍콩 시정국에 의해 1962년 홍콩대회당(홍콩시청) 건물에 설립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩 예술관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EC%98%88%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q908216",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 22.293547,
+   "lng": 114.172025,
+   "name": "홍콩 예술관",
+   "name_original": "香港藝術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q908216"
   },
   {
    "area": "홍콩",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -153,10 +263,95 @@
    "wikidata_id": "Q992697"
   },
   {
-   "area": "야우짐웡구",
-   "category": "park",
+   "area": "짐사저이",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2326446",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 22.2987,
+   "lng": 114.172,
+   "name": "주룽 모스크",
+   "name_original": "九龍清真寺暨伊斯蘭中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 29.1,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q32815"
+   ],
+   "wikidata_id": "Q2326446"
+  },
+  {
+   "area": "중시구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "홍콩 공원(중국어 간체자: 香港公园, 정체자: 香港公園, 병음: Xiānggǎng Gōngyuán)은 홍콩 홍콩섬 중완에 있는 공원이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩 공원",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/42255430"
+   },
+   "hours_text": "06:00-23:00",
+   "id": "wd:Q2918611",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 22.27716,
+   "lng": 114.16146,
+   "name": "홍콩 공원",
+   "name_original": "香港公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/42255430",
+     "text": "영업시간 06:00-23:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 43.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q2918611"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -186,8 +381,10 @@
   {
    "area": "홍콩",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -217,8 +414,10 @@
   {
    "area": "홍콩",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -259,8 +458,81 @@
    "wikidata_id": "Q1144740"
   },
   {
+   "area": "완자이구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q281527",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 22.281389,
+   "lng": 114.1725,
+   "name": "완쯔",
+   "name_original": "灣仔",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 204.2,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q281527"
+  },
+  {
+   "area": "완자이구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "코즈웨이베이(영어: Causeway Bay), 광둥어로 통로완 혹은 퉁로완(중국어 정체자: 銅鑼灣, 광둥어 예일: Tùhnglòhwāan, 한자음: 동나만)은 홍콩섬 북부 완자이 구에 자리한 지역이다. 초고층 건물이 밀집해 있으며 쇼핑가가 조성되어 있다. 이곳의 쇼핑가는 세계에서 가장 임대료가 비싼 거리 중 한 곳이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "코즈웨이베이",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BD%94%EC%A6%88%EC%9B%A8%EC%9D%B4%EB%B2%A0%EC%9D%B4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q564732",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 22.28066,
+   "lng": 114.18096,
+   "name": "코즈웨이베이",
+   "name_original": "銅鑼灣",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q564732"
+  },
+  {
    "area": "야우짐웡구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "충킹맨션(중국어: 重慶大廈, 영어: Chungking Mansions)은 홍콩 짐사저이 네이선 로드에 위치한 복합 빌딩이다. '도시 속 게토'로 알려진 충칭 빌딩은 홍콩의 소수민족이 많이 모이는 곳이다. 영화 중경삼림에 나와 유명해졌다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -269,6 +541,7 @@
     "title": "충칭 빌딩",
     "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%B9%AD_%EB%B9%8C%EB%94%A9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -298,6 +571,7 @@
   {
    "area": "완자이구",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "빅토리아 공원 또는 빅토리아 파크(Victoria Park, 중국어: 維多利亞公園)는 홍콩의 공원의 하나이다. 땅이 좁은 홍콩에서 빅토리아 항을 메워서 만든 면적 약 30ha라는 파격적인 넓이를 자랑하는 공원으로 이름의 유래가 된 빅토리아 여왕의 동상은 입구에 있다. 공원 서쪽으로는 최고의 번화가로 홍콩 제일의 쇼핑 센터의 하나로 손꼽히고, 우리식의 먹자골목인 푸드 스트리트에는 중국 각지의 요리는 말할 것도 없고, 프랑스, 이탈리아, 일본 등 각국의 요리를 맛볼 수 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -306,6 +580,7 @@
     "title": "빅토리아 공원 (홍콩)",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%85%ED%86%A0%EB%A6%AC%EC%95%84_%EA%B3%B5%EC%9B%90_(%ED%99%8D%EC%BD%A9)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -333,83 +608,59 @@
    "wikidata_id": "Q1859090"
   },
   {
-   "area": "중완",
-   "category": "building_landmark",
-   "description": "만다린 오리엔탈 호텔 홍콩(Mandarin Oriental Hotel Hong Kong)은 홍콩의 5성급 호텔이다. 만다린 오리엔탈 그룹이 지은 최초이자 대표적인 호텔이다. 1963년 더 만다린이라는 이름으로 홍콩섬의 금융 무역 중심지인 콘노트가 5번지에서 개업하였다.",
+   "area": "홍콩",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "플래그스태프 하우스(Flagstaff House, 중국어: 旗杆屋 기간옥[*], 치간우, 케이곤욱)은 중국 홍콩에 위치한 콜로니얼 양식의 건물이다. 홍콩 중서구 코튼 트리 드라이브(紅棉路) 10번지에 위치한다. 홍콩공원 내에 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "만다린 오리엔탈 호텔 홍콩",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A7%8C%EB%8B%A4%EB%A6%B0_%EC%98%A4%EB%A6%AC%EC%97%94%ED%83%88_%ED%98%B8%ED%85%94_%ED%99%8D%EC%BD%A9"
+    "title": "플래그스태프 하우스",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%8C%EB%9E%98%EA%B7%B8%EC%8A%A4%ED%83%9C%ED%94%84_%ED%95%98%EC%9A%B0%EC%8A%A4"
    },
+   "discovery": "en",
    "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1064758",
-   "importance": {
-    "sitelinks": 13
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/42255475"
    },
-   "lat": 22.2821,
-   "lng": 114.159,
-   "name": "만다린 오리엔탈 호텔 홍콩",
-   "name_original": "香港文華東方酒店",
+   "hours_text": "We-Mo 10:00-18:00 open \"LNY eve ~17:00\"; PH 10:00-18:00 open \"LNY D1-2 off\"; Dec24 10:00-17:00",
+   "id": "wd:Q908224",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 22.2785,
+   "lng": 114.1625,
+   "name": "플래그스태프 하우스",
+   "name_original": "Flagstaff House",
    "name_source": "ko",
    "recommendations": [],
-   "tips": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/42255475",
+     "text": "영업시간 We-Mo 10:00-18:00 open \"LNY eve ~17:00\"; PH 10:00-18:00 open \"LNY D1-2 off\"; Dec24 10:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
    "verification": {
-    "coord_delta_m": 186.4,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q27686",
-    "Q63099748"
+    "Q33506"
    ],
-   "wikidata_id": "Q1064758"
+   "wikidata_id": "Q908224"
   },
   {
    "area": "야우짐웡구",
    "category": "building_landmark",
-   "description": "더 페닌슐라 홍콩(영어: The Peninsula Hong Kong, 중국어 정체자: 香港半島酒店), 또는 홍콩 페닌슐라 호텔은 홍콩 가우룽 짐사저이에 위치한 최고급 호텔로 더 페닌슐라 호텔 그룹의 대표 호텔이자 홍콩 상하이 호텔그룹 소속이다. 1928년에 문을 연 최초의 페닌슐라 브랜드 호텔로, 1994년에 대대적인 확장공사를 거쳐 식민지 시절과 현대적인 요소가 공존하는 모습을 갖추게 되었다. 호텔에서 운영하는 차량은 롤스로이스 차량으로 '페닌슐라 그린'이라 불리는 색으로 도색하여 여러 대를 보유한 것으로도 유명하다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "더 페닌슐라 홍콩",
-    "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%ED%8E%98%EB%8B%8C%EC%8A%90%EB%9D%BC_%ED%99%8D%EC%BD%A9"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1757744",
-   "importance": {
-    "sitelinks": 13
-   },
-   "lat": 22.295292,
-   "lng": 114.171531,
-   "name": "더 페닌슐라 홍콩",
-   "name_original": "半島酒店",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q27686"
-   ],
-   "wikidata_id": "Q1757744"
-  },
-  {
-   "area": "야우짐웡구",
-   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "홍콩문화중심(중국어: 香港文化中心, 영어: Hong Kong Cultural Centre)은 홍콩 짐사저이에 위치한 종합 예술 문화 시설이다. 오페라, 발레, 뮤지컬, 연극, 관현악, 실내악 등의 각종 공연이 개최되고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -418,6 +669,7 @@
     "title": "홍콩문화중심",
     "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9%EB%AC%B8%ED%99%94%EC%A4%91%EC%8B%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -448,8 +700,10 @@
   {
    "area": "난 구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -477,8 +731,48 @@
    "wikidata_id": "Q1207908"
   },
   {
+   "area": "중완",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "성 요한 대성당(중국어 정체자: 聖約翰座堂, 간체자: 圣约翰座堂, 병음: Shèng Yuēhàn Zuòtáng) 또는 성 요한 주교좌 성당은 홍콩 성공회 홍콩 섬 교구의 대성당이다. 홍콩에서 제일 오래된 고딕 양식의 성당이다. 1847년에 건축이 시작되어서 1849년에 완공과 축성되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성 요한 대성당 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EC%9A%94%ED%95%9C_%EB%8C%80%EC%84%B1%EB%8B%B9_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2942473",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 22.27885,
+   "lng": 114.159558,
+   "name": "성 요한 대성당",
+   "name_original": "聖約翰座堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q56242250"
+   ],
+   "wikidata_id": "Q2942473"
+  },
+  {
    "area": "중시구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "홍콩 대회당(중국어 정체자: 香港大會堂, Hong Kong City Hall)은 홍콩 홍콩섬 쭝완 에든버러 광장에 위치한 건물이다. 영어명은 '홍콩 시청'이지만 홍콩에서는 홍콩 그 자체나 홍콩 내 어떤 지역이든 '시'라고 지칭하지 않기에 시장이나 시의회가 없다. 그래서 전세계 각지의 시청과는 달리 홍콩 시청에는 시 행정부 청사가 존재하지 않는다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -487,6 +781,7 @@
     "title": "홍콩 대회당",
     "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EB%8C%80%ED%9A%8C%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -515,31 +810,739 @@
   },
   {
    "area": "중시구",
-   "category": "building_landmark",
-   "description": "포 시즌스 호텔 홍콩(영어: Four Seasons Hotel Hong Kong, 중국어 정체자: 香港四季酒店)은 홍콩 중완의 국제금융센터에 위치한 5성급 호텔이다. 산훙게이 지산발전유한공사가 소유하고 있다. 2005년 9월에 완공하여 개장했다.",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "란콰이퐁(중국어 정체자: 蘭桂坊, 광둥어 예일: Làahn'gwaifōng, 한자음: 난계방, Lan Kwai Fong, 약칭 LKF)은 홍콩 중서부의 지명이다. 1980년대 중반에 인기를 누렸다. 서울의 이태원처럼 홍콩에서 거주하는 외국인들이 즐기는 클럽과 식당이 많고 카페와 가라오케도 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "포 시즌스 호텔 홍콩",
-    "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC_%EC%8B%9C%EC%A6%8C%EC%8A%A4_%ED%98%B8%ED%85%94_%ED%99%8D%EC%BD%A9"
+    "title": "란콰이퐁",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9E%80%EC%BD%B0%EC%9D%B4%ED%90%81"
    },
+   "discovery": "en",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q2365550",
+   "id": "wd:Q3124270",
    "importance": {
     "sitelinks": 10
    },
-   "lat": 22.28664,
-   "lng": 114.1566,
-   "name": "포 시즌스 호텔 홍콩",
-   "name_original": "Four Seasons Hotel Hong Kong",
+   "lat": 22.280861,
+   "lng": 114.155706,
+   "name": "란콰이퐁",
+   "name_original": "蘭桂坊",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 39.2,
+    "coord_delta_m": 22.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007"
+   ],
+   "wikidata_id": "Q3124270"
+  },
+  {
+   "area": "중시구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "성완(上環, Sheung Wan)은 홍콩의 지명 중 하나로, 홍콩섬 북서부의 중완과 사이잉푼 사이에 위치해 있다. 행정구역상으로는 중사이구에 속한다. 옛날엔 '서구'(西區, Western District)라 불리었으며, 중완이나 완자이에 비해 높은 지역이라는 의미에서 '어퍼 디스트릭트'(Upper District), 영국군이 처음으로 상륙하여 점령한 지역이란 뜻에서 '게이트웨이 디스트릭트'(Gateway District)라고도 부른다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "성완",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1%EC%99%84"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5016845",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 22.28524,
+   "lng": 114.15139,
+   "name": "성완",
+   "name_original": "上環",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q5016845"
+  },
+  {
+   "area": "홍콩",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "스카이100(중국어: 天際100)은 홍콩 국제상업센터 100층에 위치한 전망대이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스카이100",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%EC%B9%B4%EC%9D%B4100"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7537147",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 22.303392,
+   "lng": 114.160169,
+   "name": "스카이100",
+   "name_original": "天際100香港觀景台",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/2106910301",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q177305"
+   ],
+   "wikidata_id": "Q7537147"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타임스 스퀘어(Times Square, 時代廣場)는 홍콩섬 북부, 코즈웨이 베이(Causway Bay)에 위치한 쇼핑 센터, 영화관, 사무실 등을 갖춘 복합 시설이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타임스 스퀘어 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9E%84%EC%8A%A4_%EC%8A%A4%ED%80%98%EC%96%B4_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q836051",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 22.2783,
+   "lng": 114.182,
+   "name": "타임스 스퀘어",
+   "name_original": "時代廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 23.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q836051"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "홍콩 예빈부(香港禮賓府, Government House)는 홍콩 행정장관의 관저로 홍콩섬 중완에 있다. 홍콩 예빈부는 1855년 네오르네상스 건축으로 지어졌지만 일본의 홍콩 점령 동안 상당히 리모델링되어 현재는 일본식과 네오르네상스 양식이 절충됐다. 면적은 24000m2다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩 예빈부",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EC%98%88%EB%B9%88%EB%B6%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q838415",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 22.278664,
+   "lng": 114.157417,
+   "name": "홍콩 예빈부",
+   "name_original": "香港禮賓府",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1220959",
+    "Q481289"
+   ],
+   "wikidata_id": "Q838415"
+  },
+  {
+   "area": "둥구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "박곡(중국어: 北角, 한어 병음: Běijiǎo 베이자오[*], 월병: Bak1 gok3, 영어: North Point 노스포인트[*])는 홍콩, 홍콩섬 북부의 상업, 주택지구이다. 행정구로서는 둥구에 속한다. 홍콩섬의 북동부에 위치하고 2층 노면 전차 트램과 지하철 신강 선이 달리며(박곡역) 페리 부두도 있는 교통의 요충지이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "박곡",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%95%EA%B3%A1"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1045310",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.287111,
+   "lng": 114.191667,
+   "name": "박곡",
+   "name_original": "北角",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q1045310"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1583368",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.280278,
+   "lng": 114.169444,
+   "name": "홍콩 연예예술대학교",
+   "name_original": "香港演藝學院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q383092"
+   ],
+   "wikidata_id": "Q1583368"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "전 프랑스 외방전도회 대루(중국어 정체자: 前法國外方傳道會大樓 전법국외방전도회대루[*], 영어: Former French Mission Building)는 홍콩 중완 배터리 길 1번지에 위치한 홍콩의 등록문화재이다. 1997년 7월 1일부터 2015년 9월 6일까지는 홍콩 종심법원이 이 건물에 위치하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "전 프랑스 외방전도회 대루",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A0%84_%ED%94%84%EB%9E%91%EC%8A%A4_%EC%99%B8%EB%B0%A9%EC%A0%84%EB%8F%84%ED%9A%8C_%EB%8C%80%EB%A3%A8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1595391",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.27944,
+   "lng": 114.15972,
+   "name": "전 프랑스 외방전도회 대루",
+   "name_original": "前法國外方傳道會大樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q1595391"
+  },
+  {
+   "area": "군통구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "apm은 중국 홍콩 군통에 있는 대형 쇼핑 센터이다. 2005년 4월 문을 열었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "Apm (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/Apm_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q308279",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.3125,
+   "lng": 114.225,
+   "name": "apm",
+   "name_original": "apm",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 7.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315",
+    "Q11303"
+   ],
+   "wikidata_id": "Q308279"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "종심법원대루(중국어 정체자: 終審法院大樓, 월병: Zung1 sam2 faat3 jyun6 daai6 lau4, 광둥어 예일: Jūng sám faat yuhn daaih làuh, 영어: Court of Final Appeal Building) 또는 구 최고법원대루(중국어 정체자: 舊最高法院大樓, 월병: Gau6 zeoi3 gou1 faat3 jyun6 daai6lau4, 광둥어 예일: Gauh jeui gōu faat yuhn daaih làuh, 영어: Old Supreme Court Building)은 홍콩의 종심법원이 있는 건물이다. 1912년부터 1983년까지는 홍콩 최고법원이, 1985년부터 2011년까지는 홍콩 입법회가 자리했던 건물이기도 하다. 홍콩 중완 (센트럴)의 잭슨 로드 8번지에 위치해 있으며 황후상 광장 동쪽 면, 채터 공원에서 바로 서쪽에 붙어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "종심법원대루",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A2%85%EC%8B%AC%EB%B2%95%EC%9B%90%EB%8C%80%EB%A3%A8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6518233",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.28082,
+   "lng": 114.16034,
+   "name": "종심법원대루",
+   "name_original": "終審法院大樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q6518233"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "퀸 엘리자베스 병원(Queen Elizabeth Hospital, 伊利沙伯醫院)은 홍콩에서 가장 큰 종합병원들 중 하나로 엘리자베스 2세의 이름에서 따왔다. 퀸 엘리자베스 병원은 가우룽 남부의 주요한 3차 의료기관인데 병상은 1906석, 내외과의사 500명 이상, 직원 6850명이다. 퀸 엘리자베스 병원은 1963년 9월 6일 홍콩 총독 로버트 블랙에 의해 공식적으로 개관했는데 당시에는 영연방 최대의 종합병원으로 7030만 홍콩 달러의 비용이 들었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퀸 엘리자베스 병원 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%80%B8_%EC%97%98%EB%A6%AC%EC%9E%90%EB%B2%A0%EC%8A%A4_%EB%B3%91%EC%9B%90_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7270340",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.30934,
+   "lng": 114.17625,
+   "name": "퀸 엘리자베스 병원",
+   "name_original": "伊利沙伯醫院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 65.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16917"
+   ],
+   "wikidata_id": "Q7270340"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "AIA 센트럴(중국어: 友邦金融中心, AIA Central)은 홍콩에 있는 높이 185 미터짜리 건물이다. 이전 이름은 AIG 타워(AIG Tower)이다. 40층 건물이며, 2005년 완공되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "AIA 센트럴",
+    "url": "https://ko.wikipedia.org/wiki/AIA_%EC%84%BC%ED%8A%B8%EB%9F%B4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q841968",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.28125,
+   "lng": 114.161806,
+   "name": "AIA 센트럴",
+   "name_original": "友邦金融中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q841968"
+  },
+  {
+   "area": "홍콩",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "홍콩해사박물관(香港海事博物館, Hong Kong Maritime Museum)은 홍콩에 있는 비영리 박물관이다. 홍콩해사박물관은 보트, 선박, 해양탐험과 무역, 해전의 발전에 초점을 둔다. 남중국해 및 인근 해역에 관련된 내용이 주를 이루지만 홍콩의 해양성장에 대한 내용도 다룬다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩해사박물관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9%ED%95%B4%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q866615",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 22.286389,
+   "lng": 114.161944,
+   "name": "홍콩해사박물관",
+   "name_original": "香港海事博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q866615"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "iSQUARE(중국어: 國際廣場)는 홍콩 가우룽 네이선 로드에 위치한 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "ISQUARE",
+    "url": "https://ko.wikipedia.org/wiki/ISQUARE"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3010006",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.2969,
+   "lng": 114.172,
+   "name": "iSQUARE",
+   "name_original": "國際廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 7.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q3010006"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "서항성(중국어: 西港城, 영어: Western Market 웨스턴 마켓[*])은 홍콩 홍콩섬 셩완 지역에 있는 오래된 건물이다. 원래 2개 동으로 지어진 것으로, 현재는 북쪽 건물만이 사용되고 있다. 남쪽 건물은 1981년에 철거되었으며, 현재 그 자리에는 상환시정대하가 들어서 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "서항성",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%ED%95%AD%EC%84%B1"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3052497",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.28735,
+   "lng": 114.15037,
+   "name": "서항성",
+   "name_original": "西港城",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q3052497"
+  },
+  {
+   "area": "중시구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "에든버러 광장(영어: Edinburgh Place, 중국어: 愛丁堡廣場 오이딩보우궝청[*], 월병: (ng)oi3 ding1 bou2 gwong2 coeng4, 광둥어 예일: (ng)oi3 ding1 bou2 gwong2 cheung4)은 홍콩 중완에 위치한 광장이다. 빅토리아 항을 마주보고 있으며 홍콩 대회당 (시청)이 이곳에 위치해 있다. 2007년 초까지는 에든버러 광장 페리부두 (스타 페리 부두)와 퀸스 부두도 이곳에 자리했으나 철거되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에든버러 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EB%93%A0%EB%B2%84%EB%9F%AC_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5338242",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.283142,
+   "lng": 114.160548,
+   "name": "에든버러 광장",
+   "name_original": "愛丁堡廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 41.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q34442"
+   ],
+   "wikidata_id": "Q5338242"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "1881 헤리티지(영어: 1881 Heritage)는 홍콩 가우롱 짐사저이에 있는 역사적 건축물로, 수경총구총부 본부였다. 현재는 상가와 호텔로 사용되고 있다. 1884년에 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "전 수경총부",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A0%84_%EC%88%98%EA%B2%BD%EC%B4%9D%EB%B6%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5470101",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.2955,
+   "lng": 114.17,
+   "name": "전 수경총부",
+   "name_original": "1881",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5773747",
+    "Q861951"
+   ],
+   "wikidata_id": "Q5470101"
+  },
+  {
+   "area": "중시구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "중산기념공원(中山紀念公園, Sun Yat-sen Memorial Park)은 홍콩에 있는 해안공원으로 빅토리아항을 접한다. 중산기념공원은 쑨원의 이름에서 따왔는데 이는 홍콩에서 중국의 역사인물 이름을 딴 것으로는 유일하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중산기념공원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%82%B0%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7638632",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.29,
+   "lng": 114.145,
+   "name": "중산기념공원",
+   "name_original": "中山公园",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 514.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q136468788"
+   ],
+   "wikidata_id": "Q7638632"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "랜드마크(중국어: 置地廣場, The Landmark 더 랜드마크[*])는 홍콩의 중심지인 센트럴에 있는 복합 단지이다. 좁은 의미로는 쇼핑 센터만을 가리키기도 하는데, 이 쇼핑 센터에는 세계 각지의 명품 브랜드 매장들이 입주해 있는 것으로 유명하다. 사무실, 쇼핑 센터, 식당가를 겸한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "랜드마크 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9E%9C%EB%93%9C%EB%A7%88%ED%81%AC_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q8015602",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.281143,
+   "lng": 114.157828,
+   "name": "랜드마크",
+   "name_original": "置地廣塲",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 63.1,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -547,10 +1550,480 @@
    },
    "wikidata_classes": [
     "Q11303",
-    "Q63099748",
-    "Q27686"
+    "Q31374404",
+    "Q1021645"
    ],
-   "wikidata_id": "Q2365550"
+   "wikidata_id": "Q8015602"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "MegaBox는 홍콩 지우룽완에 위치한 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "MegaBox",
+    "url": "https://ko.wikipedia.org/wiki/MegaBox"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q8427777",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.3198,
+   "lng": 114.208,
+   "name": "MegaBox",
+   "name_original": "MegaBox",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q8427777"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "인민해방군 주홍콩부대빌딩(중국어: 人民解放軍駐港部隊大廈)은 인민해방군 주홍콩부대의 사령부가 있는 건물이다. 높이 120 미터, 층수 28층으로 이루어져 있다. 건물의 아래 부분이 좁게 들어가 있는 것이 큰 특징이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "인민해방군 주홍콩부대빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EB%AF%BC%ED%95%B4%EB%B0%A9%EA%B5%B0_%EC%A3%BC%ED%99%8D%EC%BD%A9%EB%B6%80%EB%8C%80%EB%B9%8C%EB%94%A9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q844621",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 22.281667,
+   "lng": 114.164167,
+   "name": "인민해방군 주홍콩부대 빌딩",
+   "name_original": "中國人民解放軍駐香港部隊大廈",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q18691599"
+   ],
+   "wikidata_id": "Q844621"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "패션 워크(Fashion Walk)는 홍콩 코즈웨이베이에 위치한 쇼핑센터이다. 그러나 해당 쇼핑몰은 코즈웨이베이의 패터슨 가도와 그레이트 조지 가도, 킹스턴 가도, 클리블랜드 가도 등의 주위를 둘러 쌓여 있는 것으로 전하고 있다. 한국의 압구정동에 상당한 거리이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "패션 워크",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%A8%EC%85%98_%EC%9B%8C%ED%81%AC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q23888262",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.28045,
+   "lng": 114.18544,
+   "name": "패션 워크",
+   "name_original": "Fashion Walk",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q23888262"
+  },
+  {
+   "area": "중시구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "배터리 길(영어: Battery Path →포대 길, 중국어 정체자: 炮台里, 파우터이레이)은 홍콩 중완의 가버먼트 힐 아래에 위치해 있는 보행 전용길이다. 길 명칭은 머리 포대(Murray Battery)에서 따왔으며 퀸스 로드에서 가든 로드까지의 거리를 잇는다. 길을 걷는 중간중간에 역사적 명소들이 많이 자리해 있으며, 그중에는 중구정부합서, 전 프랑스 외방전도회 대루, 세인트 존 성당이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "배터리 길",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%B0%ED%84%B0%EB%A6%AC_%EA%B8%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q4869877",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.2797,
+   "lng": 114.159,
+   "name": "배터리 길",
+   "name_original": "炮台里",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 45.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007",
+    "Q34442"
+   ],
+   "wikidata_id": "Q4869877"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "하버시티(중국어: 海港城, 병음: Hái Gǎng Chéng, 영어: Harbour City)는 홍콩 짐사저이에 위치한 대형 쇼핑 센터이다. 마르코 폴로 홍콩, 오션 터미널, 오션 센터, 더 게이트웨이 등으로 이루어져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하버시티",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%B2%84%EC%8B%9C%ED%8B%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5654807",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.2975,
+   "lng": 114.168611,
+   "name": "하버시티",
+   "name_original": "海港城",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q5654807"
+  },
+  {
+   "area": "완자이구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "펄시티 맨션(Pearl City Mansion)은 홍콩 홍콩섬의 코즈웨이베이에 속한 거리이자 가도인 패터슨 가도 22-36번지에 위치하고 있는 34층 짜리의 109m의 높이를 가진 주거 전용 건축물이다. 그러나 해당 건축물이 1971년 완공되었을 당시에는 중완에 위치한 윙 온 하우스를 능가하게 되어 있는 수치를 가진 고급 맨션촌으로 군림하고 있다. 그리고 1970년대 이후 홍콩에서 최초로 높이가 100m를 넘긴 최초의 도시 건축물로 기록되어 있으며, 이전에는 키콴 맨션이 홍콩에서 가장 높은 건축물로 알려져 온 것으로 보인다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "펄시티 맨션",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%84%EC%8B%9C%ED%8B%B0_%EB%A7%A8%EC%85%98"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7213032",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.281,
+   "lng": 114.186,
+   "name": "펄시티 맨션",
+   "name_original": "翡翠明珠廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q7213032"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "The ONE은 홍콩 짐사저이에 위치한 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "The ONE",
+    "url": "https://ko.wikipedia.org/wiki/The_ONE"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7754563",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 22.2998,
+   "lng": 114.172,
+   "name": "The ONE",
+   "name_original": "The ONE",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 41.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q7754563"
+  },
+  {
+   "area": "중시구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "입법회종합대루(중국어: 立法會綜合大樓, 영어: Legislative Council Complex)는 홍콩 입법회가 자리해 있는 건물이다. 홍콩 중완 입법회로 1번지에 위치해 있으며 처음부터 홍콩 입법회의 의사당 역할을 목적으로 건설되었다. 공사는 2008년에 시작해서 2011년에 끝났다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "입법회 종합 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9E%85%EB%B2%95%ED%9A%8C_%EC%A2%85%ED%95%A9_%EB%B9%8C%EB%94%A9"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q13643095",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.280792,
+   "lng": 114.165578,
+   "name": "입법회 종합 빌딩",
+   "name_original": "立法會綜合大樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q30124446"
+   ],
+   "wikidata_id": "Q13643095"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "K11은 홍콩 짐사저이 더 마스터피스에 위치한 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "K11 (홍콩)",
+    "url": "https://ko.wikipedia.org/wiki/K11_(%ED%99%8D%EC%BD%A9)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6324297",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.2977,
+   "lng": 114.174,
+   "name": "K11",
+   "name_original": "K11",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q6324297"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "미라마 쇼핑센터(중국어: 美麗華商場, 영어: Miramar Shopping Centre)는 홍콩 짐사저이에 위치한 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "미라마 쇼핑센터",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%9D%BC%EB%A7%88_%EC%87%BC%ED%95%91%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6872708",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.300883,
+   "lng": 114.17258,
+   "name": "미라마 쇼핑센터",
+   "name_original": "美麗華廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 51.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q6872708"
+  },
+  {
+   "area": "홍콩",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "머리 포대(영어: Murray Battery, 중국어 정체자: 美利炮台)는 홍콩 중완의 가버먼트 힐 배터리 길에 있었던 영국군 포대이다. 조지 머리 경의 성을 따서 붙여진 명칭이며 영국군이 홍콩을 점거한 직후인 1841년에 완공되었다. 이후 식민지 청사를 지키기 위한 용도로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "머리 포대",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A8%B8%EB%A6%AC_%ED%8F%AC%EB%8C%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6939121",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.27944,
+   "lng": 114.15859,
+   "name": "머리 포대",
+   "name_original": "美利炮台",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 78.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q56344492"
+   ],
+   "wikidata_id": "Q6939121"
+  },
+  {
+   "area": "야우짐웡구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "홍콩 세인트 메리 캐노션 여학교(St. Mary's Canossian College)는 중화인민공화국 광둥성 홍콩 특별행정구의 로마 가톨릭 종파 사립 여학교이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "홍콩 세인트 메리 캐노션 여학교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%BD%A9_%EC%84%B8%EC%9D%B8%ED%8A%B8_%EB%A9%94%EB%A6%AC_%EC%BA%90%EB%85%B8%EC%85%98_%EC%97%AC%ED%95%99%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7590095",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 22.3031,
+   "lng": 114.176,
+   "name": "홍콩 세인트 메리 캐노션 여학교",
+   "name_original": "嘉諾撒聖瑪利書院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 31.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q159334"
+   ],
+   "wikidata_id": "Q7590095"
   }
  ]
 }

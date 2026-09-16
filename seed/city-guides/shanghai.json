@@ -1,0 +1,1355 @@
+{
+ "center": {
+  "lat": 31.2397,
+  "lng": 121.49
+ },
+ "city_id": "shanghai",
+ "country_code": "CN",
+ "country_en": "China",
+ "country_ko": "중국",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 100,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 4,
+   "bridge": 1,
+   "building_landmark": 15,
+   "museum": 4,
+   "park": 3,
+   "river": 1,
+   "worship": 3
+  },
+  "denylisted_count": 0,
+  "described_count": 25,
+  "discovery": {
+   "both": 13,
+   "en": 17,
+   "ko": 1
+  },
+  "discovery_pool": {
+   "both": 44,
+   "en": 58,
+   "ko": 1
+  },
+  "effective_radius_m": 8000,
+  "en_page_count": 404,
+  "excluded_count": 9,
+  "grade_window": 25,
+  "hours_count": 4,
+  "ko_label_count": 25,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 45,
+  "korean_count": 103,
+  "mapped_count": 405,
+  "no_korean_count": 302,
+  "page_count": 449,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 31,
+  "unclassified_count": 60,
+  "unmapped_count": 0,
+  "verification_failed_count": 6
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 6곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 6곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 27곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 60건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 302건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 1곳 · 영어 검색에서만 17곳 · 양쪽 13곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Shanghai",
+ "name_ko": "상하이",
+ "name_local": "上海",
+ "query": {
+  "en_page_count": 404,
+  "gslimit": 500,
+  "ko_page_count": 45,
+  "korean_count": 103,
+  "limit": 150,
+  "mapped_count": 405,
+  "page_count": 449,
+  "radius_clamped": false,
+  "radius_m": 8000,
+  "registry_radius_m": 8000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 8000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "푸둥 신구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 세계금융센터(중국어 간체자: 上海环球金融中心, 정체자: 上海環球金融中心, 병음: Shànghǎi huánqiú jīnróng zhōngxīn, 영어: Shanghai World Financial Center)는 중국 상하이 푸둥신구에 건설된 494m의 중국에서 여섯번째로 높은 빌딩이다. 약칭은 SWFC이다. 현재 세계에서 12위로 높은 건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 세계금융센터",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EC%84%B8%EA%B3%84%EA%B8%88%EC%9C%B5%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q80852",
+   "importance": {
+    "sitelinks": 60
+   },
+   "lat": 31.236667,
+   "lng": 121.502778,
+   "name": "상하이 세계금융센터",
+   "name_original": "上海环球金融中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q80852"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 타워(중국어: 上海中心大厦, 병음: Shànghǎi Zhōngxīn Dàshà, 영어: Shanghai Tower) 혹은 상하이 센터 빌딩은 중국 상하이 푸둥 신구에 있는 마천루이다. 높이는 632m, 128층으로 아랍에미리트 두바이의 부르즈 할리파, 말레이시아 쿠알라룸푸르에 있는 KL118 다음으로 높은 건물이다. 2008년 11월 29일 착공하여 2014년에 완공하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q18547",
+   "importance": {
+    "sitelinks": 57
+   },
+   "lat": 31.2355,
+   "lng": 121.501,
+   "name": "상하이 타워",
+   "name_original": "上海中心大厦",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q18547"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "동방명주탑(중국어 간체자: 东方明珠塔, 정체자: 東方明珠塔, 병음: Dōngfāngmíngzhū Tǎ 둥팡밍주타[*])은 상하이에 있는 방송탑이다. 정식 명칭은 동방명주 방송탑(중국어 간체자: 东方明珠电视塔, 정체자: 東方明珠電視塔, 병음: Dōngfāngmíngzhū Diànshìtǎ 둥팡밍주 뎬스타[*])으로 황푸강변 푸둥 신구의 루자쭈이에 위치하고 있다. 반대쪽은 와이탄이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "동방명주탑",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EB%B0%A9%EB%AA%85%EC%A3%BC%ED%83%91"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/40778038"
+   },
+   "hours_text": "08:00-21:30",
+   "id": "wd:Q223207",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 31.241669,
+   "lng": 121.494717,
+   "name": "동방명주탑",
+   "name_original": "東方明珠廣播電視塔",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/40778038",
+     "text": "영업시간 08:00-21:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 26.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1440300",
+    "Q11166728",
+    "Q6838244"
+   ],
+   "wikidata_id": "Q223207"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "진마오 타워(영어: Jin Mao Tower) 또는 진마오 빌딩(중국어: 金茂大厦, 병음: Jīnmào Dàshà)은 중국 상하이시 푸둥 구 뤼자쭈이에 있는 마천루로 1998년에 지어진 지상 88층, 421m의 건물이다. 2015년 기준으로, 진마오 타워는 상하이에서 세 번째로 높은 마천루이자 중국 대륙에서 10번째로 높은 빌딩이다. 완공 당시 진마오 타워는 당시 중국에서 가장 높은 빌딩으로 세계 3위였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "진마오 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A7%88%EC%98%A4_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q80813",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 31.237222,
+   "lng": 121.501389,
+   "name": "진마오 타워",
+   "name_original": "金茂大厦",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q80813"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/476779776"
+   },
+   "hours_text": "24/7",
+   "id": "wd:Q1161278",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 31.234444,
+   "lng": 121.471667,
+   "name": "쉬마오 인터내셔널 플라자",
+   "name_original": "上海世茂国际广场",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/476779776",
+     "text": "영업시간 24/7 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 217.9,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q1161278"
+  },
+  {
+   "area": "황푸구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "예원(중국어 간체자: 豫园, 정체자: 豫園, 병음: Yùyuán 위위안[*])은 상하이 구시가지 푸시의 중앙에 위치하고 있는 명청시대의 양식을 가지고 있는 정원이다. 중국 정원 중에서도 가장 섬세하고 아름답다고 평가받고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "예원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%88%EC%9B%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/40036584"
+   },
+   "hours_text": "08:00-17:15",
+   "id": "wd:Q1328025",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 31.229167,
+   "lng": 121.4875,
+   "name": "예원",
+   "name_original": "豫园",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/40036584",
+     "text": "영업시간 08:00-17:15 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/40036584",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q47692",
+    "Q22746"
+   ],
+   "wikidata_id": "Q1328025"
+  },
+  {
+   "area": "상하이시",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "난징루(남경로,중국어: 南京路, 병음: Nánjīng Lù)는 상하이의 주요 쇼핑 센터가 있는 거리이며, 난징둥루와 난징시루로 나뉜다. 1945년 이전의 난징루는 현재의 난징둥루를 가리킨다. 난징루는 상하이 푸시의 중앙에 위치를 하며, 난징시루(南京西路)에서 난징둥루(南京东路)로 이어지고, 황푸강 유역의 와이탄까지 연결되어 도보로도 이동할 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "난징루",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%9C%EC%A7%95%EB%A3%A8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q579977",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 31.234722,
+   "lng": 121.474444,
+   "name": "난징루",
+   "name_original": "南京路",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34442",
+    "Q21000333"
+   ],
+   "wikidata_id": "Q579977"
+  },
+  {
+   "area": "상하이시",
+   "category": "river",
+   "coord_source": "wikidata:P625",
+   "description": "우쑹강(呉淞江) 또는 쑤저우허(蘇州河)는 황푸강의 주요한 지류이다. 타이호에서 발원해 상하이 시가지의 와이탄 북단에 있는 와이바이 도교(外白渡橋)의 근처에서 황푸강에 합류한다. 전체 길이 125km, 상하이 시내를 흐르는 거리는 54km이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "우쑹강",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9A%B0%EC%91%B9%EA%B0%95"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q907674",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 31.2449,
+   "lng": 121.487,
+   "name": "우쑹강",
+   "name_original": "吴淞江",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4022"
+   ],
+   "wikidata_id": "Q907674"
+  },
+  {
+   "area": "상하이시",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "인민광장(중국어 간체자: 人民广场, 정체자: 人民廣場, 병음: Rénmín Guǎngchǎng 런민광창[*])은 중화인민공화국 상하이시 황푸구에 있는 대단위 공원 광장이다. 상하이시정부가 이 인민광장에 자리 잡고 있으며, 상하이 주요 지역의 거리를 재는 기준점이 된다. 말레이시아에도 있으나, 이쪽은 폐건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "인민광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EB%AF%BC%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1078123",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 31.2309,
+   "lng": 121.4703,
+   "name": "인민광장",
+   "name_original": "人民广场",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 415.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q1078123"
+  },
+  {
+   "area": "Nanjingdonglu Subdistrict",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "상하이대극원(上海大剧院)은 상하이 황푸구 인민광장 북부의 시정부 옆의 큰 길가에 있다. 황피루와 통하는 입구이다. 상하이 대극원은 상하이를 대표하는 독특한 건물 중의 하나이며, 건설하는 데 런민폐 12억 원이 들 정도의 대공사였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 대극원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EB%8C%80%EA%B7%B9%EC%9B%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1325611",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 31.232,
+   "lng": 121.467,
+   "name": "상하이 대극원",
+   "name_original": "上海大剧院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24354",
+    "Q153562",
+    "Q1060829"
+   ],
+   "wikidata_id": "Q1325611"
+  },
+  {
+   "area": "푸시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q926767",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 31.232,
+   "lng": 121.465,
+   "name": "투모로우 광장",
+   "name_original": "明天廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q926767"
+  },
+  {
+   "area": "상하이시",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "위포쓰(玉佛寺)는 옥불선사(玉佛禅寺)라고도 하며, 상하이 안유안루(安远路)에 자리잡고 있는 상하이에서 가장 유명한 사원 중의 하나이다. 1882년에 미얀마에서 수입해온 두 개의 옥불상으로 건립되었으며, 좌불은 1.95m 높이에 3톤이며, 작은 것은 부처의 죽음을 의미하는 와불이다. 지금은 더 거대한 와불을 가지고 있는데, 이것은 싱가포르에서 기증된 와불이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "위포쓰",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%8F%AC%EC%93%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q967601",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 31.243333,
+   "lng": 121.440278,
+   "name": "위포쓰",
+   "name_original": "玉佛寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q967601"
+  },
+  {
+   "area": "상하이시",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "양푸 대교(중국어 간체자: 杨浦大橋, 정체자: 楊浦大橋, 병음: Yángpǔ Dàqiáo)는 중화인민공화국 상하이 황푸강에 세워진 다리로 양푸 구와 푸둥 신구를 잇는 사장교이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "양푸 대교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%96%91%ED%91%B8_%EB%8C%80%EA%B5%90"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1365598",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 31.2575,
+   "lng": 121.541389,
+   "name": "양푸 대교",
+   "name_original": "杨浦大桥",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 61.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q537127",
+    "Q158555"
+   ],
+   "wikidata_id": "Q1365598"
+  },
+  {
+   "area": "상하이시",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "정안사(중국어: 静安寺, 병음: Jìng'ānsì)는 중국 상하이 징안 구 난징시루 1686번지에 있는 불교 사원이다. 그 역사는 3세기의 삼국시대까지 거슬러 올라가고，강남 지역의 유구한 역사에 영향을 주었던 명찰 중 하나이다 ．",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "징안쓰",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%95%EC%95%88%EC%93%B0"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q403189",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 31.225,
+   "lng": 121.440833,
+   "name": "징안쓰",
+   "name_original": "静安寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5393308"
+   ],
+   "wikidata_id": "Q403189"
+  },
+  {
+   "area": "황푸구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1326515",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 31.2226,
+   "lng": 121.47,
+   "name": "신티엔디",
+   "name_original": "新天地",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q1326515"
+  },
+  {
+   "area": "상하이시",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 성황묘(上海城隍庙)는 상하이 구도시의 오래된 도교 사원이다. 2006년 1년간의 공사로 복원되었다. 황푸구 남부 예원 맞은 편에 위치하며, 예원 상청에 가로 막혀 바로 보이지는 않는다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 성황묘",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EC%84%B1%ED%99%A9%EB%AC%98"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q289901",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 31.227778,
+   "lng": 121.488056,
+   "name": "상하이 성황묘",
+   "name_original": "上海城隍廟",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q21683788"
+   ],
+   "wikidata_id": "Q289901"
+  },
+  {
+   "area": "Zhoujiadu Subdistrict",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "메르세데스-벤츠 아레나(중국어 간체자: 梅赛德斯-奔驰文化中心, 정체자: 賽德斯-奔馳文化中心, 병음: Méisàidésī-Bēnchí Wénhuà Zhōngxīn)는 중화인민공화국 상하이시 푸둥 신구 엑스포 2010 이전 부지에 위치한 실내 경기장이다. 이 시설은 18,000명을 수용할 수 있으며 더 작은 규모의 공연장도 포함되어 있다. 2010년 엑스포 개막식이 열렸으며, 당시에는 엑스포 문화 센터라는 이름으로 불렸다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "메르세데스-벤츠 아레나 (상하이시)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A9%94%EB%A5%B4%EC%84%B8%EB%8D%B0%EC%8A%A4-%EB%B2%A4%EC%B8%A0_%EC%95%84%EB%A0%88%EB%82%98_(%EC%83%81%ED%95%98%EC%9D%B4%EC%8B%9C)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q770149",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 31.191291,
+   "lng": 121.489391,
+   "name": "메르세데스-벤츠 아레나",
+   "name_original": "梅赛德斯-奔驰文化中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q641226",
+    "Q1060829",
+    "Q1763828"
+   ],
+   "wikidata_id": "Q770149"
+  },
+  {
+   "area": "상하이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 도시계획전시관(중국어 간체자: 上海城市规划展示馆, 정체자: 上海城市規劃展示館, 병음: Shànghǎi Chéngshì Guīhuà Zhǎnshì Guǎn)은 중국 상하이시 인민광장에 있는 박물관이다. 지상 5층, 지하 2층으로 되어 있으며, 상하이 도시계획과 발전에 관한 전시를 하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 도시계획전시관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EB%8F%84%EC%8B%9C%EA%B3%84%ED%9A%8D%EC%A0%84%EC%8B%9C%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/39763847"
+   },
+   "hours_text": "Su 09:00-17:00; Tu-Sa 09:00-17:00",
+   "id": "wd:Q713922",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 31.233368,
+   "lng": 121.47048,
+   "name": "상하이 도시계획전시관",
+   "name_original": "上海城市规划展示馆",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/39763847",
+     "text": "영업시간 Su 09:00-17:00; Tu-Sa 09:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/39763847",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q713922"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2024017",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 31.241264,
+   "lng": 121.506523,
+   "name": "원 뤼자쭈이",
+   "name_original": "时代金融中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 496.7,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q2024017"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중국은행 타워 상하이(중국어: 上海中銀大廈 상해중은대하[*], 영어: Bank of China Tower Shanghai 뱅크 오브 차이나 타워 상하이[*])는 중화인민공화국 상하이시 푸둥 구에 위치한 마천루이다. 지상 53층, 226m의 건물로 안테나가 258m의 높이까지 솟아 있다. 홍콩 중국은행 타워와 비슷한 업무를 담당하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국은행 타워 (상하이)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EC%9D%80%ED%96%89_%ED%83%80%EC%9B%8C_(%EC%83%81%ED%95%98%EC%9D%B4)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2405705",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 31.240556,
+   "lng": 121.498889,
+   "name": "중국은행 타워",
+   "name_original": "中银大厦",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 37.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q2405705"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q430218",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 31.223611,
+   "lng": 121.440139,
+   "name": "상하이 윌락 광장",
+   "name_original": "会德丰国际广场",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.2,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q430218"
+  },
+  {
+   "area": "훙커우구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "루쉰 공원(鲁迅公园) 또는 노산 공원은 중화인민공화국 상하이에 위치한 공원이다. 과거에는 훙커우 공원(虹口公园)이라고 불렸었다. 대한민국에서는 윤봉길이 폭탄을 투척한 사건의 장소로 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루쉰 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%EC%89%B0_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1142220",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 31.272836,
+   "lng": 121.478425,
+   "name": "루쉰 공원",
+   "name_original": "鲁迅公园",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q1142220"
+  },
+  {
+   "area": "난징루",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 미술관(上海美术馆)은 중화인민공화국 상하이시에 있던 미술관이다. 2012년 12월 31일에 폐관하여, 박물관의 기능은 중화예술궁으로 개칭되었다. 상하이 황피베이루의 입구에, 난징시루 325번지에 있었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1194314",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 31.232611,
+   "lng": 121.466583,
+   "name": "상하이 미술관",
+   "name_original": "上海美术馆",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 35.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q1194314"
+  },
+  {
+   "area": "황푸구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중국공산당 제1차 전국대표대회 회지 약칭 중공일대회지(中共一大會址)는 중화인민공화국 상하이의 신톈디(新天地) 근처에 루완구(卢湾区) 씽예루(兴业路) 78번지에 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국공산당 제1차 전국대표대회 회지",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EA%B3%B5%EC%82%B0%EB%8B%B9_%EC%A0%9C1%EC%B0%A8_%EC%A0%84%EA%B5%AD%EB%8C%80%ED%91%9C%EB%8C%80%ED%9A%8C_%ED%9A%8C%EC%A7%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q41728",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 31.222083,
+   "lng": 121.470694,
+   "name": "중국공산당 제1차 전국대표대회 회지",
+   "name_original": "中國共產黨第一次全國代表大會會址",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176",
+    "Q33506"
+   ],
+   "wikidata_id": "Q41728"
+  },
+  {
+   "area": "상하이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중국 유럽 국제공상학원(중국어 간체자: 中欧国际工商学院, 정체자: 中歐國際工商學院, 영어: China Europe International Business School), 줄여서 CEIBS는 중화인민공화국 상하이에 있는 경영대학원이다. 1994년 11월 중화인민공화국 정부와 유럽 위원회 사이의 합의로 세워졌으며, 중화인민공화국 본토에 세워진 첫 경영대학원이다. 중국 유럽 국제공상학원의 풀타임 MBA 과정과 Executive MBA 과정, 관리자 교육 과정은 파이낸셜 타임스가 선정한 세계 30위권 경영대학원 가운데 하나로 뽑혔다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중국 유럽 국제공상학원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD_%EC%9C%A0%EB%9F%BD_%EA%B5%AD%EC%A0%9C%EA%B3%B5%EC%83%81%ED%95%99%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1073268",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 31.200833,
+   "lng": 121.429722,
+   "name": "중국 유럽 국제공상학원",
+   "name_original": "中欧国际工商学院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1143635"
+   ],
+   "wikidata_id": "Q1073268"
+  },
+  {
+   "area": "쉬후이구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3267286",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 31.233425,
+   "lng": 121.531683,
+   "name": "위안션 체육중심",
+   "name_original": "源深体育中心体育场",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q3267286"
+  },
+  {
+   "area": "황푸구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "강해관(중국어: 江海关大楼)은 중화인민공화국 상하이 와이탄에 위치한 7층짜리 건축물로 1927년에 건축되어 지금까지 세관으로 사용되고 있다. 옆에 있는 HSBC 건물과 함께 상하이 와이탄을 상징하는 건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "강해관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%ED%95%B4%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5196503",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 31.238611,
+   "lng": 121.485417,
+   "name": "강해관",
+   "name_original": "江海关",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 200.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q5196503"
+  },
+  {
+   "area": "상하이시",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "런민 공원(중국어 간체자: 人民公园, 병음: Rénmín Gōngyuán 인민공원[*])은 중국의 상하이시의 중심인 황푸구에 있는 공원이다. 이 곳은 상점가인 난징루의 남쪽, 런민 광장의 북쪽에 해당한다. 지금은 없어진 상하이 경마장의 북쪽 절반에 해당하며, 1952년에 개원했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "런민 공원 (상하이시)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%AF%BC_%EA%B3%B5%EC%9B%90_(%EC%83%81%ED%95%98%EC%9D%B4%EC%8B%9C)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q10867684",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 31.233944,
+   "lng": 121.467813,
+   "name": "런민 공원",
+   "name_original": "上海人民公园",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 534.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22746"
+   ],
+   "wikidata_id": "Q10867684"
+  },
+  {
+   "area": "상하이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "상하이 당대예술관(중국어: 上海当代艺术馆, 영어: Museum of Contemporary Art Shanghai, MOCA Shanghai)은 중국 상하이시에 있는 현대 미술관이다. 이 미술관은 런민 광장의 북쪽 런민 공원 부근의 관공서 또는 박물관이 있는 장소에 있다. 이 장소는 한때 상하이 경마장이었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이 당대예술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4_%EB%8B%B9%EB%8C%80%EC%98%88%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3329586",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 31.233316,
+   "lng": 121.468084,
+   "name": "상하이 당대예술관",
+   "name_original": "上海当代艺术馆",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q3329586"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "톈쯔팡(중국어: 田子坊, 병음: Tiánzǐ Fāng)은 중국 상하이시 황푸구 타이캉루 210번지에 위치한 예술, 쇼핑 지역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "톈쯔팡",
+    "url": "https://ko.wikipedia.org/wiki/%ED%86%88%EC%AF%94%ED%8C%A1"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7800264",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 31.210228,
+   "lng": 121.46413,
+   "name": "톈쯔팡",
+   "name_original": "田子坊",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 56.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q7800264"
+  },
+  {
+   "area": "상하이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "상하이역사박물관(Shanghai History Museum, 上海市历史博物馆)은 중화인민공화국 상하이시의 역사를 전적으로 다루는 박물관이다. 이 박물관은 1843년 개항 시기부터 1949년 공산주의에 인계된 수백년에 걸친 상하이의 역사를 아우르는 물품들이 전시되어 있다. 이 박물관의 오래된 유물은 6,000년 전으로 거슬러 올라간다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "상하이역사박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%95%98%EC%9D%B4%EC%97%AD%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q779273",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 31.23267,
+   "lng": 121.46663,
+   "name": "상하이역사박물관",
+   "name_original": "上海市历史博物馆",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2898.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16735822"
+   ],
+   "wikidata_id": "Q779273"
+  }
+ ]
+}

@@ -7,38 +7,58 @@
  "country_code": "IT",
  "country_en": "Italy",
  "country_ko": "이탈리아",
- "grade": "partial",
+ "grade": "full",
  "harvest": {
-  "candidate_count": 17,
+  "candidate_count": 59,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "building_landmark": 5,
-   "castle": 3,
-   "museum": 2,
+   "attraction": 6,
+   "bridge": 2,
+   "building_landmark": 6,
+   "castle": 6,
+   "museum": 7,
    "tower": 2,
-   "worship": 2
+   "worship": 8
   },
   "denylisted_count": 0,
-  "described_count": 14,
+  "described_count": 36,
+  "discovery": {
+   "both": 18,
+   "en": 18,
+   "ko": 1
+  },
+  "discovery_pool": {
+   "both": 25,
+   "en": 31,
+   "ko": 4
+  },
   "effective_radius_m": 3000,
-  "excluded_count": 1,
-  "grade_window": 14,
-  "hours_count": 6,
-  "ko_label_count": 14,
+  "en_page_count": 379,
+  "excluded_count": 2,
+  "grade_window": 25,
+  "hours_count": 13,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 29,
-  "page_count": 29,
+  "ko_page_count": 29,
+  "korean_count": 60,
+  "mapped_count": 383,
+  "no_korean_count": 323,
+  "page_count": 408,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 14,
-  "unclassified_count": 2,
-  "verification_failed_count": 0
+  "spot_count": 37,
+  "unclassified_count": 20,
+  "unmapped_count": 0,
+  "verification_failed_count": 1
  },
  "known_gaps": [
-  "영업시간이 없는 스팟 8곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 24곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 2건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 20건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 323건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 1곳 · 영어 검색에서만 18곳 · 양쪽 18곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -46,14 +66,21 @@
  "name_ko": "베네치아",
  "name_local": "Venezia",
  "query": {
+  "en_page_count": 379,
   "gslimit": 500,
+  "ko_page_count": 29,
+  "korean_count": 60,
   "limit": 150,
-  "mapped_count": 29,
-  "page_count": 29,
+  "mapped_count": 383,
+  "page_count": 408,
   "radius_clamped": false,
   "radius_m": 3000,
   "registry_radius_m": 3000,
-  "sitelink_min": 20
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 3000,
  "retrieved_at": "2026-09-16",
@@ -63,6 +90,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -83,7 +115,199 @@
  "spots": [
   {
    "area": "베네치아",
-   "category": "building_landmark",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "산마르코 대성당(이탈리아어: Basilica di San Marco)은 이탈리아 베네토주 베네치아의 성당이다. 비잔틴 건축 양식의 대표적인 건축물 가운데 하나로 손꼽히며 산마르코 광장과 두칼레 궁전과 인접해 있다. 원래 두칼레 궁전에 소속된 성당이었으나, 1807년에 베네치아 대주교가 이 곳으로 주교좌를 옮기며 바티칸 소유의 대성당으로 승격되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산마르코 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EB%A7%88%EB%A5%B4%EC%BD%94_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/138800932"
+   },
+   "hours_text": "Oct 29-Apr 15,Apr 16-Oct 27 Mo-Sa 09:30-17:00; Oct 29-Apr 15 Su 14:00-16:30; Apr 16-Oct 27 Su 14:00-17:00",
+   "id": "wd:Q172988",
+   "importance": {
+    "sitelinks": 65
+   },
+   "lat": 45.434444,
+   "lng": 12.339722,
+   "name": "산마르코 대성당",
+   "name_original": "Basilica di San Marco",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/138800932",
+     "text": "영업시간 Oct 29-Apr 15,Apr 16-Oct 27 Mo-Sa 09:30-17:00; Oct 29-Apr 15 Su 14:00-16:30; Apr 16-Oct 27 Su 14:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/138800932",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2977",
+    "Q120560"
+   ],
+   "wikidata_id": "Q172988"
+  },
+  {
+   "area": "베네치아",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "H",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "두칼레 궁전",
+    "url": "https://ko.wikipedia.org/wiki/%EB%91%90%EC%B9%BC%EB%A0%88_%EA%B6%81%EC%A0%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/138803915"
+   },
+   "hours_text": "Apr 01-Oct 31 08:30-19:00; Nov 01-Mar 31 08:30-17:30",
+   "id": "wd:Q189883",
+   "importance": {
+    "sitelinks": 60
+   },
+   "lat": 45.433667,
+   "lng": 12.340417,
+   "name": "두칼레 궁전",
+   "name_original": "Palazzo Ducale",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/138803915",
+     "text": "영업시간 Apr 01-Oct 31 08:30-19:00; Nov 01-Mar 31 08:30-17:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/138803915",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 7.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q207694",
+    "Q124830213"
+   ],
+   "wikidata_id": "Q189883"
+  },
+  {
+   "area": "베네치아",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "산마르코 광장(이탈리아어: Piazza San Marco)은 이탈리아 베네치아에 위치한 광장으로, 베네치아의 가장 유명한 광장이며 베네치아의 정치적, 종교적 중심지 역할을 하던 광장이다. 베네치아에서는 산 마르코 광장을 단순히 '광장' (la Piazza)라고 지칭한다. 산마르코 광장과, 피아제타, 그리고 로마 광장을 제외한 다른 모든 공공 공간들은 광장이라고 불리는 대신에, 들판들이라는 뜻을 가진 캄피 (Campi - Campo의 복수)라고 불렸다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산마르코 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EB%A7%88%EB%A5%B4%EC%BD%94_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q217527",
+   "importance": {
+    "sitelinks": 54
+   },
+   "lat": 45.434,
+   "lng": 12.338,
+   "name": "산마르코 광장",
+   "name_original": "Piazza San Marco",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q1497375"
+   ],
+   "wikidata_id": "Q217527"
+  },
+  {
+   "area": "베네치아",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q52505",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 45.438008,
+   "lng": 12.335639,
+   "name": "리알토 교",
+   "name_original": "Ponte di Rialt",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.2,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q3397526",
+    "Q158438",
+    "Q1068842",
+    "Q1825472",
+    "Q3397551",
+    "Q132775089"
+   ],
+   "wikidata_id": "Q52505"
+  },
+  {
+   "area": "베네치아",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산타 마리아 델라 살루테 성당(이탈리아어: Basilica di Santa Maria della Salute)는 이탈리아 베네치아 도르소두로 푼타 델라 도가나에 위치한 성당이다. 카날 그란데와 베네치아 석호 중 하나인 바치노 디 산마르코 사이에 누워있는 좁은 손가락 모양의 땅 위에 세워져 있다. 17세기 베네치아에서 페스트가 광범위하게 발발하자, 베네치아 공화국에서 역병을 가라앉히기 위해 수호성인인 성모 마리아를 위한 봉헌물로 성당을 지은 뒤 헌납하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -92,6 +316,7 @@
     "title": "산타 마리아 델라 살루테 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%80_%EB%A7%88%EB%A6%AC%EC%95%84_%EB%8D%B8%EB%9D%BC_%EC%82%B4%EB%A3%A8%ED%85%8C_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -122,7 +347,102 @@
   },
   {
    "area": "베네치아",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "라 페니체(이탈리아어: La Fenice)는 이탈리아 베네치아에 위치한 극장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "라 페니체",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC_%ED%8E%98%EB%8B%88%EC%B2%B4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q223942",
+   "importance": {
+    "sitelinks": 44
+   },
+   "lat": 45.4337,
+   "lng": 12.3339,
+   "name": "라 페니체",
+   "name_original": "Gran Teatro La Fenice",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q153562"
+   ],
+   "wikidata_id": "Q223942"
+  },
+  {
+   "area": "베네치아",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "아카데미아 미술관(이탈리아어: Gallerie dell'Accademia)은 이탈리아 베네치아에 있는 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아카데미아 미술관 (베네치아)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8%EC%95%84_%EB%AF%B8%EC%88%A0%EA%B4%80_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/895805118"
+   },
+   "hours_text": "Tu-Su 08:15-19:15; Mo 8:15-14:00",
+   "id": "wd:Q338330",
+   "importance": {
+    "sitelinks": 42
+   },
+   "lat": 45.431078,
+   "lng": 12.328139,
+   "name": "아카데미아 미술관",
+   "name_original": "Gallerie dell'Accademia",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/895805118",
+     "text": "영업시간 Tu-Su 08:15-19:15; Mo 8:15-14:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 35.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q24699794",
+    "Q3867560",
+    "Q97662266",
+    "Q121076356",
+    "Q124830411"
+   ],
+   "wikidata_id": "Q338330"
+  },
+  {
+   "area": "베네치아",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "산마르코의 종탑(이탈리아어: Campanile di San Marco)은 이탈리아 베네치아 산마르코 광장에 있는 종탑이다. 높이는 98.6m이고, 산마르코 사원 앞에 있다. 아래쪽은 간단한 벽돌 구조로 되어 있으며, 상부에 아치형 종 걸이가 있으며, 안에 5개의 종이있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -131,6 +451,7 @@
     "title": "산마르코의 종탑",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EB%A7%88%EB%A5%B4%EC%BD%94%EC%9D%98_%EC%A2%85%ED%83%91"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -166,6 +487,7 @@
   {
    "area": "베네치아",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "카 도로(이탈리아어: Ca' d'Oro)는 이탈리아 베네치아 카날 그란데에 있는 궁전이다. 1927년부터는 미술관으로 사용되고 있기 때문에 프란게티 미술관(Galleria Franchetti)이라고도 한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -174,6 +496,7 @@
     "title": "카 도로",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4_%EB%8F%84%EB%A1%9C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -222,6 +545,7 @@
   {
    "area": "베네치아",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "아르세날레 디 베네치아(이탈리아어: Arsenale di Venezia)는 이탈리아 베네치아에 있는 조선소이자 병기창 복합단지이다. 베네치아 비엔날레가 일부 단지 지역에서 사용된다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -230,6 +554,7 @@
     "title": "아르세날레 디 베네치아",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%A5%B4%EC%84%B8%EB%82%A0%EB%A0%88_%EB%94%94_%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -257,8 +582,49 @@
    "wikidata_id": "Q1262248"
   },
   {
+   "area": "Venezia-Murano-Burano",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "카나레조(Cannaregio)는 이탈리아 베네치아의 세스티에레 (구) 중 하나이다. 베네치아에서 두번째로 큰 세스티에레로, 2007년 기준으로 인구는 13,169명이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카나레조",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%82%98%EB%A0%88%EC%A1%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q52423",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 45.446,
+   "lng": 12.327,
+   "name": "카나레조",
+   "name_original": "Cannaregio",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1067867",
+    "Q123705"
+   ],
+   "wikidata_id": "Q52423"
+  },
+  {
    "area": "베네치아",
-   "category": "building_landmark",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산타 마리아 글로리오사 데이 프라리 성당(이탈리아어: Basilica di Santa Maria Gloriosa dei Frari)은 이탈리아 베네치아 산폴로 지역의 캄포 데이 프라리에 있는 성당이다. 간단히 프라리(Frari)라고도 부른다. 성모 승천을 헌당한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -267,6 +633,7 @@
     "title": "산타 마리아 글로리오사 데이 프라리 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%80_%EB%A7%88%EB%A6%AC%EC%95%84_%EA%B8%80%EB%A1%9C%EB%A6%AC%EC%98%A4%EC%82%AC_%EB%8D%B0%EC%9D%B4_%ED%94%84%EB%9D%BC%EB%A6%AC_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -312,7 +679,8 @@
   },
   {
    "area": "베네치아",
-   "category": "building_landmark",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산티시모 레덴토레 교회(이탈리아어: Chiesa del Santissimo Redentore), 간단히 레덴토레 교회(Chiesa del Redentore)는 이탈리아 베네치아 주데카에 있는 교회이다. 17세기 베네치아에서 페스트가 광범위하게 발발하자, 베네치아 공화국에서 역병을 가라앉히기 위해 안드레아 팔라디오 주도로 성당을 지은 뒤 봉헌되였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -321,6 +689,7 @@
     "title": "레덴토레 교회",
     "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EB%8D%B4%ED%86%A0%EB%A0%88_%EA%B5%90%ED%9A%8C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -350,6 +719,7 @@
   {
    "area": "베네치아",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산 조르조 마조레 성당(이탈리아어: Basilica di San Giorgio Maggiore)는 이탈리아 베네치아의 산 마르코 광장의 남쪽 해상에 떠 있는 산 조르조 섬에 위치한 교회이다. 안드레아 팔라디오가 설계하였고 1566년과 1610년 사이에 건축되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -358,6 +728,7 @@
     "title": "산조르조 마조레 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EC%A1%B0%EB%A5%B4%EC%A1%B0_%EB%A7%88%EC%A1%B0%EB%A0%88_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -399,6 +770,7 @@
   {
    "area": "베네치아",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산티 조반니 에 파올로 성당(이탈리아어: Basilica dei Santi Giovanni e Paolo)은 이탈리아 베네치아 카스텔로 지역에 있는 성당이다. 베네치아 공화국 역대 도제의 장례 등을 치렀으며, 25명의 도제가 성당에 매장되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -407,6 +779,7 @@
     "title": "산티 조반니 에 파올로 성당 (베네치아)",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%8B%B0_%EC%A1%B0%EB%B0%98%EB%8B%88_%EC%97%90_%ED%8C%8C%EC%98%AC%EB%A1%9C_%EC%84%B1%EB%8B%B9_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -447,8 +820,50 @@
    "wikidata_id": "Q155225"
   },
   {
+   "area": "베네치아",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "아카데미아 다리(Ponte dell'Accademia)는 이탈리아 베네치아 카날 그란데를 아우르는 4개의 고유한 다리들 가운데 하나이다. 1807년부터 2004년까지 아카데미아 미술관이 위치한 Accademia di Belle Arti di Venezia의 이름을 따서 지어졌다. 이 다리는 도르소두로의 세스티에레와 산마르코를 연결한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아카데미아다리",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8%EC%95%84%EB%8B%A4%EB%A6%AC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q52509",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 45.43166,
+   "lng": 12.32899,
+   "name": "아카데미아다리",
+   "name_original": "Ponte dell'Accademia",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q158438",
+    "Q1068842",
+    "Q25422101"
+   ],
+   "wikidata_id": "Q52509"
+  },
+  {
    "area": "도르소두로",
-   "category": "building_landmark",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "카 포스카리(이탈리아어: Ca' Foscari)는 이탈리아 베네치아 도르소두로 카날 그란데에 있는 고딕 양식의 건축물이다. 현재는 카 포스카리 베네치아 대학교의 동쪽 장소로 사용되고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -457,6 +872,7 @@
     "title": "카 포스카리",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4_%ED%8F%AC%EC%8A%A4%EC%B9%B4%EB%A6%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -486,6 +902,7 @@
   {
    "area": "베네치아",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "카 레초니코(이탈리아어: Ca' Rezzonico)는 이탈리아 베네치아 카날 그란데에 있는 궁전이다. 현재는 18세기 무렵의 작품을 중심으로 한 18세기 베네치아 미술관(Museo del settecento veneziano)으로 공개되고 있다. 베네치아의 문화와 예술 유산을 간리하는 베네치아 시민 박물관 재단의 일원 중 하나이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -494,6 +911,7 @@
     "title": "카 레초니코",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4_%EB%A0%88%EC%B4%88%EB%8B%88%EC%BD%94"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -541,6 +959,7 @@
   {
    "area": "베네치아",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "카 페사로(이탈리아어: Ca' Pesaro)는 이탈리아 베네치아 카날 그란데에 있는 궁전이다. 지금은 미술관으로 사용되고 있으며, 1층과 2층은 국제 근대 미술관(Galleria Internazionale d'Arte Moderna), 3층은 동양 미술관(Museo d'arte orientale)으로 사용된다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -549,6 +968,7 @@
     "title": "카 페사로",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4_%ED%8E%98%EC%82%AC%EB%A1%9C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -579,6 +999,104 @@
   {
    "area": "베네치아",
    "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "그라시 궁전(이탈리아어: Palazzo Grassi 팔라초 그라시[*])은 이탈리아 북동부 베네치아 산마르코에 있는 궁전이다. 카날 그란데를 따라 위치한 궁전 중 하나이다. 1748년부터 1772년까지 지어졌으며, 조지오 그라시가 설계했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그라시 궁전",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9D%BC%EC%8B%9C_%EA%B6%81%EC%A0%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q907964",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 45.433797,
+   "lng": 12.327936,
+   "name": "그라시 궁전",
+   "name_original": "Palazzo Grassi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 24.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q15848826"
+   ],
+   "wikidata_id": "Q907964"
+  },
+  {
+   "area": "베네치아",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "페기 구겐하임 컬렉션(Peggy Guggenheim Collection)은 이탈리아 베니스의 카날 그랑데에 따라 위치한 솔로몬 R. 구겐하임 재단의 미술관 중 하나이다. 1976년 페기 구겐하임이 설립했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "페기 구겐하임 컬렉션",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%EA%B8%B0_%EA%B5%AC%EA%B2%90%ED%95%98%EC%9E%84_%EC%BB%AC%EB%A0%89%EC%85%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/3199171089"
+   },
+   "hours_text": "We-Mo 10:00-18:00",
+   "id": "wd:Q1049033",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 45.430821,
+   "lng": 12.331537,
+   "name": "페기 구겐하임 컬렉션",
+   "name_original": "Peggy Guggenheim Collection",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/3199171089",
+     "text": "영업시간 We-Mo 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/3199171089",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 44.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q97662266",
+    "Q614316"
+   ],
+   "wikidata_id": "Q1049033"
+  },
+  {
+   "area": "베네치아",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "코레르 박물관(Museo Correr)은 이탈리아 북동부 베네치아 산마르코 광장에 위치한 미술관이다. 11개의 박물관으로 이루어진 베네치아 시민 박물관 재단의 멤버 중 하나이다. 광장의 남쪽에 이어진 프로쿠라티에 누오베 윗층에 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -587,6 +1105,7 @@
     "title": "코레르 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EC%BD%94%EB%A0%88%EB%A5%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -633,7 +1152,58 @@
   },
   {
    "area": "산마르코",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "카페 플로리안(이탈리아어: Caffè Florian)은 이탈리아의 도시 베네치아의 산마르코 광장에 위치한 카페로 광장의 남쪽에 위치한 프로쿠라티에 누오베 (Procuratie Nuove)라고 불리는 건물에 자리하고 있다. 이 카페는 1720년에 개업한 곳으로, 현재까지 이탈리아에서 운영되고 있는 카페 중 가장 오래된 역사를 가지고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카페 플로리안",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%8E%98_%ED%94%8C%EB%A1%9C%EB%A6%AC%EC%95%88"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/12453807859"
+   },
+   "hours_text": "Mo-Su 09:00-23:00",
+   "id": "wd:Q960610",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 45.433675,
+   "lng": 12.338208,
+   "name": "카페 플로리안",
+   "name_original": "Caffè Florian",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/12453807859",
+     "text": "영업시간 Mo-Su 09:00-23:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 13.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q30022"
+   ],
+   "wikidata_id": "Q960610"
+  },
+  {
+   "area": "산마르코",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "시계탑(時計塔, 이탈리아어: Torre dell'orologio 토레 델로롤로조[*])은 이탈리아 북동부 베네치아 산마르코 광장 북쪽에 있는 시계탑이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -642,6 +1212,7 @@
     "title": "시계탑 (베네치아)",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EA%B3%84%ED%83%91_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -675,7 +1246,47 @@
   },
   {
    "area": "베네치아",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "리알토(Rialto)는 이탈리아 베네치아의 한 지역으로, 리알토 교가 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "리알토 (베네치아)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%95%8C%ED%86%A0_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1190585",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 45.4385,
+   "lng": 12.3348,
+   "name": "리알토",
+   "name_original": "Rialto",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q1190585"
+  },
+  {
+   "area": "베네치아",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "카 벤드라민 칼레르지(이탈리아어: Ca' Vendramin Calergi)는 이탈리아 베네치아 카나레조 카날 그란데에 있는 궁전이다. 현재는 바그너 박물관(Museo Wagner)과 베네치아 카지노(Casinò di Venezia)로 사용되고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -684,6 +1295,7 @@
     "title": "카 벤드라민 칼레르지",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4_%EB%B2%A4%EB%93%9C%EB%9D%BC%EB%AF%BC_%EC%B9%BC%EB%A0%88%EB%A5%B4%EC%A7%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -709,6 +1321,465 @@
     "Q16560"
    ],
    "wikidata_id": "Q1265593"
+  },
+  {
+   "area": "베네치아",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "스타디오 피에르 루이지 펜초(이탈리아어: Stadio Pier Luigi Penzo)는 이탈리아 베네치아시에 위치한 축구 경기장이다. 베네치아 석호 산텔레나 섬에 위치해 있으며, 비행사 피에르 루이지 펜초를 기념하기 위해 현재의 이름이 붙였다. 수용 인원으로는 베네치아에서 가장 큰 야외 경기장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스타디오 피에르 루이지 펜초",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%80%EB%94%94%EC%98%A4_%ED%94%BC%EC%97%90%EB%A5%B4_%EB%A3%A8%EC%9D%B4%EC%A7%80_%ED%8E%9C%EC%B4%88"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q588926",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 45.427761,
+   "lng": 12.363731,
+   "name": "스타디오 피에르 루이지 펜초",
+   "name_original": "stadio Pier Luigi Penzo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q588926"
+  },
+  {
+   "area": "베네치아",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "푼타 델라 도가나(이탈리아어: Punta della Dogana)는 이탈리아 베네치아]의 산타 마리아 델라 살루테 성당, 신학교, 옛 세관 건물(Dogana da Mar)이 있는 건축물 지역을 의미한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "푼타 델라 도가나",
+    "url": "https://ko.wikipedia.org/wiki/%ED%91%BC%ED%83%80_%EB%8D%B8%EB%9D%BC_%EB%8F%84%EA%B0%80%EB%82%98"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2931413",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 45.4308,
+   "lng": 12.33618,
+   "name": "푼타 델라 도가나",
+   "name_original": "Punta della Dogana",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 26.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q2931413"
+  },
+  {
+   "area": "산마르코",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "제카(Zecca)는 이탈리아 북동부 베네치아에 있는 16세기 건축물이다. 베네치아 공화국 시절의 조폐국 건물로, 현재는 국립 마르차나 도서관의 일부로 사용되고 있다. 두 건물 모두 자코포 산소비노가 설계한 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "제카 (베네치아)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%B9%B4_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q169575",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 45.433333,
+   "lng": 12.339167,
+   "name": "제카",
+   "name_original": "Zecca di Venezia",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q464780"
+   ],
+   "wikidata_id": "Q169575"
+  },
+  {
+   "area": "베네치아",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "팔라초 바르바로(Palazzi Barbaro) — 팔라초 바르바로-커티스(Palazzo Barbaro-Curtis) 또는 카 바르바로(Ca' Barbaro)라고도 불림 — 는 이탈리아 북부 베네치아의 산마르코 구역에 인접해 있는 한 쌍의 궁전이다. 과거 귀족 가문인 바르바로 가문의 저택 중 하나였다. 이 궁전들은 베네치아 대운하에 위치해 있으며, 팔라초 카발리-프란케티 옆에 있고 아카데미아 다리에서 멀지 않다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "팔라초 바르바로",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%94%EB%9D%BC%EC%B4%88_%EB%B0%94%EB%A5%B4%EB%B0%94%EB%A1%9C"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2603961",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 45.4317,
+   "lng": 12.33,
+   "name": "팔라초 바르바로",
+   "name_original": "Palazzi Barbaro",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2651004"
+   ],
+   "wikidata_id": "Q2603961"
+  },
+  {
+   "area": "베네치아",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "로마 광장(이탈리아어: Piazzale Roma)은 이탈리아 베네치아에 있는 광장이다. 광장은 베네치아의 주요 버스 정류장으로 이용되고 있다. 베네치아 마르코 폴로 공항과 트레비소 공항에 가는 버스 노선이 운행되고있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "로마 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A7%88_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2717404",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 45.437778,
+   "lng": 12.318611,
+   "name": "로마 광장",
+   "name_original": "piazzale Roma",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782",
+    "Q494829"
+   ],
+   "wikidata_id": "Q2717404"
+  },
+  {
+   "area": "베네치아",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "산폴로 광장(이탈리아어: Campo San Polo 캄포 산폴로[*])은 이탈리아 북동부 베네치아에 위치한 광장이다. 베네치아에서 산마르코 광장 다음으로 크다. 산폴로 광장에는 다음과 같은 건축물이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산폴로 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%8F%B4%EB%A1%9C_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q744776",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 45.4375,
+   "lng": 12.3299,
+   "name": "산폴로 광장",
+   "name_original": "Campo San Polo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2935533"
+   ],
+   "wikidata_id": "Q744776"
+  },
+  {
+   "area": "베네치아",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "산폴로 교회(이탈리아어: Chiesa di San Polo 키에사 디 산폴로[*])는 이탈리아 북동부 베네치아 산폴로 지역에 위치한 교회이다. 파울로스에게 전념한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산폴로 교회",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%8F%B4%EB%A1%9C_%EA%B5%90%ED%9A%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1281097",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 45.437056,
+   "lng": 12.329667,
+   "name": "산폴로 교회",
+   "name_original": "Chiesa di San Polo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q1281097"
+  },
+  {
+   "area": "베네치아",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "유리박물관(이탈리아어: Museo del vetro)은 이탈리아 베네치아 무라노 섬의 유리박물관이다. 박물관은 원래 고대 로마 귀족이 고딕 건축으로 지은 저택이었다. 그 후 토르첼로의 주교 마르코 주스티니안의 저택이되어 1861년에 현재의 유리박물관이 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "유리박물관 (베네치아)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%A6%AC%EB%B0%95%EB%AC%BC%EA%B4%80_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/895801921"
+   },
+   "hours_text": "Apr-Oct: Mo-Su 10:00-18:00; Nov-Mar: Mo-Su 10:00-17:00",
+   "id": "wd:Q3867986",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 45.456482,
+   "lng": 12.356819,
+   "name": "유리박물관",
+   "name_original": "museo del vetro di Murano",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/895801921",
+     "text": "영업시간 Apr-Oct: Mo-Su 10:00-18:00; Nov-Mar: Mo-Su 10:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/895801921",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 15.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q124830213",
+    "Q118987801"
+   ],
+   "wikidata_id": "Q3867986"
+  },
+  {
+   "area": "산마르코",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "카페 콰드리(이탈리아어: Caffè Quadri)은 이탈리아 북동부 베네치아 산마르코 광장에 있는 카페이다. 광장에 북쪽부분인 프로쿠라티에 베키에에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카페 콰드리",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%8E%98_%EC%BD%B0%EB%93%9C%EB%A6%AC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/12453807858"
+   },
+   "hours_text": "We-Fr 19:00-22:00; Sa-Su 12:00-14:30; 19:00-22:00",
+   "id": "wd:Q2932926",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 45.43442,
+   "lng": 12.33806,
+   "name": "카페 콰드리",
+   "name_original": "Caffè Quadri",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/12453807858",
+     "text": "영업시간 We-Fr 19:00-22:00; Sa-Su 12:00-14:30; 19:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q30022"
+   ],
+   "wikidata_id": "Q2932926"
+  },
+  {
+   "area": "베네치아",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "레온치니 소광장(이탈리아어: Piazzetta dei Leoncini 피아체타 데이 레온치니[*])은 이탈리아 북동부 베네치아 산마르코 광장 산마르코 대성당 북쪽에 있는 작은 광장이다. 1722년에 조반니 보나차에 의해 조각된 광장 입구 양쪽에 위치한 두 마리의 대리석 사자상 덕에 붙어진 이름이다. 성당의 동쪽에 접해있는 신고전주의 양식의 건물은 파트리아르칼레 궁전이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레온치니 소광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EC%98%A8%EC%B9%98%EB%8B%88_%EC%86%8C%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3902500",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 45.434792,
+   "lng": 12.339392,
+   "name": "레온치니 소광장",
+   "name_original": "piazzetta dei Leoncini",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q101063275"
+   ],
+   "wikidata_id": "Q3902500"
+  },
+  {
+   "area": "베네치아",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "산 마르티노 교회(이탈리아어: Chiesa di San Martino)는 이탈리아 베네토주 베네치아 카스텔로에 있는 교회이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산 마르티노 교회 (베네치아)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0_%EB%A7%88%EB%A5%B4%ED%8B%B0%EB%85%B8_%EA%B5%90%ED%9A%8C_(%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q980366",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 45.43462,
+   "lng": 12.34897,
+   "name": "산 마르티노 교회",
+   "name_original": "chiesa di San Martino",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q980366"
   }
  ]
 }

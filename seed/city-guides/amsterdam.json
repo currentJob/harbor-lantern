@@ -1,0 +1,911 @@
+{
+ "center": {
+  "lat": 52.3731,
+  "lng": 4.8926
+ },
+ "city_id": "amsterdam",
+ "country_code": "NL",
+ "country_en": "Netherlands",
+ "country_ko": "네덜란드",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 33,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 4,
+   "bridge": 1,
+   "building_landmark": 5,
+   "castle": 1,
+   "museum": 7
+  },
+  "denylisted_count": 0,
+  "described_count": 17,
+  "discovery": {
+   "both": 10,
+   "en": 8,
+   "ko": 0
+  },
+  "discovery_pool": {
+   "both": 16,
+   "en": 18,
+   "ko": 1
+  },
+  "effective_radius_m": 4000,
+  "en_page_count": 483,
+  "excluded_count": 5,
+  "grade_window": 18,
+  "hours_count": 5,
+  "ko_label_count": 18,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 17,
+  "korean_count": 35,
+  "mapped_count": 484,
+  "no_korean_count": 449,
+  "page_count": 500,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 18,
+  "unclassified_count": 10,
+  "unmapped_count": 0,
+  "verification_failed_count": 1
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 13곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 10건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 449건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 0곳 · 영어 검색에서만 8곳 · 양쪽 10곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Amsterdam",
+ "name_ko": "암스테르담",
+ "name_local": "Amsterdam",
+ "query": {
+  "en_page_count": 483,
+  "gslimit": 500,
+  "ko_page_count": 17,
+  "korean_count": 35,
+  "limit": 150,
+  "mapped_count": 484,
+  "page_count": 500,
+  "radius_clamped": false,
+  "radius_m": 4000,
+  "registry_radius_m": 4000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 4000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "암스테르담 국립미술관(네덜란드어: Rijksmuseum, 네덜란드어: [ˈrɛiksmyˌzeːjʏm] ( ))은 네덜란드의 국립박물관으로, 네덜란드의 예술과 역사를 전문으로 하며 암스테르담에 위치한다. 이 미술관은 암스테르담 자위트 자치구의 뮈세윔플레인에 위치하며, 반 고흐 미술관, 암스테르담 시립 미술관, 콘세르트헤바우와 인접해 있다. 암스테르담 국립미술관은 1798년 11월 19일 헤이그에서 설립되었으며 1808년 암스테르담으로 이전하여 처음에는 암스테르담 왕궁에, 나중에는 트리펜하위스에 위치하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "암스테르담 국립미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4_%EA%B5%AD%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/29989787"
+   },
+   "hours_text": "Mo-Su 09:00-17:00",
+   "id": "wd:Q190804",
+   "importance": {
+    "sitelinks": 70
+   },
+   "lat": 52.36,
+   "lng": 4.885278,
+   "name": "암스테르담 국립미술관",
+   "name_original": "Rijksmuseum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/29989787",
+     "text": "영업시간 Mo-Su 09:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/29989787",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 1.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q17431399",
+    "Q207694",
+    "Q16735822",
+    "Q11396960",
+    "Q1172284"
+   ],
+   "wikidata_id": "Q190804"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "반 고흐 미술관(네덜란드어: Van Gogh Museum, 네덜란드어 발음: [vɑŋˈɣɔx mʏˌzeːjʏm])은 네덜란드 암스테르담 남부의 뮈세윔플레인 광장에 있는, 빈센트 반 고흐와 그의 동시대 예술가들의 작품을 전문으로 다루는 미술관이다. 암스테르담 시립 미술관, 암스테르담 국립미술관, 콘세르트헤바우와 인접해 있다. 이 미술관은 1973년 6월 2일에 개관했으며, 이 미술관의 건물은 헤리트 리트펠트와 구로카와 기쇼가 설계했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "반 고흐 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%98_%EA%B3%A0%ED%9D%90_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q224124",
+   "importance": {
+    "sitelinks": 60
+   },
+   "lat": 52.358333,
+   "lng": 4.881111,
+   "name": "반 고흐 미술관",
+   "name_original": "Van Gogh Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q33506",
+    "Q3152824"
+   ],
+   "wikidata_id": "Q224124"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "안네 프랑크의 집(네덜란드어: Anne Frankhuis)은 네덜란드 암스테르담에 있는 박물관으로, 1942년부터 1944년까지 유대인이었던 안네 프랑크가 숨어 살았던 집이다. 안네가 있었던 다락방 및 안네의 일기, 사진 등이 그대로 보존되어 있다. 안네 프랑크 재단이 관리 운영을 실시하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "안네 프랑크의 집",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EB%84%A4_%ED%94%84%EB%9E%91%ED%81%AC%EC%9D%98_%EC%A7%91"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q165366",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 52.375344,
+   "lng": 4.884259,
+   "name": "안네 프랑크의 집",
+   "name_original": "Anne Frank Huis",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 11.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2087181",
+    "Q575759"
+   ],
+   "wikidata_id": "Q165366"
+  },
+  {
+   "area": "암스테르담",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "콘세르트헤바우(네덜란드어: Concertgebouw)는 네덜란드 암스테르담에 있는 콘서트 홀이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "콘세르트헤바우",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BD%98%EC%84%B8%EB%A5%B4%ED%8A%B8%ED%97%A4%EB%B0%94%EC%9A%B0"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q849957",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 52.356306,
+   "lng": 4.879083,
+   "name": "콘세르트헤바우",
+   "name_original": "Concertgebouw",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829",
+    "Q24354"
+   ],
+   "wikidata_id": "Q849957"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "암스테르담 시립 미술관(네덜란드어: Stedelijk Museum Amsterdam)은 네덜란드 암스테르담에 있는 근현대 미술을 대상으로 하는 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "암스테르담 시립 미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4_%EC%8B%9C%EB%A6%BD_%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q924335",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 52.358011,
+   "lng": 4.879755,
+   "name": "암스테르담 시립 미술관",
+   "name_original": "Stedelijk Museum Amsterdam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 5.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3196771"
+   ],
+   "wikidata_id": "Q924335"
+  },
+  {
+   "area": "암스테르담",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1056152",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 52.373167,
+   "lng": 4.891361,
+   "name": "네덜란드 왕궁",
+   "name_original": "Koninklijk Paleis Amsterdam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q53536964",
+    "Q24699794",
+    "Q25550691"
+   ],
+   "wikidata_id": "Q1056152"
+  },
+  {
+   "area": "암스테르담",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "더 발런(네덜란드어: De Wallen)은 네덜란드 암스테르담의 홍등가이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "더 발런",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%EB%B0%9C%EB%9F%B0"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q447664",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 52.373417,
+   "lng": 4.898056,
+   "name": "더 발런",
+   "name_original": "De Wallen",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q123705"
+   ],
+   "wikidata_id": "Q447664"
+  },
+  {
+   "area": "암스테르담",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "암스테르담 센트랄역(네덜란드어: Station Amsterdam Centraal)은 네덜란드 암스테르담에 위치한 역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "암스테르담 센트랄역",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4_%EC%84%BC%ED%8A%B8%EB%9E%84%EC%97%AD"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q50719",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 52.37895,
+   "lng": 4.90016,
+   "name": "암스테르담 센트랄역",
+   "name_original": "Amsterdam Centraal",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 69.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q55488",
+    "Q1339195",
+    "Q1402443",
+    "Q122977328"
+   ],
+   "wikidata_id": "Q50719"
+  },
+  {
+   "area": "암스테르담",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "담 광장(네덜란드어: de Dam)은 네덜란드 암스테르담 중심부에 있는 광장이다. 주목할만한 건물과 빈번한 행사로 인해 도시와 국가에서 가장 잘 알려져 있고 가장 중요한 장소 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "담 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%B4_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q839050",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 52.373056,
+   "lng": 4.892778,
+   "name": "담 광장",
+   "name_original": "Dam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 5.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q839050"
+  },
+  {
+   "area": "암스테르담",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "네덜란드 왕립 예술 과학 아카데미(네덜란드어: Koninklijke Nederlandse Akademie van Wetenschappen, KNAW)은 네덜란드의 과학 및 문학의 진흥을 전문으로 하는 조직이다. 각종 자문 및 관리 기능 이외에 사회사 국제 연구소 등 다양한 연구소를 운영하고 있으며, 이론물리학의 상인 레이우엔훅 메달 등이 포함한 다수의 상을 주최하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "네덜란드 왕립 예술 과학 아카데미",
+    "url": "https://ko.wikipedia.org/wiki/%EB%84%A4%EB%8D%9C%EB%9E%80%EB%93%9C_%EC%99%95%EB%A6%BD_%EC%98%88%EC%88%A0_%EA%B3%BC%ED%95%99_%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q253439",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 52.371528,
+   "lng": 4.899722,
+   "name": "네덜란드 왕립 예술 과학 아카데미",
+   "name_original": "Koninklijke Nederlandse Akademie van Wetenschappen",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q414147",
+    "Q32798322",
+    "Q1966910",
+    "Q96888669"
+   ],
+   "wikidata_id": "Q253439"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "렘브란트의 집(네덜란드어: Museum het Rembrandthuis)은 네덜란드 암스테르담에 있으며, 렘브란트 하르먼손 판 레인이 1639년에서 1660년까지 살았던 집이다. 유태인 거주 지역인 요덴브레이 거리에 있고 1911년 이후로 렘브란트 박물관으로 일반인에게 공개되었다. 이곳에는 렘브란트 하르먼손 판 레인의 원본 에칭과 유품과 렘브란트 하르먼손 판 레인의 스승과 제자들의 작품이 함께 전시되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "렘브란트의 집",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%98%EB%B8%8C%EB%9E%80%ED%8A%B8%EC%9D%98_%EC%A7%91"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/250624673"
+   },
+   "hours_text": "Mo-Su 10:00-17:00; Jan 05-Feb 13 10:00-17:00; Feb 14-Mar 27 10:00-18:00; Mar 28-May 10 10:00-19:00; May 11-Nov 01 10:00-18:00; Nov 02-Dec 18 10:00-17:00; Dec 19-31 10:00-18:00; Apr 27 off; Dec 25 off; Dec 24 10:00-17:00; Dec 31 10:00-17:00",
+   "id": "wd:Q277316",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 52.369444,
+   "lng": 4.901389,
+   "name": "렘브란트의 집",
+   "name_original": "Museum het Rembrandthuis",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/250624673",
+     "text": "영업시간 Mo-Su 10:00-17:00; Jan 05-Feb 13 10:00-17:00; Feb 14-Mar 27 10:00-18:00; Mar 28-May 10 10:00-19:00; May 11-Nov 01 10:00-18:00; Nov 02-Dec 18 10:00-17:00; Dec 19-31 10:00-18:00; Apr 27 off; Dec 25 off; Dec 24 10:00-17:00; Dec 31 10:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/250624673",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 8.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16735822",
+    "Q207694",
+    "Q2087181"
+   ],
+   "wikidata_id": "Q277316"
+  },
+  {
+   "area": "암스테르담",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "뮈세윔플레인(네덜란드어: Museumplein)은 네덜란드 암스테르담에 위치한 광장으로, 암스테르담 국립미술관, 반 고흐 미술관, 암스테르담 시립 미술관, 콘세르트헤바우가 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "뮈세윔플레인",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AE%88%EC%84%B8%EC%9C%94%ED%94%8C%EB%A0%88%EC%9D%B8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q639321",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 52.357611,
+   "lng": 4.881619,
+   "name": "뮈세윔플레인",
+   "name_original": "Museumplein",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 38.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q639321"
+  },
+  {
+   "area": "암스테르담",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "마헤러 브뤼흐(네덜란드어: Magere Brug)는 네덜란드 암스테르담에 위치한 다리이다. 다리 이름은 네덜란드어로 \"얇은 다리\"를 뜻한다. 암스테르담 운하의 케이저르 운하(Prinsengracht, 황제의 운하)와 프린선 운하(Prinsengracht, 왕자의 운하) 사이에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마헤러 브뤼흐",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%ED%97%A4%EB%9F%AC_%EB%B8%8C%EB%A4%BC%ED%9D%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1344400",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 52.363586,
+   "lng": 4.902357,
+   "name": "마헤러 브뤼흐",
+   "name_original": "Magere Brug",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q911663",
+    "Q428759"
+   ],
+   "wikidata_id": "Q1344400"
+  },
+  {
+   "area": "암스테르담",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "니우마르크트(네덜란드어: Nieuwmarkt)는 네덜란드 암스테르담 중심부에 있는 광장이다. 주변 지역은 라스타허 구역으로 알려져 있으며, 암스테르담의 암스테르담센트룸 내에 위치한다. 이 광장은 더 발런(홍등가) 옆에 있는 암스테르담의 차이나타운의 일부로 간주된다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "니우마르크트",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%88%EC%9A%B0%EB%A7%88%EB%A5%B4%ED%81%AC%ED%8A%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/1503919213"
+   },
+   "hours_text": "Mo-Fr 10:00-18:30; Sa 09:00-18:30; Su 09:00-17:00",
+   "id": "wd:Q1568693",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 52.372573,
+   "lng": 4.900503,
+   "name": "니우마르크트",
+   "name_original": "Nieuwmarkt",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/1503919213",
+     "text": "영업시간 Mo-Fr 10:00-18:30; Sa 09:00-18:30; Su 09:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 8.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q1568693"
+  },
+  {
+   "area": "암스테르담",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "바흐(Waag, \"계량소\")는 네덜란드 암스테르담의 니우마르크트 광장에 있는 15세기 건물이다. 원래는 성문이었으며 암스테르담 성벽의 일부였다. 이후 길드 회관, 박물관, 소방서, 해부학 강의실 등으로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바흐 (암스테르담)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%ED%9D%90_(%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2466999",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 52.37278,
+   "lng": 4.90028,
+   "name": "바흐 (암스테르담)",
+   "name_original": "Waag van Amsterdam",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q82117",
+    "Q1407236",
+    "Q488444"
+   ],
+   "wikidata_id": "Q2466999"
+  },
+  {
+   "area": "암스테르담",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "스토페라(네덜란드어: Stopera)는 네덜란드 암스테르담에 위치한 오페라 극장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스토페라",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%86%A0%ED%8E%98%EB%9D%BC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1138851",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 52.367267,
+   "lng": 4.901533,
+   "name": "스토페라",
+   "name_original": "Stopera",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829",
+    "Q25550691",
+    "Q24354",
+    "Q153562"
+   ],
+   "wikidata_id": "Q1138851"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "하이네켄 익스피리언스(Heineken Experience)는 네덜란드 암스테르담에 위치한 하이네켄이 운영하는 방문객 센터이다. 원래는 하이네켄이 소유한 맥주 공장이었지만, 1988년에 폐쇄되어 1991년에 개조하여 시작하였다. 관내에는 하이네켄의 역사와 맥주 제조 공정 등이 전시되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "하이네켄 익스피리언스",
+    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EC%9D%B4%EB%84%A4%EC%BC%84_%EC%9D%B5%EC%8A%A4%ED%94%BC%EB%A6%AC%EC%96%B8%EC%8A%A4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/2817515795"
+   },
+   "hours_text": "Mo-Th 10:30-19:30; Fr-Su 10:30-21:00",
+   "id": "wd:Q2087161",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 52.35778,
+   "lng": 4.89111,
+   "name": "하이네켄 익스피리언스",
+   "name_original": "Heineken Experience",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/2817515795",
+     "text": "영업시간 Mo-Th 10:30-19:30; Fr-Su 10:30-21:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/2817515795",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 18.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q1587716"
+   ],
+   "wikidata_id": "Q2087161"
+  },
+  {
+   "area": "암스테르담",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "암스테르담 튤립 박물관(Amsterdam Tulip Museum)은 네덜란드 암스테르담에 있는 박물관이다. 이 박물관은 튤립에 관한 전시를 다룬다. 박물관은 프린선흐라흐트 운하를 따라 위치한 운하 저택에 자리 잡고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "암스테르담 튤립 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4_%ED%8A%A4%EB%A6%BD_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/2720969403"
+   },
+   "hours_text": "Mo-Su 10:00-18:00",
+   "id": "wd:Q2020907",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 52.376111,
+   "lng": 4.883889,
+   "name": "암스테르담 튤립 박물관",
+   "name_original": "Amsterdam Tulip Museum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/2720969403",
+     "text": "영업시간 Mo-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/2720969403",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q2020907"
+  }
+ ]
+}

@@ -9,40 +9,56 @@
  "country_ko": "태국",
  "grade": "full",
  "harvest": {
-  "candidate_count": 43,
+  "candidate_count": 65,
   "candidate_ko_ratio": 1.0,
   "composition": {
    "attraction": 3,
    "bridge": 9,
    "building_landmark": 8,
-   "monument": 2,
+   "monument": 3,
    "museum": 1,
    "park": 2,
-   "worship": 6
+   "worship": 7
   },
   "denylisted_count": 0,
-  "described_count": 28,
+  "described_count": 29,
+  "discovery": {
+   "both": 18,
+   "en": 2,
+   "ko": 13
+  },
+  "discovery_pool": {
+   "both": 29,
+   "en": 25,
+   "ko": 20
+  },
   "effective_radius_m": 8000,
-  "excluded_count": 1,
+  "en_page_count": 500,
+  "excluded_count": 4,
   "grade_window": 25,
   "hours_count": 8,
   "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 49,
-  "page_count": 49,
+  "ko_page_count": 49,
+  "korean_count": 74,
+  "mapped_count": 520,
+  "no_korean_count": 446,
+  "page_count": 549,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 31,
-  "unclassified_count": 11,
-  "verification_failed_count": 3
+  "spot_count": 33,
+  "unclassified_count": 28,
+  "unmapped_count": 0,
+  "verification_failed_count": 4
  },
  "known_gaps": [
-  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 23곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 4곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 4곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 25곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 11건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 28건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 446건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 13곳 · 영어 검색에서만 2곳 · 양쪽 18곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -50,14 +66,21 @@
  "name_ko": "방콕",
  "name_local": "กรุงเทพมหานคร",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 49,
+  "korean_count": 74,
   "limit": 150,
-  "mapped_count": 49,
-  "page_count": 49,
+  "mapped_count": 520,
+  "page_count": 549,
   "radius_clamped": false,
   "radius_m": 8000,
   "registry_radius_m": 8000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 8000,
  "retrieved_at": "2026-09-16",
@@ -67,6 +90,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -88,6 +116,7 @@
   {
    "area": "Phra Borom Maha Ratchawang",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "왕궁(태국어: พระบรมมหาราชวัง)은 태국 방콕에 있는 복합 건축물이다. 이 건축물은 18세기 이후부터 국왕이 머물렀던 공식 관저이다. 건축은 1782년 라마 1세 때 수도를 톤부리에서 방콕으로 옮기면서 시작되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -96,6 +125,7 @@
     "title": "왕궁 (방콕)",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B6%81_(%EB%B0%A9%EC%BD%95)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -144,6 +174,7 @@
   {
    "area": "Phra Borom Maha Ratchawang",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "왓 프라깨오(태국어: วัดพระแก้ว, Wat Phra Kaew)는 태국 방콕 프라나콘구의 불교 사원으로 방콕 왕궁 주변에 있다. 전체 이름은 왓 프라스리라따나사사다람(태국어: วัดพระศรีรัตนศาสดาราม)이다. 일명 《에메랄드 부처 사원》으로도 알려져 있으며, 태국에서 가장 영험한 불교 사원으로 여겨지고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -152,6 +183,7 @@
     "title": "왓 프라깨오",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%93_%ED%94%84%EB%9D%BC%EA%B9%A8%EC%98%A4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -192,6 +224,7 @@
   {
    "area": "방콕",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "왓 아룬(태국어: วัดอรุณ, Wat Arun, 새벽사원)은 타이 방콕 야이 구의 불교 사원으로 짜오프라야강 왼쪽 강변에 있다. 전체 이름은 ‘왓 아룬랏차와라람 랏차워람아하위’한(วัดอรุณราชวรารามราชวรมหาวิหาร)이며, 간단하게 줄여서‘ 왓 아룬’이라고 하며, 《새벽 사원》(Temple of Dawn)으로 더 널리 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -200,6 +233,7 @@
     "title": "왓 아룬",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%93_%EC%95%84%EB%A3%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -240,6 +274,7 @@
   {
    "area": "랏차테위",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "바이요크 타워 2(태국어: อาคารใบหยก 2)는 태국 방콕에 있는 마천루이다. 태국에서 제일 높은 314m의 마하나꼰 다음으로 높으며, 304m이다. 1 ~ 2층은 의류를 중심으로 하는 가게, 3 ~ 14층은 주차 공간, 17층 위는 바이요크 스카이 호텔, 77층에 전망대, 76층과 78층에 레스토랑이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -248,6 +283,7 @@
     "title": "바이요크 타워 2",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EC%9D%B4%EC%9A%94%ED%81%AC_%ED%83%80%EC%9B%8C_2"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -277,6 +313,7 @@
   {
    "area": "Phra Borom Maha Ratchawang",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "왓 포(태국어: วัดโพธิ์์, Wat Pho)는 태국 방콕에 있는 불교 사원으로 공식적으로 \"왓 프라 체투폰 위몬 망클라람 랏차워람아하위한\" (วัดพระเชตุพนวิมลมังคลารามราชวรมหาวิหาร) 또는 간단하게 줄여서 ‘왓 포’라고 한다. 와불이 있어 와불사라고도 하며, 왕궁에 인접한 랏타나꼬씬 지구에 위치한 방콕 의 불교 사원이다. 아유타야 양식으로 지은 방콕에서 가장 오래된 사원인 동시에 최대 규모를 자랑하는 사원이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -285,6 +322,7 @@
     "title": "왓 포",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%93_%ED%8F%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -314,8 +352,10 @@
   {
    "area": "방콕",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -345,6 +385,7 @@
   {
    "area": "방콕",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "카오산 거리(태국어: ถนนข้าวสาร, Khaosan Road)는 태국 방콕 시내 프라나콘 방람푸 지역에 있는 짧은 거리 이름이다. 카오산 로드는 300m도 채 안 되는 거리이나, 전 세계 배낭여행객들의 집합소이자 젊은이들의 해방구이다. 태국뿐만 아니라 동남아 여행을 계획하고 있는 여행자들에게 카오산 로드는 반드시 거쳐야 하는 관문이자 베이스캠프이기 때문이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -353,6 +394,7 @@
     "title": "카오산 거리",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EC%98%A4%EC%82%B0_%EA%B1%B0%EB%A6%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -383,6 +425,7 @@
   {
    "area": "Lumphini",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "룸피니 공원(태국어: สวนลุมพินี)은 태국 방콕 파툼완 지역에 있는 공원이다. 0.57km2의 광대한 부지를 가진다. 인공 연못이 있고, 보트를 탈 수있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -391,6 +434,7 @@
     "title": "룸피니 공원",
     "url": "https://ko.wikipedia.org/wiki/%EB%A3%B8%ED%94%BC%EB%8B%88_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -431,6 +475,7 @@
   {
    "area": "방콕",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "라마 8세교(태국어: สะพานพระราม 8, RTGS: Saphan Phra Ram Paet)는 태국 방콕의 짜오프라야강을 가로지르는 사장교다. 인근의 프라삔끌라오교의 교통 체증을 완화하기 위해 건설되었다. 교량 건설은 1999년부터 2002년까지 진행되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -439,6 +484,7 @@
     "title": "라마 8세교",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%A7%88_8%EC%84%B8%EA%B5%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -454,7 +500,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.1,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -467,8 +513,48 @@
    "wikidata_id": "Q1092231"
   },
   {
+   "area": "Bowon Niwet",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "민주기념탑(태국어: อนุสาวรีย์ประชาธิปไตย)은 태국 방콕에 있는 기념탑이다. 이 기념물은 1932년 시암 쿠데타를 기념하기 위해 1939년에 건립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "민주기념탑",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AF%BC%EC%A3%BC%EA%B8%B0%EB%85%90%ED%83%91"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1186076",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 13.756667,
+   "lng": 100.501667,
+   "name": "민주기념탑",
+   "name_original": "อนุสาวรีย์ประชาธิปไตย",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906"
+   ],
+   "wikidata_id": "Q1186076"
+  },
+  {
    "area": "Lumphini",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "에라완 사원(태국어: ศาลท้าวมหาพรหม โรงแรมเอราวัณ)은 태국 방콕에 있는 브라흐마를 모시는 힌두교 사원이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -477,6 +563,7 @@
     "title": "에라완 사원",
     "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%EC%99%84_%EC%82%AC%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -507,6 +594,7 @@
   {
    "area": "Phra Borom Maha Ratchawang",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "사남루앙(태국어: สนามหลวง)은 태국 방콕 프라나컨에 위치한 왓 프라깨오 맞은편에 위치한 광장이다. 과거의 공식 명칭은 왕실 화장터로서의 퉁쁘라멘(태국어: ทุ่งพระเมรุ)였으나, 1855년에 라마 4세가 그것을 통사남루앙(태국어: ท้องสนามหลวง)으로 바꾸었고, 현재는 이를 줄여서 사남루앙이라 부르고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -515,6 +603,7 @@
     "title": "사남루앙",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EB%82%A8%EB%A3%A8%EC%95%99"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -544,6 +633,7 @@
   {
    "area": "Thung Phaya Thai",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "전승기녑탑(태국어: อนุสาวรีย์ชัยสมรภูมิ)은 태국 방콕 랏차테위 지역에 있는 기념탑이다. 1940년에 일어난 프랑스-태국 전쟁에서 프랑스군과 싸워 전몰한 태국군 병사를 위령하기 위해 1941년에 방콕에 지어졌다. 이 탑은 빠혼요틴 거리와 랏차테위 대로가 교차하는 곳에 위치하고, 주위는 회전식으로 되어있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -552,6 +642,7 @@
     "title": "전승기념탑 (방콕)",
     "url": "https://ko.wikipedia.org/wiki/%EC%A0%84%EC%8A%B9%EA%B8%B0%EB%85%90%ED%83%91_(%EB%B0%A9%EC%BD%95)"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -581,6 +672,7 @@
   {
    "area": "Bang Rak",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "성모 승천 대성당(태국어: อาสนวิหารอัสสัมชัญ)은 태국의 주요 가톨릭 성당으로, 방콕 방락에 위치해 있다. 이 성당은 방콕 대교구의 주교좌 성당이다. 이 성당은 1984년 교황 요한 바오로 2세와 2019년 교황 프란치스코의 태국 방문 당시 두 차례 모두 교황 방문 행사를 개최했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -589,6 +681,7 @@
     "title": "성모 승천 대성당 (방콕)",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1%EB%AA%A8_%EC%8A%B9%EC%B2%9C_%EB%8C%80%EC%84%B1%EB%8B%B9_(%EB%B0%A9%EC%BD%95)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -618,6 +711,7 @@
   {
    "area": "방콕",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "소이 카우보이(Soi Cowboy)는 태국 방콕에 있는 홍등가이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -626,6 +720,7 @@
     "title": "소이 카우보이",
     "url": "https://ko.wikipedia.org/wiki/%EC%86%8C%EC%9D%B4_%EC%B9%B4%EC%9A%B0%EB%B3%B4%EC%9D%B4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -656,6 +751,7 @@
   {
    "area": "Bang Kho Laem",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "끄룽텝교(태국어: สะพานกรุงเทพ)는 태국 방콕의 짜오프라야강을 가로지르는 도개교다. 짜오프라야강에 세워진 세 번째 다리이다. 후지 차량 제조가 건설하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -664,6 +760,7 @@
     "title": "끄룽텝교",
     "url": "https://ko.wikipedia.org/wiki/%EB%81%84%EB%A3%BD%ED%85%9D%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -694,6 +791,7 @@
   {
    "area": "Wang Mai",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "수파찰라사이 경기장(태국어: สนามศุภชลาศัย)은 태국 방콕에 국립경기장 단지의 일부이다. 1938년에 개장했으며 35,000명을 수용할 수 있다. 1966년 아시안 게임과 1970년 아시안 게임, 1978년 아시안 게임 주경기장으로 선정되었으며 2007년 AFC 아시안컵 때에는 오만과 이라크의 A조 예선 경기가 열렸다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -702,6 +800,7 @@
     "title": "수파찰라사이 경기장",
     "url": "https://ko.wikipedia.org/wiki/%EC%88%98%ED%8C%8C%EC%B0%B0%EB%9D%BC%EC%82%AC%EC%9D%B4_%EA%B2%BD%EA%B8%B0%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -731,8 +830,10 @@
   {
    "area": "Wang Mai",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -773,6 +874,7 @@
   {
    "area": "방콕",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "스테이트 타워(태국어: สเตท ทาวเวอร์, 영어: State Tower)는 태국 방콕 방락의 실롬 거리에 위치한 마천루로, 짜런크룽 거리와 인접해 있다. 2001년에 건설되었으며 연면적은 300,000 m2 (3,200,000 sq ft)이다. 스테이트 타워는 68층 규모에 높이는 247 m (810 ft)로, 태국에서 8번째로 높은 건물이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -781,6 +883,7 @@
     "title": "스테이트 타워",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -808,8 +911,42 @@
    "wikidata_id": "Q2297614"
   },
   {
+   "area": "Pak Khlong Phasi Charoen",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q4921712",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 13.721956,
+   "lng": 100.470483,
+   "name": "왓 빡남 파씨짜른",
+   "name_original": "วัดปากน้ำภาษีเจริญ",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 34.7,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q427287"
+   ],
+   "wikidata_id": "Q4921712"
+  },
+  {
    "area": "Yan Nawa",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "왓 얀나와(태국어: วัดยานนาวา)는 태국 방콕 싸톤에 위치한 사찰(왓)이다. 이 사원은 아유타야 왕국 시대부터 현재에 이르기까지 긴 역사를 가지고 있다. 라마 3세 통치 기간 동안 중국식 정크선 모양의 비하라가 건설되었으며, 이로 인해 \"배 사원\"이라는 별명을 얻었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -818,6 +955,7 @@
     "title": "왓 얀나와",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%93_%EC%96%80%EB%82%98%EC%99%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -847,6 +985,7 @@
   {
    "area": "Bang Sue",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "라마 6세교(태국어: สะพานพระราม 6, RTGS: Saphan Phra Ram Hok)는 태국 방콕의 짜오프라야강을 가로지르는 철도 교량으로, 방쓰와 방플랏 지역을 연결한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -855,6 +994,7 @@
     "title": "라마 6세교",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%A7%88_6%EC%84%B8%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -884,6 +1024,7 @@
   {
    "area": "Thon Buri",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "라마 3세교(태국어: สะพานพระราม 3)는 태국 방콕의 짜오프라야강을 가로지르는 다리다. 이 다리는 인접한 끄룽텝교의 교통 정체를 완화하기 위해 설계되어 1999년에 완공되었다. 다리의 이름은 짜끄리 왕조 시대의 국왕인 제싸다보딘(라마 3세)을 기리기 위해 명명되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -892,6 +1033,7 @@
     "title": "라마 3세교",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%A7%88_3%EC%84%B8%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -923,6 +1065,7 @@
   {
    "area": "방콕",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "짐 톰프슨의 집(영어: Jim Thompson House, 태국어: พิพิธภัณฑ์บ้านจิม ทอมป์สัน)은 타이 방콕에 있는 박물관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -931,6 +1074,7 @@
     "title": "짐 톰프슨의 집",
     "url": "https://ko.wikipedia.org/wiki/%EC%A7%90_%ED%86%B0%ED%94%84%EC%8A%A8%EC%9D%98_%EC%A7%91"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -976,6 +1120,7 @@
   {
    "area": "싸톤",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "딱신교(태국어: สะพานสมเด็จพระเจ้าตากสินมหาราช, RTGS: Saphan Somdet Phrachao Taksin Maha Ra) 또는 흔히 싸톤교(สะพานสาทร, RTGS: Saphan Sathon)는 태국 방콕의 짜오프라야강을 가로지르는 다리다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -984,6 +1129,7 @@
     "title": "딱신교",
     "url": "https://ko.wikipedia.org/wiki/%EB%94%B1%EC%8B%A0%EA%B5%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -999,7 +1145,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1014,6 +1160,7 @@
   {
    "area": "Phra Borom Maha Ratchawang",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "프라삔끌라오교(태국어: สะพานสมเด็จพระปิ่นเกล้า, RTGS: Saphan Somdet Phra Pinklao)는 태국 방콕의 왕궁 인근 짜오프라야강을 가로지르는 교량이다. 라타나코신섬과 톤부리를 연결한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1022,6 +1169,7 @@
     "title": "프라삔끌라오교",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%EC%82%94%EB%81%8C%EB%9D%BC%EC%98%A4%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1051,6 +1199,7 @@
   {
    "area": "Yan Nawa",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "싸톤 유니크 타워(สาธร ยูนีค ทาวเวอร์, 영어: Sathorn Unique Tower)는 태국 방콕 싸톤에 위치한 미완성 마천루다. 고층 콘도미니엄 단지로 계획되었으나, 건물의 약 80%가 완성된 시점인 1997년 아시아 금융 위기 동안 건설이 중단되었다. 싸톤 유니크 타워는 현재 방콕에 남겨진 수많은 방치된 건물들 중 가장 눈에 띄는 건물 중 하나이며, 도시 탐험가들의 목적지가 되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1059,6 +1208,7 @@
     "title": "싸톤 유니크 타워",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%B8%ED%86%A4_%EC%9C%A0%EB%8B%88%ED%81%AC_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1074,7 +1224,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1089,6 +1239,7 @@
   {
    "area": "방콕",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "끄룽톤교(태국어: สะพานกรุงธน, RTGS: Saphan Krung Thon)는 태국 방콕의 두싯과 방플랏을 연결하며 짜오프라야강을 가로지르는 교량이다. 이 다리는 6개의 경간으로 이루어져 있으며, 콘크리트 교각 위에 놓인 강철 상부 구조로 구성되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1097,6 +1248,7 @@
     "title": "끄롱톤교",
     "url": "https://ko.wikipedia.org/wiki/%EB%81%84%EB%A1%B1%ED%86%A4%EA%B5%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1126,6 +1278,7 @@
   {
    "area": "",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "라마 7세교(태국어: สะพานพระราม 7, RTGS: Saphan Phra Ram Chet)는 태국 방콕과 논타부리주를 가로질러 방쓰와 방플랏을 잇는 짜오프라야강의 교량이다. 도로는 각 방향 3차로씩 듀얼 캐리지웨이 구성으로 되어 있다. 이 다리는 프라차티뽁 국왕을 기리기 위해 명명되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1134,6 +1287,7 @@
     "title": "라마 7세교",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EB%A7%88_7%EC%84%B8%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1163,8 +1317,10 @@
   {
    "area": "Pathum Wan Subdistrict",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1205,6 +1361,7 @@
   {
    "area": "프라나콘",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "프라뽁깔라오교(태국어: สะพานพระปกเกล้า, RTGS: Saphan Phra Pokklao는 태국 방콕의 짜오프라야강을 가로지르는 다리다. 이 다리는 북단인 프라나콘의 왕부라파피롬 및 쌈판타우옹의 짝까왓과 남단인 클롱싼의 쏨뎃 짜오프라야 및 톤부리의 왓깔라야를 연결한다. 이 다리에는 동남아시아 최초의 공중 정원인 짜오프라야 스카이 파크가 위치해 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1213,6 +1370,7 @@
     "title": "프라뽁깔라오교",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%EB%BD%81%EA%B9%94%EB%9D%BC%EC%98%A4%EA%B5%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1242,6 +1400,7 @@
   {
    "area": "방콕",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "포 시즌스 프라이빗 레지던스 방콕(태국어: โฟร์ซีซันส์ ไพรเวท เรสซิเด้นซ์ กรุงเทพฯ, 영어: Four Seasons Private Residences Bangkok at Chao Phraya River)은 태국 방콕 싸톤에 위치한 73층 규모의 주거용 마천루이다. 이 타워의 총 구조적 높이는 299.5 m (983 ft)에 달한다. 이 건물은 방콕 및 태국에서 4번째로 높은 건물이며, 동남아시아에서 13번째로 높은 건물, 그리고 세계에서 23번째로 높은 주거용 건물이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1250,6 +1409,7 @@
     "title": "포시즌스 프라이빗 레지던스 방콕",
     "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%EC%8B%9C%EC%A6%8C%EC%8A%A4_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97_%EB%A0%88%EC%A7%80%EB%8D%98%EC%8A%A4_%EB%B0%A9%EC%BD%95"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1265,7 +1425,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1279,6 +1439,7 @@
   {
    "area": "클롱뜨이",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "벤짜낏띠 공원(태국어: สวนเบญจกิติ, RTGS: Suan Benchakitti)은 태국 방콕 클롱뜨이에 위치한 공공 공원이다. 1992년 개장한 이래 벤짜낏띠 공원은 방콕에서 야외 레크리에이션과 운동을 즐기는 사람들에게 인기 있는 장소가 되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1287,6 +1448,7 @@
     "title": "벤짜낏띠 공원",
     "url": "https://ko.wikipedia.org/wiki/%EB%B2%A4%EC%A7%9C%EB%82%8F%EB%9D%A0_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",

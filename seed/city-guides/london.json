@@ -9,42 +9,59 @@
  "country_ko": "영국",
  "grade": "full",
  "harvest": {
-  "candidate_count": 126,
+  "candidate_count": 150,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 16,
-   "bridge": 5,
-   "building_landmark": 15,
+   "attraction": 17,
+   "bridge": 6,
+   "building_landmark": 13,
    "castle": 3,
-   "monument": 2,
+   "monument": 5,
    "museum": 10,
-   "park": 5,
-   "tower": 2,
-   "worship": 2
+   "park": 4,
+   "tower": 1,
+   "worship": 1
   },
   "denylisted_count": 0,
-  "described_count": 55,
+  "described_count": 54,
+  "discovery": {
+   "both": 8,
+   "en": 12,
+   "ko": 40
+  },
+  "discovery_pool": {
+   "both": 17,
+   "en": 31,
+   "ko": 115
+  },
   "effective_radius_m": 6000,
-  "excluded_count": 8,
+  "en_page_count": 500,
+  "excluded_count": 14,
   "grade_window": 25,
   "hours_count": 2,
   "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 132,
-  "page_count": 132,
+  "ko_page_count": 132,
+  "korean_count": 163,
+  "mapped_count": 614,
+  "no_korean_count": 451,
+  "page_count": 632,
   "radius_note": "",
   "reviewed": false,
   "spot_count": 60,
-  "unclassified_count": 47,
-  "verification_failed_count": 5
+  "unclassified_count": 53,
+  "unmapped_count": 1,
+  "verification_failed_count": 6
  },
  "known_gaps": [
-  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "설명이 없는 스팟 6곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 6곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
   "영업시간이 없는 스팟 58곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 47건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 53건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "반경 안의 문서 1건은 위키데이터 항목이 없어 후보가 되지 못했다 — 중요도와 분류를 매길 근거가 없다.",
+  "영어 위키백과에서만 발견된 451건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 40곳 · 영어 검색에서만 12곳 · 양쪽 8곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -52,14 +69,21 @@
  "name_ko": "런던",
  "name_local": "London",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 132,
+  "korean_count": 163,
   "limit": 150,
-  "mapped_count": 132,
-  "page_count": 132,
+  "mapped_count": 614,
+  "page_count": 632,
   "radius_clamped": false,
   "radius_m": 6000,
   "registry_radius_m": 6000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 6000,
  "retrieved_at": "2026-09-16",
@@ -69,6 +93,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -90,6 +119,7 @@
   {
    "area": "캠던구",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "대영박물관(大英博物館) 또는 영국박물관(英國博物館, 영어: British Museum)은 영국의 런던 블룸즈베리에 위치해 있는 영국 최대의 국립 공공박물관이다. 대영박물관은 과거 영국이 제국주의 시대부터 전세계 모든 대륙에서 수집한 방대한 유물들을 소장 및 전시하고 있다. 대영박물관은 인류시작부터 현재까지의 역사, 미술, 문화와 관련된 유물 및 소장품이 대략 8백만여점에 달한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -98,6 +128,7 @@
     "title": "대영박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EC%98%81%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -131,6 +162,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "빅 벤(Big Ben)은 영국 런던의 웨스트민스터 궁전 북쪽 흔히 종뿐만 아니라 시계탑 자체도 빅 벤이라고 부른다. 시계탑의 4면에는 세계에서 가장 큰 자명종 시계가 달려 있고, 시계 자체도 독립 세워진 것들 가운데 세 번째로 높은 것이다. 2009년 5월 31일 건립 150주년을 축하하는 행사가 시계탑에서 있었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -139,6 +171,7 @@
     "title": "빅 벤",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%85_%EB%B2%A4"
    },
+   "discovery": "ko",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -177,6 +210,7 @@
   {
    "area": "타워햄리츠구",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "런던탑(영어: Tower of London 타워 오브 런던[*])은 영국 잉글랜드 센트럴런던의 템스강 북안에 있는 유서깊은 성이자 궁전이다. 정식 명칭은 국왕 폐하의 궁전이자 요새인 런던탑(영어: His Majesty's Royal Palace and Fortress of the Tower of London)이다. 종종 그냥 탑(영어: The Tower 더 타워[*])이라고 부른다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -185,6 +219,7 @@
     "title": "런던탑",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98%ED%83%91"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -217,6 +252,7 @@
   {
    "area": "타워햄리츠구",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "타워 브리지(Tower Bridge)는 영국 런던에 위치한 1등급 등록문화재로, 복합적인 구조의 다리이다. 이 다리는 도개교, 현수교, 1960년까지는 캔틸레버교의 특성을 모두 갖추고 있었다. 1886년부터 1894년 사이에 건설되었으며, 호레이스 존스가 설계하고 존 울프 배리가 헨리 마크 브루넬의 도움을 받아 공학적 설계를 담당했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -225,6 +261,7 @@
     "title": "타워 브리지",
     "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9B%8C_%EB%B8%8C%EB%A6%AC%EC%A7%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -258,8 +295,10 @@
   {
    "area": "서더크구",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -291,7 +330,47 @@
   },
   {
    "area": "시티오브웨스트민스터",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "트라팔가 광장(Trafalgar Square)은 영국 런던 코번트 가든에 있는 광장으로 1805년 트라팔가르 해전을 기념하여 만든 곳이다. 처음엔 윌리엄 4세 광장이란 이름으로 불렸으나, 건축가였던 조지 리드웰 테일러(George Ledwell Taylor)의 제안으로 인해 트라팔가 광장이 되었다. 이 광장은 에드워드 1세의 시대에는 왕가의 정원이었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "트라팔가 광장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9D%BC%ED%8C%94%EA%B0%80_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q129143",
+   "importance": {
+    "sitelinks": 73
+   },
+   "lat": 51.508056,
+   "lng": -0.128056,
+   "name": "트라팔가 광장",
+   "name_original": "Trafalgar Square",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q129143"
+  },
+  {
+   "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "내셔널 갤러리(영어: National Gallery)는 대영 박물관과 함께 영국 최대의 미술관 중 하나이다. 내셔널 갤러리는 영국 런던 중심부 웨스트민스터 시의 트라팔가 광장에 있는 미술관으로, 1824년에 창설되었다. 수장품의 범위는 시대적으로 초기 르네상스에서 19세기 후반에 이르고, 영국뿐만 아니라 각국의 명작품을 골고루 수장하고 있는 것으로도 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -300,6 +379,7 @@
     "title": "내셔널 갤러리",
     "url": "https://ko.wikipedia.org/wiki/%EB%82%B4%EC%85%94%EB%84%90_%EA%B0%A4%EB%9F%AC%EB%A6%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -331,6 +411,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "마담 투소(Madame Tussauds)는 런던 본점을 포함한 여러 나라 대도시에 있는 밀랍 인형 박물관이다. 마담 투소 박물관은 밀랍 조각가 마리 투소에 의해 설립되었으며, 예전에는 \"Madame Tussaud's\"라고 주로 불렸지만, 요즘에는 별로 쓰지 않는다. 마담 투소 박물관은 역사적인 왕실 인물, 유명한 영화 배우, 가수, 스포츠 스타, 악명높은 살인자의 밀랍 인형을 전시하는 런던의 주요 관광 명소이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -339,6 +420,7 @@
     "title": "마담 투소",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%8B%B4_%ED%88%AC%EC%86%8C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -366,8 +448,49 @@
    "wikidata_id": "Q186309"
   },
   {
+   "area": "시티오브웨스트민스터",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "다우닝가 10번지(다우닝街10番地, 영어: 10 Downing Street)는 영국의 총리가 머무르는 관저이다. 18세기에 지어져 300여년에 달하는 역사를 자랑한다. 본래 제1대장경을 위한 저택이었으나 19세기 들어 영국 총리가 제1대장경을 겸임하게 되면서 자연스럽게 총리 관저가 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "다우닝가 10번지",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%A4%EC%9A%B0%EB%8B%9D%EA%B0%80_10%EB%B2%88%EC%A7%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q169101",
+   "importance": {
+    "sitelinks": 64
+   },
+   "lat": 51.503333,
+   "lng": -0.127778,
+   "name": "다우닝가 10번지",
+   "name_original": "10 Downing Street",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q875016",
+    "Q1901835"
+   ],
+   "wikidata_id": "Q169101"
+  },
+  {
    "area": "켄징턴 첼시 구",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "빅토리아 앨버트 박물관(Victoria and Albert Museum)은 영국 런던의 사우스켄싱턴에 있는 미술관이다. 영국 왕립박물관 중의 하나로, 중세부터 근대에 걸친 유럽 미술을 중심으로 동양미술 작품에 이르기까지 광범위하게 소장하고 있다. 특히 장식미술 공예분야에서는 세계적 규모와 내용을 자랑한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -376,6 +499,7 @@
     "title": "빅토리아 앨버트 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%85%ED%86%A0%EB%A6%AC%EC%95%84_%EC%95%A8%EB%B2%84%ED%8A%B8_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -408,6 +532,7 @@
   {
    "area": "서더크",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "더 샤드(The Shard, Shard of Glass, Shard London Bridge, 이전 이름: 런던 브리지 타워/London Bridge Tower)는 런던에 위치한 72층의 고층 건물이다. 2009년 3월 착공하여 2012년 3월 30일 완공하였으며 2012년 7월 5일 개관하였다. 2013년 2월 1일 공식 개장하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -416,6 +541,7 @@
     "title": "더 샤드",
     "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%EC%83%A4%EB%93%9C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -446,6 +572,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "뉴 스코틀랜드 야드(New Scotland Yard)는 영국의 수도 런던에 소재한 런던 경찰국 또는 본부를 나타내는 말이다. 초대 본점 소재지에서 유래하는 이 이름은 오늘날까지 런던 경시청의 통칭. 애칭으로 세계적으로 널리 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -454,6 +581,7 @@
     "title": "스코틀랜드 야드",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%EC%BD%94%ED%8B%80%EB%9E%9C%EB%93%9C_%EC%95%BC%EB%93%9C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -483,6 +611,7 @@
   {
    "area": "켄징턴 첼시 구",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "켄싱턴 궁전(Kensington Palace)은 런던의 첼시 인근에 있는 궁전이다. 영국 왕가의 궁전으로 17세기 이후 줄곧 쓰여온 곳이다. 현재는 케임브리지 공작 윌리엄과 공작부인 캐서린 그리고 공자 조지, 웨일스 공자 해리, 글로스터 공작 리처드와 공작부인 비아지트, 켄트 공자 마이클과 공자빈 마리에의 공식적인 거주지다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -491,6 +620,7 @@
     "title": "켄징턴궁",
     "url": "https://ko.wikipedia.org/wiki/%EC%BC%84%EC%A7%95%ED%84%B4%EA%B6%81"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -521,8 +651,48 @@
    "wikidata_id": "Q207385"
   },
   {
+   "area": "시티오브웨스트민스터",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "다우닝 가 (Downing Street)는 영국 잉글랜드 런던의 거리로, 영국 내각의 최고 수석장관 두 명이 공식 거주하는 저택이 300년 넘게 자리해 있는 거리기도 하다. 그 두 장관은 제1대장경과 제2대장경으로, 전자는 영국 총리(Prime Minister of the United Kingdom)를 일컫는 말이며 후자는 영국 재무장관(Chancellor of the Exchequer)이 맡는 자리다. 영국 총리의 공식 저택은 다우닝가 10번지이며 재무부장관의 공식 저택은 바로 옆집인 11번지다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "다우닝가",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8B%A4%EC%9A%B0%EB%8B%9D%EA%B0%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q192687",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 51.503333,
+   "lng": -0.1275,
+   "name": "다우닝가",
+   "name_original": "Downing Street",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007"
+   ],
+   "wikidata_id": "Q192687"
+  },
+  {
    "area": "시티오브런던",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "30 세인트 메리 액스(30 St Mary Axe)는 영국 런던에서 최초로 환경친화적으로 지은 마천루로, 런던 중심부에 위치한다. 타워의 모양을 최대한 자연광이 건물로 들어오도록 설계되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -531,6 +701,7 @@
     "title": "30 세인트 메리 액스",
     "url": "https://ko.wikipedia.org/wiki/30_%EC%84%B8%EC%9D%B8%ED%8A%B8_%EB%A9%94%EB%A6%AC_%EC%95%A1%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -560,8 +731,10 @@
   {
    "area": "",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -591,6 +764,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립 초상화 미술관(National Portrait Gallery, NPG)은 역사적으로 중요하고 유명한 영국인들의 초상화 컬렉션을 소장하고 있는 런던의 미술관이다. 1856년에 문을 열었을 당시, 이곳은 초상화만을 전문으로 다루는 세계 최초의 국립 공공 미술관이었다. 미술관은 1896년에 트라팔가 광장 인근의 내셔널 갤러리와 인접한 세인트 마틴스 플레이스(St Martin's Place)의 현재 부지로 이전했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -599,6 +773,7 @@
     "title": "국립 초상화 미술관 (런던)",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD_%EC%B4%88%EC%83%81%ED%99%94_%EB%AF%B8%EC%88%A0%EA%B4%80_(%EB%9F%B0%EB%8D%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -630,6 +805,7 @@
   {
    "area": "켄징턴 첼시 구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "해러즈(Harrods)는 런던 중심부의 나이츠브리지 지구 브롬프턴 로드에 접해있는 영국의 고급 백화점이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -638,6 +814,7 @@
     "title": "해러즈",
     "url": "https://ko.wikipedia.org/wiki/%ED%95%B4%EB%9F%AC%EC%A6%88"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -669,6 +846,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "화이트홀(Whitehall)은 영국 센트럴런던의 시티오브웨스트민스터에 위치한 도로이자 주변 동네의 명칭이다. 트라팔가 광장에서 첼시까지 이어지는 A3212 도로의 초입에 해당된다. 이와 더불어 트라팔가 광장에서 남쪽의 팔리아먼트 광장 방면으로 이어지는 주요 길목이기도 하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -677,6 +855,7 @@
     "title": "화이트홀 (런던)",
     "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%9D%B4%ED%8A%B8%ED%99%80_(%EB%9F%B0%EB%8D%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -692,7 +871,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -706,8 +885,10 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -737,7 +918,88 @@
   },
   {
    "area": "시티오브웨스트민스터",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "채링크로스(Charing Cross)는 영국 런던 도심 트라팔가 광장 동쪽에 있는 번화가이다. 그레이터런던에 위치한 웨스트민스터 시에 자리잡고 있고, 채링크로스 주변에 웨스트민스터 사원, 피카딜리 서커스, 레스터 스퀘어 등이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "채링크로스",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B1%84%EB%A7%81%ED%81%AC%EB%A1%9C%EC%8A%A4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q216185",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 51.5073,
+   "lng": -0.12755,
+   "name": "채링크로스",
+   "name_original": "Charing Cross",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 22.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q2755753"
+   ],
+   "wikidata_id": "Q216185"
+  },
+  {
+   "area": "시티오브웨스트민스터",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "화이트홀 궁(영어: Palace of Whitehall)은 영국 런던에 있었던 궁전으로, 과거 요크 대주교의 주교 궁전으로 사용되어 요크 궁(영어: York Palace)이라고도 한다. 1530년부터 1698년까지 잉글랜드 군주들의 주요 거주지였으나, 1698년 화재로 소실되어 현재는 1622년에 이니고 존스가 건축한 방케팅 하우스 만이 남아있다. 화재가 있기 전에 화이트홀 궁은 유럽에서 가장 규모가 큰 궁으로 방의 개수만 해도 1,500개가 넘었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "화이트홀궁",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%9D%B4%ED%8A%B8%ED%99%80%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q391620",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 51.504444,
+   "lng": -0.125556,
+   "name": "화이트홀궁",
+   "name_original": "Palace of Whitehall",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q19860854",
+    "Q16560"
+   ],
+   "wikidata_id": "Q391620"
+  },
+  {
+   "area": "시티오브웨스트민스터",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "런던 동물원(London Zoo, 구 명칭: ZSL 런던 동물원, ZSL London Zoo)은 세계에서 가장 오래된 과학 동물원이다. 1828년 4월 27일 런던에서 개장했으며, 원래는 과학적 연구를 위한 동물 수집 장소로 사용될 예정이었다. 1831년 또는 1832년에 런던탑 동물원의 동물들이 동물원으로 옮겨졌고, 1847년에 대중에게 공개되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -746,6 +1008,7 @@
     "title": "런던 동물원",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98_%EB%8F%99%EB%AC%BC%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -775,6 +1038,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "리젠츠 파크(영어: Regent's Park)는 런던 북부에 있는 왕립 공원 및 인근 지역의 명칭이다. 도심의 북서쪽 끝에 위치하며, 런던에서 가장 큰 야외 스포츠 공원이다. 공원의 북쪽에는 런던 동물원이 있으며, 리젠트 운하의 일부와 만난다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -783,6 +1047,7 @@
     "title": "리젠츠 파크",
     "url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%A0%A0%EC%B8%A0_%ED%8C%8C%ED%81%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -798,7 +1063,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -812,6 +1077,7 @@
   {
    "area": "런던",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "이스트엔드오브런던(East End of London) 또는 이스트엔드는 잉글랜드의 런던에서 시티 오브 런던의 중세 장벽 동쪽과 템즈 강의 북쪽 지역을 가리킨다. 그러나 공식적인 지역 경계는 존재하지 않는다. 웨스트엔드에 대한 변두리이며, 한때 잭 더 리퍼의 현장이 된 곳이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -820,6 +1086,7 @@
     "title": "이스트엔드오브런던",
     "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%A4%ED%8A%B8%EC%97%94%EB%93%9C%EC%98%A4%EB%B8%8C%EB%9F%B0%EB%8D%98"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -849,6 +1116,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "레스터 광장(영어: Leicester Square)은 런던 중심부 웨스트엔드에 있는 광장이다. 광장 주변에는 극장, 영화관, 레스토랑, 나이트 클럽 등 오락 시설 및 라디오 방송국과 MTV 스튜디오 등 미디어 기업이 모여 있다. 런던 지하철이 지나며, 가장 가까운 역은 레스터광장 역이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -857,6 +1125,7 @@
     "title": "레스터 광장",
     "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EC%8A%A4%ED%84%B0_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -898,6 +1167,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "영국 왕립미술원(Royal Academy of Arts, RA)은 잉글런드 런던 피카딜리의 벌링턴 하우스에 위치한 미술 관련 기관이다. 1768년에 설립된 이 기관은 저명한 예술가와 건축가들이 이끄는 독립적인 민간 기금 기관으로서, 국가의 지원을 받지 않는 독특한 위치를 차지하고 있다. 그 목적은 전시, 교육 및 토론을 통해 순수 미술의 창작, 즐거움 및 감상을 증진하는 것이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -906,6 +1176,7 @@
     "title": "영국 왕립미술원",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%81%EA%B5%AD_%EC%99%95%EB%A6%BD%EB%AF%B8%EC%88%A0%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -921,7 +1192,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -938,6 +1209,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "피카딜리(Piccadilly)는 영국 런던 시티오브웨스트민스터에 위치한 주요한 거리 중 하나이다. 동쪽에서 피카딜리 서커스에 접한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -946,6 +1218,7 @@
     "title": "피카딜리",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B9%B4%EB%94%9C%EB%A6%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -975,6 +1248,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "넬슨 기념탑(영어: Nelson's Column)은 영국 런던 트라팔가 광장 중심으로 자리 잡고 있는 기념석물이다. 1840년부터 1843년까지 허레이쇼 넬슨 제독의 업적을 기념하기 위해 건설되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -983,6 +1257,7 @@
     "title": "넬슨 기념탑",
     "url": "https://ko.wikipedia.org/wiki/%EB%84%AC%EC%8A%A8_%EA%B8%B0%EB%85%90%ED%83%91"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1012,6 +1287,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "애비 로드 스튜디오(Abbey Road Studio)는 영국 런던의 웨스터민스터에 위치한 음악 스튜디오이다. 1931년 11월에 설립되었으며 현재는 EMI 레코드 소유에 있다. 비틀즈, 클리프 리처드, 핑크 플로이드 등의 유명 가수들이 이곳에서 녹음을 한 것으로 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1020,6 +1296,7 @@
     "title": "애비 로드 스튜디오",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%A0%EB%B9%84_%EB%A1%9C%EB%93%9C_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1050,7 +1327,47 @@
   },
   {
    "area": "시티오브웨스트민스터",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "세인트마틴인더필즈(St Martin-in-the-Fields)는 영국 런던 트라팔가 광장에 있는 교회이다. 피터 베넨슨이 1961년 이 교회에서 묵상한 뒤 국제앰네스티를 창립하겠다고 결심했고, 그 후 세계 인권의 날에는 이 교회에서 촛불을 켜는 행사를 여는 것으로 유명하다. 영국의 관현악단인 세인트 마틴 인 더 필즈 아카데미 실내 관현악단은 이곳에서 첫 연주회를 가진 인연으로 이곳의 이름을 따서 명명되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "세인트마틴인더필즈",
+    "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EC%9D%B8%ED%8A%B8%EB%A7%88%ED%8B%B4%EC%9D%B8%EB%8D%94%ED%95%84%EC%A6%88"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1335201",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 51.508889,
+   "lng": -0.126944,
+   "name": "세인트 마틴 인 더 필즈",
+   "name_original": "St Martin-in-the-Fields",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q1335201"
+  },
+  {
+   "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "스트랜드(영어: Strand)는 런던 시티오브웨스트민스터 내의 지명이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1059,6 +1376,7 @@
     "title": "스트랜드 (런던)",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8A%B8%EB%9E%9C%EB%93%9C_(%EB%9F%B0%EB%8D%98)"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1088,6 +1406,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "켄징턴 가든스(영어: Kensington Gardens)는 영국 런던에 위치한 왕립 공원이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1096,6 +1415,7 @@
     "title": "켄징턴 가든스",
     "url": "https://ko.wikipedia.org/wiki/%EC%BC%84%EC%A7%95%ED%84%B4_%EA%B0%80%EB%93%A0%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1111,7 +1431,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1126,6 +1446,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "더 맬(영어: The Mall)은 잉글랜드 런던 웨스트엔드오브런던 남서쪽의 버킹엄 궁전과 북동쪽의 애드미럴티 아치를 지나 트라팔가 광장을 잇는 거리이다. 길이는 930m이다. 일요일이나 휴일, 축제와 의식이 거행되는 동안은 교통 규제가 이루어진다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1134,6 +1455,7 @@
     "title": "더 맬",
     "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%EB%A7%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1149,7 +1471,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1163,6 +1485,7 @@
   {
    "area": "시티오브런던",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "런던 박물관(영어: London Museum)은 영국 잉글랜드 런던에 있는 박물관이다. 선사 시대부터 현대까지 런던의 역사를 다루며, 특히 사회사에 중점을 두고 있다. 런던 박물관은 1826년에 설립된 길드홀 박물관에서 시의회가 소장하고 있던 컬렉션과 1911년에 설립된 런던 박물관의 컬렉션을 통합하여 1976년에 설립되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1171,6 +1494,7 @@
     "title": "런던 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1201,6 +1525,7 @@
   {
    "area": "",
    "category": "building_landmark",
+   "coord_source": "geosearch:ko",
    "description": "세인즈버리스(Sainsbury's)는 영국의 슈퍼마켓 체인이다. 영국의 슈퍼마켓 체인 중 두 번째로 큰 기업으로서, 2015년 기준으로 영국 슈퍼마켓 시장의 16.9%를 점유하고 있다. 1869년 존 제임스 세인즈버리가 런던 드루리 레인에 설립한 가게에서 출발하여, 1922년에 이르면 회사는 식료품 분야에서 가장 큰 소매업체가 되어 영국의 자급식 소매업을 선도했고, 1980년대까지 전성기를 누렸다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1209,6 +1534,7 @@
     "title": "세인즈버리스",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EC%9D%B8%EC%A6%88%EB%B2%84%EB%A6%AC%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1224,7 +1550,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1239,8 +1565,91 @@
    "wikidata_id": "Q152096"
   },
   {
+   "area": "시티오브웨스트민스터",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "애드미럴티 아치(영어: Admiralty Arch)는 잉글랜드 런던 시티오브웨스트민스터의 역사적인 건물이다. 남서쪽으로는 더 맬, 동북쪽으로는 트라팔가 광장으로 이어진다. 1911년 에드워드 7세가 어머니인 빅토리아 여왕을 기리기 위하여 건설하도록 하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "애드미럴티 아치",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%A0%EB%93%9C%EB%AF%B8%EB%9F%B4%ED%8B%B0_%EC%95%84%EC%B9%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q359256",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 51.506758,
+   "lng": -0.128692,
+   "name": "애드미럴티 아치",
+   "name_original": "Admiralty Arch",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q143912"
+   ],
+   "wikidata_id": "Q359256"
+  },
+  {
+   "area": "시티오브웨스트민스터",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "채링크로스역(영어: Charing Cross railway station)은 런던 중심부의 철도 터미널이다. 다른 런던의 종착역과는 달리, 워털루 역과 런던브리지 역 2개의 터미널과 연결하고있다. 런던에서 5 번째로 큰 철도 터미널이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "채링크로스역 (철도역)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B1%84%EB%A7%81%ED%81%AC%EB%A1%9C%EC%8A%A4%EC%97%AD_(%EC%B2%A0%EB%8F%84%EC%97%AD)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q801128",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 51.5075,
+   "lng": -0.123611,
+   "name": "채링크로스역",
+   "name_original": "Charing Cross railway station",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 111.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1339195",
+    "Q55488",
+    "Q55485",
+    "Q22808404"
+   ],
+   "wikidata_id": "Q801128"
+  },
+  {
    "area": "서더크구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "런던 시청사(영어: City Hall)는 런던 시장과 런던 의회로 구성된 그레이터런던 당국(GLA)의 본부이다. 청사는 타워 브리지 근처, 템즈강 남부의 서더크에 위치하고 있다. 설계자는 노먼 포스터로, GLA의 설립 2년 후 2002년 7월 개청했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1249,6 +1658,7 @@
     "title": "런던 시청사",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98_%EC%8B%9C%EC%B2%AD%EC%82%AC"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1279,8 +1689,10 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1296,7 +1708,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "none",
     "reason": "label_mismatch",
     "redirected": false,
@@ -1312,7 +1724,47 @@
   },
   {
    "area": "시티오브웨스트민스터",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "팰맬(Pall Mall)은 영국 런던 중부 시티 오브 웨스트민스터의 세인트 제임스(St James's) 지구에 있는 거리이다. 세인트 제임스 스트리트(St James's Street)와 트라팔가 광장(Trafalgar Square) 사이를 이으며, 잉글랜드 A4 국도의 일부이다. 17세기에 유행하던 잔디 게임인 팰맬(Pall-mall)에서 이름이 유래하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "팰맬 (런던)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%B0%EB%A7%AC_(%EB%9F%B0%EB%8D%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q925349",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 51.506944,
+   "lng": -0.133056,
+   "name": "팰맬",
+   "name_original": "Pall Mall",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007"
+   ],
+   "wikidata_id": "Q925349"
+  },
+  {
+   "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "월리스 컬렉션(영어: Wallace Collection)은 영국 런던 맨체스터 광장에 위치한 박물관으로, 하트퍼드 후작인 시모어 가문의 옛 타운하우스인 하트퍼드 하우스(Hertford House)에 들어서 있다. 월리스 컬렉션이라는 명칭은 18세기와 19세기에 하트퍼드 후작과 함께 광범위한 컬렉션(소장품)을 구축한 리처드 월리스 경의 이름을 따서 지어졌다. 이 컬렉션은 15세기부터 19세기까지의 미술품과 장식 예술품을 특징으로 하며 18세기 프랑스 회화, 가구, 무기 및 갑옷, 도자기, 고전주의 회화 등 주요 소장품을 25개의 갤러리에 보관됐다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1321,6 +1773,7 @@
     "title": "월리스 컬렉션",
     "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EB%A6%AC%EC%8A%A4_%EC%BB%AC%EB%A0%89%EC%85%98"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1352,6 +1805,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "애비 로드(Abbey Road)는 영국 런던 캠던구와 시티오브웨스트민스터에 있는 거리이다. 로즈 크리켓 그라운드 인근의 세인트존스우드 일대를 북서쪽에서 남서쪽 방면으로 지나가는 도로이다. 애비 로드 스튜디오가 위치해 있으며, 비틀즈의 1969년 앨범 《Abbey Road》는 이 거리명에서 따옴과 동시에 음반 커버도 여기에서 촬영한 것으로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1360,6 +1814,7 @@
     "title": "애비 로드 (런던)",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%A0%EB%B9%84_%EB%A1%9C%EB%93%9C_(%EB%9F%B0%EB%8D%98)"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1389,6 +1844,7 @@
   {
    "area": "완즈워스 구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "배터시 화력발전소 (Battersea Power Station)는 영국 런던 원즈워스구 나인엠스의 템스강변 남안에 위치한 옛 석탄 화력발전소이다. 레오너드 피어스의 계획에 따라 런던 파워 컴퍼니 (LPC)가 건설하였으며, 설계는 J. 테오 할리데이와 길스 길버트 스콧이 맡았다. 완공 당시 세계에서 가장 큰 벽돌식 건물이었으며 아르데코 양식의 내부공간과 장식으로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1397,6 +1853,7 @@
     "title": "배터시 화력발전소",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%B0%ED%84%B0%EC%8B%9C_%ED%99%94%EB%A0%A5%EB%B0%9C%EC%A0%84%EC%86%8C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1426,6 +1883,7 @@
   {
    "area": "완즈워스 구",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "첼시 교(영어: Chelsea Bridge)는 영국 런던 템스강 위에 있는 다리이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1434,6 +1892,7 @@
     "title": "첼시교",
     "url": "https://ko.wikipedia.org/wiki/%EC%B2%BC%EC%8B%9C%EA%B5%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1464,44 +1923,82 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "building_landmark",
-   "description": "리츠 런던(The Ritz London)은 영국 런던의 피카딜리 거리에 위치한 호텔이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "리츠 런던",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%B8%A0_%EB%9F%B0%EB%8D%98"
-   },
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q1481002",
+   "id": "wd:Q1155331",
    "importance": {
-    "sitelinks": 26
+    "sitelinks": 27
    },
-   "lat": 51.507222,
-   "lng": -0.141389,
-   "name": "리츠 런던",
-   "name_original": "The Ritz London",
+   "lat": 51.5081,
+   "lng": -0.132,
+   "name": "여왕 폐하의 극장",
+   "name_original": "His Majesty's Theatre",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 19.2,
+    "coord_delta_m": null,
+    "label_match": "partial",
+    "reason": "coords_missing_and_label_weak",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q24354"
+   ],
+   "wikidata_id": "Q1155331"
+  },
+  {
+   "area": "런던",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "헝거퍼드 교(영어: Hungerford Bridge)는 잉글랜드 런던 템스강을 가로지르는 다리로, 워털루 교와 웨스트민스터 교 사이에 있다. 채링크로스 교(Charing Cross Bridge)라고도 부른다. 현재는 철도 교량 및 공통 교각을 이용하여 2개의 보행자용 현수교인 골든 주빌리 교(영어: Golden Jubilee Bridge)도 병설되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "헝거퍼드교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%97%9D%EA%B1%B0%ED%8D%BC%EB%93%9C%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1436185",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 51.506111,
+   "lng": -0.12,
+   "name": "헝거퍼드교",
+   "name_original": "Hungerford Bridge and Golden Jubilee Bridges",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q63099748",
-    "Q27686"
+    "Q12042110",
+    "Q1068842",
+    "Q1210334",
+    "Q158555"
    ],
-   "wikidata_id": "Q1481002"
+   "wikidata_id": "Q1436185"
   },
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "호스 가즈 퍼레이드(영어: Horse Guards Parade)는 런던 호스 가즈의 시설로, 행군 등 영국 왕실의 주요 의식이 거행된다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1510,6 +2007,7 @@
     "title": "호스 가즈 퍼레이드",
     "url": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%8A%A4_%EA%B0%80%EC%A6%88_%ED%8D%BC%EB%A0%88%EC%9D%B4%EB%93%9C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1540,6 +2038,7 @@
   {
    "area": "캠던구",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "프로이트 박물관(영어: Freud Museum)은 잉글랜드 런던에 있는 지그문트 프로이트를 기리는 박물관으로, 그가 생애 마지막 해를 가족과 함께 보낸 자택에 위치해 있다. 1938년, 나치의 오스트리아 병합을 피해 파리를 거쳐 런던으로 온 그는 잠시 엘스워시 로드 39번지에 머물다가 현재 박물관이 있는 마레스필드가든 20번지로 이사했다. 그는 1년 후 같은 집에서 사망했지만, 그의 딸 아나 프로이트는 1982년 사망할 때까지 그곳에 계속 머물렀다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1548,6 +2047,7 @@
     "title": "프로이트 박물관",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%EC%9D%B4%ED%8A%B8_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1579,6 +2079,7 @@
   {
    "area": "",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "런던에는 왕립공원이 여러개 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1587,6 +2088,7 @@
     "title": "런던의 왕립공원",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98%EC%9D%98_%EC%99%95%EB%A6%BD%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1602,7 +2104,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1617,6 +2119,7 @@
   {
    "area": "켄징턴 첼시 구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "포토벨로로드(영어: Portobello Road)은 잉글랜드 런던 노팅힐에 있는 거리 중 하나이다. 노팅힐의 북쪽에서 남쪽으로 완전한 구간이 이어진 곳이다. 나란히 래드브로크그로브로드와 연결되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1625,6 +2128,7 @@
     "title": "포토벨로로드",
     "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%ED%86%A0%EB%B2%A8%EB%A1%9C%EB%A1%9C%EB%93%9C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1665,6 +2169,7 @@
   {
    "area": "시티오브런던",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "20 펜처치 스트리트(20 Fenchurch Street)은 영국 런던에 위치한 마천루이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1673,6 +2178,7 @@
     "title": "20 펜처치 스트리트",
     "url": "https://ko.wikipedia.org/wiki/20_%ED%8E%9C%EC%B2%98%EC%B9%98_%EC%8A%A4%ED%8A%B8%EB%A6%AC%ED%8A%B8"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1702,6 +2208,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "채링크로스 로드(영어: Charing Cross Road)는 런던 중심부에 위치한 도로이다. 서점가로 잘 알려져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1710,6 +2217,7 @@
     "title": "채링크로스 로드",
     "url": "https://ko.wikipedia.org/wiki/%EC%B1%84%EB%A7%81%ED%81%AC%EB%A1%9C%EC%8A%A4_%EB%A1%9C%EB%93%9C"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1740,6 +2248,7 @@
   {
    "area": "시티오브런던",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "중앙형사재판소(Central Criminal Court)는 흔히 올드 베일리(Old Bailey)라는 별명으로 더 유명한 영국의 런던 중심부에 있는 재판소 건물이다. 건물 꼭대기에 정의의 여신상이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1748,6 +2257,7 @@
     "title": "중앙형사재판소",
     "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%95%99%ED%98%95%EC%82%AC%EC%9E%AC%ED%8C%90%EC%86%8C"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1778,6 +2288,7 @@
   {
    "area": "캠던구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "러셀 스퀘어(영어: Russell Square)는 잉글랜드 런던 블룸즈버리에 있는 런던에서 두번째로 큰 광장이다. 주변에는 런던 대학 관련 시설이 많으며, 런던 지하철에서 가장 가까운 역은 러셀 스퀘어 역이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1786,6 +2297,7 @@
     "title": "러셀 스퀘어",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%AC%EC%85%80_%EC%8A%A4%ED%80%98%EC%96%B4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1815,6 +2327,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "런던 교통 박물관(영어: London Transport Museum)은 잉글랜드 런던에 있는 교통 박물관이다. 철도 및 버스 교통에 관한 자료 등을 수집 및 전시하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1823,6 +2336,7 @@
     "title": "런던 교통 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%9F%B0%EB%8D%98_%EA%B5%90%ED%86%B5_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1838,7 +2352,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.1,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1853,6 +2367,7 @@
   {
    "area": "타워햄리츠구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "브릭레인(Brick Lane)은 잉글랜드의 런던의 거리이다. 수많은 카레 음식점 가게들로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1861,6 +2376,7 @@
     "title": "브릭레인",
     "url": "https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A6%AD%EB%A0%88%EC%9D%B8"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1892,6 +2408,7 @@
   {
    "area": "시티오브웨스트민스터",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "옥스퍼드 서커스(Oxford Circus)는 런던 웨스트엔드에서 옥스퍼드 가 (A40)와 리전트 가가 만나는 교통이 붐비는 교차로이다. 여러 버스 노선이 이 지점을 경유하며, 교차로 바로 지하에는 옥스퍼드 서커스 역이 자리해 있다. 2000년대 말, 옥스퍼드 서커스는 런던 내에서 가장 큰 이동 규모를 기록했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1900,6 +2417,7 @@
     "title": "옥스퍼드 서커스",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A5%EC%8A%A4%ED%8D%BC%EB%93%9C_%EC%84%9C%EC%BB%A4%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1928,10 +2446,51 @@
    "wikidata_id": "Q1996213"
   },
   {
+   "area": "시티오브웨스트민스터",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "더 세노타프(영어: The Cenotaph)는 잉글랜드 런던 화이트홀에 있는 전쟁 기념물이다. 에드윈 루티언스 경이 설계했으며, 1920년 제1차 세계 대전에서 전사한 영국과 대영 제국의 전사자를 기리는 영국의 국립 기념비로 공개되었고, 1946년 제2차 세계 대전의 전사자를 포함하기 위해 재봉헌되었으며, 그 이후로 해당 전쟁과 그 이후의 갈등으로 인한 영연방의 사상자를 상징하게 되었다. 세노타프라는 단어는 '빈 무덤'을 의미하는 그리스어에서 유래했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "더 세노타프",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8D%94_%EC%84%B8%EB%85%B8%ED%83%80%ED%94%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2896743",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 51.502694,
+   "lng": -0.126083,
+   "name": "더 세노타프",
+   "name_original": "The Cenotaph",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q575759"
+   ],
+   "wikidata_id": "Q2896743"
+  },
+  {
    "area": "런던",
    "category": "bridge",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1959,422 +2518,6 @@
     "Q158438"
    ],
    "wikidata_id": "Q693731"
-  },
-  {
-   "area": "켄징턴 첼시 구",
-   "category": "building_landmark",
-   "description": "로열 코트 극장(Royal Court Theatre)은 1870년에 창립된 오래된 극장으로서 영국 런던시 슬로언스퀘어에 있다. 1920년대에는 배리 잭슨경이 버밍엄 극단을 인솔하여 버나드 쇼의 <메서셀러로 돌아가라>와 현대복(現代服)에 의한 셰익스피어극 상연 등으로 극장사(劇場史)에 이름을 남겼으며, 더욱이 1956년부터 조지 셰데빈, 토니 리처드슨의 지도 아래 잉글리시 스테이지 컴페니(The English Stage Company)가 이 극장을 차지하여 오즈번의 <성난 얼굴로 돌아보라>를 공연한 후 아든, 웨스커, 핀터 등 새로운 젊은 작가들의 등용문이 되었고, 한편 베케트, 이오네스코, 주네 등 외국 전위작가들의 작품을 공연함으로써 영국 연극사에 획기적 영향과 공헌을 남긴 극장이 되었다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "로열 코트 극장",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EC%97%B4_%EC%BD%94%ED%8A%B8_%EA%B7%B9%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1169370",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 51.492611,
-   "lng": -0.1565,
-   "name": "로열 코트 극장",
-   "name_original": "Royal Court Theatre",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 6.5,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q24354"
-   ],
-   "wikidata_id": "Q1169370"
-  },
-  {
-   "area": "시티오브런던",
-   "category": "attraction",
-   "description": "롬바드 가(영어: Lombard Street)는 런던의 거리이다. 잉글랜드 은행에서 동쪽으로 300m 정도의 거리이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "롬바드가 (런던)",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A1%AC%EB%B0%94%EB%93%9C%EA%B0%80_(%EB%9F%B0%EB%8D%98)"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1432321",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 51.5125,
-   "lng": -0.0869,
-   "name": "롬바드가",
-   "name_original": "Lombard Street",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q79007"
-   ],
-   "wikidata_id": "Q1432321"
-  },
-  {
-   "area": "타워햄리츠구",
-   "category": "tower",
-   "description": "화이트 타워(White Tower)는 영국 런던의 런던탑 중앙에 있는 높이 28m의 탑으로 11세기에는 런던에서 가장 높은 건물이었다. 화이트 타워라는 이름은 헨리 3세가 이 탑을 흰색으로 칠한 데서 유래했다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "화이트 타워",
-    "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%9D%B4%ED%8A%B8_%ED%83%80%EC%9B%8C"
-   },
-   "evening_candidate": true,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1528473",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 51.5081,
-   "lng": -0.075977,
-   "name": "화이트 타워",
-   "name_original": "White Tower",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.2,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q91165"
-   ],
-   "wikidata_id": "Q1528473"
-  },
-  {
-   "area": "시티오브런던",
-   "category": "worship",
-   "description": "세인트 메리르보(영어: St Mary-le-Bow)는 잉글랜드 런던의 교회이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "세인트 메리르보",
-    "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EC%9D%B8%ED%8A%B8_%EB%A9%94%EB%A6%AC%EB%A5%B4%EB%B3%B4"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2301992",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 51.51371,
-   "lng": -0.093573,
-   "name": "세인트 메리르보",
-   "name_original": "St Mary-le-Bow",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 20.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q16970"
-   ],
-   "wikidata_id": "Q2301992"
-  },
-  {
-   "area": "완즈워스 구",
-   "category": "park",
-   "description": "배터시 공원(Battersea Park)은 런던 배터시에 위치한 공원이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "배터시 공원",
-    "url": "https://ko.wikipedia.org/wiki/%EB%B0%B0%ED%84%B0%EC%8B%9C_%EA%B3%B5%EC%9B%90"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q810947",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 51.4793,
-   "lng": -0.1573,
-   "name": "배터시 공원",
-   "name_original": "Battersea Park",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q22698",
-    "Q2221906"
-   ],
-   "wikidata_id": "Q810947"
-  },
-  {
-   "area": "램버스구",
-   "category": "building_landmark",
-   "description": "성 토머스 병원(영어: St. Thomas' Hospital)은 영국 런던 템스강변에 있는 병원이다. 1860년 플로렌스 나이팅게일이 영국 국민들의 모금을 받아, 간호 학교를 세웠다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "성 토머스 병원",
-    "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%ED%86%A0%EB%A8%B8%EC%8A%A4_%EB%B3%91%EC%9B%90"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1143779",
-   "importance": {
-    "sitelinks": 18
-   },
-   "lat": 51.4991,
-   "lng": -0.11891,
-   "name": "성 토머스 병원",
-   "name_original": "St Thomas' Hospital",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q4260475",
-    "Q1813474",
-    "Q180370"
-   ],
-   "wikidata_id": "Q1143779"
-  },
-  {
-   "area": "시티오브웨스트민스터",
-   "category": "building_landmark",
-   "description": "사보이 극장(영어: Savoy Theatre)은 영국 런던에 위치한 극장이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "사보이 극장",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EB%B3%B4%EC%9D%B4_%EA%B7%B9%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2165797",
-   "importance": {
-    "sitelinks": 18
-   },
-   "lat": 51.510139,
-   "lng": -0.120917,
-   "name": "사보이 극장",
-   "name_original": "Savoy Theatre",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 5.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q24354"
-   ],
-   "wikidata_id": "Q2165797"
-  },
-  {
-   "area": "시티오브런던",
-   "category": "worship",
-   "description": "옛 세인트폴 대성당(Old St Paul's Cathedral)은 1666년 런던 대화재 전까지 현재의 세인트폴 대성당 자리에 서 있었던 시티오브런던의 대성당이었다. 1087년에서 1255~1314년 사이에 지어졌으며, 사도 바울로에게 헌정되었다. 이 건물은 7세기까지 거슬러 올라가는 러드게이트 힐 부지의 아마도 네 번째 세인트폴 대성당이었을 것이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "옛 세인트 폴 대성당",
-    "url": "https://ko.wikipedia.org/wiki/%EC%98%9B_%EC%84%B8%EC%9D%B8%ED%8A%B8_%ED%8F%B4_%EB%8C%80%EC%84%B1%EB%8B%B9"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2576524",
-   "importance": {
-    "sitelinks": 18
-   },
-   "lat": 51.5136,
-   "lng": -0.098333,
-   "name": "옛 세인트 폴 대성당",
-   "name_original": "Old St Paul's Cathedral",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 1.2,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q19860854",
-    "Q2977",
-    "Q97588309",
-    "Q57644089"
-   ],
-   "wikidata_id": "Q2576524"
-  },
-  {
-   "area": "시티오브웨스트민스터",
-   "category": "castle",
-   "description": "사보이 궁전(Savoy Palace)은 중세시대 런던의 가장 큰 귀족들의 타운하우스로 여겨지며, 1381년 와트 타일러의 난의 난으로 파괴될 때까지 곤트의 존의 거처이기도 했다. 현재 사보이 극장과 사보이 호텔이 있는 스트랜드와 템스강 사이에 위치했으며, 이 건물들은 사보이 궁전을 기념하여 이름 붙여진 것이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "사보이궁",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EB%B3%B4%EC%9D%B4%EA%B6%81"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1886295",
-   "importance": {
-    "sitelinks": 16
-   },
-   "lat": 51.510556,
-   "lng": -0.120278,
-   "name": "사보이 궁전",
-   "name_original": "Savoy Palace",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "partial",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q1202402",
-    "Q16560",
-    "Q19860854"
-   ],
-   "wikidata_id": "Q1886295"
-  },
-  {
-   "area": "램버스구",
-   "category": "attraction",
-   "description": "시 라이프 런던 수족관(영어: Sea Life London Aquarium)은 영국 런던 카운티 홀 1층에 있는 수족관이다. 1997년 3월 '런던 수족관' (London Aquarium)이란 이름으로 처음 개관하였으며, 매년 100만 명이 넘는 관람객이 찾는다. 런던 아이가 근처에 자리해 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "시 라이프 런던 수족관",
-    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C_%EB%9D%BC%EC%9D%B4%ED%94%84_%EB%9F%B0%EB%8D%98_%EC%88%98%EC%A1%B1%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3312744",
-   "importance": {
-    "sitelinks": 16
-   },
-   "lat": 51.5019,
-   "lng": -0.118889,
-   "name": "런던 수족관",
-   "name_original": "Sea Life London Aquarium",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 4.9,
-    "label_match": "partial",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q2281788"
-   ],
-   "wikidata_id": "Q3312744"
-  },
-  {
-   "area": "램버스구",
-   "category": "building_landmark",
-   "description": "사우스뱅크 센터(영어: Southbank Centre)는 잉글랜드 런던에 있는 예술 관련 복합 시설이다. 사우스뱅크에 접하고있다. 로열 페스티벌 홀 (국립 시 도서관, 퀸 엘리자베스 홀, 퍼셀 룸 포함)과 헤이워드 갤러리로 이루어져 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "사우스뱅크 센터",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%B0%EC%8A%A4%EB%B1%85%ED%81%AC_%EC%84%BC%ED%84%B0"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2339207",
-   "importance": {
-    "sitelinks": 14
-   },
-   "lat": 51.506064,
-   "lng": -0.116306,
-   "name": "사우스뱅크 센터",
-   "name_original": "Southbank Centre",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 50.3,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q2190251",
-    "Q708676"
-   ],
-   "wikidata_id": "Q2339207"
   }
  ]
 }

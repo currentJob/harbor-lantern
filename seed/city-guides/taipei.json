@@ -1,0 +1,1599 @@
+{
+ "center": {
+  "lat": 25.0478,
+  "lng": 121.517
+ },
+ "city_id": "taipei",
+ "country_code": "TW",
+ "country_en": "Taiwan",
+ "country_ko": "대만",
+ "grade": "full",
+ "harvest": {
+  "candidate_count": 102,
+  "candidate_ko_ratio": 1.0,
+  "composition": {
+   "attraction": 3,
+   "bridge": 1,
+   "building_landmark": 20,
+   "monument": 2,
+   "museum": 7,
+   "park": 1,
+   "worship": 2
+  },
+  "denylisted_count": 0,
+  "described_count": 31,
+  "discovery": {
+   "both": 14,
+   "en": 22,
+   "ko": 0
+  },
+  "discovery_pool": {
+   "both": 40,
+   "en": 69,
+   "ko": 2
+  },
+  "effective_radius_m": 6000,
+  "en_page_count": 487,
+  "excluded_count": 7,
+  "grade_window": 25,
+  "hours_count": 6,
+  "ko_label_count": 25,
+  "ko_label_ratio": 1.0,
+  "ko_page_count": 42,
+  "korean_count": 111,
+  "mapped_count": 489,
+  "no_korean_count": 378,
+  "page_count": 529,
+  "radius_note": "",
+  "reviewed": false,
+  "spot_count": 36,
+  "unclassified_count": 59,
+  "unmapped_count": 0,
+  "verification_failed_count": 5
+ },
+ "known_gaps": [
+  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 30곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+  "분류에 걸리지 않아 제외한 후보 59건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 378건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 0곳 · 영어 검색에서만 22곳 · 양쪽 14곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+  "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+ ],
+ "name_en": "Taipei",
+ "name_ko": "타이베이",
+ "name_local": "臺北",
+ "query": {
+  "en_page_count": 487,
+  "gslimit": 500,
+  "ko_page_count": 42,
+  "korean_count": 111,
+  "limit": 150,
+  "mapped_count": 489,
+  "page_count": 529,
+  "radius_clamped": false,
+  "radius_m": 6000,
+  "registry_radius_m": 6000,
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
+ },
+ "radius_m": 6000,
+ "retrieved_at": "2026-09-16",
+ "schema_version": 1,
+ "sources": [
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://www.wikidata.org/w/api.php",
+   "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://ko.wikipedia.org/w/api.php",
+   "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://overpass.kumi.systems/api/interpreter",
+   "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+  }
+ ],
+ "spots": [
+  {
+   "area": "西村里",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 101은 대만 수도 타이베이에 있는 509미터(101층)의 마천루로, 2010년 1월까지 세계 최고(最高)의 고층건물이었다. 건축 설계는 리쭈위엔(李祖原)의 리쭈위엔건축사사무소(C.Y.Lee&Partners)가 1997년에 맡았으며, 일본의 쿠마가이구미(熊谷組)를 중심으로 화슝잉짜오(華熊營造), 룽민공정(榮民工程), 다유웨이잉짜오(大友為營造) 등이 참여한 컨소시엄이 시공을, 대한민국의 삼성물산 건설 부문이 내장 공사 등을 담당하였다. 완공 이전에는 타이베이 세계금융센터(Taipei World Financial Center)라는 명칭을 사용했고, 과거에는 타이베이 국제금융센터(Taipei International Financial Center)라는 명칭을 사용한 바 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 101",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_101"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q83101",
+   "importance": {
+    "sitelinks": 84
+   },
+   "lat": 25.033611,
+   "lng": 121.564722,
+   "name": "타이베이 101",
+   "name_original": "台北101",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q83101"
+  },
+  {
+   "area": "",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중화민국 입법원은 대만에서 최고의 입법 기관이다. 단원제를 채택하고 있다. 수장은 입법원장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중화민국 입법원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%ED%99%94%EB%AF%BC%EA%B5%AD_%EC%9E%85%EB%B2%95%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q715869",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 25.044167,
+   "lng": 121.519722,
+   "name": "중화민국 입법원",
+   "name_original": "立法院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 32.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q37002670",
+    "Q7138926",
+    "Q10553309"
+   ],
+   "wikidata_id": "Q715869"
+  },
+  {
+   "area": "타이베이시",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "중정기념당(중국어 정체자: 中正紀念堂, 병음: Zhōngzhèng Jìniàntáng 중정지녠탕[*])은 대만의 초대 총통이었던 장제스를 기념해 1980년에 건설한 기념관이다. 타이베이시 중정구에 위치해 있다. 2007년 3월 2일, 국립대만민주기념관 (國立臺灣民主紀念館)으로 이름이 바뀌었다가 마잉주 총통 시대에 들어서 다시 원래 이름으로 바뀌었다.최근 들어 이 장소는 대만의 계엄 시기(1949년~1987년)에 대한 기억과 추모의 기능도 함께 담게 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중정기념당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%A0%95%EA%B8%B0%EB%85%90%EB%8B%B9"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/1052759757"
+   },
+   "hours_text": "09:00-18:00",
+   "id": "wd:Q540794",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 25.034444,
+   "lng": 121.521667,
+   "name": "중정기념당",
+   "name_original": "國立中正紀念堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/1052759757",
+     "text": "영업시간 09:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/1052759757",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q540794"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q706712",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 25.02591,
+   "lng": 121.52749,
+   "name": "국립 대만 사범대학",
+   "name_original": "國立臺灣師範大學",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 90.5,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q265662",
+    "Q627006",
+    "Q45400320",
+    "Q31855"
+   ],
+   "wikidata_id": "Q706712"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "신광 인수보험 마천대루(중국어: 新光人壽保險摩天大樓, 영어: Shin Kong Life Tower)는 타이완 타이베이시의 마천루이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "신광 인수보험 마천대루",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EA%B4%91_%EC%9D%B8%EC%88%98%EB%B3%B4%ED%97%98_%EB%A7%88%EC%B2%9C%EB%8C%80%EB%A3%A8"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q704778",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 25.045939,
+   "lng": 121.515336,
+   "name": "신광 인수보험 마천대루",
+   "name_original": "新光人壽保險摩天大樓",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q704778"
+  },
+  {
+   "area": "富民里",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/198401479"
+   },
+   "hours_text": "Mo-Su 06:00-22:00",
+   "id": "wd:Q706761",
+   "importance": {
+    "sitelinks": 15
+   },
+   "lat": 25.037223,
+   "lng": 121.499898,
+   "name": "용산사",
+   "name_original": "艋舺龍山寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/198401479",
+     "text": "영업시간 Mo-Su 06:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 45.7,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q5393308",
+    "Q1151612",
+    "Q29043583",
+    "Q15894910"
+   ],
+   "wikidata_id": "Q706761"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q555332",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 25.035,
+   "lng": 121.518056,
+   "name": "국립중정문화중심",
+   "name_original": "國家兩廳院",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q153562",
+    "Q1060829"
+   ],
+   "wikidata_id": "Q555332"
+  },
+  {
+   "area": "중정구",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "국립대만박물관(중국어 정체자: 國立台灣博物館, 병음: guólì Táiwān bówùguǎn)은 대만 타이베이시 중정구에 있는 중화민국의 박물관이다. 일본 제국의 식민 통치 시대(대만일치시기)인 1915년에 돔 형식으로 지어졌다. 대만의 역사, 민족, 동식물, 지리, 원주민에 관한 내용 등이 전시되어 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국립대만박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EB%8C%80%EB%A7%8C%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/1050624691"
+   },
+   "hours_text": "Tu-Su 09:30-17:00, Mo off",
+   "id": "wd:Q706692",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 25.042753,
+   "lng": 121.515039,
+   "name": "국립대만박물관",
+   "name_original": "國立臺灣博物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/1050624691",
+     "text": "영업시간 Tu-Su 09:30-17:00, Mo off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/1050624691",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 648.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q17431399",
+    "Q1081138"
+   ],
+   "wikidata_id": "Q706692"
+  },
+  {
+   "area": "중산구",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "행천궁(중국어: 行天宮)은 타이완 타이베이시 중산 구에 있는 사원이다. 관우를 모시고 있다. 입장료는 무료이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "행천궁",
+    "url": "https://ko.wikipedia.org/wiki/%ED%96%89%EC%B2%9C%EA%B6%81"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q712387",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 25.063073,
+   "lng": 121.533846,
+   "name": "행천궁",
+   "name_original": "行天宮",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q842400"
+   ],
+   "wikidata_id": "Q712387"
+  },
+  {
+   "area": "타이베이시",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "자유광장(중국어 간체자: 自由广场, 정체자: 自由廣場, 병음: Zìyóu Guǎngchǎng, 백화자: Chū-iû Kóng-tiûⁿ)은 대만 타이베이시 중정구에 있는 광장이다. 면적은 240,000 제곱미터 (2,600,000 sq ft)가 넘는다. 광장의 이름은 1990년대 대만이 일당 통치에서 현대 민주주의로 전환하는 데 중요한 역사적 역할을 했다는 것을 상기시키는 의미에서 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "자유광장 (타이베이시)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EA%B4%91%EC%9E%A5_(%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4%EC%8B%9C)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6541958",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 25.034627,
+   "lng": 121.521844,
+   "name": "자유광장",
+   "name_original": "自由广场",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q6541958"
+  },
+  {
+   "area": "",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "카이다거란 대도(중국어: 凱達格蘭大道, 영어: Ketagalan Boulevard, 개달격란대도)는 중화민국 타이베이시 중정 구에 있는 도로이다. 길이는 400 미터 정도이고 왕복 10차선으로 이루어져 있다. 중화민국 총통부와 타이베이 성 동문을 잇고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카이다거란 대도",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EC%9D%B4%EB%8B%A4%EA%B1%B0%EB%9E%80_%EB%8C%80%EB%8F%84"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697197",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 25.039444,
+   "lng": 121.515278,
+   "name": "카이다거란 대도",
+   "name_original": "凱達格蘭大道",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34442"
+   ],
+   "wikidata_id": "Q697197"
+  },
+  {
+   "area": "신이구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q24840610",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 25.0344,
+   "lng": 121.5669,
+   "name": "타이베이 남산 플라자",
+   "name_original": "臺北南山廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q24840610"
+  },
+  {
+   "area": "중정구",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697177",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 25.042222,
+   "lng": 121.515,
+   "name": "얼얼바 평화기념공원",
+   "name_original": "二二八和平紀念公園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 67.8,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q22698",
+    "Q4989906"
+   ],
+   "wikidata_id": "Q697177"
+  },
+  {
+   "area": "타이베이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 당대예술관(台北當代藝術館，병음: Táiběi Dāngdài Yìshùguǎn)은 타이완 타이베이시에 있는 미술관이다. 모던 아트를 중심으로 하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 당대예술관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EB%8B%B9%EB%8C%80%EC%98%88%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/217690234"
+   },
+   "hours_text": "Tu-Su 10:00-18:00",
+   "id": "wd:Q699040",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 25.050776,
+   "lng": 121.519022,
+   "name": "타이베이 당대예술관",
+   "name_original": "台北當代藝術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/217690234",
+     "text": "영업시간 Tu-Su 10:00-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/217690234",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 48.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q699040"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중산 축구장(중국어 정체자: 中山足球場, 병음: Zhōngshān Zúqíuchǎng, 한자음: 중산 족구장, 영어: Zhongshan Soccer Stadium/영어: Chungshan Soccer Stadium/영어: Taipei Soccer Stadium)은 타이완성 타이베이시 중산구에 있는 축구장이다. 폭 184 m, 길이 300 m의 이 구장은 마루야마 운동장이 전신인 타이베이시 최초의 표준 축구장으로, 현재 기능은 2009년에 새로 지은 타이베이 시립경기장으로 넘겨졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중산 축구장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%82%B0_%EC%B6%95%EA%B5%AC%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q197911",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 25.0695,
+   "lng": 121.521056,
+   "name": "중산 축구장",
+   "name_original": "中山足球場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q483110"
+   ],
+   "wikidata_id": "Q197911"
+  },
+  {
+   "area": "타이베이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 시립미술관(중국어: 台北市立美術館)은 타이완 타이베이시에 있는 미술관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 시립미술관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697319",
+   "importance": {
+    "sitelinks": 9
+   },
+   "lat": 25.0725,
+   "lng": 121.525,
+   "name": "타이베이 시립미술관",
+   "name_original": "臺北市立美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694"
+   ],
+   "wikidata_id": "Q697319"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 빈관(중국어 정체자: 臺北賓館)은 중화민국 타이베이시 중정구 카이다거란 대도 1호에 있는 중화민국의 국가 영빈관이다. 중화민국 외교부에서 관할하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 빈관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EB%B9%88%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3699230",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 25.0401,
+   "lng": 121.517,
+   "name": "타이베이 빈관",
+   "name_original": "臺北賓館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 40.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3947",
+    "Q15894910"
+   ],
+   "wikidata_id": "Q3699230"
+  },
+  {
+   "area": "신이구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 세계 무역 센터(중국어 정체자: 臺北世界貿易中心, 병음: Táiběi Shìjiè Màoyì Zhōngxīn)는 중화민국 타이베이시에 있는 건축물이다. 1052개의 쇼룸이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 세계 무역 센터",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%84%B8%EA%B3%84_%EB%AC%B4%EC%97%AD_%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700387",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 25.034643,
+   "lng": 121.562079,
+   "name": "타이베이 세계 무역 센터",
+   "name_original": "台北世界貿易中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 85.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1378975"
+   ],
+   "wikidata_id": "Q700387"
+  },
+  {
+   "area": "다퉁구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 징슈 사립 여자고급중고등학교(臺北市私立靜修女子高級中學)는 중화민국 타이베이의 로마 가톨릭 종파 계통 관련 사립 여자 중고등학교이다. 1916년 당시 베네딕토 15세 교황의 관련 지원으로 하여금 국민정부 초기 시대 중화민국 대륙 본토 타이완 성 타이베이에서 첫 개교되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 징슈 사립 여자고급중고등학교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%A7%95%EC%8A%88_%EC%82%AC%EB%A6%BD_%EC%97%AC%EC%9E%90%EA%B3%A0%EA%B8%89%EC%A4%91%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11594730",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.058014,
+   "lng": 121.515597,
+   "name": "타이베이 징슈 사립 여자고급중고등학교",
+   "name_original": "臺北市私立靜修高級中學",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q9826",
+    "Q1138671",
+    "Q423208"
+   ],
+   "wikidata_id": "Q11594730"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 트윈 타워(중국어: 臺北雙星, 영어: Taipei Twins)는 타이완 타이베이시에 제안된 마천루이다. 공사기간은 6년 9개월인데 만약 2027년 12월 31일 완공된다라고 가정하면 늦어도 2021년 3월 31일에는 착공했어야 하지만 현재까지 아무런 정보도 없는 상태이다. 2022년 11월 11일에 드디어 착공하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 트윈 타워",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%ED%8A%B8%EC%9C%88_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1495752",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.0487,
+   "lng": 121.5127,
+   "name": "타이베이 트윈 타워",
+   "name_original": "台北双星",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q104829543"
+   ],
+   "wikidata_id": "Q1495752"
+  },
+  {
+   "area": "다퉁구",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 대교(중국어: 台北大橋, 병음: Táiběi Dàqiáo)는 대만 타이베이시와 신베이시 싼충구를 잇는 단수이강의 자동차 전용 다리이다. 너비는 16.8m이고 중앙 다리의 길이는 481.6m이다. 중앙 경간은 자동차와 일부 모터사이클이 함께 통행하는 반면에 양쪽의 좁은 경간은 자전거와 대부분의 모터사이클이 함께 통행한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 대교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EB%8C%80%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2421150",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.0637,
+   "lng": 121.506,
+   "name": "타이베이 대교",
+   "name_original": "台北大橋",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q12280"
+   ],
+   "wikidata_id": "Q2421150"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "중산당(중국어: 中山堂, 병음: Zhōngshān Táng) 또는 중산홀(Zhongshan Hall)은 원래 타이페이공회당(臺北公會堂)으로 사용되었던 역사적인 건물이다. 중화민국 타이베이시 중정구 (타이베이시) 시먼딩 인근의 98 양핑난로(延平南路)에 위치하고 있다. 1992년에는 정부로부터 사적지로 지정되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "중산당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%82%B0%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/232326529"
+   },
+   "hours_text": "Mo-Su 09:30-17:00",
+   "id": "wd:Q6145247",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.0431,
+   "lng": 121.51,
+   "name": "중산당",
+   "name_original": "中山堂",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/232326529",
+     "text": "영업시간 Mo-Su 09:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 9.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q25550691",
+    "Q41253",
+    "Q1763828"
+   ],
+   "wikidata_id": "Q6145247"
+  },
+  {
+   "area": "쑹산구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "브리즈 센터(Breeze Center)는 타이완 타이베이시 쑹산구에 위치하여 있게 되는 쇼핑 센터이다. 1998년 건축하기 시작하여 2001년에 문을 열었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "브리즈 센터",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A6%AC%EC%A6%88_%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700862",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.046139,
+   "lng": 121.544178,
+   "name": "브리즈 센터",
+   "name_original": "微風廣場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q700862"
+  },
+  {
+   "area": "중산구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 이야기관은 중화민국 타이베이시 중산 구에 있는 박물관이다. 1965년을 재현한 박물관으로, 당시의 학교, 여환, 우체국, 주택, 노점, 상점 등이 재현되어있다. 영화관에서는 당시의 영화를 볼 수 있고, 레스토랑에서는 당시의 음식을 먹을 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 이야기관",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%9D%B4%EC%95%BC%EA%B8%B0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q7676322",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.0733,
+   "lng": 121.524,
+   "name": "타이베이 이야기관",
+   "name_original": "台北故事館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 44.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41176"
+   ],
+   "wikidata_id": "Q7676322"
+  },
+  {
+   "area": "중정구",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "국사관(國史館)은 중화민국의 국사를 편찬 하기 위해 설치된 총통부 직속의 연구기관이다. 주로 역사 자료의 수집이나 보존, 연구 등의 업무를 담당하고 있다. 현재 본부는 타이베이시 중정 구에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국사관 (중화민국)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EC%82%AC%EA%B4%80_(%EC%A4%91%ED%99%94%EB%AF%BC%EA%B5%AD)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/255247884"
+   },
+   "hours_text": "Mo-Sa 09:30-17:00",
+   "id": "wd:Q8016022",
+   "importance": {
+    "sitelinks": 7
+   },
+   "lat": 25.039986,
+   "lng": 121.510792,
+   "name": "국사관",
+   "name_original": "國史館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/255247884",
+     "text": "영업시간 Mo-Sa 09:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 13.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q28863779",
+    "Q33506"
+   ],
+   "wikidata_id": "Q8016022"
+  },
+  {
+   "area": "타이베이시",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "국민혁명충렬사(중국어: 國民革命忠烈祠, 병음: Guómín Gémìng Zhōngliècí)는 타이완에서 항일 전선과 중화민국 정부를 위해 목숨을 바친 영령을 모시기 위해 1969년에 세워졌다. 정문에서는 매 시간마다 위병 교대식이 펼쳐진다. 청년의 날과 군인의 날에는 기념식이 열린다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국민혁명충렬사",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%ED%98%81%EB%AA%85%EC%B6%A9%EB%A0%AC%EC%82%AC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5956488",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 25.080458,
+   "lng": 121.532753,
+   "name": "국민혁명충렬사",
+   "name_original": "國民革命忠烈祠",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q5956488"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "청언먼(承恩門) 또는 베이먼(北門→북문)은 타이완 타이베이시 중정 구에 있는 성이다. 청나라 때만 해도 타이베이 옛 시가지를 성벽으로 둘러싼 5개의 문이 있었지만, 일본의 식민 통치 시대에 성벽과 시먼이라는 문이 파손됐고, 또 다른 문 3개는 중국 궁전식으로 개축되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베이먼",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EB%A8%BC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6726554",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 25.04772,
+   "lng": 121.51121,
+   "name": "베이먼",
+   "name_original": "臺北府城北門",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q210272",
+    "Q82117"
+   ],
+   "wikidata_id": "Q6726554"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 특별시립 제일여자고등학교(臺北特別市立第一女子高等學校, 한국어: 대북시립제일여자고급중학, 영어: Taipei Municipal First Girls High School)은 중화민국(中華民國) 타이베이시(臺北市) 중정구(中正區)에 위치한 여자 고등학교이다. 인근에 총통부(總統府)가 가까이 있다. 현지에서는 북일녀(北一女), 북일여중(北一女中), 북일(北一), 일녀중(一女中) 등으로 불리기도 하며, 녹색의 교복 때문에 이 학교의 학생을 小緑緑이라고 부르기도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 시립 제일여자고급중학",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%8B%9C%EB%A6%BD_%EC%A0%9C%EC%9D%BC%EC%97%AC%EC%9E%90%EA%B3%A0%EA%B8%89%EC%A4%91%ED%95%99"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697164",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 25.0371,
+   "lng": 121.514,
+   "name": "타이베이 시립 제일여자고급중학",
+   "name_original": "臺北市立第一女子高級中學",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q9826",
+    "Q22713629",
+    "Q1080794"
+   ],
+   "wikidata_id": "Q697164"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "광화상장(光華商場)는 타이완 타이베이시 중정 구에 있는 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "광화상장",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%ED%99%94%EC%83%81%EC%9E%A5"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697187",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 25.045267,
+   "lng": 121.5322,
+   "name": "광화상장",
+   "name_original": "光華商場",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q697187"
+  },
+  {
+   "area": "중정구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 젠궈 고급중학교(臺北市立建國高級中學)는 중화민국 타이베이의 공립 고등학교이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 젠궈 고급중학교",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EC%A0%A0%EA%B6%88_%EA%B3%A0%EA%B8%89%EC%A4%91%ED%95%99%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q697974",
+   "importance": {
+    "sitelinks": 6
+   },
+   "lat": 25.0309,
+   "lng": 121.512,
+   "name": "타이베이 젠궈 고급중학교",
+   "name_original": "臺北市立建國高級中學",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q9826",
+    "Q1080794"
+   ],
+   "wikidata_id": "Q697974"
+  },
+  {
+   "area": "완화구",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "화시제 야시장(중국어 정체자: 華西街夜市, 병음: Huáxījiē Yèshì)은 타이완 타이베이시 완화구의 야시장이다. 화시지에 야시장에는 뱀과 자라 등 자양강장을 선전문구로 내세우는 가게가 많다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "화시제 야시장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%8B%9C%EC%A0%9C_%EC%95%BC%EC%8B%9C%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5363313",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.038587,
+   "lng": 121.498501,
+   "name": "화시제 야시장",
+   "name_original": "華西街夜市",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 1.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q282587",
+    "Q79007"
+   ],
+   "wikidata_id": "Q5363313"
+  },
+  {
+   "area": "타이베이시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 필름하우스는 중화민국 타이베이시 중산 구에 있는 건축물이다. 영화 비정성시의 허우샤오셴 감독이 전 미국 영사관 건물을 재단장한 건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 필름하우스",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%ED%95%84%EB%A6%84%ED%95%98%EC%9A%B0%EC%8A%A4"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5364661",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.053056,
+   "lng": 121.522222,
+   "name": "타이베이 필름하우스",
+   "name_original": "前美國大使官邸",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q41253",
+    "Q15894910"
+   ],
+   "wikidata_id": "Q5364661"
+  },
+  {
+   "area": "중정구",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "국군역사문물관(중국어 정체자: 國軍歷史文物館, 병음: Guójūn Lìshǐ Wénwùguǎn)은 중화민국 타이베이시 중정 구에 있었던 중화민국의 군사박물관이다. 중화민국 국군의 실질적인 창군인 국민혁명군 창군 이후부터의 중일 전쟁시대와 국공 내전시대를 거친 중화민국 국군의 발전상을 소개한 박물관이었다. 박물관은 총 5개 전시실로 구성되어있었으며, 입장료를 받지 않았다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국군역사문물관",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EA%B5%B0%EC%97%AD%EC%82%AC%EB%AC%B8%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q5973840",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.039574,
+   "lng": 121.508105,
+   "name": "국군역사문물관",
+   "name_original": "國軍歷史文物館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2772772"
+   ],
+   "wikidata_id": "Q5973840"
+  },
+  {
+   "area": "다퉁구",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "타이베이 북경찰서 (대북북경찰서, 臺北北警察署)는 타이베이시 대동구에 있는 건물이다. 현재 타이베이시 경찰국 대동 분국이 이 건물이 사용하고 있다. 1933년 일본이 타이베이 성 북문 이북 지역을 관리하기 위해 설립하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "타이베이 북경찰서",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4_%EB%B6%81%EA%B2%BD%EC%B0%B0%EC%84%9C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6146055",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.059009,
+   "lng": 121.51515,
+   "name": "타이베이 북경찰서",
+   "name_original": "臺北北警察署",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 38.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q861951",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q6146055"
+  },
+  {
+   "area": "중산구",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "린안타이구춰는 타이완 타이베이시에 있는 민가이다. 1800년에 세에줬으며, 푸제신으로 지어졌다. 린씨 일가가 건축하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "린안타이구춰",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A6%B0%EC%95%88%ED%83%80%EC%9D%B4%EA%B5%AC%EC%B6%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q6776837",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.072001,
+   "lng": 121.530371,
+   "name": "린안타이구춰",
+   "name_original": "林安泰古厝",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 27.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q15894910"
+   ],
+   "wikidata_id": "Q6776837"
+  },
+  {
+   "area": "쑹산구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "징화청(京華城)는 중화민국 타이베이시 쑹산 구에 있는 쇼핑 센터이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "징화청",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%95%ED%99%94%EC%B2%AD"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q700061",
+   "importance": {
+    "sitelinks": 5
+   },
+   "lat": 25.048056,
+   "lng": 121.562222,
+   "name": "징화청",
+   "name_original": "京華城購物中心",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11315"
+   ],
+   "wikidata_id": "Q700061"
+  }
+ ]
+}

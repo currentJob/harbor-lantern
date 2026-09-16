@@ -7,40 +7,57 @@
  "country_code": "ES",
  "country_en": "Spain",
  "country_ko": "스페인",
- "grade": "partial",
+ "grade": "full",
  "harvest": {
-  "candidate_count": 23,
+  "candidate_count": 53,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 3,
-   "building_landmark": 2,
-   "monument": 1,
-   "museum": 5,
-   "park": 2
+   "attraction": 7,
+   "building_landmark": 10,
+   "monument": 2,
+   "museum": 6,
+   "park": 3,
+   "worship": 1
   },
   "denylisted_count": 0,
-  "described_count": 11,
+  "described_count": 24,
+  "discovery": {
+   "both": 15,
+   "en": 10,
+   "ko": 4
+  },
+  "discovery_pool": {
+   "both": 29,
+   "en": 19,
+   "ko": 6
+  },
   "effective_radius_m": 5000,
-  "excluded_count": 1,
-  "grade_window": 13,
-  "hours_count": 5,
-  "ko_label_count": 13,
+  "en_page_count": 500,
+  "excluded_count": 3,
+  "grade_window": 25,
+  "hours_count": 6,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 35,
-  "page_count": 35,
+  "ko_page_count": 35,
+  "korean_count": 54,
+  "mapped_count": 506,
+  "no_korean_count": 452,
+  "page_count": 535,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 13,
-  "unclassified_count": 9,
-  "verification_failed_count": 2
+  "spot_count": 29,
+  "unclassified_count": 21,
+  "unmapped_count": 0,
+  "verification_failed_count": 4
  },
  "known_gaps": [
-  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 8곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 4곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 23곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 9건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 21건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 452건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 4곳 · 영어 검색에서만 10곳 · 양쪽 15곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -48,14 +65,21 @@
  "name_ko": "바르셀로나",
  "name_local": "Barcelona",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 35,
+  "korean_count": 54,
   "limit": 150,
-  "mapped_count": 35,
-  "page_count": 35,
+  "mapped_count": 506,
+  "page_count": 535,
   "radius_clamped": false,
   "radius_m": 5000,
   "registry_radius_m": 5000,
-  "sitelink_min": 20
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 5000,
  "retrieved_at": "2026-09-16",
@@ -65,6 +89,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -84,8 +113,211 @@
  ],
  "spots": [
   {
+   "area": "Sagrada Família",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "사그라다 파밀리아 성당(카탈루냐어: Temple Expiatori de la Sagrada Família, 스페인어: Templo Expiatorio de la Sagrada Familia)은 스페인 바르셀로나에 짓고 있는 로마 가톨릭교회 성당이다. 또한 '사그라다'는 스페인어로 성스러운이라는 뜻을 가졌으며, 파밀리아는 가족을 뜻하기 때문에 성가정 성당이라고도 한다. 카탈루냐 출신 건축가 안토니오 가우디가 설계하고 직접 건축을 책임졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "사그라다 파밀리아",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EA%B7%B8%EB%9D%BC%EB%8B%A4_%ED%8C%8C%EB%B0%80%EB%A6%AC%EC%95%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q48435",
+   "importance": {
+    "sitelinks": 109
+   },
+   "lat": 41.40369,
+   "lng": 2.17433,
+   "name": "사그라다 파밀리아",
+   "name_original": "La Sagrada Família",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q120560",
+    "Q133747929"
+   ],
+   "wikidata_id": "Q48435"
+  },
+  {
+   "area": "La Maternitat i Sant Ramon",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "캄 노우(카탈루냐어: Camp Nou: [kamˈnɔw], \"새 경기장\"이라는 뜻, 스페인어: Camp Nou 캄프 노우[*])는 스페인 바르셀로나에 위치한 축구 경기장이다. 관중 수용인원은 99,876명이고, 유럽에서 가장 큰 축구 경기장이며, 세계에서 11번째로 큰 경기장이다. FC 바르셀로나의 홈 경기장이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "캄 노우",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BA%84_%EB%85%B8%EC%9A%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q159848",
+   "importance": {
+    "sitelinks": 89
+   },
+   "lat": 41.380833,
+   "lng": 2.122778,
+   "name": "캄 노우",
+   "name_original": "Camp Nou",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 4.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q159848"
+  },
+  {
+   "area": "La Salut",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/66713401"
+   },
+   "hours_text": "Jan 01-Mar 24,Oct 28-Dec 31: 08:30-18:15; Mar 25-Apr 29: 08:00-20:30; Apr 30-Aug 26: 08:00-21:30",
+   "id": "wd:Q212867",
+   "importance": {
+    "sitelinks": 55
+   },
+   "lat": 41.413611,
+   "lng": 2.152778,
+   "name": "구엘 공원",
+   "name_original": "Park Güell",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/66713401",
+     "text": "영업시간 Jan 01-Mar 24,Oct 28-Dec 31: 08:30-18:15; Mar 25-Apr 29: 08:00-20:30; Apr 30-Aug 26: 08:00-21:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/66713401",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 527802.8,
+    "label_match": "exact",
+    "reason": "coord_out_of_tolerance",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q1759852",
+    "Q22698"
+   ],
+   "wikidata_id": "Q212867"
+  },
+  {
+   "area": "La Derecha del Ensanche",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q207870",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 41.395278,
+   "lng": 2.161667,
+   "name": "카사 밀라",
+   "name_original": "Casa Milà",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "no_description",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q1498804"
+   ],
+   "wikidata_id": "Q207870"
+  },
+  {
+   "area": "La Derecha del Ensanche",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "카사 바트요(카탈루냐어: Casa Batlló, 스페인어: Casa Batlló)는 스페인 바르셀로나에 있는 안토니 가우디가 설계한 건축물 중 하나로, 2005년 유네스코 세계 문화 유산에 등록되었다. 이는 앞서 해당 부지에 있었던 에밀리오 살라 코르테스(Emilio Sala Cortés)의 건물을 리모델링한 것이다. 엔산체 지구(에이샴플라 지구)를 가로지르는 대로인 바르셀로나 파세오 데 그라시아 거리 43번지에 위치해 있으며, 이 구역은 다른 모더니즘 건축가들의 작품들이 모여있어 소위 불화의 사과(사방이 도로로 둘러싸인 도시의 한 구획)로 불리기도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카사 바트요",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EC%82%AC_%EB%B0%94%ED%8A%B8%EC%9A%94"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q461371",
+   "importance": {
+    "sitelinks": 51
+   },
+   "lat": 41.39158,
+   "lng": 2.16492,
+   "name": "카사 바트요",
+   "name_original": "Casa Batlló",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1498804",
+    "Q11755880"
+   ],
+   "wikidata_id": "Q461371"
+  },
+  {
    "area": "Sant Pere, Santa Caterina i la Ribera",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "카탈루냐 음악당(스페인어: Palau de la Música Catalana, 팔라우 델 라 무지카 카탈라냐)은 스페인 카탈루냐 바르셀로나에 있는 연주회장이다. 카탈루냐 문예부흥운동인 레나셴사(Renaixença)를 주도한 오르페오 카탈라(Orfeó Català) 합창단을 위해 루이스 도메네크 이 몬타네르가 설계하였으며, 1905년에 시공하여 1908년 2월 9일에 준공하였다. 1982년부터 1989년까지 복원과 개수를 거쳐 1997년에 산 파우 병원과 함께 유네스코 세계문화유산에 등재되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -94,6 +326,7 @@
     "title": "카탈루냐 음악당",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EC%9D%8C%EC%95%85%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -121,8 +354,82 @@
    "wikidata_id": "Q327940"
   },
   {
+   "area": "El Parc i la Llacuna del Poblenou",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q336246",
+   "importance": {
+    "sitelinks": 40
+   },
+   "lat": 41.403489,
+   "lng": 2.189519,
+   "name": "토레 글로라이즈",
+   "name_original": "Torre Glòries",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 18.4,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q336246"
+  },
+  {
+   "area": "El Baix Guinardó",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "산 파우 병원(스페인어: Hospital de la Santa Creu i Sant Pau)은 스페인 바로셀로나 엘 귀나르도(스페인어: El Guinardó) 교외에 1901년부터 1930년까지 지어진 복합건축물이다. 카탈루냐 모데르니스모의 중요한 건축가인 루이스 도메네크 이 몬타네르가 설계했다. 1978년에 스페인 국가문화재 역사군으로 등재되었으며 1997년에 카탈루냐 음악당과 함께 유네스코 세계 문화 유산에 등재되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산 파우 병원",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0_%ED%8C%8C%EC%9A%B0_%EB%B3%91%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q507282",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 41.412778,
+   "lng": 2.174444,
+   "name": "산 파우 병원",
+   "name_original": "Hospital de la Santa Creu i Sant Pau",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q64578911",
+    "Q39364723"
+   ],
+   "wikidata_id": "Q507282"
+  },
+  {
    "area": "La Derecha del Ensanche",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "카탈루냐 광장(카탈루냐어: Plaça de Catalunya, 스페인어: Plaza de Cataluña)은 스페인 바르셀로나에 있는 광장이다. 카탈루냐 광장은 바르셀로나 공항에서 아에로 버스를 타고 갈 수 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -131,6 +438,7 @@
     "title": "카탈루냐 광장",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -161,6 +469,7 @@
   {
    "area": "La Maternitat i Sant Ramon",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "미니 에스타디(카탈루냐어: Mini Estadi, 스페인어: Miniestadi)는 스페인 바르셀로나에 위치한 축구 경기장이었다. 캄 노우와 인접해있다. 평상시는 FC 바르셀로나 B의 경기장으로 사용되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -169,6 +478,7 @@
     "title": "미니 에스타디",
     "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%8B%88_%EC%97%90%EC%8A%A4%ED%83%80%EB%94%94"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -184,7 +494,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -198,6 +508,7 @@
   {
    "area": "Sants-Montjuïc",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "카탈루냐 미술관(카탈루냐어: Museu Nacional d'Art de Catalunya, 약칭: MNAC)은 1934년에 설립된 카탈루냐 지방 바르셀로나에 위치한 미술관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -206,6 +517,7 @@
     "title": "카탈루냐 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -251,6 +563,7 @@
   {
    "area": "Ciutat Vella",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "피카소 미술관(카탈루냐어: Museu Picasso)은 스페인 바르셀로나에 위치한 미술관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -259,6 +572,7 @@
     "title": "피카소 미술관 (바르셀로나)",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B9%B4%EC%86%8C_%EB%AF%B8%EC%88%A0%EA%B4%80_(%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -303,10 +617,52 @@
    "wikidata_id": "Q1050032"
   },
   {
+   "area": "Sants-Montjuïc",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "몬주이크(카탈루냐어: Montjuïc 문주이크, 스페인어: Montjuic)는 스페인 바르셀로나에 있는 언덕이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "몬주이크",
+    "url": "https://ko.wikipedia.org/wiki/%EB%AA%AC%EC%A3%BC%EC%9D%B4%ED%81%AC"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1122701",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 41.364167,
+   "lng": 2.158056,
+   "name": "몬주이크",
+   "name_original": "Montjuïc",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q8502",
+    "Q75135432"
+   ],
+   "wikidata_id": "Q1122701"
+  },
+  {
    "area": "몬주이크",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -338,8 +694,87 @@
    "wikidata_id": "Q867072"
   },
   {
+   "area": "Les Corts",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "캄 데 레스 코르츠(카탈루냐어: Camp de Les Corts ˈkam də ləs ˈkoɾts)는 줄여서 레스 코르츠(카탈루냐어: Les Corts)로 알려진 스페인 카탈루냐 주 바르셀로나에 있던 스포츠 경기장이었다. 이 경기장은 바르셀로나가 1957년에 캄 노우로 안방을 옮기기 전까지 구단의 안방 경기장으로 활용했다. 콘달은 창립 이래 해체되기 전까지 이 곳에서만 안방 경기를 치렀었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "캄 데 레스 코르츠",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BA%84_%EB%8D%B0_%EB%A0%88%EC%8A%A4_%EC%BD%94%EB%A5%B4%EC%B8%A0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q918580",
+   "importance": {
+    "sitelinks": 30
+   },
+   "lat": 41.385833,
+   "lng": 2.135556,
+   "name": "캄 데 레스 코르츠",
+   "name_original": "Camp de les Corts",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q918580"
+  },
+  {
+   "area": "Ciutat Vella",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "바르셀로나 개선문(카탈루냐어: Arc de Triomf 아르크 더 트리옴프, 카탈루냐어 발음: [ˈaɾɡ də tɾiˈomf])는 스페인 카탈루냐주 바르셀로나에 있는 개선문이다. 카탈루냐의 건축가 주제프 빌라세카 이 카사노바스(Josep Vilaseca i Casanovas)가 1888년 바르셀로나 만국 박람회(Exposició Universal de Barcelona)의 주 출입구로 설계했다. 당시 박람회장이 있던 자리이자 현재 시우타델랴 공원 으로 이어지는 루이스 콤파니스 거리(Passeig de Lluís Companys)​의 넓은 중앙 산책로 위에 세워져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 개선문",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EA%B0%9C%EC%84%A0%EB%AC%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q631075",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 41.391111,
+   "lng": 2.180556,
+   "name": "바르셀로나 개선문",
+   "name_original": "Arco de Triunfo de Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 30.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q143912"
+   ],
+   "wikidata_id": "Q631075"
+  },
+  {
    "area": "라발 / 바리 크시니스",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "바르셀로나 현대미술관(카탈루냐어: Museu d'Art Contemporani de Barcelona, 스페인어: Museo de Arte Contemporáneo de Barcelona, 약칭: MACBA)은 스페인 바르셀로나에 위치한 미술관이다. 1995년 11월 28일에 개관했으며 건축가 리처드 마이어가 설계를 맡았다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -348,6 +783,7 @@
     "title": "바르셀로나 현대미술관",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -395,6 +831,7 @@
   {
    "area": "바르셀로나",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "FC 바르셀로나 박물관(카탈루냐어: Museu del FC Barcelona) 또는 누녜스 박물관(Museu President Núñez)은 스페인 바르셀로나 캄 노우 내에 있는 축구 박물관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -403,6 +840,7 @@
     "title": "FC 바르셀로나 박물관",
     "url": "https://ko.wikipedia.org/wiki/FC_%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -447,10 +885,51 @@
    "wikidata_id": "Q616238"
   },
   {
+   "area": "라발 / 바리 크시니스",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "라 보케리아(카탈루냐어: La Boqueria) 또는 산트 주제프 시장(카탈루냐어: Mercat de Sant Josep)은 스페인 바르셀로나 시우타베야에 있는 시장이다. 청과 · 정육 · 조미료 · 건어물 · 유제품 · 과자류 등 다양한 상품이 있는 시장이며, 시민 식당에 신선한 재료를 공급한다. 람블라스 거리에서 서쪽에 시장의 입구가 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "라 보케리아",
+    "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC_%EB%B3%B4%EC%BC%80%EB%A6%AC%EC%95%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1334899",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 41.381796,
+   "lng": 2.171549,
+   "name": "라 보케리아",
+   "name_original": "Mercat de la Boqueria",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 36.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2080521"
+   ],
+   "wikidata_id": "Q1334899"
+  },
+  {
    "area": "Sant Pere, Santa Caterina i la Ribera",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -479,8 +958,49 @@
    "wikidata_id": "Q301135"
   },
   {
+   "area": "Ciutat Vella",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "바르셀로네타(La Barceloneta)는 스페인 바르셀로나의 동네이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로네타",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%84%A4%ED%83%80"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q377070",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 41.37944,
+   "lng": 2.18917,
+   "name": "바르셀로네타",
+   "name_original": "la Barceloneta",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 52.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q75135432",
+    "Q123705"
+   ],
+   "wikidata_id": "Q377070"
+  },
+  {
    "area": "몬주이크",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "몬주이크 마법의 분수(카탈루냐어: Font màgica de Montjuïc, 스페인어: Font màgica de Montjuïc)는 스페인 바르셀로나 몬주이크의 분수이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -489,6 +1009,7 @@
     "title": "몬주이크 마법의 분수",
     "url": "https://ko.wikipedia.org/wiki/%EB%AA%AC%EC%A3%BC%EC%9D%B4%ED%81%AC_%EB%A7%88%EB%B2%95%EC%9D%98_%EB%B6%84%EC%88%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -529,6 +1050,7 @@
   {
    "area": "바르셀로나",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "바르셀로나 동물원(카탈루냐어: Parc Zoològic de Barcelona, 스페인어: Parque Zoológico de Barcelona)은 스페인 바르셀로나에 있는 동물원이다. 13 헥타르의 원내에는 400여 종, 7500여 동물이 있으며, 흰색 고릴라 코피토 데 니에베가 있던 동물원으로도 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -537,6 +1059,7 @@
     "title": "바르셀로나 동물원",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EB%8F%99%EB%AC%BC%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -566,6 +1089,7 @@
   {
    "area": "몬주이크",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "에스파냐 광장(카탈루냐어: Plaça d'Espanya, 스페인어: Plaza de España)은 스페인 바르셀로나에 있는 광장이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -574,6 +1098,7 @@
     "title": "에스파냐 광장 (바르셀로나)",
     "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EC%8A%A4%ED%8C%8C%EB%83%90_%EA%B4%91%EC%9E%A5_(%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -603,6 +1128,7 @@
   {
    "area": "Ciutat Vella",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "바르셀로나 수족관(카탈루냐어: Aquarium de Barcelona)는 스페인 바르셀로나 벨 항구에 있는 수족관이다. 35개의 수족관과, 450종의 11,000마리의 동물이 있으며, 해저 80m의 수중 터널이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -611,6 +1137,7 @@
     "title": "바르셀로나 수족관",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EC%88%98%EC%A1%B1%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -636,6 +1163,163 @@
     "Q2281788"
    ],
    "wikidata_id": "Q1200948"
+  },
+  {
+   "area": "Fort Pienc",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "바르셀로나 모누멘탈 투우장(카탈루냐어: Plaça de Braus de la Monumental 플라샤 데 브라우스 데 라 모누멘탈, 스페인어: Plaza de Toros Monumental de Barcelona 플라사 데 토로스 모누멘탈 데 바르셀로나[*]) 또는 간단히 라 모누멘탈(카탈루냐어: La Monumental, 스페인어: La Monumental)은 스페인 카탈루냐 지방 바르셀로나 주 바르셀로나에 있는 투우장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 모누멘탈 투우장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EB%AA%A8%EB%88%84%EB%A9%98%ED%83%88_%ED%88%AC%EC%9A%B0%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q337522",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 41.4,
+   "lng": 2.18111,
+   "name": "바르셀로나 모누멘탈 투우장",
+   "name_original": "la Monumental",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 38.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1193438"
+   ],
+   "wikidata_id": "Q337522"
+  },
+  {
+   "area": "Fort Pienc",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "카탈루냐 국립극장(카탈루냐어: Teatre Nacional de Catalunya)은 스페인 바르셀로나에 위치한 극장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카탈루냐 국립극장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%ED%83%88%EB%A3%A8%EB%83%90_%EA%B5%AD%EB%A6%BD%EA%B7%B9%EC%9E%A5"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1320197",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 41.39972,
+   "lng": 2.18611,
+   "name": "카탈루냐 국립극장",
+   "name_original": "Teatre Nacional de Catalunya",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1954948",
+    "Q24354"
+   ],
+   "wikidata_id": "Q1320197"
+  },
+  {
+   "area": "바르셀로네타",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "바로셀로네타 해변(Playa de la Barceloneta)는 스페인 바르셀로네타의 해변이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로네타 해변",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%84%A4%ED%83%80_%ED%95%B4%EB%B3%80"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1053014",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 41.378419,
+   "lng": 2.192417,
+   "name": "바르셀로네타 해변",
+   "name_original": "platja de la Barceloneta",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 302.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q7900097"
+   ],
+   "wikidata_id": "Q1053014"
+  },
+  {
+   "area": "Gothic Quarter",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "바르셀로나 왁스 박물관(카탈루냐어: Museu de Cera de Barcelona, 스페인어: Museo de cera de Barcelona)은 스페인 바르셀로나에 위치한 박물관이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바르셀로나 왁스 박물관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98_%EC%99%81%EC%8A%A4_%EB%B0%95%EB%AC%BC%EA%B4%80"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q876794",
+   "importance": {
+    "sitelinks": 8
+   },
+   "lat": 41.377381,
+   "lng": 2.177259,
+   "name": "바르셀로나 왁스 박물관",
+   "name_original": "Museu de Cera de Barcelona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 17.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506"
+   ],
+   "wikidata_id": "Q876794"
   }
  ]
 }

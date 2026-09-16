@@ -9,41 +9,58 @@
  "country_ko": "일본",
  "grade": "full",
  "harvest": {
-  "candidate_count": 110,
+  "candidate_count": 150,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 4,
-   "bridge": 1,
-   "building_landmark": 5,
+   "attraction": 3,
+   "building_landmark": 9,
    "castle": 1,
+   "monument": 2,
    "museum": 3,
-   "park": 2,
+   "park": 3,
    "tower": 1,
    "worship": 1
   },
   "denylisted_count": 0,
-  "described_count": 17,
+  "described_count": 21,
+  "discovery": {
+   "both": 12,
+   "en": 11,
+   "ko": 0
+  },
+  "discovery_pool": {
+   "both": 91,
+   "en": 85,
+   "ko": 45
+  },
   "effective_radius_m": 6000,
-  "excluded_count": 1,
-  "grade_window": 18,
+  "en_page_count": 258,
+  "excluded_count": 3,
+  "grade_window": 23,
   "hours_count": 4,
-  "ko_label_count": 18,
+  "ko_label_count": 23,
   "ko_label_ratio": 1.0,
-  "mapped_count": 136,
-  "page_count": 136,
+  "ko_page_count": 136,
+  "korean_count": 221,
+  "mapped_count": 302,
+  "no_korean_count": 81,
+  "page_count": 394,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 18,
-  "unclassified_count": 91,
-  "verification_failed_count": 1
+  "spot_count": 23,
+  "unclassified_count": 124,
+  "unmapped_count": 1,
+  "verification_failed_count": 2
  },
  "known_gaps": [
-  "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 14곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 2곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 2곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 19곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 91건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 124건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "반경 안의 문서 1건은 위키데이터 항목이 없어 후보가 되지 못했다 — 중요도와 분류를 매길 근거가 없다.",
+  "영어 위키백과에서만 발견된 81건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 0곳 · 영어 검색에서만 11곳 · 양쪽 12곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -51,14 +68,21 @@
  "name_ko": "오사카",
  "name_local": "大阪",
  "query": {
+  "en_page_count": 258,
   "gslimit": 500,
+  "ko_page_count": 136,
+  "korean_count": 221,
   "limit": 150,
-  "mapped_count": 136,
-  "page_count": 136,
+  "mapped_count": 302,
+  "page_count": 394,
   "radius_clamped": false,
   "radius_m": 6000,
   "registry_radius_m": 6000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 6000,
  "retrieved_at": "2026-09-16",
@@ -68,6 +92,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -89,6 +118,7 @@
   {
    "area": "Abenosuji",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "아베노하루카스(일본어: あべのハルカス, 영어: Abeno Harukas)는 높이 300m의 일본 오사카부 오사카시 아베노구에 있는 마천루로, 아베노바시 터미널 빌딩의 중심이 되는 빌딩이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -97,6 +127,7 @@
     "title": "아베노하루카스",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%B2%A0%EB%85%B8%ED%95%98%EB%A3%A8%EC%B9%B4%EC%8A%A4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -137,6 +168,7 @@
   {
    "area": "Ōsaka-jō",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "오사카성(일본어: 大 (おお)坂 (さか)城 (じょう), 大 (おお)阪 (さか)城 (じょう) 오사카조[*])은 셋쓰국 히가시나리군 오사카에 있었던 아즈치모모야마 시대부터 에도 시대의 성이다. 다른 이름은 긴조(金城) 혹은 긴조(錦城)로, 과거에는 오사카(大坂)가 근대에 와서 오사카(大阪)로 표기하도록 개정되었기 때문에, 현재에는 오사카(大阪)라고 많이 표기하고 있다. 또, 과거에는 오자카라고 읽었지만, 현재에는 오사카로 많이 읽힌다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -145,6 +177,7 @@
     "title": "오사카성",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4%EC%84%B1"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -174,8 +207,10 @@
   {
    "area": "Shitennōji",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -191,7 +226,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "none",
     "reason": "label_mismatch",
     "redirected": false,
@@ -203,8 +238,97 @@
    "wikidata_id": "Q339859"
   },
   {
+   "area": "Ōyodo-Naka",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "우메다 스카이 빌딩(일본어: 梅田スカイビル 우메다스카이비루[*])은 일본 오사카시에서 21번째로 높은 건물이자 오사카를 가장 잘 나타내는 랜드마크 중 하나이다. 건물은 40층의 두 동의 타워로 이루어져있고 꼭대기에서 서로 연결되며 중앙의 아트리움 같은 넓은 공간을 다리와 에스컬레이터가 교차하고 있다. 오사카시 기타구에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "우메다 스카이 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9A%B0%EB%A9%94%EB%8B%A4_%EC%8A%A4%EC%B9%B4%EC%9D%B4_%EB%B9%8C%EB%94%A9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1151808",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 34.705278,
+   "lng": 135.489722,
+   "name": "우메다 스카이 빌딩",
+   "name_original": "梅田スカイビル",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q1151808"
+  },
+  {
+   "area": "Ebisuhigashi",
+   "category": "tower",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/254319878"
+   },
+   "hours_text": "Mo-Su 08:30-21:30",
+   "id": "wd:Q1148463",
+   "importance": {
+    "sitelinks": 23
+   },
+   "lat": 34.652222,
+   "lng": 135.506111,
+   "name": "통천각",
+   "name_original": "通天閣",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/254319878",
+     "text": "영업시간 Mo-Su 08:30-21:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/254319878",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q1440300"
+   ],
+   "wikidata_id": "Q1148463"
+  },
+  {
    "area": "니시구",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "오사카 돔(일본어: 大阪ドーム 오사카도무[*], Osaka Dome)은 일본 오사카부 오사카시에 있는 일본의 돔 야구장이다. 현재 일본 프로 야구 퍼시픽 리그 팀인 오릭스 버펄로스가 홈 구장으로 사용하고 있으며, 1994년에 착공, 1997년 3월 1일에 개장했다. 교세라와의 명명권 계약으로 2006년 7월 1일부터 교세라 돔 오사카(京セラドーム大阪, Kyocera Dome Osaka)라는 호칭을 사용하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -213,6 +337,7 @@
     "title": "오사카 돔",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%EB%8F%94"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -241,8 +366,50 @@
    "wikidata_id": "Q128836"
   },
   {
+   "area": "후쿠시마구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "게이트 타워 빌딩(Gate Tower Building)(일본어: TKPゲートタワービル)은 오사카시 후쿠시마구에 있는 지상 16층 사무용 건물이다. 한신 고속도로가 이 건물을 관통하고 있는 것이 특징이다. \"벌집\", \"떠들썩한 장소\"를 뜻하는 \"비하이브\"(beehive)라는 별칭을 가지고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "게이트 타워 빌딩",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B2%8C%EC%9D%B4%ED%8A%B8_%ED%83%80%EC%9B%8C_%EB%B9%8C%EB%94%A9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q850547",
+   "importance": {
+    "sitelinks": 21
+   },
+   "lat": 34.698031,
+   "lng": 135.489529,
+   "name": "게이트 타워 빌딩",
+   "name_original": "TKPゲートタワービル",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 8.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303",
+    "Q1021645",
+    "Q1230677"
+   ],
+   "wikidata_id": "Q850547"
+  },
+  {
    "area": "주오구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "도톤보리(일본어: 道 (どう)頓 (とん)堀 (ぼり))는 일본 오사카부 오사카시 주오구의 지명으로, 이 지역의 북쪽을 흐르는 도톤보리강(일본어: 道頓堀川)의 약어이기도 하다. 도톤보리는 과거에는 극장이 밀집된 지역이었으나, 현재는 밤문화와 오락시설이 밀집된 지역으로 변모했다. 오사카의 제과회사인 에자키 글리코의 결승선을 통과하는 달리는 남성 육상선수 광고판 (도톤보리 글리코 사인)이 도시의 상징으로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -251,6 +418,7 @@
     "title": "도톤보리",
     "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%ED%86%A4%EB%B3%B4%EB%A6%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -279,8 +447,127 @@
    "wikidata_id": "Q964876"
   },
   {
+   "area": "오사카시",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "이시야마 혼간지(일본어: 石山本願寺, いしやまほんがんじ)는 1496년 렌뇨에 의해 셋쓰 국 이시야마 (현 오사카시 주오구)에 창건된 사찰이다. 후에 정토진종 혼간지파의 본산이 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "이시야마 혼간지",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8B%9C%EC%95%BC%EB%A7%88_%ED%98%BC%EA%B0%84%EC%A7%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1098123",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 34.687361,
+   "lng": 135.525694,
+   "name": "이시야마 혼간지",
+   "name_original": "石山本願寺",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 348.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11486287"
+   ],
+   "wikidata_id": "Q1098123"
+  },
+  {
+   "area": "Ōsaka-jō",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "오사카성 홀(大阪城ホール 오사카 조 홀[*])은 오사카성 축성 400주년을 기념한 시설로, 1983년에 건설된 다목적 아레나이다. 정식 명칭은 오사카성 국제 문화 스포츠 홀이지만, 보통 오사카성 홀로 불리고 있어 운영 기관도 〈재단법인 오사카성 홀〉이다. 줄여서 성 홀(조 홀)로 불리기도 한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오사카성 홀",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4%EC%84%B1_%ED%99%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1092700",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 34.689444,
+   "lng": 135.529722,
+   "name": "오사카성 홀",
+   "name_original": "大阪城ホール",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1763828",
+    "Q641226"
+   ],
+   "wikidata_id": "Q1092700"
+  },
+  {
+   "area": "기타구",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "독립행정법인 조폐국(일본어: 独立行政法人 造幣局)은 동전 및 주화 제조, 훈장, 포장 및 금속 공예품 제조, 광물 분석 및 시험, 귀금속의 정제, 귀금속 제품 품질 증명 등의 업무를 담당하는 일본의 관공서이다. 본사는 오사카시 기타 구에 있고, 본사 안에는 조폐 박물관이 있다. 그리고 지국 두 곳이 도쿄도와 히로시마시에 설치 운영되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "일본 조폐국",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9D%BC%EB%B3%B8_%EC%A1%B0%ED%8F%90%EA%B5%AD"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1130777",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 34.6968,
+   "lng": 135.521,
+   "name": "일본 조폐국",
+   "name_original": "造幣局",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 18.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q464780"
+   ],
+   "wikidata_id": "Q1130777"
+  },
+  {
    "area": "기타구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "우메다(일본어: 梅 (うめ)田 (だ))는 일본 오사카시 기타구의 상업과 업무 지구로, 도시의 주요 교통에는 북쪽 철도 터미널인 오사카역과 우메다역이 있다. 우메다는 커다란 철도 축일 뿐만 아니라 주요 관청과 호텔 지구이기도 하다. 특히 니시우메다, 도지마, 나카노시마에는 거리를 따라 대형 건물들이 늘어서 있으며, 구역 내에는 초고층 빌딩 수가 40개가 넘는다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -289,6 +576,7 @@
     "title": "우메다",
     "url": "https://ko.wikipedia.org/wiki/%EC%9A%B0%EB%A9%94%EB%8B%A4"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -319,6 +607,7 @@
   {
    "area": "Ōsaka-jō",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "북위 34.687378° 동경 135.525844° ﻿ / 34.687378; 135.525844 오사카 성 공원(일본어: 大阪城公園)은 일본 오사카시 주오구에 있는 대형 녹지 공원이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -327,6 +616,7 @@
     "title": "오사카성 공원",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4%EC%84%B1_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -360,6 +650,7 @@
   {
    "area": "기타구",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립국제미술관(일본어: 国立国際美術館 고쿠리쓰코쿠사이비쥬쓰칸[*])은 오사카부 오사카시 기타구 나카노시마에 위치한 미술관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -368,6 +659,7 @@
     "title": "국립국제미술관",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EA%B5%AD%EC%A0%9C%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -407,8 +699,88 @@
    "wikidata_id": "Q1055037"
   },
   {
+   "area": "기타구",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "오사카시립동양도자미술관(일본어: 大阪市立東洋陶磁美術館)은 일본 오사카부 오사카시 기타구 나카노시마에 있는 미술관이다. 스미토모 그룹에서 기증한 아타카 컬렉션(일본어: 安宅コレクション 아타카코레쿠숀[*])이라는 동양도자 컬렉션을 중심으로 1982년에 설립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오사카시립동양도자미술관",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4%EC%8B%9C%EB%A6%BD%EB%8F%99%EC%96%91%EB%8F%84%EC%9E%90%EB%AF%B8%EC%88%A0%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11440555",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 34.693444,
+   "lng": 135.505472,
+   "name": "오사카시립동양도자미술관",
+   "name_original": "大阪市立東洋陶磁美術館",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q25964553",
+    "Q61891263"
+   ],
+   "wikidata_id": "Q11440555"
+  },
+  {
+   "area": "",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "덴노지 동물원(일본어: 天王寺動物園 덴노지도부쓰엔[*])는 일본 오사카부 오사카시 덴노지구에 위치한 동물원이다. 덴노지 공원 내에 위치하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "덴노지 동물원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%8D%B4%EB%85%B8%EC%A7%80_%EB%8F%99%EB%AC%BC%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1054648",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 34.6526,
+   "lng": 135.508,
+   "name": "덴노지 동물원",
+   "name_original": "天王寺動物園",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 45.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q43501"
+   ],
+   "wikidata_id": "Q1054648"
+  },
+  {
    "area": "닛폰바시",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "국립 분라쿠 극장(일본어: 国立文楽劇場 고쿠리쓰분라쿠게키죠[*])은 오사카부 오사카시 주오구에 위치한 분라쿠 극장이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -417,6 +789,7 @@
     "title": "국립 분라쿠 극장",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD_%EB%B6%84%EB%9D%BC%EC%BF%A0_%EA%B7%B9%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -446,8 +819,48 @@
    "wikidata_id": "Q1138857"
   },
   {
+   "area": "오사카시",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "오사카 베이 타워(일본어: オオサカベイタワー)는 일본 오사카에 위치한 마천루다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "오사카 베이 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%EB%B2%A0%EC%9D%B4_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2883948",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 34.669806,
+   "lng": 135.460222,
+   "name": "오사카 베이 타워",
+   "name_original": "OSAKA BAY TOWER",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 100.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q11303"
+   ],
+   "wikidata_id": "Q2883948"
+  },
+  {
    "area": "",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "덴노지 공원(일본어: 天王寺公園 덴노지코엔[*])은 일본 오사카부 오사카시 덴노지구에 있는 공원이다. 입장료는 150엔이며, 공원 안에는 덴노지 동물원, 오사카 시립 미술관이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -456,6 +869,7 @@
     "title": "덴노지 공원",
     "url": "https://ko.wikipedia.org/wiki/%EB%8D%B4%EB%85%B8%EC%A7%80_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -486,6 +900,7 @@
   {
    "area": "",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "오사카 시립 미술관(일본어: 大阪市立美術館 오사카시리쓰비쥬쓰칸[*])는 일본 오사카부 오사카시 덴노지구 덴노지 공원 내에 위치한 미술관이다. 이 지역에는 1914년(다이쇼 3년)에 스미토모 가문의 본저가 세워졌으나, 이후 스미토모 가문이 미술관 건설을 목적으로 일본 정원인 '게이타쿠엔'(慶沢園)과 함께 부지를 하여, 1936년(쇼와 11년) 본관 건물에 미술관이 개관하였다. 2019년부터 지방독립행정법인인 오사카시 박물관 기구가 운영하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -494,6 +909,7 @@
     "title": "오사카시립미술관",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -532,8 +948,50 @@
    "wikidata_id": "Q9004920"
   },
   {
+   "area": "Settsu-shiki",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "나니와쿄(難波京)은 역사적인 일본의 수도로 오늘날의 오사카시 중앙에 위치한다. 고대 일본의 주요 교통로였던 세토 내해의 동단에 위치해 있었던 나니와에는 예로부터 야마토 조정의 왕궁이 세워졌고, 고훈 시대에는 닌토쿠 천황이 처음으로 나니와에 궁을 지었다는 전승이 《일본서기》에 있으며, 아스카 시대에는 고토쿠 천황이 나니와노 나가라노 도요사키노 미야(難波長柄豊碕宮)을 지었다.(645년) 나라 시대 전기인 진키 3년(726년), 쇼무 천황은 후지와라노 우마카이(藤原宇合)에게 나니와 궁에 와즙(瓦葺)을 바꿔 지을 것을 명했다. 덴표 16년(744년)에는 구니쿄에서 나니와 궁으로의 천도가 실시되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "나니와쿄",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%88%EC%99%80%EC%BF%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1042338",
+   "importance": {
+    "sitelinks": 10
+   },
+   "lat": 34.663411,
+   "lng": 135.501911,
+   "name": "나니와쿄",
+   "name_original": "難波京",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2737.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1025961",
+    "Q27554677",
+    "Q11643523"
+   ],
+   "wikidata_id": "Q1042338"
+  },
+  {
    "area": "기타구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "나카노시마(일본어: 中之島)는 일본 오사카시 기타구에 있는 길이 3 km, 넓이 50 헥타르의 좁은 모래톱을 가리키는 이름이다. 이곳에서 구 요도가와강이 도사보리강과 도지마강으로 나뉜다. 오사카 시청을 포함한 많은 관청과 회사 사무실, 박물관, 기타 문화시설들이 나카노시마에 자리잡고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -542,6 +1000,7 @@
     "title": "나카노시마 (오사카시)",
     "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EC%B9%B4%EB%85%B8%EC%8B%9C%EB%A7%88_(%EC%98%A4%EC%82%AC%EC%B9%B4%EC%8B%9C)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -570,243 +1029,44 @@
    "wikidata_id": "Q852067"
   },
   {
-   "area": "주오구",
-   "category": "bridge",
-   "description": "닛폰바시(日本橋 (にっぽんばし))는 일본 오사카부 오사카시 주오구 및 나니와구에 걸친 도톤보리강 위의 다리 및 그 일대의 상가이다. 닛폰바시는 가구, 도구 상점들 및 전자기기, 애니메이션, 만화 등 오타쿠 물품들에 전문화된 상점들로 유명하다. 한자로는 도쿄도 주오구 니혼바시와 똑같이 쓰이지만, 발음만 다르게 한다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "닛폰바시",
-    "url": "https://ko.wikipedia.org/wiki/%EB%8B%9B%ED%8F%B0%EB%B0%94%EC%8B%9C"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q5191476",
-   "importance": {
-    "sitelinks": 9
-   },
-   "lat": 34.66904,
-   "lng": 135.50617,
-   "name": "닛폰바시",
-   "name_original": "日本橋",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 1036.5,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q12280",
-    "Q5327369"
-   ],
-   "wikidata_id": "Q5191476"
-  },
-  {
-   "area": "나카노시마",
-   "category": "museum",
-   "description": "오사카 시립 과학관(일본어: 大阪市立科学館 오사카시리쓰카가쿠칸[*])은 오사카부 오사카시 기타구 나카노시마에 위치한 과학관이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "오사카 시립 과학관",
-    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%EC%8B%9C%EB%A6%BD_%EA%B3%BC%ED%95%99%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/way/231449111"
-   },
-   "hours_text": "Tu-Su 09:30-17:00",
-   "id": "wd:Q875709",
-   "importance": {
-    "sitelinks": 9
-   },
-   "lat": 34.69124,
-   "lng": 135.49152,
-   "name": "오사카 시립 과학관",
-   "name_original": "大阪市立科学館",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/way/231449111",
-     "text": "영업시간 Tu-Su 09:30-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q588140",
-    "Q13226383",
-    "Q148319"
-   ],
-   "wikidata_id": "Q875709"
-  },
-  {
-   "area": "기타구",
-   "category": "tower",
-   "description": "오사카 타워(일본어: 大阪タワー)는 일본 오사카부 오사카시 기타구에 세워진 전파탑이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "오사카 타워",
-    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%ED%83%80%EC%9B%8C"
-   },
-   "evening_candidate": true,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1501497",
-   "importance": {
-    "sitelinks": 8
-   },
-   "lat": 34.702358,
-   "lng": 135.485861,
-   "name": "오사카 타워",
-   "name_original": "大阪タワー",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 21.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q1068623"
-   ],
-   "wikidata_id": "Q1501497"
-  },
-  {
-   "area": "주오구",
+   "area": "나니와구",
    "category": "building_landmark",
-   "description": "오사카 시립 박물관(일본어: 大阪市立博物館)는 오사카성 내에 있던 박물관이다. 구 육군 제4사단 사령부 청사를 이용하여 1960년에 개관하여 2001년에 폐관했다.",
+   "coord_source": "wikidata:P625",
+   "description": "오사카 구장(일본어: 大阪球場)은 1950년에 세워져 1998년에 철거된 일본의 야구장이다. 수용인원은 31,379명이였으며 좌우 91.5m 좌우중 109.7m, 그리고 중앙 펜스까지 115.8m였다. 난카이 호크스(1950년 ~ 1988년), 긴테쓰 펄스(1950년 ~ 1957년), 요쇼 로빈스(1953년 ~ 1954년)의 홈구장으로 사용되었는데 긴테쓰 버펄로스가 79~80년 포스트시즌 당시 홈구장으로 사용하기도 했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "오사카 시립 박물관",
-    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%EC%8B%9C%EB%A6%BD_%EB%B0%95%EB%AC%BC%EA%B4%80"
+    "title": "오사카 구장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%82%AC%EC%B9%B4_%EA%B5%AC%EC%9E%A5"
    },
+   "discovery": "en",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q11440386",
+   "id": "wd:Q861117",
    "importance": {
-    "sitelinks": 5
+    "sitelinks": 10
    },
-   "lat": 34.685861,
-   "lng": 135.526528,
-   "name": "오사카 시립 박물관",
-   "name_original": "大阪市立博物館",
+   "lat": 34.66147,
+   "lng": 135.5018,
+   "name": "오사카 구장",
+   "name_original": "大阪スタヂアム",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q2327632"
+    "Q483110",
+    "Q19860854"
    ],
-   "wikidata_id": "Q11440386"
-  },
-  {
-   "area": "나카노시마",
-   "category": "building_landmark",
-   "description": "나카노시마 페스티벌 타워(일본어: 中之島フェスティバルタワー)는 일본 오사카부 오사카시 기타구 나카노시마 2가에 있는 일본의 마천루이다. 높이는 198.96m, 39층으로 구성되어 있다. 이곳에는 주일본 이탈리아 대사관이 위치하고 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "나카노시마 페스티벌 타워",
-    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EC%B9%B4%EB%85%B8%EC%8B%9C%EB%A7%88_%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C_%ED%83%80%EC%9B%8C"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q3335339",
-   "importance": {
-    "sitelinks": 5
-   },
-   "lat": 34.693528,
-   "lng": 135.49675,
-   "name": "나카노시마 페스티벌 타워",
-   "name_original": "中之島フェスティバルタワー",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q11303",
-    "Q118896406"
-   ],
-   "wikidata_id": "Q3335339"
-  },
-  {
-   "area": "기타구",
-   "category": "attraction",
-   "description": "HEP은 일본 오사카부 오사카시 우메다에 있는 복합 쇼핑 센터이다. HEP은 Hankyu Entetainmnt Park의 약자로, HEP FIVE와 HEP NAVIO로 구성되어 있다. HEP FIVE의 옥상에는 관람차가 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "HEP (쇼핑 센터)",
-    "url": "https://ko.wikipedia.org/wiki/HEP_(%EC%87%BC%ED%95%91_%EC%84%BC%ED%84%B0)"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q751156",
-   "importance": {
-    "sitelinks": 5
-   },
-   "lat": 34.704003,
-   "lng": 135.500447,
-   "name": "HEP",
-   "name_original": "HEP",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q11626975",
-    "Q2319498",
-    "Q31374404"
-   ],
-   "wikidata_id": "Q751156"
+   "wikidata_id": "Q861117"
   }
  ]
 }

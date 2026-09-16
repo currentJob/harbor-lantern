@@ -9,39 +9,57 @@
  "country_ko": "체코",
  "grade": "full",
  "harvest": {
-  "candidate_count": 31,
+  "candidate_count": 92,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "building_landmark": 3,
-   "castle": 2,
-   "monument": 1,
-   "museum": 5,
-   "tower": 3,
-   "worship": 3
+   "attraction": 8,
+   "building_landmark": 8,
+   "castle": 4,
+   "monument": 4,
+   "museum": 8,
+   "park": 2,
+   "tower": 5,
+   "worship": 12
   },
   "denylisted_count": 0,
-  "described_count": 16,
+  "described_count": 50,
+  "discovery": {
+   "both": 17,
+   "en": 34,
+   "ko": 0
+  },
+  "discovery_pool": {
+   "both": 28,
+   "en": 62,
+   "ko": 3
+  },
   "effective_radius_m": 5000,
-  "excluded_count": 7,
-  "grade_window": 17,
-  "hours_count": 5,
-  "ko_label_count": 17,
+  "en_page_count": 500,
+  "excluded_count": 11,
+  "grade_window": 25,
+  "hours_count": 6,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 31,
-  "page_count": 31,
+  "ko_page_count": 31,
+  "korean_count": 93,
+  "mapped_count": 503,
+  "no_korean_count": 410,
+  "page_count": 531,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 17,
-  "unclassified_count": 7,
+  "spot_count": 51,
+  "unclassified_count": 30,
+  "unmapped_count": 0,
   "verification_failed_count": 1
  },
  "known_gaps": [
   "설명이 없는 스팟 1곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
   "그중 1곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 12곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "영업시간이 없는 스팟 45곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 7건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 30건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 410건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 0곳 · 영어 검색에서만 34곳 · 양쪽 17곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -49,14 +67,21 @@
  "name_ko": "프라하",
  "name_local": "Praha",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 31,
+  "korean_count": 93,
   "limit": 150,
-  "mapped_count": 31,
-  "page_count": 31,
+  "mapped_count": 503,
+  "page_count": 531,
   "radius_clamped": false,
   "radius_m": 5000,
   "registry_radius_m": 5000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 5000,
  "retrieved_at": "2026-09-16",
@@ -66,6 +91,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -87,6 +117,7 @@
   {
    "area": "흐라드차니",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "프라하성(체코어: Pražský hrad 프라슈스키 흐라트[*])은 체코의 수도인 프라하에 블타바 강의 서쪽 언덕에 자리 잡고 있는 성으로 프라하의 초기 역사부터 존재해 왔으며 프라하의 상징이자 체코의 상징이다. 체코의 왕들과 신성 로마 제국의 황제들이 이곳에서 통치를 했으며 현재는 체코 공화국의 대통령 관저가 이곳에 자리잡고 있다. 프라하 성은 기네스북에 따르면 세계에서 가장 큰 옛성이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -95,6 +126,7 @@
     "title": "프라하성",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%ED%95%98%EC%84%B1"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -134,8 +166,51 @@
    "wikidata_id": "Q193369"
   },
   {
+   "area": "Prague 1",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "카렐교(체코어: Karlův most)는 체코 프라하 블타바강 위에 있는 다리이다. 신성 로마 제국의 황제이자 보헤미아 왕국의 국왕인 카를 4세의 통치 아래 1357년에 건설이 시작되어 1402년에 완성되었다. 1841년까지 프라하 구시가지와 프라하 성 쪽을 잇는 유일한 다리였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "카를교",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%BC%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q204871",
+   "importance": {
+    "sitelinks": 62
+   },
+   "lat": 50.086389,
+   "lng": 14.411944,
+   "name": "카를교",
+   "name_original": "Karlův most",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q3397526",
+    "Q158438",
+    "Q1068842",
+    "Q79007"
+   ],
+   "wikidata_id": "Q204871"
+  },
+  {
    "area": "흐라드차니",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "성 비투스 대성당(체코어: Katedrála svatého Víta)은 체코의 수도 프라하의 대주교좌로 프라하 성 안에 위치하고 있으며 고딕 양식의 뛰어난 전범으로 꼽히는, 체코에서 가장 크고 가장 중요한 성당이다. 1989년에 성 비투스, 성 바츨라프, 성 아달베르트 대성당(체코어: Katedrála svatého Víta, Václava a Vojtěcha)으로 개명하였다. 이 대성당에는 여러 명의 체코 왕과 여러 성자들, 영주, 귀족, 대주교들의 유골이 안치되어 있기도 하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -144,6 +219,7 @@
     "title": "성 비투스 대성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%B9%84%ED%88%AC%EC%8A%A4_%EB%8C%80%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -171,8 +247,100 @@
    "wikidata_id": "Q5949"
   },
   {
+   "area": "노베메스토",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "탄치치 둠(체코어: Tančící dům→춤추는 집), 영어식 명칭 댄싱 하우스(영어: Dancing House), 별칭 진저와 프레드(체코어: Ginger a Fred)는 체코 프라하에 있는 건물이다. 이 건물은 크로아티아계 체코인 건축가 블라도 밀루니치가 캐나다계 미국인 건축가 프랭크 게리와 협력하여 비어 있는 강변 부지에 설계했다. 1992년에 설계되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "탄치치 둠",
+    "url": "https://ko.wikipedia.org/wiki/%ED%83%84%EC%B9%98%EC%B9%98_%EB%91%A0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q244816",
+   "importance": {
+    "sitelinks": 50
+   },
+   "lat": 50.075556,
+   "lng": 14.414167,
+   "name": "탄치치 둠",
+   "name_original": "Tančící dům",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1021645"
+   ],
+   "wikidata_id": "Q244816"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "tower",
+   "coord_source": "wikidata:P625",
+   "description": "프라하 천문시계(체코어: Pražský orloj 프라시스키 오를로이[praʃskiː orloj][*], 영어: Prague astronomical clock)는 체코의 수도 프라하의 구 시청사에 위치한 중세 말기의 천문시계다. 이 시계는 1410년에 최초로 설치되어 세계에서 3번째로 오래된 천문 시계이며, 여전히 작동하는 천문 시계로서는 가장 오래되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "프라하 천문시계",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%ED%95%98_%EC%B2%9C%EB%AC%B8%EC%8B%9C%EA%B3%84"
+   },
+   "discovery": "en",
+   "evening_candidate": true,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/4748580936"
+   },
+   "hours_text": "Mo 11:00-22:00; Tu-Su 09:00-22:00",
+   "id": "wd:Q729370",
+   "importance": {
+    "sitelinks": 46
+   },
+   "lat": 50.08699,
+   "lng": 14.4207,
+   "name": "프라하 천문시계",
+   "name_original": "Pražský orloj",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/4748580936",
+     "text": "영업시간 Mo 11:00-22:00; Tu-Su 09:00-22:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 15.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q5275",
+    "Q1548498",
+    "Q200334"
+   ],
+   "wikidata_id": "Q729370"
+  },
+  {
    "area": "프라하",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립박물관(체코어: Národní muzeum)은 체코 프라하에 위치한 박물관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -181,6 +349,7 @@
     "title": "국립박물관 (프라하)",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80_(%ED%94%84%EB%9D%BC%ED%95%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -211,8 +380,48 @@
    "wikidata_id": "Q188112"
   },
   {
+   "area": "Prague 1",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "바츨라프 광장(체코어: Václavské náměstí)은 체코 프라하 신시가지에 있는 광장이다. 체코 역사의 많은 사건들이 발생한 역사적인 장소이며, 현재에도 시위, 축하행사 등이 많이 열린다. 광장 이름은 보헤미아의 수호 성인인 바츨라프 1세 공작에서 유래된 이름이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "바츨라프 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EC%B8%A8%EB%9D%BC%ED%94%84_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q847613",
+   "importance": {
+    "sitelinks": 41
+   },
+   "lat": 50.082308,
+   "lng": 14.426141,
+   "name": "바츨라프 광장",
+   "name_original": "Václavské náměstí",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 140.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q847613"
+  },
+  {
    "area": "Vyšehrad",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "비셰흐라트(체코어: Vyšehrad)는 체코 프라하에 위치한 요새이다. 비셰흐라트는 체코어로 \"높은 성\"을 뜻한다.영문으로 비세그라드Visegrad라고도 알려졌다. 비셰흐라트는 로마네스크 건축, 고딕 건축, 고딕 리바이벌 건축, 바로크 건축 양식이 혼합된 건축 양식을 띠고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -221,6 +430,7 @@
     "title": "비셰흐라트",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EC%85%B0%ED%9D%90%EB%9D%BC%ED%8A%B8"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -250,8 +460,126 @@
    "wikidata_id": "Q616334"
   },
   {
+   "area": "스타레메스토",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "구시가 광장(舊市街廣場, 체코어: Staroměstské náměstí)은 체코 프라하 스타레메스토(구 시가지)에 있는 광장이다. 바츨라프 광장과 카를교 사이에 있어서, 종종 여름에는 관광객들로 문전 성시를 보여준다. 고딕 양식 및 바로크 양식 등 다양한 건축 양식을 볼 수 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "구시가 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%8B%9C%EA%B0%80_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q421678",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 50.0875,
+   "lng": 14.421389,
+   "name": "구시가 광장",
+   "name_original": "Staroměstské náměstí",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q421678"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "틴 이전의 성모 교회(체코어: Kostel Panny Marie před Týnem)는 체코 프라하 스타레메스토 (구시가지)에 있는 교회당이다. 14세기부터 이 지역의 주요 성당이었다. 성당의 두 개의 탑은 높이가 80m이고, 각 탑의 첨탑 위에는 4개씩 두 겹으로 8개의 작은 첨탑이 얹혀 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "틴 이전의 성모 교회",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8B%B4_%EC%9D%B4%EC%A0%84%EC%9D%98_%EC%84%B1%EB%AA%A8_%EA%B5%90%ED%9A%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1453427",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 50.08771,
+   "lng": 14.4227,
+   "name": "틴 이전의 성모 교회",
+   "name_original": "Kostel Matky Boží před Týnem",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q1453427"
+  },
+  {
+   "area": "요세포프",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "스타로노바 유대교 회당(체코어: Staronová synagoga)은 체코 프라하 요세포프에 있는 유대교 회당이다. 유다 뢰브 벤 베자렐 (랍비 뢰브)이 창조한 골렘이 보관되어 있는 장소로 알려졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스타로나바 유대교 회당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%80%EB%A1%9C%EB%82%98%EB%B0%94_%EC%9C%A0%EB%8C%80%EA%B5%90_%ED%9A%8C%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q443107",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 50.09,
+   "lng": 14.418611,
+   "name": "스타로나바 유대교 회당",
+   "name_original": "Staronová synagoga",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34627"
+   ],
+   "wikidata_id": "Q443107"
+  },
+  {
    "area": "흐라드차니",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "스트라호프 수도원(체코어: Strahovský klášter)은 1143년에 Jindřich Zdík, 블라디슬라프 2세, 프라하의 요한 주교가 설립한 프레몬트레 수도원이다. 체코 프라하 스트라호프에 위치하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -260,6 +588,7 @@
     "title": "스트라호프 수도원",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8A%B8%EB%9D%BC%ED%98%B8%ED%94%84_%EC%88%98%EB%8F%84%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -289,8 +618,449 @@
    "wikidata_id": "Q969482"
   },
   {
+   "area": "Prague 1",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "노베메스토(체코어: Nové Město)는 체코 프라하의 신시가지 지역을 의미한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "노베메스토 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%B2%A0%EB%A9%94%EC%8A%A4%ED%86%A0_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q753219",
+   "importance": {
+    "sitelinks": 31
+   },
+   "lat": 50.0767,
+   "lng": 14.4264,
+   "name": "노베메스토",
+   "name_original": "Nové Město",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.8,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q20871353",
+    "Q61089180",
+    "Q123705",
+    "Q7375052"
+   ],
+   "wikidata_id": "Q753219"
+  },
+  {
+   "area": "Žižkov",
+   "category": "tower",
+   "coord_source": "wikidata:P625",
+   "description": "지슈코프 텔레비전 타워(체코어: Žižkovský vysílač)는 체코 프라하에 있는 송신탑이다. 1985년부터 1992년 사이에 건설되었다. 이 타워는 이름의 유래인 지슈코프 지구의 언덕 위에 위치하여 도시의 전통적인 스카이라인 위로 높이 솟아 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "지슈코프 텔레비전 타워",
+    "url": "https://ko.wikipedia.org/wiki/%EC%A7%80%EC%8A%88%EC%BD%94%ED%94%84_%ED%85%94%EB%A0%88%EB%B9%84%EC%A0%84_%ED%83%80%EC%9B%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": true,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1413217",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 50.080833,
+   "lng": 14.451389,
+   "name": "지슈코프 텔레비전 타워",
+   "name_original": "Žižkovský vysílač",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1440300",
+    "Q11166728"
+   ],
+   "wikidata_id": "Q1413217"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "화약탑(火藥塔, 체코어: Prašná brána)은 체코 프라하의 성문이자 탑으로, 구시가지와 신시가지를 나눈다. 얀 후스의 종교개혁 시대에 구시가를 둘러싸고 있는 8개의 탑 가운데 하나다. 1757년 프로이센 군대가 프라하를 포위하여 공격할 때 크게 파괴되었고, 후에 오늘날의 유사 고딕 양식으로 재건되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "화약탑",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%95%BD%ED%83%91"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1488700",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 50.087222,
+   "lng": 14.427778,
+   "name": "화약탑",
+   "name_original": "Prašná brána",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q12518",
+    "Q82117"
+   ],
+   "wikidata_id": "Q1488700"
+  },
+  {
+   "area": "말라스트라나",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "페트르진(체코어: Petřín)은 체코 프라하 중심에 있는 언덕이다. 페트르진은 블타바강 왼쪽 제방 위로 130m 정도 올라와 있으며, 총 높이는 320m이다. 공원으로 거의 덮여 있으며, 페트르진은 프라하 시민들이 애용하는 레크리에이션 지역이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "페트르진",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%ED%8A%B8%EB%A5%B4%EC%A7%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q427604",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 50.081667,
+   "lng": 14.394444,
+   "name": "페트르진",
+   "name_original": "Petřín",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 224.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q8502"
+   ],
+   "wikidata_id": "Q427604"
+  },
+  {
+   "area": "Bubeneč",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "스타디온 레트나(체코어: Stadion Letná)는 체코 프라하에 위치한 축구 경기장이다. AC 스파르타 프라하의 홈 구장으로 사용되고 있지만 종종 체코 축구 국가대표팀의 홈 구장으로 사용되기도 한다. 1921년에 처음 개장했으며 1969년에 현재와 같은 경기장이 건설되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스타디온 레트나",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%80%EB%94%94%EC%98%A8_%EB%A0%88%ED%8A%B8%EB%82%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q60103",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 50.099716,
+   "lng": 14.416122,
+   "name": "스타디온 레트나",
+   "name_original": "Stadion Sparty na Letné",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 20.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1154710"
+   ],
+   "wikidata_id": "Q60103"
+  },
+  {
+   "area": "Prague 1",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "스페인 시나고그(체코어: Španělská synagoga)는 체코 프라하 요세포프에 있는 개혁파 유대교 시나고그다. 이 회당은 1868년에 무어 부흥 양식으로 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스페인 시나고그",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8E%98%EC%9D%B8_%EC%8B%9C%EB%82%98%EA%B3%A0%EA%B7%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q990003",
+   "importance": {
+    "sitelinks": 27
+   },
+   "lat": 50.090361,
+   "lng": 14.420833,
+   "name": "스페인 시나고그",
+   "name_original": "Španělská synagoga",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 9.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34627"
+   ],
+   "wikidata_id": "Q990003"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "루돌피눔(체코어: Rudolfinum)은 체코 프라하 스타레메스토 얀 팔라흐 광장에 있는 음악당이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "루돌피눔",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A3%A8%EB%8F%8C%ED%94%BC%EB%88%94"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1130137",
+   "importance": {
+    "sitelinks": 26
+   },
+   "lat": 50.09,
+   "lng": 14.4156,
+   "name": "루돌피눔",
+   "name_original": "Rudolfinum",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 28.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1060829",
+    "Q18674739"
+   ],
+   "wikidata_id": "Q1130137"
+  },
+  {
    "area": "스타레메스토",
    "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "베들레헴 예배당(체코어: Betlémská kaple)은 체코 프라하 스타레메스토 (구시가지)에 있는 중세 종교 건물로, 특히 체코의 개혁가 얀 후스와 관련된 보헤미아 종교 개혁의 기원과 관련이 있는 것으로 유명하다. 이 예배당은 헤로데 1세가 갓 태어난 예수를 죽이려고 베들레헴에서 영아 학살한 것에서 이름을 따왔다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "베들레헴 예배당",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%93%A4%EB%A0%88%ED%97%B4_%EC%98%88%EB%B0%B0%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q831362",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 50.084306,
+   "lng": 14.4175,
+   "name": "베들레헴 예배당",
+   "name_original": "Betlémská kaple",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q108325"
+   ],
+   "wikidata_id": "Q831362"
+  },
+  {
+   "area": "말라스트라나",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "발트슈타인궁(체코어: Valdštejnský palác)은 체코 프라하 말라스트라나에 있는 바로크 양식의 궁전이다. 알브레히트 폰 발렌슈타인의 거주지로 사용되었으며, 현재는 체코 상원으로 사용되고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "발트슈타인궁",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%8A%B8%EC%8A%88%ED%83%80%EC%9D%B8%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q569877",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 50.09,
+   "lng": 14.406667,
+   "name": "발트슈타인궁",
+   "name_original": "Valdštejnský palác",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q7138926"
+   ],
+   "wikidata_id": "Q569877"
+  },
+  {
+   "area": "프라하",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "프라하의 아기 예수(체코어: Pražské Jezulátko)는 체코 프라하의 말라스트라나에 있는 승리의 성모 성당에 모셔져 있는 유명한 아기 예수상이다. 약 60cm 정도의 크기에 나무로 조각되어 그 위에 밀랍이 씌워져 있다. 세 살 정도의 아이 모습을 하고 있으며 값비싼 대관식용 외투를 걸치고 있고 머리에는 아주 큰 보석으로 장식된 왕관이 씌여 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "프라하의 아기 예수",
+    "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9D%BC%ED%95%98%EC%9D%98_%EC%95%84%EA%B8%B0_%EC%98%88%EC%88%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q603573",
+   "importance": {
+    "sitelinks": 24
+   },
+   "lat": 50.085556,
+   "lng": 14.403333,
+   "name": "프라하의 아기 예수",
+   "name_original": "Pražské Jezulátko",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q29168168",
+    "Q112711038",
+    "Q134082607"
+   ],
+   "wikidata_id": "Q603573"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "구 시청사(체코어: Staroměstská radnice)는 체코 프라하 구시가 광장에 있는 건물이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "구 시청사 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC_%EC%8B%9C%EC%B2%AD%EC%82%AC_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2332231",
+   "importance": {
+    "sitelinks": 22
+   },
+   "lat": 50.087108,
+   "lng": 14.420607,
+   "name": "구 시청사",
+   "name_original": "Staroměstská radnice",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q543654",
+    "Q33506"
+   ],
+   "wikidata_id": "Q2332231"
+  },
+  {
+   "area": "스타레메스토",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "성 니콜라스 성당(체코어: Kostel svatého Mikuláše)은 후기 고딕, 바로크 양식의 성당으로 체코의 수도 프라하 구시가지 광장에 위치해 있다. 13세기에 성 니콜라스를 기리는 고딕 건축 양식의 성당이 원래 있었으며, 현재의 건물은 1732년부터 1737년 사이에 건설됐다. 1920년 이전에는 체코슬로바키아 정교회의 성당으로 사용됐다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -299,6 +1069,7 @@
     "title": "성 니콜라스 성당 (스타레메스토)",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%8B%88%EC%BD%9C%EB%9D%BC%EC%8A%A4_%EC%84%B1%EB%8B%B9_(%EC%8A%A4%ED%83%80%EB%A0%88%EB%A9%94%EC%8A%A4%ED%86%A0)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -329,6 +1100,7 @@
   {
    "area": "Prague 1",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "페트르진 타워(체코어: Petřínská rozhledna)는 체코 프라하에 위치한 63.5m 높이의 타워이다. 에펠탑과 비슷한 구조이지만 훨씬 작다. 페트르진 언덕에 위치하고 있어, 에펠탑보다는 높은 고도에 위치한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -337,6 +1109,7 @@
     "title": "페트르진 타워",
     "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%ED%8A%B8%EB%A5%B4%EC%A7%84_%ED%83%80%EC%9B%8C"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -364,8 +1137,368 @@
    "wikidata_id": "Q12256"
   },
   {
+   "area": "프라하",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "스탈린 기념비(체코어: Stalinův pomník)는 체코슬로바키아 프라하에 있던 이오시프 스탈린을 기리는 15.5 m (51 ft) 높이의 화강암 기념비였다. 이 구조물은 1948년 소련의 지원을 받아 체코슬로바키아 공산당이 체코슬로바키아에서 권력을 장악한 후 건설되었다. 스탈린주의 이념을 과시하기 위해 설계되었으며 프라하 시내 중심가를 내려다보는 레트나 공원의 레트나 언덕에 있는 높은 곳에 건설되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스탈린 기념비 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%88%EB%A6%B0_%EA%B8%B0%EB%85%90%EB%B9%84_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1706629",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 50.094723,
+   "lng": 14.415988,
+   "name": "스탈린 기념비",
+   "name_original": "Stalinův pomník na Letné",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 14.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906",
+    "Q21745157",
+    "Q26883973",
+    "Q19860854",
+    "Q179700"
+   ],
+   "wikidata_id": "Q1706629"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "앤 여왕의 여름 궁전(체코어: Letohrádek královny Anny)은 체코 프라하 프라하성에 있는 궁전이다. 이탈리아 국외에 위치한 가장 순수한 이탈리아 르네상스 건축물 중 하나로 여겨진다. 페르디난트 1세가 1538년에서 1560년 사이에 크랄로브스카 정원의 동쪽 끝에 그의 아내인 아나 폰 뵈멘운트웅가른을 위해 궁전을 건설하도록 지시했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "앤 여왕의 여름 궁전",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%A4_%EC%97%AC%EC%99%95%EC%9D%98_%EC%97%AC%EB%A6%84_%EA%B6%81%EC%A0%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2424070",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 50.093611,
+   "lng": 14.405417,
+   "name": "앤 여왕의 여름 궁전",
+   "name_original": "Letohrádek královny Anny",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q816265"
+   ],
+   "wikidata_id": "Q2424070"
+  },
+  {
+   "area": "Prague 1",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "마이셀로바 시나고그(체코어: Maiselova synagoga)는 체코 프라하 요세포프에 있는 시나고그다. 이 회당은 16세기 말에 고딕 리바이벌 양식으로 지어졌다. 그 이후로 외관이 여러 번 바뀌었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마이셀로바 시나고그",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%EC%85%80%EB%A1%9C%EB%B0%94_%EC%8B%9C%EB%82%98%EA%B3%A0%EA%B7%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q517766",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 50.08878,
+   "lng": 14.41866,
+   "name": "마이셀로바 시나고그",
+   "name_original": "Synagoga Maiselova",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34627"
+   ],
+   "wikidata_id": "Q517766"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "로레타(체코어: Loreta)는 체코 프라하 흐라드차니에 있는 순례지다. 주요 대표적인 정면에는 종탑이 있고, 그 뒤에는 예배당을 둘러싸고 있는 회랑과 성탄 교회가 늘어선 안뜰이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "로레타 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%88%ED%83%80_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1064659",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 50.089444,
+   "lng": 14.391944,
+   "name": "로레타",
+   "name_original": "Pražská Loreta",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q76529788"
+   ],
+   "wikidata_id": "Q1064659"
+  },
+  {
+   "area": "Prague 1",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "승리의 성모 마리아 교회(체코어: Kostel Panny Marie Vítězné)는 체코 프라하 말라스트라나에 있는 맨발의 카르멜회가 관리하는 교회당이다. 이 교회에는 프라하의 아기 예수라는 유명한 동상이 있다. 스페인에서 유래한 이 동상은 16세기에 글로버스 크루거를 든 아기 예수를 표현한 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "승리의 성모 마리아 교회",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%B9%EB%A6%AC%EC%9D%98_%EC%84%B1%EB%AA%A8_%EB%A7%88%EB%A6%AC%EC%95%84_%EA%B5%90%ED%9A%8C"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1503199",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 50.0857,
+   "lng": 14.4036,
+   "name": "승리의 성모 마리아 교회",
+   "name_original": "Kostel Panny Marie Vítězné a svatého Antonína Paduánského",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q1503199"
+  },
+  {
+   "area": "노베메스토",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "예루살렘 시나고그(체코어: Jeruzalémská synagoga) 또는 주빌리 시나고그(체코어: Jubilejní synagoga)는 체코 프라하에 있는 정통파 유대교 시나고그다. 프라하에서 가장 큰 시나고그다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "예루살렘 시나고그",
+    "url": "https://ko.wikipedia.org/wiki/%EC%98%88%EB%A3%A8%EC%82%B4%EB%A0%98_%EC%8B%9C%EB%82%98%EA%B3%A0%EA%B7%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q942102",
+   "importance": {
+    "sitelinks": 19
+   },
+   "lat": 50.08472,
+   "lng": 14.43167,
+   "name": "예루살렘 시나고그",
+   "name_original": "Jeruzalémská synagoga",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 19.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q34627"
+   ],
+   "wikidata_id": "Q942102"
+  },
+  {
+   "area": "말라스트라나",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "공산주의 희생자 기념비(체코어: Pomník obětem komunismu)는 1948년부터 1989년 사이에 있었던 체코슬로바키아의 공산주의 시대의 희생자들을 기념하는 체코 프라하에 위치한 일련의 조각 작품이다. 말라스트라나의 페트르진 언덕과 우예스트 거리에 위치한다. 동구권의 공산주의 체제가 붕괴된 지 12년이 지난 2002년 5월 22일에 체코의 조각가인 올브람 조우베크, 체코의 건축가인 얀 케렐, 즈데네크 홀젤이 제작했으며 프라하 시의회, 정치범 연합의 지원을 받았다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "공산주의 희생자 기념비 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%A3%BC%EC%9D%98_%ED%9D%AC%EC%83%9D%EC%9E%90_%EA%B8%B0%EB%85%90%EB%B9%84_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1116389",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 50.081172,
+   "lng": 14.404269,
+   "name": "공산주의 희생자 기념비",
+   "name_original": "Pomník obětem komunismu",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q114125020",
+    "Q5003624"
+   ],
+   "wikidata_id": "Q1116389"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "체르닌스키궁(체코어: Černínský palác)은 체코 프라하 프라하 1에 있는 궁전이다. 프라하의 바로크 양식 궁전 중 가장 큰 규모로, 1930년대부터 체코슬로바키아 외무부와 체코 외무부 사무실로 사용되었다. 이 궁전은 1660년대에 베네치와와 로마의 합스부르크 제국 대사 였던 외교관 험프레이트 얀 체르닌이 위임하여 건설되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "체르닌스키궁",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B2%B4%EB%A5%B4%EB%8B%8C%EC%8A%A4%ED%82%A4%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2034292",
+   "importance": {
+    "sitelinks": 18
+   },
+   "lat": 50.088826,
+   "lng": 14.390169,
+   "name": "체르닌스키궁",
+   "name_original": "Černínský palác v Praze",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q1220959"
+   ],
+   "wikidata_id": "Q2034292"
+  },
+  {
+   "area": "프라하",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "눈의 성모 마리아 교회(체코어: Kostel Panny Marie Sněžné)는 체코 프라하에 있는 로마 가톨릭 교회당이다. 1347년 설립되었다. 작은형제회에서 운영하며, 1611년 프라하 순교자들이 살해된 곳이기도 하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "눈의 성모 마리아 교회 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%88%88%EC%9D%98_%EC%84%B1%EB%AA%A8_%EB%A7%88%EB%A6%AC%EC%95%84_%EA%B5%90%ED%9A%8C_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1742720",
+   "importance": {
+    "sitelinks": 17
+   },
+   "lat": 50.08306,
+   "lng": 14.42361,
+   "name": "눈의 성모 마리아 교회",
+   "name_original": "Kostel Panny Marie Sněžné",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970"
+   ],
+   "wikidata_id": "Q1742720"
+  },
+  {
    "area": "Prague 1",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "구 왕궁(체코어: Starý královský palác)은 체코 프라하에 있는 프라하성의 일부다. 역사는 12세기로 거슬러 올라가며 고딕과 르네상스 양식으로 설계되었다. 블라디슬라브스키 홀은 취임식에 사용되며 국가에서 가장 중요한 대표 홀이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -374,6 +1507,7 @@
     "title": "구 왕궁 (프라하)",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC_%EC%99%95%EA%B6%81_(%ED%94%84%EB%9D%BC%ED%95%98)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -403,6 +1537,7 @@
   {
    "area": "스타레메스토",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "검은 성모의 집(체코어: Dům U Černé Matky Boží)은 체코 프라하에 있는 입체주의 건축물이다. 요제프 고차르가 설계했다. 1층에는 카페가 있고, 위 4개 층은 체코 입체주의 미술관으로 사용된다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -411,6 +1546,7 @@
     "title": "검은 성모의 집",
     "url": "https://ko.wikipedia.org/wiki/%EA%B2%80%EC%9D%80_%EC%84%B1%EB%AA%A8%EC%9D%98_%EC%A7%91"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -440,6 +1576,7 @@
   {
    "area": "프라하",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "프란츠 카프카 박물관(체코어: Muzeum Franze Kafky)은 체코 프라하에 있는 박물관이다. 작가 프란츠 카프카에게 헌정된 박물관으로, 박물관에는 카프카의 초판 책이 여러 권 보관되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -448,6 +1585,7 @@
     "title": "프란츠 카프카 박물관",
     "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9E%80%EC%B8%A0_%EC%B9%B4%ED%94%84%EC%B9%B4_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -491,8 +1629,169 @@
    "wikidata_id": "Q4306202"
   },
   {
+   "area": "스타레메스토",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "레푸블리키 광장(체코어: Náměstí Republiky) 또는 공화국 광장은 체코 프라하에 위치한 광장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "공화국 광장 (프라하)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%ED%99%94%EA%B5%AD_%EA%B4%91%EC%9E%A5_(%ED%94%84%EB%9D%BC%ED%95%98)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1411047",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 50.088201,
+   "lng": 14.428557,
+   "name": "공화국 광장",
+   "name_original": "náměstí Republiky",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q1411047"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "크랄로브스카 정원(체코어: Královská zahrada)은 체코 프라하 프라하성에 있는 정원이다. 이 정원은 합스부르크 왕가의 페르디난트 1세 황제의 설계에 따라 1534년에 만들어졌다. 원래는 페르디난트 1세 황제가 왕실을 위한 정원을 만들기 위해 구입한 포도원이었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "크랄로브스카 정원",
+    "url": "https://ko.wikipedia.org/wiki/%ED%81%AC%EB%9E%84%EB%A1%9C%EB%B8%8C%EC%8A%A4%EC%B9%B4_%EC%A0%95%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2503978",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 50.0931,
+   "lng": 14.402,
+   "name": "크랄로브스카 정원",
+   "name_original": "Královská zahrada",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22698",
+    "Q75666726",
+    "Q18674739"
+   ],
+   "wikidata_id": "Q2503978"
+  },
+  {
+   "area": "Prague 3",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "비트코프 국립 기념관(체코어: Národní památník na Vítkově)은 체코 프라하 지슈코프 비트코프 언덕에 있는 기념관이다. 기념관 외부에는 1420년 비트코프 언덕 전투에서 지기스문트가 이끈 가톨릭 군대를 격파한 얀 지슈카의 세계에서 세 번째로 큰 청동 기마상이 있다. 기념관은 1928년부터 1938년까지 제1차 세계 대전 체코슬로바키아 군단을 기리기 위해 건립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "비트코프 국립 기념관",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8%EC%BD%94%ED%94%84_%EA%B5%AD%EB%A6%BD_%EA%B8%B0%EB%85%90%EA%B4%80"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3333173",
+   "importance": {
+    "sitelinks": 14
+   },
+   "lat": 50.0883,
+   "lng": 14.4494,
+   "name": "비트코프 국립 기념관",
+   "name_original": "Národní památník na Vítkově",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 62.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q24699794",
+    "Q162875",
+    "Q659396"
+   ],
+   "wikidata_id": "Q3333173"
+  },
+  {
+   "area": "흐라드차니",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "흐라드찬스케 광장(체코어: Hradčanské náměstí)은 체코 프라하에 있는 광장이다. 프라하 1 흐라드차니 중심부에 위치한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "흐라드찬스케 광장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%9D%90%EB%9D%BC%EB%93%9C%EC%B0%AC%EC%8A%A4%EC%BC%80_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q225293",
+   "importance": {
+    "sitelinks": 13
+   },
+   "lat": 50.0897,
+   "lng": 14.3975,
+   "name": "흐라드찬스케 광장",
+   "name_original": "Hradčanské náměstí",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 103.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q225293"
+  },
+  {
    "area": "프라하",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "성 기구 박물관(Sex Machines Museum)은 체코 프라하에 있는 성 박물관이다. 성 도구를 수집하고 있다. 2002년에 설립되었으며, 구시가 광장 근처에 위치하고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -501,6 +1800,7 @@
     "title": "성 기구 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EA%B8%B0%EA%B5%AC_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -544,8 +1844,92 @@
    "wikidata_id": "Q3480881"
   },
   {
+   "area": "스타레메스토",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "레지교(체코어: Most Legií)는 체코 프라하에 있는 교량이다. 이름은 체코슬로바키아 군단의 이름을 딴 것이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레지교",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EC%A7%80%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q11785802",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 50.081278,
+   "lng": 14.410111,
+   "name": "레지교",
+   "name_original": "most Legií",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q79007",
+    "Q6636777",
+    "Q18615527"
+   ],
+   "wikidata_id": "Q11785802"
+  },
+  {
+   "area": "Bubeneč",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "비스타비슈테 프라하(체코어: Výstaviště Praha)는 체코 프라하에 있는 행사장으로, 전시회, 콘서트 등 여러 문화 행사에 사용된다. 1891년 설립되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "비스타비슈테 프라하",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EC%8A%A4%ED%83%80%EB%B9%84%EC%8A%88%ED%85%8C_%ED%94%84%EB%9D%BC%ED%95%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1389717",
+   "importance": {
+    "sitelinks": 12
+   },
+   "lat": 50.104722,
+   "lng": 14.430833,
+   "name": "비스타비슈테 프라하",
+   "name_original": "Výstaviště Praha",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1378975",
+    "Q1497364",
+    "Q18674739",
+    "Q2948561"
+   ],
+   "wikidata_id": "Q1389717"
+  },
+  {
    "area": "Prague 1",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "공산주의 박물관(체코어: Muzeum komunismu)은 체코 프라하에 있는 박물관이다. 프라하를 중심으로 체코슬로바키아의 제2차 세계대전 이후 공산주의 정권에 대한 설명을 제공한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -554,6 +1938,7 @@
     "title": "공산주의 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%A3%BC%EC%9D%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -599,8 +1984,10 @@
   {
    "area": "스타레메스토",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -630,6 +2017,7 @@
   {
    "area": "말라스트라나",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "말라스트라나 다리탑(체코어: Malostranská mostecká věž)은 체코 프라하에 있는 탑이다. 탑은 카를교에서 말라스트라나로 들어가는 입구 역할을 한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -638,6 +2026,7 @@
     "title": "말라스트라나 다리탑",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%90%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9D%BC%EB%82%98_%EB%8B%A4%EB%A6%AC%ED%83%91"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -666,8 +2055,48 @@
    "wikidata_id": "Q1509185"
   },
   {
+   "area": "Holešovice",
+   "category": "park",
+   "coord_source": "wikidata:P625",
+   "description": "레트나 공원(체코어: Letenské sady)은 체코 프라하 블타바강을 따라 가파른 제방 위의 고원에 있는 레트나 언덕에 있는 공원이다. 레트나 공원에서는 프라하의 구시가지의 전망을 볼 수 있다. 1955년에 레트나 공원 가장자리에 이오시프 스탈린을 기리는 대형 기념비가 세워졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "레트나 공원",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%ED%8A%B8%EB%82%98_%EA%B3%B5%EC%9B%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q3500624",
+   "importance": {
+    "sitelinks": 11
+   },
+   "lat": 50.093736,
+   "lng": 14.412533,
+   "name": "레트나 공원",
+   "name_original": "Letenské sady",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q22698"
+   ],
+   "wikidata_id": "Q3500624"
+  },
+  {
    "area": "스타레메스토",
    "category": "tower",
+   "coord_source": "wikidata:P625",
    "description": "구시가지 다리탑(체코어: Staroměstská mostecká věž)은 체코 프라하에 있는 고딕 양식의 탑이다. 건설은 1357년 카를 4세 황제 통치 기간에 시작되었다. 건축가 페트르 파를레르시가 설계했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -676,6 +2105,7 @@
     "title": "구시가지 다리탑",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%8B%9C%EA%B0%80%EC%A7%80_%EB%8B%A4%EB%A6%AC%ED%83%91"
    },
+   "discovery": "both",
    "evening_candidate": true,
    "hours_source": null,
    "hours_text": "",
@@ -706,6 +2136,7 @@
   {
    "area": "노베메스토",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "무하 박물관(체코어: Muchovo muzeum)은 체코 프라하에 있는 미술관이다. 알폰스 무하의 삶과 작품에 초점을 맞추고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -714,6 +2145,7 @@
     "title": "무하 박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%AC%B4%ED%95%98_%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -759,6 +2191,7 @@
   {
    "area": "프라하",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "레두타 재즈 클럽(Reduta Jazz Club)은 체코 프라하에 있는 음악 공연장이자 술집이다. 프라하 중심인 나로드니에 위치하고 있으며, 프라하에서 제일 오래된 재즈 클럽이다. 이 클럽은 특히 1994년 미국 대통령 빌 클린턴의 즉흥 색소폰 공연을 주최한 것으로 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -767,6 +2200,7 @@
     "title": "레두타 재즈 클럽",
     "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EB%91%90%ED%83%80_%EC%9E%AC%EC%A6%88_%ED%81%B4%EB%9F%BD"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",

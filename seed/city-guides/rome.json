@@ -9,40 +9,56 @@
  "country_ko": "이탈리아",
  "grade": "full",
  "harvest": {
-  "candidate_count": 133,
+  "candidate_count": 150,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 11,
+   "attraction": 16,
+   "bridge": 1,
    "building_landmark": 2,
    "castle": 4,
-   "monument": 28,
-   "museum": 5,
-   "tower": 1,
+   "monument": 24,
+   "museum": 4,
    "worship": 9
   },
   "denylisted_count": 0,
-  "described_count": 54,
+  "described_count": 55,
+  "discovery": {
+   "both": 19,
+   "en": 19,
+   "ko": 22
+  },
+  "discovery_pool": {
+   "both": 44,
+   "en": 50,
+   "ko": 93
+  },
   "effective_radius_m": 5000,
-  "excluded_count": 3,
+  "en_page_count": 500,
+  "excluded_count": 4,
   "grade_window": 25,
-  "hours_count": 12,
+  "hours_count": 11,
   "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 137,
-  "page_count": 137,
+  "ko_page_count": 137,
+  "korean_count": 187,
+  "mapped_count": 593,
+  "no_korean_count": 406,
+  "page_count": 637,
   "radius_note": "",
   "reviewed": false,
   "spot_count": 60,
-  "unclassified_count": 56,
-  "verification_failed_count": 6
+  "unclassified_count": 41,
+  "unmapped_count": 0,
+  "verification_failed_count": 5
  },
  "known_gaps": [
-  "설명이 없는 스팟 6곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 6곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 48곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 5곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 5곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 49곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 56건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 41건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "영어 위키백과에서만 발견된 406건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 22곳 · 영어 검색에서만 19곳 · 양쪽 19곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -50,14 +66,21 @@
  "name_ko": "로마",
  "name_local": "Roma",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 137,
+  "korean_count": 187,
   "limit": 150,
-  "mapped_count": 137,
-  "page_count": 137,
+  "mapped_count": 593,
+  "page_count": 637,
   "radius_clamped": false,
   "radius_m": 5000,
   "registry_radius_m": 5000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 5000,
  "retrieved_at": "2026-09-16",
@@ -67,6 +90,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -88,6 +116,7 @@
   {
    "area": "Roma Capitale",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "콜로세움(Colosseum, 이탈리아어: Colosseo 콜로세오[*])은 고대 로마 시대의 건축물 가운데 하나로 로마 제국 시대에 만들어진 타원형 경기장이다. 석회암, 응회암, 콘크리트, 홍예석 등으로 지어져 있고, 8만 명 이상의 관중을 수용할 수 있었다. 로마의 중심지에 위치하여 있고, 현재는 로마를 대표하는 유명한 관광지로 탈바꿈하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -96,6 +125,7 @@
     "title": "콜로세움",
     "url": "https://ko.wikipedia.org/wiki/%EC%BD%9C%EB%A1%9C%EC%84%B8%EC%9B%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -132,6 +162,7 @@
   {
    "area": "바티칸 시국",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "성 베드로 대성전(라틴어: Basilica Sancti Petri, 이탈리아어: Basilica di San Pietro in Vaticano) 혹은 성 베드로 대성당, 바티칸 대성전(Basilica Vaticana)은 바티칸 시국 남동쪽에 있는 대성전을 말한다. 성지 가운데 하나이자 세계 기독교의 일번지, 즉 세계의 모든 교회 가운데 가장 거대한 교회로 유일무이한 위치를 차지하고 있다. 전승에 따르면, 서기 67년에 순교한 예수의 열두 제자 가운데 한 사람이자 로마의 초대 주교, 즉 교황 성 베드로의 무덤 위에 대성전을 건립했다고 한다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -140,6 +171,7 @@
     "title": "성 베드로 대성전",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%B2%A0%EB%93%9C%EB%A1%9C_%EB%8C%80%EC%84%B1%EC%A0%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -183,9 +215,59 @@
   },
   {
    "area": "로마",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "판테온(라틴어: Pantheon)은 이탈리아 로마에 위치한 옛 로마 신전으로, 7세기 들어 가톨릭 성당으로 활용되면서 지금까지 전한다. 판테온은 그리스어 ‘판테이온(Πάνθειον)’에서 유래한 말로, “모든 신을 위한 신전”이라는 뜻이다. 고대 로마 신들에게 바치는 신전으로 사용하려고 지은 로마의 건축물로, 하드리아누스 황제 때 서기 125년경 재건했었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "판테온 (로마)",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8C%90%ED%85%8C%EC%98%A8_(%EB%A1%9C%EB%A7%88)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q99309",
+   "importance": {
+    "sitelinks": 81
+   },
+   "lat": 41.898611,
+   "lng": 12.476944,
+   "name": "판테온",
+   "name_original": "Pantheon",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 12.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q867143",
+    "Q21752084",
+    "Q120560",
+    "Q96376684",
+    "Q14752696",
+    "Q92755865",
+    "Q3867560",
+    "Q112132548",
+    "Q112132522",
+    "Q124830411"
+   ],
+   "wikidata_id": "Q99309"
+  },
+  {
+   "area": "로마",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -220,6 +302,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "트레비 분수(이탈리아어: Fontana di Trevi)는 이탈리아 로마에 있는 분수다. 높이는 26.3m, 너비는 49.15m이며 이탈리아의 건축가 니콜라 살비에 의해 조성되었다. 세계에서 가장 큰 바로크 양식의 분수이며, 세계적으로도 매우 유명한 분수이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -228,6 +311,7 @@
     "title": "트레비 분수",
     "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A0%88%EB%B9%84_%EB%B6%84%EC%88%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -256,8 +340,42 @@
    "wikidata_id": "Q185382"
   },
   {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q34925",
+   "importance": {
+    "sitelinks": 68
+   },
+   "lat": 41.893333,
+   "lng": 12.483056,
+   "name": "캄피돌리오",
+   "name_original": "Campidoglio",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "partial",
+    "reason": "coords_missing_and_label_weak",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q34925"
+  },
+  {
    "area": "바티칸 시국",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "성 베드로 광장(이탈리아어: Piazza San Pietro)은 바티칸 시국에 있는 성 베드로 대성전의 바로 앞에 조성된 광장이다. 광장은 로마 시의 보르고 리오네 구역과 동쪽으로 접경을 이루며, 최대 30만 명까지 수용할 수 있다. 성 베드로 광장의 설계자는 잔 로렌초 베르니니이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -266,6 +384,7 @@
     "title": "성 베드로 광장",
     "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%B2%A0%EB%93%9C%EB%A1%9C_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -296,6 +415,7 @@
   {
    "area": "로마 1구",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "팔라티노(이탈리아어: Palatino)는 로마의 일곱 언덕 중 하나이다. 로마의 일곱 언덕들 중 가장 핵심적인 언덕으로 꼽혔으며, 로마 왕정 시대부터 사람이 살았을 정도로 로마 시내에서 가장 오래된 구역이다. 로마 포룸에서 40m정도 위에 위치해 있으며, 이 곳에 아우구스투스 황제가 지은 황궁이 있었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -304,6 +424,7 @@
     "title": "팔라티노 언덕",
     "url": "https://ko.wikipedia.org/wiki/%ED%8C%94%EB%9D%BC%ED%8B%B0%EB%85%B8_%EC%96%B8%EB%8D%95"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -346,6 +467,7 @@
   {
    "area": "로마",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산타마리아 마조레 대성전(이탈리아어: Basilica di Santa Maria Maggiore)은 이탈리아 로마에 있는 로마 가톨릭교회의 대성당이다. 성모 대성당 또는 성모 설지전(聖母雪地殿)이라고도 부른다. 고대 로마 양식의 4대 성전 가운데 하나로 손꼽힌다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -354,6 +476,7 @@
     "title": "산타마리아 마조레 대성전",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%80%EB%A7%88%EB%A6%AC%EC%95%84_%EB%A7%88%EC%A1%B0%EB%A0%88_%EB%8C%80%EC%84%B1%EC%A0%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -396,7 +519,225 @@
   },
   {
    "area": "로마",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "산탄젤로성(이탈리아어: Castel Sant'Angelo 카스텔 산탄젤로[*]) 또는 하드리아누스의 영묘는 로마에 있는 원통 모양의 건축물로 원래는 로마 제국의 황제 하드리아누스가 자신과 가족을 위해 세운 무덤이었다. 로마 제국이 멸망한 이후에는 로마 교황청의 성곽 겸 요새로 사용되었고 현재는 군사 박물관으로 사용되고 있다. 성의 정면에는 고대에 세워진 산탄젤로 다리가 있는데 이 다리는 아직도 로마에서 산탄젤로성으로 들어가는 입구를 지키고 있어 장관을 이룬다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산탄젤로성",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%84%EC%A0%A4%EB%A1%9C%EC%84%B1"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/8035487"
+   },
+   "hours_text": "Mo-Su 09:00-19:30",
+   "id": "wd:Q486382",
+   "importance": {
+    "sitelinks": 58
+   },
+   "lat": 41.903044,
+   "lng": 12.466307,
+   "name": "산탄젤로성",
+   "name_original": "Castel Sant'Angelo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/8035487",
+     "text": "영업시간 Mo-Su 09:00-19:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/way/8035487",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 6.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q33506",
+    "Q92107",
+    "Q3822604",
+    "Q162875"
+   ],
+   "wikidata_id": "Q486382"
+  },
+  {
+   "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "트라야누스 원주(라틴어: COLVMNA·TRAIANI, 이탈리아어: Colonna Traiana)는 로마 황제 트라야누스를 기념하기 위해 원로원의 명령으로 다마스쿠스의 아폴로도로스가 건설했다. 이 원주는 퀴리날레 언덕 근처, 포룸 로마눔 북쪽의 트라야누스 포룸에 있다. 113년에 완성된 이 원주는 다키아 전쟁에서 트라야누스 승리를 기념하는 부조로 유명하다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "트라야누스 원주",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9D%BC%EC%95%BC%EB%88%84%EC%8A%A4_%EC%9B%90%EC%A3%BC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q192784",
+   "importance": {
+    "sitelinks": 56
+   },
+   "lat": 41.895833,
+   "lng": 12.484167,
+   "name": "트라야누스 원주",
+   "name_original": "Columna Traiana",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1930585",
+    "Q839954"
+   ],
+   "wikidata_id": "Q192784"
+  },
+  {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "아벤티노(이탈리아어: Aventino) 혹은 아벤티누스 언덕(라틴어: Collis Aventinus)는 로마의 일곱 언덕 중 하나로, 로마의 기원이 된 곳이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "아벤티노 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%B2%A4%ED%8B%B0%EB%85%B8_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q194103",
+   "importance": {
+    "sitelinks": 54
+   },
+   "lat": 41.883333,
+   "lng": 12.483333,
+   "name": "아벤티노 언덕",
+   "name_original": "Aventino",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q194103"
+  },
+  {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "퀴리날레(이탈리아어: Quirinale)는 로마의 일곱 언덕 중 하나이다. 로마 구도심의 북서쪽에 위치해 있다. 일곱 언덕 중 가장 높으며, 언덕 위에는 이탈리아 내무부가 입주해있는 퀴리날레 궁전이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퀴리날레 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%ED%80%B4%EB%A6%AC%EB%82%A0%EB%A0%88_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q207896",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 41.901111,
+   "lng": 12.488333,
+   "name": "퀴리날레 언덕",
+   "name_original": "Quirinale",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q207896"
+  },
+  {
+   "area": "로마 1구",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "퀴리날레궁(이탈리아어: Palazzo del Quirinale)은 이탈리아 로마에 위치한 궁전이다. 교황들과 이탈리아 국왕들의 궁전으로 사용되었으며, 오늘날에는 이탈리아 대통령의 공식 관저로 사용되고 있다. 로마의 일곱 언덕 가운데 가장 높은 퀴리날레 언덕 위에 세워져 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "퀴리날레궁",
+    "url": "https://ko.wikipedia.org/wiki/%ED%80%B4%EB%A6%AC%EB%82%A0%EB%A0%88%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q223079",
+   "importance": {
+    "sitelinks": 53
+   },
+   "lat": 41.9,
+   "lng": 12.4875,
+   "name": "퀴리날레궁",
+   "name_original": "Palazzo del Quirinale",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2651004",
+    "Q15848826",
+    "Q481289"
+   ],
+   "wikidata_id": "Q223079"
+  },
+  {
+   "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "키르쿠스 막시무스(Circus Maximus)는 고대 로마 제국에서 가장 큰 전차 경기장이자 대중 오락 시설이었다. 로마의 팔라티노 언덕과 아벤티노 언덕 사이의 계곡 사이에 위치하고 있었다. 그 길이는 621m였으며 너비는 118m였고, 약 15만 명의 군중들을 수용할 수 있었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -405,6 +746,7 @@
     "title": "키르쿠스 막시무스",
     "url": "https://ko.wikipedia.org/wiki/%ED%82%A4%EB%A5%B4%EC%BF%A0%EC%8A%A4_%EB%A7%89%EC%8B%9C%EB%AC%B4%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -435,6 +777,46 @@
   {
    "area": "로마",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "에스퀼리노 언덕(이탈리아어: Esquilino)은 로마의 일곱 언덕 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "에스퀼리노 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%EC%97%90%EC%8A%A4%ED%80%BC%EB%A6%AC%EB%85%B8_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q211233",
+   "importance": {
+    "sitelinks": 52
+   },
+   "lat": 41.895556,
+   "lng": 12.496667,
+   "name": "에스퀼리노 언덕",
+   "name_original": "Esquilino",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q211233"
+  },
+  {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "트라야누스 포룸(라틴어: Forum Traiani, 이탈리아어: Foro di Traiano)은 고대 로마에 건설된 마지막 황제들의 포룸이다. 다마스쿠스의 아폴로도로스가 건설을 담당했다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -443,6 +825,7 @@
     "title": "트라야누스 포룸",
     "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9D%BC%EC%95%BC%EB%88%84%EC%8A%A4_%ED%8F%AC%EB%A3%B8"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -473,9 +856,50 @@
   },
   {
    "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "나보나 광장(Piazza Navona)은 이탈리아 로마에 있는 광장이다. 테베레강과 코르소 거리 사이에 위치해있다. 이 광장의 역사는 고대 로마 시대로 거슬러 올라간다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "나보나 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EB%B3%B4%EB%82%98_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q463400",
+   "importance": {
+    "sitelinks": 47
+   },
+   "lat": 41.89871,
+   "lng": 12.47316,
+   "name": "나보나 광장",
+   "name_original": "Piazza Navona",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 32.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q463400"
+  },
+  {
+   "area": "로마",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -508,6 +932,7 @@
   {
    "area": "Roma Capitale",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "보르게세 미술관(이탈리아어: Galleria Borghese)은 이탈리아 로마의 보르게세 공원에 있는 미술관이다. 이탈리아에서 바티칸 박물관 다음으로 소장품이 많다. 시피오네 보르게세의 미술 컬렉션이 전시되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -516,6 +941,7 @@
     "title": "보르게세 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EB%A5%B4%EA%B2%8C%EC%84%B8_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -564,8 +990,87 @@
    "wikidata_id": "Q841506"
   },
   {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "비미날레(이탈리아어: Viminale)는 로마의 일곱 언덕 중 하나이다. 7개의 언덕들 중 가장 그 크기가 작으며, 로마 구도심 중심부를 가리키는 듯한 손가락 모양을 하며 뾰족하게 튀어나와 있는 듯한 형상을 가지고 있다. 북서쪽에 퀴리날레 언덕이 있으며 남동쪽에 에스퀼리노 언덕이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "비미날레 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EB%AF%B8%EB%82%A0%EB%A0%88_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q216085",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 41.899167,
+   "lng": 12.494167,
+   "name": "비미날레 언덕",
+   "name_original": "Viminale",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q216085"
+  },
+  {
+   "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "첼리오 언덕(이탈리아어: Celio)은 로마의 일곱 언덕 중 하나로, 로마 구도심의 남동쪽에 위치해있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "첼리오 언덕",
+    "url": "https://ko.wikipedia.org/wiki/%EC%B2%BC%EB%A6%AC%EC%98%A4_%EC%96%B8%EB%8D%95"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q216104",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 41.883587,
+   "lng": 12.494992,
+   "name": "첼리오 언덕",
+   "name_original": "Celio",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 209.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q216104"
+  },
+  {
    "area": "Roma Capitale",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "카라칼라 욕장(이탈리아어: Terme di Caracalla)은 이탈리아 로마에 있는 공중 목욕탕 유적을 말한다. 카라칼라 황제의 명령으로 212년부터 216년까지 지어졌다. 이 공중 목욕탕은 6세기까지 남아서 그대로 사용되다가, 고트 전쟁 중에 동고트족 군대가 공격하여 파괴되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -574,6 +1079,7 @@
     "title": "카라칼라 욕장",
     "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%9D%BC%EC%B9%BC%EB%9D%BC_%EC%9A%95%EC%9E%A5"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -611,6 +1117,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "티투스 개선문(이탈리아어: Arco di Tito, 라틴어: Arcus Tītī, 영어: Arch of Titus)은 기원후 1세기에 지어진 개선문으로, 이탈리아 로마의 비아 사크라에 위치하고 있으며 포룸 로마눔의 남동쪽에 있다. 티투스 개선문은 티투스를 공식적으로 신격화하거나 그의 봉헌을 기념하고, 유대인의 반란에서 티투스와 그의 아버지 베스파시아누스가 함께한 승리를 기념하기 위해 티투스가 죽은 직후인 기원후 81년경에 그의 동생이자 후임 황제인 도미티아누스 황제에 의해 지어졌다. 개선문에는 로마의 승리로 예루살렘이 함락된 이후 기원후 71년에 거행된 승전 행렬이 묘사되어 있으며 헤로데 성전의 유물을 묘사한 몇 안 되는 동시대 작품 중 하나이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -619,6 +1126,7 @@
     "title": "티투스 개선문",
     "url": "https://ko.wikipedia.org/wiki/%ED%8B%B0%ED%88%AC%EC%8A%A4_%EA%B0%9C%EC%84%A0%EB%AC%B8"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -634,7 +1142,7 @@
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -649,6 +1157,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "아우구스투스의 평화의 제단(라틴어: Ara Pacis Augustae) 또는 평화의 제단은 고대 로마의 제정시대 초반에 지어진 건축물이다. 기원전 13년 7월 4일에 히스파니아와 갈리아에서부터 돌아온 아우구스투스를 맞이하여 원로원에서 평화가 오래 지속되기를 로마의 전통 신들에게 기원하는 목적으로 지었다. 기원전 9년 1월 30일에 아우구스투스의 승리로 얻어낸 평화가 계속되기를 기원하며 봉헌하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -657,6 +1166,7 @@
     "title": "평화의 제단",
     "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%ED%99%94%EC%9D%98_%EC%A0%9C%EB%8B%A8"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -689,6 +1199,7 @@
   {
    "area": "로마",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "스페인 광장(이탈리아어: Piazza di Spagna)은 이탈리아 로마에 있는 광장으로, 스페인 대사관이 있어 스페인 광장이라 불린다...",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -697,6 +1208,7 @@
     "title": "스페인 광장 (로마)",
     "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8E%98%EC%9D%B8_%EA%B4%91%EC%9E%A5_(%EB%A1%9C%EB%A7%88)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -726,6 +1238,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "베스타 신전(라틴어: Aedes Vestae, 이탈리아어: Tempio di Vesta)은 로마 포룸에 위치한 로마의 옛 신전이다. 신전 건축의 가장 큰 특징은 원형으로 이루어진 건축 구조이다. 로마의 여신 베스타가 로마 초기에 일반 가정에서 숭배를 받기 시작한 이래로, 이 건물은 로마 역사와 함께하며 로마 제국의 흥망을 지켜보았다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -734,6 +1247,7 @@
     "title": "베스타 신전",
     "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%8A%A4%ED%83%80_%EC%8B%A0%EC%A0%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -766,8 +1280,10 @@
   {
    "area": "캄포마르치오",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -796,8 +1312,90 @@
    "wikidata_id": "Q770847"
   },
   {
+   "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "마르쿠스 아우렐리우스 원주(라틴어: Columna Centenaria Divorum Marci et Faustinae, 이탈리아어: Colonna di Marco Aurelio)는 이탈리아 로마 콜론나 광장에 있는 고대 로마의 전승 기념탑이다. 나선형의 부조가 들어간 도리아 양식의 기념탑이며, 로마 제국의 황제 마르쿠스 아우렐리우스를 기념해 지어졌고 트라야누스 원주의 모델이 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마르쿠스 아우렐리우스 원주",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A5%B4%EC%BF%A0%EC%8A%A4_%EC%95%84%EC%9A%B0%EB%A0%90%EB%A6%AC%EC%9A%B0%EC%8A%A4_%EC%9B%90%EC%A3%BC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q265384",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 41.900833,
+   "lng": 12.48,
+   "name": "마르쿠스 아우렐리우스 원주",
+   "name_original": "Colonna di Marco Aurelio",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.7,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1930585",
+    "Q839954",
+    "Q179700"
+   ],
+   "wikidata_id": "Q265384"
+  },
+  {
+   "area": "로마",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "그레고리안 대학교(Pontificia Università Gregoriana)는 교황청에 소속된 로마 가톨릭교회의 대학이다. 로마 기숙학교(Collegio Romano)를 계승하며 이냐시오 데 로욜라가 건립했고, 인간 학문의 장으로 서로 다른 여러 학과, 특별히 철학과와 신학과를 중심으로 하는 대학이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "그레고리오 대학교",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EA%B3%A0%EB%A6%AC%EC%98%A4_%EB%8C%80%ED%95%99%EA%B5%90"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q467025",
+   "importance": {
+    "sitelinks": 39
+   },
+   "lat": 41.898889,
+   "lng": 12.484722,
+   "name": "그레고리오 대학교",
+   "name_original": "Pontificia Università Gregoriana",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q2120466",
+    "Q110225820"
+   ],
+   "wikidata_id": "Q467025"
+  },
+  {
    "area": "로마 1구",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "포폴로 광장(Piazza del Popolo)은 이탈리아 로마에 있는 광장으로, 핀초 언덕과 테베레강 사이에 있다. '민중의 광장'이라는 뜻이며 광장 한가운데는 아우구스투스가 기원전 1세기에 이집트를 정복한 것을 기념해 가져온 36m 높이의 플라미니오 오벨리스크가 세워져 있다. 남쪽으로는 코르소 거리, 바부이노 거리, 리페타 거리가 세 갈래로 뻗어 나가며, 광장 남족에는 쌍둥이 성당 산타 마리아 데이 미라콜리와 산타 마리아 인 몬테산토가 나란히 서 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -806,6 +1404,7 @@
     "title": "포폴로 광장",
     "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%ED%8F%B4%EB%A1%9C_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -835,6 +1434,7 @@
   {
    "area": "로마",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "라테라노 사도궁(라틴어: Palatium Apostolicum Lateranense) 또는 라테라노궁(Palatium Lateranense, Palazzo del Laterano)은 로마 제국 시대 때 지어진 궁전으로, 나중에 교황의 궁전이 되었다. 산 조반니 인 라테라노 대성전과 인접해 있으며, 오늘날에는 박물관이 되어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -843,6 +1443,7 @@
     "title": "라테라노궁",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%ED%85%8C%EB%9D%BC%EB%85%B8%EA%B6%81"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -872,7 +1473,51 @@
   },
   {
    "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "셉티미우스 세베루스 개선문(이탈리아어: Arco di Settimio Severo)는 포룸 로마눔 북서쪽 끝에 위치한 백색 대리석으로 만들어진 개선문이다. 로마 제국의 셉티미우스 세베루스 황제가 203년에 파르티아와의 전쟁에서 승리한 것을 기념하여 지어졌다. 이 개선문은 세베루스 황제와 그의 두 아들인 카라칼라와 게타에게 봉헌되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "셉티미우스 세베루스 개선문",
+    "url": "https://ko.wikipedia.org/wiki/%EC%85%89%ED%8B%B0%EB%AF%B8%EC%9A%B0%EC%8A%A4_%EC%84%B8%EB%B2%A0%EB%A3%A8%EC%8A%A4_%EA%B0%9C%EC%84%A0%EB%AC%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q162353",
+   "importance": {
+    "sitelinks": 38
+   },
+   "lat": 41.892778,
+   "lng": 12.484722,
+   "name": "셉티미우스 세베루스 개선문",
+   "name_original": "Arco di Settimio Severo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q143912",
+    "Q839954",
+    "Q109607",
+    "Q2065736",
+    "Q814254"
+   ],
+   "wikidata_id": "Q162353"
+  },
+  {
+   "area": "로마",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "파르네세궁(이탈리아어: Palazzo Farnese)은 로마에 위치한 전성기 르네상스 시대의 궁전 중 하나이다. 이탈리아 정부가 소유하고 있던 이곳은 1936년에 99년을 기간으로 프랑스 정부에 주어졌으며 현재 이탈리아 주재 프랑스 대사관으로 사용되고 있다. 1517년에 파르네세 가문을 위해 최초 설계되었던 이 건물은 1534년에 알레산드로 파르네세가 교황 바오로 3세가 되면서 안토니오 다 산갈로가 설계를 맡아 그 규모와 구상이 확대되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -881,6 +1526,7 @@
     "title": "파르네세궁",
     "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A5%B4%EB%84%A4%EC%84%B8%EA%B6%81"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -912,6 +1558,7 @@
   {
    "area": "로마",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "베네치아 광장(Piazza Venezia)은 이탈리아 로마에 있는 광장이다. 1871년 이탈리아 통일을 기념하기 위해 조성되었으며, 현재는 테르미니 역과 함께 교통의 중심지 역할을 하며 광장 안에는 이탈리아를 통일한 비토리오 에마누엘레 2세를 기리기 위한 기념관이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -920,6 +1567,7 @@
     "title": "베네치아 광장",
     "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -948,7 +1596,90 @@
   },
   {
    "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "황제들의 포룸(라틴어: Imperial Fora)는 로마에 세워졌던 황제들을 위한 기념비적인 포룸이다. 기원전 46년에서 기원후 113년까지, 총 150년의 세월 동안 지어졌다. 황제들의 포룸은 로마 공화정과 로마 제국의 심장부였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "황제들의 포룸",
+    "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EC%A0%9C%EB%93%A4%EC%9D%98_%ED%8F%AC%EB%A3%B8"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q216568",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 41.894444,
+   "lng": 12.485556,
+   "name": "황제들의 포룸",
+   "name_original": "Fori Imperiali",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 6.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q839954"
+   ],
+   "wikidata_id": "Q216568"
+  },
+  {
+   "area": "로마",
+   "category": "bridge",
+   "coord_source": "wikidata:P625",
+   "description": "산탄젤로 다리(이탈리아어: Ponte Sant'Angelo) 또는 하드리아누스의 다리는 로마에 있는 다리 가운데 하나이다. 로마 황제 하드리아누스에 의해 당시 도심 한가운데에 한창 건설 중이었던 그의 영묘(오늘날의 산탄젤로 성)로 가려고 134년에서 139년 사이에 테베레강 위에 건립되었다. 산탄젤로 다리는 온천침전물 대리석으로 되어 있으며, 테베레강 위에 짧은 거리마다 세 개의 아치들을 설치함으로써 강에서부터 중간에 있는 경사로에 의해 가까이 접근하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산탄젤로 다리",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%84%EC%A0%A4%EB%A1%9C_%EB%8B%A4%EB%A6%AC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q870476",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 41.901803,
+   "lng": 12.46645,
+   "name": "산탄젤로 다리",
+   "name_original": "Ponte Sant’Angelo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 13.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q14276458",
+    "Q1068842",
+    "Q3397526",
+    "Q537127",
+    "Q1223230"
+   ],
+   "wikidata_id": "Q870476"
+  },
+  {
+   "area": "로마",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "캄포 데 피오리(Campo de' Fiori)는 이탈리아 나보나 광장 남쪽에 위치한 직사각형 모양의 광장이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -957,6 +1688,7 @@
     "title": "캄포 데 피오리",
     "url": "https://ko.wikipedia.org/wiki/%EC%BA%84%ED%8F%AC_%EB%8D%B0_%ED%94%BC%EC%98%A4%EB%A6%AC"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -986,6 +1718,46 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "콰트로 피우미 분수(이탈리아어: Fontana dei Quattro Fiumi)는 이탈리아 로마에 있는 분수다. 나보나 광장에 있다. 1651년 잔 로렌초 베르니니가 교황 인노첸시오 10세를 위해 설계했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "콰트로 피우미 분수",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BD%B0%ED%8A%B8%EB%A1%9C_%ED%94%BC%EC%9A%B0%EB%AF%B8_%EB%B6%84%EC%88%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q655470",
+   "importance": {
+    "sitelinks": 36
+   },
+   "lat": 41.898953,
+   "lng": 12.473075,
+   "name": "콰트로 피우미 분수",
+   "name_original": "fontana dei Quattro Fiumi",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 7.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q483453"
+   ],
+   "wikidata_id": "Q655470"
+  },
+  {
+   "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "마르켈루스 극장(라틴어: Theatrum Marcelli, 이탈리아어: Teatro di Marcello, 영어: Theatre of Marcellus)은 고대 로마 공화정 말기에 지어진 야외 극장이다. 이 극장은 오늘날 이탈리아 로마의 산탄젤로 지구에 위치해 있으며, 16세기에 팔라초(궁전)로 개조되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -994,6 +1766,7 @@
     "title": "마르켈루스 극장",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A5%B4%EC%BC%88%EB%A3%A8%EC%8A%A4_%EA%B7%B9%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1025,6 +1798,7 @@
   {
    "area": "Roma Capitale",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "빌라 파르네시나(이탈리아어: Villa Farnesina)는 이탈리아 로마의 트라스테베레 지구, 룽가라가(비아 델라 룽가라)에 있는 르네상스 시대의 교외형 빌라이다. 시에나 출신의 부유한 은행가 아고스티노 키지의 의뢰로 1506년부터 1510년 사이에 지어졌으며, 도시 중심에 있던 그의 주요 거처인 팔라초 키지의 부속 건물로, 당시로서는 새로운 유형의 교외 빌라였다. 이곳은 라파엘로를 비롯한 다른 전성기 르네상스 시대 예술가들의 풍부한 프레스코화가 원형 그대로 남아 있는 것으로 특히 유명하다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1033,6 +1807,7 @@
     "title": "빌라 파르네시나",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%8C%EB%9D%BC_%ED%8C%8C%EB%A5%B4%EB%84%A4%EC%8B%9C%EB%82%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1059,7 +1834,7 @@
     }
    ],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": null,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
@@ -1076,6 +1851,7 @@
   {
    "area": "로마",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "빌라 메디치(이탈리아어: Villa Medici, 이탈리아어 발음: [ˈvilla ˈmɛːditʃi])는 이탈리아 로마의 트리니타 데이 몬티 성당 옆 핀초 언덕에 위치한 마니에르스모 건축 양식의 빌라 (별장)로, 보르게세 공원과 인접한 건물 단지이다. 토스카나 대공 페르디난도 1세 데 메디치가 설립한 건물로 오늘날 프랑스 정부의 소유이며, 1803년부터 로마 아카데미 드 프랑스가 소재해 있다. 이 건물의 정원에 설치된 분수는 훗날 오토리노 레스피기가 작곡한 '로마의 분수'에 영감을 준 바 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1084,6 +1860,7 @@
     "title": "빌라 메디치",
     "url": "https://ko.wikipedia.org/wiki/%EB%B9%8C%EB%9D%BC_%EB%A9%94%EB%94%94%EC%B9%98"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1125,6 +1902,7 @@
   {
    "area": "로마",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산 루이지 데이 프란체시 성당(이탈리아어: San Luigi dei Francesi, 프랑스어: Saint Louis des Français, 라틴어: S. Ludovici Francorum de Urbe)은 이탈리아 로마의 나보나 광장 인근에 위치한 가톨릭 성당으로, 프랑스의 수호성인인 성모 마리아, 아레오파고의 디오니시우스, 프랑스 국왕 루이 9세에게 봉헌된 성당이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1133,6 +1911,7 @@
     "title": "산 루이지 데이 프란체시 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0_%EB%A3%A8%EC%9D%B4%EC%A7%80_%EB%8D%B0%EC%9D%B4_%ED%94%84%EB%9E%80%EC%B2%B4%EC%8B%9C_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1174,6 +1953,59 @@
   {
    "area": "로마",
    "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "산타 마리아 소프라 미네르바 성당(이탈리아어: Basilica di Santa Maria sopra Minerva)은 로마에 있는 성당이다. 이 성당은 캄푸스 마르티우스 지역의 미네르바 광장에 있으며, 로마에서 유일한 고딕 양식 성당이자 도미니코회에서 관리하는 성당 가운데 으뜸가는 성당이다. 이 성당은 수많은 초기 기독교 시대의 성당들과 마찬가지로 미네르바 여신에게 바친 신전이었던 장소 위에 건설한 까닭에 이러한 이름을 갖게 되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산타 마리아 소프라 미네르바 성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%80_%EB%A7%88%EB%A6%AC%EC%95%84_%EC%86%8C%ED%94%84%EB%9D%BC_%EB%AF%B8%EB%84%A4%EB%A5%B4%EB%B0%94_%EC%84%B1%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/25400176"
+   },
+   "hours_text": "Mo-Fr 08:00-20:00; Sa,Su,PH 10:30-13:00,14:00-19:30",
+   "id": "wd:Q823685",
+   "importance": {
+    "sitelinks": 35
+   },
+   "lat": 41.898056,
+   "lng": 12.478333,
+   "name": "산타 마리아 소프라 미네르바 성당",
+   "name_original": "basilica di Santa Maria sopra Minerva",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/25400176",
+     "text": "영업시간 Mo-Fr 08:00-20:00; Sa,Su,PH 10:30-13:00,14:00-19:30 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1088552",
+    "Q120560",
+    "Q2065736"
+   ],
+   "wikidata_id": "Q823685"
+  },
+  {
+   "area": "로마",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산 카를로 알레 콰트로 폰타네 성당(이탈리아어: Chiesa di San Carlo alle Quattro Fontane)은 이탈리아 로마에 있는 성당이다. 보로미니가 건축하였다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1182,6 +2014,7 @@
     "title": "산 카를로 알레 콰트로 폰타네 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0_%EC%B9%B4%EB%A5%BC%EB%A1%9C_%EC%95%8C%EB%A0%88_%EC%BD%B0%ED%8A%B8%EB%A1%9C_%ED%8F%B0%ED%83%80%EB%84%A4_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1209,8 +2042,92 @@
    "wikidata_id": "Q867329"
   },
   {
+   "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "폼페이우스 극장(라틴어: Theatrum Pompeii, 이탈리아어: Teatro di Pompeo 테아트로 디 폼페오[*])은 고대 로마의 건축물로 로마 공화정 후기에 건설되었다. 완성까지 7년에 걸렸으며, 기원전 61년에 착공하여 준공 이전 기원전 55년에 사용되기 시작되었다. 로마 최초의 극장이며, 몇 세기에 걸쳐 세계 최대의 극장으로 알려져 있었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "폼페이우스 극장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8F%BC%ED%8E%98%EC%9D%B4%EC%9A%B0%EC%8A%A4_%EA%B7%B9%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q944814",
+   "importance": {
+    "sitelinks": 34
+   },
+   "lat": 41.895278,
+   "lng": 12.473611,
+   "name": "폼페이우스 극장",
+   "name_original": "Teatro di Pompeo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 2.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q21752084",
+    "Q19757",
+    "Q19860854"
+   ],
+   "wikidata_id": "Q944814"
+  },
+  {
+   "area": "로마",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "안토니누스와 파우스티나 신전은 고대 로마의 포룸 로마눔, 비아 사크라에 세워져 있던 로마의 신전이다. 이후 로마 가톨릭교회 성당으로 용도가 전환되었고, 산 로렌초 인 미란다 성당(San Lorenzo in Miranda)이라는 이름으로 사용되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "안토니누스와 파우스티나 신전",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%88%ED%86%A0%EB%8B%88%EB%88%84%EC%8A%A4%EC%99%80_%ED%8C%8C%EC%9A%B0%EC%8A%A4%ED%8B%B0%EB%82%98_%EC%8B%A0%EC%A0%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q752555",
+   "importance": {
+    "sitelinks": 33
+   },
+   "lat": 41.892139,
+   "lng": 12.486689,
+   "name": "안토니누스와 파우스티나 신전",
+   "name_original": "Tempio di Antonino e Faustina",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q44539",
+    "Q19860854",
+    "Q839954",
+    "Q867143"
+   ],
+   "wikidata_id": "Q752555"
+  },
+  {
    "area": "몬티",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "아우구스투스 포룸(라틴어: Forum Augustum, 이탈리아어: Foro di Augusto)은 이탈리아 로마에 있는 황제들의 포룸 중 하나로, 아우구스투스가 지었다. 이 포룸에는 마르스 울토르 신전이 자리 잡고 있기도 하다. 미완성 상태인 이 포룸과 신전은 건설 명령이 처음 내려진 지 40년 뒤인 기원전 2년이 되어서야 완성이 이뤄졌다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1219,6 +2136,7 @@
     "title": "아우구스투스 포룸",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%9A%B0%EA%B5%AC%EC%8A%A4%ED%88%AC%EC%8A%A4_%ED%8F%AC%EB%A3%B8"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1249,6 +2167,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "포르투누스 신전(이탈리아어: Tempio di Portuno)은 이탈리아 로마에 있는 고대 로마 신전이다. 이 신전은 고대 로마의 가축 시장이었던 포룸 보아리움 옆에 세워졌으며, 이 시장은 허큘리스와 관련이 있고, 로마에서 가장 오래된 강 항구인 포르투스 티베리누스(Portus Tiberinus)와 테베레강을 가로지르는 가장 오래된 석조 다리인 아이밀리우스 다리와 인접해 있었다. 신전은 아마도 '문지기의 신' 포르투누스에게 봉헌되었을 것으로 보이나, 이 지역에는 그의 것 외에도 여러 다른 신전이 있었기 때문에 정확한 헌정 대상은 명확하지 않다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1257,6 +2176,7 @@
     "title": "포르투누스 신전",
     "url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%EB%A5%B4%ED%88%AC%EB%88%84%EC%8A%A4_%EC%8B%A0%EC%A0%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1289,6 +2209,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "마르쿠스 아우렐리우스 기마상(이탈리아어: Statua equestre di Marco Aurelio)은 이탈리아 로마의 캄피돌리오 언덕에 있는 기마상이다. 청동으로 제작되었고 높이는 4.24 m (13.9 ft)이다. 황제는 말을 타고 있는 기마상이지만, 그 외에 황제를 묘사한 조각상 부분은 아우구스투스 황제의 입상과 많은 유사점들을 나타내고 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1297,6 +2218,7 @@
     "title": "마르쿠스 아우렐리우스 기마상",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A5%B4%EC%BF%A0%EC%8A%A4_%EC%95%84%EC%9A%B0%EB%A0%90%EB%A6%AC%EC%9A%B0%EC%8A%A4_%EA%B8%B0%EB%A7%88%EC%83%81"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1326,6 +2248,7 @@
   {
    "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "바르카차 분수(이탈리아어: Fontana della Barcaccia 폰타나 델라 바르차카[*]→낡은 배의 분수)는 이탈리아 로마 스페인 광장 스페인 계단 앞에 있는 분수이다. 교황 우르바노 8세는 로마의 모든 주요 광장에 분수를 세우는 이전 교황 프로젝트의 일환으로 1623년 피에트로 베르니니에게 분수를 지을 것을 의뢰했다. 분수는 1629년 8월 29일에 피에트로의 아버지가 사망한 후 그의 아들 잔 로렌초 베르니니의 도움과 함께 피에트로 베르니니에 의해 1627년부터 1629년 사이에 완성되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1334,6 +2257,7 @@
     "title": "바르카차 분수",
     "url": "https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A5%B4%EC%B9%B4%EC%B0%A8_%EB%B6%84%EC%88%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1364,6 +2288,7 @@
   {
    "area": "로마",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "베네치아궁(이탈리아어: Palazzo Venezia)은 이탈리아 로마에 있는 궁전이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1372,6 +2297,7 @@
     "title": "베네치아궁",
     "url": "https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%84%A4%EC%B9%98%EC%95%84%EA%B6%81"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1401,8 +2327,10 @@
   {
    "area": "로마",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1433,7 +2361,88 @@
   },
   {
    "area": "로마",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "자니콜로(이탈리아어: Gianicolo)는 로마의 언덕 중 하나이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "자니콜로",
+    "url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EB%8B%88%EC%BD%9C%EB%A1%9C"
+   },
+   "discovery": "ko",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q303001",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 41.891667,
+   "lng": 12.461111,
+   "name": "자니콜로",
+   "name_original": "Gianicolo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q54050"
+   ],
+   "wikidata_id": "Q303001"
+  },
+  {
+   "area": "로마",
    "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "살라리아 가도(이탈리아어: Via Salaria)는 이탈리아의 고대 로마 도로였다. 이 길은 결국 로마(아우렐리아누스 방벽의 포르타 살라리아)에서 아드리아해 연안의 '카스트룸 트루엔티눔'(포르토 다스콜리)까지 242km의 거리를 주행했다. 도로는 또한 레아테(리에티)와 아스쿨룸(아스콜리피체노)을 통과했다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "살라리아 가도",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B4%EB%9D%BC%EB%A6%AC%EC%95%84_%EA%B0%80%EB%8F%84"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q549998",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 41.9,
+   "lng": 12.483,
+   "name": "살라리아 가도",
+   "name_original": "via Salaria",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q194029",
+    "Q14752696",
+    "Q19860854"
+   ],
+   "wikidata_id": "Q549998"
+  },
+  {
+   "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "유피테르 옵티무스 막시무스 신전은 유피테르 카피톨리누스 신전(라틴어: Aedes Iovis Optimi Maximi Capitolini; 이탈리아어: Tempio di Giove Ottimo Massimo; : \"카피톨리노의 최고 위대한 유피테르의 신전\")이라고도 알려진 카피톨리노 언덕에 위치했던 고대 로마의 가장 중요한 신전이었다. 고대 로마 종교의 총본산과 같은 곳이었으며, 수많은 사원, 조각상, 정원들에 둘러싸인 채 언덕 위에 당당하게 자리잡고 있었다. 최초로 지어진 건물은 당시 로마에서 가장 오래된 대형 신전이었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1442,6 +2451,7 @@
     "title": "유피테르 옵티무스 막시무스 신전",
     "url": "https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%94%BC%ED%85%8C%EB%A5%B4_%EC%98%B5%ED%8B%B0%EB%AC%B4%EC%8A%A4_%EB%A7%89%EC%8B%9C%EB%AC%B4%EC%8A%A4_%EC%8B%A0%EC%A0%84"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1473,8 +2483,60 @@
    "wikidata_id": "Q586468"
   },
   {
+   "area": "로마",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "캄포 마르초의 로욜라의 성 이냐시오 성당(라틴어: S. Ignatius a Loyola in Campo Martio, 이탈리아어: Chiesa di Sant'Ignazio di Loyola a Campo Marzio)은 이탈리아 로마에 있는 로마 가톨릭교회의 성당이다. 추기경에게 할당되는 로마의 명의본당 가운데 하나로서 수호성인은 예수회의 설립자인 로욜라의 성 이냐시오이다. 1626년~1650년에 걸쳐 바로크 양식으로 지어진 이 성당은 본래 로마 대학교 담당 사제의 본당으로 기능하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "산티냐시오 성당 (로마)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%8B%B0%EB%83%90%EC%8B%9C%EC%98%A4_%EC%84%B1%EB%8B%B9_(%EB%A1%9C%EB%A7%88)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/way/23840659"
+   },
+   "hours_text": "Mo-Sa 07:30-19:00; Su 11:30-18:00",
+   "id": "wd:Q1465674",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 41.89904,
+   "lng": 12.47973,
+   "name": "산티냐시오 성당",
+   "name_original": "chiesa di Sant'Ignazio di Loyola in Campo Marzio",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/way/23840659",
+     "text": "영업시간 Mo-Sa 07:30-19:00; Su 11:30-18:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 6.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16970",
+    "Q56395672"
+   ],
+   "wikidata_id": "Q1465674"
+  },
+  {
    "area": "",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "아쿠아 아피아(라틴어:Aqua Appia) 즉 아피우스 수도교는 첫 번째로 지어진 고대 로마의 수도교였다. 기원전 312년 아피아 가도를 건설한 로마의 집정관인 아피우스 클라우디우스 카이쿠스가 건설했다. 프론티누스가 확인한 바로는 이 수도교의 수원지는 비아 프라이네스티나로부터 780페이스 정도 떨어져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1483,6 +2545,7 @@
     "title": "아쿠아 아피아",
     "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%BF%A0%EC%95%84_%EC%95%84%ED%94%BC%EC%95%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -1512,7 +2575,48 @@
   },
   {
    "area": "로마",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "트라야누스 시장(라틴어: Mercatus Traiani, 이탈리아어: Mercati di Traiano)은 이탈리아 로마의 포리 임페리알리 거리에 있는 거대한 유적 단지이며, 콜로세움에서 반대쪽 끝에 위치했다. 트라야누스 포룸을 구성하는 주요 시설이며, 현전하는 구조물은 퀴리날레 언덕 발굴지의 맞은편에 위치해 있다. 로마 건축의 면면을 파악할 수 있으면서도 수도 로마의 주민들이 살았던 생생한 삶을 가늠할 수 있는 현장이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "트라야누스 시장",
+    "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9D%BC%EC%95%BC%EB%88%84%EC%8A%A4_%EC%8B%9C%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q478642",
+   "importance": {
+    "sitelinks": 29
+   },
+   "lat": 41.895611,
+   "lng": 12.486194,
+   "name": "트라야누스 시장",
+   "name_original": "Mercati di Traiano",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.3,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q109607",
+    "Q839954"
+   ],
+   "wikidata_id": "Q478642"
+  },
+  {
+   "area": "로마",
    "category": "worship",
+   "coord_source": "wikidata:P625",
    "description": "산타 마리아 인 코스메딘 성당(Basilica di Santa Maria in Cosmedin)은 이탈리아 로마에 있는 성당이다. 발렌타인데이에 유래가 된 성 발렌타인의 유골이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -1521,6 +2625,7 @@
     "title": "산타 마리아 인 코스메딘 성당",
     "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%83%80_%EB%A7%88%EB%A6%AC%EC%95%84_%EC%9D%B8_%EC%BD%94%EC%8A%A4%EB%A9%94%EB%94%98_%EC%84%B1%EB%8B%B9"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -1558,972 +2663,6 @@
     "Q1649443"
    ],
    "wikidata_id": "Q609293"
-  },
-  {
-   "area": "로마",
-   "category": "worship",
-   "description": "평화의 신전(라틴어: Templum Pacis) 혹은 '베스파시아누스 포룸'(라틴어: Forum Vespasiani)은 로마의 평화의 여신 팍스에게 경의를 표하기 위해 베스파시아누스 황제 시기인 서기 71년에 로마에 건설된 건축물이다. 유명한 콜로세움이 있는 쪽인 벨리아 언덕을 마주하고 있으며, 아르길레툼 남쪽에 위치해 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "평화의 신전",
-    "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%ED%99%94%EC%9D%98_%EC%8B%A0%EC%A0%84"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1456939",
-   "importance": {
-    "sitelinks": 28
-   },
-   "lat": 41.892622,
-   "lng": 12.487611,
-   "name": "평화의 신전",
-   "name_original": "Tempio della Pace",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.3,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q867143",
-    "Q44539",
-    "Q839954"
-   ],
-   "wikidata_id": "Q1456939"
-  },
-  {
-   "area": "로마",
-   "category": "museum",
-   "description": "국립근현대미술관(이탈리아어: Galleria Nazionale d'Arte Moderna e Contemporanea)는 라 갈레리아 나치오날레(이탈리아어: La Galleria Nazionale)로도 알려진 로마의 미술관이다. 1883년 당시 장관이었던 귀도 바첼리의 주도로 설립되었으며, 근대 미술과 현대 미술을 전문으로 다룬다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "로마 국립근현대미술관",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A7%88_%EA%B5%AD%EB%A6%BD%EA%B7%BC%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1492387",
-   "importance": {
-    "sitelinks": 28
-   },
-   "lat": 41.91653,
-   "lng": 12.48177,
-   "name": "로마 국립근현대미술관",
-   "name_original": "Galleria Nazionale d'Arte Moderna e Contemporanea",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 59.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q207694",
-    "Q17431399",
-    "Q97662266",
-    "Q33506",
-    "Q3867560",
-    "Q1007870",
-    "Q121076356",
-    "Q124830411"
-   ],
-   "wikidata_id": "Q1492387"
-  },
-  {
-   "area": "로마",
-   "category": "worship",
-   "description": "",
-   "description_source": null,
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/way/52333460"
-   },
-   "hours_text": "Tu-Fr 09:00-13:00, 15:00-19:00; Sa, Su 09:00-13:00, 15:00-20:00",
-   "id": "wd:Q1192577",
-   "importance": {
-    "sitelinks": 27
-   },
-   "lat": 41.89877,
-   "lng": 12.4726,
-   "name": "산타녜세 인 아고네 성당",
-   "name_original": "chiesa di Sant'Agnese in Agone",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/way/52333460",
-     "text": "영업시간 Tu-Fr 09:00-13:00, 15:00-19:00; Sa, Su 09:00-13:00, 15:00-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 15.6,
-    "label_match": "none",
-    "reason": "label_mismatch",
-    "redirected": false,
-    "status": "failed"
-   },
-   "wikidata_classes": [
-    "Q16970"
-   ],
-   "wikidata_id": "Q1192577"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "트라야누스의 욕장(이탈리아어: Terme di Traiano)은 고대 로마에 지은 거대한 목욕 및 레저 단지로, 서기 104년에 짓기 시작하여 109년 7월 칼렌드에 개관을 했다. 트라야누스의 명으로 지어진, 이 목욕 단지는 세르비아누스 성벽의 경계 안쪽에 위치했음에도 로마의 주요 발전 지역의 변두리이었던 오피우스 언덕 남쪽에 자리잡았었다. 다마스쿠스의 아폴로도로스가 설계했다고 전해진다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "트라야누스 욕장",
-    "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9D%BC%EC%95%BC%EB%88%84%EC%8A%A4_%EC%9A%95%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q599035",
-   "importance": {
-    "sitelinks": 27
-   },
-   "lat": 41.891867,
-   "lng": 12.496281,
-   "name": "트라야누스 욕장",
-   "name_original": "Terme di Traiano",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q839954",
-    "Q6581615",
-    "Q14752696"
-   ],
-   "wikidata_id": "Q599035"
-  },
-  {
-   "area": "로마",
-   "category": "attraction",
-   "description": "",
-   "description_source": null,
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1202365",
-   "importance": {
-    "sitelinks": 26
-   },
-   "lat": 41.9025,
-   "lng": 12.496389,
-   "name": "공화국 광장",
-   "name_original": "Piazza della Repubblica",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "none",
-    "reason": "label_mismatch",
-    "redirected": false,
-    "status": "failed"
-   },
-   "wikidata_classes": [
-    "Q174782"
-   ],
-   "wikidata_id": "Q1202365"
-  },
-  {
-   "area": "로마",
-   "category": "museum",
-   "description": "도리아 팜필리 미술관(Doria Pamphilj Gallery)은 이탈리아 로마에 있는 미술관, 궁전이다. 벨라스케스의 교황 인노켄티우스 10세의 초상화 등 400여 편의 유명 회화가 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "도리아 팜필리 미술관",
-    "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EB%A6%AC%EC%95%84_%ED%8C%9C%ED%95%84%EB%A6%AC_%EB%AF%B8%EC%88%A0%EA%B4%80"
-   },
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/node/706793341"
-   },
-   "hours_text": "Mo-Th 09:00-19:00; Fr-Su 10:00-20:00",
-   "id": "wd:Q1203458",
-   "importance": {
-    "sitelinks": 26
-   },
-   "lat": 41.897669,
-   "lng": 12.481145,
-   "name": "도리아 팜필리 미술관",
-   "name_original": "Galleria Doria Pamphilj",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/node/706793341",
-     "text": "영업시간 Mo-Th 09:00-19:00; Fr-Su 10:00-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
-    },
-    {
-     "evidence": "admission",
-     "source_url": "https://www.openstreetmap.org/node/706793341",
-     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q207694",
-    "Q33506",
-    "Q614316"
-   ],
-   "wikidata_id": "Q1203458"
-  },
-  {
-   "area": "로마",
-   "category": "attraction",
-   "description": "콜론나 광장(Piazza Colonna)은 이탈리아 로마 콜론나 중심에 있는 광장이다. 명칭은 서기 193년부터 이곳에 세워져 있는 대리석 마르쿠스 아우렐리우스 원주에서 채택되었다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "콜론나 광장",
-    "url": "https://ko.wikipedia.org/wiki/%EC%BD%9C%EB%A1%A0%EB%82%98_%EA%B4%91%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q63785",
-   "importance": {
-    "sitelinks": 26
-   },
-   "lat": 41.901056,
-   "lng": 12.479917,
-   "name": "콜론나 광장",
-   "name_original": "Piazza Colonna",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q174782"
-   ],
-   "wikidata_id": "Q63785"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "네르바 포룸(이탈리아어: Foro di Nerva; 라틴어: Forum Nervae)은 이탈리아 로마에 있는 고대 건축물로, 연대순으로는 황제들의 포룸에 지어진 포룸 중 마지막 전의 포룸이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "네르바 포룸",
-    "url": "https://ko.wikipedia.org/wiki/%EB%84%A4%EB%A5%B4%EB%B0%94_%ED%8F%AC%EB%A3%B8"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q686911",
-   "importance": {
-    "sitelinks": 26
-   },
-   "lat": 41.89305,
-   "lng": 12.48617,
-   "name": "네르바 포룸",
-   "name_original": "forum transitorium",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q839954",
-    "Q174782"
-   ],
-   "wikidata_id": "Q686911"
-  },
-  {
-   "area": "로마",
-   "category": "worship",
-   "description": "산마르코 에반젤리스타 알 캄피돌리오 성당(이탈리아어: Basilica di San Marco Evangelista al Campidoglio)은 이탈리아 로마 베네치아 광장에 있는 성당이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "산마르코 에반젤리스타 알 캄피돌리오 성당",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EB%A7%88%EB%A5%B4%EC%BD%94_%EC%97%90%EB%B0%98%EC%A0%A4%EB%A6%AC%EC%8A%A4%ED%83%80_%EC%95%8C_%EC%BA%84%ED%94%BC%EB%8F%8C%EB%A6%AC%EC%98%A4_%EC%84%B1%EB%8B%B9"
-   },
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/way/140031952"
-   },
-   "hours_text": "Sep-Jul Tu-Sa 10:00-13:00,16:00-18:00; Sep-Jul Su 10:00-13:00,16:00-20:00; Aug 16:00-20:00",
-   "id": "wd:Q1479910",
-   "importance": {
-    "sitelinks": 25
-   },
-   "lat": 41.895724,
-   "lng": 12.481448,
-   "name": "산마르코 에반젤리스타 알 캄피돌리오 성당",
-   "name_original": "basilica di San Marco Evangelista al Campidoglio",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/way/140031952",
-     "text": "영업시간 Sep-Jul Tu-Sa 10:00-13:00,16:00-18:00; Sep-Jul Su 10:00-13:00,16:00-20:00; Aug 16:00-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q16970",
-    "Q120560",
-    "Q1649443"
-   ],
-   "wikidata_id": "Q1479910"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "카스트라 프라이토리아(Castra Praetoria)는 제정 로마 시대의 친위대 병영 (카스트라)이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "카스트라 프라이토리아",
-    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EC%8A%A4%ED%8A%B8%EB%9D%BC_%ED%94%84%EB%9D%BC%EC%9D%B4%ED%86%A0%EB%A6%AC%EC%95%84"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1049836",
-   "importance": {
-    "sitelinks": 24
-   },
-   "lat": 41.908799,
-   "lng": 12.507941,
-   "name": "카스트라 프라이토리아",
-   "name_original": "Castra Praetoria",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 360.2,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q88205",
-    "Q131263",
-    "Q839954",
-    "Q14752696"
-   ],
-   "wikidata_id": "Q1049836"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "라테라노 오벨리스크 (Lateran Obelisk)는 이탈리아 로마의 산 조반니 인 라테라노 대성당과 산 조반니 아돌로라타 병원 사이의 광장에 위치한 오벨리스크이다. 이탈리아 최대이자 세계 최대의 이집트 오벨리스크이기도 하다. 무게는 원래 455톤에 달했으나 한차례 무너지고 다시 직립하기까지 4m 가량이 닳면서 현재 무게는 330톤이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "라테라노 오벨리스크",
-    "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%ED%85%8C%EB%9D%BC%EB%85%B8_%EC%98%A4%EB%B2%A8%EB%A6%AC%EC%8A%A4%ED%81%AC"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q645181",
-   "importance": {
-    "sitelinks": 24
-   },
-   "lat": 41.886833,
-   "lng": 12.504778,
-   "name": "라테라노 오벨리스크",
-   "name_original": "Obelisco Lateranense",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q170980"
-   ],
-   "wikidata_id": "Q645181"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "살루스티우스 정원(Horti Sallustiani)은 기원전 1세기 로마의 역사가 살루스티우스가 만든 로마 정원이다. 로마의 핀초 언덕과 퀴리날레 언덕 산맥 사이 북서쪽 넓은 지역을 차지하고 있고 살라리아 가도 인근, 시간이 흘러서는 살라리아 문에 있었던 이 정원은 6 구역이 되었다. 오늘날의 리오네는 살루스티아노로 알려져 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "살루스티우스 정원",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%B4%EB%A3%A8%EC%8A%A4%ED%8B%B0%EC%9A%B0%EC%8A%A4_%EC%A0%95%EC%9B%90"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1241278",
-   "importance": {
-    "sitelinks": 23
-   },
-   "lat": 41.908083,
-   "lng": 12.496917,
-   "name": "살루스티우스 정원",
-   "name_original": "Horti Sallustiani",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 707.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q839954",
-    "Q1107656"
-   ],
-   "wikidata_id": "Q1241278"
-  },
-  {
-   "area": "로마",
-   "category": "worship",
-   "description": "산티 조반니 에 파올로 성당(이탈리아어: Basilica dei Santi Giovanni e Paolo)은 이탈리아 로마에 있는 성당이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "산티 조반니 에 파올로 성당 (로마)",
-    "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%ED%8B%B0_%EC%A1%B0%EB%B0%98%EB%8B%88_%EC%97%90_%ED%8C%8C%EC%98%AC%EB%A1%9C_%EC%84%B1%EB%8B%B9_(%EB%A1%9C%EB%A7%88)"
-   },
-   "evening_candidate": false,
-   "hours_source": {
-    "license": "ODbL 1.0",
-    "provider": "OpenStreetMap",
-    "retrieved_at": "2026-09-16",
-    "url": "https://www.openstreetmap.org/way/375936632"
-   },
-   "hours_text": "08:30-12:45,14:00-17:00",
-   "id": "wd:Q1586946",
-   "importance": {
-    "sitelinks": 22
-   },
-   "lat": 41.886272,
-   "lng": 12.492659,
-   "name": "산티 조반니 에 파올로 성당",
-   "name_original": "basilica dei Santi Giovanni e Paolo",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "opening_hours",
-     "source_url": "https://www.openstreetmap.org/way/375936632",
-     "text": "영업시간 08:30-12:45,14:00-17:00 (OpenStreetMap 기준 · 방문 전 확인)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 38.4,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q120560",
-    "Q16970"
-   ],
-   "wikidata_id": "Q1586946"
-  },
-  {
-   "area": "로마",
-   "category": "castle",
-   "description": "칸첼레리아궁(Palazzo della Cancelleria)는 이탈리아 로마 캄포 데 피오리에 위치한 궁전이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "칸첼레리아궁",
-    "url": "https://ko.wikipedia.org/wiki/%EC%B9%B8%EC%B2%BC%EB%A0%88%EB%A6%AC%EC%95%84%EA%B6%81"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q2031943",
-   "importance": {
-    "sitelinks": 22
-   },
-   "lat": 41.896687,
-   "lng": 12.471521,
-   "name": "칸첼레리아궁",
-   "name_original": "Palazzo della Cancelleria",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q15848826"
-   ],
-   "wikidata_id": "Q2031943"
-  },
-  {
-   "area": "",
-   "category": "building_landmark",
-   "description": "로마 아카데미 드 프랑스(프랑스어: Académie de France à Rome)는 이탈리아 로마의 핀초 언덕에 있는 빌라 보르게세의 빌라 메디치에 위치한 아카데미이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "로마 아카데미 드 프랑스",
-    "url": "https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A7%88_%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8_%EB%93%9C_%ED%94%84%EB%9E%91%EC%8A%A4"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q337494",
-   "importance": {
-    "sitelinks": 22
-   },
-   "lat": 41.908333,
-   "lng": 12.4825,
-   "name": "로마 아카데미 드 프랑스",
-   "name_original": "Académie de France à Rome",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [
-    {
-     "evidence": "admission",
-     "source_url": "https://www.openstreetmap.org/node/4891858022",
-     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
-    }
-   ],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q2385804",
-    "Q117531692"
-   ],
-   "wikidata_id": "Q337494"
-  },
-  {
-   "area": "로마",
-   "category": "attraction",
-   "description": "캄피돌리오 광장(Piazza del Campidoglio)은 이탈리아 캄피돌리오 언덕에 있는 광장이다. 미켈란젤로가 1537년에 설계했다. 투시적 효과가 의도된 동적인 타원형 외부광장이 특이하게 사다리꼴을 하고 있는 특징이 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "캄피돌리오 광장",
-    "url": "https://ko.wikipedia.org/wiki/%EC%BA%84%ED%94%BC%EB%8F%8C%EB%A6%AC%EC%98%A4_%EA%B4%91%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q34921",
-   "importance": {
-    "sitelinks": 22
-   },
-   "lat": 41.893336,
-   "lng": 12.482924,
-   "name": "캄피돌리오 광장",
-   "name_original": "Piazza del Campidoglio",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 287.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q174782"
-   ],
-   "wikidata_id": "Q34921"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "하드리아누스 신전(Temple of Hadrian, Templum Divus Hadrianus, Hadrianeum)은 2세기의 로마 황제 하드리아누스를 받들어 지어진 신전이다. 내부는 비교적 화려하지 않지만 정면 현관의 장식은 화려하고 아치의 중앙에는 여신 티케, 문 안쪽에는 양손을 벌린 메두사가 조각되어 있다. 그 주위로 신들과 아마존, 동물 등이 그려져 있다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "하드리아누스 신전",
-    "url": "https://ko.wikipedia.org/wiki/%ED%95%98%EB%93%9C%EB%A6%AC%EC%95%84%EB%88%84%EC%8A%A4_%EC%8B%A0%EC%A0%84"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q431062",
-   "importance": {
-    "sitelinks": 22
-   },
-   "lat": 41.899722,
-   "lng": 12.479444,
-   "name": "하드리아누스 신전",
-   "name_original": "Tempio di Adriano",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q839954",
-    "Q867143",
-    "Q14752696",
-    "Q109607"
-   ],
-   "wikidata_id": "Q431062"
-  },
-  {
-   "area": "",
-   "category": "monument",
-   "description": "아쿠아 율리아(라틴어: Aqua Julia)는 아우구스투스황제 시기에 그의 친구이자 동지인 아그리파가 입안하여 지은 수도교이며 아그리파가 지은 3개 수도 아쿠아 비르고, 아쿠아 알시에티나 중 하나로 총길이 22.9km에 송수량은 50,000km3정도였다. 이 아쿠아 율리아는 로마시내 동부지역의 상수도 공급을 위해 지어졌다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "아쿠아 율리아",
-    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%BF%A0%EC%95%84_%EC%9C%A8%EB%A6%AC%EC%95%84"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q476787",
-   "importance": {
-    "sitelinks": 21
-   },
-   "lat": 41.896963,
-   "lng": 12.510719,
-   "name": "아쿠아 율리아",
-   "name_original": "Aqua Iulia",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 9.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q839954",
-    "Q13218676"
-   ],
-   "wikidata_id": "Q476787"
-  },
-  {
-   "area": "",
-   "category": "monument",
-   "description": "아쿠아 알시에티나(라틴어: Aqua Alsietina)는 고대 로마의 수도교이며 아그리파가 죽은지 10년 뒤인 기원전 2년에 완공되었다. 총길이는 32.9km로 수질이 나빠서 음용이 불가능 하였다. 하지만 이 수도는 공장등의 공업용수로 쓰기 위하여 건설되었기에 그러한 것이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "아쿠아 알시에티나",
-    "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%BF%A0%EC%95%84_%EC%95%8C%EC%8B%9C%EC%97%90%ED%8B%B0%EB%82%98"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q536769",
-   "importance": {
-    "sitelinks": 21
-   },
-   "lat": 41.88656,
-   "lng": 12.469321,
-   "name": "아쿠아 알시에티나",
-   "name_original": "Aqua Alsietina",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 15.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q13218676",
-    "Q839954",
-    "Q19860854"
-   ],
-   "wikidata_id": "Q536769"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "안토니누스 피우스 원주(이탈리아어: Colonna di Antonino Pio)는 이탈리아 로마에 있는 전승기념탑으로, 서기 161년 로마 황제 안토니누스 피우스에게 헌정되었으며 현재 치토리오 언덕의 가장 자리에 있는 캄푸스 마르티우스에 있었다. 그의 후임자들인 마르쿠스 아우렐리우스와 루키우스 베루스가 설치하였다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "안토니누스 피우스 원주",
-    "url": "https://ko.wikipedia.org/wiki/%EC%95%88%ED%86%A0%EB%8B%88%EB%88%84%EC%8A%A4_%ED%94%BC%EC%9A%B0%EC%8A%A4_%EC%9B%90%EC%A3%BC"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q599302",
-   "importance": {
-    "sitelinks": 21
-   },
-   "lat": 41.901667,
-   "lng": 12.476111,
-   "name": "안토니누스 피우스 원주",
-   "name_original": "Colonna di Antonino Pio",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q860861",
-    "Q1930585"
-   ],
-   "wikidata_id": "Q599302"
-  },
-  {
-   "area": "",
-   "category": "monument",
-   "description": "네로 욕장(라틴어: Thermae Neronis) 또는 알렉산드리나이 욕장(라틴어: Thermae Alexandrinae)은 이탈리아 로마의 캄푸스 마르티우스에 있는 고대 로마 목욕탕 (테르마이)이다. 서기 62년~64년경 로마 황제 네로가 건설하였으며, 서기 227년~229년경 세베루스 알렉산데르 황제가 재건하였다. 판테온과 도미티아누스 경기장 사이에 위치하여 사람들이 자주 찾는 곳으로서, 당대 기록에서 로마 시의 대표적인 명소로 소개하는 경우가 많았다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "네로 욕장",
-    "url": "https://ko.wikipedia.org/wiki/%EB%84%A4%EB%A1%9C_%EC%9A%95%EC%9E%A5"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1890176",
-   "importance": {
-    "sitelinks": 20
-   },
-   "lat": 41.898722,
-   "lng": 12.475833,
-   "name": "네로 욕장",
-   "name_original": "Terme di Nerone",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 3.7,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q6581615",
-    "Q14752696"
-   ],
-   "wikidata_id": "Q1890176"
-  },
-  {
-   "area": "로마 1구",
-   "category": "monument",
-   "description": "플라비아 궁전(Domus Flavia)은 로마의 팔라티노 궁전에 있는 드넓은 도미티아누스 궁전의 일부이다. 서기 92년에 티투스 플라비우스 도미티아누스가 완공했으며, 그의 수석 건축가 라비리우스가 지은 것으로 알려져 있다. 플라비아 궁전의 라틴어식 명칭인 도무스 플라비아는 공무 성격의 사무, 오락, 행사 목적의 넓은 공공 공간들이 집중된 궁전의 북서쪽 부분들에 대한 현대 명칭이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "플라비아 궁전",
-    "url": "https://ko.wikipedia.org/wiki/%ED%94%8C%EB%9D%BC%EB%B9%84%EC%95%84_%EA%B6%81%EC%A0%84"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q529806",
-   "importance": {
-    "sitelinks": 20
-   },
-   "lat": 41.8885,
-   "lng": 12.4869,
-   "name": "플라비아 궁전",
-   "name_original": "Domus Flavia",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 517.1,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q782970",
-    "Q839954",
-    "Q14752696",
-    "Q136351774"
-   ],
-   "wikidata_id": "Q529806"
-  },
-  {
-   "area": "로마",
-   "category": "tower",
-   "description": "콘티탑 (이탈리아어: Torre dei Conti)은 콜로세움과 포룸 로마눔 근처 이탈리아 로마에 위치한 중세 시대의 요새화된 탑이다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "콘티탑",
-    "url": "https://ko.wikipedia.org/wiki/%EC%BD%98%ED%8B%B0%ED%83%91"
-   },
-   "evening_candidate": true,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q605721",
-   "importance": {
-    "sitelinks": 20
-   },
-   "lat": 41.893549,
-   "lng": 12.487947,
-   "name": "콘티탑",
-   "name_original": "Torre dei Conti",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 11.3,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q12518"
-   ],
-   "wikidata_id": "Q605721"
-  },
-  {
-   "area": "로마",
-   "category": "monument",
-   "description": "게모니아이 계단(라틴어: Scalae Gemoniae, 이탈리아어: Scale Gemonie)은 고대 로마시에 있었던 계단이다. 비탄의 계단이라는 별칭을 지녔던, 이 계단은 로마 역사에서 사형 장소로 악명 높았다.",
-   "description_source": {
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "retrieved_at": "2026-09-16",
-    "title": "게모니아이 계단",
-    "url": "https://ko.wikipedia.org/wiki/%EA%B2%8C%EB%AA%A8%EB%8B%88%EC%95%84%EC%9D%B4_%EA%B3%84%EB%8B%A8"
-   },
-   "evening_candidate": false,
-   "hours_source": null,
-   "hours_text": "",
-   "id": "wd:Q1501204",
-   "importance": {
-    "sitelinks": 19
-   },
-   "lat": 41.893333,
-   "lng": 12.484722,
-   "name": "게모니아이 계단",
-   "name_original": "Scale Gemonie",
-   "name_source": "ko",
-   "recommendations": [],
-   "tips": [],
-   "verification": {
-    "coord_delta_m": 0.0,
-    "label_match": "exact",
-    "reason": "",
-    "redirected": false,
-    "status": "passed"
-   },
-   "wikidata_classes": [
-    "Q12511",
-    "Q839954",
-    "Q19860854"
-   ],
-   "wikidata_id": "Q1501204"
   }
  ]
 }

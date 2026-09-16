@@ -12,36 +12,54 @@
   "candidate_count": 150,
   "candidate_ko_ratio": 1.0,
   "composition": {
-   "attraction": 8,
-   "building_landmark": 1,
-   "castle": 1,
-   "monument": 3,
-   "museum": 4,
-   "park": 1
+   "attraction": 10,
+   "building_landmark": 4,
+   "castle": 3,
+   "monument": 6,
+   "museum": 6,
+   "park": 1,
+   "worship": 1
   },
   "denylisted_count": 0,
-  "described_count": 15,
+  "described_count": 27,
+  "discovery": {
+   "both": 16,
+   "en": 13,
+   "ko": 2
+  },
+  "discovery_pool": {
+   "both": 97,
+   "en": 35,
+   "ko": 69
+  },
   "effective_radius_m": 6000,
-  "excluded_count": 2,
-  "grade_window": 18,
-  "hours_count": 3,
-  "ko_label_count": 18,
+  "en_page_count": 500,
+  "excluded_count": 4,
+  "grade_window": 25,
+  "hours_count": 5,
+  "ko_label_count": 25,
   "ko_label_ratio": 1.0,
-  "mapped_count": 166,
-  "page_count": 166,
+  "ko_page_count": 166,
+  "korean_count": 201,
+  "mapped_count": 568,
+  "no_korean_count": 367,
+  "page_count": 666,
   "radius_note": "",
   "reviewed": false,
-  "spot_count": 18,
-  "unclassified_count": 130,
-  "verification_failed_count": 3
+  "spot_count": 31,
+  "unclassified_count": 115,
+  "unmapped_count": 1,
+  "verification_failed_count": 4
  },
  "known_gaps": [
-  "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
-  "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
-  "영업시간이 없는 스팟 15곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+  "설명이 없는 스팟 4곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+  "그중 4곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+  "영업시간이 없는 스팟 26곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
   "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
-  "분류에 걸리지 않아 제외한 후보 130건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
-  "후보는 **한국어 위키백과에 문서가 있고 좌표가 붙은 장소**로 한정된다 — 한국어 문서가 없는 장소는 아예 잡히지 않는다. 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 원래도 영어 이름 + 빈 설명으로 실렸겠지만, '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+  "분류에 걸리지 않아 제외한 후보 115건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+  "반경 안의 문서 1건은 위키데이터 항목이 없어 후보가 되지 못했다 — 중요도와 분류를 매길 근거가 없다.",
+  "영어 위키백과에서만 발견된 367건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+  "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 2곳 · 영어 검색에서만 13곳 · 양쪽 16곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
   "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
   "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
  ],
@@ -49,14 +67,21 @@
  "name_ko": "마드리드",
  "name_local": "Madrid",
  "query": {
+  "en_page_count": 500,
   "gslimit": 500,
+  "ko_page_count": 166,
+  "korean_count": 201,
   "limit": 150,
-  "mapped_count": 166,
-  "page_count": 166,
+  "mapped_count": 568,
+  "page_count": 666,
   "radius_clamped": false,
   "radius_m": 6000,
   "registry_radius_m": 6000,
-  "sitelink_min": 5
+  "sitelink_min": 5,
+  "wikis": [
+   "ko",
+   "en"
+  ]
  },
  "radius_m": 6000,
  "retrieved_at": "2026-09-16",
@@ -66,6 +91,11 @@
    "retrieved_at": "2026-09-16",
    "url": "https://ko.wikipedia.org/w/api.php",
    "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+  },
+  {
+   "retrieved_at": "2026-09-16",
+   "url": "https://en.wikipedia.org/w/api.php",
+   "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
   },
   {
    "retrieved_at": "2026-09-16",
@@ -85,8 +115,225 @@
  ],
  "spots": [
   {
+   "area": "마드리드",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "국립 소피아 왕비 예술센터(스페인어: Museo Nacional Centro de Arte Reina Sofía)는 스페인 마드리드에 있는 국립 미술관이다. 줄여서 소피아 왕비 미술관으로 불리기도 하며, 당시 스페인의 왕비인 소피아 왕비의 이름을 따서 명명되었다. 20세기 및 현대 미술 관련 미술품을 소장하고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국립 소피아 왕비 예술센터",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD_%EC%86%8C%ED%94%BC%EC%95%84_%EC%99%95%EB%B9%84_%EC%98%88%EC%88%A0%EC%84%BC%ED%84%B0"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q460889",
+   "importance": {
+    "sitelinks": 46
+   },
+   "lat": 40.408571,
+   "lng": -3.693996,
+   "name": "국립 소피아 왕비 예술센터",
+   "name_original": "Museo Nacional Centro de Arte Reina Sofía",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q17431399",
+    "Q4989906",
+    "Q64578911",
+    "Q2190251"
+   ],
+   "wikidata_id": "Q460889"
+  },
+  {
+   "area": "마드리드",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "마드리드 왕궁(스페인어: Palacio Real de Madrid)은 스페인의 왕실 공식 관저이다. 사실 마드리드 외곽의 작은 궁전인 사르수엘라 궁에 머물고 있다. 국가적 상황에만 사용이 되는 것이 원칙이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마드리드 왕궁",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C_%EC%99%95%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/4451986389"
+   },
+   "hours_text": "Oct-Mar: 10:00-18:00; Apr-Sep: 10:00-20:00",
+   "id": "wd:Q171517",
+   "importance": {
+    "sitelinks": 45
+   },
+   "lat": 40.417955,
+   "lng": -3.714312,
+   "name": "마드리드 왕궁",
+   "name_original": "Palacio Real de Madrid",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/4451986389",
+     "text": "영업시간 Oct-Mar: 10:00-18:00; Apr-Sep: 10:00-20:00 (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/4451986389",
+     "text": "입장료 있음(금액 정보 미제공) (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": 16.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q53536964",
+    "Q907116",
+    "Q16560",
+    "Q481289",
+    "Q33506",
+    "Q15848826"
+   ],
+   "wikidata_id": "Q171517"
+  },
+  {
+   "area": "마드리드",
+   "category": "worship",
+   "coord_source": "wikidata:P625",
+   "description": "산타 마리아 라 레알 데 라 알무데나 대성당(스페인어: Catedral de Santa María la Real de la Almudena de Madrid)은 스페인 마드리드에 있는 로마 가톨릭교회의 마드리드 대교구 대성당이다. 1993년 요한 바오로 2세에 의하여 축성되었다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "알무데나 대성당",
+    "url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%AC%B4%EB%8D%B0%EB%82%98_%EB%8C%80%EC%84%B1%EB%8B%B9"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q849711",
+   "importance": {
+    "sitelinks": 43
+   },
+   "lat": 40.415556,
+   "lng": -3.714444,
+   "name": "알무데나 대성당",
+   "name_original": "catedral de la Almudena",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 10.2,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q56242215"
+   ],
+   "wikidata_id": "Q849711"
+  },
+  {
+   "area": "Sol",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "마요르 광장(스페인어: Plaza Mayor de Madrid)은 스페인 마드리드에 있는 광장이다. 푸에르타 델 솔 및 빌라 광장에서 몇 블록 떨어진 거리에 있다. 129m × 94m의 직사각형 모양을 하고 있으며 광장에 접해있는 237개의 발코니를 가진 3층 건물에 둘러싸여있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마요르 광장 (마드리드)",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9A%94%EB%A5%B4_%EA%B4%91%EC%9E%A5_(%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C)"
+   },
+   "discovery": "both",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1123493",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 40.415456,
+   "lng": -3.707381,
+   "name": "마요르 광장",
+   "name_original": "Plaza Mayor",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 17.4,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q1200957",
+    "Q28793904"
+   ],
+   "wikidata_id": "Q1123493"
+  },
+  {
+   "area": "마드리드",
+   "category": "museum",
+   "coord_source": "wikidata:P625",
+   "description": "",
+   "description_source": null,
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q176251",
+   "importance": {
+    "sitelinks": 37
+   },
+   "lat": 40.416041,
+   "lng": -3.694925,
+   "name": "티센보르네미차 미술관",
+   "name_original": "Museo Nacional Thyssen-Bornemisza",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "none",
+    "reason": "label_mismatch",
+    "redirected": false,
+    "status": "failed"
+   },
+   "wikidata_classes": [
+    "Q207694",
+    "Q33506"
+   ],
+   "wikidata_id": "Q176251"
+  },
+  {
    "area": "헤로니모스",
    "category": "park",
+   "coord_source": "wikidata:P625",
    "description": "레티로 공원(스페인어: Parque del Retiro 파르케 델 레티로[*])은 스페인 마드리드에 위치한 공원이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -95,6 +342,7 @@
     "title": "레티로 공원",
     "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%ED%8B%B0%EB%A1%9C_%EA%B3%B5%EC%9B%90"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -127,6 +375,7 @@
   {
    "area": "Sol",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "푸에르타 델 솔(스페인어: Puerta del Sol)은 스페인 마드리드에 있는 광장이다. 이 광장에서 스페인의 새해 전통인 포도 12알을 먹는 행사가 시작되었으며 1962년 12월 31일부터 새해 카운트다운의 모습이 TV 중계되고있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -135,6 +384,7 @@
     "title": "푸에르타 델 솔",
     "url": "https://ko.wikipedia.org/wiki/%ED%91%B8%EC%97%90%EB%A5%B4%ED%83%80_%EB%8D%B8_%EC%86%94"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -162,8 +412,66 @@
    "wikidata_id": "Q427163"
   },
   {
+   "area": "마드리드",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "국립 고고학 박물관(스페인어: Museo Arqueológico Nacional)은 스페인 마드리드 콜론 광장에 있는 국립박물관이다. 스페인 국립도서관과 같은 건물을 사용하고 있다. 1871년 개관하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "국립 고고학 박물관 (스페인)",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD_%EA%B3%A0%EA%B3%A0%ED%95%99_%EB%B0%95%EB%AC%BC%EA%B4%80_(%EC%8A%A4%ED%8E%98%EC%9D%B8)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": {
+    "license": "ODbL 1.0",
+    "provider": "OpenStreetMap",
+    "retrieved_at": "2026-09-16",
+    "url": "https://www.openstreetmap.org/node/255288522"
+   },
+   "hours_text": "Mo off; Tu-Sa 09:30-20:00; Su 09:30-15:00; PH 09:30-15:00; Jan 01,06,May 01,Dec 24,25,31 off",
+   "id": "wd:Q1352282",
+   "importance": {
+    "sitelinks": 32
+   },
+   "lat": 40.423645,
+   "lng": -3.689422,
+   "name": "국립 고고학 박물관",
+   "name_original": "Museo Arqueológico Nacional",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [
+    {
+     "evidence": "opening_hours",
+     "source_url": "https://www.openstreetmap.org/node/255288522",
+     "text": "영업시간 Mo off; Tu-Sa 09:30-20:00; Su 09:30-15:00; PH 09:30-15:00; Jan 01,06,May 01,Dec 24,25,31 off (OpenStreetMap 기준 · 방문 전 확인)"
+    },
+    {
+     "evidence": "admission",
+     "source_url": "https://www.openstreetmap.org/node/255288522",
+     "text": "입장 무료 (OpenStreetMap 기준)"
+    }
+   ],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q17431399",
+    "Q3329412",
+    "Q4989906"
+   ],
+   "wikidata_id": "Q1352282"
+  },
+  {
    "area": "Palacio",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "왕립극장(스페인어: Teatro Real)은 스페인 마드리드에 위치한 극장이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -172,6 +480,7 @@
     "title": "왕립극장 (마드리드)",
     "url": "https://ko.wikipedia.org/wiki/%EC%99%95%EB%A6%BD%EA%B7%B9%EC%9E%A5_(%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -203,6 +512,7 @@
   {
    "area": "마드리드",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "라스 벤타스(스페인어: Las Ventas)는 스페인 마드리드에 있는 투우장이다. 25,000여명을 수용할 수 있다. 스페인 내전 도중에는 프랑코 정권의 강제 수용소로 이용되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -211,6 +521,7 @@
     "title": "라스 벤타스",
     "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%8A%A4_%EB%B2%A4%ED%83%80%EC%8A%A4"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -242,8 +553,10 @@
   {
    "area": "마드리드",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -276,6 +589,7 @@
   {
    "area": "Justicia",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "그란비아(스페인어: Gran Vía)는 스페인 마드리드 중심에 위치한 쇼핑가이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -284,6 +598,7 @@
     "title": "그란비아",
     "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%80%EB%B9%84%EC%95%84"
    },
+   "discovery": "ko",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -311,8 +626,127 @@
    "wikidata_id": "Q1324163"
   },
   {
+   "area": "마드리드",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "스페인 광장(스페인어: Plaza de España)은 스페인 마드리드에 있는 광장이다. 1916년, 스페인의 대표적인 작가 미겔 데 세르반테스의 사후 300주년을 기념하여 만들어졌다. 광장 중앙에는 세르반테스의 기념비가 있고 그 앞에는 애마 로시난테를 올라 탄 돈키호테, 노새를 탄 산초 판사의 동상이 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "스페인 광장 (마드리드)",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8E%98%EC%9D%B8_%EA%B4%91%EC%9E%A5_(%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C)"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1326261",
+   "importance": {
+    "sitelinks": 28
+   },
+   "lat": 40.423392,
+   "lng": -3.712233,
+   "name": "스페인 광장",
+   "name_original": "Plaza de España",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 11.6,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q1326261"
+  },
+  {
+   "area": "마드리드",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "푸에르타 데 알칼라(스페인어: Puerta de Alcalá→알칼라 문)는 스페인 마드리드 독립광장에 있는 기념문이다. 이 문은 알칼라 거리를 이등분한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "푸에르타 데 알칼라",
+    "url": "https://ko.wikipedia.org/wiki/%ED%91%B8%EC%97%90%EB%A5%B4%ED%83%80_%EB%8D%B0_%EC%95%8C%EC%B9%BC%EB%9D%BC"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1140634",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 40.420024,
+   "lng": -3.688727,
+   "name": "푸에르타 데 알칼라",
+   "name_original": "Puerta de Alcalá",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 14.0,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q143912",
+    "Q82117"
+   ],
+   "wikidata_id": "Q1140634"
+  },
+  {
+   "area": "마드리드",
+   "category": "attraction",
+   "coord_source": "wikidata:P625",
+   "description": "시벨레스 광장(스페인어: Plaza de Cibeles)은 스페인 마드리드 중심에 있는 원형 광장이다. 광장 중앙의 시벨레스 분수를 기준으로 회전교차로를 형성하고 있다. 광장의 동서 방향으로는 알칼라 거리가, 북쪽으로는 파세오 데 레콜레토스, 남쪽으로는 파세오 델 프라도가 교차한다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "시벨레스 광장",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%B2%A8%EB%A0%88%EC%8A%A4_%EA%B4%91%EC%9E%A5"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1537446",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 40.41917,
+   "lng": -3.69306,
+   "name": "시벨레스 광장",
+   "name_original": "plaza de Cibeles",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 0.5,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q174782"
+   ],
+   "wikidata_id": "Q1537446"
+  },
+  {
    "area": "레티로",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "파세오 델 프라도(스페인어: Paseo del Prado)는 스페인 마드리드의 거리이다. 시벨레스 광장에서 남쪽으로 펼쳐져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -321,6 +755,7 @@
     "title": "파세오 델 프라도",
     "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%84%B8%EC%98%A4_%EB%8D%B8_%ED%94%84%EB%9D%BC%EB%8F%84"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -350,8 +785,48 @@
    "wikidata_id": "Q2079615"
   },
   {
+   "area": "아토차",
+   "category": "monument",
+   "coord_source": "wikidata:P625",
+   "description": "기억의 숲(스페인어: Bosque del Recuerdo 보스케 델 레쿠에르도[*]) 또는 예전 이름 망자의 숲(스페인어: Bosque de los Ausentes 보스케 데 로스 아우센테스[*])은 스페인 마드리드 레티로 공원에 있는 추도 시설이다. 2004년 3월 11일에 일어난 마드리드 열차 폭탄 테러로 191명의 희생자와 2004년 4월 3일에 레가네스에서 발생한 자살 폭탄 테러로 사망 한 특수부대 요원을 추모하기 위해 만들어졌다. 산에는 192개의 올리브 나무와 서양노송나무가 심어져 있으며, 이것은 1그루당 살해된 1명을 나타내고 있다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "기억의 숲",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B8%B0%EC%96%B5%EC%9D%98_%EC%88%B2"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q833213",
+   "importance": {
+    "sitelinks": 25
+   },
+   "lat": 40.411944,
+   "lng": -3.686944,
+   "name": "기억의 숲",
+   "name_original": "Bosque del Recuerdo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q4989906"
+   ],
+   "wikidata_id": "Q833213"
+  },
+  {
    "area": "마드리드",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "소로야 미술관(스페인어: Museo Sorolla)은 스페인 마드리드에 위치한 개인 예술가 박물관으로, 호아킨 소로야와 그의 딸 엘레나 소로야를 포함한 가족들의 삶과 작품을 전시하고 있다. 이 미술관은 원래 화가의 집이자 작업실이었던 건물에 자리 잡고 있으며, 소로야의 미망인이 사망한 후 박물관으로 개조되었다. 1962년에 스페인 중요문화유산으로 지정되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -360,6 +835,7 @@
     "title": "소로야 미술관",
     "url": "https://ko.wikipedia.org/wiki/%EC%86%8C%EB%A1%9C%EC%95%BC_%EB%AF%B8%EC%88%A0%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -405,8 +881,50 @@
    "wikidata_id": "Q1592523"
   },
   {
+   "area": "Casa de Campo",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "마드리드 아레나(스페인어: Madrid Arena)는 스페인 마드리드 카사 데 캄포에 있는 실내 경기장이다. 주로 농구와 테니스 등의 경기 대회에 사용된다. 2007년 텔레포니카가 명명권을 취득하였다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "마드리드 아레나",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C_%EC%95%84%EB%A0%88%EB%82%98"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q1423431",
+   "importance": {
+    "sitelinks": 20
+   },
+   "lat": 40.413047,
+   "lng": -3.738256,
+   "name": "마드리드 아레나",
+   "name_original": "Madrid Arena",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": null,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q641226",
+    "Q1060829",
+    "Q13380226"
+   ],
+   "wikidata_id": "Q1423431"
+  },
+  {
    "area": "Almagro",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "콜론 광장(스페인어: Plaza de Colón)은 스페인 마드리드에 위치한 광장이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -415,6 +933,7 @@
     "title": "콜론 광장",
     "url": "https://ko.wikipedia.org/wiki/%EC%BD%9C%EB%A1%A0_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -444,6 +963,7 @@
   {
    "area": "살라망카",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "파세오 데 라 카스테야나(스페인어: Paseo de la Castellana)는 스페인 마드리드에 있는 가장 긴 거리 중 하나이다. 거리의 이름은 카스티야 광장에 있는 오래된 분수에서 따왔다. 리마 광장, 쿠스코 광장, 카스티야 광장 등을 지나쳐가며, M-30과 길로 콜메나르비에오로 이어져 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -452,6 +972,7 @@
     "title": "파세오 데 라 카스테야나",
     "url": "https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%84%B8%EC%98%A4_%EB%8D%B0_%EB%9D%BC_%EC%B9%B4%EC%8A%A4%ED%85%8C%EC%95%BC%EB%82%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -483,8 +1004,10 @@
   {
    "area": "마드리드",
    "category": "building_landmark",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -526,6 +1049,7 @@
   {
    "area": "마드리드",
    "category": "monument",
+   "coord_source": "wikidata:P625",
    "description": "시벨레스 분수(스페인어: Fuente de Cibeles 또는 La Cibeles)는 스페인 마드리드에 있는 신고전주의 양식의 분수로, 시벨레스 광장 중앙에 있다. 분수 가운데 있는 조각상은 아나톨리아 지방의 대지모신인 키벨레를 표현한 것으로, 도시의 상징이 되었다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -534,6 +1058,7 @@
     "title": "시벨레스 분수",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%B2%A8%EB%A0%88%EC%8A%A4_%EB%B6%84%EC%88%98"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -565,6 +1090,7 @@
   {
    "area": "마드리드",
    "category": "castle",
+   "coord_source": "wikidata:P625",
    "description": "시벨레스궁(스페인어: Palacio de Cibeles)은 스페인 마드리드에 있는 궁전이다. 원래는 코무니카시오네스궁(스페인어: Palacio de Comunicaciones)이라는 이름이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -573,6 +1099,7 @@
     "title": "시벨레스궁",
     "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%B2%A8%EB%A0%88%EC%8A%A4%EA%B6%81"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -604,6 +1131,7 @@
   {
    "area": "마드리드",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "오리엔테 광장(스페인어: Plaza de Oriente 플라사 데 오리엔테[*])은 스페인 마드리드 중심부에 있는 광장이다. 마드리드 왕궁 동쪽에 있어서 오리엔테 (동쪽) 광장으로 명명했다. 광장 동쪽에는 왕립극장, 북쪽에는 라 엔카르시온 수도원이 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -612,6 +1140,7 @@
     "title": "오리엔테 광장",
     "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EB%A6%AC%EC%97%94%ED%85%8C_%EA%B4%91%EC%9E%A5"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -640,9 +1169,51 @@
   },
   {
    "area": "마드리드",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "귀머거리의 집(스페인어: Quinta del Sordo, 영어: Villa of the Deaf One) 또는 고야의 집(스페인어: Quinta de Goya)은 스페인 마드리드 외곽의 구시가지인 카라반첼의 언덕에 위치했던 광대한 부지이자 별장이다. 이 집은 스페인의 화가 프란시스코 고야의 집으로 가장 잘 알려져 있으며, 그는 이 집에 《검은 그림》으로 알려진 14개의 벽화를 그렸다. '귀머거리의 집'이라는 이 별장의 이름은 1792년에 콜레라로 청력을 잃은 고야에서 이름을 따온게 아니라 청각 장애인이었던 이전의 집주인에 유래하여 지어졌다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "귀머거리의 집",
+    "url": "https://ko.wikipedia.org/wiki/%EA%B7%80%EB%A8%B8%EA%B1%B0%EB%A6%AC%EC%9D%98_%EC%A7%91"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2344241",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 40.411466,
+   "lng": -3.725987,
+   "name": "귀머거리의 집",
+   "name_original": "Quinta del Sordo",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 3.9,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q19485824",
+    "Q19860854"
+   ],
+   "wikidata_id": "Q2344241"
+  },
+  {
+   "area": "마드리드",
    "category": "attraction",
+   "coord_source": "wikidata:P625",
    "description": "",
    "description_source": null,
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -671,7 +1242,49 @@
   },
   {
    "area": "마드리드",
+   "category": "castle",
+   "coord_source": "wikidata:P625",
+   "description": "리나레스 궁전(스페인어: Palacio de Linares)은 스페인 마드리드에 있는 궁전이다.",
+   "description_source": {
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "retrieved_at": "2026-09-16",
+    "title": "리나레스궁",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EB%82%98%EB%A0%88%EC%8A%A4%EA%B6%81"
+   },
+   "discovery": "en",
+   "evening_candidate": false,
+   "hours_source": null,
+   "hours_text": "",
+   "id": "wd:Q2628455",
+   "importance": {
+    "sitelinks": 16
+   },
+   "lat": 40.4199,
+   "lng": -3.6921,
+   "name": "리나레스궁",
+   "name_original": "Palacio de Linares",
+   "name_source": "ko",
+   "recommendations": [],
+   "tips": [],
+   "verification": {
+    "coord_delta_m": 15.1,
+    "label_match": "exact",
+    "reason": "",
+    "redirected": false,
+    "status": "passed"
+   },
+   "wikidata_classes": [
+    "Q16560",
+    "Q4989906",
+    "Q2881199"
+   ],
+   "wikidata_id": "Q2628455"
+  },
+  {
+   "area": "마드리드",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "국립 인류학 박물관(스페인어: Museo Nacional de Antropología)은 스페인 마드리드에 위치한 인류학 박물관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -680,6 +1293,7 @@
     "title": "국립 인류학 박물관 (스페인)",
     "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD_%EC%9D%B8%EB%A5%98%ED%95%99_%EB%B0%95%EB%AC%BC%EA%B4%80_(%EC%8A%A4%ED%8E%98%EC%9D%B8)"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
@@ -710,6 +1324,7 @@
   {
    "area": "마드리드",
    "category": "museum",
+   "coord_source": "wikidata:P625",
    "description": "마드리드 역사박물관(스페인어: Museo de Historia de Madrid)은 1929년에 설립된 스페인 마드리드에 위치한 박물관이다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
@@ -718,6 +1333,7 @@
     "title": "마드리드 역사박물관",
     "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C_%EC%97%AD%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80"
    },
+   "discovery": "both",
    "evening_candidate": false,
    "hours_source": {
     "license": "ODbL 1.0",
@@ -763,40 +1379,42 @@
   },
   {
    "area": "마드리드",
-   "category": "attraction",
-   "description": "비야 광장(스페인어: Plaza de la Villa)은 스페인 마드리드에 있는 작은 광장이다. 광장의 북쪽으로 마요르 거리가 접하고 있다. 루하네스 저택, 시스네로스 집, 카사 데 라 비야와 같은 다른 시대에 다른 양식으로 지어진 역사적 건축물에 둘러싸여 있다.",
+   "category": "building_landmark",
+   "coord_source": "wikidata:P625",
+   "description": "캄포 데 오도넬(스페인어: Campo de O'Donnell, 오도넬의 구장)은 스페인 마드리드의 다목적 경기장이다. 이 경기장은 길을 따라 200m 떨어진 곳에 위치한 아틀레티코 마드리드의 동명의 경기장과 다른 경기장이다. 이곳은 본래 오도넬의 잔디 구장(campo)으로 카예 데 오도넬 옆에 붙어 있다.",
    "description_source": {
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "retrieved_at": "2026-09-16",
-    "title": "비야 광장",
-    "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%EC%95%BC_%EA%B4%91%EC%9E%A5"
+    "title": "캄포 데 오도넬",
+    "url": "https://ko.wikipedia.org/wiki/%EC%BA%84%ED%8F%AC_%EB%8D%B0_%EC%98%A4%EB%8F%84%EB%84%AC"
    },
+   "discovery": "en",
    "evening_candidate": false,
    "hours_source": null,
    "hours_text": "",
-   "id": "wd:Q2711992",
+   "id": "wd:Q663849",
    "importance": {
-    "sitelinks": 14
+    "sitelinks": 15
    },
-   "lat": 40.415278,
-   "lng": -3.710556,
-   "name": "비야 광장",
-   "name_original": "plaza de la Villa",
+   "lat": 40.4219,
+   "lng": -3.6751,
+   "name": "캄포 데 오도넬",
+   "name_original": "Estadio de O'Donnell",
    "name_source": "ko",
    "recommendations": [],
    "tips": [],
    "verification": {
-    "coord_delta_m": 0.0,
+    "coord_delta_m": 194.3,
     "label_match": "exact",
     "reason": "",
     "redirected": false,
     "status": "passed"
    },
    "wikidata_classes": [
-    "Q174782"
+    "Q1154710"
    ],
-   "wikidata_id": "Q2711992"
+   "wikidata_id": "Q663849"
   }
  ]
 }

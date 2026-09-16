@@ -107,16 +107,27 @@ def test_exclusion_is_flat_and_allow_roots_are_closed() -> None:
         assert qid.startswith("Q") and qid[1:].isdigit()
 
 
-def test_every_allow_root_is_also_allowed_flat() -> None:
+def test_every_allow_root_is_classifiable_on_its_own() -> None:
     """뿌리 자신이 직접 `P31` 로 붙은 항목도 통과해야 한다.
 
-    `classify()` 의 승급은 직접 클래스의 **부모**만 본다. 그래서 `allow_root` 에만 있는
-    QID 가 항목의 `P31` 로 직접 붙어 있으면 아무 규칙에도 걸리지 않고 `unclassified` 로
-    빠진다 — 다낭 후보 14건 중 다리 4·강 2(롱교·한강)가 통째로 사라지는 경로다.
-    고정 입력으로 굽기 경로를 돌려 보다가 실제로 걸린 구멍이다.
+    원래 이 검사는 "모든 뿌리가 `allow_flat` 에도 있어야 한다"는 **데이터 중복**을 요구했다.
+    그것은 `classify()` 의 승급이 부모만 보던 시절의 우회책이었다 — 그 구멍으로 다낭의
+    다리 4·강 2 가 사라졌다. 지금은 분류기가 규칙 2-b(허용 뿌리 자신)로 직접 처리하므로
+    목록을 두 곳에 맞춰 둘 이유가 없다. 그래서 검사 대상을 **목록에서 동작으로** 옮긴다 —
+    앞으로 뿌리를 추가하는 사람은 아무것도 기억하지 않아도 된다.
     """
-    missing = sorted(set(CLASSES["allow_root"]) - set(CLASSES["allow_flat"]))
-    assert missing == [], f"allow_flat 에 없는 뿌리: {missing}"
+    from harbor_lantern.domain.guide_taxonomy import Taxonomy, classify
+
+    taxonomy = Taxonomy(
+        exclude_flat=frozenset(CLASSES["exclude_flat"]),
+        allow_flat=CLASSES["allow_flat"],
+        allow_root=CLASSES["allow_root"],
+    )
+    unreachable = [
+        qid for qid in CLASSES["allow_root"]
+        if classify([qid], {}, taxonomy).decision != "accept"
+    ]
+    assert not unreachable, f"조상 캐시 없이 분류되지 않는 뿌리: {unreachable}"
 
 
 def test_classify_accepts_a_root_used_as_a_direct_class() -> None:
@@ -296,3 +307,32 @@ def test_retry_after_is_read_in_seconds_and_ignored_when_unreadable() -> None:
     assert _retry_after_seconds(_Response(429, {"Retry-After": "Wed, 21 Oct 2026 07:28:00 GMT"})) is None
     assert _retry_after_seconds(_Response(429, {"Retry-After": "-5"})) is None
     assert _retry_after_seconds(_Response(429, {"Retry-After": "99999"})) is None
+
+
+# ── 콜로세움의 두 번째 문 ────────────────────────────────────────────────────
+def test_excluding_stadiums_would_delete_the_colosseum() -> None:
+    """경기장을 제외 목록에 넣으면 안 된다 — **평면으로도** 콜로세움이 지워진다.
+
+    정찰에서는 `P279*` 로 '스포츠 시설'을 제외했다가 콜로세움을 잃었고, 그래서 제외를
+    평면으로만 하기로 했다. 그런데 2026-09-16 굽기 결과를 보니 **콜로세움 자신이
+    `Q483110`(경기장)을 `P31` 로 달고 있다** — 제외는 허용보다 먼저 적용되므로(규칙 1)
+    평면 제외만으로도 지워진다. 같은 함정의 두 번째 문이다.
+
+    경기장 잡음 18건은 감수한다. 거슬리는 도시는 항목 단위로 `city-denylist.json` 에 적는다.
+    """
+    from harbor_lantern.domain.guide_taxonomy import Taxonomy, classify
+
+    # 2026-09-16 굽기의 rome.json 이 실제로 기록한 콜로세움의 분류 집합.
+    colosseum = ["Q124830411", "Q112132548", "Q133444874", "Q7362268",
+                 "Q839954", "Q112132522", "Q483110", "Q3867560"]
+
+    allowed = {"Q839954": "monument"}
+    kept = Taxonomy(exclude_flat=frozenset(), allow_flat=allowed, allow_root={})
+    assert classify(colosseum, {}, kept).decision == "accept"
+
+    # 경기장을 평면 제외에 넣는 순간 사라진다 — 이 단언이 실패하면 규칙 순서가 바뀐 것이다.
+    banned = Taxonomy(exclude_flat=frozenset({"Q483110"}), allow_flat=allowed, allow_root={})
+    assert classify(colosseum, {}, banned).decision == "exclude"
+
+    # 그래서 실제 분류표에는 경기장이 제외로 들어가 있으면 안 된다.
+    assert "Q483110" not in CLASSES["exclude_flat"], "경기장을 제외하면 콜로세움이 지워진다"
