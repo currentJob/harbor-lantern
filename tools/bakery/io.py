@@ -24,6 +24,7 @@ __all__ = [
     "HTTP_TIMEOUT_S",
     "MIN_REQUEST_INTERVAL_S",
     "RETRY_BACKOFF_S",
+    "THROTTLED_BACKOFF_S",
     "USER_AGENT",
     "WBGETENTITIES_BATCH",
     "WDQS_TIMEOUT_S",
@@ -62,6 +63,27 @@ HTTP_TIMEOUT_S = 60.0
 # 지수 백오프. **파라미터는 바꾸지 않는다** — 하한을 올려 재시도하면 수확량이 바뀌고,
 # 수확량이 바뀌면 등급이 바뀐다(함정 F13 · 도쿄 32건 → 10건, 실측 2026-09-15).
 RETRY_BACKOFF_S = (5.0, 15.0, 45.0)
+
+# 429 를 받았을 때의 최소 대기. 공개 엔드포인트가 이 클라이언트를 조이기 시작했다는
+# 뜻이므로 초 단위로 다시 두드리지 않는다. 서버가 `Retry-After` 를 주면 그쪽을 쓴다.
+THROTTLED_BACKOFF_S = 120.0
+
+
+def _retry_after_seconds(response: Any) -> float | None:
+    """`Retry-After` 를 초로. 초 단위 정수만 읽고, HTTP-date 형식은 읽지 않는다.
+
+    날짜 형식을 해석하려면 서버 시계와 우리 시계의 차를 믿어야 하는데, 틀리면
+    **더 짧게** 기다리는 쪽으로 틀린다. 못 읽으면 `None` 을 돌려 호출부의 기본 대기를
+    쓰게 하는 편이 안전하다.
+    """
+    raw = response.headers.get("Retry-After")
+    if raw is None:
+        return None
+    try:
+        seconds = float(str(raw).strip())
+    except ValueError:
+        return None
+    return seconds if 0 < seconds <= 3600 else None
 
 
 class BakeError(RuntimeError):
@@ -257,9 +279,12 @@ class HttpClient:
             raise BakeError(f"offline 모드인데 {stage} 요청이 필요하다 (캐시 미적중: {url})")
 
         last_error: Exception | None = None
+        override: float | None = None  # 서버가 직접 지시한 대기(Retry-After)
         for attempt, backoff in enumerate((0.0, *RETRY_BACKOFF_S)):
-            if backoff:
-                self.sleep(backoff)
+            wait = backoff if override is None else max(backoff, override)
+            override = None
+            if wait:
+                self.sleep(wait)
             self._throttle()
             self.requests[stage] = self.requests.get(stage, 0) + 1
             try:
@@ -267,6 +292,14 @@ class HttpClient:
                     method, url, params=params, data=data, headers=dict(headers or {}), timeout=timeout
                 )
                 if response.status_code >= 500 or response.status_code == 429:
+                    # 429 는 "잠깐 기다려"가 아니라 "그만 두드려"다. 고정 백오프로 계속
+                    # 두드리면 throttle 창이 오히려 길어진다 — 실측에서 겪었다(정찰 중
+                    # 연속 질의로 WDQS 가 429 를 주기 시작하자, 몇 분 전 57.9초에 성공한
+                    # 질의가 65.9초 504 로 바뀌었다. 그 상태에서 잰 수치는 질의 모양이
+                    # 아니라 내 요청량을 잰 것이다).
+                    override = _retry_after_seconds(response) or (
+                        THROTTLED_BACKOFF_S if response.status_code == 429 else None
+                    )
                     raise httpx.HTTPStatusError(
                         f"{response.status_code} {response.reason_phrase}", request=response.request, response=response
                     )

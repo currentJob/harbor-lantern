@@ -247,3 +247,46 @@ def test_sitelink_min_is_not_a_retry_knob() -> None:
     assert tokyo["sitelink_min"] == 15
     assert tokyo["radius_m"] == 6000
     assert "F13" in " ".join(REGISTRY["rules"]) or "재시도" in " ".join(REGISTRY["rules"])
+
+
+# ── 429 는 "그만 두드려"다 ────────────────────────────────────────────────────
+class _Response:
+    def __init__(self, status_code: int, headers: dict[str, str] | None = None) -> None:
+        self.status_code = status_code
+        self.reason_phrase = "Too Many Requests" if status_code == 429 else "Server Error"
+        self.headers = headers or {}
+        self.request = None
+
+    def raise_for_status(self) -> None:  # pragma: no cover - 4xx/5xx 는 위에서 막힌다
+        raise AssertionError("여기에 오면 안 된다")
+
+    def json(self) -> dict[str, object]:  # pragma: no cover
+        return {}
+
+
+def test_a_429_waits_far_longer_than_the_plain_backoff() -> None:
+    """429 를 받으면 초 단위로 다시 두드리지 않는다.
+
+    정찰 중 연속 질의로 WDQS 가 429 를 주기 시작하자, 몇 분 전 57.9초에 성공하던
+    질의가 65.9초 504 로 바뀌었다. 고정 백오프로 계속 두드리면 조인 창이 길어진다.
+    """
+    from bakery.io import RETRY_BACKOFF_S, THROTTLED_BACKOFF_S
+
+    assert THROTTLED_BACKOFF_S > max(RETRY_BACKOFF_S) * 2
+
+
+def test_retry_after_is_read_in_seconds_and_ignored_when_unreadable() -> None:
+    """서버가 지시한 대기를 따르되, 못 읽으면 조용히 기본값으로 돌아간다.
+
+    HTTP-date 형식은 일부러 읽지 않는다 — 시계 차를 잘못 읽으면 **더 짧게** 기다리는
+    쪽으로 틀린다.
+    """
+    from bakery.io import _retry_after_seconds
+
+    assert _retry_after_seconds(_Response(429, {"Retry-After": "90"})) == 90.0
+    assert _retry_after_seconds(_Response(429, {"Retry-After": " 30 "})) == 30.0
+    assert _retry_after_seconds(_Response(429, {})) is None
+    # HTTP-date · 음수 · 비정상적으로 긴 값은 읽지 않는다.
+    assert _retry_after_seconds(_Response(429, {"Retry-After": "Wed, 21 Oct 2026 07:28:00 GMT"})) is None
+    assert _retry_after_seconds(_Response(429, {"Retry-After": "-5"})) is None
+    assert _retry_after_seconds(_Response(429, {"Retry-After": "99999"})) is None

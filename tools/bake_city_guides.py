@@ -26,6 +26,13 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+# 한국어 Windows 콘솔은 기본이 cp949 라 `--help` 조차 UnicodeEncodeError 로 죽는다
+# (이 저장소의 개발 기기가 그 환경이다). 도구가 자기 도움말도 못 내면 쓸 수 없으므로
+# 출력 스트림을 여기서 UTF-8 로 맞춘다 — 호출자가 `-X utf8` 을 기억할 필요가 없어야 한다.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
