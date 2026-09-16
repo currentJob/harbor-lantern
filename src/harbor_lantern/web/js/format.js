@@ -120,6 +120,16 @@ export function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+/** 외부 링크 한 개. **스킴을 검사하고 만든다** — `javascript:` 가 href 에 들어갈 길을 막는다.
+ *  URL 을 읽을 수 없으면 빈 문자열이다(링크가 아닌 것을 링크처럼 그리지 않는다).
+ *  `explore.js` 에 있던 구현을 그대로 옮겼다 — 가이드 렌더러(`render/guide.js`)가 출처
+ *  링크에 같은 규칙을 써야 하고(AC-080), 두 벌이면 한쪽만 고쳐지는 날이 온다. */
+export function link(url, label) {
+  try { const parsed = new URL(url); if (!['https:', 'http:'].includes(parsed.protocol)) return ''; }
+  catch { return ''; }
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a>`;
+}
+
 /** 'HH:MM' + day_offset → '20:30' 또는 '+1일 01:10'. */
 export function formatLocalTime(hhmm, dayOffset) {
   if (!hhmm) return '';

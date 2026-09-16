@@ -1,9 +1,13 @@
 import { apiBase, request, setApiBase } from './api.js';
-import { escapeHtml as esc } from './format.js';
+import { escapeHtml as esc, link } from './format.js';
 import { directionsUrl } from './geo.js';
+import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml } from './render/guide.js';
 
 const $ = (id) => document.getElementById(id);
 let destination = null;
+// 선택된 **구운 도시**(DSN-46). `destination`(지명 검색 결과)과 따로 둔다 — 둘을 한 변수에
+// 담으면 "가이드로 만든 일정"과 "좌표로 만든 일정"을 구분할 수 없게 되고, 그 구분이 AC-085 다.
+let city = null;
 let activePlan = null;
 let foods = [];
 let saved = [];
@@ -12,11 +16,6 @@ const categories = {restaurant:'음식점', cafe:'카페', fast_food:'간편식'
 try { saved = JSON.parse(localStorage.getItem('hl_explore_plans') || '[]'); if (!Array.isArray(saved)) saved = []; } catch { saved = []; }
 
 function notice(text, error = false) { $('message').textContent = text; $('message').hidden = false; $('message').classList.toggle('error', error); }
-function link(url, label) {
-  try { const parsed = new URL(url); if (!['https:', 'http:'].includes(parsed.protocol)) return ''; }
-  catch { return ''; }
-  return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`;
-}
 async function action(button, work) {
   button.disabled = true;
   try { await work(); } catch (error) { notice(error.message || '요청을 처리하지 못했습니다. 다시 시도해 주세요.', true); }
@@ -24,12 +23,52 @@ async function action(button, work) {
 }
 const apiRequest = async (path, body) => (await request('/api/explore/' + path, {method:body ? 'POST':'GET',body,timeoutMs:55000})).data;
 
+/** 구운 도시 목록을 그린다 (DSN-46 · AC-075 · AC-076).
+ *
+ * **"일본"을 넣으면 여기가 답한다** — 예전에는 지명 검색이 나라를 찾아 "넓은 지역"이라는
+ * 막다른 안내로 끝났다. 구운 도시가 하나도 없어도 **오류가 아니다**: 빈 목록과 안내 문구를
+ * 그대로 보여 준다(굽기 전의 정상 상태가 그것이다).
+ */
+function renderGuideCities(result) {
+  const cities = (result && result.cities) || [];
+  $('guideCityList').replaceChildren();
+  $('guideCities').hidden = false;
+  const summary = gradeSummary(result && result.counts);
+  // 개수는 **등급별로만** 말한다 — "도시 N개 지원" 류의 일괄 주장을 하지 않는다(AC-064).
+  $('guideCounts').textContent = summary ? `· 조사된 가이드 ${summary}` : '';
+  $('guideCitiesNote').textContent = cities.length
+    ? (result.notice || '')
+    : '이 검색어로 조사된 도시가 없습니다. 아래 지명 검색에서 목적지를 고르면 제한된 자동 추천을 만듭니다.';
+  for (const entry of cities) {
+    const button = document.createElement('button'); button.type = 'button';
+    button.textContent = cityLabel(entry);
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', () => {
+      city = entry;
+      const center = entry.center || {};
+      // 근처 맛집 검색은 좌표로 돈다 — 도시를 골랐으면 그 중심을 쓴다(기존 흐름 유지).
+      destination = {name: entry.name_ko || entry.city_id, lat: center.lat, lng: center.lng};
+      for (const other of $('guideCityList').children) other.setAttribute('aria-pressed', String(other === button));
+      for (const other of $('destinations').children) other.setAttribute('aria-pressed', 'false');
+      $('selectedDestination').textContent = `${cityLabel(entry)} 선택됨`; $('selectedDestination').hidden = false;
+      $('message').hidden = true;
+    });
+    $('guideCityList').appendChild(button);
+  }
+}
+
 $('searchDestination').addEventListener('click', (event) => action(event.currentTarget, async () => {
   const query = $('destinationQuery').value.trim();
   if (query.length < 2) return notice('나라와 도시 또는 지역을 두 글자 이상 입력해 주세요.', true);
-  destination = null; $('selectedDestination').hidden = true; $('destinations').replaceChildren();
+  destination = null; city = null; $('selectedDestination').hidden = true; $('destinations').replaceChildren();
   notice('여행지를 찾고 있어요…');
-  const result = await apiRequest('destinations?q=' + encodeURIComponent(query));
+  // 구운 도시 목록이 먼저다. 외부 호출이 0건이라 빠르고, 장소 제공자가 죽어도 답한다.
+  renderGuideCities(await apiRequest('guides?q=' + encodeURIComponent(query)));
+  let result = {items: []};
+  let failure = '';
+  try { result = await apiRequest('destinations?q=' + encodeURIComponent(query)); }
+  catch (error) { failure = error.message || '지명 검색을 마치지 못했어요.'; }
+  $('destinationsBlock').hidden = false;
   for (const place of result.items) {
     const button = document.createElement('button'); button.type = 'button'; button.textContent = place.name;
     button.setAttribute('aria-pressed', 'false');
@@ -38,25 +77,35 @@ $('searchDestination').addEventListener('click', (event) => action(event.current
         notice('넓은 지역을 찾았어요. 하루 동선을 설계할 도시나 동네를 함께 입력해 주세요. 예: 일본 오사카', true);
         return;
       }
-      destination = {name:place.name, lat:place.lat, lng:place.lng};
+      destination = {name:place.name, lat:place.lat, lng:place.lng}; city = null;
       for (const other of $('destinations').children) other.setAttribute('aria-pressed', String(other === button));
+      for (const other of $('guideCityList').children) other.setAttribute('aria-pressed', 'false');
       $('selectedDestination').textContent = place.name; $('selectedDestination').hidden = false;
       $('message').hidden = true;
     });
     $('destinations').appendChild(button);
   }
+  if (failure) return notice(`조사된 도시 목록만 표시했어요. 지명 검색: ${failure}`, true);
   notice(result.items.length ? '검색 결과에서 여행할 도시·동네를 선택해 주세요.' : '찾는 지역이 없어요. 도시 이름 또는 현지 표기로 다시 검색해 주세요.');
 }));
-$('destinationQuery').addEventListener('input', () => { destination = null; $('selectedDestination').hidden = true; });
+$('destinationQuery').addEventListener('input', () => { destination = null; city = null; $('selectedDestination').hidden = true; });
 $('planForm').addEventListener('submit', (event) => {
   event.preventDefault();
   action($('createPlan'), async () => {
-    if (!destination) return notice('먼저 여행지를 검색하고 결과에서 선택해 주세요.', true);
+    if (!city && !destination) return notice('먼저 여행지를 검색하고 결과에서 선택해 주세요.', true);
     const start = $('startDate').value, end = $('endDate').value;
     const length = (Date.parse(end) - Date.parse(start)) / 86400000;
     if (!Number.isFinite(length) || length < 0 || length > 13) return notice('오는 날은 가는 날 이후이며 여행 기간은 1~14일이어야 합니다.', true);
-    notice('장소와 영업시간을 확인해 날짜별 동선을 설계하고 있어요. 최대 약 40초 걸릴 수 있습니다.');
-    const result = await apiRequest('plan', {destination,start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value)});
+    notice(city
+      ? '조사해 둔 가이드로 날짜별 동선을 만들고 있어요.'
+      : '장소와 영업시간을 확인해 날짜별 동선을 설계하고 있어요. 최대 약 40초 걸릴 수 있습니다.');
+    // `city_id` 와 `destination` 을 **함께** 보낸다 — 구운 파일이 없으면 서버가 좌표로 폴백해
+    // "제한된 자동 추천"을 만든다(REQ-028 · AC-077). 좌표가 없는 항목은 좌표를 빼고 보낸다
+    // (없는 값을 0 으로 채워 보내면 서아프리카 앞바다의 일정이 나온다).
+    const located = destination && Number.isFinite(destination.lat) && Number.isFinite(destination.lng);
+    const result = await apiRequest('plan', {
+      ...(city ? {city_id:city.city_id} : {}), ...(located ? {destination} : {}),
+      start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value)});
     activePlan = result;
     let stored = true;
     if (result.scheduled_count) {
@@ -83,13 +132,25 @@ function renderPlan(plan) {
   activePlan = plan; $('planSection').hidden = false;
   $('planTitle').textContent = plan.destination.name.split(',')[0] + ' 여행';
   $('planMeta').textContent = `${plan.start_date} — ${plan.end_date} · ${plan.scheduled_count}곳 · 이동시간은 추정값`;
+  // 등급 표시는 **두 경로 모두에서 항상** 있다 (AC-085 · AC-077). 폴백 일정도 예외가 아니다.
+  $('guideGrade').innerHTML = gradeBadgeHtml(plan);
+  const guided = isGuidePlan(plan);
+  // 출처·한계는 접어서라도 항상 붙인다 — 한계를 모르면 이 목록을 "그 도시 전부"로 읽는다.
+  $('guideSources').innerHTML = guided ? sourcesHtml(plan.guide_city) : '';
+  if (guided) { $('planDays').innerHTML = daysHtml(plan); return; }
   $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map(stop => `<div class="stop"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
 }
 function renderSaved() {
   $('savedSection').hidden = !saved.length; $('savedPlans').replaceChildren();
   saved.forEach(plan => {
     const button = document.createElement('button'); button.textContent = `${plan.destination.name.split(',')[0]} · ${plan.start_date}`;
-    button.addEventListener('click', () => { destination = plan.destination; renderPlan(plan); $('planSection').scrollIntoView({behavior:'smooth'}); });
+    button.addEventListener('click', () => {
+      destination = plan.destination;
+      // 저장된 일정이 가이드로 만든 것이면 도시 선택도 되살린다 — 안 되살리면 같은 화면에서
+      // 다시 만들기를 눌렀을 때 조용히 폴백 일정이 나온다.
+      city = isGuidePlan(plan) ? {city_id:plan.guide_city.city_id, name_ko:plan.guide_city.name_ko, grade:plan.guide_city.grade, center:{lat:plan.destination.lat, lng:plan.destination.lng}} : null;
+      renderPlan(plan); $('planSection').scrollIntoView({behavior:'smooth'});
+    });
     $('savedPlans').appendChild(button);
   });
 }
