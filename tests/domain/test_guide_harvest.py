@@ -23,7 +23,7 @@ def row(qid: str, lat: float, lng: float, sitelinks: int) -> dict:
 
 
 def binding(qid: str, lat: float, lng: float, sitelinks: int) -> dict:
-    """공급자 원문 모양 — SPARQL JSON 바인딩."""
+    """공급자 원문 모양 — 값이 {"value": …} 로 감싸여 오는 바인딩 형태."""
     return {
         "item": {"type": "uri", "value": f"http://www.wikidata.org/entity/{qid}"},
         "lat": {"type": "literal", "value": str(lat)},
@@ -76,7 +76,7 @@ def test_every_kept_candidate_is_inside_the_radius() -> None:
 
 
 # ── 입력 형태·정렬·결정론 ────────────────────────────────────────────────
-def test_sparql_bindings_and_flat_rows_give_the_same_candidates() -> None:
+def test_wrapped_bindings_and_flat_rows_give_the_same_candidates() -> None:
     flat = fold_candidates([row("Q243", 35.6800, 139.6550, 191)], TOKYO, 10_000.0)
     raw = fold_candidates([binding("Q243", 35.6800, 139.6550, 191)], TOKYO, 10_000.0)
     assert flat == raw

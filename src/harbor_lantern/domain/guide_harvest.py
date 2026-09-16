@@ -1,21 +1,23 @@
 """후보 정규화 — DSN-35 (설계서 §16.6 · REQ-022 · AC-065).
 
-1단계 SPARQL(§16.4)은 **항목당 여러 행**을 돌려준다. `P625`(좌표) 문이 여러 개인 항목이
-그대로 여러 행이 되기 때문이다 — 정찰에서 **도쿄 스미다강 2행 · 다낭 선짜산 3행**이 나왔다.
-접는 일을 SPARQL 의 `SAMPLE()` 에 맡기지 않는 이유가 둘이다.
+수확(§16.4)은 **항목당 여러 좌표**를 돌려준다. `P625` 문이 여러 개인 항목이 그대로 여러
+행·여러 값이 되기 때문이다 — 정찰에서 **도쿄 스미다강 2행 · 다낭 선짜산 3행**이 나왔다.
+접는 일을 공급자에게 맡기지 않는 이유가 둘이다.
 
-1. `SAMPLE()` 은 어느 값이 올지 정의되지 않는다. 같은 질의에 다른 바이트가 나오면
-   NFR-020(재현성)이 깨진다.
+1. 공급자 쪽 집계(SPARQL 의 `SAMPLE()` 같은 것)는 **어느 값이 올지 정의되지 않는다.**
+   같은 입력에 다른 바이트가 나오면 NFR-020(재현성)이 깨진다.
 2. **중심에 가장 가까운 좌표**를 고르면 반경 불변식이 공짜로 따라온다 — 채택한 좌표가
    반경을 벗어나면 그 항목의 다른 어떤 좌표도 벗어나므로, 접은 뒤의
    `haversine_m(center, coord) <= radius_m` 재검증이 그 항목을 정확히 떨어뜨린다(AC-065).
 
+(수확은 v1.5 에서 WDQS SPARQL → ko.wikipedia `geosearch` 사슬로 바뀌었다. 이 모듈의
+입력 모양과 판단은 그대로 맞다 — 아래 `_row` 는 두 형태를 모두 읽는다.)
+
 **좌표 중복은 접지 않는다.** 같은 건물에 든 서로 다른 명소가 사라진다(§6.23 에서 이미 배웠다).
 접는 것은 **같은 QID 의 여러 좌표**와 **같은 표기의 다른 QID**(`dedupe_by_name`) 둘뿐이다.
 
-이름 중복 제거가 별도 함수인 이유: 1단계는 **라벨을 받지 않는다**(§16.4 — `wikibase:label`
-서비스가 ko→en 폴백을 조용히 해서 한국어 라벨 비율을 셀 수 없게 된다). 이름은 2단계
-`wbgetentities` 응답에서 오므로, 이름 중복은 그것이 붙은 뒤에 판정한다.
+이름 중복 제거가 별도 함수인 이유: 수확 1단계는 **쓸 이름을 주지 않는다.** 이름은
+`wbgetentities` 응답의 라벨에서 오므로, 이름 중복은 그것이 붙은 뒤에 판정한다.
 """
 
 from __future__ import annotations
@@ -141,7 +143,7 @@ def dedupe_by_name(spots: Sequence[Mapping[str, Any]]) -> NameDedupeResult:
 
 
 def _parse_row(row: Mapping[str, Any]) -> tuple[str, float, float, int] | None:
-    """SPARQL 행 하나 → `(qid, lat, lng, sitelinks)`. 읽을 수 없으면 `None`.
+    """수확 행 하나 → `(qid, lat, lng, sitelinks)`. 읽을 수 없으면 `None`.
 
     공급자 원문(`{"item": {"value": "http://www.wikidata.org/entity/Q243"}}`)과
     평탄화한 형태(`{"qid": "Q243"}`) 둘 다 받는다 — 어댑터가 어느 쪽으로 넘겨도
@@ -170,7 +172,7 @@ def _row_qid(row: Mapping[str, Any]) -> str:
 
 def _scalar(row: Mapping[str, Any], key: str) -> Any:
     value = row.get(key)
-    if isinstance(value, Mapping):  # SPARQL JSON 바인딩: {"type": "literal", "value": "..."}
+    if isinstance(value, Mapping):  # 바인딩 형태: {"type": "literal", "value": "..."}
         return value.get("value")
     return value
 
