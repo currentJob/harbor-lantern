@@ -101,6 +101,18 @@ def classify(
         if root is not None:
             return Classification("accept", root, qid, "allow_flat")
 
+    # 규칙 2-b — 직접 분류가 **허용 뿌리 자신**인 경우. `allow_root` 는 "이 클래스와 그
+    # 하위분류"라는 뜻이므로 클래스 자신은 당연히 포함이다. 그런데 승급(규칙 3)은 부모부터
+    # 훑기 때문에 이 자리를 아무도 보지 않았다 — `P31` 이 '다리'(Q12280)·'강'(Q4022)인
+    # 항목이 어떤 규칙에도 안 걸려 `unclassified` 로 빠졌다. **다낭이 그 형태다**
+    # (수확 12건 중 다리 4·강 2 — 정찰 실측 2026-09-15). 허용목록을 `allow_flat` 에
+    # 복제해 막을 수도 있지만, 그러면 같은 목록을 두 곳에 맞춰 두어야 하고 한쪽만 고치는
+    # 날 조용히 다시 사라진다.
+    for qid in direct_classes:
+        root = taxonomy.allow_root.get(qid)
+        if root is not None:
+            return Classification("accept", root, qid, "allow_root_self")
+
     promoted = _promote(direct_classes, ancestry, taxonomy)
     if promoted is not None:
         return promoted

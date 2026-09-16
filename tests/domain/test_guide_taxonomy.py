@@ -99,3 +99,48 @@ def test_default_taxonomy_is_usable_with_the_two_argument_contract() -> None:
     assert classify(["Q33506"], {}).root == "museum"
     assert classify(["Q5"], {}).decision == "exclude"
     assert DEFAULT_TAXONOMY.allow_root["Q12280"] == "bridge"  # 다낭에서는 다리가 명소다
+
+
+# ── 규칙 2-b — 허용 뿌리 자신 (다낭 사건) ────────────────────────────────────
+def test_a_direct_class_that_is_itself_an_allow_root_is_accepted() -> None:
+    """`P31` 이 허용 뿌리 **자신**이면 받아들인다.
+
+    승급(규칙 3)은 부모부터 훑기 때문에 이 자리를 보지 않았다. 그 결과 `P31` 이
+    '다리'·'강'인 항목이 어떤 규칙에도 안 걸려 `unclassified` 로 빠졌다 —
+    **다낭 수확 12건 중 다리 4·강 2 가 통째로 사라지는 경로**다(정찰 실측 2026-09-15).
+    조상 캐시가 비어 있어도(= 그 클래스의 P279 를 조회한 적이 없어도) 걸려야 한다.
+    """
+    for qid, expected_root in (("Q12280", "bridge"), ("Q4022", "river"),
+                               ("Q22698", "park"), ("Q41176", "building_landmark")):
+        result = classify([qid], {}, DEFAULT_TAXONOMY)
+        assert result.decision == "accept", f"{qid} 가 {result.decision} 로 빠졌다"
+        assert result.root == expected_root
+        assert result.matched_class == qid
+        assert result.reason == "allow_root_self"
+
+
+def test_allow_root_self_does_not_outrank_a_flat_exclusion() -> None:
+    """규칙 순서는 그대로다 — 제외가 먼저다.
+
+    규칙 2-b 를 규칙 1 앞에 두면 제외 목록이 조용히 무력해진다.
+    """
+    taxonomy = Taxonomy(
+        exclude_flat=frozenset({"Q12280"}),
+        allow_flat={},
+        allow_root={"Q12280": "bridge"},
+    )
+    assert classify(["Q12280"], {}, taxonomy).decision == "exclude"
+
+
+def test_every_default_allow_root_is_reachable_without_an_ancestry_cache() -> None:
+    """기본표의 뿌리가 **하나도 빠짐없이** 조상 캐시 없이 판정된다.
+
+    `allow_root` 에만 있고 `allow_flat` 에 없는 QID 가 7 개였고, 그 전부가
+    `unclassified` 였다. 목록을 손으로 맞추는 대신 이 불변식을 검사로 둔다 —
+    앞으로 뿌리를 추가하는 사람은 아무것도 기억하지 않아도 된다.
+    """
+    unreachable = [
+        qid for qid in DEFAULT_TAXONOMY.allow_root
+        if classify([qid], {}, DEFAULT_TAXONOMY).decision != "accept"
+    ]
+    assert not unreachable, f"조상 캐시 없이 분류되지 않는 뿌리: {unreachable}"
