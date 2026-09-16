@@ -128,6 +128,12 @@ powershell -ExecutionPolicy Bypass -File tools/start-tunnel.ps1    # .local/clou
 $env:HL_ALLOWED_ORIGINS = "https://<사용자>.github.io"             # CORS 허용 (필수)
 ```
 
+**터널을 띄우면 접속 링크가 Telegram 으로 온다.** `start-tunnel.ps1` 이 주소를 받은 뒤
+`tools/notify_tunnel.py` 로 `<Pages 주소>?api=<터널 주소>` 를 보낸다 — 휴대폰에서 링크 한 번이면
+주소가 그 브라우저에 저장된다. 토큰은 **복사하지 않는다**: `.env.local`(gitignore)의
+`HL_TELEGRAM_CONFIG` 가 설정 파일 **경로만** 가리킨다. 설정이 없으면 조용히 건너뛰고 터널은
+그대로 동작한다. 링크만 보려면 `python tools/notify_tunnel.py --dry-run`.
+
 **주소는 화면에서 넣는다.** Pages 로 연 화면의 "여행 시작하기" 카드 아래 **백엔드 주소** 칸에
 터널 주소를 넣으면 이 기기에 저장된다. 페이지 주소 뒤에 `?api=` 로 붙여 열어도 같다.
 
