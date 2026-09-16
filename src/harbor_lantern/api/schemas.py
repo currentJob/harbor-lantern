@@ -32,6 +32,9 @@ __all__ = [
     "ExpenseOut",
     "ExpenseUpdateRequest",
     "FxResponseOut",
+    "GuideCityDetailOut",
+    "GuideCityOut",
+    "GuideListOut",
     "HealthOut",
     "HoursSpecOut",
     "JoinRequest",
@@ -469,6 +472,62 @@ class CuratedResponseOut(BaseModel):
     counts: dict[str, Any]
     returned: int
     places: list[CuratedPlaceOut]
+
+
+class GuideCityOut(BaseModel):
+    """구운 도시 목록의 한 항목 (REQ-027 · AC-075 · 설계서 §16.15).
+
+    **그대로 일정 생성 입력으로 쓸 수 있는 모양이다** — `city_id` 와 `center` 가 있으므로
+    화면은 이 항목 하나만 들고 `POST /api/explore/plan` 을 부를 수 있다. 목록과 상세가
+    다른 이름을 쓰면 화면이 두 번 매핑해야 하고, 그 매핑이 조용히 어긋난다.
+
+    **`extra="allow"` 다**(계약의 `additionalProperties: true`). 베이커가 인덱스에 필드를
+    더했을 때 여기서 조용히 깎이면, 화면은 있는 데이터를 못 본 채 "없다"고 그린다.
+    """
+
+    model_config = ConfigDict(extra="allow")
+
+    city_id: str
+    name_ko: str
+    name_local: str = ""
+    name_en: str = ""
+    country_code: str = ""
+    country_ko: str = ""
+    country_en: str = ""
+    center: dict[str, float] = Field(default_factory=dict)
+    grade: str = ""
+    spot_count: int = 0
+    retrieved_at: str = ""
+
+
+class GuideListOut(BaseModel):
+    """`GET /api/explore/guides` (REQ-027).
+
+    구운 도시가 없어도 **200 + 빈 목록 + 안내 문구**다(AC-076). "없음"은 오류가 아니다 —
+    404 로 답하면 화면은 "서버가 고장났다"와 "아직 조사되지 않았다"를 구분하지 못한다.
+    """
+
+    cities: list[GuideCityOut]
+    counts: dict[str, Any] = Field(default_factory=dict)
+    sources: list[dict[str, Any]] = Field(default_factory=list)
+    known_gaps: list[str] = Field(default_factory=list)
+    retrieved_at: str = ""
+    notice: str
+
+
+class GuideCityDetailOut(GuideCityOut):
+    """`GET /api/explore/guides/{city_id}` (REQ-022 · REQ-024).
+
+    `spots` 는 구운 파일의 스팟을 **그대로** 싣는다(설계서 §16.11). 설명·출처·검증 표시를
+    여기서 깎으면 화면이 출처를 못 밝히고, 그러면 AC-070 이 요구하는 세 필드가 사라진다.
+    """
+
+    radius_m: int = 0
+    harvest: dict[str, Any] = Field(default_factory=dict)
+    sources: list[dict[str, Any]] = Field(default_factory=list)
+    known_gaps: list[str] = Field(default_factory=list)
+    spots: list[dict[str, Any]] = Field(default_factory=list)
+    notice: str
 
 
 class NearbyResponseOut(ExternalMetaOut):

@@ -91,6 +91,87 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /api/explore/guides:
+    get:
+      tags:
+      - explore
+      summary: Guides
+      description: |
+        구운 도시 가이드 목록 (REQ-027 · 설계서 §16.15).
+        "일본"·"Japan"·"JP" 가 같은 결과를 준다. 구운 도시가 없으면 **빈 목록 + 안내 문구를 200 으로**
+        돌려준다 — "없음"은 오류가 아니다(AC-076). 외부 호출이 0건이라 429·503 이 없다(NFR-017).
+      operationId: guides_api_explore_guides_get
+      parameters:
+      - name: q
+        in: query
+        required: false
+        description: 국가명(완전 일치) 또는 도시명(접두 일치)
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 100
+          title: Q
+      - name: country
+        in: query
+        required: false
+        description: ISO 3166-1 국가 코드
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 3
+          pattern: '^[A-Za-z]{2,3}$'
+          title: Country
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuideListResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/explore/guides/{city_id}:
+    get:
+      tags:
+      - explore
+      summary: Guide Detail
+      description: |
+        도시 하나의 구운 가이드 (REQ-022 · REQ-024). 굽지 않은 도시는 404 이고,
+        식별자 형식(`^[a-z0-9-]+$`)에 맞지 않으면 422 다 — 경로 조작을 파일 읽기로
+        만들지 않기 위해 **검증 뒤에만** 경로에 붙인다(설계서 §16.12).
+      operationId: guide_detail_api_explore_guides__city_id__get
+      parameters:
+      - name: city_id
+        in: path
+        required: true
+        schema:
+          type: string
+          maxLength: 64
+          pattern: '^[a-z0-9-]+$'
+          title: City Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuideCityDetail'
+        '404':
+          description: 아직 조사되지 않은 도시입니다
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /api/explore/plan:
     post:
       tags:
@@ -108,7 +189,8 @@ paths:
           description: Successful Response
           content:
             application/json:
-              schema: {}
+              schema:
+                $ref: '#/components/schemas/GuidedPlanResponse'
         '429':
           description: 조회가 진행 중입니다
           content:
@@ -817,7 +899,18 @@ components:
       - lng
       title: Destination
     PlanRequest:
+      description: |
+        `city_id` 와 `destination` 중 **둘 중 하나는 필수**다 (설계서 §16.16).
+        `city_id` 가 있으면 구운 가이드 경로로, 없으면 기존 폴백(Overpass) 경로로 간다.
+        `city_id` 가 굽지 않은 도시인데 `destination` 도 없으면 422 다.
       properties:
+        city_id:
+          type: string
+          pattern: '^[a-z0-9-]+$'
+          maxLength: 64
+          nullable: true
+          description: 구운 도시 식별자. 있으면 가이드 경로.
+          title: City Id
         destination:
           $ref: '#/components/schemas/Destination'
         start_date:
@@ -852,11 +945,96 @@ components:
           default: 5000
       additionalProperties: false
       type: object
-      required:
-      - destination
-      - start_date
-      - end_date
+      required: [start_date, end_date]
       title: PlanRequest
+
+    GuideCity:
+      type: object
+      additionalProperties: true
+      required: [city_id, name_ko, center, grade]
+      description: |
+        구운 도시 목록의 한 항목 (AC-075). **그대로 `PlanRequest` 입력으로 쓸 수 있다** —
+        `city_id` 와 `center` 를 담는다.
+      properties:
+        city_id:      { type: string, pattern: '^[a-z0-9-]+$' }
+        name_ko:      { type: string }
+        name_local:   { type: string }
+        name_en:      { type: string }
+        country_code: { type: string }
+        country_ko:   { type: string }
+        country_en:   { type: string }
+        center:
+          type: object
+          required: [lat, lng]
+          properties:
+            lat: { type: number }
+            lng: { type: number }
+        grade:        { type: string, enum: [full, partial] }
+        spot_count:   { type: integer }
+        retrieved_at: { type: string }
+
+    GuideListResponse:
+      type: object
+      additionalProperties: false
+      required: [cities, counts, sources, known_gaps, retrieved_at, notice]
+      description: 구운 도시가 없으면 `cities` 가 빈 배열이고 `notice` 가 그 사실을 말한다 (AC-076).
+      properties:
+        cities:
+          type: array
+          items: { $ref: '#/components/schemas/GuideCity' }
+        counts:       { type: object, additionalProperties: true }
+        sources:
+          type: array
+          items: { type: object, additionalProperties: true }
+        known_gaps:
+          type: array
+          items: { type: string }
+        retrieved_at: { type: string }
+        notice:       { type: string, description: 사용자용 한국어 안내 }
+
+    GuideCityDetail:
+      allOf:
+        - $ref: '#/components/schemas/GuideCity'
+        - type: object
+          required: [spots, sources, known_gaps, harvest, notice]
+          properties:
+            radius_m:   { type: integer }
+            harvest:    { type: object, additionalProperties: true, description: 수확 지표 (AC-083 재계산 가능) }
+            sources:
+              type: array
+              items: { type: object, additionalProperties: true }
+            known_gaps:
+              type: array
+              items: { type: string }
+            spots:
+              type: array
+              description: 구운 파일의 스팟 그대로 — 설명·출처·검증 표시를 포함한다 (AC-070).
+              items: { type: object, additionalProperties: true }
+            notice:     { type: string }
+
+    GuidedPlanResponse:
+      type: object
+      additionalProperties: true
+      required: [days, guide_grade, guide_notice]
+      description: |
+        `POST /api/explore/plan` 의 200. **기존 응답 필드를 전부 유지한다** — 그래서
+        `additionalProperties: true` 다(필드는 더하기만 한다 · AC-078).
+      properties:
+        guide_grade:
+          type: string
+          enum: [full, partial, heuristic]
+          description: 비어 있을 수 없다 (AC-085). 구운 도시면 그 등급, 아니면 `heuristic`.
+        guide_notice:
+          type: string
+          description: 등급마다 다른 한국어 문구. `heuristic` 은 "제한된 자동 추천"이라고 밝힌다 (AC-077).
+        guide_city:
+          type: object
+          nullable: true
+          additionalProperties: true
+          description: 폴백 경로면 `null`.
+        days:
+          type: array
+          items: { type: object, additionalProperties: true }
 
     # ------------------------------------------------------------- 공통 ---
     Error:
