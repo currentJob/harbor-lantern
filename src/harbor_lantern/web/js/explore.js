@@ -1,7 +1,9 @@
 import { apiBase, request, setApiBase } from './api.js';
 import { escapeHtml as esc, link } from './format.js';
-import { directionsUrl } from './geo.js';
-import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml } from './render/guide.js';
+import { LocationTracker, directionsUrl } from './geo.js';
+import { TripMap } from './map.js';
+import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml, stopDomId } from './render/guide.js';
+import { dayPickerLabel, planMapDays, planMapSpotCount, unmappedCount } from './render/planmap.js';
 
 const $ = (id) => document.getElementById(id);
 let destination = null;
@@ -128,6 +130,74 @@ function placeBody(place) {
     ${(place.reviews || []).map(review => `<div class="review"><div class="review-author">${review.avatar ? `<img src="${esc(review.avatar)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ''}${link(review.author_url,review.author) || esc(review.author)} <span>${esc(review.rating ?? '')}★</span></div><p>${esc(review.text)}</p><small>${esc(review.date)}</small> ${link(review.url,'후기 전체 보기')}</div>`).join('')}
     <p class="source" translate="no">${esc(place.source)}${place.source === 'Google Maps' ? ' · 관련성순 후기' : ''}</p>`;
 }
+/* ── 일정 지도 (홍콩 화면과 같은 TripMap · 어댑터는 render/planmap.js) ──────────────
+ *
+ * 지도는 **없어도 되는 부품**이다: Leaflet 이 없거나 타일이 죽어도 목록·타임라인은 그대로다.
+ * 위치도 마찬가지다 — 권한을 거부하면 '내 위치' 하나만 빠지고 나머지는 전부 살아 있다.
+ * 그래서 권한은 **버튼을 누른 뒤에만** 요청한다(근처 맛집 버튼과 같은 규칙).
+ */
+let tripMap = null;      // 한 번만 세운다. 실패해도 다시 시도하지 않는다(실패 이유가 안 바뀐다).
+let mapBooted = false;
+let mapDays = [];
+let myPosition = null;
+const tracker = new LocationTracker({
+  onUpdate: (position) => { myPosition = position; if (tripMap) tripMap.showMe(position); },
+  onError: (error) => { tracker.stop(); notice(error.message, true); },
+});
+
+function mapNotice(message) { $('planMapMsg').textContent = message; $('planMapMsg').hidden = !message; }
+
+/** 목록의 그 자리로 데려간다. 핀과 카드는 `stopDomId` 라는 같은 문자열로 묶여 있다. */
+function focusStopCard(spotId) {
+  const card = document.getElementById(spotId);
+  if (!card) return;
+  for (const other of document.querySelectorAll('.stop.pinned')) other.classList.remove('pinned');
+  card.classList.add('pinned');
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function bootMap() {
+  if (mapBooted) return Boolean(tripMap);
+  mapBooted = true;
+  const map = new TripMap('planMap', {onMarkerClick:(dayIndex, spotId) => focusStopCard(spotId), onTileTrouble:mapNotice});
+  tripMap = map.init() ? map : null;   // 세우지 못했으면 이유는 onTileTrouble 이 이미 적었다
+  return Boolean(tripMap);
+}
+
+function renderPlanMap(plan) {
+  mapDays = planMapDays(plan);
+  const pins = planMapSpotCount(mapDays);
+  // 일정이 없으면 지도를 띄우지 않는다 — 빈 지도는 "아직 안 그려졌다"로도 읽힌다.
+  $('planMapBlock').hidden = !pins;
+  $('planMapDay').replaceChildren();
+  if (!pins || !bootMap()) return;
+  tripMap.render(mapDays);
+  for (const day of mapDays) {
+    if (!day.spots.length) continue;
+    const option = document.createElement('option');
+    option.value = String(day.day_index); option.textContent = dayPickerLabel(day);
+    $('planMapDay').appendChild(option);
+  }
+  const first = mapDays.find(day => day.spots.length);
+  $('planMapDay').value = String(first.day_index);
+  tripMap.invalidate(); tripMap.focusDay(first);
+  if (myPosition) tripMap.showMe(myPosition);
+  // 좌표가 없어 핀이 안 선 장소가 있으면 **그 사실을 말한다** — 말하지 않으면 지도 고장으로 읽힌다.
+  const missing = unmappedCount(plan);
+  mapNotice(missing ? `${missing}곳은 좌표가 없어 지도에 표시하지 못했습니다 — 목록에는 그대로 있습니다.` : '');
+}
+
+$('planMapDay').addEventListener('change', event => {
+  const day = mapDays.find(entry => String(entry.day_index) === event.target.value);
+  if (tripMap && day) tripMap.focusDay(day);
+});
+$('planMapLocate').addEventListener('click', () => {
+  if (!tripMap) return notice('지도를 사용할 수 없어 현재 위치를 표시할 수 없습니다. 일정은 그대로 확인할 수 있어요.', true);
+  if (myPosition) { tripMap.showMe(myPosition); return tripMap.flyToMe(myPosition); }
+  if (!tracker.tracking && !tracker.start()) return;
+  notice('현재 위치를 확인하고 있어요…');
+});
+
 function renderPlan(plan) {
   activePlan = plan; $('planSection').hidden = false;
   $('planTitle').textContent = plan.destination.name.split(',')[0] + ' 여행';
@@ -137,8 +207,9 @@ function renderPlan(plan) {
   const guided = isGuidePlan(plan);
   // 출처·한계는 접어서라도 항상 붙인다 — 한계를 모르면 이 목록을 "그 도시 전부"로 읽는다.
   $('guideSources').innerHTML = guided ? sourcesHtml(plan.guide_city) : '';
+  renderPlanMap(plan);
   if (guided) { $('planDays').innerHTML = daysHtml(plan); return; }
-  $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map(stop => `<div class="stop"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
+  $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map((stop,order) => `<div class="stop" id="${stopDomId(index,order)}"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
 }
 function renderSaved() {
   $('savedSection').hidden = !saved.length; $('savedPlans').replaceChildren();

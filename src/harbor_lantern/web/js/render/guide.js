@@ -187,6 +187,16 @@ export function safeColor(value) {
   return /^#[0-9a-fA-F]{3,8}$/.test(text(value)) ? text(value) : '';
 }
 
+/** 일정 한 줄의 DOM 식별자 — **지도 핀과 목록을 잇는 유일한 끈**이다.
+ *
+ * 장소 자체의 id 를 쓰지 않는다: 같은 장소가 다른 날에 또 나올 수 있고, 폴백 일정의
+ * 장소에는 id 가 아예 없다. 위치(몇째 날 · 몇째 순서)는 두 경로 모두에 항상 있다.
+ * 지도 어댑터(`render/planmap.js`)와 이 렌더러가 **같은 함수**를 불러야 둘이 갈라지지 않는다.
+ */
+export function stopDomId(dayIndex, stopIndex) {
+  return `plan-d${Number(dayIndex) || 0}s${Number(stopIndex) || 0}`;
+}
+
 /** 하루 카드. 테마(`title`·`area`·`color`)는 홍콩 가이드의 일자 탭과 같은 시각 언어다. */
 export function dayHtml(day, index) {
   const source = day || {};
@@ -197,7 +207,7 @@ export function dayHtml(day, index) {
     ? `<p class="dayexception">이 날은 다른 지역의 대표 장소가 포함되어 있습니다. ${esc(text(source.area_exception_reason))}</p>`
     : '';
   const body = stops.length
-    ? stops.map((stop) => `<div class="stop"><time>${esc(text(stop.arrival))}<p class="meta">${esc(text(stop.departure))}</p></time><div>${
+    ? stops.map((stop, order) => `<div class="stop" id="${stopDomId(index, order)}"><time>${esc(text(stop.arrival))}<p class="meta">${esc(text(stop.departure))}</p></time><div>${
       stop.evening_slot ? '<span class="pill">저녁 배치 · 19:00 기준 추정</span>' : ''
     }<span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${
       stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'
