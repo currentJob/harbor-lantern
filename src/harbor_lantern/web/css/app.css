@@ -313,3 +313,15 @@ footer b{color:#c5cede}
 
 /* 애니메이션을 원치 않는 사용자 (NFR-008 · AC-044) */
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Full itinerary review and leg navigation */
+.review-option{display:flex;align-items:center;gap:8px;margin:16px 0}
+.review-option input{width:auto;accent-color:#22d3ee}
+.review-day{padding:18px 0;border-top:1px solid rgba(255,255,255,.15)}
+.review-day h3{margin:0 0 8px}.review-day details{margin:14px 0}
+.review-day summary{cursor:pointer;color:#67e8f9;line-height:1.7}
+.review-day ol{padding-left:24px}.review-day li{margin:16px 0;overflow-wrap:anywhere}
+.review-day p,.review-day ul{line-height:1.7}
+.review-evidence{font-size:13px}.review-evidence blockquote{margin:10px 0;padding:10px 14px;border-left:2px solid #22d3ee;background:rgba(255,255,255,.04)}
+.route-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;font-size:12px}
+.route-links a{padding:7px 10px;border:1px solid rgba(34,211,238,.3);border-radius:8px;color:#67e8f9}
+.itinerary-review button:disabled{opacity:.5;cursor:default}

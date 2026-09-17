@@ -5,6 +5,7 @@ from datetime import timedelta
 
 from harbor_lantern.domain.geo import haversine_m
 from harbor_lantern.domain.models import LatLng
+from harbor_lantern.domain.review_plan import reported_closed, review_bonus
 
 DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
 FOOD = {"restaurant", "cafe", "fast_food"}
@@ -69,7 +70,7 @@ def build_plan(places, destination, start, end, pace="balanced", interests="mixe
         for _ in range(count):
             ranked = []
             for place in places:
-                if place["id"] in used:
+                if place["id"] in used or reported_closed(place):
                     continue
                 food = place["category"] in FOOD
                 if food and sum(stop["place"]["category"] in FOOD for stop in stops) >= 2:
@@ -96,6 +97,7 @@ def build_plan(places, destination, start, end, pace="balanced", interests="mixe
                 if food and stops and stops[-1]["place"]["category"] in FOOD:
                     meal_penalty += 150
                 rank = travel + (eta - cursor) + meal_penalty + (15 if windows is None else 0)
+                rank -= review_bonus(place.get("review"))
                 ranked.append((rank, place["id"], place, eta, duration, travel, distance, windows))
             if not ranked:
                 break

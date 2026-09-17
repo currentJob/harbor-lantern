@@ -234,6 +234,12 @@ export const api = {
     const { data } = await request(`${trip(tripId)}/days/${dayIndex}/optimize`, { method: 'POST', token });
     return data;
   },
+  async reviewPlan(tripId, token, useReviews = false) {
+    const { data } = await request(`${trip(tripId)}/review-plan`, {
+      method: 'POST', token, body: { use_reviews: useReviews }, timeoutMs: 90000,
+    });
+    return data;
+  },
 
   // ── 경비 · 정산 ────────────────────────────────────────────────────────
   async listExpenses(tripId, token) {

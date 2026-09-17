@@ -12,6 +12,7 @@ import {
 } from '../format.js';
 import { haversineMeters, sortByDistance } from '../geo.js';
 import { warningBadges } from './warnings.js';
+import { routeHtml } from './reviewplan.js';
 
 const MODE_LABEL = { walk: '도보', transit: '대중교통' };
 
@@ -141,6 +142,7 @@ export function renderCards(container, ctx) {
       const next = day.spots[scheduleIndex + 1];
       const leg = document.createElement('div');
       leg.innerHTML = legLine(spot.leg_to_next, next ? next.name : '');
+      if (next) leg.firstElementChild.insertAdjacentHTML('beforeend', routeHtml(spot, next));
       container.appendChild(leg.firstElementChild);
     }
   });

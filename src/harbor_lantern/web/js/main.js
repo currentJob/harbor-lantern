@@ -17,6 +17,7 @@ import { renderExpenses } from './render/expenses.js';
 import { renderCurated } from './render/curated.js';
 import { renderNearby } from './render/nearby.js';
 import { renderProgress } from './render/progress.js';
+import { proposalHtml } from './render/reviewplan.js';
 import { renderSettlement } from './render/settlement.js';
 import { renderDaySummary, renderTabs } from './render/tabs.js';
 import { renderAlerts } from './render/warnings.js';
@@ -29,6 +30,9 @@ const el = (id) => document.getElementById(id);
 
 // 화면 전용 상태 — 서버에 없고 저장할 필요도 없는 것들.
 const ui = {
+  reviewPlan: null,
+  reviewBusy: false,
+  reviewRenderKey: null,
   editingSpot: null,     // 수정 중인 스팟
   addingSpot: false,     // 추가 폼 열림
   proposal: null,        // 동선 최적화 제안
@@ -257,6 +261,24 @@ async function addNearbyToItinerary(place) {
 }
 
 function wireMapBar() {
+  el('reviewPlanBtn').addEventListener('click', async () => {
+    if (ui.reviewBusy) return;
+    ui.reviewBusy = true;
+    el('reviewPlanBtn').disabled = true;
+    el('reviewPlanStatus').textContent = el('useReviews').checked
+      ? '전체 일정과 장소 후기를 확인하는 중입니다. 최대 약 1분 걸릴 수 있습니다.' : '전체 일정을 점검하고 있습니다…';
+    try {
+      ui.reviewPlan = await api.reviewPlan(store.tripId, store.token, el('useReviews').checked);
+      ui.reviewRenderKey = null;
+      el('reviewPlanStatus').textContent = '점검 완료. 각 날짜의 제안을 확인한 뒤 적용하세요.';
+    } catch (error) {
+      el('reviewPlanStatus').textContent = error.message || '점검에 실패했습니다. 다시 시도하세요.';
+    } finally {
+      ui.reviewBusy = false;
+      el('reviewPlanBtn').disabled = false;
+      emit();
+    }
+  });
   tracker = new LocationTracker({
     onUpdate: (me) => {
       store.me = me;
@@ -403,7 +425,9 @@ function renderDayEdit(container, day) {
   optimize.textContent = '동선 최적화 제안';
   optimize.addEventListener('click', async () => {
     await run(async () => {
-      ui.proposal = await api.optimizeDay(store.tripId, store.token, day.day_index);
+      const revision = store.state.trip.revision;
+      const proposal = await api.optimizeDay(store.tripId, store.token, day.day_index);
+      ui.proposal = { ...proposal, expected_revision: revision };
       emit();
     });
   });
@@ -433,14 +457,14 @@ function proposalPanel(day, proposal) {
       ? `<div class="memo" style="margin-top:6px">고정시각 스팟은 자리를 유지합니다: ${
         proposal.anchored_spot_ids.map((id) => escapeHtml(nameOf(id))).join(', ')}</div>` : '')
     + '<div class="formbtns" style="margin-top:12px">'
-    + `<button class="primary" type="button" data-act="apply"${proposal.improved ? '' : ' disabled'}>이 순서로 적용</button>`
+    + `<button class="primary" type="button" data-act="apply"${proposal.improved && proposal.expected_revision === store.state.trip.revision ? '' : ' disabled'}>이 순서로 적용</button>`
     + '<button class="secondary" type="button" data-act="close">닫기</button></div>';
 
   panel.querySelector('[data-act="close"]').addEventListener('click', () => { ui.proposal = null; emit(); });
   panel.querySelector('[data-act="apply"]').addEventListener('click', async () => {
     const ok = await run(async () => {
       await api.reorderDay(
-        store.tripId, store.token, day.day_index, store.state.trip.revision, proposal.proposed_order,
+        store.tripId, store.token, day.day_index, proposal.expected_revision, proposal.proposed_order,
       );
       await syncOnce({ force: true });
     }, '제안 순서를 적용했습니다.');
@@ -472,6 +496,7 @@ function renderAll() {
   if (!store.state) return;
   const state = store.state;
   const day = activeDayState();
+  renderReviewPlan(state.trip.revision);
   document.documentElement.style.setProperty('--c', day ? day.color : '#22d3ee');
 
   renderStatusStrip(el('status'), { weather: store.weather, fx: store.fx, syncError: store.syncError });
@@ -582,6 +607,35 @@ function renderAll() {
   if (tripMap && ui.mapRevision !== state.trip.revision) {
     tripMap.render(state.days);
     ui.mapRevision = state.trip.revision;
+  }
+}
+
+function renderReviewPlan(revision) {
+  const result = ui.reviewPlan;
+  if (!result) return;
+  const key = `${result.expected_revision}:${revision}`;
+  if (ui.reviewRenderKey === key) return; // Polling/location updates must preserve open details.
+  ui.reviewRenderKey = key;
+  el('reviewPlan').innerHTML = proposalHtml(result, revision);
+  for (const button of el('reviewPlan').querySelectorAll('[data-apply-day]')) {
+    button.addEventListener('click', async () => {
+      if (ui.reviewBusy) return;
+      const day = result.days.find(d => d.day_index === Number(button.dataset.applyDay));
+      ui.reviewBusy = true;
+      button.disabled = true;
+      el('reviewPlanBtn').disabled = true;
+      try {
+        await run(async () => {
+          await api.reorderDay(store.tripId, store.token, day.day_index, result.expected_revision, day.proposed_order);
+          await syncOnce({force:true});
+        }, '제안 순서를 적용했습니다. 다른 날짜는 최신 일정으로 다시 점검해 주세요.');
+      } finally {
+        ui.reviewBusy = false;
+        el('reviewPlanBtn').disabled = false;
+        ui.reviewRenderKey = null;
+        emit();
+      }
+    });
   }
 }
 

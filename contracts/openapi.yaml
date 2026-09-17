@@ -811,6 +811,50 @@ paths:
             text/html:
               schema: { type: string }
 
+  /api/trips/{trip_id}/review-plan:
+    post:
+      summary: 전체 일정 점검 및 리뷰 기반 제안 (읽기 전용)
+      description: |
+        use_reviews가 true일 때만 최대 40개 장소의 Google Maps 후기를 조회한다.
+        현재·제안 일정, 경고·충돌, 구간 길찾기, 리뷰 출처·조회 상태를 반환한다.
+        적용은 기존 PUT /days/{day_index}/order에 여기서 받은 expected_revision을 사용한다.
+        이동은 추정치이고 실제 경로는 Google Maps 링크에서 확인한다. 응답은 no-store다.
+      parameters:
+        - name: trip_id
+          in: path
+          required: true
+          schema: {type: string}
+        - name: X-Participant-Token
+          in: header
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                use_reviews: {type: boolean, default: false}
+      responses:
+        '200':
+          description: 날짜별 비교·제안 순서·리뷰·구간 링크·expected_revision
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [expected_revision, days, review_summary, reviews_enabled, notice]
+                properties:
+                  expected_revision: {type: integer}
+                  days: {type: array, items: {type: object}}
+                  review_summary: {type: object}
+                  reviews_enabled: {type: boolean}
+                  notice: {type: string}
+        '404':
+          description: 여행 또는 접근 권한 없음
+        '422':
+          description: 요청 형식 오류
+
 components:
 
   securitySchemes:
@@ -904,6 +948,10 @@ components:
         `city_id` 가 있으면 구운 가이드 경로로, 없으면 기존 폴백(Overpass) 경로로 간다.
         `city_id` 가 굽지 않은 도시인데 `destination` 도 없으면 422 다.
       properties:
+        use_reviews:
+          type: boolean
+          default: false
+          description: 명시적으로 켠 경우에만 최대 40개 후보의 평점·평가 수를 계획에 반영한다.
         city_id:
           type: string
           pattern: '^[a-z0-9-]+$'

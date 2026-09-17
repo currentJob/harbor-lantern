@@ -104,6 +104,15 @@
     <!-- 미리 조사해 둔 미쉐린 목록 (REQ-019). 조회 전에는 비어 있다. -->
     <section class="nearpanel" id="curated"></section>
 
+    <section class="panel itinerary-review" aria-labelledby="reviewTitle">
+      <h2 id="reviewTitle">홍콩 전체 일정 점검</h2>
+      <p class="memo">4일의 영업시간·예약 충돌·이동 부담을 확인하고, 평점과 평가 수를 반영해 순서를 제안합니다.</p>
+      <label class="review-option"><input id="useReviews" type="checkbox"> Google Maps 평점·후기 반영</label>
+      <button class="primary" id="reviewPlanBtn" type="button">전체 일정 점검·개선 제안</button>
+      <p id="reviewPlanStatus" role="status" aria-live="polite"></p>
+      <div id="reviewPlan"></div>
+    </section>
+
     <div class="tabs" id="tabs"></div>
     <div class="daysum" id="daysum"></div>
     <div id="alerts"></div>
