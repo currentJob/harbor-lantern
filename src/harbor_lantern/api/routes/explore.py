@@ -16,6 +16,7 @@
 바로 그 문제다.
 """
 
+import math
 import threading
 from datetime import date
 from typing import Annotated, Any, Literal
@@ -33,7 +34,7 @@ from harbor_lantern.domain.util import parse_hhmm
 from harbor_lantern.services.external.ports import ExternalUnavailable
 from harbor_lantern.services.external.reviews import collect_reviews, review_summary
 from harbor_lantern.services.guides import CITY_ID_PATTERN, CityGuide, find_cities, load_city, load_index
-from harbor_lantern.services.ratings import city_ratings, rated_spots
+from harbor_lantern.services.ratings import city_ratings, enrich_viewport, rated_spots
 
 router = APIRouter(prefix="/api/explore", tags=["explore"])
 _slots = threading.BoundedSemaphore(2)
@@ -402,3 +403,32 @@ def search_places(request: Request, q: Annotated[str, Query(min_length=2, max_le
         raise HTTPException(422, "장소 이름을 두 글자 이상 입력하세요.")
     return {"items": execute(lambda: request.app.state.discovery.search_places(q.strip(), lat, lng)),
             "attribution": "© OpenStreetMap contributors", "notice": "도시 중심 50km 이내 검색 결과입니다."}
+
+
+@router.get('/places/viewport', responses=_errors)
+def viewport_places(request: Request,
+                    south: Annotated[float, Query(ge=-90, le=90, allow_inf_nan=False)],
+                    west: Annotated[float, Query(ge=-180, le=180, allow_inf_nan=False)],
+                    north: Annotated[float, Query(ge=-90, le=90, allow_inf_nan=False)],
+                    east: Annotated[float, Query(ge=-180, le=180, allow_inf_nan=False)],
+                    category: Literal['all', 'attraction', 'culture', 'nature', 'history',
+                                      'religion', 'food', 'shopping'] = 'all'):
+    width = east-west if east >= west else 360+east-west
+    area = (north-south)*width*111**2*math.cos(math.radians((south+north)/2))
+    if not 0 < north-south <= 1 or not 0 < width <= 1 or area > 1200:
+        raise HTTPException(422, '지도를 더 확대해 주세요. 한 번에 약 1,200km² 이내를 조회합니다.')
+    bounds = (south, west, north, east)
+    try:
+        result = execute(lambda: request.app.state.discovery.viewport(bounds, category))
+        items = enrich_viewport(result['items'], bounds, guides_dir(request))
+        return {**result, 'items': items, 'partial': False, 'bounds': bounds,
+                'notice': ('현재 영역의 공개 지도 장소입니다. 등록되지 않은 장소는 빠질 수 있으며 '
+                           '평점은 확인된 조사 자료만 표시합니다.'),
+                'attribution': '© OpenStreetMap contributors / Wikidata · Trip.com 조사 시점 평점'}
+    except HTTPException as exc:
+        if exc.status_code not in (429, 503):
+            raise
+        return {'items': enrich_viewport([], bounds, guides_dir(request)), 'partial': True,
+                'truncated': False, 'limit': 500, 'bounds': bounds,
+                'notice': f'{exc.detail} 현재는 조사된 장소만 표시합니다. 다시 조회해 주세요.',
+                'attribution': 'Wikidata / Trip.com 조사 자료'}

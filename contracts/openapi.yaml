@@ -52,6 +52,63 @@ security:
   - participantToken: []
 
 paths:
+  /api/explore/places/viewport:
+    get:
+      summary: 현재 지도 영역의 전 세계 장소와 확인된 평점 조회
+      description: >-
+        국가·도시 제한 없이 Overpass 공개 장소와 조사된 가이드를 결합한다.
+        위도·경도 폭 각각 1도 이내, 면적 약 1200km² 이하만 허용한다.
+        west > east는 날짜변경선을 통과하는 영역이다. 공개 지도 최대 500건이며
+        truncated=true이면 확대해야 한다. 외부 조회 실패는 partial=true와 안내를 반환한다.
+        별점은 확인된 Trip.com 조사 자료만 포함하며 없으면 review 필드를 생략한다.
+      parameters:
+        - name: south
+          in: query
+          required: true
+          schema: {type: number, minimum: -90, maximum: 90}
+        - name: west
+          in: query
+          required: true
+          schema: {type: number, minimum: -180, maximum: 180}
+        - name: north
+          in: query
+          required: true
+          schema: {type: number, minimum: -90, maximum: 90}
+        - name: east
+          in: query
+          required: true
+          schema: {type: number, minimum: -180, maximum: 180}
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [all, attraction, culture, nature, history, religion, food, shopping]
+            default: all
+      responses:
+        '200':
+          description: 영역 장소·조사 자료, 조회 한계 및 부분 결과 여부
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, partial, truncated, limit, bounds, notice, attribution]
+                properties:
+                  items: {type: array, items: {type: object}}
+                  partial: {type: boolean}
+                  truncated: {type: boolean}
+                  limit: {type: integer}
+                  bounds: {type: array, items: {type: number}, minItems: 4, maxItems: 4}
+                  notice: {type: string}
+                  attribution: {type: string}
+        '422':
+          description: 유효하지 않거나 너무 넓은 영역
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Error'}
+        '429':
+          description: 조회 혼잡 (부분 결과로 안내될 수 있음)
+        '503':
+          description: 외부 조회 실패 (부분 결과로 안내될 수 있음)
   /api/explore/places/search:
     get:
       tags: [explore]

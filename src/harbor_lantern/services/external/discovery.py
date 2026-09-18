@@ -15,6 +15,57 @@ from harbor_lantern.domain.models import LatLng
 from harbor_lantern.services.external.ports import ExternalUnavailable
 
 USER_AGENT = "HarborLantern/0.2 (personal travel planner)"
+VIEWPORT_LIMIT = 500
+
+
+def in_bounds(place, bounds):
+    south, west, north, east = bounds
+    lat, lng = place.get('lat'), place.get('lng')
+    return (isinstance(lat, (int, float)) and isinstance(lng, (int, float))
+            and math.isfinite(lat) and math.isfinite(lng) and south <= lat <= north
+            and (west <= lng <= east if west <= east else lng >= west or lng <= east))
+
+
+def viewport_place(row):
+    """Only published OSM facts become descriptions/tips; stars are never inferred."""
+    tags, point = row.get('tags') or {}, row.get('center') or row
+    if row.get('type') not in {'node', 'way', 'relation'} or not tags.get('name'):
+        return None
+    try:
+        lat, lng, osm_id = float(point['lat']), float(point['lon']), int(row['id'])
+    except (KeyError, ValueError, TypeError):
+        return None
+    if not math.isfinite(lat) or not math.isfinite(lng) or not -90 <= lat <= 90 or not -180 <= lng <= 180:
+        return None
+    source = f'https://www.openstreetmap.org/{row["type"]}/{osm_id}'
+    fetched = datetime.now(UTC).isoformat()
+    def text(key, limit=400):
+        return str(tags.get(key) or '')[:limit]
+    tips = []
+    for key, label in [('opening_hours', '영업시간 표기'), ('fee', '입장료 표기'),
+                       ('wheelchair', '휠체어 접근 표기'), ('reservation', '예약 표기'), ('access', '출입 조건 표기')]:
+        value = text(key, 200)
+        if value:
+            translated = {'fee': {'yes': '유료', 'no': '무료'},
+                          'wheelchair': {'yes': '가능', 'no': '불가', 'limited': '제한적'},
+                          'reservation': {'yes': '예약 가능', 'required': '예약 필수'},
+                          'access': {'yes': '가능', 'no': '불가', 'customers': '이용 고객',
+                                     'private': '사유지'}}.get(key, {}).get(value, value)
+            tips.append({'text': f'{label}: {translated}. 방문 전 현장·공식 안내를 확인하세요.',
+                         'evidence': f'OpenStreetMap {key}={value}', 'source_url': source})
+    return {
+        'id': f'{row["type"]}/{osm_id}', 'wikidata_id': text('wikidata'),
+        'name': text('name:ko') or text('name'), 'name_original': text('name'), 'lat': lat, 'lng': lng,
+        'category': (text('tourism') or text('historic') or text('amenity') or text('leisure')
+                     or text('natural') or text('shop') or 'place'),
+        'address': ' '.join(filter(None, [text('addr:city'), text('addr:street'), text('addr:housenumber')])),
+        'description': text('description:ko', 1500) or text('description', 1500) or text('description:en', 1500),
+        'description_source': {'url': source, 'title': text('name'), 'license': 'ODbL',
+                               'license_url': 'https://www.openstreetmap.org/copyright', 'retrieved_at': fetched},
+        'hours_text': text('opening_hours', 2000), 'tips': tips,
+        'website': safe_link(tags.get('website') or tags.get('contact:website')),
+        'source': 'OpenStreetMap', 'source_url': source, 'fetched_at': fetched,
+    }
 
 
 def safe_link(value):
@@ -60,7 +111,7 @@ class DiscoveryProvider:
         except (httpx.HTTPError, ValueError) as exc:
             raise ExternalUnavailable("장소 제공자에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요.") from exc
 
-    def _overpass(self, query):
+    def _overpass(self, query, timeout=10):
         configured = os.environ.get("HL_DISCOVERY_OVERPASS_URL")
         endpoints = [configured] if configured else [
             "https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter"]
@@ -68,7 +119,7 @@ class DiscoveryProvider:
             if self._cooldown.get(endpoint, 0) > time.monotonic():
                 continue
             try:
-                document = self._request("POST", endpoint, data={"data": query}, timeout=10)
+                document = self._request("POST", endpoint, data={"data": query}, timeout=timeout)
                 if document.get("remark"):
                     raise ExternalUnavailable("장소 조회가 시간 내 완료되지 않았습니다.")
                 return document
@@ -195,6 +246,36 @@ class DiscoveryProvider:
                 unique.append(place)
             return unique
         return self._cached(("places", round(lat, 4), round(lng, 4), radius, restaurants_only), fetch)
+
+    def viewport(self, bounds, category='all'):
+        """A user-visible viewport only; no Nominatim fallback, pagination, or world scraping."""
+        def fetch():
+            box = '(' + ','.join(str(float(v)) for v in bounds) + ')'
+            groups = {
+                'attraction': ['["tourism"~"^(attraction|zoo|aquarium|theme_park|artwork)$"]'],
+                'culture': ['["tourism"~"^(museum|gallery)$"]', '["amenity"="arts_centre"]'],
+                'history': ['["historic"]'],
+                'nature': ['["leisure"~"^(park|garden|nature_reserve)$"]',
+                           '["natural"~"^(beach|peak|waterfall)$"]', '["tourism"="viewpoint"]'],
+                'religion': ['["amenity"="place_of_worship"]'],
+                'food': ['["amenity"~"^(restaurant|cafe|fast_food)$"]'],
+                'shopping': ['["amenity"="marketplace"]', '["shop"="mall"]'],
+            }
+            selectors = [s for group in groups.values() for s in group] if category == 'all' else groups[category]
+            query = '[out:json][timeout:15];(' + ''.join(f'nwr{box}{s}["name"];' for s in selectors)
+            query += f');out center {VIEWPORT_LIMIT + 1};'
+            document = self._overpass(query, timeout=18)
+            rows = document.get('elements', [])
+            unique = {}
+            for row in rows[:VIEWPORT_LIMIT]:
+                place = viewport_place(row)
+                if place and in_bounds(place, bounds):
+                    if category != 'all':
+                        place['category_group'] = category
+                    unique[place['id']] = place
+            return {'items': list(unique.values()), 'truncated': len(rows) > VIEWPORT_LIMIT,
+                    'limit': VIEWPORT_LIMIT}
+        return self._cached(('viewport', category, *bounds), fetch)
 
     @property
     def reviews_enabled(self):
