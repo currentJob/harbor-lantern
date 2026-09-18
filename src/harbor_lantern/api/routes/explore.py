@@ -28,10 +28,11 @@ from harbor_lantern.api.schemas import GuideCityDetailOut, GuideListOut
 from harbor_lantern.domain.geo import haversine_m
 from harbor_lantern.domain.guide import build_guide_plan
 from harbor_lantern.domain.models import LatLng
-from harbor_lantern.domain.planner import build_plan
+from harbor_lantern.domain.planner import build_plan, opening_windows, travel_minutes
 from harbor_lantern.services.external.ports import ExternalUnavailable
 from harbor_lantern.services.external.reviews import collect_reviews, review_summary
 from harbor_lantern.services.guides import CITY_ID_PATTERN, CityGuide, find_cities, load_city, load_index
+from harbor_lantern.services.ratings import city_ratings, rated_spots
 
 router = APIRouter(prefix="/api/explore", tags=["explore"])
 _slots = threading.BoundedSemaphore(2)
@@ -82,6 +83,7 @@ class PlanRequest(BaseModel):
     interests: Literal["mixed", "culture", "nature"] = "mixed"
     radius_m: int = Field(default=5000, ge=500, le=10000)
     use_reviews: bool = False
+    use_ratings: bool = True
 
     @model_validator(mode="after")
     def dates(self):
@@ -145,7 +147,7 @@ def guides(
     index = load_index(guides_dir(request))
     cities = find_cities(q, country, index)
     return {
-        "cities": cities,
+        "cities": [{**c, "rated_count": len(city_ratings(c["city_id"]))} for c in cities],
         "counts": index.counts,
         "sources": list(index.sources),
         "known_gaps": list(index.known_gaps),
@@ -180,7 +182,7 @@ def guide_detail(
         "harvest": guide.harvest,
         "sources": list(guide.sources),
         "known_gaps": list(guide.known_gaps),
-        "spots": list(guide.spots),
+        "spots": rated_spots(guide.city_id, guide.spots),
         "notice": GRADE_NOTICE[grade].format(retrieved_at=guide.retrieved_at),
     }
 
@@ -188,11 +190,12 @@ def guide_detail(
 def guided_plan(guide: CityGuide, body: PlanRequest, provider=None) -> dict[str, Any]:
     """구운 도시로 만든 일정. use_reviews=False인 기본 경로는 외부 호출 0건이다."""
     grade = grade_of(guide.grade)
-    spots = guide.spots
+    spots = rated_spots(guide.city_id, guide.spots) if body.use_ratings else guide.spots
     evidence = None
     if body.use_reviews and provider is not None:
         evidence = collect_reviews(provider, list(spots), True)
-        spots = [{**s, "review": evidence[s["id"]]} for s in spots]
+        spots = [{**s, "review": evidence[s["id"]] if evidence[s["id"]]["status"] == "matched"
+                  else s.get("review", evidence[s["id"]])} for s in spots]
     result = build_guide_plan(
         {**guide.as_city(), "grade": grade},
         spots,
@@ -207,6 +210,12 @@ def guided_plan(guide: CityGuide, body: PlanRequest, provider=None) -> dict[str,
         result["notice"] += (" 리뷰 확인 장소만 평가 수 보정 점수로 우선순위를 조정했습니다."
                              if result["review_summary"]["counts"].get("matched") else
                              " 리뷰를 확인하지 못해 기존 가이드 우선순위를 사용했습니다.")
+    result["rating_summary"] = {
+        "source": "Trip.com", "matched": sum(
+            s.get("review", {}).get("status") == "matched"
+            and s.get("review", {}).get("source") == "Trip.com" for s in spots),
+        "enabled": body.use_ratings, "notice": "평점과 리뷰 수를 보정한 조사 시점 자료입니다. 실시간 평점이 아닙니다.",
+    }
     result["guide_city"] = {
         "city_id": guide.city_id,
         "name_ko": guide.name_ko,
@@ -271,3 +280,66 @@ def nearby(request: Request, lat: Annotated[float, Query(ge=-90, le=90, allow_in
     if any(p.get("limited_search") for p in places):
         notice += " 제공자 혼잡으로 대체 검색 결과 일부를 표시합니다."
     return {"places": results[:30], "reviews_enabled": provider.reviews_enabled, "notice": notice}
+
+
+class EditablePlace(Destination):
+    model_config = ConfigDict(extra="allow")
+    id: str = Field(max_length=120)
+    hours_text: str = Field(default="", max_length=2000)
+    opening_hours: str = Field(default="", max_length=2000)
+
+
+class EditableStop(BaseModel):
+    place: EditablePlace
+    duration: int = Field(default=90, ge=5, le=720)
+    completed: bool = False
+
+
+class EditableDay(BaseModel):
+    date: date
+    title: str = Field(default="", max_length=200)
+    area: str = Field(default="", max_length=200)
+    color: str = Field(default="#245548", pattern=r"^#[0-9a-fA-F]{6}$")
+    stops: list[EditableStop] = Field(max_length=40)
+
+
+class RecalculateRequest(BaseModel):
+    days: list[EditableDay] = Field(min_length=1, max_length=14)
+
+
+@router.post("/recalculate")
+def recalculate(body: RecalculateRequest):
+    """Recompute a user's explicit order without dropping or silently rearranging stops."""
+    result = []
+    for day in body.days:
+        cursor, previous, stops = 9 * 60, None, []
+        for stop in day.stops:
+            place = stop.place.model_dump()
+            position = LatLng(place["lat"], place["lng"])
+            distance = round(haversine_m(previous, position)) if previous else 0
+            travel = travel_minutes(distance) if previous else 0
+            eta = cursor + travel
+            windows = opening_windows(place.get("hours_text") or place.get("opening_hours"), day.date.weekday())
+            warnings = []
+            status = "unverified"
+            if windows is not None:
+                feasible = [max(eta, a) for a, b in windows if max(eta, a) + stop.duration <= b]
+                if feasible:
+                    eta = min(feasible)
+                    status = "weekly_hours"
+                else:
+                    warnings.append("예상 방문·체류 시간이 영업시간 밖입니다. 순서나 날짜를 조정하세요.")
+            end = eta + stop.duration
+            if end >= 24 * 60:
+                warnings.append("일정이 다음 날까지 이어집니다. 장소를 다른 날로 옮겨 주세요.")
+            def hhmm(value):
+                return f"{value // 60:02}:{value % 60:02}"
+            stops.append({"place": place, "arrival": hhmm(eta), "departure": hhmm(end),
+                          "duration": stop.duration, "completed": stop.completed, "warnings": warnings,
+                          "travel_minutes": travel, "distance_m": distance, "hours_status": status})
+            previous, cursor = position, end
+        result.append({"date": day.date.isoformat(), "weekday": day.date.weekday(), "title": day.title,
+                       "area": day.area, "color": day.color, "stops": stops,
+                       "distance_m": sum(s["distance_m"] for s in stops),
+                       "travel_minutes": sum(s["travel_minutes"] for s in stops)})
+    return {"days": result, "scheduled_count": sum(len(d["stops"]) for d in result)}

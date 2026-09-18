@@ -10,17 +10,20 @@ export function withoutReviews(plan) {
   const copy = JSON.parse(JSON.stringify(plan));
   delete copy.review_summary;
   for (const day of copy.days || []) {
-    for (const stop of day.stops || []) delete stop.place.review;
+    for (const stop of day.stops || []) {
+      if (stop.place.review?.source !== 'Trip.com') delete stop.place.review;
+    }
   }
   return copy;
 }
 
 export function reviewHtml(review) {
   if (!review || review.status !== 'matched') return `<p class="memo">${esc(STATUS[review?.status] || '후기 미제공')}</p>`;
-  return `<div class="review-evidence"><p><b translate="no">Google Maps</b> · ${
+  const snapshot = review.source === 'Trip.com';
+  return `<div class="review-evidence"><p><b translate="no">${snapshot ? 'Trip.com' : 'Google Maps'}</b> · ${
     review.rating == null ? '평점 미제공' : `★ ${esc(review.rating)} / 5`
   } · ${esc(review.review_count ?? '미제공')}개 평가 ${link(review.source_url, '장소 원문')}</p>
-  <p class="memo">조회 ${esc(review.fetched_at)} · 관련성순 후기 일부</p>
+  <p class="memo">조회 ${esc((review.fetched_at || '').slice(0,10))} · ${snapshot ? '평점·리뷰 수 스냅샷' : '관련성순 후기 일부'}</p>
   ${(review.reviews || []).map(r => `<blockquote><p>${esc(r.text)}</p><small>${
     link(r.author_url, r.author) || esc(r.author)
   } · ${esc(r.rating ?? '미제공')}★ · ${esc(r.date)} ${link(r.url, '후기 원문')}</small></blockquote>`).join('')}

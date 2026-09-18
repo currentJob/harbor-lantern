@@ -5,6 +5,7 @@ import { TripMap } from './map.js';
 import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml, stopDomId } from './render/guide.js';
 import { dayPickerLabel, planMapDays, planMapSpotCount, unmappedCount } from './render/planmap.js';
 import { reviewHtml, routeHtml, withoutReviews } from './render/reviewplan.js';
+import { initPlatform, confidence } from './platform.js';
 
 const $ = (id) => document.getElementById(id);
 let destination = null;
@@ -108,13 +109,11 @@ $('planForm').addEventListener('submit', (event) => {
     const located = destination && Number.isFinite(destination.lat) && Number.isFinite(destination.lng);
     const result = await apiRequest('plan', {
       ...(city ? {city_id:city.city_id} : {}), ...(located ? {destination} : {}),
-      start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value),use_reviews:$('planUseReviews').checked});
+      start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value),use_reviews:$('planUseReviews').checked,use_ratings:$('planUseRatings').checked});
     activePlan = result;
     let stored = true;
     if (result.scheduled_count) {
-      saved = [withoutReviews(result), ...saved].slice(0,10);
-      try { localStorage.setItem('hl_explore_plans', JSON.stringify(saved)); } catch { stored = false; }
-      renderSaved();
+      stored = savePlan(result);
     }
     renderPlan(result);
     notice(result.scheduled_count ? `${result.scheduled_count}곳을 연결했어요. ${result.notice}${stored ? '' : ' 저장 공간이 부족해 이번 화면에서만 확인할 수 있어요.'}` : '조건에 맞는 장소를 찾지 못했어요. 주변 범위를 넓히거나 다른 동네를 선택해 주세요.', !result.scheduled_count);
@@ -160,7 +159,9 @@ function focusStopCard(spotId) {
 function bootMap() {
   if (mapBooted) return Boolean(tripMap);
   mapBooted = true;
-  const map = new TripMap('planMap', {onMarkerClick:(dayIndex, spotId) => focusStopCard(spotId), onTileTrouble:mapNotice});
+  const map = new TripMap('planMap', {onMarkerClick:(dayIndex, spotId) => {
+    window.dispatchEvent(new CustomEvent('hl:pin',{detail:{day:dayIndex}})); focusStopCard(spotId);
+  }, onTileTrouble:mapNotice});
   tripMap = map.init() ? map : null;   // 세우지 못했으면 이유는 onTileTrouble 이 이미 적었다
   return Boolean(tripMap);
 }
@@ -174,7 +175,6 @@ function renderPlanMap(plan) {
   if (!pins || !bootMap()) return;
   tripMap.render(mapDays);
   for (const day of mapDays) {
-    if (!day.spots.length) continue;
     const option = document.createElement('option');
     option.value = String(day.day_index); option.textContent = dayPickerLabel(day);
     $('planMapDay').appendChild(option);
@@ -200,18 +200,21 @@ $('planMapLocate').addEventListener('click', () => {
 });
 
 function renderPlan(plan) {
+  window.dispatchEvent(new Event('hl:show-itinerary'));
   activePlan = plan; $('planSection').hidden = false;
   $('planTitle').textContent = plan.destination.name.split(',')[0] + ' 여행';
   $('planMeta').textContent = `${plan.start_date} — ${plan.end_date} · ${plan.scheduled_count}곳 · 이동시간은 추정값`;
   if (plan.review_summary) $('planMeta').textContent += ` · 리뷰 확인 ${plan.review_summary.counts.matched || 0}곳. ${plan.review_summary.notice}`;
+  if (plan.rating_summary?.enabled) $('planMeta').textContent += ` · Trip.com 평점·리뷰 수 반영 (${plan.rating_summary.matched}곳 확인)`;
   // 등급 표시는 **두 경로 모두에서 항상** 있다 (AC-085 · AC-077). 폴백 일정도 예외가 아니다.
   $('guideGrade').innerHTML = gradeBadgeHtml(plan);
   const guided = isGuidePlan(plan);
   // 출처·한계는 접어서라도 항상 붙인다 — 한계를 모르면 이 목록을 "그 도시 전부"로 읽는다.
   $('guideSources').innerHTML = guided ? sourcesHtml(plan.guide_city) : '';
   renderPlanMap(plan);
-  if (guided) { $('planDays').innerHTML = daysHtml(plan); return; }
+  if (guided) { $('planDays').innerHTML = daysHtml(plan); window.dispatchEvent(new CustomEvent('hl:plan',{detail:{plan,map:tripMap}})); return; }
   $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map((stop,order) => `<div class="stop" id="${stopDomId(index,order)}"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}${order ? routeHtml(day.stops[order-1].place, stop.place) : ''}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
+  window.dispatchEvent(new CustomEvent('hl:plan',{detail:{plan,map:tripMap}}));
 }
 function renderSaved() {
   $('savedSection').hidden = !saved.length; $('savedPlans').replaceChildren();
@@ -227,6 +230,12 @@ function renderSaved() {
     $('savedPlans').appendChild(button);
   });
 }
+function savePlan(plan) {
+  plan.local_id ||= `trip-${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+  const next = [withoutReviews(plan), ...saved.filter(p => p.local_id !== plan.local_id)].slice(0,10);
+  try { localStorage.setItem('hl_explore_plans',JSON.stringify(next)); saved=next; renderSaved(); return true; }
+  catch { notice('저장 공간이 부족합니다. 일정 내려받기로 보관해 주세요.',true); return false; }
+}
 $('downloadPlan').addEventListener('click', () => {
   if (!activePlan) return;
   const blob = new Blob([JSON.stringify(withoutReviews(activePlan),null,2)], {type:'application/json'});
@@ -238,10 +247,12 @@ async function findFood(origin) {
   const result = await apiRequest(`nearby?lat=${origin.lat}&lng=${origin.lng}&radius_m=${$('nearRadius').value}`);
   foods = result.places; $('foodNotice').textContent = result.notice;
   renderFoods(); notice(foods.length ? `${foods.length}곳을 찾았어요.` : '이 반경 안에서 음식점을 찾지 못했어요. 검색 반경을 넓혀 주세요.');
+  window.dispatchEvent(new CustomEvent('hl:food',{detail:{places:foods,origin}}));
 }
 function renderFoods() {
-  const ordered = foods.slice().sort($('foodSort').value === 'rating' ? (a,b) => (b.rating ?? -1)-(a.rating ?? -1) || a.distance_m-b.distance_m : (a,b) => a.distance_m-b.distance_m);
-  $('foodResults').innerHTML = ordered.map(place => `<article class="place-card"><p class="eyebrow">${place.distance_m < 1000 ? place.distance_m + 'm' : (place.distance_m/1000).toFixed(1) + 'km'} AWAY</p>${placeBody(place)}</article>`).join('');
+  const mode=$('foodSort').value;
+  const ordered = foods.slice().sort((a,b) => (mode==='confidence' ? confidence(b.rating,b.review_count)-confidence(a.rating,a.review_count) : mode==='rating' ? (b.rating??-1)-(a.rating??-1) : 0) || a.distance_m-b.distance_m);
+  $('foodResults').innerHTML = ordered.length ? ordered.map(place => `<article class="place-card" data-food="${esc(place.id)}"><p class="eyebrow">${place.distance_m < 1000 ? place.distance_m + 'm' : (place.distance_m/1000).toFixed(1) + 'km'} 거리</p>${placeBody(place)}</article>`).join('') : '<p class="empty">이 반경에는 검색된 음식점이 없습니다. 반경을 넓혀 다시 찾아보세요.</p>';
 }
 $('findNearby').addEventListener('click', event => action(event.currentTarget, async () => {
   if (!navigator.geolocation) return notice('이 브라우저는 위치 조회를 지원하지 않습니다. 여행지 기준으로 검색해 주세요.', true);
@@ -260,3 +271,9 @@ const today = new Date();
 const dateText = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 $('startDate').value = dateText(today); today.setDate(today.getDate()+3); $('endDate').value = dateText(today);
 renderSaved();
+initPlatform({apiRequest,getPlan:()=>activePlan,renderPlan,savePlan,notice,action,findFood,
+  selectCity:entry=>{
+    city=entry;destination={name:entry.name_ko,lat:entry.center.lat,lng:entry.center.lng};
+    $('destinationQuery').value=entry.name_ko;
+    $('selectedDestination').textContent=cityLabel(entry);$('selectedDestination').hidden=false;
+  }});

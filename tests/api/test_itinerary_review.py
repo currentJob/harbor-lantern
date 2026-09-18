@@ -143,7 +143,8 @@ def test_explore_review_option_without_key(app, client, monkeypatch):
     app.state.discovery = FakeDiscovery()
     for target in [{"city_id": "hong-kong"}, {"destination": {"name": "HK", "lat": 22.3, "lng": 114.17}}]:
         response = client.post("/api/explore/plan", json={**target, "start_date": "2026-10-05",
-                                                       "end_date": "2026-10-08", "use_reviews": True})
+                                                       "end_date": "2026-10-08", "use_reviews": True,
+                                                       "use_ratings": False})
         assert response.status_code == 200, response.text
         assert response.headers["cache-control"] == "no-store"
         body = response.json()

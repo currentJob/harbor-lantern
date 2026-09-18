@@ -27,7 +27,8 @@ CSS = WEB / "css" / "app.css"
 #   - OpenRice: 미쉐린 목록의 "리뷰" 링크(REQ-019). **우리가 부르는 API 가 아니라
 #     사용자가 누를 때 열리는 링크다.** 리뷰를 무료로 가져올 경로가 없어 링크로 넘긴다.
 ALLOWED_RUNTIME_HOSTS = {
-    "{s}.basemaps.cartocdn.com",
+    "tile.openstreetmap.org",
+    "www.openstreetmap.org",
     "www.google.com",
     "www.openrice.com",
     # 지도 저작권 표기에 쓰이는 도메인 문자열이 필요해지면 여기에 명시적으로 추가한다.

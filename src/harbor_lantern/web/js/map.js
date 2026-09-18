@@ -10,8 +10,8 @@
 
 import { escapeHtml } from './format.js';
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-const TILE_ATTRIBUTION = '© OpenStreetMap · © CARTO';
+const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const TILE_ATTRIBUTION = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
 const TILE_ERROR_WINDOW_MS = 10000;
 const TILE_ERROR_THRESHOLD = 5;
 
@@ -70,7 +70,7 @@ export class TripMap {
     try {
       this.map = L.map(this.containerId, { zoomControl: false, attributionControl: false })
         .setView([22.30, 114.10], 11);
-      const tiles = L.tileLayer(TILE_URL, { subdomains: 'abcd', maxZoom: 19 });
+      const tiles = L.tileLayer(TILE_URL, { maxZoom: 19, referrerPolicy: 'strict-origin-when-cross-origin' });
       tiles.on('tileerror', () => this._noteTileError());
       tiles.addTo(this.map);
       L.control.attribution({ prefix: false }).addAttribution(TILE_ATTRIBUTION).addTo(this.map);
@@ -104,6 +104,8 @@ export class TripMap {
   }
 
   _pin(color, label) {
+    color = ({'#22d3ee':'#28726d','#f472b6':'#a56a65','#ff2e88':'#a56a65',
+      '#fbbf24':'#a58135','#f7b733':'#a58135','#a78bfa':'#7a7296'})[color] || color;
     return L.divIcon({
       className: '',
       iconSize: [22, 22],
@@ -221,8 +223,15 @@ export class TripMap {
   }
 
   focusDay(day) {
-    if (!this.map || !day || !day.spots.length) return;
-    this.map.flyTo([day.spots[0].lat, day.spots[0].lng], 13);
+    if (!this.map) return;
+    if (this.routeLine) { this.routeLine.remove(); this.routeLine = null; }
+    const selected = new Set(day?.spots.map(spot => spot.id) || []);
+    for (const [id, marker] of this.markers) marker.setOpacity(selected.has(id) ? 1 : 0.35);
+    if (!day?.spots.length) return;
+    const points = day.spots.map(spot => [spot.lat, spot.lng]);
+    this.invalidate();
+    this.map.fitBounds(points, { padding: [28, 28], maxZoom: 15, animate: false });
+    this.routeLine = L.polyline(points, { color: '#315e4d', weight: 3, dashArray: '6 8', opacity: 0.7 }).addTo(this.map);
   }
 
   showMe(me) {

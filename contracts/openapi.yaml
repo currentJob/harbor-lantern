@@ -52,6 +52,45 @@ security:
   - participantToken: []
 
 paths:
+  /api/explore/recalculate:
+    post:
+      tags: [explore]
+      summary: 편집한 날짜별 일정의 이동시간과 영업시간 재계산
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [days]
+              properties:
+                days:
+                  type: array
+                  minItems: 1
+                  maxItems: 14
+                  items:
+                    type: object
+                    required: [date, stops]
+                    properties:
+                      date: {type: string, format: date}
+                      stops:
+                        type: array
+                        maxItems: 40
+                        items:
+                          type: object
+                          required: [place]
+                          properties:
+                            place:
+                              type: object
+                              required: [id, name, lat, lng]
+                            duration: {type: integer, minimum: 5, maximum: 720, default: 90}
+                            completed: {type: boolean, default: false}
+      responses:
+        '200':
+          description: 원래 순서를 보존한 일정과 영업시간 경고. 서버에 저장하지 않음.
+        '422':
+          description: 날짜, 좌표, 장소 수 또는 체류시간 오류
   /api/explore/destinations:
     get:
       tags:
@@ -948,6 +987,10 @@ components:
         `city_id` 가 있으면 구운 가이드 경로로, 없으면 기존 폴백(Overpass) 경로로 간다.
         `city_id` 가 굽지 않은 도시인데 `destination` 도 없으면 422 다.
       properties:
+        use_ratings:
+          type: boolean
+          default: true
+          description: 조사 시점 Trip.com 평점·리뷰 수를 추천 우선순위에 반영한다. 외부 호출 없음.
         use_reviews:
           type: boolean
           default: false
