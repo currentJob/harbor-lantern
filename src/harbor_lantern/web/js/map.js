@@ -8,7 +8,15 @@
  * 나머지 자산은 전부 저장소 안에 있다(AC-042).
  */
 
-import { escapeHtml } from './format.js';
+import { escapeHtml, link } from './format.js';
+
+export function ratingLabel(place) {
+  const evidence = place.review || place;
+  return Number.isFinite(evidence.rating) && evidence.rating >= 1 && evidence.rating <= 5
+    && Number.isInteger(evidence.review_count) && evidence.review_count > 0
+    ? `★ ${evidence.rating.toFixed(1)} · ${evidence.review_count.toLocaleString('ko-KR')}개 평가`
+    : '평가 정보 없음';
+}
 
 const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const TILE_ATTRIBUTION = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
@@ -149,11 +157,12 @@ export class TripMap {
           iconSize: numbered ? [44, 44] : [14, 14],
           iconAnchor: numbered ? [22, 22] : [7, 7],
           popupAnchor: [0, -8],
-          html: numbered ? `<div class="picker-pin">${index + 1}</div>` : '<div class="nearpin"></div>',
+          html: numbered ? `<div class="picker-pin">${index + 1}</div><span class="picker-rating">${escapeHtml(ratingLabel(place))}</span>` : '<div class="nearpin"></div>',
         }),
       }).addTo(this.map).bindPopup(
         `<b>${escapeHtml(place.name)}</b><br>${escapeHtml(place.category_label)} · `
-        + `${Math.round(place.distance_m)}m`,
+        + `${Math.round(place.distance_m)}m`
+        + (numbered ? `<p class="map-rating">${escapeHtml(ratingLabel(place))}</p>${place.review ? `${link(place.review.source_url,place.review.source || '평가 출처')} · 조회 ${escapeHtml((place.review.fetched_at || '').slice(0,10))}` : ''}` : ''),
       );
       if (onPick) marker.on('click', () => onPick(place));
       this.nearbyMarkers.push(marker);

@@ -4,6 +4,20 @@ from tests.static.test_plan_map import PROJECT_ROOT, _run_node, node_only
 
 
 @node_only
+def test_map_rating_labels_distinguish_missing_data():
+    module = (PROJECT_ROOT / 'src/harbor_lantern/web/js/map.js').as_uri()
+    result = _run_node(f"""
+        import {{ratingLabel}} from {module!r};
+        console.log(JSON.stringify([
+          ratingLabel({{review:{{rating:4.6,review_count:1039}}}}),
+          ratingLabel({{}}),ratingLabel({{review:{{rating:4.6}}}}),
+          ratingLabel({{review:{{rating:9,review_count:3}}}})
+        ]));
+    """)
+    assert result == ['★ 4.6 · 1,039개 평가', '평가 정보 없음', '평가 정보 없음', '평가 정보 없음']
+
+
+@node_only
 def test_picker_merges_verified_identity_preserves_sources_and_avoids_false_ratings():
     module = (PROJECT_ROOT / 'src/harbor_lantern/web/js/place-picker.js').as_uri()
     result = _run_node(f"""
