@@ -181,6 +181,7 @@ export function spotBody(spot) {
     area ? `<span class="pill">${esc(area)}</span>` : ''].join('');
   const name = text(source.name) || text(source.name_ko);
   return `${pills}<h3>${esc(name)}${original ? ` <span class="orig" translate="no">${esc(original)}</span>` : ''}</h3>
+    ${source.source === 'OpenStreetMap' ? `<p class="hint">${esc(source.address || '')} · ${link(source.source_url,'© OpenStreetMap contributors')}</p>` : ''}
     ${descriptionHtml(source)}${hoursHtml(source)}${tipsHtml(source)}${recommendationsHtml(source)}
     ${source.review ? reviewHtml(source.review) : ''}
     ${Number.isFinite(source.lat) && Number.isFinite(source.lng) ? link(directionsUrl(source.lat, source.lng), '현재 위치에서 길찾기') : ''}`;

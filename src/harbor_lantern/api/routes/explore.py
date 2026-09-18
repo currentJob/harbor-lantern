@@ -29,6 +29,7 @@ from harbor_lantern.domain.geo import haversine_m
 from harbor_lantern.domain.guide import build_guide_plan
 from harbor_lantern.domain.models import LatLng
 from harbor_lantern.domain.planner import build_plan, opening_windows, travel_minutes
+from harbor_lantern.domain.util import parse_hhmm
 from harbor_lantern.services.external.ports import ExternalUnavailable
 from harbor_lantern.services.external.reviews import collect_reviews, review_summary
 from harbor_lantern.services.guides import CITY_ID_PATTERN, CityGuide, find_cities, load_city, load_index
@@ -293,6 +294,7 @@ class EditableStop(BaseModel):
     place: EditablePlace
     duration: int = Field(default=90, ge=5, le=720)
     completed: bool = False
+    fixed_start: str | None = Field(default=None, pattern=r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 
 
 class EditableDay(BaseModel):
@@ -301,18 +303,57 @@ class EditableDay(BaseModel):
     area: str = Field(default="", max_length=200)
     color: str = Field(default="#245548", pattern=r"^#[0-9a-fA-F]{6}$")
     stops: list[EditableStop] = Field(max_length=40)
+    start_time: str = Field(default="09:00", pattern=r"^(?:[01]\d|2[0-3]):[0-5]\d$")
+
+
+class InsertStop(BaseModel):
+    day_index: int = Field(ge=0, le=13)
+    stop: EditableStop
 
 
 class RecalculateRequest(BaseModel):
     days: list[EditableDay] = Field(min_length=1, max_length=14)
+    insert: InsertStop | None = None
 
 
-@router.post("/recalculate")
+@router.post("/recalculate", responses={409: {"description": "이미 추가된 장소"}})
 def recalculate(body: RecalculateRequest):
     """Recompute a user's explicit order without dropping or silently rearranging stops."""
+    if body.insert is not None:
+        insertion = body.insert
+        if insertion.day_index >= len(body.days):
+            raise HTTPException(422, "추가할 날짜가 없습니다.")
+        day = body.days[insertion.day_index]
+        if len(day.stops) >= 40:
+            raise HTTPException(422, "하루 최대 40곳까지 추가할 수 있습니다.")
+        place = insertion.stop.place
+        for stop in day.stops:
+            old = stop.place
+            old_wd = old.model_extra.get("wikidata_id") or (old.id[3:] if old.id.startswith("wd:") else None)
+            new_wd = place.model_extra.get("wikidata_id") or (place.id[3:] if place.id.startswith("wd:") else None)
+            if (old.id == place.id or (old_wd and old_wd == new_wd)
+                    or (old.name.casefold() == place.name.casefold()
+                        and haversine_m(LatLng(old.lat, old.lng), LatLng(place.lat, place.lng)) < 50)):
+                raise HTTPException(409, "이 날짜에 이미 추가된 장소입니다.")
+        first = max((i + 1 for i, s in enumerate(day.stops) if s.completed), default=0)
+        # ponytail: exact best insertion in a fixed order (<=41 slots); no road-network/TSP solver.
+        candidates = []
+        for index in range(first, len(day.stops) + 1):
+            candidate = day.model_copy(update={"stops": day.stops[:index] + [insertion.stop] + day.stops[index:]})
+            computed = recalculate(RecalculateRequest(days=[candidate]))["days"][0]
+            score = (sum(len(s["warnings"]) for s in computed["stops"]), computed["distance_m"], index)
+            candidates.append((score, index, candidate))
+        _, index, chosen = min(candidates, key=lambda c: c[0])
+        days = list(body.days)
+        days[insertion.day_index] = chosen
+        result = recalculate(RecalculateRequest(days=days))
+        result["insertion"] = {"day_index": insertion.day_index, "stop_index": index,
+                               "notice": "시간 충돌이 적고 예상 이동거리가 가장 짧은 위치에 추가했습니다. "
+                                         "기존 순서는 유지하며 실제 도로 최단 경로는 아닙니다."}
+        return result
     result = []
     for day in body.days:
-        cursor, previous, stops = 9 * 60, None, []
+        cursor, previous, stops = parse_hhmm(day.start_time), None, []
         for stop in day.stops:
             place = stop.place.model_dump()
             position = LatLng(place["lat"], place["lng"])
@@ -322,8 +363,14 @@ def recalculate(body: RecalculateRequest):
             windows = opening_windows(place.get("hours_text") or place.get("opening_hours"), day.date.weekday())
             warnings = []
             status = "unverified"
+            if stop.fixed_start:
+                fixed = parse_hhmm(stop.fixed_start)
+                if eta > fixed:
+                    warnings.append(f"지정 시각 {stop.fixed_start}보다 약 {eta - fixed}분 늦게 도착합니다.")
+                eta = max(eta, fixed)
             if windows is not None:
-                feasible = [max(eta, a) for a, b in windows if max(eta, a) + stop.duration <= b]
+                feasible = [max(eta, a) for a, b in windows if max(eta, a) + stop.duration <= b
+                            and (not stop.fixed_start or a <= eta)]
                 if feasible:
                     eta = min(feasible)
                     status = "weekly_hours"
@@ -335,11 +382,23 @@ def recalculate(body: RecalculateRequest):
             def hhmm(value):
                 return f"{value // 60:02}:{value % 60:02}"
             stops.append({"place": place, "arrival": hhmm(eta), "departure": hhmm(end),
+                          "fixed_start": stop.fixed_start,
                           "duration": stop.duration, "completed": stop.completed, "warnings": warnings,
                           "travel_minutes": travel, "distance_m": distance, "hours_status": status})
             previous, cursor = position, end
         result.append({"date": day.date.isoformat(), "weekday": day.date.weekday(), "title": day.title,
+                       "start_time": day.start_time,
                        "area": day.area, "color": day.color, "stops": stops,
                        "distance_m": sum(s["distance_m"] for s in stops),
                        "travel_minutes": sum(s["travel_minutes"] for s in stops)})
     return {"days": result, "scheduled_count": sum(len(d["stops"]) for d in result)}
+
+
+@router.get("/places/search", responses=_errors)
+def search_places(request: Request, q: Annotated[str, Query(min_length=2, max_length=100)],
+                  lat: Annotated[float, Query(ge=-90, le=90, allow_inf_nan=False)],
+                  lng: Annotated[float, Query(ge=-180, le=180, allow_inf_nan=False)]):
+    if len(q.strip()) < 2:
+        raise HTTPException(422, "장소 이름을 두 글자 이상 입력하세요.")
+    return {"items": execute(lambda: request.app.state.discovery.search_places(q.strip(), lat, lng)),
+            "attribution": "© OpenStreetMap contributors", "notice": "도시 중심 50km 이내 검색 결과입니다."}

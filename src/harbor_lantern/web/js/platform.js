@@ -109,21 +109,50 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
           action(field,()=>edit(di,si,'duration',Number(field.value)));
         };
         controls.appendChild(duration);
+        const time = document.createElement('label');
+        time.innerHTML='방문 시각 <input type="time" aria-label="방문 시각">';
+        time.querySelector('input').value=stop.fixed_start || '';
+        time.querySelector('input').onchange=e=>action(e.target,()=>edit(di,si,'time',e.target.value || null));
+        controls.appendChild(time);
+        const auto=document.createElement('button');auto.textContent='시각 자동';auto.disabled=!stop.fixed_start;
+        auto.onclick=()=>action(auto,()=>edit(di,si,'time',null));controls.appendChild(auto);
       });
-      if (plan.guide_city?.city_id) {
+      const start=document.createElement('label');start.className='day-start';
+      start.innerHTML='하루 시작 <input type="time" aria-label="하루 시작 시각" required>';
+      start.querySelector('input').value=plan.days[di].start_time || '09:00';
+      start.querySelector('input').onchange=e=>{if(e.target.reportValidity())action(e.target,()=>edit(di,0,'start',e.target.value));};
+      dayEl.querySelector('.day-head').after(start);
+      {
         const add = document.createElement('button'); add.className='secondary add-place';
-        add.textContent='장소 추가'; dayEl.appendChild(add);
-        add.onclick=()=>action(add,async()=>{
-          const guide = await apiRequest('guides/'+encodeURIComponent(plan.guide_city.city_id));
-          const used = new Set(getPlan().days.flatMap(d=>d.stops.map(s=>s.place.id)));
-          const available = guide.spots.filter(p=>!used.has(p.id));
-          const select=document.createElement('select');select.setAttribute('aria-label','추가할 장소');
-          select.innerHTML='<option value="">추가할 장소 선택</option>'+available.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
-          if(!available.length) return notice('가이드의 모든 장소가 이미 일정에 포함되어 있습니다.');
-          add.replaceWith(select);
-          select.onchange=()=>{const place=available.find(p=>p.id===select.value);if(place)action(select,()=>edit(di,0,'add',place));};
-          select.focus();
-        });
+        add.textContent='관광지 검색해서 추가'; dayEl.appendChild(add);
+        add.onclick=()=>{
+          add.hidden=true;
+          const panel=document.createElement('section');panel.className='place-search';
+          panel.innerHTML=`<h3>Day ${di+1}에 갈 곳 찾기</h3><form><label>관광지 이름<input type="search" required minlength="2" maxlength="100" placeholder="예: 프라하 동물원, Prague Zoo" aria-label="관광지 이름"></label><button type="submit">검색</button></form><p class="hint">도시 중심 50km 이내를 실제 검색합니다. 결과가 없으면 현지명·영문명으로 시도하세요. 추가 시 시간 충돌과 예상 이동거리를 비교해 방문 위치를 정합니다.</p><p class="search-status" role="status"></p><div class="search-results"></div><button type="button" class="secondary close-search">닫기</button>`;
+          dayEl.appendChild(panel);panel.querySelector('input').focus();
+          panel.querySelector('.close-search').onclick=()=>{panel.remove();add.hidden=false;add.focus();};
+          panel.querySelector('form').onsubmit=e=>{
+            e.preventDefault();const q=panel.querySelector('input').value.trim();
+            if(q.length<2) return;
+            action(panel.querySelector('[type=submit]'),async()=>{
+              const status=panel.querySelector('.search-status'),results=panel.querySelector('.search-results');
+              status.textContent='관광지를 검색하고 있습니다…';results.replaceChildren();
+              try {
+                const origin=plan.destination;
+                const found=await apiRequest('places/search?'+new URLSearchParams({q,lat:origin.lat,lng:origin.lng}));
+                if(!panel.isConnected) return;
+                status.textContent=found.items.length ? `${found.items.length}곳 · ${found.attribution}` : '검색 결과가 없습니다. 영문명이나 현지명으로 다시 검색해 주세요.';
+                for(const place of found.items){
+                  const card=document.createElement('article');card.className='search-result';
+                  const duplicate=getPlan().days[di].stops.some(s=>s.place.id===place.id || (place.wikidata_id && (s.place.wikidata_id===place.wikidata_id || s.place.id==='wd:'+place.wikidata_id)));
+                  card.innerHTML=`<h4>${esc(place.name)}</h4><p>${esc(place.address)}</p><p class="hint">도시 중심에서 ${(place.distance_m/1000).toFixed(1)}km · 영업시간 ${esc(place.hours_text || '미확인')}</p>${link(place.source_url,'지도에서 위치 확인')} <button type="button" ${duplicate?'disabled':''}>${duplicate?'이미 이 날짜에 있음':'동선에 맞춰 추가'}</button>`;
+                  card.querySelector('button').onclick=e=>action(e.currentTarget,()=>edit(di,0,'add',place));
+                  results.appendChild(card);
+                }
+              } catch(error){status.textContent=error.message+' 다시 검색해 주세요.';}
+            });
+          };
+        };
       }
     });
     activateDay(selectedDay);
@@ -139,24 +168,33 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
     editing=true;
     try {
     const plan = structuredClone(getPlan()), stops = plan.days[di].stops;
+    let insertedIndex=null;
     if(kind==='check') stops[si].completed=!stops[si].completed;
     else {
       if(kind==='up' && si>0) [stops[si-1],stops[si]]=[stops[si],stops[si-1]];
       if(kind==='down' && si<stops.length-1) [stops[si+1],stops[si]]=[stops[si],stops[si+1]];
       if(kind==='remove') stops.splice(si,1);
       if(kind==='duration') stops[si].duration=target;
+      if(kind==='time') stops[si].fixed_start=target;
+      if(kind==='start') plan.days[di].start_time=target;
       if(kind==='add') {
         if(stops.length>=40) return notice('하루 최대 40곳까지 담을 수 있습니다.',true);
-        stops.push({place:target,duration:90,completed:false});
       }
       if(kind==='move') {plan.days[target].stops.push(stops.splice(si,1)[0]);selectedDay=target;}
       const minutes=t=>{const [h,m]=t.split(':').map(Number);return h*60+m;};
-      const days=plan.days.map(d=>({date:d.date,title:d.title||'',area:d.area||'',color:d.color||'#245548',stops:d.stops.map(s=>({place:s.place,duration:s.duration||Math.max(5,minutes(s.departure)-minutes(s.arrival)),completed:Boolean(s.completed)}))}));
-      const result=await apiRequest('recalculate',{days});
+      const days=plan.days.map(d=>({date:d.date,start_time:d.start_time||'09:00',title:d.title||'',area:d.area||'',color:d.color||'#245548',stops:d.stops.map(s=>({place:s.place,duration:s.duration||Math.max(5,minutes(s.departure)-minutes(s.arrival)),completed:Boolean(s.completed),fixed_start:s.fixed_start||null}))}));
+      const result=await apiRequest('recalculate',{days,...(kind==='add'?{insert:{day_index:di,stop:{place:target,duration:90}}}:{})});
       plan.days=result.days;plan.scheduled_count=result.scheduled_count;
+      insertedIndex=result.insertion?.stop_index ?? null;
+      if(kind==='add') selectedDay=di;
     }
     const stored=savePlan(plan);renderPlan(plan);
-    if(stored) notice('변경한 일정을 내 여행에 저장했습니다. 이동시간은 추정값입니다.');
+    if(insertedIndex!==null) {
+      const id=`plan-d${di}s${insertedIndex}`;
+      document.getElementById(id)?.scrollIntoView({block:'center',behavior:'smooth'});
+      map?.focus({...target,id});
+    }
+    if(stored) notice(kind==='add' ? '시간 충돌과 예상 이동거리를 비교해 추가하고 저장했습니다. 기존 장소 순서는 유지합니다.' : '변경한 일정을 내 여행에 저장했습니다. 이동시간은 추정값입니다.');
     } finally { editing=false; }
   }
   window.addEventListener('hl:food',event=>{

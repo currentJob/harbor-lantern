@@ -113,6 +113,45 @@ class DiscoveryProvider:
                     for row in rows if "lat" in row and "lon" in row]
         return self._cached(("destination", query.casefold()), fetch)
 
+    def search_places(self, query, lat, lng):
+        """Explicit name search, capped and cached; no autocomplete or bulk lookup."""
+        def fetch():
+            dy = 50000 / 111000
+            dx = min(180, dy / max(0.01, math.cos(math.radians(lat))))
+            box = f"{max(-180,lng-dx)},{min(90,lat+dy)},{min(180,lng+dx)},{max(-90,lat-dy)}"
+            rows = self._request("GET", "https://nominatim.openstreetmap.org/search", params={
+                "q": query, "format": "jsonv2", "limit": 10, "extratags": 1, "namedetails": 1,
+                "viewbox": box, "bounded": 1, "accept-language": "ko,en"},
+                headers={"User-Agent": USER_AGENT})
+            result = []
+            for row in rows:
+                try:
+                    point = LatLng(float(row["lat"]), float(row["lon"]))
+                    osm_id = str(int(row["osm_id"]))
+                except (KeyError, TypeError, ValueError):
+                    continue
+                if (row.get("osm_type") not in {"node", "way", "relation"}
+                        or not math.isfinite(point.lat) or not math.isfinite(point.lng)
+                        or not -90 <= point.lat <= 90 or not -180 <= point.lng <= 180):
+                    continue
+                distance = round(haversine_m(LatLng(lat, lng), point))
+                if distance > 50000:
+                    continue
+                tags = row.get("extratags") or {}
+                names = row.get("namedetails") or {}
+                source = f'https://www.openstreetmap.org/{row["osm_type"]}/{osm_id}'
+                result.append({
+                    "id": f'{row["osm_type"]}/{osm_id}', "wikidata_id": tags.get("wikidata"),
+                    "name": (names.get("name:ko") or row.get("name") or row["display_name"].split(",")[0])[:400],
+                    "name_original": names.get("name", ""), "address": row.get("display_name", ""),
+                    "lat": point.lat, "lng": point.lng, "distance_m": distance,
+                    "category": row.get("type", "place"), "hours_text": tags.get("opening_hours", "")[:2000],
+                    "source": "OpenStreetMap", "source_url": source,
+                    "fetched_at": datetime.now(UTC).isoformat(), "website": safe_link(tags.get("website")),
+                })
+            return result
+        return self._cached(("place-search", query.casefold(), lat, lng), fetch)
+
     def places(self, lat, lng, radius, restaurants_only=False):
         def fetch():
             near = f"(around:{radius},{float(lat)},{float(lng)})"
