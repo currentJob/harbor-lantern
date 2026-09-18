@@ -139,17 +139,17 @@ export class TripMap {
    *  일정 스팟 핀과 **모양이 달라야 한다** — 같은 모양이면 "내 일정"과 "그냥 근처에 있는
    *  가게"가 지도에서 구분되지 않는다. 스팟은 번호가 박힌 물방울, 이것은 점이다.
    */
-  renderNearby(places, { onPick } = {}) {
+  renderNearby(places, { onPick, numbered = false } = {}) {
     this.clearNearby();
     if (!this.map) return;
-    for (const place of places || []) {
+    for (const [index, place] of (places || []).entries()) {
       const marker = L.marker([place.lat, place.lng], {
         icon: L.divIcon({
           className: '',
-          iconSize: [14, 14],
-          iconAnchor: [7, 7],
+          iconSize: numbered ? [44, 44] : [14, 14],
+          iconAnchor: numbered ? [22, 22] : [7, 7],
           popupAnchor: [0, -8],
-          html: '<div class="nearpin"></div>',
+          html: numbered ? `<div class="picker-pin">${index + 1}</div>` : '<div class="nearpin"></div>',
         }),
       }).addTo(this.map).bindPopup(
         `<b>${escapeHtml(place.name)}</b><br>${escapeHtml(place.category_label)} · `

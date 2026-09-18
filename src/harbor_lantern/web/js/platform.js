@@ -1,6 +1,7 @@
 import { escapeHtml as esc, link } from './format.js';
 import { spotBody, gradeSummary } from './render/guide.js';
 import { TripMap } from './map.js';
+import { openPlacePicker } from './place-picker.js';
 
 const $ = id => document.getElementById(id);
 const EUROPE = new Set(['NL','ES','TR','GB','FR','CZ','IT','AT']);
@@ -124,35 +125,8 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
       dayEl.querySelector('.day-head').after(start);
       {
         const add = document.createElement('button'); add.className='secondary add-place';
-        add.textContent='관광지 검색해서 추가'; dayEl.appendChild(add);
-        add.onclick=()=>{
-          add.hidden=true;
-          const panel=document.createElement('section');panel.className='place-search';
-          panel.innerHTML=`<h3>Day ${di+1}에 갈 곳 찾기</h3><form><label>관광지 이름<input type="search" required minlength="2" maxlength="100" placeholder="예: 프라하 동물원, Prague Zoo" aria-label="관광지 이름"></label><button type="submit">검색</button></form><p class="hint">도시 중심 50km 이내를 실제 검색합니다. 결과가 없으면 현지명·영문명으로 시도하세요. 추가 시 시간 충돌과 예상 이동거리를 비교해 방문 위치를 정합니다.</p><p class="search-status" role="status"></p><div class="search-results"></div><button type="button" class="secondary close-search">닫기</button>`;
-          dayEl.appendChild(panel);panel.querySelector('input').focus();
-          panel.querySelector('.close-search').onclick=()=>{panel.remove();add.hidden=false;add.focus();};
-          panel.querySelector('form').onsubmit=e=>{
-            e.preventDefault();const q=panel.querySelector('input').value.trim();
-            if(q.length<2) return;
-            action(panel.querySelector('[type=submit]'),async()=>{
-              const status=panel.querySelector('.search-status'),results=panel.querySelector('.search-results');
-              status.textContent='관광지를 검색하고 있습니다…';results.replaceChildren();
-              try {
-                const origin=plan.destination;
-                const found=await apiRequest('places/search?'+new URLSearchParams({q,lat:origin.lat,lng:origin.lng}));
-                if(!panel.isConnected) return;
-                status.textContent=found.items.length ? `${found.items.length}곳 · ${found.attribution}` : '검색 결과가 없습니다. 영문명이나 현지명으로 다시 검색해 주세요.';
-                for(const place of found.items){
-                  const card=document.createElement('article');card.className='search-result';
-                  const duplicate=getPlan().days[di].stops.some(s=>s.place.id===place.id || (place.wikidata_id && (s.place.wikidata_id===place.wikidata_id || s.place.id==='wd:'+place.wikidata_id)));
-                  card.innerHTML=`<h4>${esc(place.name)}</h4><p>${esc(place.address)}</p><p class="hint">도시 중심에서 ${(place.distance_m/1000).toFixed(1)}km · 영업시간 ${esc(place.hours_text || '미확인')}</p>${link(place.source_url,'지도에서 위치 확인')} <button type="button" ${duplicate?'disabled':''}>${duplicate?'이미 이 날짜에 있음':'동선에 맞춰 추가'}</button>`;
-                  card.querySelector('button').onclick=e=>action(e.currentTarget,()=>edit(di,0,'add',place));
-                  results.appendChild(card);
-                }
-              } catch(error){status.textContent=error.message+' 다시 검색해 주세요.';}
-            });
-          };
-        };
+        add.textContent='지도에서 관광지 찾아 추가'; dayEl.appendChild(add);
+        add.onclick=()=>openPlacePicker({plan,dayIndex:di,apiRequest,onAdd:place=>edit(di,0,'add',place)});
       }
     });
     activateDay(selectedDay);
@@ -195,6 +169,7 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
       map?.focus({...target,id});
     }
     if(stored) notice(kind==='add' ? '시간 충돌과 예상 이동거리를 비교해 추가하고 저장했습니다. 기존 장소 순서는 유지합니다.' : '변경한 일정을 내 여행에 저장했습니다. 이동시간은 추정값입니다.');
+    return true;
     } finally { editing=false; }
   }
   window.addEventListener('hl:food',event=>{
