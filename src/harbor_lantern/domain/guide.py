@@ -27,6 +27,7 @@ from harbor_lantern.domain.cluster import cluster_spots
 from harbor_lantern.domain.geo import haversine_m
 from harbor_lantern.domain.models import LatLng
 from harbor_lantern.domain.planner import opening_windows, travel_minutes
+from harbor_lantern.domain.review_plan import reported_closed, review_bonus
 
 __all__ = ["ALGORITHM", "NOTICE", "build_guide_plan"]
 
@@ -60,7 +61,8 @@ def build_guide_plan(
     """
     per_day = dict(cfg.pace_spots)[pace]
     day_count = (end - start).days + 1
-    ordered = sorted(spots, key=lambda spot: (-_sitelinks_of(spot), _id_of(spot)))
+    ordered = sorted((s for s in spots if not reported_closed(s)),
+                     key=lambda spot: (-_sitelinks_of(spot), _id_of(spot)))
 
     reserve_n = min(cfg.reserve_top_n, max(0, day_count) * per_day)
     reserved_ids = {_id_of(spot) for spot in ordered[:reserve_n]}
@@ -74,6 +76,8 @@ def build_guide_plan(
     for index in range(max(0, day_count)):
         cluster = clusters[index] if index < len(clusters) else None
         ids = [] if cluster is None else [sid for sid in cluster.spot_ids if sid not in used]
+        # Stable sort: no review evidence preserves the existing importance order.
+        ids.sort(key=lambda sid: -review_bonus(by_id[sid].get("review")))
         # 예약분이 먼저 슬롯을 가져간다. 그래야 넘치는 클러스터에서 잘리는 쪽이 꼬리가 된다.
         chosen_ids = [sid for sid in ids if sid in reserved_ids][:per_day]
         for sid in ids:
@@ -170,24 +174,29 @@ def _build_day(
     exceptions: list[str] = []
     cursor = cfg.day_start_min
     position: LatLng | None = None
-    for order, (spot, is_evening) in enumerate(route):
+    for spot, is_evening in route:
         coord = _coord(spot)
         distance = 0.0 if position is None else haversine_m(position, coord)
         travel = 0 if position is None else travel_minutes(distance)
         arrival = cursor + travel
         if is_evening:
             arrival = max(arrival, cfg.evening_from_min)
+        windows = opening_windows(str(spot.get("hours_text", "") or ""), day.weekday())
+        if windows is not None:
+            feasible = [max(arrival, a) for a, b in windows if max(arrival, a) + cfg.spot_dwell_min <= b]
+            if not feasible:
+                continue
+            arrival = min(feasible)
         departure = arrival + cfg.spot_dwell_min
         if departure > cfg.day_end_min:
-            break  # 하루 창(21:00)을 넘기지 않는다. 남는 스팟은 배정하지 않는다.
-        windows = opening_windows(str(spot.get("hours_text", "") or ""), day.weekday())
+            continue  # 늦게 여는 곳을 제외하되, 뒤의 다른 후보는 계속 확인한다.
         stops.append({
             "place": spot,
             "guide_id": _id_of(spot),
             "arrival": _hhmm(arrival),
             "departure": _hhmm(departure),
-            "travel_minutes": travel if order else 0,
-            "distance_m": round(distance) if order else 0,
+            "travel_minutes": travel if stops else 0,
+            "distance_m": round(distance) if stops else 0,
             "hours_status": "weekly_hours" if windows is not None else "unverified",
             "evening_slot": is_evening,
         })

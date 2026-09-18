@@ -2,11 +2,14 @@
 
 **두 경로가 한 표면에 있다** (설계서 §16.16 · DSN-45).
 
-- **가이드 경로** — 구운 도시 파일(`seed/city-guides/`)을 읽어 만든다. 외부 호출이 **0건**이라
+- **가이드 기본 경로** — 구운 도시 파일(`seed/city-guides/`)을 읽어 만든다. 외부 호출이 **0건**이라
   `execute()`(세마포어 · 503 변환)를 타지 않는다. 그 기계는 외부 공급자를 위한 것이고,
   파일 읽기에 씌우면 "혼잡" 이라는 거짓말이 가능해진다(NFR-017 · AC-079).
 - **폴백 경로** — 굽지 않은 도시. 기존 Overpass 휴리스틱 그대로이고 **코드 한 줄도 바꾸지
   않았다**(A14 · AC-078). 더하는 것은 "제한된 자동 추천"이라는 표시뿐이다(REQ-028 · AC-077).
+
+`use_reviews=true`는 두 경로에서 명시적으로 선택하는 확장이다. 제한된 리뷰 조회를 추가하고
+확인한 평점만 순위에 반영한다. 기본값 false는 기존 오프라인 가이드 동작을 유지한다.
 
 **`guide_grade` 는 두 경로 모두에서 반드시 실린다**(AC-085). 비어 있으면 화면이 아무 문구도
 고르지 못하고, 사용자는 조사된 가이드와 자동 추천을 구분할 수 없게 된다 — 이 확장이 고치려는
@@ -17,7 +20,7 @@ import threading
 from datetime import date
 from typing import Annotated, Any, Literal
 
-from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi import APIRouter, HTTPException, Query, Request, Response
 from fastapi import Path as PathParam
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -27,6 +30,7 @@ from harbor_lantern.domain.guide import build_guide_plan
 from harbor_lantern.domain.models import LatLng
 from harbor_lantern.domain.planner import build_plan
 from harbor_lantern.services.external.ports import ExternalUnavailable
+from harbor_lantern.services.external.reviews import collect_reviews, review_summary
 from harbor_lantern.services.guides import CITY_ID_PATTERN, CityGuide, find_cities, load_city, load_index
 
 router = APIRouter(prefix="/api/explore", tags=["explore"])
@@ -77,6 +81,7 @@ class PlanRequest(BaseModel):
     pace: Literal["relaxed", "balanced", "full"] = "balanced"
     interests: Literal["mixed", "culture", "nature"] = "mixed"
     radius_m: int = Field(default=5000, ge=500, le=10000)
+    use_reviews: bool = False
 
     @model_validator(mode="after")
     def dates(self):
@@ -180,18 +185,28 @@ def guide_detail(
     }
 
 
-def guided_plan(guide: CityGuide, body: PlanRequest) -> dict[str, Any]:
-    """구운 도시로 만든 일정 (§16.14 · §16.16). **외부 호출 0건 · `execute()` 없음**."""
+def guided_plan(guide: CityGuide, body: PlanRequest, provider=None) -> dict[str, Any]:
+    """구운 도시로 만든 일정. use_reviews=False인 기본 경로는 외부 호출 0건이다."""
     grade = grade_of(guide.grade)
+    spots = guide.spots
+    evidence = None
+    if body.use_reviews and provider is not None:
+        evidence = collect_reviews(provider, list(spots), True)
+        spots = [{**s, "review": evidence[s["id"]]} for s in spots]
     result = build_guide_plan(
         {**guide.as_city(), "grade": grade},
-        guide.spots,
+        spots,
         body.start_date,
         body.end_date,
         body.pace,
         body.interests,
     )
     result["guide_notice"] = GRADE_NOTICE[grade].format(retrieved_at=guide.retrieved_at)
+    if evidence is not None:
+        result["review_summary"] = review_summary(evidence)
+        result["notice"] += (" 리뷰 확인 장소만 평가 수 보정 점수로 우선순위를 조정했습니다."
+                             if result["review_summary"]["counts"].get("matched") else
+                             " 리뷰를 확인하지 못해 기존 가이드 우선순위를 사용했습니다.")
     result["guide_city"] = {
         "city_id": guide.city_id,
         "name_ko": guide.name_ko,
@@ -205,11 +220,13 @@ def guided_plan(guide: CityGuide, body: PlanRequest) -> dict[str, Any]:
 
 
 @router.post("/plan", responses=_errors)
-def plan(body: PlanRequest, request: Request):
+def plan(body: PlanRequest, request: Request, response: Response):
+    if body.use_reviews:
+        response.headers["Cache-Control"] = "no-store"
     if body.city_id:
         guide = load_city(body.city_id, guides_dir(request))
         if guide is not None:
-            return guided_plan(guide, body)
+            return guided_plan(guide, body, request.app.state.discovery)
         if body.destination is None:
             # 굽지 않은 도시 + 좌표 없음 = 폴백조차 만들 수 없다. 422 다 — 요청이 부족한 것이지
             # 서버가 고장난 것이 아니다.
@@ -221,10 +238,16 @@ def plan(body: PlanRequest, request: Request):
     # Overpass can return way centers outside the requested circle.
     origin = LatLng(destination["lat"], destination["lng"])
     places = [p for p in places if haversine_m(origin, LatLng(p["lat"], p["lng"])) <= body.radius_m]
+    evidence = None
+    if body.use_reviews:
+        evidence = collect_reviews(request.app.state.discovery, places, True)
+        places = [{**p, "review": evidence[p["id"]]} for p in places]
     result = build_plan(places, destination, body.start_date, body.end_date, body.pace, body.interests)
+    if evidence is not None:
+        result["review_summary"] = review_summary(evidence)
     if any(p.get("limited_search") for p in places):
         result["notice"] += " 제공자 혼잡으로 대체 검색의 일부 주요 후보를 사용했습니다."
-    # 폴백 경로의 계산은 한 줄도 바꾸지 않았다(A14 · AC-078). 더하는 것은 표시뿐이다.
+    # 기본 폴백은 기존 계산을 유지하며, 명시적인 리뷰 옵션만 순위에 영향을 준다.
     result["guide_grade"] = "heuristic"
     result["guide_notice"] = GRADE_NOTICE["heuristic"]
     result["guide_city"] = None

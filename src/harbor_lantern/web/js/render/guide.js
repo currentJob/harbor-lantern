@@ -17,6 +17,8 @@
  */
 
 import { escapeHtml as esc, link } from '../format.js';
+import { reviewHtml, routeHtml } from './reviewplan.js';
+import { directionsUrl } from '../geo.js';
 
 /** 등급은 이 셋뿐이다. 서버(`api/routes/explore.py`)의 `GRADE_NOTICE` 키와 같다. */
 export const GRADES = ['full', 'partial', 'heuristic'];
@@ -179,7 +181,9 @@ export function spotBody(spot) {
     area ? `<span class="pill">${esc(area)}</span>` : ''].join('');
   const name = text(source.name) || text(source.name_ko);
   return `${pills}<h3>${esc(name)}${original ? ` <span class="orig" translate="no">${esc(original)}</span>` : ''}</h3>
-    ${descriptionHtml(source)}${hoursHtml(source)}${tipsHtml(source)}${recommendationsHtml(source)}`;
+    ${descriptionHtml(source)}${hoursHtml(source)}${tipsHtml(source)}${recommendationsHtml(source)}
+    ${source.review ? reviewHtml(source.review) : ''}
+    ${Number.isFinite(source.lat) && Number.isFinite(source.lng) ? link(directionsUrl(source.lat, source.lng), '현재 위치에서 길찾기') : ''}`;
 }
 
 /** `#rrggbb` 만 통과. 색은 데이터에서 온다 — 검사 없이 style 에 넣으면 그것이 주입 경로다. */
@@ -212,7 +216,7 @@ export function dayHtml(day, index) {
     }<span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${
       stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'
     }</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${esc(stop.travel_minutes)}분</span>` : ''}${
-      spotBody(stop.place)
+      spotBody(stop.place) + (order ? routeHtml(stops[order - 1].place, stop.place) : '')
     }</div></div>`).join('')
     : '<p class="empty">이 날에 배정할 수 있는 조사된 장소가 없습니다. 일정이 채워지지 않았습니다.</p>';
   return `<article class="day"><div class="day-head"${color ? ` style="border-left:6px solid ${color}"` : ''}>

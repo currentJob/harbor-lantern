@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Header, Request, Response
+from pydantic import BaseModel, ConfigDict
 
 from harbor_lantern.api.deps import ClockDep, Conn, SettingsDep, TripAccessDep
 from harbor_lantern.api.ratelimit import client_ip, enforce_join_rate_limit
@@ -23,10 +24,23 @@ from harbor_lantern.api.schemas import (
     TripStateOut,
 )
 from harbor_lantern.services import plan_service, trip_service
+from harbor_lantern.services.itinerary_review import build_review
 
 router = APIRouter(prefix="/api", tags=["trips"])
 
 _NOT_FOUND = {404: {"model": ErrorBody, "description": "대상 없음 (또는 접근 권한 없음 — 구분하지 않는다)"}}
+
+
+class ItineraryReviewRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    use_reviews: bool = False
+
+
+@router.post("/trips/{trip_id}/review-plan", responses=_NOT_FOUND, summary="전체 일정 점검·리뷰 기반 동선 제안")
+def review_plan(body: ItineraryReviewRequest, access: TripAccessDep, settings: SettingsDep,
+                request: Request, response: Response):
+    response.headers["Cache-Control"] = "no-store"
+    return build_review(access.conn, access.trip, settings, request.app.state.discovery, body.use_reviews)
 
 
 @router.post(

@@ -4,6 +4,7 @@ import { LocationTracker, directionsUrl } from './geo.js';
 import { TripMap } from './map.js';
 import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml, stopDomId } from './render/guide.js';
 import { dayPickerLabel, planMapDays, planMapSpotCount, unmappedCount } from './render/planmap.js';
+import { reviewHtml, routeHtml, withoutReviews } from './render/reviewplan.js';
 
 const $ = (id) => document.getElementById(id);
 let destination = null;
@@ -23,7 +24,7 @@ async function action(button, work) {
   try { await work(); } catch (error) { notice(error.message || '요청을 처리하지 못했습니다. 다시 시도해 주세요.', true); }
   finally { button.disabled = false; }
 }
-const apiRequest = async (path, body) => (await request('/api/explore/' + path, {method:body ? 'POST':'GET',body,timeoutMs:55000})).data;
+const apiRequest = async (path, body) => (await request('/api/explore/' + path, {method:body ? 'POST':'GET',body,timeoutMs:body?.use_reviews ? 120000 : 55000})).data;
 
 /** 구운 도시 목록을 그린다 (DSN-46 · AC-075 · AC-076).
  *
@@ -107,11 +108,11 @@ $('planForm').addEventListener('submit', (event) => {
     const located = destination && Number.isFinite(destination.lat) && Number.isFinite(destination.lng);
     const result = await apiRequest('plan', {
       ...(city ? {city_id:city.city_id} : {}), ...(located ? {destination} : {}),
-      start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value)});
+      start_date:start,end_date:end,pace:$('pace').value,interests:$('interests').value,radius_m:Number($('planRadius').value),use_reviews:$('planUseReviews').checked});
     activePlan = result;
     let stored = true;
     if (result.scheduled_count) {
-      saved = [result, ...saved].slice(0,10);
+      saved = [withoutReviews(result), ...saved].slice(0,10);
       try { localStorage.setItem('hl_explore_plans', JSON.stringify(saved)); } catch { stored = false; }
       renderSaved();
     }
@@ -124,7 +125,7 @@ $('planForm').addEventListener('submit', (event) => {
 function placeBody(place) {
   const rating = place.rating == null ? '<span class="meta">평점 미제공 · 후기 미제공</span>' : `<span class="rating">★ ${esc(place.rating)} / 5</span> <span class="meta">${esc(place.review_count ?? 0)}개 평가</span>`;
   const menu = place.recommendation || (place.cuisine ? `음식 종류: ${place.cuisine} · 대표 메뉴 미확인` : '대표 메뉴 정보 미제공');
-  return `<span class="pill">${esc(categories[place.category] || place.category)}</span><h3>${esc(place.name)}</h3>${rating}
+  return `<span class="pill">${esc(categories[place.category] || place.category)}</span><h3>${esc(place.name)}</h3>${place.review ? reviewHtml(place.review) : rating}
     <p class="meta">영업시간: ${esc(place.opening_hours || '미제공 · 방문 전 확인')}</p><p class="meta">${esc(menu)}</p>
     <div class="links">${link(directionsUrl(place.lat,place.lng),'길찾기')}${link(place.menu_url,'메뉴 원문')}${link(place.website,'업체 홈페이지')}${link(place.source_url,'장소 원문')}</div>
     ${(place.reviews || []).map(review => `<div class="review"><div class="review-author">${review.avatar ? `<img src="${esc(review.avatar)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ''}${link(review.author_url,review.author) || esc(review.author)} <span>${esc(review.rating ?? '')}★</span></div><p>${esc(review.text)}</p><small>${esc(review.date)}</small> ${link(review.url,'후기 전체 보기')}</div>`).join('')}
@@ -202,6 +203,7 @@ function renderPlan(plan) {
   activePlan = plan; $('planSection').hidden = false;
   $('planTitle').textContent = plan.destination.name.split(',')[0] + ' 여행';
   $('planMeta').textContent = `${plan.start_date} — ${plan.end_date} · ${plan.scheduled_count}곳 · 이동시간은 추정값`;
+  if (plan.review_summary) $('planMeta').textContent += ` · 리뷰 확인 ${plan.review_summary.counts.matched || 0}곳. ${plan.review_summary.notice}`;
   // 등급 표시는 **두 경로 모두에서 항상** 있다 (AC-085 · AC-077). 폴백 일정도 예외가 아니다.
   $('guideGrade').innerHTML = gradeBadgeHtml(plan);
   const guided = isGuidePlan(plan);
@@ -209,7 +211,7 @@ function renderPlan(plan) {
   $('guideSources').innerHTML = guided ? sourcesHtml(plan.guide_city) : '';
   renderPlanMap(plan);
   if (guided) { $('planDays').innerHTML = daysHtml(plan); return; }
-  $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map((stop,order) => `<div class="stop" id="${stopDomId(index,order)}"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
+  $('planDays').innerHTML = plan.days.map((day,index) => `<article class="day"><div class="day-head"><h3>DAY ${index + 1} <span>${esc(day.date)} (${weekdays[day.weekday]})</span></h3><span>${(day.distance_m/1000).toFixed(1)}km · 이동 약 ${day.travel_minutes}분</span></div>${day.stops.length ? day.stops.map((stop,order) => `<div class="stop" id="${stopDomId(index,order)}"><time>${esc(stop.arrival)}<p class="meta">${esc(stop.departure)}</p></time><div><span class="pill ${stop.hours_status === 'unverified' ? 'unknown' : ''}">${stop.hours_status === 'unverified' ? '영업 여부 확인 필요' : '주간 영업시간 반영'}</span>${stop.travel_minutes ? `<span class="pill">이전 장소에서 약 ${stop.travel_minutes}분</span>` : ''}${placeBody(stop.place)}${order ? routeHtml(day.stops[order-1].place, stop.place) : ''}</div></div>`).join('') : '<p class="empty">남은 후보 중 영업시간과 일정에 맞는 장소가 없습니다. 자유시간으로 남겨 두었어요.</p>'}</article>`).join('');
 }
 function renderSaved() {
   $('savedSection').hidden = !saved.length; $('savedPlans').replaceChildren();
@@ -227,7 +229,7 @@ function renderSaved() {
 }
 $('downloadPlan').addEventListener('click', () => {
   if (!activePlan) return;
-  const blob = new Blob([JSON.stringify(activePlan,null,2)], {type:'application/json'});
+  const blob = new Blob([JSON.stringify(withoutReviews(activePlan),null,2)], {type:'application/json'});
   const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url;
   a.download = `travel-${activePlan.start_date}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
 });
