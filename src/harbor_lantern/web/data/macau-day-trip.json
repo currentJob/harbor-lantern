@@ -1,0 +1,442 @@
+{
+  "destination": {
+    "name": "마카오 당일치기",
+    "lat": 22.1936,
+    "lng": 113.54
+  },
+  "start_date": "2026-10-07",
+  "end_date": "2026-10-07",
+  "scheduled_count": 6,
+  "guide_city": {
+    "center": {
+      "lat": 22.1936,
+      "lng": 113.54
+    },
+    "city_id": "macau",
+    "country_code": "MO",
+    "country_en": "Macau",
+    "country_ko": "마카오",
+    "grade": "full",
+    "harvest": {
+      "candidate_count": 37,
+      "candidate_ko_ratio": 1.0,
+      "composition": {
+        "attraction": 4,
+        "bridge": 3,
+        "building_landmark": 4,
+        "castle": 1,
+        "museum": 3,
+        "tower": 1,
+        "worship": 4
+      },
+      "denylisted_count": 0,
+      "described_count": 17,
+      "discovery": {
+        "both": 13,
+        "en": 5,
+        "ko": 2
+      },
+      "discovery_pool": {
+        "both": 16,
+        "en": 21,
+        "ko": 2
+      },
+      "effective_radius_m": 5000,
+      "en_page_count": 169,
+      "excluded_count": 6,
+      "grade_window": 20,
+      "hours_count": 2,
+      "ko_label_count": 20,
+      "ko_label_ratio": 1.0,
+      "ko_page_count": 18,
+      "korean_count": 39,
+      "mapped_count": 171,
+      "no_korean_count": 132,
+      "page_count": 187,
+      "radius_note": "",
+      "reviewed": false,
+      "spot_count": 20,
+      "unclassified_count": 11,
+      "unmapped_count": 0,
+      "verification_failed_count": 3
+    },
+    "known_gaps": [
+      "설명이 없는 스팟 3곳 — 한국어 위키백과 문서가 없거나 연결 검증에 실패했다. 영어 원문으로 대체하지 않았다.",
+      "그중 3곳은 한국어 문서가 없어서가 아니라 **연결 검증에 실패해서** 설명을 비웠다 — 좌표나 제목이 맞지 않는 문서였다. 장소는 목록에 그대로 남아 있다.",
+      "영업시간이 없는 스팟 18곳 — OpenStreetMap 에 해당 QID 요소가 없거나 opening_hours 태그가 없다.",
+      "사람의 검토를 거치지 않은 도시다 — 자동 수확 결과를 그대로 실었다.",
+      "분류에 걸리지 않아 제외한 후보 11건 — 버리되 굽기 보고서에 남겼다(다음 굽기에서 허용목록에 올릴 수 있게).",
+      "영어 위키백과에서만 발견된 132건은 한국어 문서가 없어 싣지 않았다 — 영어 원문으로 대체하지 않았다. 굽기 보고서에는 그중 언어판이 많은 25건까지 이름으로 남는다.",
+      "후보는 한국어·영어 위키백과 지리 검색의 **합집합**에서 오되, **한국어 문서가 있는 것만** 싣는다(이 도시: 한국어 검색 2곳 · 영어 검색에서만 5곳 · 양쪽 13곳). 영어를 함께 긁는 이유는 한국어 문서가 있어도 그 문서에 좌표가 없으면 한국어 검색이 돌려주지 않기 때문이다. 그래도 **한국어 문서 자체가 없는 장소는 여전히 잡히지 않는다** — 이 앱은 한국어 가이드이고 설명도 한국어 위키백과에서 오므로 그런 장소는 영어 이름 + 빈 설명이 됐을 것이다. '이 도시에 이것밖에 없나'로 읽히지 않도록 여기 적는다.",
+      "소요시간·접근 교통 팁은 0건이다 — 근거를 줄 공개 원천을 이번 범위에서 찾지 못했다.",
+      "설명은 위키백과 도입부 요약이라 '그 장소가 무엇인지'를 말한다. 사람이 쓴 홍콩 가이드처럼 '왜 가는지'를 말하지는 않는다."
+    ],
+    "name_en": "Macau",
+    "name_ko": "마카오",
+    "name_local": "澳門",
+    "query": {
+      "en_page_count": 169,
+      "gslimit": 500,
+      "ko_page_count": 18,
+      "korean_count": 39,
+      "limit": 150,
+      "mapped_count": 171,
+      "page_count": 187,
+      "radius_clamped": false,
+      "radius_m": 5000,
+      "registry_radius_m": 5000,
+      "sitelink_min": 5,
+      "wikis": [
+        "ko",
+        "en"
+      ]
+    },
+    "radius_m": 5000,
+    "retrieved_at": "2026-09-16",
+    "schema_version": 1,
+    "sources": [
+      {
+        "retrieved_at": "2026-09-16",
+        "url": "https://ko.wikipedia.org/w/api.php",
+        "what": "스팟 후보(중심 반경 안의 한국어 문서)와 문서 좌표 — 한국어 위키백과 지리 검색"
+      },
+      {
+        "retrieved_at": "2026-09-16",
+        "url": "https://en.wikipedia.org/w/api.php",
+        "what": "스팟 후보 발견 경로 2 — 영어 위키백과 지리 검색. 한국어 문서에 좌표가 없어 한국어 검색에 안 잡히는 장소(카를교·프라하 천문시계 같은)를 찾는 데만 쓰고, 수록은 한국어 문서가 있는 항목만 한다 — 제목·설명은 언제나 한국어 위키백과에서 온다"
+      },
+      {
+        "retrieved_at": "2026-09-16",
+        "url": "https://www.wikidata.org/w/api.php",
+        "what": "이름·중요도(언어판 수)·분류(P31)·행정구역(P131)·좌표(P625)·문서 제목 — 위키데이터"
+      },
+      {
+        "retrieved_at": "2026-09-16",
+        "url": "https://ko.wikipedia.org/w/api.php",
+        "what": "설명 — 한국어 위키백과 도입부 요약 (CC BY-SA 4.0)"
+      },
+      {
+        "retrieved_at": "2026-09-16",
+        "url": "https://overpass.kumi.systems/api/interpreter",
+        "what": "영업시간·입장료 — OpenStreetMap (ODbL 1.0) · QID 태그로 매칭"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "2026-10-07",
+      "weekday": 2,
+      "start_time": "09:30",
+      "title": "마카오 · 바다 건너 구시가지",
+      "area": "마카오 반도",
+      "color": "#906443",
+      "destination": {
+        "name": "마카오",
+        "lat": 22.1936,
+        "lng": 113.54
+      },
+      "guide_city": {
+        "city_id": "macau"
+      },
+      "stops": [
+        {
+          "place": {
+            "id": "macau-outer-arrival",
+            "name": "마카오 외항 터미널 · 입경",
+            "name_original": "Outer Harbour Ferry Terminal / 外港客運碼頭",
+            "lat": 22.1979199,
+            "lng": 113.5604019,
+            "category": "transport",
+            "source_url": "https://www2.turbojet.com.hk/travel-with-us-sea-ferry/",
+            "hours_text": "예약한 편의 승선 마감 확인",
+            "tips": [
+              {
+                "text": "타이파 터미널과 다릅니다. 택시 기사에게 外港客運碼頭를 보여주세요.",
+                "evidence": "운항사 터미널 안내",
+                "source_url": "https://www2.turbojet.com.hk/travel-with-us-sea-ferry/"
+              }
+            ]
+          },
+          "arrival": "09:30",
+          "departure": "10:00",
+          "fixed_start": "09:30",
+          "duration": 30,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 0,
+          "distance_m": 0
+        },
+        {
+          "place": {
+            "area": "마카오",
+            "category": "worship",
+            "coord_source": "wikidata:P625",
+            "description": "",
+            "description_source": null,
+            "discovery": "both",
+            "evening_candidate": false,
+            "hours_source": null,
+            "hours_text": "",
+            "id": "wd:Q1551411",
+            "importance": {
+              "sitelinks": 31
+            },
+            "lat": 22.197468,
+            "lng": 113.54086,
+            "name": "세인트폴 성당 유적",
+            "name_original": "大三巴牌坊",
+            "name_source": "ko",
+            "recommendations": [],
+            "tips": [],
+            "verification": {
+              "coord_delta_m": 31.5,
+              "label_match": "none",
+              "reason": "label_mismatch",
+              "redirected": false,
+              "status": "failed"
+            },
+            "wikidata_classes": [
+              "Q16970",
+              "Q210272"
+            ],
+            "wikidata_id": "Q1551411"
+          },
+          "arrival": "10:45",
+          "departure": "11:30",
+          "fixed_start": "10:45",
+          "duration": 45,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 40,
+          "distance_m": 2013
+        },
+        {
+          "place": {
+            "area": "마카오",
+            "category": "worship",
+            "coord_source": "wikidata:P625",
+            "description": "성 도밍고 성당(St. Dominic's Church)은 마카오의 가장 아름다운 바로크 양식 성당이다. 원래는 나무로 지어졌으나, 후에 흙으로 재건되었다.",
+            "description_source": {
+              "license": "CC BY-SA 4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "retrieved_at": "2026-09-16",
+              "title": "성 도밍고 성당",
+              "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%8F%84%EB%B0%8D%EA%B3%A0_%EC%84%B1%EB%8B%B9"
+            },
+            "discovery": "both",
+            "evening_candidate": false,
+            "hours_source": null,
+            "hours_text": "",
+            "id": "wd:Q4130614",
+            "importance": {
+              "sitelinks": 17
+            },
+            "lat": 22.194681,
+            "lng": 113.540412,
+            "name": "성 도밍고 성당",
+            "name_original": "玫瑰聖母堂",
+            "name_source": "ko",
+            "recommendations": [],
+            "tips": [],
+            "verification": {
+              "coord_delta_m": 15.5,
+              "label_match": "exact",
+              "reason": "",
+              "redirected": false,
+              "status": "passed"
+            },
+            "wikidata_classes": [
+              "Q16970",
+              "Q210272"
+            ],
+            "wikidata_id": "Q4130614"
+          },
+          "arrival": "11:45",
+          "departure": "12:15",
+          "fixed_start": "11:45",
+          "duration": 30,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 10,
+          "distance_m": 313
+        },
+        {
+          "place": {
+            "area": "마카오",
+            "category": "attraction",
+            "coord_source": "wikidata:P625",
+            "description": "세나두 광장(중국어: 議事亭前地, 포르투갈어: Largo do Senado)은 마카오의 광장이다. 유네스코 마카오 역사지구 세계유산의 일부이다.",
+            "description_source": {
+              "license": "CC BY-SA 4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "retrieved_at": "2026-09-16",
+              "title": "세나두 광장",
+              "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EB%82%98%EB%91%90_%EA%B4%91%EC%9E%A5"
+            },
+            "discovery": "both",
+            "evening_candidate": false,
+            "hours_source": null,
+            "hours_text": "",
+            "id": "wd:Q837935",
+            "importance": {
+              "sitelinks": 13
+            },
+            "lat": 22.193583,
+            "lng": 113.539667,
+            "name": "세나두 광장",
+            "name_original": "議事亭前地",
+            "name_source": "ko",
+            "recommendations": [],
+            "tips": [],
+            "verification": {
+              "coord_delta_m": 0.1,
+              "label_match": "exact",
+              "reason": "",
+              "redirected": false,
+              "status": "passed"
+            },
+            "wikidata_classes": [
+              "Q174782"
+            ],
+            "wikidata_id": "Q837935"
+          },
+          "arrival": "12:30",
+          "departure": "14:00",
+          "fixed_start": "12:30",
+          "duration": 90,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 10,
+          "distance_m": 144
+        },
+        {
+          "place": {
+            "area": "마카오",
+            "category": "worship",
+            "coord_source": "wikidata:P625",
+            "description": "아마 사원(A-Ma Temple)은 마카오에서 가장 오래된 중국식 절이다. 약 600여년 전에 세워진 것으로 추정된다. 1554∼1557년 사이에 포르투갈인들이 마카오에 정착할 즈음에 유럽인들이 이 지역의 이름을 아마 여신의 이름을 따서 ‘아마가오’ 또는 ‘아마베이’로 바꾸어 불렀다.",
+            "description_source": {
+              "license": "CC BY-SA 4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "retrieved_at": "2026-09-16",
+              "title": "아마 사원",
+              "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%A7%88_%EC%82%AC%EC%9B%90"
+            },
+            "discovery": "both",
+            "evening_candidate": false,
+            "hours_source": null,
+            "hours_text": "",
+            "id": "wd:Q2149114",
+            "importance": {
+              "sitelinks": 24
+            },
+            "lat": 22.186111,
+            "lng": 113.531139,
+            "name": "아마 사원",
+            "name_original": "媽閣廟",
+            "name_source": "ko",
+            "recommendations": [],
+            "tips": [],
+            "verification": {
+              "coord_delta_m": null,
+              "label_match": "exact",
+              "reason": "",
+              "redirected": false,
+              "status": "passed"
+            },
+            "wikidata_classes": [
+              "Q44539"
+            ],
+            "wikidata_id": "Q2149114"
+          },
+          "arrival": "14:30",
+          "departure": "15:15",
+          "fixed_start": "14:30",
+          "duration": 45,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 25,
+          "distance_m": 1209
+        },
+        {
+          "place": {
+            "id": "macau-outer-departure",
+            "name": "마카오 외항 터미널 · 귀환 수속",
+            "name_original": "Outer Harbour Ferry Terminal / 外港客運碼頭",
+            "lat": 22.1979199,
+            "lng": 113.5604019,
+            "category": "transport",
+            "source_url": "https://www2.turbojet.com.hk/travel-with-us-sea-ferry/",
+            "hours_text": "예약한 편의 승선 마감 확인",
+            "tips": [
+              {
+                "text": "타이파 터미널과 다릅니다. 택시 기사에게 外港客運碼頭를 보여주세요.",
+                "evidence": "운항사 터미널 안내",
+                "source_url": "https://www2.turbojet.com.hk/travel-with-us-sea-ferry/"
+              }
+            ]
+          },
+          "arrival": "16:30",
+          "departure": "17:30",
+          "fixed_start": "16:30",
+          "duration": 60,
+          "completed": false,
+          "hours_status": "unverified",
+          "travel_minutes": 65,
+          "distance_m": 3287
+        }
+      ],
+      "distance_m": 6966,
+      "travel_minutes": 150,
+      "excursion": {
+        "id": "macau-2026",
+        "title": "TurboJET · 셩완 ↔ 마카오 외항",
+        "checked_at": "2026-09-18",
+        "reason": "성바울 유적과 세나도 광장이 있는 마카오 반도부터 둘러보는 코스입니다. 외항 도착 후 구시가지로 이동하고, 남쪽 아마 사원까지 걸은 뒤 택시로 같은 터미널에 돌아옵니다. 코타이까지 무리하게 왕복하지 않는 구성입니다.",
+        "transport": [
+          "07:30 셩완 순탁센터 3층 도착 권장 → 08:30 TurboJET 출항 → 약 09:30 마카오 외항 도착. 입경 대기 30분 이상을 여유로 잡으세요.",
+          "외항에서 성바울 유적 근처까지 택시 추천. 차량 진입 가능한 지점에서 내려 걸으세요. 구시가지 안은 도보로 이동합니다.",
+          "12:30–14:00 세나도 광장 주변에서 점심·휴식. 포르투갈식 음식이나 완탕면을 고르고 에그타르트는 간식으로 즐겨 보세요. 특정 식당 예약은 포함되지 않습니다.",
+          "15:15 아마 사원 관람 종료 후 택시로 외항 복귀. 16:30 터미널 도착 목표 → 17:30 귀환편 → 약 18:30 홍콩 셩완 도착. 택시 대기·교통 상황에 따라 더 일찍 출발하세요."
+        ],
+        "fare": "현재 공시 성인 이코노미 편도: 평일 주간 HK$194, 주말·공휴일 주간 HK$212, 야간 HK$242. 08:30·17:30 모두 주간 기준이며 평일 요금 적용 시 왕복 HK$388. 실제 날짜·좌석·최종 결제액은 예약 화면에서 확인하세요.",
+        "caution": "모든 시각은 추천 계획이며 예약 확정이 아닙니다. 2026-09-01 시행 시간표를 참조했습니다. 최소 30분 전 승선 수속을 위해 1시간 일찍 터미널에 도착하도록 잡았습니다. 지도 선은 장소를 잇는 참고선, 이동 분은 도보 추정이며 페리·택시 실시간 경로가 아닙니다. 시간을 편집해도 페리 예약은 변경되지 않습니다.",
+        "tips": [
+          "필수: 여권 원본, 왕복 승선권·예약번호, 홍콩 숙소 주소와 귀국 항공편 정보. 표의 이름은 여권과 일치하게 입력하고 QR·주소를 오프라인으로 보관하세요.",
+          "대한민국 여권 소지자는 마카오 사증 면제 대상이며 체류 허가는 최대 90일입니다. 여권은 예정 체류 종료 후 최소 90일 이상 유효해야 합니다. 다른 국적·여행증명서는 해당 요건과 홍콩 재입경 조건을 별도로 확인하세요.",
+          "출발편·귀환편을 함께 확보하고 목적지를 Macau (Outer Harbour)로 선택하세요. 타이파 또는 공항 환승 전용편과 혼동하지 마세요.",
+          "준비물: 홍콩·마카오 양쪽을 지원하는 데이터 로밍/eSIM, 보조배터리, 소액 현금, 편한 운동화, 물, 작은 우산. 홍콩에서 쓰던 통신 상품이 마카오도 포함하는지 확인하세요.",
+          "성바울 유적과 성 도밍고 성당은 오전에, 세나도 광장은 점심·휴식과 묶었습니다. 계단과 경사가 있으니 무리하면 성당 내부 관람을 줄이고 귀환 시간을 우선하세요.",
+          "대기줄이 길면 자유시간을 줄이고 아마 사원에서 바로 택시로 돌아오세요. 페리를 놓쳤을 때 다음 편 탑승이 보장되지 않으므로 운항사에 변경 가능 여부를 확인하세요.",
+          "출발 전날과 당일 운항 공지·날씨를 확인하세요. 악천후에는 결항될 수 있습니다. 건물 내부 개방·임시 휴무는 방문 전 공식 관광 안내에서 확인하세요."
+        ],
+        "sources": [
+          {
+            "name": "운항 시간·터미널·예약",
+            "url": "https://www2.turbojet.com.hk/travel-with-us-sea-ferry/"
+          },
+          {
+            "name": "요금·운항 공지",
+            "url": "https://www2.turbojet.com.hk/notifications/"
+          },
+          {
+            "name": "마카오 입경 요건",
+            "url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/"
+          },
+          {
+            "name": "마카오 공식 관광 안내",
+            "url": "https://www.macaotourism.gov.mo/en/"
+          },
+          {
+            "name": "홍콩 입경 요건",
+            "url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html"
+          }
+        ]
+      }
+    }
+  ],
+  "rating_summary": {
+    "enabled": true,
+    "matched": 0
+  }
+}

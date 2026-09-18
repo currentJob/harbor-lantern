@@ -6,6 +6,7 @@ import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sources
 import { dayPickerLabel, planMapDays, planMapSpotCount, unmappedCount } from './render/planmap.js';
 import { reviewHtml, routeHtml, withoutReviews } from './render/reviewplan.js';
 import { initPlatform, confidence } from './platform.js';
+import { renderMacauOffer } from './day-trip.js';
 
 const $ = (id) => document.getElementById(id);
 let destination = null;
@@ -202,7 +203,7 @@ $('planMapLocate').addEventListener('click', () => {
 function renderPlan(plan) {
   window.dispatchEvent(new Event('hl:show-itinerary'));
   activePlan = plan; $('planSection').hidden = false;
-  $('planTitle').textContent = plan.destination.name.split(',')[0] + ' 여행';
+  $('planTitle').textContent = plan.destination.name.split(',')[0] + (plan.days.some(d=>d.excursion?.original_day) ? ' · 마카오' : '') + ' 여행';
   $('planMeta').textContent = `${plan.start_date} — ${plan.end_date} · ${plan.scheduled_count}곳 · 이동시간은 추정값`;
   if (plan.review_summary) $('planMeta').textContent += ` · 리뷰 확인 ${plan.review_summary.counts.matched || 0}곳. ${plan.review_summary.notice}`;
   if (plan.rating_summary?.enabled) $('planMeta').textContent += ` · Trip.com 평점·리뷰 수 반영 (${plan.rating_summary.matched}곳 확인)`;
@@ -217,9 +218,11 @@ function renderPlan(plan) {
   window.dispatchEvent(new CustomEvent('hl:plan',{detail:{plan,map:tripMap}}));
 }
 function renderSaved() {
+  const offer = $('macauTripOffer');
+  renderMacauOffer({root:offer,plans:saved,savePlan,renderPlan,action,notice});
   $('savedSection').hidden = !saved.length; $('savedPlans').replaceChildren();
   saved.forEach(plan => {
-    const button = document.createElement('button'); button.textContent = `${plan.destination.name.split(',')[0]} · ${plan.start_date}`;
+    const button = document.createElement('button'); button.textContent = `${plan.destination.name.split(',')[0]} · ${plan.start_date}${plan.days.some(d=>d.excursion) ? ' · 마카오 포함' : ''}`;
     button.addEventListener('click', () => {
       destination = plan.destination;
       // 저장된 일정이 가이드로 만든 것이면 도시 선택도 되살린다 — 안 되살리면 같은 화면에서

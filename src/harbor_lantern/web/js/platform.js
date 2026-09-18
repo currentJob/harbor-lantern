@@ -2,6 +2,7 @@ import { escapeHtml as esc, link } from './format.js';
 import { spotBody, gradeSummary } from './render/guide.js';
 import { TripMap } from './map.js';
 import { openPlacePicker } from './place-picker.js';
+import { excursionHtml } from './day-trip.js';
 
 const $ = id => document.getElementById(id);
 const EUROPE = new Set(['NL','ES','TR','GB','FR','CZ','IT','AT']);
@@ -91,6 +92,7 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
     $('itineraryTabs').innerHTML = plan.days.map((d,i) => `<button type="button" role="tab" data-day="${i}" aria-selected="false">Day ${i+1} <small>${esc(d.date.slice(5))}</small></button>`).join('');
     $('itineraryTabs').setAttribute('role','tablist');
     document.querySelectorAll('#planDays .day').forEach((dayEl,di) => {
+      dayEl.querySelector('.day-head').insertAdjacentHTML('afterend',excursionHtml(plan.days[di]));
       dayEl.querySelectorAll('.stop').forEach((el,si) => {
         const stop = plan.days[di].stops[si];
         el.classList.toggle('completed',Boolean(stop.completed));
@@ -158,7 +160,8 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
       const minutes=t=>{const [h,m]=t.split(':').map(Number);return h*60+m;};
       const days=plan.days.map(d=>({date:d.date,start_time:d.start_time||'09:00',title:d.title||'',area:d.area||'',color:d.color||'#245548',stops:d.stops.map(s=>({place:s.place,duration:s.duration||Math.max(5,minutes(s.departure)-minutes(s.arrival)),completed:Boolean(s.completed),fixed_start:s.fixed_start||null}))}));
       const result=await apiRequest('recalculate',{days,...(kind==='add'?{insert:{day_index:di,stop:{place:target,duration:90}}}:{})});
-      plan.days=result.days;plan.scheduled_count=result.scheduled_count;
+      plan.days=result.days.map((day,index)=>index===di || (kind==='move' && index===target)
+        ? {...plan.days[index],...day} : plan.days[index]);plan.scheduled_count=result.scheduled_count;
       insertedIndex=result.insertion?.stop_index ?? null;
       if(kind==='add') selectedDay=di;
     }

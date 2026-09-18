@@ -24,18 +24,19 @@ export function mergePlaces(guides, live, query = '') {
 
 /** One map/list selection flow for researched travel guides and explicit live name searches. */
 export function openPlacePicker({plan, dayIndex, apiRequest, onAdd}) {
+  const day=plan.days[dayIndex], destination=day.destination || plan.destination;
+  const guideCity=day.guide_city || plan.guide_city;
   const dialog=document.createElement('dialog');dialog.className='place-picker';
   dialog.setAttribute('aria-labelledby','pickerTitle');
-  dialog.innerHTML=`<div class="picker-heading"><div><p class="eyebrow">${esc(plan.destination.name)} · Day ${dayIndex+1}</p><h2 id="pickerTitle">지도에서 다음 장소 고르기</h2></div><button type="button" class="secondary picker-close" aria-label="장소 선택 닫기">닫기</button></div>
+  dialog.innerHTML=`<div class="picker-heading"><div><p class="eyebrow">${esc(destination.name)} · Day ${dayIndex+1}</p><h2 id="pickerTitle">지도에서 다음 장소 고르기</h2></div><button type="button" class="secondary picker-close" aria-label="장소 선택 닫기">닫기</button></div>
     <form class="picker-search"><label>관광지 이름<input type="search" aria-label="관광지 이름" maxlength="100" placeholder="관광지 이름 · 현지명 · 영문명"></label><button type="submit">실시간 검색</button><button type="button" class="secondary picker-reset">도시 가이드 보기</button><label>참조 자료<select aria-label="참조 자료"><option value="all">전체 자료</option><option value="trip">Trip.com 평점 있는 곳</option><option value="osm">실시간 지도 검색 결과</option></select></label></form>
     <p class="hint picker-help">지도 핀 또는 목록에서 선택해 상세 정보를 확인하세요. Trip.com 평점은 조사 시점 자료이며, 실시간 이름 검색은 도시 중심 50km 이내의 OpenStreetMap 결과입니다.</p>
     <p class="picker-status" role="status">도시 관광지를 불러오는 중입니다.</p>
     <div class="picker-workspace"><div id="placePickerMap" aria-label="추가할 관광지 지도"></div><div class="picker-side"><div class="picker-results" aria-label="관광지 검색 결과"></div><section class="picker-detail" aria-live="polite"><p class="hint">지도 핀을 선택하면 평점·설명·출처를 볼 수 있습니다.</p></section></div></div>`;
   document.body.appendChild(dialog);dialog.showModal();
-  const $=selector=>dialog.querySelector(selector), origin=plan.destination;
+  const $=selector=>dialog.querySelector(selector), origin=destination;
   const status=$('.picker-status'), results=$('.picker-results'), detail=$('.picker-detail');
   let guides=[], live=[], query='', visible=[], requestId=0, adding=false, mapWarning='';
-  const day=plan.days[dayIndex];
   const duplicate=place=>day.stops.some(s=>samePlace(s.place,place));
   const map=new TripMap('placePickerMap',{onTileTrouble:text=>{mapWarning=text+' 목록에서 선택할 수 있습니다.';status.textContent=mapWarning;}});
   map.init();
@@ -104,8 +105,8 @@ export function openPlacePicker({plan, dayIndex, apiRequest, onAdd}) {
     }catch(error){if(dialog.open && token===requestId){render();status.textContent=`${error.message} · 조사된 자료 ${visible.length}곳만 표시합니다. 다시 검색할 수 있습니다.`;}}
     finally{if(token===requestId)submit.disabled=false;}
   };
-  if(plan.guide_city?.city_id){
-    apiRequest('guides/'+encodeURIComponent(plan.guide_city.city_id)).then(result=>{
+  if(guideCity?.city_id){
+    apiRequest('guides/'+encodeURIComponent(guideCity.city_id)).then(result=>{
       if(!dialog.open)return;guides=result.spots;render();
     }).catch(error=>{if(dialog.open)status.textContent=error.message+' 실시간 이름 검색은 계속 사용할 수 있습니다.';});
   }else {render();status.textContent='조사된 도시 가이드가 없는 지역입니다. 관광지 이름을 실시간 검색해 주세요.';}
