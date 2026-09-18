@@ -119,13 +119,19 @@ export function openPlacePicker({plan, dayIndex, apiRequest, onAdd}) {
       const button=document.createElement('button');button.type='button';button.dataset.id=place.id;button.setAttribute('aria-pressed',String(place.id===selected));
       const tip=(place.tips || []).find(t=>t.text && t.evidence);
       button.innerHTML=`<span class="picker-number">${i+1}</span><span><strong>${esc(place.name)}</strong><small>${esc(place.category_label)} · 중심에서 ${formatDistance(place.distance_m)}${duplicate(place)?' · 일정에 있음':''}</small><small class="picker-list-rating">${esc(ratingLabel(place))}</small><small>${esc(brief(place))}</small><small>${tip?'방문 팁 · '+esc(tip.text.slice(0,120)):'일반 방문 체크 · '+esc(VISIT_CHECKS[categoryGroup(place)])}</small></span>`;
-      button.onclick=()=>{choose(place);map.nearbyMarkers[i]?.openPopup();};results.appendChild(button);
+      button.onclick=()=>{
+        choose(place);
+        map.map?.setView([place.lat,place.lng],Math.max(map.map.getZoom(),16),{animate:false});
+        map.nearbyMarkers[visible.findIndex(p=>p.id===place.id)]?.openPopup();
+        $('.picker-side').scrollTop=0;
+        $('#placePickerMap').scrollIntoView({block:'start',behavior:'instant'});
+      };results.appendChild(button);
     }
     if(!visible.length)results.innerHTML='<p class="empty">현재 영역에서 조건에 맞는 장소가 없습니다. 필터를 초기화하거나 지도를 이동·확대해 보세요.</p>';
     map.renderNearby(visible,{onPick:choose,numbered:true});
     map.nearbyMarkers.forEach((marker,i)=>{const icon=marker.getElement();if(icon){icon.setAttribute('aria-label',visible[i].name);icon.title=visible[i].name;}});
     const kept=visible.find(p=>p.id===selected);
-    if(kept&&!adding)choose(kept);
+    if(kept&&!adding){choose(kept);map.nearbyMarkers[visible.indexOf(kept)]?.openPopup();}
     else if(!adding){selected=null;detail.innerHTML='<p class="hint">장소를 고르면 상세 정보와 방문 팁을 볼 수 있습니다.</p>';}
     status.textContent=`${visible.length}곳 표시 / 영역 자료 ${items.filter(p=>withinBounds(p,bounds)).length}곳 · ${message}${mapWarning?' '+mapWarning:''}`;
   }
@@ -135,7 +141,13 @@ export function openPlacePicker({plan, dayIndex, apiRequest, onAdd}) {
     try{
       const found=await apiRequest('places/viewport?'+new URLSearchParams(job.bounds));
       if(!dialog.open || job.generation!==generation)return;
-      items=found.items;lastKey=found.partial?'':job.key;
+      const chosen=items.find(p=>p.id===selected);
+      items=found.items;
+      if(chosen && withinBounds(chosen,bounds)){
+        const match=items.find(p=>samePlace(p,chosen));
+        if(match)selected=match.id;else items.push(chosen);
+      }
+      lastKey=found.partial?'':job.key;
       message=(found.truncated?'장소가 많아 일부만 조회했습니다. 지도를 더 확대해 주세요. ':'')+found.notice;
       render();
     }catch(error){if(dialog.open && job.generation===generation){message=`조회 실패: ${error.message} ‘이 영역 다시 조회’를 눌러주세요.`;render();}}
