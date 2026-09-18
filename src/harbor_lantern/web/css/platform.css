@@ -23,3 +23,4 @@ html{scroll-behavior:smooth;scroll-padding-top:95px}body,.shared-page{margin:0;b
 
 .picker-filter-panel{margin-top:12px}.picker-filter-panel>summary{cursor:pointer;font-size:13px;color:var(--green)}.picker-help,.picker-status{max-width:none}.picker-filter-panel>.picker-filters{margin-top:8px}
 @media(min-width:761px){.picker-filter-panel>summary{display:none}}
+.picker-close{flex-shrink:0;white-space:nowrap}
