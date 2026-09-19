@@ -222,3 +222,17 @@ PC 가 꺼지거나 절전으로 들어가면 조회·수정이 연결되지 않
 (<https://creativecommons.org/licenses/by-sa/4.0/>). 설명이 붙은 스팟은 전부 출처 URL·라이선스
 식별자·조회일을 함께 저장하고 화면에 출처 링크를 표시한다. 영업시간은 OpenStreetMap(**ODbL 1.0**)에서
 온다. 지도 타일·근처 장소도 OpenStreetMap 기여자의 자료다.
+
+### SNS·트렌드 맛집
+
+`주변 맛집 → 맛집 모아보기 → SNS·트렌드 맛집만`에서 공개 소개 기사로 조사한 장소를 볼 수 있습니다.
+현재 홍콩 8곳(자료 확인 2026-09-19)을 제공하며 SNS 화제, 식사·브런치, 감성 카페로 좁힙니다.
+선택 도시 전체와 검색 반경 내를 구분하고, 내 위치 버튼을 누르면 반경 검색으로 전환합니다.
+목록과 지도는 같은 필터를 쓰며 `지도에서 보기`로 선택한 지점에 이동합니다.
+기사 출처·수정일·자료 확인일·추천 메뉴·방문 팁을 표시합니다. 미조사 도시는 빈 결과로 안내합니다.
+실시간 Instagram 순위나 방문객 연령 통계가 아니며, 없는 평점과 리뷰 수는 만들어 넣지 않습니다.
+정적 자료는 `src/harbor_lantern/web/data/trending-food.json`에 있으며 별도 유료 API를 호출하지 않습니다.
+
+브라우저 확인: 서버 실행 후 `uv run --no-project --with playwright --python .venv/Scripts/python.exe tools/check_trend_food.py`.
+`CHECK_URL`로 배포 주소, `CHROME_PATH`로 설치된 Chromium 실행 파일을 지정할 수 있습니다.
+일반 주변 맛집 API만 테스트 응답으로 대체하며, 트렌드 목록은 실제 배포 파일을 읽습니다.

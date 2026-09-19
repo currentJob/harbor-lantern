@@ -1,6 +1,6 @@
 import { apiBase, request, setApiBase } from './api.js';
 import { escapeHtml as esc, link } from './format.js';
-import { LocationTracker, directionsUrl } from './geo.js';
+import { LocationTracker, directionsUrl, haversineMeters } from './geo.js';
 import { TripMap } from './map.js';
 import { cityLabel, daysHtml, gradeBadgeHtml, gradeSummary, isGuidePlan, sourcesHtml, stopDomId } from './render/guide.js';
 import { dayPickerLabel, planMapDays, planMapSpotCount, unmappedCount } from './render/planmap.js';
@@ -15,6 +15,10 @@ let destination = null;
 let city = null;
 let activePlan = null;
 let foods = [];
+let foodOrigin = null;
+let foodSequence = 0;
+let trendCatalogue = null;
+const trendLabels = {sns:'SNS 화제', meal:'식사·브런치', cafe:'감성 카페'};
 let saved = [];
 const weekdays = ['월', '화', '수', '목', '금', '토', '일'];
 const categories = {restaurant:'음식점', cafe:'카페', fast_food:'간편식', museum:'박물관', gallery:'갤러리', attraction:'명소', viewpoint:'전망', zoo:'동물원', park:'공원'};
@@ -246,20 +250,66 @@ $('downloadPlan').addEventListener('click', () => {
   a.download = `travel-${activePlan.start_date}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
 });
 async function findFood(origin) {
-  notice('주변 음식점을 조회하고 있어요…');
-  const result = await apiRequest(`nearby?lat=${origin.lat}&lng=${origin.lng}&radius_m=${$('nearRadius').value}`);
-  foods = result.places; $('foodNotice').textContent = result.notice;
-  renderFoods(); notice(foods.length ? `${foods.length}곳을 찾았어요.` : '이 반경 안에서 음식점을 찾지 못했어요. 검색 반경을 넓혀 주세요.');
-  window.dispatchEvent(new CustomEvent('hl:food',{detail:{places:foods,origin}}));
+  const token = ++foodSequence;
+  foodOrigin = origin || null;
+  foods = []; renderFoods();
+  const trending = $('foodCollection').value === 'trend';
+  $('foodNotice').textContent = '장소를 불러오는 중입니다…';
+  try {
+    if (trending) {
+      if (!trendCatalogue) {
+        const response = await fetch('./data/trending-food.json');
+        if (!response.ok) throw new Error('트렌드 맛집 자료를 불러오지 못했습니다. 다시 조회해 주세요.');
+        trendCatalogue = await response.json();
+      }
+      if (token !== foodSequence) return;
+      const nearby = $('trendScope').value === 'nearby';
+      foods = trendCatalogue.places
+        .filter(place => nearby || !$('foodCity').value || place.city_id === $('foodCity').value)
+        .map(place => ({...place,distance_m:origin ? Math.round(haversineMeters(origin,place)) : null}))
+        .filter(place => !nearby || (origin && place.distance_m <= Number($('nearRadius').value)));
+      $('foodNotice').textContent = `${nearby ? '검색 반경 내' : ($('foodCity').value ? $('foodCity').selectedOptions[0].textContent : '조사된 모든 도시') + ' · 도시 전체'} 트렌드 픽 · 자료 확인 ${trendCatalogue.checked_at}. 현재 홍콩 8곳을 제공합니다. 실시간 인스타 순위나 방문객 연령 통계가 아닌, 공개 소개 기사를 바탕으로 고른 목록입니다.`;
+    } else {
+      if (!origin) { $('foodNotice').textContent = '도시를 고르거나 내 위치로 찾아보세요.'; return; }
+      const result = await apiRequest(`nearby?lat=${origin.lat}&lng=${origin.lng}&radius_m=${$('nearRadius').value}`);
+      if (token !== foodSequence) return;
+      foods = result.places; $('foodNotice').textContent = result.notice;
+    }
+    renderFoods();
+  } catch (error) {
+    if (token !== foodSequence) return;
+    $('foodNotice').textContent = error.message;
+    notice(error.message,true);
+  }
 }
 function renderFoods() {
   const mode=$('foodSort').value;
-  const ordered = foods.slice().sort((a,b) => (mode==='confidence' ? confidence(b.rating,b.review_count)-confidence(a.rating,a.review_count) : mode==='rating' ? (b.rating??-1)-(a.rating??-1) : 0) || a.distance_m-b.distance_m);
-  $('foodResults').innerHTML = ordered.length ? ordered.map(place => `<article class="place-card" data-food="${esc(place.id)}"><p class="eyebrow">${place.distance_m < 1000 ? place.distance_m + 'm' : (place.distance_m/1000).toFixed(1) + 'km'} 거리</p>${placeBody(place)}</article>`).join('') : '<p class="empty">이 반경에는 검색된 음식점이 없습니다. 반경을 넓혀 다시 찾아보세요.</p>';
+  const trending = $('foodCollection').value === 'trend';
+  const tag = $('trendKind').value;
+  const ordered = foods.filter(p => !trending || tag === 'all' || p.trend_tags?.includes(tag)).sort((a,b) => (mode==='confidence' ? confidence(b.rating,b.review_count)-confidence(a.rating,a.review_count) : mode==='rating' ? (b.rating??-1)-(a.rating??-1) : 0) || (a.distance_m??0)-(b.distance_m??0));
+  $('foodCount').textContent = `${ordered.length}곳`;
+  $('foodResults').innerHTML = ordered.length ? ordered.map(place => `<article class="place-card" data-food="${esc(place.id)}"><p class="eyebrow">${place.distance_m == null ? esc(place.area || '') : (place.distance_m < 1000 ? place.distance_m + 'm' : (place.distance_m/1000).toFixed(1) + 'km') + ' · 직선거리'}</p>${placeBody(place)}${place.trend_tags ? `<div class="trend-detail"><div class="trend-tags">${place.trend_tags.map(t=>`<span>${esc(trendLabels[t])}</span>`).join('')}</div><p>${esc(place.trend_reason)}</p><p class="meta">방문 팁 · ${esc(place.tip)}</p><p class="meta">${esc(place.address)}</p><p class="source">기사 수정 ${esc(place.source_updated_at)} · 자료 확인 ${esc(place.checked_at)}</p></div>` : ''}<button type="button" class="secondary food-focus" data-focus-food="${esc(place.id)}">지도에서 보기 ↗</button></article>`).join('') : `<p class="empty">${trending ? '이 지역·조건에서 확인된 트렌드 픽이 아직 없습니다. 도시 전체 또는 다른 취향을 선택하거나, 일반 주변 맛집을 조회해 보세요.' : '이 반경에는 검색된 음식점이 없습니다. 도시를 선택하거나 반경을 넓혀 다시 찾아보세요.'}</p>`;
+  window.dispatchEvent(new CustomEvent('hl:food',{detail:{places:ordered,origin:foodOrigin,fit:trending && $('trendScope').value === 'city'}}));
 }
+$('foodResults').addEventListener('click',event=>{
+  const button=event.target.closest('[data-focus-food]');
+  const place=foods.find(p=>p.id===button?.dataset.focusFood);
+  if(place) window.dispatchEvent(new CustomEvent('hl:food-focus',{detail:place}));
+});
+function refreshFoodControls() {
+  const trending=$('foodCollection').value==='trend';
+  $('trendControls').hidden=!trending;
+  $('nearRadius').disabled=trending && $('trendScope').value==='city';
+  findFood(foodOrigin || destination);
+}
+$('foodCollection').addEventListener('change',refreshFoodControls);
+$('trendScope').addEventListener('change',refreshFoodControls);
+$('trendKind').addEventListener('change',renderFoods);
+$('nearRadius').addEventListener('change',()=>findFood(foodOrigin || destination));
 $('findNearby').addEventListener('click', event => action(event.currentTarget, async () => {
   if (!navigator.geolocation) return notice('이 브라우저는 위치 조회를 지원하지 않습니다. 여행지 기준으로 검색해 주세요.', true);
   const position = await new Promise((resolve,reject) => navigator.geolocation.getCurrentPosition(resolve, error => reject(new Error(error.code === 1 ? '위치 권한이 꺼져 있어요. 브라우저 권한을 허용하거나 여행지 기준으로 검색해 주세요.' : '현재 위치를 확인하지 못했어요. 다시 시도하거나 여행지 기준으로 검색해 주세요.')), {enableHighAccuracy:true,timeout:12000,maximumAge:60000}));
+  $('trendScope').value='nearby'; $('nearRadius').disabled=false;
   await findFood({lat:position.coords.latitude,lng:position.coords.longitude});
 }));
 $('findDestinationFood').addEventListener('click', event => action(event.currentTarget, async () => {

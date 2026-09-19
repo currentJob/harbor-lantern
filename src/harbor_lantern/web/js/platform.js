@@ -176,13 +176,30 @@ export function initPlatform({apiRequest, selectCity, getPlan, renderPlan, saveP
     } finally { editing=false; }
   }
   window.addEventListener('hl:food',event=>{
-    const {places,origin}=event.detail;
+    const {places,origin,fit}=event.detail;
     if(!foodMap){foodMap=new TripMap('foodMap',{onTileTrouble:text=>notice(text,true)});foodMap.init();}
     foodMap.renderNearby(places,{onPick:place=>document.querySelector(`[data-food="${CSS.escape(String(place.id))}"]`)?.scrollIntoView({block:'center',behavior:'smooth'})});
     foodMap.invalidate();
-    if(foodMap.map) foodMap.map.setView([origin.lat,origin.lng],15);
+    if(foodMap.map) {
+      if(fit && places.length) foodMap.map.fitBounds(places.map(p=>[p.lat,p.lng]),{padding:[35,35],maxZoom:16,animate:false});
+      else if(origin) foodMap.map.setView([origin.lat,origin.lng],15,{animate:false});
+    }
   });
-  $('foodCity').onchange=()=>{const c=cities.find(c=>c.city_id===$('foodCity').value);if(c) selectCity(c);};
+  window.addEventListener('hl:food-focus',event=>{
+    const place=event.detail;
+    if(foodMap?.map) {
+      foodMap.map.stop();
+      foodMap.map.setView([place.lat,place.lng],16,{animate:false});
+      const marker=foodMap.nearbyMarkers.find(marker=>marker.getLatLng().lat===place.lat && marker.getLatLng().lng===place.lng);
+      if(marker) { marker.getPopup().options.autoPan=false; marker.openPopup(); }
+    }
+    $('foodMap').scrollIntoView({block:'center',behavior:'smooth'});
+  });
+  $('foodCity').onchange=()=>{
+    const c=cities.find(c=>c.city_id===$('foodCity').value);
+    if(c) selectCity(c);
+    findFood(c?.center || null);
+  };
   fetch('./data/cities.json').then(r=>{if(!r.ok)throw new Error('도시 목록을 불러오지 못했습니다.');return r.json();}).then(data=>{
     cities=data.cities;
     $('catalogueMeta').textContent=`조사된 가이드 ${gradeSummary(data.counts)} · 지도와 날짜별 추천 일정`;

@@ -160,8 +160,8 @@ export class TripMap {
           html: numbered ? `<div class="picker-pin">${index + 1}</div><span class="picker-rating">${escapeHtml(ratingLabel(place))}</span>` : '<div class="nearpin"></div>',
         }),
       }).addTo(this.map).bindPopup(
-        `<b>${escapeHtml(place.name)}</b><br>${escapeHtml(place.category_label)} · `
-        + `${Math.round(place.distance_m)}m`
+        `<b>${escapeHtml(place.name)}</b><br>${escapeHtml(place.category_label || place.area || place.category || '')}`
+        + (Number.isFinite(place.distance_m) ? ` · ${Math.round(place.distance_m)}m` : '')
         + (numbered ? `<p class="map-rating">${escapeHtml(ratingLabel(place))}</p>${place.review ? `${link(place.review.source_url,place.review.source || '평가 출처')} · 조회 ${escapeHtml((place.review.fetched_at || '').slice(0,10))}` : ''}` : ''),
         {autoPan: !numbered},
       );
